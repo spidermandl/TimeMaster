@@ -1,0 +1,276 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/first"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:background="#999999"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:id="@+id/function"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dip" >
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a00" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a01" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_switch_arrow" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a03" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a04" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dip"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dip" >
+
+            <TextView
+                android:layout_marginLeft="0dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="8dip"
+                android:layout_span="4"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a10" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a11" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dip" >
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a20" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a21" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a22" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a23" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a24" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dip" >
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a30" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a31" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a32" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a33" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a34" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dip" >
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a40" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a41" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a42" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a43" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a44" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dip" >
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a50" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a51" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a52" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a53" />
+
+            <TextView
+                android:layout_margin="1dip"
+                android:background="@drawable/pattern_background"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip"
+                android:gravity="center"
+                android:text="@string/a54" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

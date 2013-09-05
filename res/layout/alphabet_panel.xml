@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="450dip">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/A" />
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/J" />
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/S" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/B" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/K" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/T" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/C" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/L" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/U" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/D" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/M" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/V" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/E" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/N" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/W" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/F" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/O" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/X" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/G" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/P" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/Y" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/H" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/Q" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/Z" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/I" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/R" />
+
+        <TextView
+            android:background="@drawable/wheel_val_with_frame"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dip"
+            android:layout_height="50dip"
+            android:text="@string/cancel" />
+    </TableRow>
+
+</TableLayout>

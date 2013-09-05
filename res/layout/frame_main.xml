@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TabHost
+        android:id="@+id/main_tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <HorizontalScrollView  
+                android:layout_width="match_parent"  
+                android:layout_height="wrap_content" 
+                android:layout_alignParentTop="true"
+                android:fillViewport="true"  
+                android:scrollbars="none" > 
+            <!-- 注意：id必须设置为android:id="@android:id/tabs"，否则会抛异常 -->
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <!-- 注意：id必须设置为android:id="@android:id/tabcontent"，否则会抛异常 -->
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@android:id/tabs" >
+
+                <fragment
+                    android:id="@+id/generation_fragment"
+                    android:name="com.time.master.fragment.GenerationFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <fragment
+                    android:id="@+id/year_fragment"
+                    android:name="com.time.master.fragment.YearFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <fragment
+                    android:id="@+id/month_fragment"
+                    android:name="com.time.master.fragment.MonthFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <fragment
+                    android:id="@+id/week_fragment"
+                    android:name="com.time.master.fragment.WeekFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <fragment
+                    android:id="@+id/date_fragment"
+                    android:name="com.time.master.fragment.DateFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                
+                <fragment
+                    android:id="@+id/issue_list_fragment"
+                    android:name="com.time.master.fragment.IssueListFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                                
+                <fragment
+                    android:id="@+id/new_issue_fragment"
+                    android:name="com.time.master.fragment.NewIssueFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+        </RelativeLayout>
+    </TabHost>
+
+</RelativeLayout>
