@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.10"
+        android:background="#87CEFA"
+        android:gravity="center"
+        android:text="@string/page3_login"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/page3_tvcontent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.77"
+        android:text="@string/page3_first"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+       <CheckBox
+           android:id="@+id/page3_cbdisagree"
+           android:layout_width="321dp"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="10dp"
+           android:text="@string/page3_disagree"
+           android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/page3_cbagree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/page3_agree"
+            android:textSize="20sp" />
+
+</LinearLayout>

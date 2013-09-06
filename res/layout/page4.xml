@@ -1,0 +1,215 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <TextView 
+        android:layout_width="fill_parent"
+      	android:layout_height="0dip"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:text="@string/page4_title"
+        android:gravity="center"
+        android:background="#87CEFA"
+        />
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:id="@+id/page4_tvidcard"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/page4_idcard"  />
+        
+        <EditText 
+            android:id="@+id/page4_etidcard"
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:id="@+id/page4_tvturename"
+           android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/page4_truename"  />
+        
+        <EditText 
+            android:id="@+id/page4_etruename"
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+     <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:id="@+id/page4_tvusername"
+           android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/page4_username"  />
+        
+        <EditText 
+            android:id="@+id/page4_etusername"
+           android:layout_width="0dip"
+            android:layout_weight="2"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+      <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:id="@+id/page4_tvbirth"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/page4_birthday"  />
+        
+        <EditText 
+            android:id="@+id/page4_etbirth"
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_marginRight="10dp"
+            android:textSize="20sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:id="@+id/page4_tvnativeplace"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/page4_nativeplace"  />
+        
+        <EditText 
+            android:id="@+id/page4_etnativeplace"
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_marginRight="10dp"
+            android:textSize="20sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:id="@+id/page4_tvpersonid"
+            android:layout_width="0dip"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/page4_personid"  />
+        
+        <TextView 
+            android:id="@+id/page4_tvpersonid1"
+           android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/page4_personid1"/>
+         <EditText 
+            android:id="@+id/page4_etpersonid"
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_marginRight="10dp"
+            android:textSize="20sp"
+            android:layout_height="wrap_content" />
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:id="@+id/page4_tvidcode"
+            android:layout_width="0dip"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/page4_authcode"  />
+        
+        <TextView
+            android:id="@+id/page4_tvidcode1"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@string/page4_authcode1"  />
+        
+        <EditText
+            android:id="@+id/page4_etidcode"
+           android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content" />
+            
+    </LinearLayout>
+
+   		<Button
+   		    android:id="@+id/page4_btnconfirm"
+   		    android:layout_width="match_parent"
+   		    android:layout_height="0dip"
+            android:layout_weight="0.7"
+   		    android:layout_gravity="bottom"
+   		    android:background="#cbfef1"
+   		    android:text="@string/page4_confirm"
+   		    android:textSize="20sp" />
+  
+</LinearLayout>

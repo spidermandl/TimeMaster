@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#87CEFA"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/page1_tvprompt"
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:text="@string/page1_prompt"
+        android:textSize="30sp" />
+
+  
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/page1_etset"
+                android:layout_width="235dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/page1_btnset"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/page1_shezhi"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/page1_etlogin"
+                android:layout_width="235dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0dp"
+                android:ems="10" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/page1_btnlogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/page1_denglu"
+                android:layout_marginBottom="0dp"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/page1_tvinform"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/page1_inform"
+        android:textSize="30sp" />
+
+</LinearLayout>

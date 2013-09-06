@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:baselineAligned="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    android:orientation="vertical" >
+
+ <LinearLayout
+     android:layout_width="wrap_content"
+     android:layout_height="0dp"
+     android:layout_weight="1"
+     android:alpha="0"
+     android:background="#00000000"
+     android:orientation="vertical" >
+
+ </LinearLayout>
+ 
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+		android:layout_gravity="center"
+		android:background="#87CEFA"
+        android:orientation="horizontal">
+         
+     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical" >
+    <CheckBox 
+        android:id="@+id/page2_cbpw" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="@string/page2_pw" />
+    <CheckBox 
+        android:id="@+id/page2_cblogin" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="@string/page2_login" />
+    <CheckBox
+        android:id="@+id/page2_cbname" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="@string/page2_username" />
+	<CheckBox
+        android:id="@+id/page2_cbkeyboard" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="@string/page2_keyboard" />
+    </LinearLayout>
+    
+<LinearLayout
+        android:layout_width="wrap_content" 
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    <Button
+        android:id="@+id/page2_btnregister"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="#f0ff00"
+        android:text="@string/page2_brnlogin"
+        android:layout_gravity="center"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/page2_btnscan"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="#00ff00"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:text="@string/page2_btnsee"
+        android:textSize="30sp" />
+    </LinearLayout>
+	</LinearLayout>
+	
+</LinearLayout>
