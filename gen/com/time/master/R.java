@@ -11,7 +11,9 @@ public final class R {
     public static final class attr {
     }
     public static final class dimen {
+        public static final int alphabet_panel_height=0x7f040003;
         public static final int wheel_human_item_height=0x7f040002;
+        public static final int wheel_item_text_size=0x7f040004;
         public static final int wheel_location_item_height=0x7f040001;
         public static final int wheel_numeric_item_height=0x7f040000;
     }
@@ -27,6 +29,7 @@ public final class R {
         public static final int wheel_val_with_frame=0x7f020008;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int MainActivityViewFlipper=0x7f080017;
         public static final int alph=0x7f08007b;
         public static final int country=0x7f080074;
@@ -154,6 +157,70 @@ public final class R {
         public static final int week_fragment=0x7f08000c;
         public static final int year=0x7f080001;
         public static final int year_fragment=0x7f08000a;
+=======
+        public static final int A=0x7f080000;
+        public static final int B=0x7f080003;
+        public static final int C=0x7f080006;
+        public static final int D=0x7f080009;
+        public static final int E=0x7f08000c;
+        public static final int F=0x7f08000f;
+        public static final int G=0x7f080012;
+        public static final int H=0x7f080015;
+        public static final int I=0x7f080018;
+        public static final int J=0x7f080001;
+        public static final int K=0x7f080004;
+        public static final int L=0x7f080007;
+        public static final int M=0x7f08000a;
+        public static final int N=0x7f08000d;
+        public static final int O=0x7f080010;
+        public static final int P=0x7f080013;
+        public static final int Q=0x7f080016;
+        public static final int R=0x7f080019;
+        public static final int S=0x7f080002;
+        public static final int T=0x7f080005;
+        public static final int U=0x7f080008;
+        public static final int V=0x7f08000b;
+        public static final int W=0x7f08000e;
+        public static final int X=0x7f080011;
+        public static final int Y=0x7f080014;
+        public static final int Z=0x7f080017;
+        public static final int alph=0x7f08003a;
+        public static final int country=0x7f080034;
+        public static final int date_fragment=0x7f080028;
+        public static final int date_selector_wheel=0x7f08001b;
+        public static final int day=0x7f08001e;
+        public static final int edit_date=0x7f080022;
+        public static final int edit_human=0x7f08003c;
+        public static final int edit_location=0x7f080031;
+        public static final int first=0x7f080032;
+        public static final int function=0x7f080033;
+        public static final int generation_fragment=0x7f080024;
+        public static final int hour=0x7f08001f;
+        public static final int human_confirm=0x7f08003b;
+        public static final int human_select=0x7f080039;
+        public static final int human_selector_wheel=0x7f080038;
+        public static final int human_text=0x7f080035;
+        public static final int issue_list_fragment=0x7f080029;
+        public static final int location_1=0x7f08002c;
+        public static final int location_2=0x7f08002d;
+        public static final int location_3=0x7f08002e;
+        public static final int location_4=0x7f08002f;
+        public static final int location_confirm=0x7f080030;
+        public static final int location_selector_wheel=0x7f08002b;
+        public static final int location_text=0x7f080036;
+        public static final int main_tab=0x7f080023;
+        public static final int menu_settings=0x7f08003d;
+        public static final int minute=0x7f080020;
+        public static final int month=0x7f08001d;
+        public static final int month_fragment=0x7f080026;
+        public static final int name_cancel=0x7f08001a;
+        public static final int new_issue_fragment=0x7f08002a;
+        public static final int numeric_text=0x7f080037;
+        public static final int time_confirm=0x7f080021;
+        public static final int week_fragment=0x7f080027;
+        public static final int year=0x7f08001c;
+        public static final int year_fragment=0x7f080025;
+>>>>>>> 61478c3f20c2fb99cbadb2c52bb2fc7a61c5f353
     }
     public static final class layout {
         public static final int alphabet_panel=0x7f030000;
@@ -162,6 +229,7 @@ public final class R {
         public static final int generation_layout=0x7f030003;
         public static final int issue_list=0x7f030004;
         public static final int month_layout=0x7f030005;
+<<<<<<< HEAD
         public static final int myviewflipper=0x7f030006;
         public static final int new_issue=0x7f030007;
         public static final int page1=0x7f030008;
@@ -179,6 +247,15 @@ public final class R {
         public static final int wheel_nemeric_text_item=0x7f030014;
         public static final int wheel_text_item=0x7f030015;
         public static final int year_layout=0x7f030016;
+=======
+        public static final int new_issue=0x7f030006;
+        public static final int pattern_switch=0x7f030007;
+        public static final int week_layout=0x7f030008;
+        public static final int wheel_human_text_item=0x7f030009;
+        public static final int wheel_location_text_item=0x7f03000a;
+        public static final int wheel_nemeric_text_item=0x7f03000b;
+        public static final int year_layout=0x7f03000c;
+>>>>>>> 61478c3f20c2fb99cbadb2c52bb2fc7a61c5f353
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;
