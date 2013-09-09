@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -27,7 +28,6 @@ public class MainActivity extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.myviewflipper);
 		viewFlipper=(ViewFlipper)findViewById(R.id.MainActivityViewFlipper);
-		
 		page1_tvinform=(TextView)viewFlipper.getCurrentView().findViewById(R.id.page1_tvinform);
 //		page2_btnregister=(Button)viewFlipper.getRootView().findViewById(R.id.page2_btnregister);
 		page3_cbagree=(CheckBox)viewFlipper.getRootView().findViewById(R.id.page3_cbagree);
@@ -36,7 +36,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		page6_btnend=(Button)viewFlipper.getRootView().findViewById(R.id.page6_btnend);
 		page7_btnend=(Button)viewFlipper.getRootView().findViewById(R.id.page7_btnend);
 		page8_btnend=(Button)viewFlipper.getRootView().findViewById(R.id.page8_btnend);
-		
+
 		page1_tvinform.setOnClickListener(this);
 //		page2_btnregister.setOnClickListener(this);
 		page3_cbagree.setOnClickListener(this);
