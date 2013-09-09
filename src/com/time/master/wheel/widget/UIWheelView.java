@@ -18,7 +18,7 @@ public class UIWheelView extends WheelView {
 		super(context, attrs, defStyle);
 		init();
 	}
-
+	
 	/**
 	 * Constructor
 	 */

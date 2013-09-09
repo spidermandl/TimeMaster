@@ -6,6 +6,7 @@ import java.util.Locale;
 
 import com.time.master.R;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
+import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.UIWheelView;
 import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.WheelView;
@@ -53,6 +54,7 @@ public class DateFragment extends Fragment {
 				editText.setText(getDateString());
 			}
 		});
+        year.addClickingListener(clickListener);
         
         month = (UIWheelView) layout.findViewById(R.id.month);
         monthAdapter = new NumericWheelAdapter(this.getActivity(), 1,12);
@@ -96,6 +98,7 @@ public class DateFragment extends Fragment {
 //				day.setCurrentItem(model.day-1);
 			}
 		});
+        month.addClickingListener(clickListener);
         
         day = (UIWheelView) layout.findViewById(R.id.day);
         dayAdapter = new NumericWheelAdapter(this.getActivity(), 1,calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
@@ -120,6 +123,7 @@ public class DateFragment extends Fragment {
 				editText.setText(getDateString());
 			}
 		});
+        day.addClickingListener(clickListener);
         
         hour = (UIWheelView) layout.findViewById(R.id.hour);
         hourAdapter = new NumericWheelAdapter(this.getActivity(), 0,23);
@@ -143,6 +147,7 @@ public class DateFragment extends Fragment {
 				editText.setText(getDateString());
 			}
 		});
+        hour.addClickingListener(clickListener);
         
         minute = (UIWheelView) layout.findViewById(R.id.minute);
         minAdapter = new NumericWheelAdapter(this.getActivity(), 0, 59, "%02d");
@@ -167,6 +172,7 @@ public class DateFragment extends Fragment {
 				editText.setText(getDateString());
 			}
 		});
+        minute.addClickingListener(clickListener);
         
         editText=(EditText)layout.findViewById(R.id.edit_date);
         editText.setInputType(InputType.TYPE_NULL);
@@ -182,6 +188,14 @@ public class DateFragment extends Fragment {
 	Calendar calendar;
 	UIWheelView year,month,day,hour,minute;
 	NumericWheelAdapter yearAdapter,monthAdapter,dayAdapter,hourAdapter,minAdapter;
+	OnWheelClickedListener clickListener=new OnWheelClickedListener() {
+		
+		@Override
+		public void onItemClicked(WheelView wheel, int itemIndex) {
+			wheel.setCurrentItem(itemIndex, true);
+			
+		}
+	};
 	
 	private String getDateString(){
 		return model.year+"年 "+model.month+"月 "+model.day+"日 "+model.hour+"时 "+model.minute+"分 ";

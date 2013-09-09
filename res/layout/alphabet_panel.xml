@@ -9,24 +9,27 @@
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/A"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/A" />
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/J"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/J" />
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/S"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/S" />
     </TableRow>
 
@@ -36,26 +39,29 @@
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/B"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/B" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/K"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/K" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/T"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/T" />
     </TableRow>
 
@@ -65,26 +71,29 @@
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/C"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/C" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/L"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/L" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/U"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/U" />
     </TableRow>
 
@@ -94,26 +103,29 @@
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/D"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/D" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/M"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/M" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/V"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/V" />
     </TableRow>
 
@@ -123,26 +135,29 @@
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/E"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/E" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/N"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/N" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/W"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/W" />
     </TableRow>
 
@@ -152,26 +167,29 @@
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/F"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/F" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/O"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/O" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/X"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/X" />
     </TableRow>
 
@@ -181,26 +199,29 @@
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/G"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/G" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/P"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/P" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/Y"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/Y" />
     </TableRow>
 
@@ -210,26 +231,29 @@
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/H"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/H" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/Q"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/Q" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/Z"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/Z" />
     </TableRow>
 
@@ -239,26 +263,29 @@
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/I"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/I" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/R"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/R" />
 
         <TextView
             android:background="@drawable/wheel_val_with_frame"
+            android:id="@+id/name_cancel"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dip"
-            android:layout_height="50dip"
+            android:layout_height="@dimen/alphabet_panel_height"
             android:text="@string/cancel" />
     </TableRow>
 
