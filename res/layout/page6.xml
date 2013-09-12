@@ -1,159 +1,253 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity5" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:orientation="vertical">
+  
+    <TextView
+        android:id="@+id/titleseven"
+        android:layout_width="fill_parent"
+        android:layout_height="27dp"
+        android:background="#319EDE"
+        android:gravity="center"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:text="@string/page_title"
+        android:textSize="@dimen/pagetitle_text_size"
+        android:textColor="#FFFFFF" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:background="#87CEFA"
+        android:id="@+id/pagetitleseven"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="#F0F0F0"
         android:gravity="center"
-        android:text="@string/page6_title"
-        android:textSize="25sp" />
+        android:textSize="@dimen/pagetitle_text_size"
+        android:text="@string/page6_title" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
+<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+    	android:orientation="vertical">
+        
         <TextView
-            android:id="@+id/page6_tvname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:text="@string/page6_name"
-            android:textSize="23sp" />
+        	android:id="@+id/setpassword"
+        	android:layout_width="match_parent"
+        	android:layout_height="0dip"
+    		android:layout_weight="1"
+    		android:gravity="center"
+    		android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginTop="8dp"
+    		android:layout_marginBottom="8dp"
+        	android:background="#ADD7E7"
+        	android:textColor="#48839F"
+        	android:textSize="@dimen/pagecomponent_text_size"
+        	android:text="@string/page6_pwset" />
 
-        <EditText
-            android:id="@+id/page6_etname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="40dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
+<LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+    		android:layout_weight="1"
+    		android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginTop="8dp"
+    		android:layout_marginBottom="8dp" 
+            android:orientation="horizontal">     
+         
+         <TextView
+             android:id="@+id/pwprint"
+             android:layout_width="0dip"
+             android:layout_height="match_parent"
+             android:layout_weight="3"
+             android:layout_marginRight="8dp"
+             android:background="@drawable/setbar_background"
+             android:gravity="center"
+             android:textSize="@dimen/pagecomponent_text_size"
+             android:text="@string/page6_pwinput" />
+        
         <TextView
-            android:id="@+id/page6_tvgender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page6_gender"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page6_etgender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="10dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
+            android:id="@+id/pwprinttv"
+            android:layout_width="0dip"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="@string/page6_hintpwin"
+            android:textColor="#E0DFDF"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:background="@drawable/setbar_backgroundp" 
+            android:textIsSelectable="true"/>
+ </LinearLayout>  
+ <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+    		android:layout_weight="1"
+    		android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginBottom="18dp" 
+            android:orientation="horizontal">         
         <TextView
-            android:id="@+id/page6_tvaddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page6_address"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page6_etaddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
+            android:id="@+id/repwprint"
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:layout_marginRight="8dp"
+            android:text="@string/page6_pwinput" />
+        
         <TextView
-            android:id="@+id/page6_tvphone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page6_phone"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page6_etphone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
+            android:id="@+id/repwprinttv"
+            android:layout_width="0dip"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="@string/page6_hintpwin"
+            android:textColor="#E0DFDF"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:background="@drawable/setbar_backgroundp" 
+            android:textIsSelectable="true"/>
+ </LinearLayout>
+        
         <TextView
-            android:id="@+id/page6_tvqqnumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page6_qqnumber"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page6_etqqnumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="10dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
+        	android:id="@+id/notice"
+        	android:layout_width="match_parent"
+        	android:layout_height="0dip"
+    		android:layout_weight="1"
+        	android:background="#FFFFFF"
+        	android:gravity="center"
+        	android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginBottom="18dp"
+        	android:textColor="#77A6BF"
+        	android:textSize="@dimen/pagetitle_text_size"
+        	android:text="@string/page6_pwremind" />
+  <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+    		android:layout_weight="1"
+    		android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginBottom="8dp" 
+            android:orientation="horizontal">          
         <TextView
-            android:id="@+id/page6_tvmessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page6_message"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page6_etmessage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="10dp" />
-
+            android:id="@+id/findpassword"
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:layout_marginRight="8dp"
+            android:text="@string/page6_findpw" />
+        
+        <TextView
+            android:id="@+id/telfindpasswordtv"
+            android:layout_width="0dip"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="@string/page6_hintphone"
+            android:textColor="#E0DFDF"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:background="@drawable/setbar_backgroundp" 
+            android:textIsSelectable="true"/>
 </LinearLayout>
+<LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+    		android:layout_weight="1"
+    		android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginBottom="8dp" 
+            android:orientation="horizontal">            
+	<TextView
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_marginRight="8dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/emailfindpasswordtv"
+            android:layout_width="0dip"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:hint="@string/page6_hintemail"
+            android:textColor="#E0DFDF"
+            android:textIsSelectable="true" />
 
-    <Button
-        android:id="@+id/page6_btnend"
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="0.7"
-        android:background="#cbfef1"
-        android:text="@string/page6_end"
-        android:textSize="23sp" />
-
+ </LinearLayout>
+ <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+    		android:layout_weight="1"
+    		android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginBottom="8dp" 
+            android:orientation="horizontal">           
+         <TextView
+            android:id="@+id/question"
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:layout_marginRight="8dp"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:text="@string/page6_question" />
+        
+        <TextView
+            android:id="@+id/questiontv"
+            android:layout_width="0dip"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="@string/page6_hintintqes"
+            android:textColor="#E0DFDF"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:background="@drawable/setbar_backgroundp" 
+            android:textIsSelectable="true"/>
+   </LinearLayout>
+   <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+    		android:layout_weight="1"
+    		android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginBottom="18dp" 
+            android:orientation="horizontal"> 
+		<TextView
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_marginRight="8dp"
+            android:layout_height="match_parent"/>       
+        <TextView
+            android:id="@+id/answertv"
+            android:layout_width="0dip"
+            android:layout_weight="5"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="@string/page6_hintintans"
+            android:textColor="#E0DFDF"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:background="@drawable/setbar_backgroundp" 
+            android:textIsSelectable="true"/>
+  </LinearLayout>      
+        <Button
+        	android:id="@+id/page6_btnend"
+        	android:layout_width="match_parent"
+        	android:layout_height="0dip"
+        	android:layout_weight="1"
+        	android:background="#ADD7E7"
+        	android:gravity="center"
+        	android:textColor="#48839F"
+        	android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginBottom="8dp"
+    		android:textSize="@dimen/pagecomponent_text_size"
+        	android:text="@string/page6_end" />
+</LinearLayout>
 </LinearLayout>

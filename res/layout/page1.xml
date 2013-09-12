@@ -2,71 +2,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#87CEFA"
+    android:background="#DEDFDE"
+    android:orientation="vertical">
+    
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:gravity="center"
+    android:background="#319EDE"
+    android:textColor="#ffffff"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:textSize="@dimen/pagetitle_text_size"
+    android:text="@string/page_title"/>
+
+  
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#B92727"
+        android:background="#EAF3FA"
+        android:textSize="@dimen/pagetitle_text_size"
+        android:text="@string/page1_sysprompt"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dip"
+    android:layout_weight="3.2"
+    android:background="#EAF3FA"
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/page1_tvprompt"
         android:layout_width="match_parent"
-        android:layout_height="100dip"
-        android:layout_gravity="top"
-        android:gravity="center"
-        android:text="@string/page1_prompt"
-        android:textSize="30sp" />
+        android:layout_height="0dip"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:lineSpacingMultiplier="1.2"
+        android:text="@string/page1_content"
+        android:textSize="@dimen/pagecontent_text_size" />
+</LinearLayout>
 
-  
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:orientation="horizontal" >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dip"
+    android:layout_weight="3"
+    android:orientation="vertical"
+    android:background="#FFFFFF">   
 
-            <EditText
-                android:id="@+id/page1_etset"
-                android:layout_width="235dp"
-                android:layout_height="match_parent" />
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="0dip"
+	    android:layout_weight="1"
+	    android:layout_marginTop="10dp"
+	    android:orientation="horizontal" >
 
-            <Button
-                android:id="@+id/page1_btnset"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/page1_shezhi"
-                android:textSize="30sp" />
-        </LinearLayout>
+	    <EditText
+	        android:id="@+id/editText1"
+	        android:layout_width="0dip"
+	        android:layout_height="match_parent"
+	        android:layout_weight="3"
+	        android:layout_marginLeft="10dp"
+	        android:ems="10"
+	        android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:textSize="@dimen/pagecomponent_text_size"
+	        android:hint="@string/page1_hintname" 
+	        android:background="@drawable/setbar_backgroundfirstpage"/>
 
-        <LinearLayout
-            
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:orientation="horizontal" >
+	    <Button
+	        android:id="@+id/page1_setbtn"
+	        android:layout_width="0dip"
+	        android:layout_weight="1"
+	        android:layout_height="match_parent"
+	        android:background="#01B0F1"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:textColor="#ffffff"
+	        android:textSize="@dimen/pagecomponent_text_size"
+	        android:text="@string/page1_setbtn" />
+	</LinearLayout>
 
-            <EditText
-                android:id="@+id/page1_etlogin"
-                android:layout_width="235dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="0dp"
-                android:ems="10" >
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="0dip"
+	    android:layout_weight="1"
+	    android:layout_marginTop="5dp"
+	    android:layout_marginBottom="10dp"
+	    android:orientation="horizontal" >
 
-                <requestFocus />
-            </EditText>
+	    <EditText
+	        android:id="@+id/editText2"
+	        android:layout_width="0dip"
+	        android:layout_weight="3"
+	        android:layout_height="match_parent"
+	        android:ems="10"
+	        android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+	        android:layout_marginLeft="10dp"
+	        android:hint="@string/page1_hintpw"
+	        android:inputType="textPassword" 
+	        android:textSize="@dimen/pagecomponent_text_size"
+	        android:background="@drawable/setbar_backgroundfirstpage"/>
 
-            <Button
-                android:id="@+id/page1_btnlogin"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/page1_denglu"
-                android:layout_marginBottom="0dp"
-                android:textSize="30sp" />
-        </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/page1_tvinform"
-        android:layout_width="match_parent"
+	    <Button
+	        android:id="@+id/page1_loginbtn"
+	        android:layout_width="0dip"
+	        android:layout_weight="1"
+	        android:layout_height="match_parent"
+	        android:background="#01B0F1"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:textColor="#ffffff"
+	        android:textSize="@dimen/pagecomponent_text_size"
+	        android:hint="@string/page1_hintname" 
+	        android:text="@string/page1_loginbtn" />
+	</LinearLayout>
+ 
+</LinearLayout>
+	<LinearLayout 
+	     android:layout_width="fill_parent"
+        android:layout_height="0dip"
+    	android:layout_weight="5"
+    	android:orientation="horizontal"
+	   >
+ 	<TextView
+        android:id="@+id/page1_endtv"
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="@string/page1_inform"
-        android:textSize="30sp" />
-
+        android:textSize="@dimen/pagecomponent_text_size"
+        android:hint="@string/page1_hintname" 
+        android:text="@string/page1_end" />
+ 	<include 
+ 	    layout="@layout/page2"
+ 	    android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+ 	    
+ 	    
+ 	    />
+ 	</LinearLayout>
 </LinearLayout>
