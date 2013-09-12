@@ -44,7 +44,7 @@ public class ExcelTest{
             		for(j=0;j<cell.length;j++){
             			
             		if("".equals(cell[j].getContents())==true){
-            			System.out.print("\t\t");
+            			System.out.print("\t");
             			continue;
             		}
             			
