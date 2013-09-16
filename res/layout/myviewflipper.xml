@@ -6,7 +6,8 @@
       <ViewFlipper
         android:id="@+id/MainActivityViewFlipper"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="0dip"
+        android:layout_weight="1">
          <include 
               android:id="@+id/page1"
               layout="@layout/page1"
@@ -36,5 +37,5 @@
               layout="@layout/page8"
               /> 
       </ViewFlipper>
-		
+	
 </LinearLayout>
