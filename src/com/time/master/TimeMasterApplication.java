@@ -64,5 +64,13 @@ public class TimeMasterApplication extends Application {
 			}
 		}
 	}
+
+	public int getScreen_width() {
+		return screen_width;
+	}
+
+	public int getScreen_height() {
+		return screen_height;
+	}
 	
 }
