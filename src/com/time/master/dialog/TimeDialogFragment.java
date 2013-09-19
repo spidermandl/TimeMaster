@@ -21,6 +21,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 
+/**
+ * 时间选择器
+ * @author duanlei
+ *
+ */
 public class TimeDialogFragment extends DialogFragment {
 	
 	public static final String TAG="TimeDialogFragment";
@@ -34,6 +39,9 @@ public class TimeDialogFragment extends DialogFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		/****************************************************
+		 * 设置对话框属性，高度、宽度、动画、背景
+		 ****************************************************/
 		getDialog().setCanceledOnTouchOutside(true);
         Window window = getDialog().getWindow();
         window.setGravity(Gravity.BOTTOM);  //此处可以设置dialog显示的位置  
@@ -199,7 +207,9 @@ public class TimeDialogFragment extends DialogFragment {
         editText.setText(getDateString());
 		return layout;
 	}
-	
+	/**
+	 * 时间数据模型，年、月、日、小时、分钟
+	 */
 	class DateModel{
 		int year,month,day,hour,minute;
 	}

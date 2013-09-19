@@ -18,7 +18,11 @@ import android.view.WindowManager;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.TextView;
-
+/**
+ * 任务选择器
+ * @author duanlei
+ *
+ */
 public class HumanDialogFragment extends DialogFragment {
 
 	public static final String TAG="HumanDialogFragment";
@@ -33,6 +37,9 @@ public class HumanDialogFragment extends DialogFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		/****************************************************
+		 * 设置对话框属性，高度、宽度、动画、背景
+		 ****************************************************/
 		getDialog().setCanceledOnTouchOutside(true);
         Window window = getDialog().getWindow();
         window.setGravity(Gravity.BOTTOM);  //此处可以设置dialog显示的位置  

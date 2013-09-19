@@ -12,7 +12,10 @@ import android.view.WindowManager;
 
 public class TimeMasterApplication extends Application {
 
-	int screen_width,screen_height;
+	/**
+	 * ÆÁÄ»¿í¶È¡¢¸ß¶È
+	 */
+	private int screen_width,screen_height;
 	/**
 	 * singleton instance of Application
 	 */
@@ -73,4 +76,11 @@ public class TimeMasterApplication extends Application {
 		return screen_height;
 	}
 	
+	public int getScreen_W(){
+		return this.screen_width;
+	}
+	
+	public int getScreen_H(){
+		return this.screen_height;
+	}
 }
