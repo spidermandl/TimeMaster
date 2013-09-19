@@ -4,11 +4,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-<!--     <LinearLayout
+    <Button
+        android:id="@+id/human_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="模式" />
+    <Button
+        android:id="@+id/human_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="确定" />
+
+    <EditText
+        android:id="@+id/edit_human"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/human_confirm"
+        android:layout_toRightOf="@id/human_type" />
+    
+    <LinearLayout
         android:id="@+id/human_selector_wheel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/human_type"
         android:orientation="horizontal" >
 
         <com.time.master.wheel.widget.UIWheelView
@@ -24,17 +44,5 @@
             android:layout_weight="1"/>
         
     </LinearLayout>
-    <Button android:id="@+id/human_confirm"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_above="@id/human_selector_wheel"
-            android:layout_alignParentRight="true"
-            android:text="确定"/>
-    <EditText android:id="@+id/edit_human"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_toLeftOf="@id/human_confirm"
-            android:layout_alignParentLeft="true"
-            android:layout_above="@id/human_selector_wheel"/> -->
 
 </RelativeLayout>

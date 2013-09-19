@@ -1,0 +1,287 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Eight" >
+
+    <TextView
+        android:id="@+id/title8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#319ede"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:text="@string/page_title"
+        android:textSize="@dimen/pagetitle_text_size"/>
+<LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginTop="8dp"
+    		android:layout_marginBottom="8dp"
+            android:background="#ADD7E7"
+            android:textColor="#48839F"
+            android:text="@string/page7_title"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="0dip"
+    	android:layout_weight="1"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_marginTop="8dp"
+    	android:layout_marginBottom="8dp"
+    	android:orientation="horizontal">
+        <TextView 
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#d7d7d7"
+            android:text="@string/page7_name"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:gravity="center"/>
+        <TextView 
+            android:id="@+id/nickname"
+            android:layout_width="0dip"
+            android:layout_weight="1.5"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:textIsSelectable="true"
+            android:background="@drawable/setbar_backgroundp"/>
+    </LinearLayout>
+    
+     <LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="0dip"
+    	android:layout_weight="1"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_marginTop="8dp"
+    	android:layout_marginBottom="8dp"
+    	android:orientation="horizontal">
+        <TextView 
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:text="@string/page7_gender"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:gravity="center"/>
+        <TextView 
+            android:id="@+id/gender"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.5"
+            android:textIsSelectable="true"
+            android:background="@drawable/setbar_backgroundp"/>
+    </LinearLayout>
+    
+      <LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="0dip"
+    	android:layout_weight="1"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_marginTop="8dp"
+    	android:layout_marginBottom="8dp"
+    	android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:text="@string/page7_address"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView 
+            android:id="@+id/homeadd"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.5"
+            android:textIsSelectable="true"
+            android:background="@drawable/setbar_backgroundp"/>
+    </LinearLayout>
+    
+       <LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="0dip"
+    	android:layout_weight="1"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_marginTop="8dp"
+    	android:layout_marginBottom="8dp"
+    	android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:text="@string/page7_getaddress"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView 
+            android:id="@+id/postadd"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.5"
+            android:textIsSelectable="true"
+            android:background="@drawable/setbar_backgroundp"/>
+    </LinearLayout>
+    
+        <LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="0dip"
+    	android:layout_weight="1"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_marginTop="8dp"
+    	android:layout_marginBottom="8dp"
+    	android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/connect"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page7_phone"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView 
+            android:layout_width="0dip"
+            android:layout_weight="1.5"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:textIsSelectable="true"
+            android:background="@drawable/setbar_backgroundp"/>
+    </LinearLayout>
+    
+         <LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="0dip"
+    	android:layout_weight="1"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_marginTop="8dp"
+    	android:layout_marginBottom="8dp"
+    	android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/QQ"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:text="@string/page7_qqnumber"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView 
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.5"
+            android:textIsSelectable="true"
+            android:background="@drawable/setbar_backgroundp"/>
+    </LinearLayout>
+    
+         <LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="0dip"
+    	android:layout_weight="1"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_marginTop="8dp"
+    	android:layout_marginBottom="8dp"
+    	android:orientation="horizontal">
+        <TextView 
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#d7d7d7"
+            android:text="@string/page7_microblog"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:gravity="center"/>
+        <TextView 
+            android:id="@+id/wb"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.5"
+            android:textIsSelectable="true"
+            android:background="@drawable/setbar_backgroundp"/>
+    </LinearLayout>
+    
+           <LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="0dip"
+    	android:layout_weight="1"
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginRight="10dp"
+    	android:layout_marginTop="8dp"
+    	android:layout_marginBottom="8dp"
+    	android:orientation="horizontal">
+        <TextView 
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#d7d7d7"
+            android:text="@string/page7_message"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:gravity="center"/>
+        <TextView 
+            android:id="@+id/wx"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1.5"
+            android:textIsSelectable="true"
+            android:background="@drawable/setbar_backgroundp"/>
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/page7_btnend"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/page7_end"
+            android:background="#ADD7E7"
+            android:layout_marginLeft="10dp"
+    		android:layout_marginRight="10dp"
+    		android:layout_marginTop="8dp"
+    		android:layout_marginBottom="8dp"
+    		android:textColor="#48839F"
+    		android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/location_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="模式" />
+    <Button
+        android:id="@+id/location_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="确定" />
+
+    <EditText
+        android:id="@+id/edit_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/location_confirm"
+        android:layout_toRightOf="@id/location_type" />
+    
+    <LinearLayout
+        android:id="@+id/location_selector_wheel"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@id/location_type">
+      
+        <com.time.master.wheel.widget.UIWheelView android:id="@+id/location_1"
+            android:layout_height="match_parent"
+            android:layout_width="0dip"
+            android:layout_weight="1"/>
+        <com.time.master.wheel.widget.UIWheelView android:id="@+id/location_2"
+            android:layout_height="match_parent"
+            android:layout_width="0dip"
+            android:layout_weight="1"/>
+        <com.time.master.wheel.widget.UIWheelView android:id="@+id/location_3"
+            android:layout_height="match_parent"
+            android:layout_width="0dip"
+            android:layout_weight="1"/>
+        <com.time.master.wheel.widget.UIWheelView android:id="@+id/location_4"
+            android:layout_height="match_parent"
+            android:layout_width="0dip"
+            android:layout_weight="1"/>
+    </LinearLayout>  
+
+    
+
+</RelativeLayout>
