@@ -21,10 +21,16 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+/**
+ * "新建"界面
+ * @author Deamond
+ *
+ */
 public class NewIssueFragment extends Fragment implements OnClickListener,OnFocusChangeListener{
 	
-	DialogFragment dateFragment,locationFragment,humanFragment;
+	DialogFragment dateFragment,
+	          locationFragment,
+	          humanFragment;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

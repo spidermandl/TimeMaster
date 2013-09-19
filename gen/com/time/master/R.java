@@ -13,6 +13,22 @@ public final class R {
         public static final int dialog_exit=0x7f040001;
     }
     public static final class attr {
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int new_line=0x7f010001;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int width_multi=0x7f010000;
     }
     public static final class color {
         public static final int Calendar_DayBgColor=0x7f05001a;
@@ -113,6 +129,7 @@ public final class R {
         public static final int Z=0x7f0a0017;
         public static final int alph=0x7f0a0028;
         public static final int answertv=0x7f0a007d;
+        public static final int basic_info_up=0x7f0a007f;
         public static final int birthday=0x7f0a0063;
         public static final int birthdaytv=0x7f0a0064;
         public static final int birthplace=0x7f0a0065;
@@ -128,15 +145,15 @@ public final class R {
         public static final int ckEmail=0x7f0a0053;
         public static final int ckPhone=0x7f0a0052;
         public static final int connect=0x7f0a0084;
-        public static final int country=0x7f0a009c;
+        public static final int country=0x7f0a009d;
         public static final int date_fragment=0x7f0a0020;
         public static final int date_selector=0x7f0a003d;
-        public static final int date_selector_wheel=0x7f0a00a0;
-        public static final int day=0x7f0a00a3;
-        public static final int deoffi=0x7f0a0097;
+        public static final int date_selector_wheel=0x7f0a00a1;
+        public static final int day=0x7f0a00a4;
+        public static final int deoffi=0x7f0a0098;
         public static final int editText1=0x7f0a0040;
         public static final int editText2=0x7f0a0042;
-        public static final int edit_date=0x7f0a009f;
+        public static final int edit_date=0x7f0a00a0;
         public static final int edit_human=0x7f0a0025;
         public static final int edit_location=0x7f0a002b;
         public static final int email=0x7f0a0067;
@@ -144,31 +161,31 @@ public final class R {
         public static final int emailtv=0x7f0a0068;
         public static final int etAnwser=0x7f0a0050;
         public static final int etQuestion=0x7f0a004f;
-        public static final int faidencnu=0x7f0a008a;
+        public static final int faidencnu=0x7f0a008b;
         public static final int familynametv=0x7f0a005f;
-        public static final int famrole=0x7f0a008c;
+        public static final int famrole=0x7f0a008d;
         public static final int findpassword=0x7f0a0078;
-        public static final int first=0x7f0a009a;
-        public static final int function=0x7f0a009b;
+        public static final int first=0x7f0a009b;
+        public static final int function=0x7f0a009c;
         public static final int gender=0x7f0a0081;
         public static final int generation_fragment=0x7f0a001c;
         public static final int hidnumber=0x7f0a006b;
         public static final int hidnumbertv=0x7f0a006c;
         public static final int homeadd=0x7f0a0082;
-        public static final int hour=0x7f0a00a4;
-        public static final int huidencnu=0x7f0a008e;
+        public static final int hour=0x7f0a00a5;
+        public static final int huidencnu=0x7f0a008f;
         public static final int human_confirm=0x7f0a0024;
         public static final int human_select=0x7f0a0027;
         public static final int human_selector=0x7f0a003f;
         public static final int human_selector_wheel=0x7f0a0026;
-        public static final int human_text=0x7f0a00a6;
+        public static final int human_text=0x7f0a00a7;
         public static final int human_type=0x7f0a0023;
-        public static final int iaddr=0x7f0a0092;
+        public static final int iaddr=0x7f0a0093;
         public static final int idcard=0x7f0a005c;
         public static final int idcardtv=0x7f0a005d;
         public static final int issue_list_fragment=0x7f0a0021;
-        public static final int jorole=0x7f0a0098;
-        public static final int lico=0x7f0a0094;
+        public static final int jorole=0x7f0a0099;
+        public static final int lico=0x7f0a0095;
         public static final int location_1=0x7f0a002d;
         public static final int location_2=0x7f0a002e;
         public static final int location_3=0x7f0a002f;
@@ -176,15 +193,15 @@ public final class R {
         public static final int location_confirm=0x7f0a002a;
         public static final int location_selector=0x7f0a003e;
         public static final int location_selector_wheel=0x7f0a002c;
-        public static final int location_text=0x7f0a00a7;
+        public static final int location_text=0x7f0a00a8;
         public static final int location_type=0x7f0a0029;
-        public static final int maidencnu=0x7f0a008b;
+        public static final int maidencnu=0x7f0a008c;
         public static final int main_tab=0x7f0a001b;
         public static final int mainlayout=0x7f0a0031;
-        public static final int mecnu=0x7f0a008d;
-        public static final int menu_settings=0x7f0a00a9;
-        public static final int minute=0x7f0a00a5;
-        public static final int month=0x7f0a00a2;
+        public static final int mecnu=0x7f0a008e;
+        public static final int menu_settings=0x7f0a00aa;
+        public static final int minute=0x7f0a00a6;
+        public static final int month=0x7f0a00a3;
         public static final int month_fragment=0x7f0a001e;
         public static final int name=0x7f0a005e;
         public static final int name_cancel=0x7f0a001a;
@@ -192,7 +209,7 @@ public final class R {
         public static final int new_issue_fragment=0x7f0a0022;
         public static final int nickname=0x7f0a0080;
         public static final int notice=0x7f0a0077;
-        public static final int numeric_text=0x7f0a00a8;
+        public static final int numeric_text=0x7f0a00a9;
         public static final int page1=0x7f0a0036;
         public static final int page1_endtv=0x7f0a0044;
         public static final int page1_loginbtn=0x7f0a0043;
@@ -210,8 +227,8 @@ public final class R {
         public static final int page7=0x7f0a003b;
         public static final int page7_btnend=0x7f0a0088;
         public static final int page8=0x7f0a003c;
-        public static final int page8_btnend=0x7f0a0090;
-        public static final int page9_btnend=0x7f0a0099;
+        public static final int page8_btnend=0x7f0a0091;
+        public static final int page9_btnend=0x7f0a009a;
         public static final int pagetitleseven=0x7f0a0071;
         public static final int pagetitlesix=0x7f0a005b;
         public static final int phonecode=0x7f0a006d;
@@ -221,18 +238,18 @@ public final class R {
         public static final int pwprinttv=0x7f0a0074;
         public static final int question=0x7f0a007b;
         public static final int questiontv=0x7f0a007c;
-        public static final int renu=0x7f0a0089;
+        public static final int renu=0x7f0a008a;
         public static final int repwprint=0x7f0a0075;
         public static final int repwprinttv=0x7f0a0076;
-        public static final int sellpro=0x7f0a0096;
+        public static final int sellpro=0x7f0a0097;
         public static final int setpassword=0x7f0a0072;
-        public static final int taxreco=0x7f0a0095;
+        public static final int taxreco=0x7f0a0096;
         public static final int telfindpasswordtv=0x7f0a0079;
         public static final int telnum=0x7f0a0069;
         public static final int telnumtv=0x7f0a006a;
-        public static final int time_confirm=0x7f0a009e;
-        public static final int time_type=0x7f0a009d;
-        public static final int title8=0x7f0a007f;
+        public static final int time_confirm=0x7f0a009f;
+        public static final int time_type=0x7f0a009e;
+        public static final int title8=0x7f0a0089;
         public static final int titleseven=0x7f0a0070;
         public static final int titlesix=0x7f0a005a;
         public static final int tvContent=0x7f0a0057;
@@ -242,15 +259,15 @@ public final class R {
         public static final int tvQuestion=0x7f0a004e;
         public static final int tvView=0x7f0a0054;
         public static final int tvhead=0x7f0a004c;
-        public static final int uch=0x7f0a0093;
-        public static final int uname=0x7f0a0091;
+        public static final int uch=0x7f0a0094;
+        public static final int uname=0x7f0a0092;
         public static final int username=0x7f0a0061;
         public static final int usernametv=0x7f0a0062;
         public static final int wb=0x7f0a0086;
         public static final int week_fragment=0x7f0a001f;
-        public static final int wiidencnu=0x7f0a008f;
+        public static final int wiidencnu=0x7f0a0090;
         public static final int wx=0x7f0a0087;
-        public static final int year=0x7f0a00a1;
+        public static final int year=0x7f0a00a2;
         public static final int year_fragment=0x7f0a001d;
     }
     public static final class layout {
@@ -437,4 +454,49 @@ public final class R {
         public static final int AppTheme=0x7f080000;
         public static final int wheelAnimation=0x7f080001;
     }
+    public static final class styleable {
+        /**   自定义viewgroup的布局参数 
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ViewGroupType_new_line com.time.master:new_line}</code></td><td></td></tr>
+           <tr><td><code>{@link #ViewGroupType_width_multi com.time.master:width_multi}</code></td><td></td></tr>
+           </table>
+           @see #ViewGroupType_new_line
+           @see #ViewGroupType_width_multi
+         */
+        public static final int[] ViewGroupType = {
+            0x7f010000, 0x7f010001
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.time.master.R.attr#new_line}
+          attribute's value can be found in the {@link #ViewGroupType} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:new_line
+        */
+        public static final int ViewGroupType_new_line = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.time.master.R.attr#width_multi}
+          attribute's value can be found in the {@link #ViewGroupType} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:width_multi
+        */
+        public static final int ViewGroupType_width_multi = 0;
+    };
 }

@@ -19,8 +19,8 @@ public class Page7Fragment extends Fragment implements OnClickListener{
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View layout = inflater.inflate(R.layout.page7,container,false);
-		Button button=(Button)layout.findViewById(R.id.page7_btnend);
-		button.setOnClickListener(this);
+		View next=layout.findViewById(R.id.page7_btnend);
+		next.setOnClickListener(this);
 		return layout;
 	}
 
