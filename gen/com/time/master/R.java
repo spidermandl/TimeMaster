@@ -20,7 +20,31 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
+        public static final int bottom=0x7f010003;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
         public static final int new_line=0x7f010001;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int top=0x7f010002;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int visible=0x7f010004;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -82,20 +106,22 @@ containing a value of this type.
         public static final int wheel_numeric_item_height=0x7f060000;
     }
     public static final class drawable {
-        public static final int ic_action_search=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int next_month=0x7f020002;
-        public static final int pattern_background=0x7f020003;
-        public static final int pattern_switch_arrow=0x7f020004;
-        public static final int previous_month=0x7f020005;
-        public static final int setbar_background=0x7f020006;
-        public static final int setbar_backgroundfirstpage=0x7f020007;
-        public static final int setbar_backgroundp=0x7f020008;
-        public static final int wheel_bg=0x7f020009;
-        public static final int wheel_bg_full=0x7f02000a;
-        public static final int wheel_bg_without_frame=0x7f02000b;
-        public static final int wheel_val=0x7f02000c;
-        public static final int wheel_val_with_frame=0x7f02000d;
+        public static final int checkbox=0x7f020000;
+        public static final int checkboxonclick=0x7f020001;
+        public static final int ic_action_search=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int next_month=0x7f020004;
+        public static final int pattern_background=0x7f020005;
+        public static final int pattern_switch_arrow=0x7f020006;
+        public static final int previous_month=0x7f020007;
+        public static final int setbar_background=0x7f020008;
+        public static final int setbar_backgroundfirstpage=0x7f020009;
+        public static final int setbar_backgroundp=0x7f02000a;
+        public static final int wheel_bg=0x7f02000b;
+        public static final int wheel_bg_full=0x7f02000c;
+        public static final int wheel_bg_without_frame=0x7f02000d;
+        public static final int wheel_val=0x7f02000e;
+        public static final int wheel_val_with_frame=0x7f02000f;
     }
     public static final class id {
         public static final int A=0x7f0a0000;
@@ -137,11 +163,6 @@ containing a value of this type.
         public static final int btAffirm=0x7f0a0055;
         public static final int btn_next_month=0x7f0a0034;
         public static final int btn_pre_month=0x7f0a0033;
-        public static final int checkBox1=0x7f0a0045;
-        public static final int checkBox2=0x7f0a0047;
-        public static final int checkBox3=0x7f0a0049;
-        public static final int checkBox4=0x7f0a004a;
-        public static final int checkBox5=0x7f0a004b;
         public static final int ckEmail=0x7f0a0053;
         public static final int ckPhone=0x7f0a0052;
         public static final int connect=0x7f0a0084;
@@ -214,12 +235,17 @@ containing a value of this type.
         public static final int page1_endtv=0x7f0a0044;
         public static final int page1_loginbtn=0x7f0a0043;
         public static final int page1_setbtn=0x7f0a0041;
+        public static final int page2_checkBox1=0x7f0a0045;
+        public static final int page2_checkBox2=0x7f0a0047;
+        public static final int page2_checkBox3=0x7f0a0049;
+        public static final int page2_checkBox4=0x7f0a004a;
+        public static final int page2_checkBox5=0x7f0a004b;
         public static final int page2_registbtn=0x7f0a0048;
         public static final int page2_seebtn=0x7f0a0046;
         public static final int page3=0x7f0a0037;
         public static final int page4=0x7f0a0038;
-        public static final int page4_agreecb=0x7f0a0059;
-        public static final int page4_disagreecb=0x7f0a0058;
+        public static final int page4_agreetv=0x7f0a0059;
+        public static final int page4_disagreetv=0x7f0a0058;
         public static final int page5=0x7f0a0039;
         public static final int page5_btnend=0x7f0a006f;
         public static final int page6=0x7f0a003a;
@@ -461,15 +487,36 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ViewGroupType_bottom com.time.master:bottom}</code></td><td></td></tr>
            <tr><td><code>{@link #ViewGroupType_new_line com.time.master:new_line}</code></td><td></td></tr>
+           <tr><td><code>{@link #ViewGroupType_top com.time.master:top}</code></td><td></td></tr>
+           <tr><td><code>{@link #ViewGroupType_visible com.time.master:visible}</code></td><td></td></tr>
            <tr><td><code>{@link #ViewGroupType_width_multi com.time.master:width_multi}</code></td><td></td></tr>
            </table>
+           @see #ViewGroupType_bottom
            @see #ViewGroupType_new_line
+           @see #ViewGroupType_top
+           @see #ViewGroupType_visible
            @see #ViewGroupType_width_multi
          */
         public static final int[] ViewGroupType = {
-            0x7f010000, 0x7f010001
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004
         };
+        /**
+          <p>This symbol is the offset where the {@link com.time.master.R.attr#bottom}
+          attribute's value can be found in the {@link #ViewGroupType} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:bottom
+        */
+        public static final int ViewGroupType_bottom = 3;
         /**
           <p>This symbol is the offset where the {@link com.time.master.R.attr#new_line}
           attribute's value can be found in the {@link #ViewGroupType} array.
@@ -484,6 +531,34 @@ containing a value of this type.
           @attr name android:new_line
         */
         public static final int ViewGroupType_new_line = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.time.master.R.attr#top}
+          attribute's value can be found in the {@link #ViewGroupType} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:top
+        */
+        public static final int ViewGroupType_top = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.time.master.R.attr#visible}
+          attribute's value can be found in the {@link #ViewGroupType} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:visible
+        */
+        public static final int ViewGroupType_visible = 4;
         /**
           <p>This symbol is the offset where the {@link com.time.master.R.attr#width_multi}
           attribute's value can be found in the {@link #ViewGroupType} array.

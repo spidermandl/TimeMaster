@@ -74,12 +74,17 @@
                 android:layout_marginBottom="8dp"
                 android:orientation="vertical" >
 
-                <CheckBox
-                    android:id="@+id/page4_disagreecb"
+                <com.time.master.view.BasicTextView
+                    android:id="@+id/page4_disagreetv"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="#E7E7E7"
-                    android:gravity="fill_vertical"
+                    android:gravity="center_vertical"
+       				android:clickable="true"
+       				android:padding="5dp"
+                	android:paddingTop="8dp"
+                	android:paddingBottom="8dp"
+       				android:drawableLeft="@drawable/checkbox"
                     android:textSize="@dimen/pagetitle_text_size"
                     android:text="@string/page4_disagreecb" />
             </LinearLayout>
@@ -91,12 +96,17 @@
                 android:layout_marginBottom="5dp"
                 android:orientation="vertical" >
 
-                <CheckBox
-                    android:id="@+id/page4_agreecb"
+                <com.time.master.view.BasicTextView
+                    android:id="@+id/page4_agreetv"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="#E7E7E7"
-                    android:gravity="fill_vertical"
+                    android:gravity="center_vertical"
+      				android:clickable="true"
+      				android:padding="5dp"
+                	android:paddingTop="8dp"
+                	android:paddingBottom="8dp"
+       				android:drawableLeft="@drawable/checkbox"
                     android:textSize="@dimen/pagetitle_text_size"
                     android:text="@string/page4_agreecb" />
             </LinearLayout>

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 public class BasicViewGroup extends ViewGroup{
 	
 	int screen_width,
+	screen_height,
 	unit_width,//view 单位长度
 	gap,//view的间隔长度
 	current_margin_top=0,//当前放置y坐标
@@ -20,6 +21,7 @@ public class BasicViewGroup extends ViewGroup{
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 		screen_width=TimeMasterApplication.getInstance().getScreen_W();
+		screen_height=TimeMasterApplication.getInstance().getScreen_H();
 		unit_width=screen_width/6;
 		gap=screen_width/36;
 		current_margin_top-=0.75*unit_width;
@@ -32,18 +34,35 @@ public class BasicViewGroup extends ViewGroup{
 		for(int i=0;i<num;i++){
 			View view=this.getChildAt(i);
 			LayoutStyleableInterface styleable=(LayoutStyleableInterface)view;
-			if(styleable.isNewLine()){
-				current_margin_top+=0.75*unit_width+gap;
-				current_margin_left=gap;
-			}
 			LayoutParams layoutParams=view.getLayoutParams();
-			layoutParams.width=styleable.getMultiWidth()*unit_width+(styleable.getMultiWidth()-1)*gap;
-			layoutParams.height=(int)(unit_width*0.75);
-			view.layout(current_margin_left, 
+			if(styleable.isBottom()||styleable.isTop()){
+				current_margin_top+=0.75*unit_width;
+				current_margin_left=gap;
+				layoutParams.height=(int)(unit_width*0.75);
+				if(styleable.isTop()){
+					layoutParams.width=screen_width;
+					view.layout(0,0,screen_width,layoutParams.height);
+				}
+				if(styleable.isBottom()){
+					layoutParams.width=styleable.getMultiWidth()*unit_width+(styleable.getMultiWidth()-1)*gap;
+					view.layout(current_margin_left,screen_height-layoutParams.height-gap,current_margin_left+layoutParams.width,screen_height-gap);
+				}
+					
+			}
+			else{
+				
+				if(styleable.isNewLine()){
+					current_margin_top+=0.75*unit_width+gap;
+					current_margin_left=gap;
+				}
+				layoutParams.width=styleable.getMultiWidth()*unit_width+(styleable.getMultiWidth()-1)*gap;
+				layoutParams.height=(int)(unit_width*0.75);
+				view.layout(current_margin_left, 
 					current_margin_top, 
 					current_margin_left+layoutParams.width, 
 					current_margin_top+layoutParams.height);
-			current_margin_left+=layoutParams.width+gap;
+				current_margin_left+=layoutParams.width+gap;
+			}
 		}
 	}
 

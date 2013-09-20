@@ -19,13 +19,16 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp">
 
-    <CheckBox
-        android:id="@+id/checkBox1"
+    <com.time.master.view.BasicTextView
+        android:id="@+id/page2_checkBox1"
         android:layout_width="0dip"
     	android:layout_weight="3"
     	android:layout_height="match_parent"
         android:background="#E7E7E7"
         android:padding="5dp"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:drawableLeft="@drawable/checkbox"
         android:textSize="@dimen/pagecomponent_text_size"
         android:layout_marginRight="10dp"
         android:text="@string/page2_one" />
@@ -50,14 +53,17 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp">
 
-   <CheckBox
-       android:id="@+id/checkBox2"
+   <com.time.master.view.BasicTextView
+       android:id="@+id/page2_checkBox2"
        android:layout_width="0dip"
        android:layout_weight="3"
        android:layout_height="match_parent"
        android:layout_marginRight="10dp"
        android:background="#E7E7E7"
        android:padding="5dp"
+       android:gravity="center_vertical"
+       android:clickable="true"
+       android:drawableLeft="@drawable/checkbox"
        android:textSize="@dimen/pagecomponent_text_size"
        android:text="@string/page2_two" />
    <Button
@@ -80,13 +86,16 @@
     android:orientation="horizontal"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp">
-	<CheckBox
-       android:id="@+id/checkBox3"
+	<com.time.master.view.BasicTextView
+       android:id="@+id/page2_checkBox3"
        android:layout_width="0dip"
        android:layout_weight="3"
        android:layout_height="match_parent"
        android:background="#E7E7E7"
        android:padding="5dp"
+       android:gravity="center_vertical"
+       android:clickable="true"
+       android:drawableLeft="@drawable/checkbox"
        android:textSize="@dimen/pagecomponent_text_size"
        android:layout_marginRight="10dp"
        android:text="@string/page2_three" />
@@ -103,14 +112,17 @@
     android:orientation="horizontal"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp">
-   <CheckBox
-       android:id="@+id/checkBox4"
+   <com.time.master.view.BasicTextView
+       android:id="@+id/page2_checkBox4"
        android:layout_width="0dip"
        android:layout_weight="3"
        android:layout_height="match_parent"
        android:layout_marginRight="10dp"
        android:background="#E7E7E7"
        android:padding="5dp"
+       android:gravity="center_vertical"
+       android:clickable="true"
+       android:drawableLeft="@drawable/checkbox"
        android:textSize="@dimen/pagecomponent_text_size"
        android:text="@string/page2_four" />
    <TextView
@@ -126,12 +138,16 @@
     android:orientation="horizontal"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp">
-   <CheckBox
-       android:id="@+id/checkBox5"
+   <com.time.master.view.BasicTextView
+       android:id="@+id/page2_checkBox5"
        android:layout_width="0dip"
        android:layout_weight="3"
        android:layout_height="match_parent"
        android:background="#E7E7E7"
+       android:padding="5dp"
+       android:gravity="center_vertical"
+       android:clickable="true"
+       android:drawableLeft="@drawable/checkbox"
        android:textSize="@dimen/pagecomponent_text_size"
        android:layout_marginRight="10dp"
        android:text="@string/page2_five" />

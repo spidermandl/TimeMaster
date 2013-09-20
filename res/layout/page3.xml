@@ -136,22 +136,32 @@
             android:layout_weight="1"
             android:orientation="vertical" >
 
-            <CheckBox
+            <TextView
                 android:id="@+id/ckPhone"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="#E7E7E7"
-                android:gravity="fill_vertical"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+       			android:clickable="true"
+       			android:drawableLeft="@drawable/checkbox"
                 android:textSize="@dimen/pagecomponent_text_size"
                 android:text="@string/page3_cb1" />
 
-            <CheckBox
+            <TextView
                 android:id="@+id/ckEmail"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="#E7E7E7"
-                android:gravity="fill_vertical"
+                android:gravity="center_vertical"
+       			android:clickable="true"
+       			android:padding="5dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+       			android:drawableLeft="@drawable/checkbox"
                 android:textSize="@dimen/pagecomponent_text_size"
                 android:text="@string/page3_cb2" />
         </LinearLayout>
