@@ -35,7 +35,7 @@
         android:textSize="@dimen/pagetitle_text_size"
         layout:new_line="true"
         layout:width_multi="5"
-        layout:top="true" />
+        layout:full="true" />
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"

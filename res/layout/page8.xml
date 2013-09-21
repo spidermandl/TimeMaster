@@ -1,281 +1,197 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".Nine" >
+    
 
-    <TextView
-        android:id="@+id/title8"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#319ede"
+    <com.time.master.view.BasicViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/family_info_up" >
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/titleseven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#319EDE"
         android:gravity="center"
-        android:textColor="#ffffff"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
         android:text="@string/page_title"
-        android:textSize="@dimen/pagetitle_text_size" />
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/pagetitle_text_size"
+        layout:new_line="true"
+        layout:width_multi="5"
+        layout:full="true" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:layout_weight="1.2"
-        android:background="#add7e7"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ADD7E7"
             android:gravity="center"
-            android:textColor="#48839F"
             android:text="@string/page8_title"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#48839F"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-    </LinearLayout>
+            layout:new_line="true"
+            layout:width_multi="5" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="2"
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page8_id"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/renu"
-            android:layout_width="0dip"
-            android:layout_weight="3"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/idedittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2"
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page8_dadid"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/faidencnu"
-            android:layout_width="0dip"
-            android:layout_weight="3"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/dadidedittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2"
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page8_momid"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/maidencnu"
-            android:layout_width="0dip"
-            android:layout_weight="3"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/momidedittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2"
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page8_familyrole"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/famrole"
-            android:layout_width="0dip"
-            android:layout_weight="3"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/familyroleeduttext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2"
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:id="@+id/marryidtextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page8_marryid"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/mecnu"
-            android:layout_width="0dip"
-            android:layout_weight="3"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/marryidedittext"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2"
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:id="@+id/husbandtextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page8_husband"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/huidencnu"
-            android:layout_width="0dip"
-            android:layout_weight="3"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hasbandedittext"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2"
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page8_wife"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/wiidencnu"
-            android:layout_width="0dip"
-            android:layout_weight="3"
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/wifeesittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+
         
-    </LinearLayout>
-<TextView 
-    android:layout_width="fill_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"/>
-    <LinearLayout
-         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <Button
+       <com.time.master.view.BasicTextView
             android:id="@+id/page8_btnend"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ADD7E7"
             android:gravity="center"
-            android:textColor="#48839F"
-            android:background="#add7e7"
-            android:layout_marginBottom="8dp"
             android:text="@string/page8_end"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#48839F"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-    </LinearLayout>
+            layout:new_line="true"
+            layout:width_multi="5"
+            layout:bottom="true" />
+    </com.time.master.view.BasicViewGroup>
 
-</LinearLayout>
+</RelativeLayout>

@@ -12,7 +12,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 
 	int multi_width;
 	boolean isNewLine;
-	boolean isTop;
+	boolean isFull;
 	boolean isBottom;
 	boolean isVisible;
 	boolean isclick;
@@ -32,7 +32,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ViewGroupType, defStyle, 0);
 		multi_width = a.getInt(R.styleable.ViewGroupType_width_multi, 1);
 		isNewLine=a.getBoolean(R.styleable.ViewGroupType_new_line, false);
-		isTop=a.getBoolean(R.styleable.ViewGroupType_top, false);
+		isFull=a.getBoolean(R.styleable.ViewGroupType_full, false);
 		isBottom=a.getBoolean(R.styleable.ViewGroupType_bottom, false);
 		isVisible=a.getBoolean(R.styleable.ViewGroupType_visible, true);
 		isclick=false;
@@ -49,8 +49,8 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		return isNewLine;
 	}
 	@Override
-	public boolean isTop(){
-		return isTop;
+	public boolean isFull(){
+		return isFull;
 	}
 
 	@Override

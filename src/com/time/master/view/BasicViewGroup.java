@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class BasicViewGroup extends ViewGroup{
+public  class BasicViewGroup extends ViewGroup{
 	
 	int screen_width,
 	screen_height,
@@ -35,15 +35,16 @@ public class BasicViewGroup extends ViewGroup{
 			View view=this.getChildAt(i);
 			LayoutStyleableInterface styleable=(LayoutStyleableInterface)view;
 			LayoutParams layoutParams=view.getLayoutParams();
-			if(styleable.isBottom()||styleable.isTop()){
+			if(styleable.isBottom()||styleable.isFull()){
 				current_margin_top+=0.75*unit_width;
 				current_margin_left=gap;
 				layoutParams.height=(int)(unit_width*0.75);
-				if(styleable.isTop()){
+				if(styleable.isFull()){
 					layoutParams.width=screen_width;
-					view.layout(0,0,screen_width,layoutParams.height);
+					view.layout(0,current_margin_top,screen_width,current_margin_top+layoutParams.height);
 				}
 				if(styleable.isBottom()){
+					
 					layoutParams.width=styleable.getMultiWidth()*unit_width+(styleable.getMultiWidth()-1)*gap;
 					view.layout(current_margin_left,screen_height-layoutParams.height-gap,current_margin_left+layoutParams.width,screen_height-gap);
 				}
@@ -65,5 +66,5 @@ public class BasicViewGroup extends ViewGroup{
 			}
 		}
 	}
-
+	
 }

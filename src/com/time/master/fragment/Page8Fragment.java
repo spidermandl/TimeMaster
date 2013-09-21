@@ -1,6 +1,7 @@
 package com.time.master.fragment;
 import com.time.master.R;
 import com.time.master.activity.MainActivity;
+import com.time.master.view.BasicTextView;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,7 +20,7 @@ public class Page8Fragment extends Fragment implements OnClickListener{
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View layout = inflater.inflate(R.layout.page8,container,false);
-		Button button=(Button)layout.findViewById(R.id.page8_btnend);
+		BasicTextView button=(BasicTextView)layout.findViewById(R.id.page8_btnend);
 		button.setOnClickListener(this);
 		return layout;
 	}

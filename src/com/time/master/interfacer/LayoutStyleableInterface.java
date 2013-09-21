@@ -4,7 +4,7 @@ public interface LayoutStyleableInterface {
 
 	int getMultiWidth();
 	boolean isNewLine();
-	boolean isTop();
+	boolean isFull();
 	boolean isBottom();
 	boolean isVisible();
 	
