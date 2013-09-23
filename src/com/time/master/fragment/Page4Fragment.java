@@ -39,15 +39,15 @@ public class Page4Fragment extends Fragment implements OnClickListener{
 			tvdisagree.setCompoundDrawables(drawable, null, null, null);
 		}
 		else {
-			tvagree.setIsclick(true);
+			tvdisagree.setIsclick(true);
 			Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
 			drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-			tvagree.setCompoundDrawables(drawable, null, null, null);
+			tvdisagree.setCompoundDrawables(drawable, null, null, null);
 		}
 		break;
 	case R.id.page4_agreetv:
 		if(tvagree.isclick()){
-			
+			break;
 		}
 		else {
 			tvagree.setIsclick(true);
