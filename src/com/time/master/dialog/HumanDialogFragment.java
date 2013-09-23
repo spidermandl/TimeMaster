@@ -20,10 +20,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 /**
  * ÈÎÎñÑ¡ÔñÆ÷
- * @author duanlei
+ * @author Desmond
  *
  */
-public class HumanDialogFragment extends DialogFragment {
+public class HumanDialogFragment extends WheelDialogFragment {
 
 	public static final String TAG="HumanDialogFragment";
 	
@@ -53,6 +53,8 @@ public class HumanDialogFragment extends DialogFragment {
         View layout=inflater.inflate(R.layout.human_wheel_layout, container, false);
 		human = (UIWheelView) layout.findViewById(R.id.human_select);
 		editText=(EditText)layout.findViewById(R.id.edit_human);
+		confirm=(TextView)layout.findViewById(R.id.human_confirm);
+		
 		TextView 
 		a=(TextView)layout.findViewById(R.id.A),
 		b=(TextView)layout.findViewById(R.id.B),
@@ -120,10 +122,10 @@ public class HumanDialogFragment extends DialogFragment {
 		human.setVisibleItems(9);
 		human.setCurrentItem(static_human.length/2);
         
+		superInit();
 		return layout;
 	}
 	
-	EditText editText;
 	UIWheelView human;
 	ArrayWheelAdapter<String> humanAdapter;
 	
@@ -247,4 +249,9 @@ public class HumanDialogFragment extends DialogFragment {
 			
 		}
 	};
+
+	@Override
+	protected String getSelectedString() {
+		return "";
+	}
 }

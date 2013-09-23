@@ -20,13 +20,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * 地点选择器
- * @author duanlei
+ * @author Desmond
  *
  */
-public class LocationDialogFragment extends DialogFragment {
+public class LocationDialogFragment extends WheelDialogFragment {
 
 	public static final String TAG="LocationDialogFragment";
 	
@@ -42,7 +43,7 @@ public class LocationDialogFragment extends DialogFragment {
 		/****************************************************
 		 * 设置对话框属性，高度、宽度、动画、背景
 		 ****************************************************/
-		getDialog().setCanceledOnTouchOutside(true);
+		getDialog().setCanceledOnTouchOutside(true);//点击dialog以外区域，关闭dialog
         Window window = getDialog().getWindow();
         window.setGravity(Gravity.BOTTOM);  //此处可以设置dialog显示的位置  
         window.setWindowAnimations(R.style.wheelAnimation);  //添加动画 
@@ -54,6 +55,8 @@ public class LocationDialogFragment extends DialogFragment {
         
 		View layout=inflater.inflate(R.layout.location_wheel_layout, container, false);
 		editText=(EditText)layout.findViewById(R.id.edit_location);
+		confirm=(TextView)layout.findViewById(R.id.location_confirm);
+		
 		model=new DateModel();
 		model.province=static_location_1[static_location_1.length/2];
 		model.city=static_location_2[static_location_2.length/2];
@@ -159,6 +162,7 @@ public class LocationDialogFragment extends DialogFragment {
 			}
 		});
 
+        superInit();
 		return layout;
 	}
 	
@@ -166,7 +170,6 @@ public class LocationDialogFragment extends DialogFragment {
 		String province,city,district,area;
 	}
 	DateModel model;
-	EditText editText;
 	Calendar calendar;
 	UIWheelView location1,location2,location3,location4;
 	ArrayWheelAdapter<String> location1Adapter,location2Adapter,location3Adapter,location4Adapter;
@@ -185,4 +188,9 @@ public class LocationDialogFragment extends DialogFragment {
 	static final String[] static_location_2={"杭州","湖州","嘉兴","金华","丽水","宁波","衢州","绍兴","台州","温州","舟山"};
 	static final String[] static_location_3={"鹿城","瓯海","龙湾","洞头","永嘉","乐清","瑞安","平阳","苍南","泰顺","龙湾"};
 	static final String[] static_location_4={"乐成","石帆","虹桥","清江","雁荡","柳市","翁阳","黄华","白象","白石","磐石"};
+
+	@Override
+	protected String getSelectedString() {
+		return getLocationString();
+	}
 }

@@ -8,6 +8,13 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ * 自定义布局类，
+ * 设定子view之间间距
+ * 根据屏幕大小部署view的长宽
+ * @author Desmond
+ *
+ */
 public class BasicViewGroup extends ViewGroup{
 	
 	int screen_width,
@@ -18,16 +25,28 @@ public class BasicViewGroup extends ViewGroup{
 	
 	public BasicViewGroup(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		// TODO Auto-generated constructor stub
-		screen_width=TimeMasterApplication.getInstance().getScreen_W();
-		unit_width=screen_width/6;
-		gap=screen_width/36;
-		current_margin_top-=0.75*unit_width;
+		init();
 	}
 
 	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		int num=this.getChildCount();
+		int line=0;
+		for(int i=0;i<num;i++){
+			View view=this.getChildAt(i);
+			LayoutStyleableInterface styleable=(LayoutStyleableInterface)view;
+			if(styleable.isNewLine()){
+				line++;
+			}
+		}
+		int height=line==0?0:(int)(line*unit_width*0.75+gap*(line+1));
+		setMeasuredDimension(TimeMasterApplication.getInstance().getScreen_W(),height);
+		//super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+	}
+	
+	@Override
 	protected void onLayout(boolean changed, int l, int t, int r, int b) {
-		// TODO Auto-generated method stub
+		
 		int num=this.getChildCount();
 		for(int i=0;i<num;i++){
 			View view=this.getChildAt(i);
@@ -36,15 +55,33 @@ public class BasicViewGroup extends ViewGroup{
 				current_margin_top+=0.75*unit_width+gap;
 				current_margin_left=gap;
 			}
-			LayoutParams layoutParams=view.getLayoutParams();
+			ViewGroup.LayoutParams layoutParams=view.getLayoutParams();
 			layoutParams.width=styleable.getMultiWidth()*unit_width+(styleable.getMultiWidth()-1)*gap;
 			layoutParams.height=(int)(unit_width*0.75);
+			view.setLayoutParams(layoutParams);
+			/***设置子view 大小，子view的onMeasure方法被回调 **/
+			view.measure(
+					MeasureSpec.makeMeasureSpec(layoutParams.width, MeasureSpec.EXACTLY), 
+					MeasureSpec.makeMeasureSpec(layoutParams.height, MeasureSpec.EXACTLY));
 			view.layout(current_margin_left, 
 					current_margin_top, 
 					current_margin_left+layoutParams.width, 
 					current_margin_top+layoutParams.height);
 			current_margin_left+=layoutParams.width+gap;
+			
 		}
+		
+		init();
 	}
+	/***
+	 * 初始化所有参数
+	 */
+	protected void init(){
+		screen_width=TimeMasterApplication.getInstance().getScreen_W();
+		unit_width=screen_width/6;
+		gap=screen_width/36;
+		current_margin_top=(int)(-0.75*unit_width);
+	}
+	
 
 }

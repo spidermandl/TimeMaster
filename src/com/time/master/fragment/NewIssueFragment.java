@@ -10,23 +10,19 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.text.InputType;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnFocusChangeListener;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+
 /**
  * "新建"界面
- * @author Deamond
+ * @author Desmond
  *
  */
-public class NewIssueFragment extends Fragment implements OnClickListener,OnFocusChangeListener{
+public class NewIssueFragment extends Fragment implements OnTouchListener{
 	
 	DialogFragment dateFragment,
 	          locationFragment,
@@ -39,54 +35,51 @@ public class NewIssueFragment extends Fragment implements OnClickListener,OnFocu
 
 		EditText dateSelector=(EditText) layout.findViewById(R.id.date_selector);
 		dateSelector.setInputType(InputType.TYPE_NULL);
-		dateSelector.setOnClickListener(this);
-		dateSelector.setOnFocusChangeListener(this);
+		dateSelector.setOnTouchListener(this);
 		
 		EditText locationSelector=(EditText) layout.findViewById(R.id.location_selector);
 		locationSelector.setInputType(InputType.TYPE_NULL);
-		locationSelector.setOnClickListener(this);
-		locationSelector.setOnFocusChangeListener(this);
+		locationSelector.setOnTouchListener(this);
 		
 		EditText humanSelector=(EditText) layout.findViewById(R.id.human_selector);
 		humanSelector.setInputType(InputType.TYPE_NULL);
-		humanSelector.setOnClickListener(this);
-		humanSelector.setOnFocusChangeListener(this);
+		humanSelector.setOnTouchListener(this);
 		
 		return layout;
 	}
 
-	@Override
-	public void onClick(View v) {
-
-	}
-
-	
-	@Override
-	public void onFocusChange(View v, boolean hasFocus) {
-		if(hasFocus){
-			// TODO Auto-generated method stub
-			switch (v.getId()) {
-			case R.id.date_selector:
-				if(dateFragment==null)
-					dateFragment=new TimeDialogFragment();
-				showDialog(dateFragment);
-				break;
-			case R.id.location_selector:
-				if(locationFragment==null)
-					locationFragment=new LocationDialogFragment();
-				showDialog(locationFragment);
-				break;
-			case R.id.human_selector:
-				if(humanFragment==null)
-					humanFragment=new HumanDialogFragment();
-				showDialog(humanFragment);
-				break;
-			default:
-				break;
-			}
-		}
-		
-	}  
+//	@Override
+//	public void onClick(View v) {
+//
+//	}
+//
+//	
+//	@Override
+//	public void onFocusChange(View v, boolean hasFocus) {
+//		if(hasFocus){
+//			// TODO Auto-generated method stub
+//			switch (v.getId()) {
+//			case R.id.date_selector:
+//				if(dateFragment==null)
+//					dateFragment=new TimeDialogFragment();
+//				showDialog(dateFragment);
+//				break;
+//			case R.id.location_selector:
+//				if(locationFragment==null)
+//					locationFragment=new LocationDialogFragment();
+//				showDialog(locationFragment);
+//				break;
+//			case R.id.human_selector:
+//				if(humanFragment==null)
+//					humanFragment=new HumanDialogFragment();
+//				showDialog(humanFragment);
+//				break;
+//			default:
+//				break;
+//			}
+//		}
+//		
+//	}  
       
     void showDialog(DialogFragment dialogFragment) {  
     	
@@ -103,6 +96,32 @@ public class NewIssueFragment extends Fragment implements OnClickListener,OnFocu
         // Create and show the dialog. 
         dialogFragment.show(ft, "dialog");  
     }
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		if (event.getAction() == MotionEvent.ACTION_UP) {
+			switch (v.getId()) {
+			case R.id.date_selector:
+				if (dateFragment == null)
+					dateFragment = new TimeDialogFragment();
+				showDialog(dateFragment);
+				break;
+			case R.id.location_selector:
+				if (locationFragment == null)
+					locationFragment = new LocationDialogFragment();
+				showDialog(locationFragment);
+				break;
+			case R.id.human_selector:
+				if (humanFragment == null)
+					humanFragment = new HumanDialogFragment();
+				showDialog(humanFragment);
+				break;
+			default:
+				break;
+			}
+		}
+		return false;
+	}
 
       
        

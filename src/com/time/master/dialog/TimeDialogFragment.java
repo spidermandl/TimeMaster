@@ -3,6 +3,7 @@ package com.time.master.dialog;
 import java.util.Calendar;
 
 import com.time.master.R;
+import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
@@ -20,15 +21,17 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * 时间选择器
  * @author duanlei
  *
  */
-public class TimeDialogFragment extends DialogFragment {
+public class TimeDialogFragment extends WheelDialogFragment {
 	
 	public static final String TAG="TimeDialogFragment";
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,7 @@ public class TimeDialogFragment extends DialogFragment {
 		/****************************************************
 		 * 设置对话框属性，高度、宽度、动画、背景
 		 ****************************************************/
-		getDialog().setCanceledOnTouchOutside(true);
+		getDialog().setCanceledOnTouchOutside(true);//点击dialog以外区域，关闭dialog
         Window window = getDialog().getWindow();
         window.setGravity(Gravity.BOTTOM);  //此处可以设置dialog显示的位置  
         window.setWindowAnimations(R.style.wheelAnimation);  //添加动画 
@@ -61,6 +64,10 @@ public class TimeDialogFragment extends DialogFragment {
 		model.minute=calendar.get(Calendar.MINUTE);
 		
 		View layout=inflater.inflate(R.layout.time_wheel_layout, container, false);
+
+        editText=(EditText)layout.findViewById(R.id.edit_date);
+        confirm =(TextView)layout.findViewById(R.id.time_confirm);
+        
 		year = (UIWheelView) layout.findViewById(R.id.year);
         yearAdapter = new NumericWheelAdapter(this.getActivity(), model.year-5000, model.year+5000);
         yearAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
@@ -202,9 +209,7 @@ public class TimeDialogFragment extends DialogFragment {
 		});
         minute.addClickingListener(clickListener);
         
-        editText=(EditText)layout.findViewById(R.id.edit_date);
-        editText.setInputType(InputType.TYPE_NULL);
-        editText.setText(getDateString());
+        superInit();
 		return layout;
 	}
 	/**
@@ -214,7 +219,6 @@ public class TimeDialogFragment extends DialogFragment {
 		int year,month,day,hour,minute;
 	}
 	DateModel model;
-	EditText editText;
 	Calendar calendar;
 	UIWheelView year,month,day,hour,minute;
 	NumericWheelAdapter yearAdapter,monthAdapter,dayAdapter,hourAdapter,minAdapter;
@@ -230,4 +234,10 @@ public class TimeDialogFragment extends DialogFragment {
 	private String getDateString(){
 		return model.year+"年 "+model.month+"月 "+model.day+"日 "+model.hour+"时 "+model.minute+"分 ";
 	}
+
+	@Override
+	protected String getSelectedString() {
+		return getDateString();
+	}
+
 }
