@@ -4,38 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Eight" >
-<com.time.master.view.BasicViewGroup
-   		android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/basic_page5" >
-
-    <com.time.master.view.BasicTextView
+    <TextView
         android:id="@+id/titlesix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:background="#319EDE"
         android:gravity="center"
         android:text="@string/page_title"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/pagetitle_text_size"
-        layout:new_line="true"
-        layout:width_multi="5"
-        layout:full="true" />
-
-    <com.time.master.view.BasicTextView
+         />
+    <TextView
         android:id="@+id/pagetitlesix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/titlesix"
         android:background="#F0F0F0"
         android:gravity="center"
         android:text="@string/page5_title"
         android:textColor="#000000"
         android:textSize="@dimen/pagecomponent_text_size" 
-        layout:new_line="true"
-        layout:width_multi="5"
-        layout:full="true"/>
-
-   
+        />
+<com.time.master.view.BasicViewGroup
+   		android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pagetitlesix"
+        android:id="@+id/basic_page5" >
 
             <com.time.master.view.BasicTextView
                 android:id="@+id/idcard"
@@ -259,6 +258,14 @@
                 layout:new_line="false"
                 layout:width_multi="3" />
         
+</com.time.master.view.BasicViewGroup>
+
+<com.time.master.view.BasicViewGroup
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    >
+    
 
         <com.time.master.view.BasicTextView
             android:id="@+id/page5_btnend"
@@ -269,9 +276,9 @@
             android:text="确认"
             android:textColor="#48839F"
             android:textSize="@dimen/pagecomponent_text_size"
-            layout:bottom="true"
+            layout:new_line="true"
             layout:width_multi="5"
              />
-    
-</com.time.master.view.BasicViewGroup>
+    </com.time.master.view.BasicViewGroup>
+
 </RelativeLayout>

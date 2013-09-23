@@ -4,41 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Seven" >
-    
-
-    <com.time.master.view.BasicViewGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/basic_info_up" >
-        <com.time.master.view.BasicTextView
+    <TextView
         android:id="@+id/titlefive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:background="#319EDE"
         android:gravity="center"
         android:text="@string/page_title"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/pagetitle_text_size"
-        layout:new_line="true"
-        layout:width_multi="5"
-        layout:full="true" />
-        
-        
-        
-       <com.time.master.view.BasicTextView
+         />
+    <TextView
         android:id="@+id/pagetitleseven"
-        android:layout_width="fill_parent"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/titlefive"
         android:background="#F0F0F0"
         android:gravity="center"
         android:text="@string/page6_title"
         android:textColor="#000000"
-        android:textSize="@dimen/pagetitle_text_size"
-        layout:new_line="true"
-        layout:width_multi="5"
-        layout:full="true" />
-        
+        android:textSize="@dimen/pagecomponent_text_size" 
+        />
 
+    <com.time.master.view.BasicViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pagetitleseven"
+        android:id="@+id/basic_info_up" >
+        
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

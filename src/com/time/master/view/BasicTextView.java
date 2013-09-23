@@ -23,8 +23,11 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	}
 	
 	public BasicTextView(Context context, AttributeSet attrs) {
-		this(context, attrs,0);
-		// TODO Auto-generated constructor stub
+		super(context, attrs);
+		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ViewGroupType);
+		multi_width = a.getInt(R.styleable.ViewGroupType_width_multi, 1);
+		isNewLine=a.getBoolean(R.styleable.ViewGroupType_new_line, false);
+        a.recycle();
 	}
 	
 	public BasicTextView(Context context, AttributeSet attrs, int defStyle) {
@@ -39,6 +42,11 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
         a.recycle();
 	}
 
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		// TODO Auto-generated method stub
+		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+	}
 	@Override
 	public int getMultiWidth() {
 		return multi_width;

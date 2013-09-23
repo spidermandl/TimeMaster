@@ -22,8 +22,11 @@ public class BasicView extends View implements LayoutStyleableInterface{
 	}
 	
 	public BasicView(Context context, AttributeSet attrs) {
-		this(context, attrs,0);
-		// TODO Auto-generated constructor stub
+		super(context, attrs);
+		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ViewGroupType);
+		multi_width = a.getInt(R.styleable.ViewGroupType_width_multi, 1);
+		isNewLine=a.getBoolean(R.styleable.ViewGroupType_new_line, false);
+        a.recycle();
 	}
 	
 	public BasicView(Context context, AttributeSet attrs, int defStyle) {

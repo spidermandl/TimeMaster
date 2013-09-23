@@ -1,33 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/time_type"
+    <com.time.master.view.BasicViewGroup
+        android:id="@+id/time_bar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:text="模式" />
-    <Button
-        android:id="@+id/time_confirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:text="确定" />
+        android:layout_height="wrap_content" >
 
-    <EditText
-        android:id="@+id/edit_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/time_confirm"
-        android:layout_toRightOf="@id/time_type" />
-    
+        <com.time.master.view.BasicTextView
+            android:id="@+id/time_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFBCBCBC"
+            android:gravity="center"
+            android:text="模式"
+            layout:new_line="true"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/edit_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/editview_padding_left"
+            android:singleLine="true"
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/time_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFBCBCBC"
+            android:gravity="center"
+            android:text="确定"
+            layout:new_line="false"
+            layout:width_multi="1" />
+    </com.time.master.view.BasicViewGroup>
+
     <LinearLayout
         android:id="@+id/date_selector_wheel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/time_type"
+        android:layout_below="@id/time_bar"
         android:orientation="horizontal" >
 
         <com.time.master.wheel.widget.UIWheelView

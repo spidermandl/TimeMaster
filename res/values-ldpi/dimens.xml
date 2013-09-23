@@ -6,4 +6,6 @@
 	<dimen name="alphabet_panel_height">25dp</dimen>
 	<dimen name="wheel_item_text_size">10sp</dimen>
 	<dimen name="text_size">10sp</dimen>
+	
+	<dimen name = "editview_padding_left">2sp</dimen>
 </resources>
