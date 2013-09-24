@@ -5,4 +5,10 @@
 	<dimen name="wheel_human_item_height">50dp</dimen>
 	<dimen name="alphabet_panel_height">50dp</dimen>
 	<dimen name="wheel_item_text_size">20sp</dimen>
+	
+	<dimen name="pagetitle_text_size">13sp</dimen>
+	<dimen name="pagecontent_text_size">11sp</dimen>
+	<dimen name="pagecomponent_text_size">17sp</dimen>
+	
+	<dimen name = "editview_padding_left">2sp</dimen>
 </resources>

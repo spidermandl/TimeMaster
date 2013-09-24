@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+      <ViewFlipper
+        android:id="@+id/MainActivityViewFlipper"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+         <include 
+              android:id="@+id/page1"
+              layout="@layout/page1"
+              />
+         <include 
+              android:id="@+id/page3"
+              layout="@layout/page3"
+              />
+         <include 
+              android:id="@+id/page4"
+              layout="@layout/page4"
+              />
+         <include 
+              android:id="@+id/page5"
+              layout="@layout/page5"
+              />
+         <include 
+              android:id="@+id/page6"
+              layout="@layout/page6"
+              />
+         <include 
+              android:id="@+id/page7"
+              layout="@layout/page7"
+              />
+         <include 
+              android:id="@+id/page8"
+              layout="@layout/page8"
+              /> 
+      </ViewFlipper>
+	
+</LinearLayout>

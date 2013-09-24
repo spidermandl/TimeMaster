@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!--  自定义viewgroup的布局参数 -->
+    <declare-styleable name="ViewGroupType">
+        <attr name="width_multi" format="integer" />
+        <attr name="new_line" format="boolean"/>
+    </declare-styleable>  
+
+</resources>

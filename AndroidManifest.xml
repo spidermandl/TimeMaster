@@ -13,6 +13,10 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.time.master.activity.MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".activity.FrameActivity"
             android:screenOrientation="portrait" >
             <intent-filter>
