@@ -185,8 +185,13 @@
             android:textIsSelectable="true"
             layout:new_line="false"
             layout:width_multi="3" />
+        </com.time.master.view.BasicViewGroup>
         
-
+    
+	<com.time.master.view.BasicViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
         
         
        <com.time.master.view.BasicTextView

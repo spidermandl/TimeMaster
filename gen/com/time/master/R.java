@@ -156,8 +156,8 @@ containing a value of this type.
         public static final int Z=0x7f0a0017;
         public static final int addressedittext=0x7f0a00b0;
         public static final int alph=0x7f0a0044;
-        public static final int basic_info_up=0x7f0a008e;
-        public static final int basic_page5=0x7f0a0077;
+        public static final int basic_info_up=0x7f0a0090;
+        public static final int basic_page5=0x7f0a0079;
         public static final int birthday=0x7f0a0081;
         public static final int birthdaytv=0x7f0a0082;
         public static final int birthplace=0x7f0a0083;
@@ -265,8 +265,8 @@ containing a value of this type.
         public static final int page8=0x7f0a0059;
         public static final int page8_btnend=0x7f0a00ac;
         public static final int page9_btnend=0x7f0a00b7;
-        public static final int pagetitleseven=0x7f0a0090;
-        public static final int pagetitlesix=0x7f0a0079;
+        public static final int pagetitleseven=0x7f0a008f;
+        public static final int pagetitlesix=0x7f0a0078;
         public static final int phonecode=0x7f0a008b;
         public static final int phonecodetv=0x7f0a008c;
         public static final int plan_human=0x7f0a002c;
@@ -306,9 +306,9 @@ containing a value of this type.
         public static final int time_confirm=0x7f0a00be;
         public static final int time_type=0x7f0a00bc;
         public static final int titleeight=0x7f0a00ae;
-        public static final int titlefive=0x7f0a008f;
+        public static final int titlefive=0x7f0a008e;
         public static final int titleseven=0x7f0a00a2;
-        public static final int titlesix=0x7f0a0078;
+        public static final int titlesix=0x7f0a0077;
         public static final int tvContent=0x7f0a0074;
         public static final int tvFind=0x7f0a006a;
         public static final int tvHead=0x7f0a0073;

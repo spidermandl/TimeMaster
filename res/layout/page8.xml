@@ -5,24 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".Nine" >
     
-
-    <com.time.master.view.BasicViewGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/family_info_up" >
-        
-        <com.time.master.view.BasicTextView
+	<TextView
         android:id="@+id/titleseven"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#319EDE"
         android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:text="@string/page_title"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/pagetitle_text_size"
-        layout:new_line="true"
-        layout:width_multi="5"
-        layout:full="true" />
+         />
+    <com.time.master.view.BasicViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleseven"
+        android:id="@+id/family_info_up" >
+        
+        
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
@@ -177,8 +179,16 @@
             android:textIsSelectable="true"
             layout:new_line="false"
             layout:width_multi="3" />
-
-        
+	</com.time.master.view.BasicViewGroup>
+	
+    
+    
+        <com.time.master.view.BasicViewGroup
+            android:layout_width="match_parent"
+       		android:layout_height="wrap_content"
+        	android:layout_alignParentBottom="true"
+            
+            >
        <com.time.master.view.BasicTextView
             android:id="@+id/page8_btnend"
             android:layout_width="wrap_content"
