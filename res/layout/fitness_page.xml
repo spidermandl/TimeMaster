@@ -10,214 +10,185 @@
       	>
     <!-- this is frist line -->
     <com.time.master.view.BasicTextView 
+        android:id="@+id/fitness_page_fitness"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#9A65FA"
+        android:background="#FFFE02"
         android:gravity="center"
-        android:text="衣"
-        android:textColor="#ffffff"
+        android:text="健"
         layout:new_line="true"
-        layout:width_multi="1" />
+        layout:width_multi="2" />
     
     
     <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FD9A33"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="食"
-        android:textColor="#ffffff"
+        android:text="百科"        
         layout:new_line="false"
         layout:width_multi="1" />   
         
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_page_live" 
+    <com.time.master.view.BasicTextView 
+        android:id="@+id/main_page_live"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#2ADEE4"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="住"
-        android:textColor="#ffffff"
+        android:text="跑步"
         layout:new_line="false"
         layout:width_multi="1" />     
         
      <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#93D156"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="行"
-        android:textColor="#ffffff"
+        android:text="徒步"
         layout:new_line="false"
         layout:width_multi="1" />  
-    
+        
+   <!-- this is second line --> 
+     
       <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#EA5414"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="际"
-        android:textColor="#ffffff"
-        layout:new_line="false"
+        android:text="俯卧撑"
+        layout:new_line="true"
         layout:width_multi="1" />
-      
-  <!-- this is second line -->
-  
-   
+       
        <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FD9BCB"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="康"
-        android:textColor="#ffffff"
-        layout:new_line="true"
+        android:text="瑜伽"
+        layout:new_line="false"
         layout:width_multi="1" />
         
         <com.time.master.view.BasicTextView
-        android:id="@+id/main_page_fitness" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FFFF01"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="健"
+        android:text="游泳"
         layout:new_line="false"
         layout:width_multi="1" />
         
         <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FE71FD"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="娱"
-        android:textColor="#ffffff"
+        android:text="爬山"
         layout:new_line="false"
         layout:width_multi="1" />
          
         <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#3763E9"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="学"
-        android:textColor="#ffffff"
+        android:text="器械"
         layout:new_line="false"
         layout:width_multi="1" />
         
+     <!-- this is third line -->    
         <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#A56F30"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="职"
-        android:textColor="#ffffff"
-        layout:new_line="false"
+        android:text="网球"
+        layout:new_line="true"
         layout:width_multi="1" />
-        
-   <!-- this is third line -->
+          
    		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#D5B833"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="其他"
-        android:textColor="#ffffff"
-        layout:new_line="true"
+        android:text="羽毛球"
+        layout:new_line="false"
         layout:width_multi="1" />
    		
    		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#469BF7"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="卫"
-        android:textColor="#ffffff"
+        android:text="乒乓"
         layout:new_line="false"
         layout:width_multi="1" />
    
    		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#37B837"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="购"
-        android:textColor="#ffffff"
+        android:text="篮球"
         layout:new_line="false"
         layout:width_multi="1" />
    		
    		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FF6377"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="财"
-        android:textColor="#ffffff"
+        android:text="足球"
         layout:new_line="false"
         layout:width_multi="1" />
    		
+   	<!-- this is four line -->	
    		<com.time.master.view.BasicTextView 
+   		android:id="@+id/fitness_page_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#81E51D"
         android:gravity="center"
-        android:text="家"
-        android:textColor="#ffffff"
-        layout:new_line="false"
+        android:background="@drawable/setbar_backgroundp"
+        android:text="+"
+        layout:new_line="true"
         layout:width_multi="1" />
-   		
-   	<!-- this is four line -->
-   	
+   		 	
    		<com.time.master.view.BasicTextView
    		android:id="@+id/main_page_add" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"     
         android:gravity="center"
-        android:text="+"
-        android:background="@drawable/setbar_backgroundp"
-        android:textColor="#000000"
-        layout:new_line="true"
-        layout:width_multi="1" />
-   		
-   		<com.time.master.view.BasicTextView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/setbar_backgroundp"
-        android:gravity="center"
         android:text=""
-        android:textColor="#48839F"
+        android:background="#C2D7F1"
         layout:new_line="false"
         layout:width_multi="1" />
    		
    		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/setbar_backgroundp"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text=""
-        android:textColor="#48839F"
+        android:text="眼保操"
         layout:new_line="false"
         layout:width_multi="1" />
    		
    		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/setbar_backgroundp"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text=""
-        android:textColor="#48839F"
+        android:text="健身操"
         layout:new_line="false"
         layout:width_multi="1" />
    		
    		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/setbar_backgroundp"
+        android:background="#C2D7F1"
         android:gravity="center"
-        android:text="工具"
-        android:textColor="#000000"
+        android:text="高尔夫"
         layout:new_line="false"
         layout:width_multi="1" />
-   
+   		
     </com.time.master.view.BasicViewGroup>
 
     <TextView 
@@ -229,8 +200,6 @@
         android:gravity="center"
         android:background="#EAF2F4"
         android:layout_below="@+id/main_baseviewgroup"
-        android:text="广告推送"
-        />
-    
-    
+        android:text="广告推送"/>
+        
 </RelativeLayout>

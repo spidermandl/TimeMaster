@@ -20,7 +20,7 @@ public class Page8Fragment extends Fragment implements OnClickListener{
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View layout = inflater.inflate(R.layout.page8,container,false);
-		BasicTextView button=(BasicTextView)layout.findViewById(R.id.page8_btnend);
+		BasicTextView button=(BasicTextView)layout.findViewById(R.id.page8_btnEnd);
 		button.setOnClickListener(this);
 		return layout;
 	}
@@ -29,7 +29,7 @@ public class Page8Fragment extends Fragment implements OnClickListener{
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.page8_btnend:
+		case R.id.page8_btnEnd:
 			MainActivity activity=(MainActivity)getActivity();
 			activity.showNext(new Page9Fragment(),R.id.mainlayout);
 			break;

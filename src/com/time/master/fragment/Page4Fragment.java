@@ -20,8 +20,8 @@ public class Page4Fragment extends Fragment implements OnClickListener{
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View layout = inflater.inflate(R.layout.page4,container,false);
-		 tvagree=(BasicTextView)layout.findViewById(R.id.page4_agreetv);
-		 tvdisagree=(BasicTextView)layout.findViewById(R.id.page4_disagreetv);
+		 tvagree=(BasicTextView)layout.findViewById(R.id.page4_tvAgree);
+		 tvdisagree=(BasicTextView)layout.findViewById(R.id.page4_tvDisagree);
 		
 		 tvagree.setOnClickListener(this);
 		 tvdisagree.setOnClickListener(this);
@@ -31,7 +31,7 @@ public class Page4Fragment extends Fragment implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-	case R.id.page4_disagreetv:
+	case R.id.page4_tvDisagree:
 		if(tvdisagree.isclick()){
 			tvdisagree.setIsclick(false);
 			Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
@@ -45,7 +45,7 @@ public class Page4Fragment extends Fragment implements OnClickListener{
 			tvdisagree.setCompoundDrawables(drawable, null, null, null);
 		}
 		break;
-	case R.id.page4_agreetv:
+	case R.id.page4_tvAgree:
 		if(tvagree.isclick()){
 			break;
 		}
