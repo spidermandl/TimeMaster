@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<com.time.master.view.BasicViewGroup 
+    android:id="@+id/main_date_two"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_unknown_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ed5315"
+        android:gravity="center"
+        android:text="无名类别"
+        layout:new_line="true"
+        layout:width_multi="2" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#97ce56"
+        android:gravity="center"
+        android:text="保存"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_add1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="添加"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_add2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="添加"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_treasure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_footprint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_treasure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_footprint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_treasure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_footprint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+
+</com.time.master.view.BasicViewGroup>
+
+<TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_baseviewgroup_two"
+        android:text="信息推送"
+        android:background="#eaf2f4"
+        android:gravity="center"
+        />
+    
+    
+</RelativeLayout>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<com.time.master.view.BasicViewGroup 
+    android:id="@+id/main_date_one" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_clothes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#9765ff"
+        android:gravity="center"
+        android:text="衣"
+        layout:new_line="true"
+        layout:width_multi="1" />
+    
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#fd9b38"
+        android:gravity="center"
+        android:text="食"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_live"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#25e5e8"
+        android:gravity="center"
+        android:text="住"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#90d257"
+        android:gravity="center"
+        android:text="行"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_communication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ec5319"
+        android:gravity="center"
+        android:text="际"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff98ce"
+        android:gravity="center"
+        android:text="康"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_healthy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffff00"
+        android:gravity="center"
+        android:text="健"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_entertainment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff71ff"
+        android:gravity="center"
+        android:text="娱"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_study"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#3a5feb"
+        android:gravity="center"
+        android:text="学"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_profession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#a86c36"
+        android:gravity="center"
+        android:text="职"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_others"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#d1bc45"
+        android:gravity="center"
+        android:text="其他"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_hygiene"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#479afa"
+        android:gravity="center"
+        android:text="卫"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_shopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#38ba3e"
+        android:gravity="center"
+        android:text="购"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_wealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff6482"
+        android:gravity="center"
+        android:text="财"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_family"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#7ee61d"
+        android:gravity="center"
+        android:text="家"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="+"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_treasure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_location_footprint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/main_tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="工具"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+
+</com.time.master.view.BasicViewGroup>
+
+ <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/main_baseviewgroup_one"
+        android:text="信息推送"
+        android:gravity="center"
+        android:background="#eaf2f4"
+        />
+    
+    
+</RelativeLayout>
