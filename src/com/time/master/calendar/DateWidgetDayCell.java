@@ -73,7 +73,7 @@ public class DateWidgetDayCell extends View {
 	// 设置变量值
 	public void setData(int iYear, int iMonth, int iDay, Boolean bToday,
 			Boolean bHoliday, int iActiveMonth, boolean hasRecord) {
-		//设置日期，年月日，是否为当天，是否为假期，当前有效月，是否已记录，
+		//设置日期，年月日，是否为当天，是否为假期，当前有效月，是否已记录.
 		iDateYear = iYear;//当前年
 		iDateMonth = iMonth;//当前日期
 		iDateDay = iDay;//当前日
@@ -140,7 +140,7 @@ public class DateWidgetDayCell extends View {
 		// }
 	}
 
-	// 绘制日历中的数字
+	// 绘制日历中的数
 	public void drawDayNumber(Canvas canvas) {
 		// draw day number
 		pt.setTypeface(null);//设置字体样式
