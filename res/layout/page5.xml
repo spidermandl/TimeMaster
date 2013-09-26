@@ -1,149 +1,376 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity5" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:background="#87CEFA"
+        android:id="@+id/titlesix"
+        android:layout_width="fill_parent"
+        android:layout_height="27dp"
+        android:background="#319EDE"
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:text="@string/page_title"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/pagetitle_text_size" />
+
+    <TextView
+        android:id="@+id/pagetitlesix"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="#F0F0F0"
         android:gravity="center"
         android:text="@string/page5_title"
-        android:textSize="25sp" />
+        android:textColor="#000000"
+        android:textSize="@dimen/pagecomponent_text_size" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/page5_tvpwset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="10dp"
-            android:text="@string/page5_pw"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page5_etpwset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/page5_tvreinput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page5_reinto"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page5_etreinput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/page5_tvpwremind"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page5_pwremind"
-            android:textSize="23sp" />
-
-        <TextView
-            android:textIsSelectable="true"
-            android:id="@+id/page5_tvpwremind1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/page5_tvpwfind"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page5_findpw"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page5_etpwfind"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:hint="@string/page5_hintphone" />
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/idcard"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/setbar_background"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/page5_idcard"
+                android:textSize="@dimen/pagecomponent_text_size" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
+            <TextView
+                android:id="@+id/idcardtv"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:hint="@string/page5_hintid"
+                android:textColor="#E0DFDF"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/pagecomponent_text_size" />
+        </LinearLayout>
 
-        <EditText
-            android:id="@+id/page5_etpwfind1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="125dp"
-            android:layout_marginRight="10dp"
-            android:hint="@string/page5_hintemail" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:id="@+id/page5_tvquestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"            
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="10dp"
-            android:text="@string/page5_question"
-            android:textSize="23sp" />
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
 
-        <EditText
-            android:id="@+id/page5_etquestion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"/>
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/setbar_background"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/page5_truename"
+                android:textSize="@dimen/pagecomponent_text_size" />
+
+            <TextView
+                android:id="@+id/familynametv"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:hint="@string/page5_hintfirst"
+                android:textColor="#E0DFDF"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/pagecomponent_text_size" />
+
+            <TextView
+                android:id="@+id/nametv"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:hint="@string/page5_hintend"
+                android:textColor="#E0DFDF"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/pagecomponent_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/setbar_background"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/page5_username"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/pagecomponent_text_size" />
+
+            <TextView
+                android:id="@+id/usernametv"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/birthday"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/setbar_background"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/page5_birthday"
+                android:textSize="@dimen/pagecomponent_text_size" />
+
+            <TextView
+                android:id="@+id/birthdaytv"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/birthplace"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/setbar_background"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/page5_nativeplace"
+                android:textSize="@dimen/pagecomponent_text_size" />
+
+            <TextView
+                android:id="@+id/birthplacetv"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/setbar_background"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/page5_email"
+                android:textSize="@dimen/pagecomponent_text_size" />
+
+            <TextView
+                android:id="@+id/emailtv"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/telnum"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/setbar_background"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/page5_phone"
+                android:textSize="@dimen/pagecomponent_text_size" />
+
+            <TextView
+                android:id="@+id/telnumtv"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/hidnumber"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/setbar_background"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/page5_code"
+                android:textSize="@dimen/pagecomponent_text_size" />
+
+            <TextView
+                android:id="@+id/hidnumbertv"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/phonecode"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="2"
+                android:background="@drawable/setbar_background"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/page5_getcode"
+                android:textSize="@dimen/pagecomponent_text_size" />
+
+            <TextView
+                android:id="@+id/phonecodetv"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:textIsSelectable="true" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/page5_btnend"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="#ADD7E7"
+            android:gravity="center"
+            android:text="确认"
+            android:textColor="#48839F"
+            android:textSize="@dimen/pagecomponent_text_size" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/page5_btnend"
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="0.7"
-        android:background="#cbfef1"
-        android:text="@string/page5_end"
-        android:textSize="23sp" />
- 
 </LinearLayout>

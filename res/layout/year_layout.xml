@@ -2,39 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical" >
-
-    <LinearLayout
-        android:id="@+id/human_selector_wheel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal" >
-
-        <com.time.master.wheel.widget.UIWheelView
-            android:id="@+id/human_select"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-        
-        <include layout="@layout/alphabet_panel"
-            android:id="@+id/alph"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-        
-    </LinearLayout>
-    <Button android:id="@+id/human_confirm"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_above="@id/human_selector_wheel"
-            android:layout_alignParentRight="true"
-            android:text="确定"/>
-    <EditText android:id="@+id/edit_human"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_toLeftOf="@id/human_confirm"
-            android:layout_alignParentLeft="true"
-            android:layout_above="@id/human_selector_wheel"/>
 
 </RelativeLayout>

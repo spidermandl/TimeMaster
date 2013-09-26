@@ -2,155 +2,280 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".Nine" >
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
+        android:id="@+id/title8"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#87CEFA"
+        android:background="#319ede"
         android:gravity="center"
-        android:text="@string/page8_unit"
-        android:textSize="25sp" />
+        android:textColor="#ffffff"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:text="@string/page_title"
+        android:textSize="@dimen/pagetitle_text_size" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1.2"
+        android:background="#add7e7"
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/page8_tvname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page8_name"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page8_etname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp" />
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#48839F"
+            android:text="@string/page8_title"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1.2"
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/page8_tvaddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page8_address"
-            android:textSize="23sp" />
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page8_id"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <EditText
-            android:id="@+id/page8_etaddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp" />
+        <TextView
+            android:id="@+id/renu"
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page8_dadid"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/faidencnu"
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1.2"
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/page8_tvquale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page8_momid"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/maidencnu"
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_height="fill_parent"
             android:layout_marginLeft="10dp"
-            android:text="@string/page8_quale"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page8_etquale"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp" />
-
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1.2"
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/page8_tvidcode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page8_familyrole"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/famrole"
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_height="fill_parent"
             android:layout_marginLeft="10dp"
-            android:text="@string/page8_idcode"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page8_etidcode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"/>
-
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1.2"
         android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page8_marryid"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/mecnu"
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page8_husband"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/huidencnu"
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2"
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page8_wife"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/wiidencnu"
+            android:layout_width="0dip"
+            android:layout_weight="3"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
         
-        <TextView
-            android:id="@+id/page8_tvidnumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/page8_idnumber"
-            android:layout_marginLeft="10dp"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page8_etidnumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"/>
-
     </LinearLayout>
-
+<TextView 
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1.2"
         android:orientation="horizontal" >
 
-        <TextView
-            android:id="@+id/page8_tvrole"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/page8_role"
-            android:textSize="23sp" />
-
-        <EditText
-            android:id="@+id/page8_etrole"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"/>
+        <Button
+            android:id="@+id/page8_btnend"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#48839F"
+            android:background="#add7e7"
+            android:layout_marginBottom="8dp"
+            android:text="@string/page8_end"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/page8_btnend"
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="0.7"
-        android:background="#cbfef1"
-        android:text="@string/page8_end"
-        android:textSize="23sp" />
 
 </LinearLayout>

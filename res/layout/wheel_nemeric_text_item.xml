@@ -3,7 +3,7 @@
     android:id="@+id/numeric_text"
     android:layout_width="wrap_content"
     android:layout_height="@dimen/wheel_numeric_item_height"
-    android:textSize="20sp"
+    android:textSize="@dimen/wheel_item_text_size"
     android:lines="1"
     android:textStyle="bold"
     android:textColor="#FF111111"

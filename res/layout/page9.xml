@@ -1,0 +1,306 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Eight" >
+
+    <TextView
+        android:id="@+id/title8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#319ede"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:text="@string/page_title"
+        android:textSize="@dimen/pagetitle_text_size"  />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="9dp"
+        android:layout_weight="1.2"
+        android:background="#add7e7"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#48839F"
+            android:text="@string/page9_title"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2"            
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page9_name"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/uname"
+            android:layout_width="0dip"
+            android:layout_weight="3" 
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2" 
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page9_address"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/iaddr"
+            android:layout_width="0dip"
+            android:layout_weight="3" 
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2" 
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page9_quale"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/uch"
+            android:layout_width="0dip"
+            android:layout_weight="3" 
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2" 
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page9_idcode"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/lico"
+            android:layout_width="0dip"
+            android:layout_weight="3" 
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2" 
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page9_idnumber"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/taxreco"
+            android:layout_width="0dip"
+            android:layout_weight="3" 
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2" 
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page9_goods"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/sellpro"
+            android:layout_width="0dip"
+            android:layout_weight="3" 
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2" 
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page9_class"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/deoffi"
+            android:layout_width="0dip"
+            android:layout_weight="3" 
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_weight="2" 
+            android:layout_height="fill_parent"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page9_role"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/jorole"
+            android:layout_width="0dip"
+            android:layout_weight="3" 
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.2"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/page9_btnend"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            android:textColor="#48839F"
+            android:background="#add7e7"
+            android:text="@string/page9_end"
+            android:textSize="@dimen/pagecomponent_text_size"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+</LinearLayout>
