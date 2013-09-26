@@ -29,6 +29,7 @@ public class DateFragment extends Fragment implements OnTouchListener {
 	WheelDialogFragment dateFragment, locationFragment, humanFragment;
 	BasicEditText dateSelector,locationSelector,humanSelector;
 	
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
