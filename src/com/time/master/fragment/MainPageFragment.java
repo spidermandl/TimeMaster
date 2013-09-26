@@ -36,7 +36,7 @@ public class MainPageFragment extends Fragment implements OnClickListener{
 			FrameActivity activity2=(FrameActivity)getActivity();
 			activity2.showNext(new FitnessFragment(), R.id.date_fragment);
 			break;
-		default:
+		default: 
 			break;
 		}
 	}
