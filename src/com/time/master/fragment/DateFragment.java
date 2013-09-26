@@ -7,7 +7,6 @@ import com.time.master.dialog.TimeDialogFragment;
 import com.time.master.dialog.WheelDialogFragment;
 import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.BasicEditText;
-
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -18,7 +17,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
-import android.widget.EditText;
 /**
  * "»’"√Ê∞Â
  * @author duanlei
