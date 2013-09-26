@@ -580,7 +580,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:bottom
+          @attr name com.time.master:bottom
         */
         public static final int ViewGroupType_bottom = 3;
         /**
@@ -594,7 +594,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:full
+          @attr name com.time.master:full
         */
         public static final int ViewGroupType_full = 2;
         /**
@@ -608,7 +608,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:new_line
+          @attr name com.time.master:new_line
         */
         public static final int ViewGroupType_new_line = 1;
         /**
@@ -622,7 +622,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:visible
+          @attr name com.time.master:visible
         */
         public static final int ViewGroupType_visible = 4;
         /**
@@ -636,7 +636,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:width_multi
+          @attr name com.time.master:width_multi
         */
         public static final int ViewGroupType_width_multi = 0;
     };
