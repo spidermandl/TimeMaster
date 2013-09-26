@@ -18,7 +18,7 @@ public class DateWidgetDayHeader extends View {
 	private final static int fTextSize = 22;
 	private Paint pt = new Paint();
 	private RectF rect = new RectF();
-	private int iWeekDay = -1;
+	private int iWeekDay = -1; 
 
 	public DateWidgetDayHeader(Context context, int iWidth, int iHeight) {
 		super(context);
@@ -50,7 +50,7 @@ public class DateWidgetDayHeader extends View {
 		pt.setColor(Constant.Calendar_WeekFontColor);
 		
 		// draw day name
-		final String sDayName = DayStyle.getWeekDayName(iWeekDay);
+		final String sDayName = DayStyle.getWeekDayName(iWeekDay);   //根据日期  得到星期几
 		final int iPosX = (int) rect.left + ((int) rect.width() >> 1)
 				- ((int) pt.measureText(sDayName) >> 1);
 		final int iPosY = (int) (this.getHeight()

@@ -28,16 +28,16 @@ public class DayStyle {
 	}
 	
 	public static int getWeekDay(int index, int iFirstDayOfWeek) {
-		int iWeekDay = -1;
+		int iWeekDay = -1;  //将周一放置第一位
 
-		if (iFirstDayOfWeek == Calendar.MONDAY) {
+		if (iFirstDayOfWeek == Calendar.MONDAY) {  //如果一周的第一天是周一
 			iWeekDay = index + Calendar.MONDAY;
 			
 			if (iWeekDay > Calendar.SATURDAY)
 				iWeekDay = Calendar.SUNDAY;
 		}
 
-		if (iFirstDayOfWeek == Calendar.SUNDAY) {
+		if (iFirstDayOfWeek == Calendar.SUNDAY) {  //如果一周的第一天是周日
 			iWeekDay = index + Calendar.SUNDAY;
 		}
 
