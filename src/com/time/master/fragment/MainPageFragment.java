@@ -38,11 +38,15 @@ public class MainPageFragment extends Fragment implements OnClickListener{
 			FrameActivity activity2=(FrameActivity)getActivity();
 			activity2.showNext(new FitnessFragment(), R.id.date_fragment);
 			break;
+<<<<<<< HEAD
 		case R.id.main_page_walk:
 			FrameActivity activity3=(FrameActivity)getActivity();
 			activity3.showNext(new WalkFragment(), R.id.date_fragment);
 			break;
 		default:
+=======
+		default: 
+>>>>>>> 740f03352e02c7e768f4f5dc093662d759a87292
 			break;
 		}
 	}
