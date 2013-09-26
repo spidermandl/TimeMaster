@@ -18,8 +18,10 @@ public class MainPageFragment extends Fragment implements OnClickListener{
 		View layout = inflater.inflate(R.layout.main_page, container, false);
 		BasicTextView add=(BasicTextView)layout.findViewById(R.id.main_page_add);
 		BasicTextView fitness=(BasicTextView)layout.findViewById(R.id.main_page_fitness);
+		BasicTextView walk=(BasicTextView)layout.findViewById(R.id.main_page_walk);
 		add.setOnClickListener(this);
 		fitness.setOnClickListener(this);
+		walk.setOnClickListener(this);
 		
 		return layout;
 	}
@@ -30,11 +32,15 @@ public class MainPageFragment extends Fragment implements OnClickListener{
 		switch (v.getId()) {
 		case R.id.main_page_add:
 			FrameActivity activity=(FrameActivity)getActivity();
-			activity.showNext(new Page4Fragment(), R.id.date_fragment);
+			activity.showNext(new AddFragment(), R.id.date_fragment);
 			break;
 		case R.id.main_page_fitness:
 			FrameActivity activity2=(FrameActivity)getActivity();
 			activity2.showNext(new FitnessFragment(), R.id.date_fragment);
+			break;
+		case R.id.main_page_walk:
+			FrameActivity activity3=(FrameActivity)getActivity();
+			activity3.showNext(new WalkFragment(), R.id.date_fragment);
 			break;
 		default:
 			break;
