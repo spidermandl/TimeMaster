@@ -33,6 +33,7 @@ public class YearFragment extends Fragment {
 		TitleList = (ListView)  layout.findViewById(R.id.listView1);
 		
 		aDemo =new BaseAdapterDemo(this.getActivity(), mData);
+
 		TitleList.setAdapter(aDemo);
 		
         
