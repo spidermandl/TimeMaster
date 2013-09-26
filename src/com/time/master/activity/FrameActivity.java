@@ -33,7 +33,6 @@ public class FrameActivity extends FragmentActivity {
         tabHost.addTab(tabHost.newTabSpec("date").setIndicator(this.getResources().getString(R.string.date)).setContent(R.id.date_fragment));
         tabHost.addTab(tabHost.newTabSpec("list").setIndicator(this.getResources().getString(R.string.list)).setContent(R.id.issue_list_fragment));
         tabHost.addTab(tabHost.newTabSpec("new").setIndicator(this.getResources().getString(R.string.new_item)).setContent(R.id.new_issue_fragment));
-        
         tabHost.setCurrentTabByTag("generation");
         
         TabWidget tabWidget = tabHost.getTabWidget();  
@@ -73,4 +72,17 @@ public class FrameActivity extends FragmentActivity {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
+    public void showNext(Fragment fragment, int ID) {
+		FragmentManager fragmentManager = this.getSupportFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager
+				.beginTransaction();
+		fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
+				android.R.anim.fade_out);
+		fragmentTransaction.replace(ID, fragment);
+		fragmentTransaction.addToBackStack(null);
+		fragmentTransaction
+				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+		fragmentTransaction.commit();
+	}
 }
+

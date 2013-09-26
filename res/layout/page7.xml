@@ -5,25 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".Eight" >
 
-    <!--
-         <TextView
-        android:id="@+id/title8"
-        android:layout_width="fill_parent"
+   <TextView
+        android:id="@+id/titleseven"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#319ede"
+        android:background="#319EDE"
         android:gravity="center"
-        android:paddingBottom="6dp"
-        android:paddingTop="6dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:text="@string/page_title"
-        android:textColor="#ffffff"
-        android:textSize="@dimen/pagetitle_text_size" />
--->
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/pagetitle_text_size"/>
     
 
     <com.time.master.view.BasicViewGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/titleseven"
         android:id="@+id/basic_info_up" >
+        
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
@@ -38,6 +39,7 @@
             layout:width_multi="5" />
 
         <com.time.master.view.BasicTextView
+            android:id="@+id/page7_tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -49,7 +51,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/nickname"
+            android:id="@+id/page7_etName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -58,6 +60,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
+            android:id="@+id/page7_tvGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -69,7 +72,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/gender"
+            android:id="@+id/page7_etGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -78,6 +81,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
+            android:id="@+id/page7_tvAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -89,7 +93,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/homeadd"
+            android:id="@+id/page7_etAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -98,6 +102,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
+            android:id="@+id/page7_tvGetaddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -109,7 +114,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/postadd"
+            android:id="@+id/page7_etGetaddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -118,7 +123,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/connect"
+            android:id="@+id/page7_tvAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -130,6 +135,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
+            android:id="@+id/page7_etAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -138,7 +144,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/QQ"
+            android:id="@+id/page7_tvQq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -150,6 +156,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
+            android:id="@+id/page7_etQq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -158,6 +165,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
+            android:id="@+id/page7_tvMicroblog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -169,7 +177,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/wb"
+            android:id="@+id/page7_etMicroblog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -178,6 +186,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
+            android:id="@+id/page7_tvMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -189,16 +198,24 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/wx"
+            android:id="@+id/page7_etMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
             android:textIsSelectable="true"
             layout:new_line="false"
             layout:width_multi="3" />
+        </com.time.master.view.BasicViewGroup>
         
+    
+        <com.time.master.view.BasicViewGroup
+        	android:layout_width="match_parent"
+       		android:layout_height="wrap_content"
+        	android:layout_alignParentBottom="true"
+            
+            >
        <com.time.master.view.BasicTextView
-            android:id="@+id/page7_btnend"
+            android:id="@+id/page7_btnEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#ADD7E7"
@@ -208,27 +225,9 @@
             android:textColor="#48839F"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
-            layout:width_multi="5" />
+            layout:width_multi="5"
+        	 />
     </com.time.master.view.BasicViewGroup>
-<!-- 
-    <com.time.master.view.BasicViewGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/basic_info_up"
-        android:layout_alignParentBottom="true">
 
-        <com.time.master.view.BasicTextView
-            android:id="@+id/page7_btnend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#ADD7E7"
-            android:gravity="center"
-            android:text="@string/page7_end"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#48839F"
-            android:textSize="@dimen/pagecomponent_text_size"
-            layout:new_line="true"
-            layout:width_multi="5" />
-    </com.time.master.view.BasicViewGroup> -->
 
 </RelativeLayout>
