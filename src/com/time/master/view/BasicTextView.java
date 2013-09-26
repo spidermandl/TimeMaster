@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 public class BasicTextView extends TextView implements LayoutStyleableInterface{
-
+    
 	int multi_width;
 	boolean isNewLine;
 	
@@ -48,4 +48,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	public boolean isNewLine() {
 		return isNewLine;
 	}
+	
+	
+	
 }

@@ -512,7 +512,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:new_line
+          @attr name com.time.master:new_line
         */
         public static final int ViewGroupType_new_line = 1;
         /**
@@ -526,7 +526,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:width_multi
+          @attr name com.time.master:width_multi
         */
         public static final int ViewGroupType_width_multi = 0;
     };
