@@ -8,6 +8,7 @@ import java.util.Map;
 
 
 import com.time.master.R;
+import com.time.master.adapter.BaseAdapterDemo;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -31,7 +32,8 @@ public class YearFragment extends Fragment {
 		mData=getData();
 		TitleList = (ListView)  layout.findViewById(R.id.listView1);
 		
-		aDemo =new BaseAdapterDemo(this, mData);
+		aDemo =new BaseAdapterDemo(this.getActivity(), mData);
+
 		TitleList.setAdapter(aDemo);
 		
         
