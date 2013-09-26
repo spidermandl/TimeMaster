@@ -1,4 +1,4 @@
-package com.time.master.fragment;
+package com.time.master.fragment.login;
 
 import com.time.master.R;
 import com.time.master.activity.MainActivity;
@@ -10,13 +10,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
-public class Page8Fragment extends Fragment implements OnClickListener{
+public class RegisterInformation extends Fragment implements OnClickListener{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View layout = inflater.inflate(R.layout.page8,container,false);
-		BasicTextView button=(BasicTextView)layout.findViewById(R.id.page8_btnEnd);
+		View layout = inflater.inflate(R.layout.page_register_information,container,false);
+		BasicTextView button=(BasicTextView)layout.findViewById(R.id.register_btnEnd);
 		button.setOnClickListener(this);
 		return layout;
 	}
@@ -25,9 +25,12 @@ public class Page8Fragment extends Fragment implements OnClickListener{
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.page8_btnEnd:
+		case R.id.register_btnEnd:
 			MainActivity activity=(MainActivity)getActivity();
-			activity.showNext(new Page9Fragment(),R.id.mainlayout);
+			activity.showNext(new PasswordSet(),R.id.mainlayout);
+			break;
+
+		default:
 			break;
 		}
 	}

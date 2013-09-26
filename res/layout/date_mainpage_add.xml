@@ -156,12 +156,12 @@
         <!-- this is four line -->
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/main_page_add"
+            android:id="@+id/add_page_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="+"
+            android:text=""
             android:textColor="#48839F"
             layout:new_line="true"
             layout:width_multi="1" />

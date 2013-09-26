@@ -1,4 +1,4 @@
-package com.time.master.fragment;
+package com.time.master.fragment.login;
 
 import com.time.master.R;
 import com.time.master.activity.MainActivity;
@@ -13,31 +13,31 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Page1Fragment extends Fragment implements OnClickListener {
-	TextView textView;
-	BasicTextView checkbox1,checkbox2,checkbox3,checkbox4,checkbox5;
+public class InformationPush extends Fragment implements OnClickListener {
+	TextView tvInformapush;
+	BasicTextView tvUsername,tvRememberpw,tvLogin,tvForgetpw,tvKeyboard;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View layout = inflater.inflate(R.layout.page1, container, false);
+		View layout = inflater.inflate(R.layout.page_information_push, container, false);
 
-		textView = (TextView) layout.findViewById(R.id.page1_tvEnd);
-		checkbox1=(BasicTextView)layout.findViewById(R.id.page2_tvUsername);
-		checkbox2=(BasicTextView)layout.findViewById(R.id.page2_tvRememberpw);
-		checkbox3=(BasicTextView)layout.findViewById(R.id.page2_tvLogin);
-		checkbox4=(BasicTextView)layout.findViewById(R.id.page2_tvFogetpw);
-		checkbox5=(BasicTextView)layout.findViewById(R.id.page2_tvKeyboard);
+		tvInformapush = (TextView) layout.findViewById(R.id.informapush_tvEnd);
+		tvUsername=(BasicTextView)layout.findViewById(R.id.informainto_tvUsername);
+		tvRememberpw=(BasicTextView)layout.findViewById(R.id.informainto_tvRememberpw);
+		tvLogin=(BasicTextView)layout.findViewById(R.id.informainto_tvLogin);
+		tvForgetpw=(BasicTextView)layout.findViewById(R.id.informainto_tvFogetpw);
+		tvKeyboard=(BasicTextView)layout.findViewById(R.id.informainto_tvKeyboard);
 	
-		Button button = (Button) layout.findViewById(R.id.page2_btnRegist);
-		checkbox1.setOnClickListener(this);
-		checkbox2.setOnClickListener(this);
-		checkbox3.setOnClickListener(this);
-		checkbox4.setOnClickListener(this);
-		checkbox5.setOnClickListener(this);
+		Button button = (Button) layout.findViewById(R.id.informainto_btnRegist);
+		tvUsername.setOnClickListener(this);
+		tvRememberpw.setOnClickListener(this);
+		tvLogin.setOnClickListener(this);
+		tvForgetpw.setOnClickListener(this);
+		tvKeyboard.setOnClickListener(this);
 		button.setOnClickListener(this);
-		textView.setOnClickListener(this);
+		tvInformapush.setOnClickListener(this);
 		return layout;
 	}
 
@@ -45,81 +45,81 @@ public class Page1Fragment extends Fragment implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.page1_tvEnd:
-			textView.setVisibility(View.GONE);
+		case R.id.informapush_tvEnd:
+			tvInformapush.setVisibility(View.GONE);
 			break;
-		case R.id.page2_btnRegist:
+		case R.id.informainto_btnRegist:
 			MainActivity activity = (MainActivity) getActivity();
-			activity.showNext(new Page4Fragment(), R.id.mainlayout);
+			activity.showNext(new SystemProtocol(), R.id.mainlayout);
 			break;
-		case R.id.page2_tvUsername:
-			if(checkbox1.isclick()){
-				checkbox1.setIsclick(false);
+		case R.id.informainto_tvUsername:
+			if(tvUsername.isclick()){
+				tvUsername.setIsclick(false);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
 				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-				checkbox1.setCompoundDrawables(drawable, null, null, null);
+				tvUsername.setCompoundDrawables(drawable, null, null, null);
 			}
 			else {
-				checkbox1.setIsclick(true);
+				tvUsername.setIsclick(true);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
 				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-				checkbox1.setCompoundDrawables(drawable, null, null, null);
+				tvUsername.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-		case R.id.page2_tvRememberpw:
-			if(checkbox2.isclick()){
-				checkbox2.setIsclick(false);
+		case R.id.informainto_tvRememberpw:
+			if(tvRememberpw.isclick()){
+				tvRememberpw.setIsclick(false);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
 				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-				checkbox2.setCompoundDrawables(drawable, null, null, null);
+				tvRememberpw.setCompoundDrawables(drawable, null, null, null);
 			}
 			else {
-				checkbox2.setIsclick(true);
+				tvRememberpw.setIsclick(true);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
 				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-				checkbox2.setCompoundDrawables(drawable, null, null, null);
+				tvRememberpw.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-		case R.id.page2_tvLogin:
-			if(checkbox3.isclick()){
-				checkbox3.setIsclick(false);
+		case R.id.informainto_tvLogin:
+			if(tvLogin.isclick()){
+				tvLogin.setIsclick(false);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
 				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-				checkbox3.setCompoundDrawables(drawable, null, null, null);
+				tvLogin.setCompoundDrawables(drawable, null, null, null);
 			}
 			else {
-				checkbox3.setIsclick(true);
+				tvLogin.setIsclick(true);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
 				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-				checkbox3.setCompoundDrawables(drawable, null, null, null);
+				tvLogin.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-		case R.id.page2_tvFogetpw:
-			if(checkbox4.isclick()){
-				checkbox4.setIsclick(false);
+		case R.id.informainto_tvFogetpw:
+			if(tvForgetpw.isclick()){
+				tvForgetpw.setIsclick(false);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
 				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-				checkbox4.setCompoundDrawables(drawable, null, null, null);
+				tvForgetpw.setCompoundDrawables(drawable, null, null, null);
 			}
 			else {
-				checkbox4.setIsclick(true);
+				tvForgetpw.setIsclick(true);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
 				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-				checkbox4.setCompoundDrawables(drawable, null, null, null);
+				tvForgetpw.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-		case R.id.page2_tvKeyboard:
-			if(checkbox5.isclick()){
-				checkbox5.setIsclick(false);
+		case R.id.informainto_tvKeyboard:
+			if(tvKeyboard.isclick()){
+				tvKeyboard.setIsclick(false);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
 				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-				checkbox5.setCompoundDrawables(drawable, null, null, null);
+				tvKeyboard.setCompoundDrawables(drawable, null, null, null);
 			}
 			else {
-				checkbox5.setIsclick(true);
+				tvKeyboard.setIsclick(true);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
 				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-				checkbox5.setCompoundDrawables(drawable, null, null, null);
+				tvKeyboard.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
 		}

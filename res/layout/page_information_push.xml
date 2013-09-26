@@ -59,7 +59,7 @@
             android:orientation="horizontal" >
 
             <EditText
-                android:id="@+id/page1_etSet"
+                android:id="@+id/informapush_etSet"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -72,7 +72,7 @@
                 android:textSize="@dimen/pagecomponent_text_size" />
 
             <Button
-                android:id="@+id/page1_btnSet"
+                android:id="@+id/informapush_btnSet"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -93,7 +93,7 @@
             android:orientation="horizontal" >
 
             <EditText
-                android:id="@+id/page1_etLogin"
+                android:id="@+id/informapush_etLogin"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -107,7 +107,7 @@
                 android:textSize="@dimen/pagecomponent_text_size" />
 
             <Button
-                android:id="@+id/page1_btnLogin"
+                android:id="@+id/informapush_btnLogin"
                 android:layout_width="0dip"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -128,7 +128,7 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/page1_tvEnd"
+            android:id="@+id/informapush_tvEnd"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -139,7 +139,7 @@
         <include
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            layout="@layout/page2" />
+            layout="@layout/page_information_push_into" />
     </LinearLayout>
 
 </LinearLayout>

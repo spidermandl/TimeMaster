@@ -1,4 +1,4 @@
-package com.time.master.fragment;
+package com.time.master.fragment.login;
 import com.time.master.R;
 
 import android.os.Bundle;
@@ -8,12 +8,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
-public class Page2Fragment extends Fragment implements OnClickListener{
+public class FimalyInformaInto extends Fragment implements OnClickListener{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View layout = inflater.inflate(R.layout.page2,container,false);
+		View layout = inflater.inflate(R.layout.page_information_push_into,container,false);
 		return layout;
 	}
 
