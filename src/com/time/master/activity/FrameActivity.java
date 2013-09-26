@@ -1,13 +1,7 @@
 package com.time.master.activity;
 
 import com.time.master.R;
-import com.time.master.R.layout;
-import com.time.master.R.menu;
-import com.time.master.fragment.GenerationFragment;
-
 import android.os.Bundle;
-import android.app.Activity;
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -42,7 +36,6 @@ public class FrameActivity extends FragmentActivity {
         DisplayMetrics displayMetrics = new DisplayMetrics();  
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);  
         int screenWidth = displayMetrics.widthPixels;  
-        int screenheight = displayMetrics.heightPixels;  
 		if (count >= 4) {
 			for (int i = 0; i < count; i++) {
 				// 设置每个标签的宽度，为屏幕的1/4

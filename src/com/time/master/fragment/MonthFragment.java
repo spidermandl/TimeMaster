@@ -3,22 +3,18 @@ package com.time.master.fragment;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Hashtable;
-
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.calendar.DateWidgetDayCell;
 import com.time.master.calendar.DateWidgetDayHeader;
 import com.time.master.calendar.DayStyle;
 import com.time.master.tool.Constant;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;

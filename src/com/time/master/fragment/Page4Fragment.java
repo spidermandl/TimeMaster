@@ -3,8 +3,6 @@ package com.time.master.fragment;
 import com.time.master.R;
 import com.time.master.activity.MainActivity;
 import com.time.master.view.BasicTextView;
-
-import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

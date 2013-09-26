@@ -9,15 +9,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
 
 public class TimeMasterHelper extends SQLiteOpenHelper{
-
-	private SQLiteDatabase db;
 	
 	private static final String DB_NAME = "schedual.db";//DB name
 	private static final int DB_VERSION = 1;	//DB version
 	
 	public TimeMasterHelper(Context context){
 		super(context, getDataBasePath(), null, DB_VERSION);
-		db = getWritableDatabase();
 	}
 
 	public static String getDataBasePath(){

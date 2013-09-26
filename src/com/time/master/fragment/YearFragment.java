@@ -1,8 +1,5 @@
 package com.time.master.fragment;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-
 import com.time.master.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
