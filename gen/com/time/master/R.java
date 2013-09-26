@@ -97,6 +97,9 @@ containing a value of this type.
         public static final int wheel_bg_without_frame=0x7f02000b;
         public static final int wheel_val=0x7f02000c;
         public static final int wheel_val_with_frame=0x7f02000d;
+        public static final int year=0x7f02000e;
+        public static final int yeargray=0x7f02000f;
+        public static final int yearwhite=0x7f020010;
     }
     public static final class id {
         public static final int A=0x7f0a0000;
@@ -188,6 +191,7 @@ containing a value of this type.
         public static final int issue_list_fragment=0x7f0a003c;
         public static final int jorole=0x7f0a00b6;
         public static final int lico=0x7f0a00b2;
+        public static final int listView1=0x7f0a00ca;
         public static final int location_1=0x7f0a004a;
         public static final int location_2=0x7f0a004b;
         public static final int location_3=0x7f0a004c;
@@ -202,7 +206,7 @@ containing a value of this type.
         public static final int main_tab=0x7f0a0035;
         public static final int mainlayout=0x7f0a004e;
         public static final int mecnu=0x7f0a00ab;
-        public static final int menu_settings=0x7f0a00c8;
+        public static final int menu_settings=0x7f0a00cc;
         public static final int minute=0x7f0a00c4;
         public static final int month=0x7f0a00c1;
         public static final int month_fragment=0x7f0a0039;
@@ -277,9 +281,12 @@ containing a value of this type.
         public static final int telfindpasswordtv=0x7f0a0096;
         public static final int telnum=0x7f0a0086;
         public static final int telnumtv=0x7f0a0087;
+        public static final int textView1=0x7f0a00cb;
+        public static final int time=0x7f0a00c8;
         public static final int time_bar=0x7f0a00bb;
         public static final int time_confirm=0x7f0a00be;
         public static final int time_type=0x7f0a00bc;
+        public static final int title=0x7f0a00c9;
         public static final int title8=0x7f0a00a6;
         public static final int titleseven=0x7f0a008d;
         public static final int titlesix=0x7f0a0077;
@@ -328,7 +335,8 @@ containing a value of this type.
         public static final int wheel_human_text_item=0x7f030017;
         public static final int wheel_location_text_item=0x7f030018;
         public static final int wheel_nemeric_text_item=0x7f030019;
-        public static final int year_layout=0x7f03001a;
+        public static final int year_item=0x7f03001a;
+        public static final int year_layout=0x7f03001b;
     }
     public static final class menu {
         public static final int activity_main=0x7f090000;
