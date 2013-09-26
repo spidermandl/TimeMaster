@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 /**
  * 自定义布局类，
  * 设定子view之间间距
@@ -16,8 +17,10 @@ import android.view.ViewGroup;
  *
  */
 public class BasicViewGroup extends ViewGroup{
+
 	
 	int screen_width,
+	screen_height,
 	unit_width,//view 单位长度
 	gap,//view的间隔长度
 	current_margin_top=0,//当前放置y坐标
@@ -68,11 +71,12 @@ public class BasicViewGroup extends ViewGroup{
 					current_margin_left+layoutParams.width, 
 					current_margin_top+layoutParams.height);
 			current_margin_left+=layoutParams.width+gap;
-			
+
 		}
-		
+
 		init();
 	}
+
 	/***
 	 * 初始化所有参数
 	 */
@@ -82,6 +86,5 @@ public class BasicViewGroup extends ViewGroup{
 		gap=screen_width/36;
 		current_margin_top=(int)(-0.75*unit_width);
 	}
-	
 
 }

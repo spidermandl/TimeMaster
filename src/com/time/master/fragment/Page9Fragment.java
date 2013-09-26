@@ -2,6 +2,7 @@ package com.time.master.fragment;
 import com.time.master.R;
 import com.time.master.activity.FrameActivity;
 import com.time.master.activity.MainActivity;
+import com.time.master.view.BasicTextView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +22,7 @@ public class Page9Fragment extends Fragment implements OnClickListener{
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View layout = inflater.inflate(R.layout.page9,container,false);
-		Button button=(Button)layout.findViewById(R.id.page9_btnend);
+		BasicTextView button=(BasicTextView)layout.findViewById(R.id.page9_btnEnd);
 		button.setOnClickListener(this);
 		return layout;
 	}
@@ -30,7 +31,7 @@ public class Page9Fragment extends Fragment implements OnClickListener{
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.page9_btnend:
+		case R.id.page9_btnEnd:
 			MainActivity activity=(MainActivity)getActivity();
 			Intent intent=new Intent();
 			intent.setClass(activity, FrameActivity.class);
