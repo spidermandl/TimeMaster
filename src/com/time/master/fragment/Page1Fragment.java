@@ -23,14 +23,14 @@ public class Page1Fragment extends Fragment implements OnClickListener {
 		// TODO Auto-generated method stub
 		View layout = inflater.inflate(R.layout.page1, container, false);
 
-		textView = (TextView) layout.findViewById(R.id.page1_endtv);
-		checkbox1=(BasicTextView)layout.findViewById(R.id.page2_checkBox1);
-		checkbox2=(BasicTextView)layout.findViewById(R.id.page2_checkBox2);
-		checkbox3=(BasicTextView)layout.findViewById(R.id.page2_checkBox3);
-		checkbox4=(BasicTextView)layout.findViewById(R.id.page2_checkBox4);
-		checkbox5=(BasicTextView)layout.findViewById(R.id.page2_checkBox5);
+		textView = (TextView) layout.findViewById(R.id.page1_tvEnd);
+		checkbox1=(BasicTextView)layout.findViewById(R.id.page2_tvUsername);
+		checkbox2=(BasicTextView)layout.findViewById(R.id.page2_tvRememberpw);
+		checkbox3=(BasicTextView)layout.findViewById(R.id.page2_tvLogin);
+		checkbox4=(BasicTextView)layout.findViewById(R.id.page2_tvFogetpw);
+		checkbox5=(BasicTextView)layout.findViewById(R.id.page2_tvKeyboard);
 	
-		Button button = (Button) layout.findViewById(R.id.page2_registbtn);
+		Button button = (Button) layout.findViewById(R.id.page2_btnRegist);
 		checkbox1.setOnClickListener(this);
 		checkbox2.setOnClickListener(this);
 		checkbox3.setOnClickListener(this);
@@ -45,14 +45,14 @@ public class Page1Fragment extends Fragment implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.page1_endtv:
+		case R.id.page1_tvEnd:
 			textView.setVisibility(View.GONE);
 			break;
-		case R.id.page2_registbtn:
+		case R.id.page2_btnRegist:
 			MainActivity activity = (MainActivity) getActivity();
 			activity.showNext(new Page4Fragment(), R.id.mainlayout);
 			break;
-		case R.id.page2_checkBox1:
+		case R.id.page2_tvUsername:
 			if(checkbox1.isclick()){
 				checkbox1.setIsclick(false);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
@@ -66,7 +66,7 @@ public class Page1Fragment extends Fragment implements OnClickListener {
 				checkbox1.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-		case R.id.page2_checkBox2:
+		case R.id.page2_tvRememberpw:
 			if(checkbox2.isclick()){
 				checkbox2.setIsclick(false);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
@@ -80,7 +80,7 @@ public class Page1Fragment extends Fragment implements OnClickListener {
 				checkbox2.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-		case R.id.page2_checkBox3:
+		case R.id.page2_tvLogin:
 			if(checkbox3.isclick()){
 				checkbox3.setIsclick(false);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
@@ -94,7 +94,7 @@ public class Page1Fragment extends Fragment implements OnClickListener {
 				checkbox3.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-		case R.id.page2_checkBox4:
+		case R.id.page2_tvFogetpw:
 			if(checkbox4.isclick()){
 				checkbox4.setIsclick(false);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
@@ -108,7 +108,7 @@ public class Page1Fragment extends Fragment implements OnClickListener {
 				checkbox4.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-		case R.id.page2_checkBox5:
+		case R.id.page2_tvKeyboard:
 			if(checkbox5.isclick()){
 				checkbox5.setIsclick(false);
 				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);

@@ -3,220 +3,226 @@
     xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-<com.time.master.view.BasicViewGroup 
-    android:id="@+id/main_date_one" 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
     
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_clothes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#9765ff"
-        android:gravity="center"
-        android:text="衣"
-        layout:new_line="true"
-        layout:width_multi="1" />
     
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_food"
+  
+    <com.time.master.view.BasicViewGroup
+        android:id="@+id/main_baseviewgroup1" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      	>
+        
+    <!-- this is frist line -->
+    <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#fd9b38"
-        android:gravity="center"
-        android:text="食"
-        layout:new_line="false"
-        layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_live"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#25e5e8"
-        android:gravity="center"
-        android:text="住"
-        layout:new_line="false"
-        layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_move"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#90d257"
+        android:background="#2CE2E5"
         android:gravity="center"
         android:text="行"
-        layout:new_line="false"
-        layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_communication"
+        android:textColor="#48839F"
+        layout:new_line="true"
+        layout:width_multi="2" />
+      
+        
+    <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#ec5319"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="际"
+        android:text="休息"
+        android:textColor="#48839F"
         layout:new_line="false"
-        layout:width_multi="1" />
-    <!-- ////////////////////////////////////////////////////////////// -->
+        layout:width_multi="1" />     
+        
+     <com.time.master.view.BasicTextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#C2D7F2"
+        android:gravity="center"
+        android:text="入住"
+        android:textColor="#48839F"
+        layout:new_line="false"
+        layout:width_multi="1" />  
     
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_health"
+      <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#ff98ce"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="康"
+        android:text="睡觉"
+        android:textColor="#48839F"
+        layout:new_line="false"
+        layout:width_multi="1" />
+      
+  <!-- this is second line -->
+  
+   
+       <com.time.master.view.BasicTextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#C2D7F2"
+        android:gravity="center"
+        android:text="买房"
+        android:textColor="#48839F"
         layout:new_line="true"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_healthy"
+        
+        <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#ffff00"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="健"
+        android:text="租房"
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_entertainment"
+        
+        <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#ff71ff"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="娱"
+        android:text="订房"
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_study"
+         
+        <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#3a5feb"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="学"
+        android:text="打扫"
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_profession"
+        
+        <com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#a86c36"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="职"
+        android:text="环境"
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-    <!-- ////////////////////////////////////////////////////////////// -->
-    
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_others"
+        
+   <!-- this is third line -->
+   		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#d1bc45"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="其他"
+        android:text=""
+        android:textColor="#48839F"
         layout:new_line="true"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_hygiene"
+   		
+   		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#479afa"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="卫"
+        android:text="社区"
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_shopping"
+   
+   		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#38ba3e"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="购"
+        android:text="家政"
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_wealth"
+   		
+   		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#ff6482"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="财"
+        android:text="保姆"
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_family"
+   		
+   		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#7ee61d"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="家"
+        android:text="爱家"
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-    <!-- ////////////////////////////////////////////////////////////// -->
-    
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_plus"
+   		
+   	<!-- this is four line -->
+   	
+   		<com.time.master.view.BasicTextView
+   		android:id="@+id/walk_page_add" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
         android:gravity="center"
         android:text="+"
+        android:textColor="#48839F"
         layout:new_line="true"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_location_site"
+   		
+   		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#C2D7F2"
         android:gravity="center"
+        android:text=""
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_location_treasure"
+   		
+   		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#C2D7F2"
         android:gravity="center"
+        android:text=""
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_location_footprint"
+   		
+   		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#C2D7F2"
         android:gravity="center"
+        android:text=""
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-
-    <com.time.master.view.BasicTextView
-        android:id="@+id/main_tools"
+   		
+   		<com.time.master.view.BasicTextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#C2D7F2"
         android:gravity="center"
-        android:text="工具"
+        android:text=""
+        android:textColor="#48839F"
         layout:new_line="false"
         layout:width_multi="1" />
-    <!-- ////////////////////////////////////////////////////////////// -->
-    
+   
+    </com.time.master.view.BasicViewGroup>
 
-</com.time.master.view.BasicViewGroup>
-
- <TextView 
+        <TextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/main_baseviewgroup_one"
-        android:text="信息推送"
+        android:layout_below="@+id/main_baseviewgroup1"
+        android:background="#EAF2F4"
         android:gravity="center"
-        android:background="#eaf2f4"
+        android:text="广告推送"
         />
     
     

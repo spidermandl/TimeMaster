@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.time.master.view.BasicViewGroup
+        android:id="@+id/main_baseviewgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <!-- this is frist line -->
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E95517"
+            android:gravity="center"
+            android:text="无名类别"
+            android:textColor="#ffffff"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#96CD57"
+            android:gravity="center"
+            android:text="保存"
+            android:textColor="#ffffff"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="添加"
+            android:background="@drawable/setbar_backgroundp"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text="添加"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <!-- this is second line -->
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="true"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <!-- this is third line -->
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="true"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <!-- this is four line -->
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/add_page_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#48839F"
+            layout:new_line="true"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#48839F"
+            layout:new_line="false"
+            layout:width_multi="1" />
+    </com.time.master.view.BasicViewGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:layout_below="@+id/main_baseviewgroup"
+        android:text="广告推送" />
+
+</RelativeLayout>
