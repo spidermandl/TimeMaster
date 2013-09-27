@@ -15,7 +15,11 @@ public class FitnessFragment extends Fragment implements OnClickListener{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		View layout = inflater.inflate(R.layout.mainpage_fitness, container, false);//资源文件
+=======
+		View layout = inflater.inflate(R.layout.date_mainpage_fitness, container, false);
+>>>>>>> 5d4d9b629b1dd36350370353ab016f668dcd9c16
 		BasicTextView add=(BasicTextView) layout.findViewById(R.id.fitness_page_add);
 		add.setOnClickListener(this);
 		return layout;

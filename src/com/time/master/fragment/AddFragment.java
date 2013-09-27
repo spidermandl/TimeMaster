@@ -15,7 +15,7 @@ public class AddFragment extends Fragment implements OnClickListener{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View layout = inflater.inflate(R.layout.mainpage_add, container, false);
+		View layout = inflater.inflate(R.layout.date_mainpage_add, container, false);
 		BasicTextView textView=(BasicTextView)layout.findViewById(R.id.add_page_add);
 		textView.setOnClickListener(this);
 		return layout;

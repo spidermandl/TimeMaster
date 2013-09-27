@@ -161,7 +161,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="+"
+            android:text=""
             android:textColor="#48839F"
             layout:new_line="true"
             layout:width_multi="1" />

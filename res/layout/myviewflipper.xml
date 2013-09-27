@@ -10,31 +10,31 @@
         android:layout_weight="1">
          <include 
               android:id="@+id/page1"
-              layout="@layout/page1"
+              layout="@layout/page_information_push"
               />
          <include 
               android:id="@+id/page3"
-              layout="@layout/page3"
+              layout="@layout/page_password_find"
               />
          <include 
               android:id="@+id/page4"
-              layout="@layout/page4"
+              layout="@layout/page_system_protocol"
               />
          <include 
               android:id="@+id/page5"
-              layout="@layout/page5"
+              layout="@layout/page_register_information"
               />
          <include 
               android:id="@+id/page6"
-              layout="@layout/page6"
+              layout="@layout/page_password_set"
               />
          <include 
               android:id="@+id/page7"
-              layout="@layout/page7"
+              layout="@layout/page_personal_information"
               />
          <include 
               android:id="@+id/page8"
-              layout="@layout/page8"
+              layout="@layout/page_family_information"
               /> 
       </ViewFlipper>
 	

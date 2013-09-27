@@ -15,7 +15,7 @@ public class WalkFragment extends Fragment implements OnClickListener{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View layout = inflater.inflate(R.layout.mainpage_walk, container, false);
+		View layout = inflater.inflate(R.layout.date_mainpage_walk, container, false);
 		BasicTextView textView = (BasicTextView)layout.findViewById(R.id.walk_page_add);
 		textView.setOnClickListener(this);
 		return layout;

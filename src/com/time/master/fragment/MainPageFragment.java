@@ -18,7 +18,7 @@ public class MainPageFragment extends Fragment implements OnClickListener{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View layout = inflater.inflate(R.layout.main_page, container, false);
+		View layout = inflater.inflate(R.layout.date_main_page, container, false);
 		BasicTextView add=(BasicTextView)layout.findViewById(R.id.main_page_add);
 		BasicTextView fitness=(BasicTextView)layout.findViewById(R.id.main_page_fitness);
 		BasicTextView walk=(BasicTextView)layout.findViewById(R.id.main_page_walk);
