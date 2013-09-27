@@ -10,11 +10,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
+/**
+ * 完善个人信息界面
+ * 
+ * @author Desmond
+ * 
+ */
 public class PersonalInformation extends Fragment implements OnClickListener{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+		//设置按钮监听事件
 		View layout = inflater.inflate(R.layout.page_personal_information,container,false);
 		View next=layout.findViewById(R.id.personal_btnEnd);
 		next.setOnClickListener(this);
@@ -23,7 +29,7 @@ public class PersonalInformation extends Fragment implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		//按钮点击事件
 		switch (v.getId()) {
 		case R.id.personal_btnEnd:
 			MainActivity activity=(MainActivity)getActivity();

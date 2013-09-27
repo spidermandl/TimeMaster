@@ -34,9 +34,9 @@
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
             android:text="添加"
-            android:background="@drawable/setbar_backgroundp"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -213,8 +213,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:gravity="center"
         android:layout_below="@+id/main_baseviewgroup"
+        android:gravity="center"
         android:text="广告推送" />
 
 </RelativeLayout>

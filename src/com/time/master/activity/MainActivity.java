@@ -1,7 +1,7 @@
 package com.time.master.activity;
 
 import com.time.master.R;
-import com.time.master.fragment.login.InformationPush;
+import com.time.master.fragment.login.SystemPrompt;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -29,7 +29,7 @@ public class MainActivity extends FrameActivity implements OnClickListener {
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager
 				.beginTransaction();
-		InformationPush pageFragment = new InformationPush();
+		SystemPrompt pageFragment = new SystemPrompt();
 		fragmentTransaction.add(R.id.mainlayout, pageFragment);
 		fragmentTransaction.commit();
 	}
