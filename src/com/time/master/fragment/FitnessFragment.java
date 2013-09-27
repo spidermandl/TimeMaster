@@ -16,6 +16,7 @@ public class FitnessFragment extends Fragment implements OnClickListener{
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View layout = inflater.inflate(R.layout.date_mainpage_fitness, container, false);
+
 		BasicTextView add=(BasicTextView) layout.findViewById(R.id.fitness_page_add);
 		add.setOnClickListener(this);
 		return layout;
