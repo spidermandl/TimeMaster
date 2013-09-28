@@ -72,17 +72,4 @@ public class MainActivity extends FrameActivity implements OnClickListener {
 		// TODO Auto-generated method stub
 
 	}
-
-	public void showNext(Fragment fragment, int ID) {
-		FragmentManager fragmentManager = this.getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager
-				.beginTransaction();
-		fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
-				android.R.anim.fade_out);
-		fragmentTransaction.replace(ID, fragment);
-		fragmentTransaction.addToBackStack(null);
-		fragmentTransaction
-				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-		fragmentTransaction.commit();
-	}
 }

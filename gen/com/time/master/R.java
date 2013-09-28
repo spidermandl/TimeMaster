@@ -451,6 +451,10 @@ containing a value of this type.
         public static final int app_name=0x7f070000;
         public static final int cancel=0x7f07003e;
         public static final int date=0x7f070007;
+        public static final int date_layout_plan_model_1=0x7f070092;
+        public static final int date_layout_plan_model_2=0x7f070094;
+        public static final int date_plan_time_period_1=0x7f070093;
+        public static final int date_plan_time_period_2=0x7f070095;
         public static final int generation=0x7f070003;
         public static final int hello_world=0x7f070001;
         public static final int list=0x7f070008;

@@ -7,37 +7,56 @@ import com.time.master.dialog.TimeDialogFragment;
 import com.time.master.dialog.WheelDialogFragment;
 import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.BasicEditText;
+import com.time.master.view.BasicTextView;
+import android.R.color;
+import android.R.string;
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Html;
 import android.text.InputType;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.widget.TextView;
+
 /**
  * "日"面板
+ * 
  * @author duanlei
- *
+ * 
  */
-public class DateFragment extends Fragment implements OnTouchListener {
+@SuppressLint("ResourceAsColor")
+public class DateFragment extends Fragment implements OnTouchListener,
+		OnClickListener {
 
 	WheelDialogFragment dateFragment, locationFragment, humanFragment;
-	BasicEditText dateSelector,locationSelector,humanSelector;
-	
+	BasicEditText dateSelector, locationSelector, humanSelector;
+	BasicTextView tvdate, tvduration;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
 		View layout = inflater.inflate(R.layout.date_layout, container, false);
 
-		dateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_start);
+		dateSelector = (BasicEditText) layout
+				.findViewById(R.id.plan_time_start);
 		dateSelector.setInputType(InputType.TYPE_NULL);
 		dateSelector.setOnTouchListener(this);
 
-		locationSelector = (BasicEditText) layout.findViewById(R.id.plan_location);
+		locationSelector = (BasicEditText) layout
+				.findViewById(R.id.plan_location);
 		locationSelector.setInputType(InputType.TYPE_NULL);
 		locationSelector.setOnTouchListener(this);
 
@@ -45,7 +64,32 @@ public class DateFragment extends Fragment implements OnTouchListener {
 		humanSelector.setInputType(InputType.TYPE_NULL);
 		humanSelector.setOnTouchListener(this);
 
+		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
+		tvdate.setOnClickListener(this);
+		//tvdate.setBackgroundColor(R.color.dateforcolor);
+		String dateString = (String) getText(R.string.date_layout_plan_model_1);
+		SpannableStringBuilder datestyle = new SpannableStringBuilder(
+				dateString);
+		datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
+				Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+		datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
+				Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+		tvdate.setText(datestyle);
+
+		tvduration = (BasicTextView) layout.findViewById(R.id.plan_time_period);
+		tvduration.setOnClickListener(this);
+		//tvduration.setBackgroundColor(R.color.dateforcolor);
+		String durationString = (String) getText(R.string.date_plan_time_period_1);
+		SpannableStringBuilder durationstyle = new SpannableStringBuilder(
+				durationString);
+		durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
+				3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+		durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
+				5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+		tvduration.setText(durationstyle);
+ 
 		return layout;
+
 	}
 
 	void showDialog(DialogFragment dialogFragment) {
@@ -69,11 +113,11 @@ public class DateFragment extends Fragment implements OnTouchListener {
 		if (event.getAction() == MotionEvent.ACTION_UP) {
 			switch (v.getId()) {
 			case R.id.plan_time_start:
-				if (dateFragment == null){
+				if (dateFragment == null) {
 					dateFragment = new TimeDialogFragment();
-					/**设定获取滚轮内容接口*/
+					/** 设定获取滚轮内容接口 */
 					dateFragment.setWheelInterface(new WheelResultInterface() {
-						
+
 						@Override
 						public void getResult(String result) {
 							dateSelector.setText(result);
@@ -83,25 +127,26 @@ public class DateFragment extends Fragment implements OnTouchListener {
 				showDialog(dateFragment);
 				break;
 			case R.id.plan_location:
-				if (locationFragment == null){
+				if (locationFragment == null) {
 					locationFragment = new LocationDialogFragment();
-					/**设定获取滚轮内容接口*/
-					locationFragment.setWheelInterface(new WheelResultInterface() {
-						
-						@Override
-						public void getResult(String result) {
-							locationSelector.setText(result);
-						}
-					});
+					/** 设定获取滚轮内容接口 */
+					locationFragment
+							.setWheelInterface(new WheelResultInterface() {
+
+								@Override
+								public void getResult(String result) {
+									locationSelector.setText(result);
+								}
+							});
 				}
 				showDialog(locationFragment);
 				break;
 			case R.id.plan_human:
-				if (humanFragment == null){
+				if (humanFragment == null) {
 					humanFragment = new HumanDialogFragment();
-					/**设定获取滚轮内容接口*/
+					/** 设定获取滚轮内容接口 */
 					humanFragment.setWheelInterface(new WheelResultInterface() {
-						
+
 						@Override
 						public void getResult(String result) {
 							humanSelector.setText(result);
@@ -117,4 +162,66 @@ public class DateFragment extends Fragment implements OnTouchListener {
 		return false;
 	}
 
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.plan_model:
+			if (tvdate.isclick()) {
+				tvdate.setIsclick(false);
+				String dateString = (String) getText(R.string.date_layout_plan_model_1);
+				SpannableStringBuilder datestyle = new SpannableStringBuilder(
+						dateString);
+				datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
+						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
+						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				tvdate.setText(datestyle);
+				//tvdate.setBackgroundColor(R.color.calendar_background);
+				
+				
+
+			} else {
+				tvdate.setIsclick(true);
+				String dateString = (String) getText(R.string.date_layout_plan_model_2);
+				SpannableStringBuilder datestyle = new SpannableStringBuilder(
+						dateString);
+				datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
+						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
+						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				tvdate.setText(datestyle);
+				//tvdate.setBackgroundColor(R.color.dateforcolor);
+			}
+
+			break;
+		case R.id.plan_time_period:
+			if (tvduration.isclick()) {
+				tvduration.setIsclick(false);
+				String durationString = (String) getText(R.string.date_plan_time_period_1);
+				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
+						durationString);
+				durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
+						3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
+						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				tvduration.setText(durationstyle);
+				//tvduration.setBackgroundColor(R.color.datebackcolor);
+			} else {
+				tvduration.setIsclick(true);
+				String durationString = (String) getText(R.string.date_plan_time_period_2);
+				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
+						durationString);
+				durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
+						3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
+						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				tvduration.setText(durationstyle);
+				//tvduration.setBackgroundColor(R.color.dateforcolor);
+			}
+			break;
+		default:
+			break;
+		}
+
+	}
 }
