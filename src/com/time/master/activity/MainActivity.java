@@ -1,29 +1,18 @@
 package com.time.master.activity;
 
 import com.time.master.R;
-import com.time.master.fragment.Page1Fragment;
+import com.time.master.fragment.login.SystemPrompt;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.DisplayMetrics;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
-import android.widget.PopupWindow;
-import android.widget.TabHost;
-import android.widget.TabWidget;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
-import android.app.Activity;
-
-import android.content.Context;
-import android.content.Intent;
 
 public class MainActivity extends FrameActivity implements OnClickListener {
 
@@ -40,7 +29,7 @@ public class MainActivity extends FrameActivity implements OnClickListener {
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager
 				.beginTransaction();
-		Page1Fragment pageFragment = new Page1Fragment();
+		SystemPrompt pageFragment = new SystemPrompt();
 		fragmentTransaction.add(R.id.mainlayout, pageFragment);
 		fragmentTransaction.commit();
 	}

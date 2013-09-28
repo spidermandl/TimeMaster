@@ -8,19 +8,15 @@ import com.time.master.dialog.WheelDialogFragment;
 import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.BasicEditText;
 import com.time.master.view.BasicTextView;
-import android.R.color;
-import android.R.string;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.text.Html;
 import android.text.InputType;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
-import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -28,7 +24,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.widget.TextView;
 
 /**
  * "»’"√Ê∞Â

@@ -32,7 +32,8 @@ public class PinYinUtility {
         return matcher.find();    
     }    
     //使用PinYin4j.jar将汉字转换为拼音  
-    public static String chineneToSpell(String chineseStr){  
+    @SuppressWarnings("deprecation")
+	public static String chineneToSpell(String chineseStr){  
         try {
 			return PinyinHelper.toHanyuPinyinString(chineseStr , new HanyuPinyinOutputFormat() ,"");
 		} catch (BadHanyuPinyinOutputFormatCombination e) {

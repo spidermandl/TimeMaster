@@ -1,4 +1,5 @@
-package com.time.master.fragment;
+package com.time.master.fragment.login;
+
 import com.time.master.R;
 import com.time.master.activity.MainActivity;
 
@@ -8,29 +9,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 
-public class Page7Fragment extends Fragment implements OnClickListener{
+/**
+ * 完善个人信息界面
+ * 
+ * @author Desmond
+ * 
+ */
+public class PersonalInformation extends Fragment implements OnClickListener{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		View layout = inflater.inflate(R.layout.page7,container,false);
-		View next=layout.findViewById(R.id.page7_btnEnd);
+		//设置按钮监听事件
+		View layout = inflater.inflate(R.layout.page_personal_information,container,false);
+		View next=layout.findViewById(R.id.personal_btnEnd);
 		next.setOnClickListener(this);
 		return layout;
 	}
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		//按钮点击事件
 		switch (v.getId()) {
-		case R.id.page7_btnEnd:
+		case R.id.personal_btnEnd:
 			MainActivity activity=(MainActivity)getActivity();
-			activity.showNext(new Page8Fragment(),R.id.mainlayout);
+			activity.showNext(new FamilyInformation(),R.id.mainlayout);
 			break;
 		}
 	}

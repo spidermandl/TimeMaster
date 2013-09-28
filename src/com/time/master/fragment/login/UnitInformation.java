@@ -1,37 +1,43 @@
-package com.time.master.fragment;
+package com.time.master.fragment.login;
+
 import com.time.master.R;
+import com.time.master.activity.FrameActivity;
 import com.time.master.activity.MainActivity;
 import com.time.master.view.BasicTextView;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 
-public class Page8Fragment extends Fragment implements OnClickListener{
+/**
+ * 完善单位信息界面
+ * 
+ * @author Desmond
+ * 
+ */
+public class UnitInformation extends Fragment implements OnClickListener{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		View layout = inflater.inflate(R.layout.page8,container,false);
-		BasicTextView button=(BasicTextView)layout.findViewById(R.id.page8_btnEnd);
+		// 设置按钮监听
+		View layout = inflater.inflate(R.layout.page_unit_information,container,false);
+		BasicTextView button=(BasicTextView)layout.findViewById(R.id.unit_btnEnd);
 		button.setOnClickListener(this);
 		return layout;
 	}
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		// 按钮点击事件
 		switch (v.getId()) {
-		case R.id.page8_btnEnd:
+		case R.id.unit_btnEnd:
 			MainActivity activity=(MainActivity)getActivity();
-			activity.showNext(new Page9Fragment(),R.id.mainlayout);
+			Intent intent=new Intent();
+			intent.setClass(activity, FrameActivity.class);
+			startActivity(intent);
 			break;
 		}
 	}
