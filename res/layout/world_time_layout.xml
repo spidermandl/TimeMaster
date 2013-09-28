@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">"
+	<com.time.master.view.BasicViewGroup 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/worldtime"
+	    >
+	    
+	    
+	    <com.time.master.view.BasicTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:id="@+id/solarandlunarcalendar"
+        android:text="阴历\n阳历"
+        android:textColor="#000000"
+        android:background="#FFFFFF"
+       	/>
+	    <com.time.master.view.BasicTextView 
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:id="@+id/idlerwheel"
+        android:text="滚轮\n区"
+        android:textColor="#000000"
+        android:background="#FFFF00"   
+	    />
+	    <com.time.master.view.BasicTextView 
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:id="@+id/idlerwheel"
+        android:text="滚轮\n区"
+        android:textColor="#000000"
+        android:background="#FFFF00"   
+	    />
+	    <com.time.master.view.BasicTextView 
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:id="@+id/arrow"
+        android:background="@drawable/arrow"/>
+	    <com.time.master.view.BasicTextView 
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:id="@+id/conversion"
+        android:text="换算\n区"
+        android:textColor="#000000"
+        android:background="#FFFF00"   
+	    />
+	    <com.time.master.view.BasicTextView 
+	    android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:id="@+id/confirm"
+        android:text="确认"
+        android:textColor="#000000"
+        android:background="#FF0000"   
+	    />
+	    
+	    
+	    
+	</com.time.master.view.BasicViewGroup>
+    
+
+</RelativeLayout>

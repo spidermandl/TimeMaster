@@ -4,7 +4,6 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/tvhead"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="#319EDE"
@@ -23,7 +22,6 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/tvFind"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#F0F0F0"
@@ -45,7 +43,6 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/tvQuestion"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
@@ -66,7 +63,7 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/etQuestion"
+            android:id="@+id/page3_tvQuestion"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -89,7 +86,7 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/etAnwser"
+            android:id="@+id/page3_tvAnwser"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -107,7 +104,6 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/tvMethod"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -136,22 +132,32 @@
             android:layout_weight="1"
             android:orientation="vertical" >
 
-            <CheckBox
-                android:id="@+id/ckPhone"
+            <TextView
+                android:id="@+id/page3_tvPhone"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="#E7E7E7"
-                android:gravity="fill_vertical"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+       			android:clickable="true"
+       			android:drawableLeft="@drawable/checkbox"
                 android:textSize="@dimen/pagecomponent_text_size"
                 android:text="@string/page3_cb1" />
 
-            <CheckBox
-                android:id="@+id/ckEmail"
+            <TextView
+                android:id="@+id/page3_tvEmail"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="#E7E7E7"
-                android:gravity="fill_vertical"
+                android:gravity="center_vertical"
+       			android:clickable="true"
+       			android:padding="5dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+       			android:drawableLeft="@drawable/checkbox"
                 android:textSize="@dimen/pagecomponent_text_size"
                 android:text="@string/page3_cb2" />
         </LinearLayout>
@@ -174,7 +180,7 @@
         android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/tvView"
+            android:id="@+id/page3_tvView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -198,7 +204,7 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/btAffirm"
+            android:id="@+id/page3_btnAffirm"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

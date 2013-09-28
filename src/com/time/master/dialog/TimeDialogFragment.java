@@ -2,20 +2,15 @@ package com.time.master.dialog;
 
 import java.util.Calendar;
 
-import com.time.master.R;
-import com.time.master.interfacer.WheelResultInterface;
-import com.time.master.wheel.adapters.NumericWheelAdapter;
-import com.time.master.wheel.widget.OnWheelClickedListener;
-import com.time.master.wheel.widget.OnWheelScrollListener;
-import com.time.master.wheel.widget.UIWheelView;
-import com.time.master.wheel.widget.WheelView;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.text.InputType;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
@@ -23,14 +18,23 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.time.master.R;
+import com.time.master.fragment.NewIssueFragment;
+import com.time.master.wheel.adapters.NumericWheelAdapter;
+import com.time.master.wheel.widget.OnWheelClickedListener;
+import com.time.master.wheel.widget.OnWheelScrollListener;
+import com.time.master.wheel.widget.UIWheelView;
+import com.time.master.wheel.widget.WheelView;
+
 /**
  * Ê±¼äÑ¡ÔñÆ÷
  * @author duanlei
  *
  */
-public class TimeDialogFragment extends WheelDialogFragment {
+public class TimeDialogFragment extends WheelDialogFragment implements OnClickListener{
 	
 	public static final String TAG="TimeDialogFragment";
+	WorldTimeDialogFragment worldtime=new WorldTimeDialogFragment();
 	
 	
 	@Override
@@ -67,6 +71,8 @@ public class TimeDialogFragment extends WheelDialogFragment {
 
         editText=(EditText)layout.findViewById(R.id.edit_date);
         confirm =(TextView)layout.findViewById(R.id.time_confirm);
+        mode=(TextView)layout.findViewById(R.id.time_type);
+        mode.setOnClickListener(this);
         
 		year = (UIWheelView) layout.findViewById(R.id.year);
         yearAdapter = new NumericWheelAdapter(this.getActivity(), model.year-5000, model.year+5000);
@@ -239,5 +245,35 @@ public class TimeDialogFragment extends WheelDialogFragment {
 	protected String getSelectedString() {
 		return getDateString();
 	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.time_type:
+			this.dismiss();
+			showDialog(worldtime);
+			
+			break;
+
+		default:
+			break;
+		}
+	}
+    void showDialog(DialogFragment dialogFragment) {  
+    	
+        // DialogFragment.show() will take care of adding the fragment  
+        // in a transaction.  We also want to remove any currently showing  
+        // dialog, so make our own transaction and take care of that here.  
+        FragmentTransaction ft = getFragmentManager().beginTransaction();  
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");  
+        if (prev != null) {  
+            ft.remove(prev);  
+        }  
+        ft.addToBackStack(null);  
+  
+        // Create and show the dialog. 
+        dialogFragment.show(ft, "dialog");  
+    }
 
 }

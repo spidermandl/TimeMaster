@@ -1,306 +1,227 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".Eight" >
-
-    <TextView
-        android:id="@+id/title8"
-        android:layout_width="fill_parent"
+		<TextView
+        android:id="@+id/title9"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#319ede"
+        android:background="#319EDE"
         android:gravity="center"
-        android:textColor="#ffffff"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:text="@string/page_title"
-        android:textSize="@dimen/pagetitle_text_size"  />
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/pagetitle_text_size"/>
+    <com.time.master.view.BasicViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title9"
+        android:id="@+id/unit_info_up" >
+        
+        
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="9dp"
-        android:layout_weight="1.2"
-        android:background="#add7e7"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+        <com.time.master.view.BasicTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ADD7E7"
             android:gravity="center"
-            android:textColor="#48839F"
             android:text="@string/page9_title"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#48839F"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-    </LinearLayout>
+            layout:new_line="true"
+            layout:width_multi="5" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2"            
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:id="@+id/page9_tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page9_name"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/uname"
-            android:layout_width="0dip"
-            android:layout_weight="3" 
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/page9_etName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2" 
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:id="@+id/page9_tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page9_address"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/iaddr"
-            android:layout_width="0dip"
-            android:layout_weight="3" 
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/page9_etAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2" 
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:id="@+id/page9_tvQuale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page9_quale"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/uch"
-            android:layout_width="0dip"
-            android:layout_weight="3" 
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/page9_etQuale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2" 
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:id="@+id/page9_tvIdcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page9_idcode"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/lico"
-            android:layout_width="0dip"
-            android:layout_weight="3" 
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/page9_etIdcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2" 
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:id="@+id/page9_tvIdnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page9_idnumber"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/taxreco"
-            android:layout_width="0dip"
-            android:layout_weight="3" 
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/page9_etIdnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2" 
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:id="@+id/page9_tvGoods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page9_goods"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/sellpro"
-            android:layout_width="0dip"
-            android:layout_weight="3" 
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/page9_etGoods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2" 
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:id="@+id/page9_tvClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page9_class"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/deoffi"
-            android:layout_width="0dip"
-            android:layout_weight="3" 
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText 
+            android:id="@+id/page9_etClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
 
-    <LinearLayout
-         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_weight="2" 
-            android:layout_height="fill_parent"
+        <com.time.master.view.BasicTextView
+            android:id="@+id/page9_tvRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
             android:text="@string/page9_role"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            layout:new_line="true"
+            layout:width_multi="2" />
 
-        <TextView
-            android:id="@+id/jorole"
-            android:layout_width="0dip"
-            android:layout_weight="3" 
-            android:layout_height="fill_parent"
-            android:layout_marginLeft="10dp"
+        <com.time.master.view.BasicEditText
+            android:id="@+id/page9_etRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="1.2"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/page9_btnend"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+         </com.time.master.view.BasicViewGroup>
+         <com.time.master.view.BasicViewGroup
+            android:layout_width="match_parent"
+       		android:layout_height="wrap_content"
+        	android:layout_alignParentBottom="true">
+    
+       <com.time.master.view.BasicTextView
+            android:id="@+id/page9_btnEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ADD7E7"
             android:gravity="center"
-            android:layout_marginBottom="5dp"
-            android:textColor="#48839F"
-            android:background="#add7e7"
             android:text="@string/page9_end"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#48839F"
             android:textSize="@dimen/pagecomponent_text_size"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-    </LinearLayout>
+            layout:new_line="true"
+            layout:width_multi="5"
+            layout:bottom="true" />
+    </com.time.master.view.BasicViewGroup>
 
-</LinearLayout>
+</RelativeLayout>
