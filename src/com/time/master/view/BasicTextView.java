@@ -12,7 +12,7 @@ import android.widget.Chronometer;
 import android.widget.TextView;
 
 public class BasicTextView extends TextView implements LayoutStyleableInterface{
-
+    
 	int multi_width;
 	boolean isNewLine;
 	boolean isFull;
@@ -59,6 +59,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	public boolean isNewLine() {
 		return isNewLine;
 	}
+
 	@Override
 	public boolean isFull(){
 		return isFull;
@@ -83,4 +84,9 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	public void setIsclick(boolean isclick) {
 		this.isclick = isclick;
 	}
+
+	
+	
+	
+
 }
