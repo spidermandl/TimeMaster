@@ -1,5 +1,9 @@
 package com.time.master.dialog;
-
+/**
+ * 世界时间界面
+ * @author ZhouYongJian
+ *
+ */
 import com.time.master.R;
 
 import android.annotation.SuppressLint;
