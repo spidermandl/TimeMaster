@@ -5,6 +5,7 @@ import com.time.master.activity.FrameActivity;
 import com.time.master.view.BasicTextView;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,16 +25,15 @@ public class FitnessFragment extends Fragment implements OnClickListener{
 	}
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.fitness_page_add:
 			FrameActivity activity=(FrameActivity)getActivity();
-			activity.showNext(new DateFragment(), R.id.date_fragment);
+			activity.showNext(new DateFragment(),R.id.date_fragment);
 			break;
 
 		default:
 			break;
 		}
-	}
+	     }
 
 }
