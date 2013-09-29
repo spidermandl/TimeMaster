@@ -45,7 +45,7 @@ import com.time.master.wheel.widget.WheelView;
 public class TimeDialogFragment extends WheelDialogFragment implements OnClickListener{
 	
 	public static final String TAG="TimeDialogFragment";
-	WorldTimeDialogFragment worldtime=new WorldTimeDialogFragment();
+	//WorldTimeDialogFragment worldtime=new WorldTimeDialogFragment();
 	
 	
 	@Override
@@ -264,7 +264,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 		switch (v.getId()) {
 		case R.id.time_type:
 			this.dismiss();
-			showDialog(worldtime);
+			showDialog(new WorldTimeDialogFragment());
 			
 			break;
 

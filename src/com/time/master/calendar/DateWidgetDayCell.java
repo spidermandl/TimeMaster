@@ -2,8 +2,6 @@ package com.time.master.calendar;
 
 import java.util.Calendar;
 
-import com.time.master.tool.Constant;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
@@ -14,8 +12,11 @@ import android.graphics.Shader;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
 import android.widget.LinearLayout.LayoutParams;
+
+import com.time.master.tool.Constant;
 /*×¢ÊÍÕß
  * Ð»¶¬
 */
@@ -132,7 +133,7 @@ public class DateWidgetDayCell extends View {
 			canvas.drawRect(rect, pt);
 		}
 
-		if (hasRecord) {
+		if (!hasRecord) {
 			CreateReminder(canvas, Constant.special_Reminder);
 		}
 		// else if (!hasRecord && !bToday && !bSelected) {
@@ -255,4 +256,6 @@ public class DateWidgetDayCell extends View {
 		path.close();
 		canvas.drawPath(path, pt);
 	}
+
+
 }

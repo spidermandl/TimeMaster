@@ -34,7 +34,7 @@ public  class WorldTimeDialogFragment extends android.support.v4.app.DialogFragm
         window.setGravity(Gravity.BOTTOM);  //此处可以设置dialog显示的位置  
         window.setWindowAnimations(R.style.wheelAnimation);  //添加动画 
         WindowManager.LayoutParams para=(WindowManager.LayoutParams)window.getAttributes();
-        //para.height=LayoutParams.WRAP_CONTENT;
+        para.height=LayoutParams.WRAP_CONTENT;
         para.width=LayoutParams.MATCH_PARENT;
         window.setAttributes(para);
         window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
