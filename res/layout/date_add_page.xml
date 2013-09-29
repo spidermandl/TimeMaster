@@ -5,7 +5,7 @@
     android:layout_height="match_parent" >
 
     <com.time.master.view.BasicViewGroup
-        android:id="@+id/main_baseviewgroup"
+        android:id="@+id/date_add_page"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
@@ -14,30 +14,19 @@
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#9A65FA"
+            android:background="#E95517"
             android:gravity="center"
-            android:text="衣"
+            android:text="无名类别"
             android:textColor="#ffffff"
             layout:new_line="true"
-            layout:width_multi="1" />
+            layout:width_multi="2" />
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FD9A33"
+            android:background="#96CD57"
             android:gravity="center"
-            android:text="食"
-            android:textColor="#ffffff"
-            layout:new_line="false"
-            layout:width_multi="1" />
-
-        <com.time.master.view.BasicTextView
-            android:id="@+id/main_page_live"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#2ADEE4"
-            android:gravity="center"
-            android:text="住"
+            android:text="保存"
             android:textColor="#ffffff"
             layout:new_line="false"
             layout:width_multi="1" />
@@ -45,20 +34,18 @@
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#93D156"
             android:gravity="center"
-            android:text="行"
-            android:textColor="#ffffff"
+            android:text="添加"
+            android:background="@drawable/setbar_backgroundp"
             layout:new_line="false"
             layout:width_multi="1" />
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#EA5414"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="际"
-            android:textColor="#ffffff"
+            android:text="添加"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -67,50 +54,50 @@
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FD9BCB"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="康"
-            android:textColor="#ffffff"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="true"
             layout:width_multi="1" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/main_page_fitness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFFF01"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="健"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="false"
             layout:width_multi="1" />
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FE71FD"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="娱"
-            android:textColor="#ffffff"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="false"
             layout:width_multi="1" />
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#3763E9"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="学"
-            android:textColor="#ffffff"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="false"
             layout:width_multi="1" />
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#A56F30"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="职"
-            android:textColor="#ffffff"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -119,63 +106,63 @@
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#D5B833"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="其他"
-            android:textColor="#ffffff"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="true"
             layout:width_multi="1" />
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#469BF7"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="卫"
-            android:textColor="#ffffff"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="false"
             layout:width_multi="1" />
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#37B837"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="购"
-            android:textColor="#ffffff"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="false"
             layout:width_multi="1" />
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FF6377"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="财"
-            android:textColor="#ffffff"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="false"
             layout:width_multi="1" />
 
         <com.time.master.view.BasicTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#81E51D"
+            android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="家"
-            android:textColor="#ffffff"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="false"
             layout:width_multi="1" />
 
         <!-- this is four line -->
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/main_page_add"
+            android:id="@+id/add_page_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="+"
-            android:textColor="#000000"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="true"
             layout:width_multi="1" />
 
@@ -214,8 +201,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="工具"
-            android:textColor="#000000"
+            android:text=""
+            android:textColor="#48839F"
             layout:new_line="false"
             layout:width_multi="1" />
     </com.time.master.view.BasicViewGroup>
@@ -226,9 +213,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/main_baseviewgroup"
-        android:background="#EAF2F4"
         android:gravity="center"
+        android:layout_below="@+id/main_baseviewgroup"
         android:text="广告推送" />
 
 </RelativeLayout>

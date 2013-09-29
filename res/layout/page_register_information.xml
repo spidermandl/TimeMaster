@@ -3,210 +3,266 @@
     xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Nine" >
-    
-	<TextView
-        android:id="@+id/title8"
+    tools:context=".Eight" >
+
+    <TextView
+        android:id="@+id/register_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#319EDE"
-        android:gravity="center"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:background="#319EDE"
+        android:gravity="center"
         android:text="@string/page_title"
         android:textColor="#FFFFFF"
-        android:textSize="@dimen/pagetitle_text_size"/>
-	
+        android:textSize="@dimen/pagetitle_text_size" />
+
+    <TextView
+        android:id="@+id/pagetitlefive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/register_title"
+        android:background="#F0F0F0"
+        android:gravity="center"
+        android:text="@string/page5_title"
+        android:textColor="#000000"
+        android:textSize="@dimen/pagecomponent_text_size" />
+
+    <com.time.master.view.BasicViewGroup
+        android:id="@+id/basic_page5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pagetitlefive" >
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/register_tvIdcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:text="@string/page5_idcard"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/register_etIdcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:hint="@string/page5_hintid"
+            android:textColor="#E0DFDF"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="false"
+            layout:width_multi="3" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/register_tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:text="@string/page5_truename"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/register_etFamilyname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:hint="@string/page5_hintfirst"
+            android:textColor="#E0DFDF"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/register_etName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:hint="@string/page5_hintend"
+            android:textColor="#E0DFDF"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="false"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/register_tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:text="@string/page5_username"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/register_etUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/register_tvBirthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:text="@string/page5_birthday"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/register_etBirthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/register_tvBirthplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:text="@string/page5_nativeplace"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/register_etBirthplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/register_tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:text="@string/page5_email"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/register_etEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/register_tvTelnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:text="@string/page5_phone"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/register_etTelnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/register_tvHidnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:text="@string/page5_code"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/register_etHidnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/register_tvPhonecode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_background"
+            android:gravity="center"
+            android:text="@string/page5_getcode"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/register_etPhonecode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:gravity="center"
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+    </com.time.master.view.BasicViewGroup>
+
     <com.time.master.view.BasicViewGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title8"
-        android:id="@+id/family_info_up" >
-        
-        
+        android:layout_alignParentBottom="true" >
 
         <com.time.master.view.BasicTextView
+            android:id="@+id/register_btnEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#ADD7E7"
             android:gravity="center"
-            android:text="@string/page8_title"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="确认"
             android:textColor="#48839F"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
             layout:width_multi="5" />
-
-        <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#d7d7d7"
-            android:gravity="center"
-            android:text="@string/page8_id"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="@dimen/pagecomponent_text_size"
-            layout:new_line="true"
-            layout:width_multi="2" />
-
-        <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true"
-            layout:new_line="false"
-            layout:width_multi="3" />
-
-        <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvDadid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#d7d7d7"
-            android:gravity="center"
-            android:text="@string/page8_dadid"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="@dimen/pagecomponent_text_size"
-            layout:new_line="true"
-            layout:width_multi="2" />
-
-        <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etDadid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true"
-            layout:new_line="false"
-            layout:width_multi="3" />
-
-        <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvMomid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#d7d7d7"
-            android:gravity="center"
-            android:text="@string/page8_momid"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="@dimen/pagecomponent_text_size"
-            layout:new_line="true"
-            layout:width_multi="2" />
-
-        <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etMomid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true"
-            layout:new_line="false"
-            layout:width_multi="3" />
-
-        <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvRole"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#d7d7d7"
-            android:gravity="center"
-            android:text="@string/page8_familyrole"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="@dimen/pagecomponent_text_size"
-            layout:new_line="true"
-            layout:width_multi="2" />
-
-        <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etRole"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true"
-            layout:new_line="false"
-            layout:width_multi="3" />
-
-        <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvMarryid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#d7d7d7"
-            android:gravity="center"
-            android:text="@string/page8_marryid"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="@dimen/pagecomponent_text_size"
-            layout:new_line="true"
-            layout:width_multi="2" />
-
-        <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etMarryid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true"
-            layout:new_line="false"
-            layout:width_multi="3" />
-
-        <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvHusbandid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#d7d7d7"
-            android:gravity="center"
-            android:text="@string/page8_husband"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="@dimen/pagecomponent_text_size"
-            layout:new_line="true"
-            layout:width_multi="2" />
-
-        <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etHusbandid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true"
-            layout:new_line="false"
-            layout:width_multi="3" />
-
-        <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvWifeid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#d7d7d7"
-            android:gravity="center"
-            android:text="@string/page8_wife"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="@dimen/pagecomponent_text_size"
-            layout:new_line="true"
-            layout:width_multi="2" />
-
-        <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etWifeid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setbar_backgroundp"
-            android:textIsSelectable="true"
-            layout:new_line="false"
-            layout:width_multi="3" />
-	</com.time.master.view.BasicViewGroup>
-	
-    
-    
-        <com.time.master.view.BasicViewGroup
-            android:layout_width="match_parent"
-       		android:layout_height="wrap_content"
-        	android:layout_alignParentBottom="true"
-            
-            >
-       <com.time.master.view.BasicTextView
-            android:id="@+id/page8_btnEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#ADD7E7"
-            android:gravity="center"
-            android:text="@string/page8_end"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#48839F"
-            android:textSize="@dimen/pagecomponent_text_size"
-            layout:new_line="true"
-            layout:width_multi="5"
-            layout:bottom="true" />
     </com.time.master.view.BasicViewGroup>
 
 </RelativeLayout>

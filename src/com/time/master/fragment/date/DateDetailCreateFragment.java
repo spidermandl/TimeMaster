@@ -1,12 +1,14 @@
-package com.time.master.fragment;
+package com.time.master.fragment.date;
 
 import com.time.master.R;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
+import com.time.master.dialog.RepeatDialogFragment;
 import com.time.master.dialog.TimeDialogFragment;
 import com.time.master.dialog.WheelDialogFragment;
 import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.BasicEditText;
+import com.time.master.view.BasicTextView;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -18,10 +20,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
-
-public class DateDetailCreateFragment extends Fragment implements OnTouchListener{
+/**
+ * 日---新增选项界面
+ * @author Desmond
+ *
+ */
+public class DateDetailCreateFragment extends Fragment implements OnTouchListener,android.view.View.OnClickListener{
 	WheelDialogFragment dateFragment, locationFragment, humanFragment;
+	DialogFragment repeatFragment;
 	BasicEditText dateSelector,locationSelector,humanSelector;
+	BasicTextView dateRepeat;
+	
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,7 +49,9 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		humanSelector = (BasicEditText) layout.findViewById(R.id.plan_human);
 		humanSelector.setInputType(InputType.TYPE_NULL);
 		humanSelector.setOnTouchListener(this);
-
+		
+		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
+		dateRepeat.setOnClickListener(this);
 
 		return layout;
 	}
@@ -107,10 +118,26 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				}
 				showDialog(humanFragment);
 				break;
+			
 			default:
 				break;
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public void onClick(View view) {
+		// TODO Auto-generated method stub
+		switch (view.getId()) {
+		case R.id.plan_repeat:
+			repeatFragment=new RepeatDialogFragment();
+			repeatFragment.setShowsDialog(true);
+			showDialog(repeatFragment);
+			break;
+
+		default:
+			break;
+		}
 	}
 }
