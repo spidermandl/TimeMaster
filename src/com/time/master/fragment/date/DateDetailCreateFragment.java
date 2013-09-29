@@ -1,5 +1,7 @@
 package com.time.master.fragment.date;
 
+import java.util.HashMap;
+
 import com.time.master.R;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
@@ -10,11 +12,15 @@ import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.BasicEditText;
 import com.time.master.view.BasicTextView;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.text.InputType;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -30,7 +36,10 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 	DialogFragment repeatFragment;
 	BasicEditText dateSelector,locationSelector,humanSelector;
 	BasicTextView dateRepeat;
+	BasicTextView tvdate, //日期 /倒计 按钮
+	              tvduration;//占用/期间 按钮
 	
+	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,6 +62,31 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
 		dateRepeat.setOnClickListener(this);
 
+		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
+		tvdate.setOnClickListener(this);
+		viewStatus.put(tvdate.getId(), false);
+		//tvdate.setBackgroundColor(R.color.dateforcolor);
+		String dateString = (String) getText(R.string.date_layout_plan_model_1);
+		SpannableStringBuilder datestyle = new SpannableStringBuilder(
+				dateString);
+		datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
+				Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+		datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
+				Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+		tvdate.setText(datestyle);
+
+		tvduration = (BasicTextView) layout.findViewById(R.id.plan_time_period);
+		tvduration.setOnClickListener(this);
+		viewStatus.put(tvduration.getId(), false);
+		//tvduration.setBackgroundColor(R.color.dateforcolor);
+		String durationString = (String) getText(R.string.date_plan_time_period_1);
+		SpannableStringBuilder durationstyle = new SpannableStringBuilder(
+				durationString);
+		durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
+				3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+		durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
+				5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+		tvduration.setText(durationstyle);
 		return layout;
 	}
 
@@ -135,7 +169,60 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			repeatFragment.setShowsDialog(true);
 			showDialog(repeatFragment);
 			break;
+		case R.id.plan_model:
+			if (viewStatus.get(R.id.plan_model)) {
+				viewStatus.put(R.id.plan_model,false);
+				String dateString = (String) getText(R.string.date_layout_plan_model_1);
+				SpannableStringBuilder datestyle = new SpannableStringBuilder(
+						dateString);
+				datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
+						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
+						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				tvdate.setText(datestyle);
+				//tvdate.setBackgroundColor(R.color.calendar_background);
+				
+				
 
+			} else {
+				viewStatus.put(R.id.plan_model,true);
+				String dateString = (String) getText(R.string.date_layout_plan_model_2);
+				SpannableStringBuilder datestyle = new SpannableStringBuilder(
+						dateString);
+				datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
+						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
+						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				tvdate.setText(datestyle);
+				//tvdate.setBackgroundColor(R.color.dateforcolor);
+			}
+
+			break;
+		case R.id.plan_time_period:
+			if (viewStatus.get(R.id.plan_time_period)) {
+				viewStatus.put(R.id.plan_time_period,false);
+				String durationString = (String) getText(R.string.date_plan_time_period_1);
+				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
+						durationString);
+				durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
+						3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
+						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				tvduration.setText(durationstyle);
+				//tvduration.setBackgroundColor(R.color.datebackcolor);
+			} else {
+				viewStatus.put(R.id.plan_time_period,true);
+				String durationString = (String) getText(R.string.date_plan_time_period_2);
+				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
+						durationString);
+				durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
+						3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
+						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+				tvduration.setText(durationstyle);
+				//tvduration.setBackgroundColor(R.color.dateforcolor);
+			}
+			break;
 		default:
 			break;
 		}

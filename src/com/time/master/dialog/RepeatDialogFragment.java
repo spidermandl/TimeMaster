@@ -13,6 +13,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
+/**
+ * "重复"对话框界面
+ * @author bianyanling
+ *
+ */
 public class RepeatDialogFragment extends DialogFragment {
 
 	public static final String tag="RepeatDialogFragment";

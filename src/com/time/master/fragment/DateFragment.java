@@ -4,7 +4,6 @@ import com.time.master.R;
 import com.time.master.activity.FrameActivity;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
-import com.time.master.dialog.RepeatDialogFragment;
 import com.time.master.dialog.TimeDialogFragment;
 import com.time.master.dialog.WheelDialogFragment;
 import com.time.master.fragment.date.DateAddFragment;
@@ -17,21 +16,28 @@ import com.time.master.view.BasicViewGroup;
 
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.text.InputType;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
 import android.webkit.WebView.FindListener;
+
 /**
  * "»’"√Ê∞Â
+ * 
  * @author duanlei
- *
+ * 
  */
 public class DateFragment extends Fragment implements android.view.View.OnClickListener {
 
@@ -49,8 +55,8 @@ public class DateFragment extends Fragment implements android.view.View.OnClickL
 		add.setOnClickListener(this);
 		fitness.setOnClickListener(this);
 		walk.setOnClickListener(this);
-		
 		return layout;
+
 	}
 
 	@Override
@@ -75,6 +81,6 @@ public class DateFragment extends Fragment implements android.view.View.OnClickL
 
 			break;
 		}
-	}
 
+	}
 }

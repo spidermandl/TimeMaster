@@ -10,7 +10,7 @@
         android:layout_weight="1">
          <include 
               android:id="@+id/page1"
-              layout="@layout/page_information_push"
+              layout="@layout/page_system_prompt"
               />
          <include 
               android:id="@+id/page3"

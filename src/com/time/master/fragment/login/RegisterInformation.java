@@ -10,11 +10,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 
+/**
+ * 注册信息界面
+ * 
+ * @author Desmond
+ * 
+ */
 public class RegisterInformation extends Fragment implements OnClickListener{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+		// 设置按钮监听事件
 		View layout = inflater.inflate(R.layout.page_register_information,container,false);
 		BasicTextView button=(BasicTextView)layout.findViewById(R.id.register_btnEnd);
 		button.setOnClickListener(this);
@@ -23,7 +29,7 @@ public class RegisterInformation extends Fragment implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		// 按钮点击事件
 		switch (v.getId()) {
 		case R.id.register_btnEnd:
 			MainActivity activity=(MainActivity)getActivity();
