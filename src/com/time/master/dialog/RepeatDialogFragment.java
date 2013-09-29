@@ -1,8 +1,6 @@
 package com.time.master.dialog;
 
 import com.time.master.R;
-
-import android.R.string;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.Gravity;
@@ -34,7 +32,6 @@ public class RepeatDialogFragment extends DialogFragment {
 		para.width=LayoutParams.MATCH_PARENT;
 		window.setAttributes(para);
 		window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-		
 		View layout=inflater.inflate(R.layout.date_repeat, container, false);
 		return layout;
 	}
