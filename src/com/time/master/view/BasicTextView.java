@@ -5,7 +5,10 @@ import com.time.master.interfacer.LayoutStyleableInterface;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.SystemClock;
 import android.util.AttributeSet;
+import android.view.View;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 public class BasicTextView extends TextView implements LayoutStyleableInterface{
@@ -41,7 +44,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		isclick=false;
         a.recycle();
 	}
-
+	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		// TODO Auto-generated method stub

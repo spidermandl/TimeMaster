@@ -52,7 +52,7 @@
         layout:width_multi="3" />
 
     <com.time.master.view.BasicTextView
-        android:id="@+id/plan_previous"
+        android:id="@+id/plan_previou"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFACD6FF"
@@ -84,7 +84,7 @@
         android:textIsSelectable="true"
         layout:new_line="false"
         layout:width_multi="3" />
-
+  
     <com.time.master.view.BasicTextView
         android:id="@+id/plan_previous"
         android:layout_width="wrap_content"
@@ -92,8 +92,10 @@
         android:background="#FFACD6FF"
         android:gravity="center"
         android:text="开始"
+       
         layout:new_line="false"
         layout:width_multi="1" />
+   
     <!-- /////////////////////////////////////////////////////////////////////////////// -->
 
     <com.time.master.view.BasicTextView

@@ -69,7 +69,7 @@ public class MainActivity extends FrameActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
