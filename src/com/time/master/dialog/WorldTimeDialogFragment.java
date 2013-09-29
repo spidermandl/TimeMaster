@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.view.ViewGroup.LayoutParams;
 
 
-public class WorldTimeDialogFragment extends android.support.v4.app.DialogFragment {
+public  class WorldTimeDialogFragment extends android.support.v4.app.DialogFragment {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
