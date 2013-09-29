@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 import com.time.master.R;
 import com.time.master.adapter.BaseAdapterDemo;
 
