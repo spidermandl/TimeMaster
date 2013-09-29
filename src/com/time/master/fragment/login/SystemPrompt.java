@@ -1,5 +1,7 @@
 package com.time.master.fragment.login;
 
+import java.util.HashMap;
+
 import com.time.master.R;
 import com.time.master.activity.MainActivity;
 import com.time.master.view.BasicTextView;
@@ -21,22 +23,36 @@ import android.widget.TextView;
  */
 public class SystemPrompt extends Fragment implements OnClickListener {
 	TextView tvInformapush;
-	BasicTextView tvUsername,tvRememberpw,tvLogin,tvForgetpw,tvKeyboard;
+	BasicTextView tvUsername, tvRememberpw, tvLogin, tvForgetpw, tvKeyboard;
+
+	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// 设置按钮和textview点击监听事件
-		View layout = inflater.inflate(R.layout.page_system_prompt, container, false);
+		View layout = inflater.inflate(R.layout.page_system_prompt, container,
+				false);
 
 		tvInformapush = (TextView) layout.findViewById(R.id.systemprompt_tvEnd);
-		tvUsername=(BasicTextView)layout.findViewById(R.id.informapush_tvUsername);
-		tvRememberpw=(BasicTextView)layout.findViewById(R.id.informapush_tvRememberpw);
-		tvLogin=(BasicTextView)layout.findViewById(R.id.informapush_tvLogin);
-		tvForgetpw=(BasicTextView)layout.findViewById(R.id.informapush_tvFogetpw);
-		tvKeyboard=(BasicTextView)layout.findViewById(R.id.informapush_tvKeyboard);
-		
-		Button button = (Button) layout.findViewById(R.id.informapush_btnRegist);
+		tvUsername = (BasicTextView) layout
+				.findViewById(R.id.informapush_tvUsername);
+		tvRememberpw = (BasicTextView) layout
+				.findViewById(R.id.informapush_tvRememberpw);
+		tvLogin = (BasicTextView) layout.findViewById(R.id.informapush_tvLogin);
+		tvForgetpw = (BasicTextView) layout
+				.findViewById(R.id.informapush_tvFogetpw);
+		tvKeyboard = (BasicTextView) layout
+				.findViewById(R.id.informapush_tvKeyboard);
+
+		viewStatus.put(tvUsername.getId(), false);
+		viewStatus.put(tvRememberpw.getId(), false);
+		viewStatus.put(tvLogin.getId(), false);
+		viewStatus.put(tvForgetpw.getId(), false);
+		viewStatus.put(tvKeyboard.getId(), false);
+
+		Button button = (Button) layout
+				.findViewById(R.id.informapush_btnRegist);
 		tvUsername.setOnClickListener(this);
 		tvRememberpw.setOnClickListener(this);
 		tvLogin.setOnClickListener(this);
@@ -60,81 +76,95 @@ public class SystemPrompt extends Fragment implements OnClickListener {
 			break;
 		// 点击事件，点击切换图片
 		case R.id.informapush_tvUsername:
-			if(tvUsername.isclick()){
-				tvUsername.setIsclick(false);
-				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
-				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+			if (viewStatus.get(R.id.informapush_tvUsername)) {
+				viewStatus.put(R.id.informapush_tvUsername, true);
+				Drawable drawable = getResources().getDrawable(
+						R.drawable.checkbox);
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+						drawable.getMinimumHeight());
 				tvUsername.setCompoundDrawables(drawable, null, null, null);
-			}
-			else {
-				tvUsername.setIsclick(true);
-				Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
-				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+			} else {
+				viewStatus.put(R.id.informapush_tvUsername, false);
+				Drawable drawable = getResources().getDrawable(
+						R.drawable.checkboxonclick);
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+						drawable.getMinimumHeight());
 				tvUsername.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-			// 点击事件，点击切换图片
+		// 点击事件，点击切换图片
 		case R.id.informapush_tvRememberpw:
-			if(tvRememberpw.isclick()){
-				tvRememberpw.setIsclick(false);
-				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
-				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+			if (viewStatus.get(R.id.informapush_tvRememberpw)) {
+				viewStatus.put(R.id.informapush_tvRememberpw, true);
+				Drawable drawable = getResources().getDrawable(
+						R.drawable.checkbox);
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+						drawable.getMinimumHeight());
 				tvRememberpw.setCompoundDrawables(drawable, null, null, null);
-			}
-			else {
-				tvRememberpw.setIsclick(true);
-				Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
-				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+			} else {
+				viewStatus.put(R.id.informapush_tvRememberpw, false);
+				Drawable drawable = getResources().getDrawable(
+						R.drawable.checkboxonclick);
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+						drawable.getMinimumHeight());
 				tvRememberpw.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-			// 点击事件，点击切换图片
+		// 点击事件，点击切换图片
 		case R.id.informapush_tvLogin:
-			if(tvLogin.isclick()){
-				tvLogin.setIsclick(false);
-				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
-				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+			if (viewStatus.get(R.id.informapush_tvLogin)) {
+				viewStatus.put(R.id.informapush_tvLogin, true);
+				Drawable drawable = getResources().getDrawable(
+						R.drawable.checkbox);
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+						drawable.getMinimumHeight());
 				tvLogin.setCompoundDrawables(drawable, null, null, null);
-			}
-			else {
-				tvLogin.setIsclick(true);
-				Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
-				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+			} else {
+				viewStatus.put(R.id.informapush_tvLogin, false);
+				Drawable drawable = getResources().getDrawable(
+						R.drawable.checkboxonclick);
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+						drawable.getMinimumHeight());
 				tvLogin.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-			// 点击事件，点击切换图片
+		// 点击事件，点击切换图片
 		case R.id.informapush_tvFogetpw:
-			if(tvForgetpw.isclick()){
-				tvForgetpw.setIsclick(false);
-				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
-				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+			if (viewStatus.get(R.id.informapush_tvFogetpw)) {
+				viewStatus.put(R.id.informapush_tvFogetpw, true);
+				Drawable drawable = getResources().getDrawable(
+						R.drawable.checkbox);
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+						drawable.getMinimumHeight());
 				tvForgetpw.setCompoundDrawables(drawable, null, null, null);
-			}
-			else {
-				tvForgetpw.setIsclick(true);
-				Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
-				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+			} else {
+				viewStatus.put(R.id.informapush_tvFogetpw, false);
+				Drawable drawable = getResources().getDrawable(
+						R.drawable.checkboxonclick);
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+						drawable.getMinimumHeight());
 				tvForgetpw.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
-			// 点击事件，点击切换图片
+		// 点击事件，点击切换图片
 		case R.id.informapush_tvKeyboard:
-			if(tvKeyboard.isclick()){
-				tvKeyboard.setIsclick(false);
-				Drawable drawable=getResources().getDrawable(R.drawable.checkbox);
-				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+			if (viewStatus.get(R.id.informapush_tvKeyboard)) {
+				viewStatus.put(R.id.informapush_tvKeyboard, true);
+				Drawable drawable = getResources().getDrawable(
+						R.drawable.checkbox);
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+						drawable.getMinimumHeight());
 				tvKeyboard.setCompoundDrawables(drawable, null, null, null);
-			}
-			else {
-				tvKeyboard.setIsclick(true);
-				Drawable drawable=getResources().getDrawable(R.drawable.checkboxonclick);
-				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+			} else {
+				viewStatus.put(R.id.informapush_tvKeyboard, false);
+				Drawable drawable = getResources().getDrawable(
+						R.drawable.checkboxonclick);
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(),
+						drawable.getMinimumHeight());
 				tvKeyboard.setCompoundDrawables(drawable, null, null, null);
 			}
 			break;
 		}
-		
-			
+
 	}
 }

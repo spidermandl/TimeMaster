@@ -1,6 +1,9 @@
 package com.time.master.activity;
 
+import java.util.HashMap;
+
 import com.time.master.R;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -13,6 +16,8 @@ import android.widget.TabWidget;
 
 public class FrameActivity extends FragmentActivity {
 
+	HashMap<Integer, Fragment> fragmentCache=new HashMap<Integer, Fragment>();
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,16 +68,33 @@ public class FrameActivity extends FragmentActivity {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
-    public void showNext(Fragment fragment, int ID) {
+    
+    public void showNext(int containerID,Class<Fragment> fragmentName , int fragmentID) {
+		Fragment f=fragmentCache.get(fragmentID);
+		if(f==null){
+			try {
+				f=fragmentName.newInstance();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+				return;
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+				return;
+			}
+			fragmentCache.put(fragmentID, f);
+		}
+		
 		FragmentManager fragmentManager = this.getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager
-				.beginTransaction();
-		fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
-				android.R.anim.fade_out);
-		fragmentTransaction.replace(ID, fragment);
+		Fragment fragment=fragmentManager.findFragmentById(containerID);
+		if(fragment==null){
+			return;
+		}
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,android.R.anim.fade_out);
+
+		fragmentTransaction.replace(containerID, f);
 		fragmentTransaction.addToBackStack(null);
-		fragmentTransaction
-				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+		fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 		fragmentTransaction.commit();
 	}
 }

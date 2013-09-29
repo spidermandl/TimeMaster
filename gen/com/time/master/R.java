@@ -20,31 +20,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int bottom=0x7f010003;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int full=0x7f010002;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
         public static final int new_line=0x7f010001;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static final int visible=0x7f010004;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -138,7 +114,7 @@ containing a value of this type.
         public static final int K=0x7f0a0004;
         public static final int L=0x7f0a0007;
         public static final int M=0x7f0a000a;
-        public static final int MainActivityViewFlipper=0x7f0a0076;
+        public static final int MainActivityViewFlipper=0x7f0a007a;
         public static final int N=0x7f0a000d;
         public static final int O=0x7f0a0010;
         public static final int P=0x7f0a0013;
@@ -146,252 +122,256 @@ containing a value of this type.
         public static final int R=0x7f0a0019;
         public static final int S=0x7f0a0002;
         public static final int T=0x7f0a0005;
-        public static final int Top_Date=0x7f0a0073;
+        public static final int Top_Date=0x7f0a0077;
         public static final int U=0x7f0a0008;
         public static final int V=0x7f0a000b;
         public static final int W=0x7f0a000e;
         public static final int X=0x7f0a0011;
         public static final int Y=0x7f0a0014;
         public static final int Z=0x7f0a0017;
-        public static final int add_page_add=0x7f0a003a;
-        public static final int alph=0x7f0a0068;
-        public static final int basic_info_up=0x7f0a00a1;
-        public static final int basic_page5=0x7f0a00c2;
-        public static final int btn_next_month=0x7f0a0075;
-        public static final int btn_pre_month=0x7f0a0074;
-        public static final int country=0x7f0a00f3;
-        public static final int data_festival=0x7f0a0049;
-        public static final int date_commemorate_day=0x7f0a004e;
-        public static final int date_confirm=0x7f0a0041;
-        public static final int date_day_off=0x7f0a0053;
-        public static final int date_everyday=0x7f0a0045;
-        public static final int date_fragment=0x7f0a005f;
-        public static final int date_friday=0x7f0a0058;
-        public static final int date_lunar_month_current=0x7f0a0048;
-        public static final int date_lunar_month_select=0x7f0a0047;
-        public static final int date_lunar_year_current=0x7f0a0052;
-        public static final int date_lunar_year_select=0x7f0a0051;
-        public static final int date_monday=0x7f0a0046;
-        public static final int date_month_current=0x7f0a0043;
-        public static final int date_month_select=0x7f0a0042;
-        public static final int date_other_week=0x7f0a004f;
-        public static final int date_plan_yourself=0x7f0a0056;
-        public static final int date_quaque=0x7f0a004a;
-        public static final int date_saturday=0x7f0a0054;
-        public static final int date_selector=0x7f0a007e;
-        public static final int date_selector_wheel=0x7f0a00f8;
-        public static final int date_sunday=0x7f0a0057;
-        public static final int date_thursday=0x7f0a0055;
-        public static final int date_top_center=0x7f0a0040;
-        public static final int date_top_left=0x7f0a003f;
-        public static final int date_tuesday=0x7f0a004b;
-        public static final int date_wednesday=0x7f0a0050;
-        public static final int date_working=0x7f0a0044;
-        public static final int date_year_current=0x7f0a004d;
-        public static final int date_year_select=0x7f0a004c;
-        public static final int day=0x7f0a00fb;
-        public static final int edit_date=0x7f0a00f6;
-        public static final int edit_human=0x7f0a0064;
-        public static final int edit_location=0x7f0a006b;
-        public static final int famaly_tvMomid=0x7f0a0087;
-        public static final int family_btnEnd=0x7f0a0091;
-        public static final int family_etDadid=0x7f0a0086;
-        public static final int family_etHusbandid=0x7f0a008e;
-        public static final int family_etId=0x7f0a0084;
-        public static final int family_etMarryid=0x7f0a008c;
-        public static final int family_etMomid=0x7f0a0088;
-        public static final int family_etRole=0x7f0a008a;
-        public static final int family_etWifeid=0x7f0a0090;
-        public static final int family_info_up=0x7f0a0082;
-        public static final int family_title=0x7f0a0081;
-        public static final int family_tvDadid=0x7f0a0085;
-        public static final int family_tvHusbandid=0x7f0a008d;
-        public static final int family_tvId=0x7f0a0083;
-        public static final int family_tvMarryid=0x7f0a008b;
-        public static final int family_tvRole=0x7f0a0089;
-        public static final int family_tvWifeid=0x7f0a008f;
-        public static final int first=0x7f0a00f1;
-        public static final int fitness_page_add=0x7f0a003c;
-        public static final int fitness_page_fitness=0x7f0a003b;
-        public static final int function=0x7f0a00f2;
-        public static final int generation_fragment=0x7f0a005b;
-        public static final int hour=0x7f0a00fc;
-        public static final int human_bar=0x7f0a0062;
-        public static final int human_confirm=0x7f0a0065;
-        public static final int human_select=0x7f0a0067;
-        public static final int human_selector=0x7f0a0080;
-        public static final int human_selector_wheel=0x7f0a0066;
-        public static final int human_text=0x7f0a00fe;
-        public static final int human_type=0x7f0a0063;
-        public static final int informapush_btnRegist=0x7f0a0095;
-        public static final int informapush_btnSee=0x7f0a0093;
-        public static final int informapush_tvFogetpw=0x7f0a0097;
-        public static final int informapush_tvKeyboard=0x7f0a0098;
-        public static final int informapush_tvLogin=0x7f0a0096;
-        public static final int informapush_tvRememberpw=0x7f0a0094;
-        public static final int informapush_tvUsername=0x7f0a0092;
-        public static final int issue_list_fragment=0x7f0a0060;
-        public static final int location_1=0x7f0a006e;
-        public static final int location_2=0x7f0a006f;
-        public static final int location_3=0x7f0a0070;
-        public static final int location_4=0x7f0a0071;
-        public static final int location_bar=0x7f0a0069;
-        public static final int location_confirm=0x7f0a006c;
-        public static final int location_selector=0x7f0a007f;
-        public static final int location_selector_wheel=0x7f0a006d;
-        public static final int location_text=0x7f0a00ff;
-        public static final int location_type=0x7f0a006a;
-        public static final int main_baseviewgroup=0x7f0a0035;
-        public static final int main_baseviewgroup1=0x7f0a003d;
-        public static final int main_page_add=0x7f0a0039;
-        public static final int main_page_fitness=0x7f0a0038;
-        public static final int main_page_live=0x7f0a0036;
-        public static final int main_page_walk=0x7f0a0037;
-        public static final int main_tab=0x7f0a0059;
-        public static final int mainlayout=0x7f0a0072;
-        public static final int menu_settings=0x7f0a0101;
-        public static final int minute=0x7f0a00fd;
-        public static final int month=0x7f0a00fa;
-        public static final int month_fragment=0x7f0a005d;
+        public static final int add_page_add=0x7f0a001c;
+        public static final int alph=0x7f0a006c;
+        public static final int basic_info_up=0x7f0a00a5;
+        public static final int basic_page5=0x7f0a00c6;
+        public static final int btn_next_month=0x7f0a0079;
+        public static final int btn_pre_month=0x7f0a0078;
+        public static final int country=0x7f0a00f7;
+        public static final int data_festival=0x7f0a004a;
+        public static final int date_add_page=0x7f0a001b;
+        public static final int date_commemorate_day=0x7f0a004f;
+        public static final int date_confirm=0x7f0a0042;
+        public static final int date_day_off=0x7f0a0054;
+        public static final int date_everyday=0x7f0a0046;
+        public static final int date_fragment=0x7f0a0063;
+        public static final int date_friday=0x7f0a0059;
+        public static final int date_front_page=0x7f0a003b;
+        public static final int date_habbit_page=0x7f0a0038;
+        public static final int date_lunar_month_current=0x7f0a0049;
+        public static final int date_lunar_month_select=0x7f0a0048;
+        public static final int date_lunar_year_current=0x7f0a0053;
+        public static final int date_lunar_year_select=0x7f0a0052;
+        public static final int date_monday=0x7f0a0047;
+        public static final int date_month_current=0x7f0a0044;
+        public static final int date_month_select=0x7f0a0043;
+        public static final int date_other_week=0x7f0a0050;
+        public static final int date_plan_yourself=0x7f0a0057;
+        public static final int date_quaque=0x7f0a004b;
+        public static final int date_saturday=0x7f0a0055;
+        public static final int date_selector=0x7f0a0082;
+        public static final int date_selector_wheel=0x7f0a00fc;
+        public static final int date_sport_page=0x7f0a005a;
+        public static final int date_sunday=0x7f0a0058;
+        public static final int date_thursday=0x7f0a0056;
+        public static final int date_top_center=0x7f0a0041;
+        public static final int date_top_left=0x7f0a0040;
+        public static final int date_tuesday=0x7f0a004c;
+        public static final int date_wednesday=0x7f0a0051;
+        public static final int date_working=0x7f0a0045;
+        public static final int date_year_current=0x7f0a004e;
+        public static final int date_year_select=0x7f0a004d;
+        public static final int day=0x7f0a00ff;
+        public static final int edit_date=0x7f0a00fa;
+        public static final int edit_human=0x7f0a0068;
+        public static final int edit_location=0x7f0a006f;
+        public static final int famaly_tvMomid=0x7f0a008b;
+        public static final int family_btnEnd=0x7f0a0095;
+        public static final int family_etDadid=0x7f0a008a;
+        public static final int family_etHusbandid=0x7f0a0092;
+        public static final int family_etId=0x7f0a0088;
+        public static final int family_etMarryid=0x7f0a0090;
+        public static final int family_etMomid=0x7f0a008c;
+        public static final int family_etRole=0x7f0a008e;
+        public static final int family_etWifeid=0x7f0a0094;
+        public static final int family_info_up=0x7f0a0086;
+        public static final int family_title=0x7f0a0085;
+        public static final int family_tvDadid=0x7f0a0089;
+        public static final int family_tvHusbandid=0x7f0a0091;
+        public static final int family_tvId=0x7f0a0087;
+        public static final int family_tvMarryid=0x7f0a008f;
+        public static final int family_tvRole=0x7f0a008d;
+        public static final int family_tvWifeid=0x7f0a0093;
+        public static final int first=0x7f0a00f5;
+        public static final int fitness_page_add=0x7f0a005c;
+        public static final int fitness_page_fitness=0x7f0a005b;
+        public static final int function=0x7f0a00f6;
+        public static final int generation_fragment=0x7f0a005f;
+        public static final int hour=0x7f0a0100;
+        public static final int human_bar=0x7f0a0066;
+        public static final int human_confirm=0x7f0a0069;
+        public static final int human_select=0x7f0a006b;
+        public static final int human_selector=0x7f0a0084;
+        public static final int human_selector_wheel=0x7f0a006a;
+        public static final int human_text=0x7f0a0102;
+        public static final int human_type=0x7f0a0067;
+        public static final int informapush_btnRegist=0x7f0a0099;
+        public static final int informapush_btnSee=0x7f0a0097;
+        public static final int informapush_tvFogetpw=0x7f0a009b;
+        public static final int informapush_tvKeyboard=0x7f0a009c;
+        public static final int informapush_tvLogin=0x7f0a009a;
+        public static final int informapush_tvRememberpw=0x7f0a0098;
+        public static final int informapush_tvUsername=0x7f0a0096;
+        public static final int issue_list_fragment=0x7f0a0064;
+        public static final int location_1=0x7f0a0072;
+        public static final int location_2=0x7f0a0073;
+        public static final int location_3=0x7f0a0074;
+        public static final int location_4=0x7f0a0075;
+        public static final int location_bar=0x7f0a006d;
+        public static final int location_confirm=0x7f0a0070;
+        public static final int location_selector=0x7f0a0083;
+        public static final int location_selector_wheel=0x7f0a0071;
+        public static final int location_text=0x7f0a0103;
+        public static final int location_type=0x7f0a006e;
+        public static final int main_baseviewgroup=0x7f0a001d;
+        public static final int main_baseviewgroup1=0x7f0a003a;
+        public static final int main_page_add=0x7f0a003f;
+        public static final int main_page_fitness=0x7f0a003e;
+        public static final int main_page_live=0x7f0a003c;
+        public static final int main_page_walk=0x7f0a003d;
+        public static final int main_tab=0x7f0a005d;
+        public static final int mainlayout=0x7f0a0076;
+        public static final int menu_settings=0x7f0a0105;
+        public static final int minute=0x7f0a0101;
+        public static final int month=0x7f0a00fe;
+        public static final int month_fragment=0x7f0a0061;
         public static final int name_cancel=0x7f0a001a;
-        public static final int new_issue_fragment=0x7f0a0061;
-        public static final int numeric_text=0x7f0a0100;
-        public static final int page1=0x7f0a0077;
-        public static final int page3=0x7f0a0078;
-        public static final int page4=0x7f0a0079;
-        public static final int page5=0x7f0a007a;
-        public static final int page6=0x7f0a007b;
-        public static final int page7=0x7f0a007c;
-        public static final int page8=0x7f0a007d;
-        public static final int pagetitlefive=0x7f0a00c1;
-        public static final int pagetitlesix=0x7f0a00a0;
-        public static final int personal_btnEnd=0x7f0a00bf;
-        public static final int personal_etAdd=0x7f0a00b8;
-        public static final int personal_etAddress=0x7f0a00b4;
-        public static final int personal_etGender=0x7f0a00b2;
-        public static final int personal_etGetaddress=0x7f0a00b6;
-        public static final int personal_etMessage=0x7f0a00be;
-        public static final int personal_etMicroblog=0x7f0a00bc;
-        public static final int personal_etName=0x7f0a00b0;
-        public static final int personal_etQq=0x7f0a00ba;
-        public static final int personal_title=0x7f0a00ae;
-        public static final int personal_tvAdd=0x7f0a00b7;
-        public static final int personal_tvAddress=0x7f0a00b3;
-        public static final int personal_tvGender=0x7f0a00b1;
-        public static final int personal_tvGetaddress=0x7f0a00b5;
-        public static final int personal_tvMessage=0x7f0a00bd;
-        public static final int personal_tvMicroblog=0x7f0a00bb;
-        public static final int personal_tvName=0x7f0a00af;
-        public static final int personal_tvQq=0x7f0a00b9;
-        public static final int plan_human=0x7f0a002c;
-        public static final int plan_human_cloest=0x7f0a0031;
-        public static final int plan_human_corp=0x7f0a002e;
-        public static final int plan_human_leader=0x7f0a002d;
-        public static final int plan_human_name=0x7f0a002f;
-        public static final int plan_human_relationship=0x7f0a0032;
-        public static final int plan_human_treasure=0x7f0a0030;
-        public static final int plan_length=0x7f0a0021;
-        public static final int plan_location=0x7f0a0025;
-        public static final int plan_location_addr=0x7f0a0027;
-        public static final int plan_location_footprint=0x7f0a002a;
-        public static final int plan_location_map=0x7f0a002b;
-        public static final int plan_location_search=0x7f0a0026;
-        public static final int plan_location_site=0x7f0a0028;
-        public static final int plan_location_treasure=0x7f0a0029;
-        public static final int plan_model=0x7f0a001d;
-        public static final int plan_previous=0x7f0a001f;
-        public static final int plan_repeat=0x7f0a0022;
-        public static final int plan_time_end=0x7f0a0023;
-        public static final int plan_time_period=0x7f0a0020;
-        public static final int plan_time_start=0x7f0a001e;
-        public static final int plan_title=0x7f0a001b;
-        public static final int plan_tool=0x7f0a0033;
-        public static final int plan_tool_search=0x7f0a0034;
-        public static final int plan_type=0x7f0a001c;
-        public static final int plan_warning=0x7f0a0024;
-        public static final int protocol_tvAgree=0x7f0a00dd;
-        public static final int protocol_tvDisagree=0x7f0a00dc;
-        public static final int pwfind_btnAffirm=0x7f0a009e;
-        public static final int pwfind_tvAnwser=0x7f0a009a;
-        public static final int pwfind_tvEmail=0x7f0a009c;
-        public static final int pwfind_tvPhone=0x7f0a009b;
-        public static final int pwfind_tvQuestion=0x7f0a0099;
-        public static final int pwfind_tvView=0x7f0a009d;
-        public static final int pwset_btnEnd=0x7f0a00ad;
-        public static final int pwset_etAnswer=0x7f0a00ac;
-        public static final int pwset_etEmail=0x7f0a00a9;
-        public static final int pwset_etPhone=0x7f0a00a8;
-        public static final int pwset_etPwinput1=0x7f0a00a3;
-        public static final int pwset_etPwinput2=0x7f0a00a5;
-        public static final int pwset_etQuestion=0x7f0a00ab;
-        public static final int pwset_title=0x7f0a009f;
-        public static final int pwset_tvFindpw=0x7f0a00a7;
-        public static final int pwset_tvPwinput1=0x7f0a00a2;
-        public static final int pwset_tvPwinput2=0x7f0a00a4;
-        public static final int pwset_tvPwremind=0x7f0a00a6;
-        public static final int pwset_tvQuestion=0x7f0a00aa;
-        public static final int register_btnEnd=0x7f0a00d6;
-        public static final int register_etBirthday=0x7f0a00cb;
-        public static final int register_etBirthplace=0x7f0a00cd;
-        public static final int register_etEmail=0x7f0a00cf;
-        public static final int register_etFamilyname=0x7f0a00c6;
-        public static final int register_etHidnumber=0x7f0a00d3;
-        public static final int register_etIdcard=0x7f0a00c4;
-        public static final int register_etName=0x7f0a00c7;
-        public static final int register_etPhonecode=0x7f0a00d5;
-        public static final int register_etTelnum=0x7f0a00d1;
-        public static final int register_etUsername=0x7f0a00c9;
-        public static final int register_title=0x7f0a00c0;
-        public static final int register_tvBirthday=0x7f0a00ca;
-        public static final int register_tvBirthplace=0x7f0a00cc;
-        public static final int register_tvEmail=0x7f0a00ce;
-        public static final int register_tvHidnumber=0x7f0a00d2;
-        public static final int register_tvIdcard=0x7f0a00c3;
-        public static final int register_tvName=0x7f0a00c5;
-        public static final int register_tvPhonecode=0x7f0a00d4;
-        public static final int register_tvTelnum=0x7f0a00d0;
-        public static final int register_tvUsername=0x7f0a00c8;
-        public static final int scroll_tab=0x7f0a005a;
-        public static final int systemprompt_btnLogin=0x7f0a00da;
-        public static final int systemprompt_btnSet=0x7f0a00d8;
-        public static final int systemprompt_etLogin=0x7f0a00d9;
-        public static final int systemprompt_etSet=0x7f0a00d7;
-        public static final int systemprompt_tvEnd=0x7f0a00db;
-        public static final int time_bar=0x7f0a00f4;
-        public static final int time_confirm=0x7f0a00f7;
-        public static final int time_type=0x7f0a00f5;
-        public static final int unit_btnEnd=0x7f0a00f0;
-        public static final int unit_etAddress=0x7f0a00e3;
-        public static final int unit_etClass=0x7f0a00ed;
-        public static final int unit_etGoods=0x7f0a00eb;
-        public static final int unit_etIdcode=0x7f0a00e7;
-        public static final int unit_etIdnumber=0x7f0a00e9;
-        public static final int unit_etName=0x7f0a00e1;
-        public static final int unit_etQuale=0x7f0a00e5;
-        public static final int unit_etRole=0x7f0a00ef;
-        public static final int unit_info_up=0x7f0a00df;
-        public static final int unit_title=0x7f0a00de;
-        public static final int unit_tvAddress=0x7f0a00e2;
-        public static final int unit_tvClass=0x7f0a00ec;
-        public static final int unit_tvGoods=0x7f0a00ea;
-        public static final int unit_tvIdcode=0x7f0a00e6;
-        public static final int unit_tvIdnumber=0x7f0a00e8;
-        public static final int unit_tvName=0x7f0a00e0;
-        public static final int unit_tvQuale=0x7f0a00e4;
-        public static final int unit_tvRole=0x7f0a00ee;
-        public static final int walk_page_add=0x7f0a003e;
-        public static final int week_fragment=0x7f0a005e;
-        public static final int year=0x7f0a00f9;
-        public static final int year_fragment=0x7f0a005c;
+        public static final int new_issue_fragment=0x7f0a0065;
+        public static final int numeric_text=0x7f0a0104;
+        public static final int page1=0x7f0a007b;
+        public static final int page3=0x7f0a007c;
+        public static final int page4=0x7f0a007d;
+        public static final int page5=0x7f0a007e;
+        public static final int page6=0x7f0a007f;
+        public static final int page7=0x7f0a0080;
+        public static final int page8=0x7f0a0081;
+        public static final int pagetitlefive=0x7f0a00c5;
+        public static final int pagetitlesix=0x7f0a00a4;
+        public static final int personal_btnEnd=0x7f0a00c3;
+        public static final int personal_etAdd=0x7f0a00bc;
+        public static final int personal_etAddress=0x7f0a00b8;
+        public static final int personal_etGender=0x7f0a00b6;
+        public static final int personal_etGetaddress=0x7f0a00ba;
+        public static final int personal_etMessage=0x7f0a00c2;
+        public static final int personal_etMicroblog=0x7f0a00c0;
+        public static final int personal_etName=0x7f0a00b4;
+        public static final int personal_etQq=0x7f0a00be;
+        public static final int personal_title=0x7f0a00b2;
+        public static final int personal_tvAdd=0x7f0a00bb;
+        public static final int personal_tvAddress=0x7f0a00b7;
+        public static final int personal_tvGender=0x7f0a00b5;
+        public static final int personal_tvGetaddress=0x7f0a00b9;
+        public static final int personal_tvMessage=0x7f0a00c1;
+        public static final int personal_tvMicroblog=0x7f0a00bf;
+        public static final int personal_tvName=0x7f0a00b3;
+        public static final int personal_tvQq=0x7f0a00bd;
+        public static final int plan_human=0x7f0a002f;
+        public static final int plan_human_cloest=0x7f0a0034;
+        public static final int plan_human_corp=0x7f0a0031;
+        public static final int plan_human_leader=0x7f0a0030;
+        public static final int plan_human_name=0x7f0a0032;
+        public static final int plan_human_relationship=0x7f0a0035;
+        public static final int plan_human_treasure=0x7f0a0033;
+        public static final int plan_length=0x7f0a0024;
+        public static final int plan_location=0x7f0a0028;
+        public static final int plan_location_addr=0x7f0a002a;
+        public static final int plan_location_footprint=0x7f0a002d;
+        public static final int plan_location_map=0x7f0a002e;
+        public static final int plan_location_search=0x7f0a0029;
+        public static final int plan_location_site=0x7f0a002b;
+        public static final int plan_location_treasure=0x7f0a002c;
+        public static final int plan_model=0x7f0a0020;
+        public static final int plan_previous=0x7f0a0022;
+        public static final int plan_repeat=0x7f0a0025;
+        public static final int plan_time_end=0x7f0a0026;
+        public static final int plan_time_period=0x7f0a0023;
+        public static final int plan_time_start=0x7f0a0021;
+        public static final int plan_title=0x7f0a001e;
+        public static final int plan_tool=0x7f0a0036;
+        public static final int plan_tool_search=0x7f0a0037;
+        public static final int plan_type=0x7f0a001f;
+        public static final int plan_warning=0x7f0a0027;
+        public static final int protocol_tvAgree=0x7f0a00e1;
+        public static final int protocol_tvDisagree=0x7f0a00e0;
+        public static final int pwfind_btnAffirm=0x7f0a00a2;
+        public static final int pwfind_tvAnwser=0x7f0a009e;
+        public static final int pwfind_tvEmail=0x7f0a00a0;
+        public static final int pwfind_tvPhone=0x7f0a009f;
+        public static final int pwfind_tvQuestion=0x7f0a009d;
+        public static final int pwfind_tvView=0x7f0a00a1;
+        public static final int pwset_btnEnd=0x7f0a00b1;
+        public static final int pwset_etAnswer=0x7f0a00b0;
+        public static final int pwset_etEmail=0x7f0a00ad;
+        public static final int pwset_etPhone=0x7f0a00ac;
+        public static final int pwset_etPwinput1=0x7f0a00a7;
+        public static final int pwset_etPwinput2=0x7f0a00a9;
+        public static final int pwset_etQuestion=0x7f0a00af;
+        public static final int pwset_title=0x7f0a00a3;
+        public static final int pwset_tvFindpw=0x7f0a00ab;
+        public static final int pwset_tvPwinput1=0x7f0a00a6;
+        public static final int pwset_tvPwinput2=0x7f0a00a8;
+        public static final int pwset_tvPwremind=0x7f0a00aa;
+        public static final int pwset_tvQuestion=0x7f0a00ae;
+        public static final int register_btnEnd=0x7f0a00da;
+        public static final int register_etBirthday=0x7f0a00cf;
+        public static final int register_etBirthplace=0x7f0a00d1;
+        public static final int register_etEmail=0x7f0a00d3;
+        public static final int register_etFamilyname=0x7f0a00ca;
+        public static final int register_etHidnumber=0x7f0a00d7;
+        public static final int register_etIdcard=0x7f0a00c8;
+        public static final int register_etName=0x7f0a00cb;
+        public static final int register_etPhonecode=0x7f0a00d9;
+        public static final int register_etTelnum=0x7f0a00d5;
+        public static final int register_etUsername=0x7f0a00cd;
+        public static final int register_title=0x7f0a00c4;
+        public static final int register_tvBirthday=0x7f0a00ce;
+        public static final int register_tvBirthplace=0x7f0a00d0;
+        public static final int register_tvEmail=0x7f0a00d2;
+        public static final int register_tvHidnumber=0x7f0a00d6;
+        public static final int register_tvIdcard=0x7f0a00c7;
+        public static final int register_tvName=0x7f0a00c9;
+        public static final int register_tvPhonecode=0x7f0a00d8;
+        public static final int register_tvTelnum=0x7f0a00d4;
+        public static final int register_tvUsername=0x7f0a00cc;
+        public static final int scroll_tab=0x7f0a005e;
+        public static final int systemprompt_btnLogin=0x7f0a00de;
+        public static final int systemprompt_btnSet=0x7f0a00dc;
+        public static final int systemprompt_etLogin=0x7f0a00dd;
+        public static final int systemprompt_etSet=0x7f0a00db;
+        public static final int systemprompt_tvEnd=0x7f0a00df;
+        public static final int time_bar=0x7f0a00f8;
+        public static final int time_confirm=0x7f0a00fb;
+        public static final int time_type=0x7f0a00f9;
+        public static final int unit_btnEnd=0x7f0a00f4;
+        public static final int unit_etAddress=0x7f0a00e7;
+        public static final int unit_etClass=0x7f0a00f1;
+        public static final int unit_etGoods=0x7f0a00ef;
+        public static final int unit_etIdcode=0x7f0a00eb;
+        public static final int unit_etIdnumber=0x7f0a00ed;
+        public static final int unit_etName=0x7f0a00e5;
+        public static final int unit_etQuale=0x7f0a00e9;
+        public static final int unit_etRole=0x7f0a00f3;
+        public static final int unit_info_up=0x7f0a00e3;
+        public static final int unit_title=0x7f0a00e2;
+        public static final int unit_tvAddress=0x7f0a00e6;
+        public static final int unit_tvClass=0x7f0a00f0;
+        public static final int unit_tvGoods=0x7f0a00ee;
+        public static final int unit_tvIdcode=0x7f0a00ea;
+        public static final int unit_tvIdnumber=0x7f0a00ec;
+        public static final int unit_tvName=0x7f0a00e4;
+        public static final int unit_tvQuale=0x7f0a00e8;
+        public static final int unit_tvRole=0x7f0a00f2;
+        public static final int walk_page_add=0x7f0a0039;
+        public static final int week_fragment=0x7f0a0062;
+        public static final int year=0x7f0a00fd;
+        public static final int year_fragment=0x7f0a0060;
     }
     public static final class layout {
         public static final int alphabet_panel=0x7f030000;
-        public static final int date_layout=0x7f030001;
-        public static final int date_main_page=0x7f030002;
-        public static final int date_mainpage_add=0x7f030003;
-        public static final int date_mainpage_fitness=0x7f030004;
-        public static final int date_mainpage_walk=0x7f030005;
-        public static final int date_repeat=0x7f030006;
+        public static final int date_add_page=0x7f030001;
+        public static final int date_detail_create_page=0x7f030002;
+        public static final int date_habbit_page=0x7f030003;
+        public static final int date_layout=0x7f030004;
+        public static final int date_repeat=0x7f030005;
+        public static final int date_sports_page=0x7f030006;
         public static final int frame_main=0x7f030007;
         public static final int generation_layout=0x7f030008;
         public static final int human_wheel_layout=0x7f030009;
@@ -478,6 +458,10 @@ containing a value of this type.
         public static final int app_name=0x7f070000;
         public static final int cancel=0x7f07003e;
         public static final int date=0x7f070007;
+        public static final int date_layout_plan_model_1=0x7f070092;
+        public static final int date_layout_plan_model_2=0x7f070094;
+        public static final int date_plan_time_period_1=0x7f070093;
+        public static final int date_plan_time_period_2=0x7f070095;
         public static final int generation=0x7f070003;
         public static final int hello_world=0x7f070001;
         public static final int list=0x7f070008;
@@ -580,50 +564,15 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ViewGroupType_bottom com.time.master:bottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroupType_full com.time.master:full}</code></td><td></td></tr>
            <tr><td><code>{@link #ViewGroupType_new_line com.time.master:new_line}</code></td><td></td></tr>
-           <tr><td><code>{@link #ViewGroupType_visible com.time.master:visible}</code></td><td></td></tr>
            <tr><td><code>{@link #ViewGroupType_width_multi com.time.master:width_multi}</code></td><td></td></tr>
            </table>
-           @see #ViewGroupType_bottom
-           @see #ViewGroupType_full
            @see #ViewGroupType_new_line
-           @see #ViewGroupType_visible
            @see #ViewGroupType_width_multi
          */
         public static final int[] ViewGroupType = {
-            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
-            0x7f010004
+            0x7f010000, 0x7f010001
         };
-        /**
-          <p>This symbol is the offset where the {@link com.time.master.R.attr#bottom}
-          attribute's value can be found in the {@link #ViewGroupType} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:bottom
-        */
-        public static final int ViewGroupType_bottom = 3;
-        /**
-          <p>This symbol is the offset where the {@link com.time.master.R.attr#full}
-          attribute's value can be found in the {@link #ViewGroupType} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:full
-        */
-        public static final int ViewGroupType_full = 2;
         /**
           <p>This symbol is the offset where the {@link com.time.master.R.attr#new_line}
           attribute's value can be found in the {@link #ViewGroupType} array.
@@ -638,20 +587,6 @@ containing a value of this type.
           @attr name android:new_line
         */
         public static final int ViewGroupType_new_line = 1;
-        /**
-          <p>This symbol is the offset where the {@link com.time.master.R.attr#visible}
-          attribute's value can be found in the {@link #ViewGroupType} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name android:visible
-        */
-        public static final int ViewGroupType_visible = 4;
         /**
           <p>This symbol is the offset where the {@link com.time.master.R.attr#width_multi}
           attribute's value can be found in the {@link #ViewGroupType} array.

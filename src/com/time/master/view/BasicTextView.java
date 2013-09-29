@@ -12,10 +12,6 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 
 	int multi_width;
 	boolean isNewLine;
-	boolean isFull;
-	boolean isBottom;
-	boolean isVisible;
-	boolean isclick;
 	
 	public BasicTextView(Context context) {
 		super(context);
@@ -35,10 +31,6 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ViewGroupType, defStyle, 0);
 		multi_width = a.getInt(R.styleable.ViewGroupType_width_multi, 1);
 		isNewLine=a.getBoolean(R.styleable.ViewGroupType_new_line, false);
-		isFull=a.getBoolean(R.styleable.ViewGroupType_full, false);
-		isBottom=a.getBoolean(R.styleable.ViewGroupType_bottom, false);
-		isVisible=a.getBoolean(R.styleable.ViewGroupType_visible, true);
-		isclick=false;
         a.recycle();
 	}
 
@@ -55,29 +47,5 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	@Override
 	public boolean isNewLine() {
 		return isNewLine;
-	}
-	@Override
-	public boolean isFull(){
-		return isFull;
-	}
-
-	@Override
-	public boolean isBottom() {
-		// TODO Auto-generated method stub
-		return isBottom;
-	}
-
-	@Override
-	public boolean isVisible() {
-		// TODO Auto-generated method stub
-		return isVisible;
-	}
-
-	public boolean isclick() {
-		return isclick;
-	}
-
-	public void setIsclick(boolean isclick) {
-		this.isclick = isclick;
 	}
 }
