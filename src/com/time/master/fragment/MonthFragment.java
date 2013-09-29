@@ -85,7 +85,7 @@ public class MonthFragment extends Fragment {
 		btn_pre_month = (Button) mainLayout.findViewById(R.id.btn_pre_month);//布局里的左方向按钮
 		btn_next_month = (Button) mainLayout.findViewById(R.id.btn_next_month);//布局里的右方向按钮
 		btn_pre_month.setOnClickListener(new Pre_MonthOnClickListener());//绑定监听事件
-		btn_next_month.setOnClickListener(new Next_MonthOnClickListener());
+		btn_next_month.setOnClickListener( new Next_MonthOnClickListener());
 
 		// 计算本月日历中的第一天(一般是上月的某天)，并更新日历
 		calStartDate = getCalendarStartDate();
