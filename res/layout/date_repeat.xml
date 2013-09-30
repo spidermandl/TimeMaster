@@ -248,6 +248,7 @@
         android:background="#8ED4FF"
         android:gravity="center"
         android:text="@string/date_plan_yourself"
+
         layout:new_line="true"
         layout:width_multi="3" />
 

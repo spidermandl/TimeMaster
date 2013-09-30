@@ -1,41 +1,38 @@
 package com.time.master.dialog;
 
 import java.util.HashMap;
-
 import com.time.master.R;
 import com.time.master.view.BasicTextView;
-import com.time.master.wheel.widget.UIWheelView;
-
-import android.R.string;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
-import android.widget.EditText;
-import android.widget.TextView;
 
 /**
  * "重复"对话框界面
  * @author bianyanling
  *
  */
-public class RepeatDialogFragment extends DialogFragment implements OnClickListener {
+public class RepeatDialogFragment extends DialogFragment implements OnClickListener, android.view.View.OnClickListener  {
 
 	public static final String tag="RepeatDialogFragment";
 	BasicTextView confirm,dtmselect,dtmcurrent,dtworking,dteveryday,dtmonday,dtlmselect,dtlmcurrent,dtfestival,
 	dtqueque,dttuesday,dtyselect,dtycurrent,dtcomday,dtotherweek,dtwednesday,dtlyselect,
 	dtlycurrent,dtdayoff,dtsaturday,dtthursday,dtplyouself,dtsunday,dtfriday;
 	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
+	
+	DoDialogFragment doDialog;////
+	BasicTextView yourselfBasicTextView;////
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +41,7 @@ public class RepeatDialogFragment extends DialogFragment implements OnClickListe
 		super.onCreate(savedInstanceState);
 		
 	}
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -134,8 +132,29 @@ public class RepeatDialogFragment extends DialogFragment implements OnClickListe
 				dtsunday.setOnClickListener(this);
 				dtfriday.setOnClickListener(this);
 		
+		yourselfBasicTextView=(BasicTextView)layout.findViewById(R.id.date_plan_yourself);
+		yourselfBasicTextView.setOnClickListener(this);////
+		
 		return layout;
 	}
+	
+	
+	void showDialog(DialogFragment dialogFragment) {
+
+		// DialogFragment.show() will take care of adding the fragment
+		// in a transaction. We also want to remove any currently showing
+		// dialog, so make our own transaction and take care of that here.
+		FragmentTransaction ft = getFragmentManager().beginTransaction();
+		Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+		if (prev != null) {
+			ft.remove(prev);
+		}
+		ft.addToBackStack(null);
+
+		// Create and show the dialog.
+		dialogFragment.show(ft, "dialog");////
+	}
+
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -321,6 +340,9 @@ case R.id.date_thursday:
 		}
 	break;
 case R.id.date_plan_yourself:
+	doDialog=new DoDialogFragment();
+	doDialog.setShowsDialog(true);
+	showDialog(doDialog);
 	if (viewStatus.get(R.id.date_plan_yourself)) {
 		viewStatus.put(R.id.date_plan_yourself,false);				
 		dtplyouself.setBackgroundColor(Color.parseColor("#FFACD6FF"));
@@ -346,8 +368,16 @@ case R.id.date_friday:
 		viewStatus.put(R.id.date_friday,true);						
 		dtfriday.setBackgroundColor(Color.WHITE);
 		}
-	break;
-	
+
 		}
+		
 	}
+
+	@Override
+	public void onClick(DialogInterface dialog, int which) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
+
