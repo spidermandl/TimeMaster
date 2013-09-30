@@ -5,6 +5,10 @@ import java.util.HashMap;
 import com.time.master.R;
 
 import android.os.Bundle;
+<<<<<<< HEAD
+=======
+import android.content.Context;
+>>>>>>> ff137e92aa5a233847dd278d811f358291ba390b
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
