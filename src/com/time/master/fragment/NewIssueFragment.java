@@ -1,6 +1,7 @@
 package com.time.master.fragment;
 
 import com.time.master.R;
+import com.time.master.dialog.DoDialogFragment;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
 import com.time.master.dialog.TimeDialogFragment;

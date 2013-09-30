@@ -12,7 +12,7 @@
         android:gravity="center"
         android:text="每日一次，间隔1：00"
         android:textColor="#000000"
-        layout:new_line="false"
+        layout:new_line="true"
         layout:width_multi="2" />
 
     <com.time.master.view.BasicTextView
@@ -248,7 +248,7 @@
         android:background="#8ED4FF"
         android:gravity="center"
         android:text="自排：做X  停X；"
-        layout:new_line="false"
+        layout:new_line="true"
         layout:width_multi="3" />
 
     <com.time.master.view.BasicTextView
