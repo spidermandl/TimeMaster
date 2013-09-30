@@ -1,6 +1,6 @@
 package com.time.master.dialog;
 /**
- * 世界时间界面
+ * 世界时间选择界面
  * @author ZhouYongJian
  *
  */
