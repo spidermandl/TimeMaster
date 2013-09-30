@@ -6,6 +6,8 @@ import com.time.master.interfacer.LayoutStyleableInterface;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.ViewDebug.ExportedProperty;
 import android.widget.TextView;
 
 public class BasicTextView extends TextView implements LayoutStyleableInterface{
@@ -44,6 +46,21 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		return multi_width;
 	}
 
+	@Override
+	@ExportedProperty
+	public boolean isClickable() {
+		// TODO Auto-generated method stub
+		return super.isClickable();
+	}
+	
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		// TODO Auto-generated method stub
+		return super.onTouchEvent(event);
+	}
+	
+	
 	@Override
 	public boolean isNewLine() {
 		return isNewLine;

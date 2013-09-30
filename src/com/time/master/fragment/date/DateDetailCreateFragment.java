@@ -38,6 +38,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 	BasicTextView dateRepeat;
 	BasicTextView tvdate, //日期 /倒计 按钮
 	              tvduration;//占用/期间 按钮
+	           
 	
 	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
 	
@@ -180,6 +181,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
 						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 				tvdate.setText(datestyle);
+				tvdate.setBackgroundColor(Color.parseColor("#FFACD6FF"));
 				//tvdate.setBackgroundColor(R.color.calendar_background);
 				
 				
@@ -194,6 +196,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
 						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 				tvdate.setText(datestyle);
+				tvdate.setBackgroundColor(Color.YELLOW);
 				//tvdate.setBackgroundColor(R.color.dateforcolor);
 			}
 
@@ -209,6 +212,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
 						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 				tvduration.setText(durationstyle);
+				tvduration.setBackgroundColor(Color.parseColor("#FFACD6FF"));
 				//tvduration.setBackgroundColor(R.color.datebackcolor);
 			} else {
 				viewStatus.put(R.id.plan_time_period,true);
@@ -220,6 +224,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
 						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 				tvduration.setText(durationstyle);
+				tvduration.setBackgroundColor(Color.YELLOW);
 				//tvduration.setBackgroundColor(R.color.dateforcolor);
 			}
 			break;
