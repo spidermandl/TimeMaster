@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.time.master.view.BasicViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.time.master.view.BasicEditText
+        android:id="@+id/plan_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
+        android:gravity="center_vertical"
+        android:hint="计划标题"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="true"
+        layout:width_multi="4" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF007FFF"
+        android:gravity="center"
+        android:text="类"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFACD6FF"
+        android:gravity="center"
+        android:text="日期\n倒计"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicEditText
+        android:id="@+id/plan_time_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
+        android:gravity="center_vertical"
+        android:hint="开始日期时间"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_previou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFACD6FF"
+        android:gravity="center"
+        android:text="承前"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_time_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFACD6FF"
+        android:gravity="center"
+        android:text="占用\n期间"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicEditText
+        android:id="@+id/plan_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
+        android:gravity="center_vertical"
+        android:hint="用时 ：0天1小时0分"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFACD6FF"
+        android:gravity="center"
+        android:text="开始"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_repeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFACD6FF"
+        android:gravity="center"
+        android:text="重复"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicEditText
+        android:id="@+id/plan_time_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
+        android:gravity="center_vertical"
+        android:hint="结束日期时间"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFACD6FF"
+        android:gravity="center"
+        android:text="提醒"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicEditText
+        android:id="@+id/plan_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
+        android:gravity="center_vertical"
+        android:hint="地点栏"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="true"
+        layout:width_multi="4" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_location_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF00FF45"
+        android:gravity="center"
+        android:text="搜索"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_location_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF00FF45"
+        android:gravity="center"
+        android:text="地址"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_location_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF00FF45"
+        android:gravity="center"
+        android:text="地点"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_location_treasure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF00FF45"
+        android:gravity="center"
+        android:text="收藏"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_location_footprint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF00FF45"
+        android:gravity="center"
+        android:text="足迹"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_location_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF00FF45"
+        android:gravity="center"
+        android:text="地图"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicEditText
+        android:id="@+id/plan_human"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
+        android:gravity="center_vertical"
+        android:hint="人物"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="true"
+        layout:width_multi="4" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_human_leader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFF0CA00"
+        android:gravity="center"
+        android:text="主角"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_human_corp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFF0CA00"
+        android:gravity="center"
+        android:text="单位"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_human_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFF0CA00"
+        android:gravity="center"
+        android:text="姓名"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_human_treasure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFF0CA00"
+        android:gravity="center"
+        android:text="收藏"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_human_cloest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFF0CA00"
+        android:gravity="center"
+        android:text="最近"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_human_relationship"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFF0CA00"
+        android:gravity="center"
+        android:text="关系"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicEditText
+        android:id="@+id/plan_tool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
+        android:gravity="center_vertical"
+        android:hint="工具"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="true"
+        layout:width_multi="4" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/plan_tool_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFBB5E00"
+        android:gravity="center"
+        android:text="搜索"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+</com.time.master.view.BasicViewGroup>

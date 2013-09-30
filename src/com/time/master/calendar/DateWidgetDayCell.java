@@ -132,9 +132,9 @@ public class DateWidgetDayCell extends View {
 		if (hasRecord) {
 			CreateReminder(canvas, Constant.special_Reminder);
 		}
-		// else if (!hasRecord && !bToday && !bSelected) {
-		// CreateReminder(canvas, Calendar_TestActivity.Calendar_DayBgColor);
-		// }
+//		 else if (!hasRecord && !bToday && !bSelected) {
+//		 CreateReminder(canvas, Calendar_TestActivity.Calendar_DayBgColor);
+//		 }
 	}
 
 	// 绘制日历中的数字

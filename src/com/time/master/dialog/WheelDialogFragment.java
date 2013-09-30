@@ -2,7 +2,6 @@ package com.time.master.dialog;
 
 
 import com.time.master.interfacer.WheelResultInterface;
-
 import android.support.v4.app.DialogFragment;
 import android.text.InputType;
 import android.view.View;

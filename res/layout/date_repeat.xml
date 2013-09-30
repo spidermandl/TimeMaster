@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.time.master.view.BasicViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_top_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="每日一次，间隔1：00"
+        android:textColor="#000000"
+        layout:new_line="false"
+        layout:width_multi="2" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_top_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="@+id/plan_time_end"
+        android:textColor="#000000"
+        layout:new_line="false"
+        layout:width_multi="2" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:text="确认"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+        <com.time.master.view.BasicTextView
+        android:id="@+id/date_month_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="月选日"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_month_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="月本日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_working"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="工作日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_everyday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="每日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_monday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="周一"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+        <com.time.master.view.BasicTextView
+        android:id="@+id/date_lunar_month_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="农月选日"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_lunar_month_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="农月本日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/data_festival"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="节假日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_quaque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="隔日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_tuesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="周二"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+        <com.time.master.view.BasicTextView
+        android:id="@+id/date_year_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="年选日"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_year_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="年本日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_commemorate_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="纪念日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_other_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="隔周"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_wednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="周三"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+        <com.time.master.view.BasicTextView
+        android:id="@+id/date_lunar_year_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="农年选日"
+        layout:new_line="true"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_lunar_year_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="农年本日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_day_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="休息日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_saturday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="周六"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_thursday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="周四"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_plan_yourself"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="自排：做X  停X；"
+        layout:new_line="false"
+        layout:width_multi="3" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_sunday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="周日"
+        layout:new_line="false"
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_friday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8ED4FF"
+        android:gravity="center"
+        android:text="周五"
+        layout:new_line="false"
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+    
+</com.time.master.view.BasicViewGroup>

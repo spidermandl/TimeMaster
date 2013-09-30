@@ -1,27 +1,26 @@
 /**
- * @注释梁丽丽
+ * @注释 梁丽丽
+          实现逻辑操作。
+   1、日期缓存。
+   2、
  */
 package com.time.master.fragment;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Hashtable;
-
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.calendar.DateWidgetDayCell;
 import com.time.master.calendar.DateWidgetDayHeader;
 import com.time.master.calendar.DayStyle;
 import com.time.master.tool.Constant;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -32,7 +31,7 @@ import android.widget.LinearLayout.LayoutParams;
 /**
  * 月界面
  * 
- * @author Desmond
+ * @author Desmond 
  * 
  */
 public class MonthFragment extends Fragment {
@@ -345,7 +344,7 @@ public class MonthFragment extends Fragment {
 			dayCell.setSelected(bSelected);//设置单元格被选中
 
 			// 是否有记录
-			boolean hasRecord = false;//判断记录内容是否为空，不为空则为有记录。
+			boolean hasRecord = true;//判断记录内容是否为空，不为空则为有记录。
 
 			if (flag != null && flag[i] == true && calendar_Hashtable != null
 					&& calendar_Hashtable.containsKey(i)) {
