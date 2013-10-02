@@ -13,6 +13,22 @@ public final class R {
         public static final int dialog_exit=0x7f040001;
     }
     public static final class attr {
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int default_bg=0x7f010002;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int first_half=0x7f010003;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -21,6 +37,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int new_line=0x7f010001;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int second_half=0x7f010004;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -167,7 +191,7 @@ containing a value of this type.
         public static final int date_saturday=0x7f0a005f;
         public static final int date_selector=0x7f0a009f;
         public static final int date_selector_wheel=0x7f0a0119;
-        public static final int date_sport_page=0x7f0a0064;
+        public static final int date_sport_page=0x7f0a0077;
         public static final int date_sunday=0x7f0a0062;
         public static final int date_thursday=0x7f0a0060;
         public static final int date_top_center=0x7f0a004b;
@@ -178,26 +202,26 @@ containing a value of this type.
         public static final int date_working=0x7f0a004f;
         public static final int date_year_current=0x7f0a0058;
         public static final int date_year_select=0x7f0a0057;
-        public static final int date_yes=0x7f0a0068;
+        public static final int date_yes=0x7f0a0065;
         public static final int day=0x7f0a011c;
-        public static final int do_del=0x7f0a006b;
-        public static final int do_do1=0x7f0a0067;
-        public static final int do_do2=0x7f0a006c;
-        public static final int do_do3=0x7f0a0074;
-        public static final int do_ge1=0x7f0a0069;
-        public static final int do_ge2=0x7f0a0070;
-        public static final int do_ge3=0x7f0a0078;
-        public static final int do_next=0x7f0a0079;
-        public static final int do_num0=0x7f0a006a;
-        public static final int do_num1=0x7f0a0075;
-        public static final int do_num2=0x7f0a0076;
-        public static final int do_num3=0x7f0a0077;
-        public static final int do_num4=0x7f0a0071;
-        public static final int do_num5=0x7f0a0072;
-        public static final int do_num6=0x7f0a0073;
-        public static final int do_num7=0x7f0a006d;
-        public static final int do_num8=0x7f0a006e;
-        public static final int do_num9=0x7f0a006f;
+        public static final int do_del=0x7f0a0068;
+        public static final int do_do1=0x7f0a0064;
+        public static final int do_do2=0x7f0a0069;
+        public static final int do_do3=0x7f0a0071;
+        public static final int do_ge1=0x7f0a0066;
+        public static final int do_ge2=0x7f0a006d;
+        public static final int do_ge3=0x7f0a0075;
+        public static final int do_next=0x7f0a0076;
+        public static final int do_num0=0x7f0a0067;
+        public static final int do_num1=0x7f0a0072;
+        public static final int do_num2=0x7f0a0073;
+        public static final int do_num3=0x7f0a0074;
+        public static final int do_num4=0x7f0a006e;
+        public static final int do_num5=0x7f0a006f;
+        public static final int do_num6=0x7f0a0070;
+        public static final int do_num7=0x7f0a006a;
+        public static final int do_num8=0x7f0a006b;
+        public static final int do_num9=0x7f0a006c;
         public static final int edit_date=0x7f0a0117;
         public static final int edit_date_last=0x7f0a003d;
         public static final int edit_human=0x7f0a0085;
@@ -220,8 +244,8 @@ containing a value of this type.
         public static final int family_tvRole=0x7f0a00aa;
         public static final int family_tvWifeid=0x7f0a00b0;
         public static final int first=0x7f0a0112;
-        public static final int fitness_page_add=0x7f0a0066;
-        public static final int fitness_page_fitness=0x7f0a0065;
+        public static final int fitness_page_add=0x7f0a0079;
+        public static final int fitness_page_fitness=0x7f0a0078;
         public static final int function=0x7f0a0113;
         public static final int generation_fragment=0x7f0a007c;
         public static final int hour=0x7f0a011d;
@@ -401,8 +425,8 @@ containing a value of this type.
         public static final int date_last=0x7f030004;
         public static final int date_layout=0x7f030005;
         public static final int date_repeat=0x7f030006;
-        public static final int date_sports_page=0x7f030007;
-        public static final int do_dialog=0x7f030008;
+        public static final int date_repeat_customized_dialog=0x7f030007;
+        public static final int date_sports_page=0x7f030008;
         public static final int frame_main=0x7f030009;
         public static final int generation_layout=0x7f03000a;
         public static final int human_wheel_layout=0x7f03000b;
@@ -615,21 +639,80 @@ containing a value of this type.
         public static final int wheelAnimation=0x7f080001;
     }
     public static final class styleable {
+        /** Attributes that can be used with a SwitchTextView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SwitchTextView_first_half com.time.master:first_half}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchTextView_second_half com.time.master:second_half}</code></td><td></td></tr>
+           </table>
+           @see #SwitchTextView_first_half
+           @see #SwitchTextView_second_half
+         */
+        public static final int[] SwitchTextView = {
+            0x7f010003, 0x7f010004
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.time.master.R.attr#first_half}
+          attribute's value can be found in the {@link #SwitchTextView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:first_half
+        */
+        public static final int SwitchTextView_first_half = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.time.master.R.attr#second_half}
+          attribute's value can be found in the {@link #SwitchTextView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:second_half
+        */
+        public static final int SwitchTextView_second_half = 1;
         /**   自定义viewgroup的布局参数 
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ViewGroupType_default_bg com.time.master:default_bg}</code></td><td></td></tr>
            <tr><td><code>{@link #ViewGroupType_new_line com.time.master:new_line}</code></td><td></td></tr>
            <tr><td><code>{@link #ViewGroupType_width_multi com.time.master:width_multi}</code></td><td></td></tr>
            </table>
+           @see #ViewGroupType_default_bg
            @see #ViewGroupType_new_line
            @see #ViewGroupType_width_multi
          */
         public static final int[] ViewGroupType = {
-            0x7f010000, 0x7f010001
+            0x7f010000, 0x7f010001, 0x7f010002
         };
+        /**
+          <p>This symbol is the offset where the {@link com.time.master.R.attr#default_bg}
+          attribute's value can be found in the {@link #ViewGroupType} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:default_bg
+        */
+        public static final int ViewGroupType_default_bg = 2;
         /**
           <p>This symbol is the offset where the {@link com.time.master.R.attr#new_line}
           attribute's value can be found in the {@link #ViewGroupType} array.

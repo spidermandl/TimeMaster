@@ -18,7 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
-public class DoDialogFragment extends DialogFragment{
+public class RepeatCustomizedDialogFragment extends BasicDialogFragment{
 	public static final String tag="DoDialogFragment";
 	
 	@Override
@@ -32,17 +32,9 @@ public class DoDialogFragment extends DialogFragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		getDialog().setCanceledOnTouchOutside(true);
-		Window window=getDialog().getWindow();
-		window.setGravity(Gravity.BOTTOM);
-		WindowManager.LayoutParams para=(WindowManager.LayoutParams)window.getAttributes();
+		setDialogStyle();
 		
-		para.height=LayoutParams.WRAP_CONTENT;
-		para.width=LayoutParams.MATCH_PARENT;
-		window.setAttributes(para);
-		window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-		
-		View layout=inflater.inflate(R.layout.do_dialog, container, false);
+		View layout=inflater.inflate(R.layout.date_repeat_customized_dialog, container, false);
 		return layout;
 	}
 

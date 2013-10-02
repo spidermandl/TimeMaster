@@ -12,7 +12,7 @@ import android.widget.TextView;
  * @author Desmond
  *
  */
-public abstract class WheelDialogFragment extends DialogFragment {
+public abstract class WheelDialogFragment extends BasicDialogFragment {
 
 	protected EditText editText;
 	protected TextView confirm;
