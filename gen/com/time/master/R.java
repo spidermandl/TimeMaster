@@ -222,6 +222,16 @@ containing a value of this type.
         public static final int do_num7=0x7f0a006a;
         public static final int do_num8=0x7f0a006b;
         public static final int do_num9=0x7f0a006c;
+        public static final int duration_date_selector_wheel=0x7f0a0123;
+        public static final int duration_edit_date=0x7f0a0121;
+        public static final int duration_line1=0x7f0a0124;
+        public static final int duration_line2=0x7f0a0125;
+        public static final int duration_line3=0x7f0a0126;
+        public static final int duration_line4=0x7f0a0127;
+        public static final int duration_line5=0x7f0a0128;
+        public static final int duration_time_bar=0x7f0a011f;
+        public static final int duration_time_confirm=0x7f0a0122;
+        public static final int duration_time_type=0x7f0a0120;
         public static final int edit_date=0x7f0a0117;
         public static final int edit_date_last=0x7f0a003d;
         public static final int edit_human=0x7f0a0085;
@@ -254,7 +264,7 @@ containing a value of this type.
         public static final int human_select=0x7f0a0088;
         public static final int human_selector=0x7f0a00a1;
         public static final int human_selector_wheel=0x7f0a0087;
-        public static final int human_text=0x7f0a011f;
+        public static final int human_text=0x7f0a0129;
         public static final int human_type=0x7f0a0084;
         public static final int informapush_btnRegist=0x7f0a00b6;
         public static final int informapush_btnSee=0x7f0a00b4;
@@ -272,7 +282,7 @@ containing a value of this type.
         public static final int location_confirm=0x7f0a008d;
         public static final int location_selector=0x7f0a00a0;
         public static final int location_selector_wheel=0x7f0a008e;
-        public static final int location_text=0x7f0a0120;
+        public static final int location_text=0x7f0a012a;
         public static final int location_type=0x7f0a008b;
         public static final int main_baseviewgroup=0x7f0a001d;
         public static final int main_baseviewgroup1=0x7f0a003a;
@@ -282,13 +292,13 @@ containing a value of this type.
         public static final int main_page_walk=0x7f0a0047;
         public static final int main_tab=0x7f0a007a;
         public static final int mainlayout=0x7f0a0093;
-        public static final int menu_settings=0x7f0a0122;
+        public static final int menu_settings=0x7f0a012c;
         public static final int minute=0x7f0a011e;
         public static final int month=0x7f0a011b;
         public static final int month_fragment=0x7f0a007e;
         public static final int name_cancel=0x7f0a001a;
         public static final int new_issue_fragment=0x7f0a0082;
-        public static final int numeric_text=0x7f0a0121;
+        public static final int numeric_text=0x7f0a012b;
         public static final int page1=0x7f0a0098;
         public static final int page3=0x7f0a0099;
         public static final int page4=0x7f0a009a;
@@ -447,11 +457,12 @@ containing a value of this type.
         public static final int page_unit_information=0x7f03001a;
         public static final int pattern_switch=0x7f03001b;
         public static final int time_wheel_layout=0x7f03001c;
-        public static final int week_layout=0x7f03001d;
-        public static final int wheel_human_text_item=0x7f03001e;
-        public static final int wheel_location_text_item=0x7f03001f;
-        public static final int wheel_nemeric_text_item=0x7f030020;
-        public static final int year_layout=0x7f030021;
+        public static final int timeduration_wheel_layout=0x7f03001d;
+        public static final int week_layout=0x7f03001e;
+        public static final int wheel_human_text_item=0x7f03001f;
+        public static final int wheel_location_text_item=0x7f030020;
+        public static final int wheel_nemeric_text_item=0x7f030021;
+        public static final int year_layout=0x7f030022;
     }
     public static final class menu {
         public static final int activity_main=0x7f090000;

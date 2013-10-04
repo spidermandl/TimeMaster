@@ -3,6 +3,7 @@ package com.time.master.fragment.date;
 import java.util.HashMap;
 
 import com.time.master.R;
+import com.time.master.dialog.DurationTimeDialogFragment;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
 import com.time.master.dialog.RepeatDialogFragment;
@@ -32,9 +33,9 @@ import android.view.View.OnTouchListener;
  *
  */
 public class DateDetailCreateFragment extends Fragment implements OnTouchListener,android.view.View.OnClickListener{
-	WheelDialogFragment dateFragment, locationFragment, humanFragment;
+	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimeEndFragment;
 	DialogFragment repeatFragment;
-	BasicEditText dateSelector,locationSelector,humanSelector;
+	BasicEditText dateSelector,locationSelector,humanSelector,planEndSelector;
 	BasicTextView dateRepeat;
 	BasicTextView tvdate, //日期 /倒计 按钮
 	              tvduration;//占用/期间 按钮
@@ -59,6 +60,10 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		humanSelector = (BasicEditText) layout.findViewById(R.id.plan_human);
 		humanSelector.setInputType(InputType.TYPE_NULL);
 		humanSelector.setOnTouchListener(this);
+		
+		planEndSelector=(BasicEditText)layout.findViewById(R.id.plan_time_end);
+		planEndSelector.setInputType(InputType.TYPE_NULL);
+		planEndSelector.setOnTouchListener(this);
 		
 		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
 		dateRepeat.setOnClickListener(this);
@@ -153,7 +158,19 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				}
 				showDialog(humanFragment);
 				break;
-			
+			case R.id.plan_time_end:
+				if(planTimeEndFragment==null){
+					planTimeEndFragment=new DurationTimeDialogFragment();
+					planTimeEndFragment.setWheelInterface(new WheelResultInterface() {
+						
+						@Override
+						public void getResult(String result) {
+							// TODO Auto-generated method stub
+							planEndSelector.setText(result);
+						}
+					});
+				}
+				showDialog(planTimeEndFragment);
 			default:
 				break;
 			}
