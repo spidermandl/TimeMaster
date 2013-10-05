@@ -3,6 +3,8 @@ package com.time.master.dialog;
 import java.util.Calendar;
 
 import com.time.master.R;
+import com.time.master.wheel.adapters.ArrayWheelAdapter;
+import com.time.master.wheel.adapters.MinuteNumbericWheelAdapter;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
@@ -14,6 +16,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -28,9 +31,12 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 	public static final String TAG="DurationTimeDialogFragment";
 	DateModel model;
 	Calendar calendar;
-	UIWheelView year,month,day,hour,minute;
-	NumericWheelAdapter yearAdapter,monthAdapter,dayAdapter,hourAdapter,minAdapter;
-	
+	UIWheelView year,month,day,hour,minute,timeModel,timeStyle ;
+	NumericWheelAdapter yearAdapter,monthAdapter,dayAdapter,hourAdapter;
+	MinuteNumbericWheelAdapter minAdapter;
+	ArrayWheelAdapter<String> timeModeAdapter,timeStyleAdapter;
+	static final String[] timeMode={"提前","倒计","持续"};
+	static final String[] timeStyles={"分钟","小时","天","天时","年月"};
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -44,6 +50,8 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 		setDialogStyle();
 		model=new DateModel();
 		calendar=Calendar.getInstance();
+		model.year=calendar.get(Calendar.YEAR);
+		model.month=calendar.get(Calendar.MONTH);
 		model.day=calendar.get(Calendar.DAY_OF_MONTH);
 		model.hour=calendar.get(Calendar.HOUR_OF_DAY);
 		model.minute=calendar.get(Calendar.MINUTE);
@@ -53,6 +61,15 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 		editText=(EditText)layout.findViewById(R.id.duration_edit_date);
         confirm =(TextView)layout.findViewById(R.id.duration_time_confirm);
 		
+        timeModeAdapter=new ArrayWheelAdapter<String>(getActivity(), timeMode);
+        timeModeAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
+        timeModeAdapter.setItemTextResource(R.id.numeric_text);
+        timeModel=(UIWheelView)layout.findViewById(R.id.duration_line1);
+        timeModel.setViewAdapter(timeModeAdapter);
+        timeModel.setBackground(R.drawable.wheel_bg_full);
+        timeModel.setCyclic(false);
+        timeModel.setCurrentItem(timeMode.length/2);
+        
         day = (UIWheelView) layout.findViewById(R.id.duration_line2);
         dayAdapter = new NumericWheelAdapter(this.getActivity(), 0,365);
         dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
@@ -103,12 +120,11 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
         hour.addClickingListener(clickListener);
 		
         minute = (UIWheelView) layout.findViewById(R.id.duration_line4);
-        minAdapter = new NumericWheelAdapter(this.getActivity(), 0, 59, "%02d");
+        minAdapter =  new MinuteNumbericWheelAdapter(this.getActivity(), 0, 59, "%02d");
         minAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         minAdapter.setItemTextResource(R.id.numeric_text);
         minute.setViewAdapter(minAdapter);
         minute.setBackground(R.drawable.wheel_bg_full);
-        minute.setRightLineWidth(0);
         minute.setCyclic(true);
         minute.setCurrentItem(0);
         minute.addScrollingListener(new OnWheelScrollListener() {
@@ -127,12 +143,21 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 		});
         minute.addClickingListener(clickListener);
         
+        timeStyleAdapter=new ArrayWheelAdapter<String>(getActivity(), timeStyles);
+        timeStyleAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
+        timeStyleAdapter.setItemTextResource(R.id.numeric_text);
+        timeStyle=(UIWheelView)layout.findViewById(R.id.duration_line5);
+        timeStyle.setViewAdapter(timeStyleAdapter);
+        timeStyle.setBackground(R.drawable.wheel_bg_full);
+        timeStyle.setCyclic(false);
+        timeStyle.setCurrentItem(timeStyles.length/2);
+        
         superInit();
 		return layout;
 	}
 	
 	private String getDateString(){
-		return model.day+"日 "+model.hour+"时 "+model.minute+"分 ";
+		return model.year+"年 "+model.month+"月 "+model.day+"日 "+model.hour+"时 "+model.minute+"分 ";
 	}
 	
 	
@@ -150,7 +175,7 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 		}
 	};
 	class DateModel{
-		int durationStyle,day,hour,minute,timeStyle;
+		int durationStyle,day,hour,minute,timeStyle,year,month;
 	}
 
 }
