@@ -4,7 +4,6 @@ import java.util.Calendar;
 
 import com.time.master.R;
 import com.time.master.wheel.adapters.ArrayWheelAdapter;
-import com.time.master.wheel.adapters.MinuteNumbericWheelAdapter;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
@@ -18,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 
@@ -31,10 +32,10 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 	public static final String TAG="DurationTimeDialogFragment";
 	DateModel model;
 	Calendar calendar;
-	UIWheelView year,month,day,hour,minute,timeModel,timeStyle ;
-	NumericWheelAdapter yearAdapter,monthAdapter,dayAdapter,hourAdapter;
-	MinuteNumbericWheelAdapter minAdapter;
-	ArrayWheelAdapter<String> timeModeAdapter,timeStyleAdapter;
+	UIWheelView line1,line2,line3,line4,line5 ;
+	NumericWheelAdapter line2Adapter,line3Adapter,line4Adapter;
+	 
+	ArrayWheelAdapter<String> line1Adapter,line5Adapter;
 	static final String[] timeMode={"提前","倒计","持续"};
 	static final String[] timeStyles={"分钟","小时","天","天时","年月"};
 	@Override
@@ -61,25 +62,26 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 		editText=(EditText)layout.findViewById(R.id.duration_edit_date);
         confirm =(TextView)layout.findViewById(R.id.duration_time_confirm);
 		
-        timeModeAdapter=new ArrayWheelAdapter<String>(getActivity(), timeMode);
-        timeModeAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
-        timeModeAdapter.setItemTextResource(R.id.numeric_text);
-        timeModel=(UIWheelView)layout.findViewById(R.id.duration_line1);
-        timeModel.setViewAdapter(timeModeAdapter);
-        timeModel.setBackground(R.drawable.wheel_bg_full);
-        timeModel.setCyclic(false);
-        timeModel.setCurrentItem(timeMode.length/2);
+        line1Adapter=new ArrayWheelAdapter<String>(getActivity(), timeMode);
+        line1Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+        line1Adapter.setItemTextResource(R.id.numeric_text);
+        line1=(UIWheelView)layout.findViewById(R.id.duration_line1);
+        line1.setViewAdapter(line1Adapter);
+        line1.setBackground(R.drawable.wheel_bg_full);
+        line1.setCyclic(false);
+        line1.setCurrentItem(0);
+        line1.addClickingListener(clickListener);
         
-        day = (UIWheelView) layout.findViewById(R.id.duration_line2);
-        dayAdapter = new NumericWheelAdapter(this.getActivity(), 0,365);
-        dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
-        dayAdapter.setItemTextResource(R.id.numeric_text);
-        day.setViewAdapter(dayAdapter);
-        day.setBackground(R.drawable.wheel_bg_full);
-        day.setRightLineWidth(6);
-        day.setCyclic(false);
-        day.setCurrentItem(0);
-        day.addScrollingListener(new OnWheelScrollListener() {
+        line2 = (UIWheelView) layout.findViewById(R.id.duration_line2);
+        line2Adapter = new NumericWheelAdapter(this.getActivity(), 0,365);
+        line2Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+        line2Adapter.setItemTextResource(R.id.numeric_text);
+        line2.setViewAdapter(line2Adapter);
+        line2.setBackground(R.drawable.wheel_bg_full);
+        line2.setRightLineWidth(6);
+        line2.setCyclic(false);
+        line2.setCurrentItem(0);
+        line2.addScrollingListener(new OnWheelScrollListener() {
 			
 			@Override
 			public void onScrollingStarted(WheelView wheel) {
@@ -93,17 +95,18 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 			//	editText.setText(getDateString());
 			}
 		});
-		day.addClickingListener(clickListener);
+		line2.addClickingListener(clickListener);
         
-		hour = (UIWheelView) layout.findViewById(R.id.duration_line3);
-        hourAdapter = new NumericWheelAdapter(this.getActivity(), 0,23);
-        hourAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
-        hourAdapter.setItemTextResource(R.id.numeric_text);
-        hour.setViewAdapter(hourAdapter);
-        hour.setBackground(R.drawable.wheel_bg_full);
-        hour.setCyclic(true);
-        hour.setCurrentItem(0);
-        hour.addScrollingListener(new OnWheelScrollListener() {
+		line3 = (UIWheelView) layout.findViewById(R.id.duration_line3);
+		line3Adapter = new NumericWheelAdapter(this.getActivity(), 0,23,"%02d");
+		line3Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+		line3Adapter.setItemTextResource(R.id.numeric_text);
+		line3Adapter.setSpeicalString("", ":");
+        line3.setViewAdapter(line3Adapter);
+        line3.setBackground(R.drawable.wheel_bg_full);
+        line3.setCyclic(true);
+        line3.setCurrentItem(0);
+        line3.addScrollingListener(new OnWheelScrollListener() {
 			
 			@Override
 			public void onScrollingStarted(WheelView wheel) {
@@ -117,17 +120,18 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 				//editText.setText(getDateString());
 			}
 		});
-        hour.addClickingListener(clickListener);
+        line3.addClickingListener(clickListener);
 		
-        minute = (UIWheelView) layout.findViewById(R.id.duration_line4);
-        minAdapter =  new MinuteNumbericWheelAdapter(this.getActivity(), 0, 59, "%02d");
-        minAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
-        minAdapter.setItemTextResource(R.id.numeric_text);
-        minute.setViewAdapter(minAdapter);
-        minute.setBackground(R.drawable.wheel_bg_full);
-        minute.setCyclic(true);
-        minute.setCurrentItem(0);
-        minute.addScrollingListener(new OnWheelScrollListener() {
+        line4 = (UIWheelView) layout.findViewById(R.id.duration_line4);
+        line4Adapter =  new NumericWheelAdapter(this.getActivity(), 0, 59, "%02d");
+        line4Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+        line4Adapter.setItemTextResource(R.id.numeric_text);
+        line4Adapter.setTimeInterval(5);
+        line4.setViewAdapter(line4Adapter);
+        line4.setBackground(R.drawable.wheel_bg_full);
+        line4.setCyclic(true);
+        line4.setCurrentItem(0);
+        line4.addScrollingListener(new OnWheelScrollListener() {
 			
 			@Override
 			public void onScrollingStarted(WheelView wheel) {
@@ -141,16 +145,31 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 				//editText.setText(getDateString());
 			}
 		});
-        minute.addClickingListener(clickListener);
+        line4.addClickingListener(clickListener);
         
-        timeStyleAdapter=new ArrayWheelAdapter<String>(getActivity(), timeStyles);
-        timeStyleAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
-        timeStyleAdapter.setItemTextResource(R.id.numeric_text);
-        timeStyle=(UIWheelView)layout.findViewById(R.id.duration_line5);
-        timeStyle.setViewAdapter(timeStyleAdapter);
-        timeStyle.setBackground(R.drawable.wheel_bg_full);
-        timeStyle.setCyclic(false);
-        timeStyle.setCurrentItem(timeStyles.length/2);
+        line5Adapter=new ArrayWheelAdapter<String>(getActivity(), timeStyles);
+        line5Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+        line5Adapter.setItemTextResource(R.id.numeric_text);
+        line5=(UIWheelView)layout.findViewById(R.id.duration_line5);
+        line5.setViewAdapter(line5Adapter);
+        line5.setBackground(R.drawable.wheel_bg_full);
+        line5.setCyclic(false);
+        line5.setCurrentItem(3);
+        line5.addScrollingListener(new OnWheelScrollListener() {
+			
+			@Override
+			public void onScrollingStarted(WheelView wheel) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onScrollingFinished(WheelView wheel) {
+				// TODO Auto-generated method stub
+				changeStyle(wheel.getCurrentItem());
+			}
+		});
+        line5.addClickingListener(clickListener);
         
         superInit();
 		return layout;
@@ -176,6 +195,113 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 	};
 	class DateModel{
 		int durationStyle,day,hour,minute,timeStyle,year,month;
+	}
+	private void changeStyle(int styleNumber){
+		switch (styleNumber) {
+		case 0:
+			line2.setVisibility(View.GONE);
+			line3.setVisibility(View.GONE);
+			line4.setVisibility(View.VISIBLE);
+			line4.setCyclic(true);
+			setViewLayoutParams(line4, 3.0f);
+			line4Adapter =  new NumericWheelAdapter(this.getActivity(), 0, 59, "%02d");
+	        line4Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+	        line4Adapter.setItemTextResource(R.id.numeric_text);
+	        line4.setViewAdapter(line4Adapter);
+			break;
+		case 1:
+			line2.setVisibility(View.VISIBLE);
+			line3.setVisibility(View.VISIBLE);
+			line4.setVisibility(View.GONE);
+			line2.setCyclic(false);
+			line3.setCyclic(true);
+			setViewLayoutParams(line2, 2.0f);
+			setViewLayoutParams(line3, 1.0f);
+			line2Adapter=  new NumericWheelAdapter(this.getActivity(),0,24);
+			line2Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+	        line2Adapter.setItemTextResource(R.id.numeric_text);
+	        line2.setViewAdapter(line2Adapter);
+	        line3Adapter=new NumericWheelAdapter(this.getActivity(),0,9);
+	        line3Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+	        line3Adapter.setItemTextResource(R.id.numeric_text);
+	        line3Adapter.setSpeicalString(".", "");
+	        line3.setViewAdapter(line3Adapter);
+	        break;
+		case 2:
+			line2.setVisibility(View.VISIBLE);
+			line3.setVisibility(View.VISIBLE);
+			line4.setVisibility(View.GONE);
+			line2.setCyclic(false);
+			line3.setCyclic(true);
+			setViewLayoutParams(line2, 2.0f);
+			setViewLayoutParams(line3, 1.0f);
+			line2Adapter=  new NumericWheelAdapter(this.getActivity(),0,100);
+			line2Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+	        line2Adapter.setItemTextResource(R.id.numeric_text);
+	        line2.setViewAdapter(line2Adapter);
+	        line3Adapter=new NumericWheelAdapter(this.getActivity(),0,9);
+	        line3Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+	        line3Adapter.setItemTextResource(R.id.numeric_text);
+	        line3Adapter.setSpeicalString(".", "");
+	        line3.setViewAdapter(line3Adapter);
+	        break;
+		case 3:
+			line2.setVisibility(View.VISIBLE);
+			line3.setVisibility(View.VISIBLE);
+			line4.setVisibility(View.VISIBLE);
+			line2.setCyclic(false);
+			line3.setCyclic(true);
+			line4.setCyclic(true);
+			setViewLayoutParams(line2, 1.0f);
+			setViewLayoutParams(line3, 1.0f);
+			setViewLayoutParams(line4, 1.0f);
+			line2Adapter = new NumericWheelAdapter(this.getActivity(), 0,365);
+		    line2Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+		    line2Adapter.setItemTextResource(R.id.numeric_text);
+		    line2.setViewAdapter(line2Adapter);
+		    line3Adapter = new NumericWheelAdapter(this.getActivity(), 0,23,"%02d");
+			line3Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+			line3Adapter.setItemTextResource(R.id.numeric_text);
+			line3Adapter.setSpeicalString("", ":");
+	        line3.setViewAdapter(line3Adapter);
+	        line4Adapter =  new NumericWheelAdapter(this.getActivity(), 0, 59, "%02d");
+	        line4Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+	        line4Adapter.setItemTextResource(R.id.numeric_text);
+	        line4Adapter.setTimeInterval(5);
+	        line4.setViewAdapter(line4Adapter);
+	        break;
+		case 4:
+			line2.setVisibility(View.VISIBLE);
+			line3.setVisibility(View.VISIBLE);
+			line4.setVisibility(View.VISIBLE);
+			line2.setCyclic(false);
+			line3.setCyclic(true);
+			line4.setCyclic(true);
+			setViewLayoutParams(line2, 1.0f);
+			setViewLayoutParams(line3, 1.0f);
+			setViewLayoutParams(line4, 1.0f);
+			line2Adapter = new NumericWheelAdapter(this.getActivity(), 0,365);
+		    line2Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+		    line2Adapter.setItemTextResource(R.id.numeric_text);
+		    line2Adapter.setSpeicalString("", "年");
+		    line2.setViewAdapter(line2Adapter);
+		    line3Adapter = new NumericWheelAdapter(this.getActivity(), 0,12);
+			line3Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+			line3Adapter.setItemTextResource(R.id.numeric_text);
+			line3Adapter.setSpeicalString("", "月");
+	        line3.setViewAdapter(line3Adapter);
+	        line4Adapter =  new NumericWheelAdapter(this.getActivity(), 0,32);
+	        line4Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
+	        line4Adapter.setItemTextResource(R.id.numeric_text);
+	        line4Adapter.setSpeicalString("", "日");
+	        line4.setViewAdapter(line4Adapter);
+		default:
+			break;
+		}
+	}
+	private void setViewLayoutParams(UIWheelView view,float weight ){
+		LayoutParams param = new LinearLayout.LayoutParams(0,LayoutParams.MATCH_PARENT,weight);
+		view.setLayoutParams(param);
 	}
 
 }

@@ -31,7 +31,7 @@ import android.widget.LinearLayout.LayoutParams;
 public class MonthFragment extends Fragment {
 
 	// 生成日历，外层容器
-	private LinearLayout layContent = null;
+	private LinearLayout layContent = null;//定义布局属性并初始化
 	private ArrayList<DateWidgetDayCell> days = new ArrayList<DateWidgetDayCell>();
 
 	// 日期变量
@@ -77,39 +77,39 @@ public class MonthFragment extends Fragment {
 		Cell_Width = Calendar_Width / 7 + 1;
 
 		// 声明控件，并绑定事件
-		Top_Date = (TextView) mainLayout.findViewById(R.id.Top_Date);
-		btn_pre_month = (Button) mainLayout.findViewById(R.id.btn_pre_month);
-		btn_next_month = (Button) mainLayout.findViewById(R.id.btn_next_month);
-		btn_pre_month.setOnClickListener(new Pre_MonthOnClickListener());
+		Top_Date = (TextView) mainLayout.findViewById(R.id.Top_Date);//month_layout布局文件里的文本框
+		btn_pre_month = (Button) mainLayout.findViewById(R.id.btn_pre_month);//布局里的左方向按钮
+		btn_next_month = (Button) mainLayout.findViewById(R.id.btn_next_month);//布局里的右方向按钮
+		btn_pre_month.setOnClickListener(new Pre_MonthOnClickListener());//绑定监听事件
 		btn_next_month.setOnClickListener(new Next_MonthOnClickListener());
 
 		// 计算本月日历中的第一天(一般是上月的某天)，并更新日历
 		calStartDate = getCalendarStartDate();
-		mainLayout.addView(generateCalendarMain());
-		DateWidgetDayCell daySelected = updateCalendar();
+		mainLayout.addView(generateCalendarMain());//像布局中加入生成日历主体的布局
+		DateWidgetDayCell daySelected = updateCalendar();//
 
-		if (daySelected != null)
-			daySelected.requestFocus();
-
+		if (daySelected != null)//如果日被选中
+			daySelected.requestFocus();//执行响应
+		//实例化俩个布局容器
 		LinearLayout.LayoutParams Param1 = new LinearLayout.LayoutParams(
 				ViewGroup.LayoutParams.MATCH_PARENT,
 				ViewGroup.LayoutParams.MATCH_PARENT);
 
-		ScrollView view = new ScrollView(this.getActivity());
-		arrange_layout = createLayout(LinearLayout.VERTICAL);
-		arrange_layout.setPadding(5, 2, 0, 0);
-		arrange_text = new TextView(this.getActivity());
-		mainLayout.setBackgroundColor(Color.WHITE);
-		arrange_text.setTextColor(Color.BLACK);
-		arrange_text.setTextSize(18);
-		arrange_layout.addView(arrange_text);
+		ScrollView view = new ScrollView(this.getActivity());//实例化滚轮
+		arrange_layout = createLayout(LinearLayout.VERTICAL);//创建个布局
+		arrange_layout.setPadding(5, 2, 0, 0);//传入布局的边界
+		arrange_text = new TextView(this.getActivity());//实例化一个文本框
+		mainLayout.setBackgroundColor(Color.WHITE);//设置布局颜色为白
+		arrange_text.setTextColor(Color.BLACK);//设置文办框颜色为黑
+		arrange_text.setTextSize(18);//这是文本框大小
+		arrange_layout.addView(arrange_text);//像布局中加入文本框
 
 		startDate = GetStartDate();
 		calToday = GetTodayDate();
 
 		endDate = GetEndDate(startDate);
-		view.addView(arrange_layout, Param1);
-		mainLayout.addView(view);
+		view.addView(arrange_layout, Param1);//向容器中加入布局
+		mainLayout.addView(view);//像布局中加入控件
 
 		// 新建线程
 		new Thread() {
@@ -124,7 +124,7 @@ public class MonthFragment extends Fragment {
 			}
 
 		}.start();
-
+//把各属性的颜色返回在布局中
 		Constant.Calendar_WeekBgColor = this.getResources().getColor(
 				R.color.Calendar_WeekBgColor);
 		Constant.Calendar_DayBgColor = this.getResources().getColor(
@@ -166,11 +166,11 @@ public class MonthFragment extends Fragment {
 
 		return index;
 	}
-
+//分辨率
 	private int millisecondsToDays(long intervalMs) {
 		return Math.round((intervalMs / (1000 * 86400)));
 	}
-
+//传入时间
 	private void setTimeToMidnight(Calendar calendar) {
 		calendar.set(Calendar.HOUR_OF_DAY, 0);
 		calendar.set(Calendar.MINUTE, 0);
