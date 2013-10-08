@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <com.time.master.view.BasicViewGroup 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_everytime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFF00"
+        android:gravity="center"
+        android:text="@string/warning_everytime"
+       layout:new_line="true"
+        layout:width_multi="1" />
+        
+        <com.time.master.view.BasicEditText
+        android:id="@+id/warning_advanced"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
+        android:gravity="center_vertical"
+        android:hint="@string/warning_advanced"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFF00"
+        android:gravity="center"
+        android:text="@string/warning_add"
+        layout:new_line="false"
+        layout:width_multi="1" />
+        
+        <!-- The second line -->
+        
+          <com.time.master.view.BasicTextView
+        android:id="@+id/warning_compose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFF00"
+        android:gravity="center"
+        android:text="@string/warning_compose"
+        layout:new_line="true"
+        layout:width_multi="1" />
+        
+        <com.time.master.view.BasicEditText
+        android:id="@+id/warning_way"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
+        android:gravity="center_vertical"
+        android:hint="@string/warning_way"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:gravity="center"
+        android:text="@string/warning_confirm"
+        layout:new_line="false"
+        layout:width_multi="1" />
+        
+        <!-- The third line -->
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_library"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8EABFF"
+        android:gravity="center"
+        android:text="@string/warning_library"
+       layout:new_line="true"
+        layout:width_multi="1" />
+        
+        <com.time.master.view.BasicEditText
+        android:id="@+id/warning_ring_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setbar_backgroundp"
+       android:gravity="center_vertical"
+        android:hint="@string/warning_ring_one"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_ring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:gravity="center"
+        android:text="@string/warning_ring"
+       layout:new_line="false"
+        layout:width_multi="1" />
+        
+        <!-- The fourth line -->
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8EABFF"
+        android:gravity="center"
+        android:text="@string/warning_collect"
+        layout:new_line="true"
+        layout:width_multi="1" />
+        
+        <com.time.master.view.BasicEditText
+        android:id="@+id/warning_ring_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFAA00"
+        android:gravity="center_vertical"
+        android:hint="@string/warning_ring_two"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8FFF6B"
+        android:gravity="center"
+        android:text="@string/warning_music"
+       layout:new_line="false"
+        layout:width_multi="1" />
+        
+        <!-- The fifth line -->
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8EABFF"
+        android:gravity="center"
+        android:text="@string/warning_download"
+        layout:new_line="true"
+        layout:width_multi="1" />
+        
+        <com.time.master.view.BasicEditText
+        android:id="@+id/warning_ring_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFAA00"
+        android:gravity="center_vertical"
+        android:hint="@string/warning_ring_three"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_pronunciation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00B97D"
+        android:gravity="center"
+        android:text="@string/warning_pronunciation"
+        layout:new_line="false"
+        layout:width_multi="1" />
+        
+        <!-- The sixth line -->
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_audition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8EABFF"
+        android:gravity="center"
+        android:text="@string/warning_audition"
+       layout:new_line="true"
+        layout:width_multi="1" />
+        
+        <com.time.master.view.BasicEditText
+        android:id="@+id/warning_ring_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFAA00"
+        android:gravity="center_vertical"
+        android:hint="@string/warning_ring_four"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_vibrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#007AB9"
+        android:gravity="center"
+        android:text="@string/warning_vibrate"
+       layout:new_line="false"
+        layout:width_multi="1" />
+        
+        <!-- seven >>>>>>>>>>>>>>>>>>>> -->
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_transcribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8EABFF"
+        android:gravity="center"
+        android:text="@string/warning_transcribe"
+        layout:new_line="true"
+        layout:width_multi="1" />
+        
+        <com.time.master.view.BasicEditText
+        android:id="@+id/warning_ring_five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFAA00"
+        android:gravity="center_vertical"
+        android:hint="@string/warning_ring_five"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFD4FF"
+        android:gravity="center"
+        android:text="@string/warning_icon"
+        layout:new_line="false"
+        layout:width_multi="1" />
+        
+        <!-- eight>>>>>>>>>>>>>>>>>>>>>> -->
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_man_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8EABFF"
+        android:gravity="center"
+        android:text="@string/warning_man_sound"
+        layout:new_line="true"
+        layout:width_multi="1" />
+        
+        <com.time.master.view.BasicEditText
+        android:id="@+id/warning_ring_six"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFAA00"
+        android:gravity="center_vertical"
+        android:hint="@string/warning_ring_six"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_motion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#B90000"
+        android:gravity="center"
+        android:text="@string/warning_motion"
+        layout:new_line="false"
+        layout:width_multi="1" />
+        
+        <!-- nine>>>>>>>>>>>>>>>>>>>>>>> -->
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_famale_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8EABFF"
+        android:gravity="center"
+        android:text="@string/warning_female_sound"
+        layout:new_line="true"
+        layout:width_multi="1" />
+        
+        <com.time.master.view.BasicEditText
+        android:id="@+id/warning_ring_seven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFAA00"
+        android:gravity="center_vertical"
+        android:hint="@string/warning_ring_seven"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_surroundings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8EABFF"
+        android:gravity="center"
+        android:text="@string/warning_surroundings"
+        layout:new_line="false"
+        layout:width_multi="1" />
+        
+        <!-- ten>>>>>>>>>>>>>>>>>>>>>> -->
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_child_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8EABFF"
+        android:gravity="center"
+        android:text="@string/warning_child_sound"
+        layout:new_line="true"
+        layout:width_multi="1" />
+        
+        <com.time.master.view.BasicEditText
+        android:id="@+id/warning_ring_eight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFAA00"
+        android:gravity="center_vertical"
+        android:hint="@string/warning_ring_eight"
+        android:paddingLeft="@dimen/editview_padding_left"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        layout:new_line="false"
+        layout:width_multi="3" />
+        
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_procedure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#C0C0C0"
+        android:gravity="center"
+        android:text="@string/warning_procedure"
+        layout:new_line="false"
+        layout:width_multi="1" />
+        
+    </com.time.master.view.BasicViewGroup>
+</ScrollView>

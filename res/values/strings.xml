@@ -199,5 +199,36 @@
 	<string name="date_saturday">周六</string>
 	<string name="date_sunday">周日</string>
 	
+	<string name="warning_everytime">每次</string>
+	<string name="warning_advanced">提前1：30</string>
+	<string name="warning_add">添加</string>
+	<string name="warning_compose">组合</string>
+	<string name="warning_way">提醒方式</string>
+	<string name="warning_confirm">确定</string>
+	<string name="warning_library">库</string>
+	<string name="warning_collect">收藏</string>
+	<string name="warning_music">音乐</string>
+	<string name="warning_download">下载</string>
+	<string name="warning_pronunciation">语音</string>
+	<string name="warning_audition">试听</string>
+	<string name="warning_vibrate">振动</string>
+	<string name="warning_transcribe">录制</string>
+	<string name="warning_icon">图标</string>
+	<string name="warning_motion">动作</string>
+	<string name="warning_surroundings">环境</string>
+	<string name="warning_procedure">流程</string>
+	<string name="warning_man_sound">男声</string>
+	<string name="warning_female_sound">女声</string>
+	<string name="warning_child_sound">童声</string>
+	<string name="warning_ring">铃声</string>
+	<string name="warning_ring_one">铃声一</string>
+	<string name="warning_ring_two">铃声二</string>
+	<string name="warning_ring_three">铃声三</string>
+	<string name="warning_ring_four">铃声四</string>
+	<string name="warning_ring_five">铃声五</string>
+	<string name="warning_ring_six">铃声六</string>
+	<string name="warning_ring_seven">铃声七</string>
+	<string name="warning_ring_eight">铃声八</string>
+	
 	
 </resources>

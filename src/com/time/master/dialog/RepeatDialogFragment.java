@@ -20,7 +20,7 @@ import android.view.WindowManager.LayoutParams;
 
 /**
  * "重复"对话框界面
- * @author bianyanling
+ * @author wanghuiming
  *
  */
 public class RepeatDialogFragment extends DialogFragment implements OnClickListener, android.view.View.OnClickListener  {

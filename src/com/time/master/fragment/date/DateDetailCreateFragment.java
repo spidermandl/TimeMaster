@@ -3,6 +3,7 @@ package com.time.master.fragment.date;
 import java.util.HashMap;
 
 import com.time.master.R;
+import com.time.master.dialog.DateWarningDialogFragment;
 import com.time.master.dialog.DoDialogFragment;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
@@ -34,9 +35,9 @@ import android.view.View.OnTouchListener;
  */
 public class DateDetailCreateFragment extends Fragment implements OnTouchListener,android.view.View.OnClickListener{
 	WheelDialogFragment dateFragment, locationFragment, humanFragment;
-	DialogFragment repeatFragment;
+	DialogFragment repeatFragment,warningFragment;
 	BasicEditText dateSelector,locationSelector,humanSelector;
-	BasicTextView dateRepeat;
+	BasicTextView dateRepeat,dateWarning;
 	BasicTextView tvdate, //日期 /倒计 按钮
 	              tvduration;//占用/期间 按钮
 	           
@@ -48,7 +49,6 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			Bundle savedInstanceState) {
 
 		View layout = inflater.inflate(R.layout.date_detail_create_page, container, false);
-
 		dateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_start);
 		dateSelector.setInputType(InputType.TYPE_NULL);
 		dateSelector.setOnTouchListener(this);
@@ -63,6 +63,9 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		
 		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
 		dateRepeat.setOnClickListener(this);
+		
+		dateWarning=(BasicTextView)layout.findViewById(R.id.plan_warning);
+		dateWarning.setOnClickListener(this);
 
 		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
 		tvdate.setOnClickListener(this);
@@ -170,6 +173,11 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			repeatFragment=new RepeatDialogFragment();
 			repeatFragment.setShowsDialog(true);
 			showDialog(repeatFragment);
+			break;
+		case R.id.plan_warning:
+			warningFragment=new DateWarningDialogFragment();
+			warningFragment.setShowsDialog(true);
+			showDialog(warningFragment);
 			break;
 		case R.id.plan_model:
 			if (viewStatus.get(R.id.plan_model)) {
