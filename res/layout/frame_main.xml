@@ -2,6 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+    
+   
+    
 
     <TabHost
         android:id="@+id/main_tab"
@@ -60,7 +63,7 @@
 
                 <fragment
                     android:id="@+id/date_fragment"
-                    android:name="com.time.master.fragment.MainPageFragment"
+                    android:name="com.time.master.fragment.DateFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
                 

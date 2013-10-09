@@ -2,11 +2,22 @@ package com.time.master.dialog;
 
 import java.util.Calendar;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+
+import com.time.master.R;
+import com.time.master.wheel.adapters.NumericWheelAdapter;
+import com.time.master.wheel.widget.OnWheelClickedListener;
+import com.time.master.wheel.widget.OnWheelScrollListener;
+import com.time.master.wheel.widget.UIWheelView;
+import com.time.master.wheel.widget.WheelView;
+import android.os.Bundle;
+
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +54,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
         setStyle(DialogFragment.STYLE_NO_FRAME,android.R.style.Theme_Light);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

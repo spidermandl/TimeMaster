@@ -1,15 +1,12 @@
 package com.time.master.dialog;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-
 import com.time.master.R;
 import com.time.master.wheel.adapters.ArrayWheelAdapter;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.UIWheelView;
 import com.time.master.wheel.widget.WheelView;
-
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.Gravity;
@@ -37,6 +34,7 @@ public class LocationDialogFragment extends WheelDialogFragment {
 		super.onCreate(savedInstanceState);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

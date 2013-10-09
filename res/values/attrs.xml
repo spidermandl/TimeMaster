@@ -5,9 +5,6 @@
     <declare-styleable name="ViewGroupType">
         <attr name="width_multi" format="integer" />
         <attr name="new_line" format="boolean"/>
-        <attr name="full" format="boolean"/>
-        <attr name="bottom" format="boolean"/>
-        <attr name="visible" format="boolean"/>
     </declare-styleable>  
 
 </resources>

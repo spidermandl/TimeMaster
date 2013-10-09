@@ -6,7 +6,7 @@
     tools:context=".Eight" >
 
    <TextView
-        android:id="@+id/titleseven"
+        android:id="@+id/personal_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#319EDE"
@@ -22,7 +22,7 @@
     <com.time.master.view.BasicViewGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/titleseven"
+        android:layout_below="@+id/personal_title"
         android:id="@+id/basic_info_up" >
         
 
@@ -39,7 +39,7 @@
             layout:width_multi="5" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page7_tvName"
+            android:id="@+id/personal_tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -51,7 +51,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page7_etName"
+            android:id="@+id/personal_etName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -60,7 +60,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page7_tvGender"
+            android:id="@+id/personal_tvGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -72,7 +72,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page7_etGender"
+            android:id="@+id/personal_etGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -81,7 +81,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page7_tvAddress"
+            android:id="@+id/personal_tvAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -93,7 +93,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page7_etAddress"
+            android:id="@+id/personal_etAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -102,7 +102,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page7_tvGetaddress"
+            android:id="@+id/personal_tvGetaddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -114,7 +114,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page7_etGetaddress"
+            android:id="@+id/personal_etGetaddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -123,7 +123,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page7_tvAdd"
+            android:id="@+id/personal_tvAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -135,7 +135,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page7_etAdd"
+            android:id="@+id/personal_etAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -144,7 +144,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page7_tvQq"
+            android:id="@+id/personal_tvQq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -156,7 +156,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page7_etQq"
+            android:id="@+id/personal_etQq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -165,7 +165,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page7_tvMicroblog"
+            android:id="@+id/personal_tvMicroblog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -177,7 +177,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page7_etMicroblog"
+            android:id="@+id/personal_etMicroblog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -186,7 +186,7 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page7_tvMessage"
+            android:id="@+id/personal_tvMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
@@ -198,7 +198,7 @@
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page7_etMessage"
+            android:id="@+id/personal_etMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -215,7 +215,7 @@
             
             >
        <com.time.master.view.BasicTextView
-            android:id="@+id/page7_btnEnd"
+            android:id="@+id/personal_btnEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#ADD7E7"
@@ -225,8 +225,8 @@
             android:textColor="#48839F"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
-            layout:width_multi="5"
-        	 />
+            layout:width_multi="5"/>
+       
     </com.time.master.view.BasicViewGroup>
 
 

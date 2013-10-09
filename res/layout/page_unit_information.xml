@@ -3,10 +3,9 @@
     xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Nine" >
-    
-	<TextView
-        android:id="@+id/title8"
+    tools:context=".Eight" >
+		<TextView
+        android:id="@+id/unit_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#319EDE"
@@ -17,12 +16,11 @@
         android:text="@string/page_title"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/pagetitle_text_size"/>
-	
     <com.time.master.view.BasicViewGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title8"
-        android:id="@+id/family_info_up" >
+        android:layout_below="@+id/unit_title"
+        android:id="@+id/unit_info_up" >
         
         
 
@@ -31,7 +29,7 @@
             android:layout_height="wrap_content"
             android:background="#ADD7E7"
             android:gravity="center"
-            android:text="@string/page8_title"
+            android:text="@string/page9_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#48839F"
             android:textSize="@dimen/pagecomponent_text_size"
@@ -39,19 +37,19 @@
             layout:width_multi="5" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvId"
+            android:id="@+id/unit_tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
-            android:text="@string/page8_id"
+            android:text="@string/page9_name"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etId"
+            android:id="@+id/unit_etName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -60,19 +58,19 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvDadid"
+            android:id="@+id/unit_tvAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
-            android:text="@string/page8_dadid"
+            android:text="@string/page9_address"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etDadid"
+            android:id="@+id/unit_etAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -81,19 +79,19 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvMomid"
+            android:id="@+id/unit_tvQuale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
-            android:text="@string/page8_momid"
+            android:text="@string/page9_quale"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etMomid"
+            android:id="@+id/unit_etQuale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -102,19 +100,19 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvRole"
+            android:id="@+id/unit_tvIdcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
-            android:text="@string/page8_familyrole"
+            android:text="@string/page9_idcode"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etRole"
+            android:id="@+id/unit_etIdcode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -123,19 +121,19 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvMarryid"
+            android:id="@+id/unit_tvIdnumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
-            android:text="@string/page8_marryid"
+            android:text="@string/page9_idnumber"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etMarryid"
+            android:id="@+id/unit_etIdnumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -144,19 +142,19 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvHusbandid"
+            android:id="@+id/unit_tvGoods"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
-            android:text="@string/page8_husband"
+            android:text="@string/page9_goods"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
             layout:width_multi="2" />
 
         <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etHusbandid"
+            android:id="@+id/unit_etGoods"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
@@ -165,48 +163,64 @@
             layout:width_multi="3" />
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/page8_tvWifeid"
+            android:id="@+id/unit_tvClass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#d7d7d7"
             android:gravity="center"
-            android:text="@string/page8_wife"
+            android:text="@string/page9_class"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
             layout:width_multi="2" />
 
-        <com.time.master.view.BasicEditText
-            android:id="@+id/page8_etWifeid"
+        <com.time.master.view.BasicEditText 
+            android:id="@+id/unit_etClass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
             android:textIsSelectable="true"
             layout:new_line="false"
             layout:width_multi="3" />
-	</com.time.master.view.BasicViewGroup>
-	
-    
-    
-        <com.time.master.view.BasicViewGroup
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/unit_tvRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#d7d7d7"
+            android:gravity="center"
+            android:text="@string/page9_role"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/pagecomponent_text_size"
+            layout:new_line="true"
+            layout:width_multi="2" />
+
+        <com.time.master.view.BasicEditText
+            android:id="@+id/unit_etRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/setbar_backgroundp"
+            android:textIsSelectable="true"
+            layout:new_line="false"
+            layout:width_multi="3" />
+         </com.time.master.view.BasicViewGroup>
+         <com.time.master.view.BasicViewGroup
             android:layout_width="match_parent"
        		android:layout_height="wrap_content"
-        	android:layout_alignParentBottom="true"
-            
-            >
+        	android:layout_alignParentBottom="true">
+    
        <com.time.master.view.BasicTextView
-            android:id="@+id/page8_btnEnd"
+            android:id="@+id/unit_btnEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#ADD7E7"
             android:gravity="center"
-            android:text="@string/page8_end"
+            android:text="@string/page9_end"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#48839F"
             android:textSize="@dimen/pagecomponent_text_size"
             layout:new_line="true"
-            layout:width_multi="5"
-            layout:bottom="true" />
+            layout:width_multi="5" />
     </com.time.master.view.BasicViewGroup>
 
 </RelativeLayout>
