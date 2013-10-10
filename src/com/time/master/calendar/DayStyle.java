@@ -1,13 +1,9 @@
-/**
- * @梁丽丽
- */
+
 
 package com.time.master.calendar;
 
 import java.util.Calendar;
-/*
- * 谢冬
- */
+
 /**
  * 日历控件样式绘制类
  * @Description: 日历控件样式绘制类

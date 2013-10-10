@@ -1,10 +1,6 @@
-/**
- * @ÁºÀöÀö
- */
+
 package com.time.master.calendar;
-/*
- * Ğ»¶¬
-*/
+
 import com.time.master.tool.Constant;
 
 import android.content.Context;
