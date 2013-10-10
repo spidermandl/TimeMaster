@@ -139,6 +139,8 @@
         android:textIsSelectable="true"
         layout:new_line="false"
         layout:width_multi="3" />
+           
+           <include layout="@layout/gridview"/>"
        </LinearLayout>
         
         <LinearLayout 
