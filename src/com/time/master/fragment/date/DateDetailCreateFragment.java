@@ -33,9 +33,9 @@ import android.view.View.OnTouchListener;
  *
  */
 public class DateDetailCreateFragment extends Fragment implements OnTouchListener,android.view.View.OnClickListener{
-	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimeEndFragment;
+	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimePeroidFragment;
 	DialogFragment repeatFragment;
-	BasicEditText dateSelector,locationSelector,humanSelector,planEndSelector;
+	BasicEditText dateSelector,locationSelector,humanSelector,planPeroidSelector;
 	BasicTextView dateRepeat;
 	BasicTextView tvdate, //日期 /倒计 按钮
 	              tvduration;//占用/期间 按钮
@@ -61,9 +61,9 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		humanSelector.setInputType(InputType.TYPE_NULL);
 		humanSelector.setOnTouchListener(this);
 		
-		planEndSelector=(BasicEditText)layout.findViewById(R.id.plan_time_end);
-		planEndSelector.setInputType(InputType.TYPE_NULL);
-		planEndSelector.setOnTouchListener(this);
+		planPeroidSelector=(BasicEditText)layout.findViewById(R.id.plan_length);
+		planPeroidSelector.setInputType(InputType.TYPE_NULL);
+		planPeroidSelector.setOnTouchListener(this);
 		
 		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
 		dateRepeat.setOnClickListener(this);
@@ -158,19 +158,19 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				}
 				showDialog(humanFragment);
 				break;
-			case R.id.plan_time_end:
-				if(planTimeEndFragment==null){
-					planTimeEndFragment=new DurationTimeDialogFragment();
-					planTimeEndFragment.setWheelInterface(new WheelResultInterface() {
+			case R.id.plan_length:
+				if(planTimePeroidFragment==null){
+					planTimePeroidFragment=new DurationTimeDialogFragment();
+					planTimePeroidFragment.setWheelInterface(new WheelResultInterface() {
 						
 						@Override
 						public void getResult(String result) {
 							// TODO Auto-generated method stub
-							planEndSelector.setText(result);
+							planPeroidSelector.setText(result);
 						}
 					});
 				}
-				showDialog(planTimeEndFragment);
+				showDialog(planTimePeroidFragment);
 			default:
 				break;
 			}

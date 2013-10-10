@@ -24,7 +24,7 @@ import android.widget.TextView;
 
 /**
  * 持续时间选择器
- * @author xx
+ * @author xianrui
  */
 public class DurationTimeDialogFragment extends WheelDialogFragment{
 	
