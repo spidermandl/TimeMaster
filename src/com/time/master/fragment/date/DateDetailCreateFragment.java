@@ -1,7 +1,6 @@
 package com.time.master.fragment.date;
 
 import java.util.HashMap;
-
 import com.time.master.R;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
@@ -11,7 +10,6 @@ import com.time.master.dialog.WheelDialogFragment;
 import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.BasicEditText;
 import com.time.master.view.BasicTextView;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
