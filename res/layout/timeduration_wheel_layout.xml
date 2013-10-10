@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:background="#FFBCBCBC"
             android:gravity="center"
-            android:text="阳历/m持续"
+            android:text="阳历/n持续"
             layout:new_line="true"
             layout:width_multi="1" />
 

@@ -1,15 +1,19 @@
 package com.time.master.dialog;
 
 import java.util.Calendar;
+import java.util.HashMap;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
 import com.time.master.R;
+import com.time.master.tool.ChineseCalendar;
+import com.time.master.wheel.adapters.ArrayWheelAdapter;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
@@ -17,11 +21,15 @@ import com.time.master.wheel.widget.UIWheelView;
 import com.time.master.wheel.widget.WheelView;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
@@ -30,6 +38,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.time.master.R;
+import com.time.master.calendar.DayStyle;
 import com.time.master.fragment.NewIssueFragment;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.widget.OnWheelClickedListener;
@@ -47,7 +56,8 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 	public static final String TAG="TimeDialogFragment";
 	//WorldTimeDialogFragment worldtime=new WorldTimeDialogFragment();
 	
-	
+	private int dayModle=0;
+	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -75,6 +85,14 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
         confirm =(TextView)layout.findViewById(R.id.time_confirm);
         mode=(TextView)layout.findViewById(R.id.time_type);
         mode.setOnClickListener(this);
+        mode.setText(R.string.date_solar_lunar_2);
+        mode.setBackgroundColor(Color.YELLOW);
+        
+        
+        
+        editText.setOnClickListener(this);
+        
+        
         
 		year = (UIWheelView) layout.findViewById(R.id.year);
         yearAdapter = new NumericWheelAdapter(this.getActivity(), model.year-5000, model.year+5000);
@@ -118,6 +136,8 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				model.month=wheel.getCurrentItem()+1;
+				if(dayModle==0){
+				
 				
 		        Calendar calendar = Calendar.getInstance();
 		        calendar.set(Calendar.YEAR, model.year);
@@ -127,10 +147,11 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 		        dayAdapter=new NumericWheelAdapter(TimeDialogFragment.this.getActivity(), 1, maxDays);
 		        dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		        dayAdapter.setItemTextResource(R.id.numeric_text);
+		        
 		        day.setViewAdapter(dayAdapter);
 		        int curDay = Math.min(maxDays, day.getCurrentItem() + 1);
 		        day.setCurrentItem(curDay - 1, true);
-		        model.day=curDay;
+		        model.day=curDay;}
 
 				editText.setText(getDateString());
 //				int max=calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -216,7 +237,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 			}
 		});
         minute.addClickingListener(clickListener);
-        
+        editText.setText(getDateString());
         superInit();
 		return layout;
 	}
@@ -240,7 +261,16 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 	};
 	
 	private String getDateString(){
-		return model.year+"年 "+model.month+"月 "+model.day+"日 "+model.hour+"时 "+model.minute+"分 ";
+		if(dayModle==0){
+			int a[]=ChineseCalendar.sCalendarSolarToLundar(model.year, model.month, model.day);
+			return a[0]+"年"+ChineseCalendar.getChinaMonth(a[1]-1)
+					+ChineseCalendar.getChinaDay(a[2])+model.hour+"时 "+model.minute+"分 ";
+		}
+		else{
+			int a[]=ChineseCalendar.sCalendarLundarToSolar(model.year, model.month, model.day);
+			return a[0]+"年 "+(a[1]-1)+"月 "+(a[2]+1)+"日 "+model.hour+"时 "+model.minute+"分 ";
+		}
+			
 	}
 
 	@Override
@@ -253,11 +283,46 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.time_type:
-			this.dismiss();
-			showDialog(new WorldTimeDialogFragment());
+			if(dayModle==0){
+				int a[]=ChineseCalendar.sCalendarSolarToLundar(model.year, model.month, model.day);
+				dayModle=1;
+				ArrayWheelAdapter<String> monthArrayWheelAdapter=new ArrayWheelAdapter<String>(getActivity(),
+						ChineseCalendar.getChinaMonth());
+				monthArrayWheelAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
+				monthArrayWheelAdapter.setItemTextResource(R.id.numeric_text);
+		        month.setViewAdapter(monthArrayWheelAdapter);
+		        month.setCurrentItem(a[1]-1);
+		        ArrayWheelAdapter<String> dayArrayWheelAdapter=new ArrayWheelAdapter<String>(getActivity(),
+						ChineseCalendar.getChinaDay());
+				dayArrayWheelAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
+				dayArrayWheelAdapter.setItemTextResource(R.id.numeric_text);
+		        day.setViewAdapter(dayArrayWheelAdapter);
+		        day.setCurrentItem(a[2]);
+		        editText.setText(getDateString());
+		        mode.setText(R.string.date_solar_lunar_1);
+			}
+			else {
+				int a[]=ChineseCalendar.sCalendarLundarToSolar(model.year, model.month, model.day);
+				dayModle=0;
+				dayAdapter = new NumericWheelAdapter(this.getActivity(), 1,calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+			    dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
+			    dayAdapter.setItemTextResource(R.id.numeric_text);
+			    day.setViewAdapter(dayAdapter);
+			    day.setCurrentItem(a[2]+1);
+			    monthAdapter = new NumericWheelAdapter(this.getActivity(), 1,12);
+		        monthAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
+		        monthAdapter.setItemTextResource(R.id.numeric_text);
+		        month.setViewAdapter(monthAdapter);
+		        month.setCurrentItem(a[1]);
+		        editText.setText(getDateString());
+		        mode.setText(R.string.date_solar_lunar_2);
+			}
 			
 			break;
-
+		case R.id.edit_date:
+			this.dismiss();
+			showDialog(new WorldTimeDialogFragment());
+			break;
 		default:
 			break;
 		}
