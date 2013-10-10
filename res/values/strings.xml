@@ -230,5 +230,38 @@
 	<string name="warning_ring_seven">铃声七</string>
 	<string name="warning_ring_eight">铃声八</string>
 	
+	<string name="warning_music_one">音乐1</string>
+	<string name="warning_music_two">音乐2</string>
+	<string name="warning_music_three">音乐3</string>
+	<string name="warning_music_four">音乐4</string>
+	<string name="warning_music_five">音乐5</string>
+	<string name="warning_music_six">音乐6</string>
+	<string name="warning_music_seven">音乐7</string>
+	<string name="warning_music_eight">音乐8</string>
 	
+	<string name="warning_pronunciation_time">语音报时</string>
+	<string name="warning_pronunciation_plan">语音报计划标题</string>
+	<string name="warning_pronunciation_record">语音报录音</string>
+	<string name="warning_pronunciation_getup">该起床了</string>
+	<string name="warning_pronunciation_dine">该吃饭了</string>
+	<string name="warning_pronunciation_work">该上班了</string>
+	<string name="warning_pronunciation_pills">该吃药了</string>
+	<string name="warning_pronunciation_rest">该休息了</string>
+	
+	<string name="warning_vibrate_one">振动持续</string>
+	<string name="warning_vibrate_two">振动一次</string>
+	<string name="warning_vibrate_three">振动5秒</string>
+	<string name="warning_vibrate_four">振动10秒</string>
+	<string name="warning_vibrate_five">振动15秒</string>
+	<string name="warning_vibrate_six">振动30秒</string>
+	<string name="warning_vibrate_seven">振动60秒</string>
+	<string name="warning_vibrate_eight">振动120秒</string>
+	
+	<string name="warning_icon_sign">符号</string>
+	<string name="warning_icon_geometry">几何</string>
+	<string name="warning_icon_mask">脸谱</string>
+	<string name="warning_icon_cartoon">卡通</string>
+	<string name="warning_icon_backgroundcolor">底色</string>
+	<string name="warning_icon_framecolor">框色</string>
+	<string name="warning_icon_wordcolor">字色</string>
 </resources>

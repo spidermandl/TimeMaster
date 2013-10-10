@@ -32,10 +32,13 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
     // Values
     private int minValue;
     private int maxValue;
-    
+    private int timeInterval=1;
+
     // format
     private String format;
     
+    // string
+    private String afterString="",beforeString="";
     /**
      * Constructor
      * @param context the current context
@@ -72,17 +75,27 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
     @Override
     public CharSequence getItemText(int index) {
         if (index >= 0 && index < getItemsCount()) {
-            int value = minValue + index;
-            return format != null ? String.format(format, value) : Integer.toString(value);
+            int value = minValue + index*timeInterval;
+            return format != null ? beforeString+String.format(format, value)+afterString : beforeString+Integer.toString(value)+afterString;
         }
         return null;
     }
 
     @Override
     public int getItemsCount() {
-        return maxValue - minValue + 1;
+        return (maxValue - minValue + 1)/timeInterval;
     }    
-    
+    public void setTimeInterval(int timeInterval){
+    	this.timeInterval=timeInterval;
+    }
+    public void setNumberSize(int minValue, int maxValue ){
+    	this.minValue=minValue;
+    	this.maxValue=maxValue;
+    }
+    public void setSpeicalString(String beforeString,String afterString){
+    	this.beforeString=beforeString;
+    	this.afterString=afterString;
+    }
 //    public void setMinValue(int value){
 //    	if(value<this.maxValue)
 //    		this.minValue=value;

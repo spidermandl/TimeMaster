@@ -1,6 +1,14 @@
 package com.time.master.dialog;
 
 import java.util.Calendar;
+
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+
 import com.time.master.R;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.widget.OnWheelClickedListener;
@@ -9,9 +17,11 @@ import com.time.master.wheel.widget.UIWheelView;
 import com.time.master.wheel.widget.WheelView;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
@@ -19,14 +29,23 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.time.master.R;
+import com.time.master.fragment.NewIssueFragment;
+import com.time.master.wheel.adapters.NumericWheelAdapter;
+import com.time.master.wheel.widget.OnWheelClickedListener;
+import com.time.master.wheel.widget.OnWheelScrollListener;
+import com.time.master.wheel.widget.UIWheelView;
+import com.time.master.wheel.widget.WheelView;
+
 /**
  * 时间选择器
  * @author duanlei
  *
  */
-public class TimeDialogFragment extends WheelDialogFragment {
+public class TimeDialogFragment extends WheelDialogFragment implements OnClickListener{
 	
 	public static final String TAG="TimeDialogFragment";
+	//WorldTimeDialogFragment worldtime=new WorldTimeDialogFragment();
 	
 	
 	@Override
@@ -39,19 +58,9 @@ public class TimeDialogFragment extends WheelDialogFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		/****************************************************
-		 * 设置对话框属性，高度、宽度、动画、背景
-		 ****************************************************/
-		getDialog().setCanceledOnTouchOutside(true);//点击dialog以外区域，关闭dialog
-        Window window = getDialog().getWindow();
-        window.setGravity(Gravity.BOTTOM);  //此处可以设置dialog显示的位置  
-        window.setWindowAnimations(R.style.wheelAnimation);  //添加动画 
-        WindowManager.LayoutParams para=(WindowManager.LayoutParams)window.getAttributes();
-        para.height=LayoutParams.WRAP_CONTENT;
-        para.width=LayoutParams.MATCH_PARENT;
-        window.setAttributes(para);
-        window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        
+		
+		setDialogStyle();
+		
 		model=new DateModel();
 		calendar = Calendar.getInstance();
 		model.year=calendar.get(Calendar.YEAR);
@@ -64,6 +73,8 @@ public class TimeDialogFragment extends WheelDialogFragment {
 
         editText=(EditText)layout.findViewById(R.id.edit_date);
         confirm =(TextView)layout.findViewById(R.id.time_confirm);
+        mode=(TextView)layout.findViewById(R.id.time_type);
+        mode.setOnClickListener(this);
         
 		year = (UIWheelView) layout.findViewById(R.id.year);
         yearAdapter = new NumericWheelAdapter(this.getActivity(), model.year-5000, model.year+5000);
@@ -235,6 +246,21 @@ public class TimeDialogFragment extends WheelDialogFragment {
 	@Override
 	protected String getSelectedString() {
 		return getDateString();
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.time_type:
+			this.dismiss();
+			showDialog(new WorldTimeDialogFragment());
+			
+			break;
+
+		default:
+			break;
+		}
 	}
 
 }

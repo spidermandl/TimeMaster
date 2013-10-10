@@ -5,6 +5,11 @@
     <declare-styleable name="ViewGroupType">
         <attr name="width_multi" format="integer" />
         <attr name="new_line" format="boolean"/>
+        <attr name="default_bg" format="integer"></attr>
     </declare-styleable>  
 
+    <declare-styleable name="SwitchTextView">
+        <attr name="first_half" format="string"></attr>
+        <attr name="second_half" format="string"></attr>
+    </declare-styleable>
 </resources>

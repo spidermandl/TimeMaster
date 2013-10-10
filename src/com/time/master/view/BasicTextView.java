@@ -5,19 +5,30 @@ import com.time.master.interfacer.LayoutStyleableInterface;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.ColorDrawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ViewDebug.ExportedProperty;
 import android.widget.TextView;
-
+/***
+ * 基本TextView，BasicViewGroup的子view
+ * @author Desmond
+ *
+ */
 public class BasicTextView extends TextView implements LayoutStyleableInterface{
 
-	int multi_width;
-	boolean isNewLine;
+	/**单位宽度的倍数*/
+	protected int multi_width;
+	/**起始行单位空间*/
+	protected boolean isNewLine;
+	/**默认背景色*/
+	protected int naturalColor;
+	/**判断是否被选中*/
+	protected boolean isSelected=false;
 	
 	public BasicTextView(Context context) {
 		super(context);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public BasicTextView(Context context, AttributeSet attrs) {
@@ -25,7 +36,9 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ViewGroupType);
 		multi_width = a.getInt(R.styleable.ViewGroupType_width_multi, 1);
 		isNewLine=a.getBoolean(R.styleable.ViewGroupType_new_line, false);
+		naturalColor=a.getInt(R.styleable.ViewGroupType_default_bg, -1);
         a.recycle();
+        init();
 	}
 	
 	public BasicTextView(Context context, AttributeSet attrs, int defStyle) {
@@ -33,34 +46,51 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ViewGroupType, defStyle, 0);
 		multi_width = a.getInt(R.styleable.ViewGroupType_width_multi, 1);
 		isNewLine=a.getBoolean(R.styleable.ViewGroupType_new_line, false);
+		naturalColor=a.getInt(R.styleable.ViewGroupType_default_bg, -1);
         a.recycle();
+        init();
 	}
 
+	protected void init(){
+		if(naturalColor!=-1)
+			setBackgroundColor(naturalColor);
+	}
+	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		// TODO Auto-generated method stub
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			/**点击背景颜色变化*/
+			actionDown();
+			break;
+		case MotionEvent.ACTION_UP:
+			actionUp();
+			break;
+		default:
+			break;
+		}
+		return super.onTouchEvent(event);
+	}
+	
+	protected void actionDown(){
+		if(naturalColor!=-1)
+			this.setBackgroundColor(0xFFFFFFFF);
+	}
+	protected void actionUp(){
+		if(naturalColor!=-1)
+			this.setBackgroundColor(naturalColor);
 	}
 	@Override
 	public int getMultiWidth() {
 		return multi_width;
 	}
 
-	@Override
-	@ExportedProperty
-	public boolean isClickable() {
-		// TODO Auto-generated method stub
-		return super.isClickable();
-	}
-	
-
-	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		// TODO Auto-generated method stub
-		return super.onTouchEvent(event);
-	}
-	
-	
 	@Override
 	public boolean isNewLine() {
 		return isNewLine;

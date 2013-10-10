@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:background="#FFFFFF">
     
     <com.time.master.view.BasicViewGroup 
     android:layout_width="match_parent"
@@ -18,14 +19,13 @@
        layout:new_line="true"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicEditText
+        <com.time.master.view.BasicTextView
         android:id="@+id/warning_advanced"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/setbar_backgroundp"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:hint="@string/warning_advanced"
-        android:paddingLeft="@dimen/editview_padding_left"
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
@@ -53,14 +53,13 @@
         layout:new_line="true"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicEditText
+        <com.time.master.view.BasicTextView
         android:id="@+id/warning_way"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/setbar_backgroundp"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:hint="@string/warning_way"
-        android:paddingLeft="@dimen/editview_padding_left"
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
@@ -88,14 +87,13 @@
        layout:new_line="true"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicEditText
-        android:id="@+id/warning_ring_one"
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_center_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/setbar_backgroundp"
-       android:gravity="center_vertical"
-        android:hint="@string/warning_ring_one"
-        android:paddingLeft="@dimen/editview_padding_left"
+        android:gravity="center"
+        android:background="#FFAA00"
+        android:text="@string/warning_ring_one"
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
@@ -106,6 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
        android:gravity="center"
+        android:background="#FFAA00"
         android:text="@string/warning_ring"
        layout:new_line="false"
         layout:width_multi="1" />
@@ -122,14 +121,13 @@
         layout:new_line="true"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicEditText
-        android:id="@+id/warning_ring_two"
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_center_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFAA00"
-        android:gravity="center_vertical"
-        android:hint="@string/warning_ring_two"
-        android:paddingLeft="@dimen/editview_padding_left"
+        android:gravity="center"
+        android:text="@string/warning_ring_two"
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
@@ -157,14 +155,13 @@
         layout:new_line="true"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicEditText
-        android:id="@+id/warning_ring_three"
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_center_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFAA00"
-        android:gravity="center_vertical"
-        android:hint="@string/warning_ring_three"
-        android:paddingLeft="@dimen/editview_padding_left"
+        android:gravity="center"
+        android:text="@string/warning_ring_three"
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
@@ -192,14 +189,13 @@
        layout:new_line="true"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicEditText
-        android:id="@+id/warning_ring_four"
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_center_four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFAA00"
-        android:gravity="center_vertical"
-        android:hint="@string/warning_ring_four"
-        android:paddingLeft="@dimen/editview_padding_left"
+        android:gravity="center"
+        android:text="@string/warning_ring_four"
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
@@ -227,14 +223,13 @@
         layout:new_line="true"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicEditText
-        android:id="@+id/warning_ring_five"
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_center_five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFAA00"
-        android:gravity="center_vertical"
-        android:hint="@string/warning_ring_five"
-        android:paddingLeft="@dimen/editview_padding_left"
+        android:gravity="center"
+        android:text="@string/warning_ring_five"
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
@@ -262,14 +257,13 @@
         layout:new_line="true"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicEditText
-        android:id="@+id/warning_ring_six"
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_center_six"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFAA00"
-        android:gravity="center_vertical"
-        android:hint="@string/warning_ring_six"
-        android:paddingLeft="@dimen/editview_padding_left"
+        android:gravity="center"
+        android:text="@string/warning_ring_six"
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
@@ -297,14 +291,13 @@
         layout:new_line="true"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicEditText
-        android:id="@+id/warning_ring_seven"
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_center_seven"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFAA00"
-        android:gravity="center_vertical"
-        android:hint="@string/warning_ring_seven"
-        android:paddingLeft="@dimen/editview_padding_left"
+        android:gravity="center"
+        android:text="@string/warning_ring_seven"
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
@@ -331,14 +324,13 @@
         layout:new_line="true"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicEditText
-        android:id="@+id/warning_ring_eight"
+        <com.time.master.view.BasicTextView
+        android:id="@+id/warning_center_eight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFAA00"
-        android:gravity="center_vertical"
-        android:hint="@string/warning_ring_eight"
-        android:paddingLeft="@dimen/editview_padding_left"
+        android:gravity="center"
+        android:text="@string/warning_ring_eight"
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"

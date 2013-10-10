@@ -3,13 +3,9 @@ package com.time.master.fragment.date;
 import java.util.HashMap;
 
 import com.time.master.R;
-import com.time.master.dialog.DateWarningDialogFragment;
-import com.time.master.dialog.DoDialogFragment;
-import com.time.master.dialog.HumanDialogFragment;
-import com.time.master.dialog.LocationDialogFragment;
-import com.time.master.dialog.RepeatDialogFragment;
-import com.time.master.dialog.TimeDialogFragment;
-import com.time.master.dialog.WheelDialogFragment;
+import com.time.master.activity.FrameActivity;
+import com.time.master.dialog.*;
+import com.time.master.fragment.DateWarningFragment;
 import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.BasicEditText;
 import com.time.master.view.BasicTextView;
@@ -34,9 +30,11 @@ import android.view.View.OnTouchListener;
  *
  */
 public class DateDetailCreateFragment extends Fragment implements OnTouchListener,android.view.View.OnClickListener{
-	WheelDialogFragment dateFragment, locationFragment, humanFragment;
-	DialogFragment repeatFragment,warningFragment;
-	BasicEditText dateSelector,locationSelector,humanSelector;
+
+	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimeEndFragment;
+	DialogFragment repeatFragment;
+//	Fragment warningFragment;
+	BasicEditText dateSelector,locationSelector,humanSelector,planEndSelector;
 	BasicTextView dateRepeat,dateWarning;
 	BasicTextView tvdate, //日期 /倒计 按钮
 	              tvduration;//占用/期间 按钮
@@ -60,6 +58,10 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		humanSelector = (BasicEditText) layout.findViewById(R.id.plan_human);
 		humanSelector.setInputType(InputType.TYPE_NULL);
 		humanSelector.setOnTouchListener(this);
+		
+		planEndSelector=(BasicEditText)layout.findViewById(R.id.plan_time_end);
+		planEndSelector.setInputType(InputType.TYPE_NULL);
+		planEndSelector.setOnTouchListener(this);
 		
 		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
 		dateRepeat.setOnClickListener(this);
@@ -157,7 +159,19 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				}
 				showDialog(humanFragment);
 				break;
-			
+			case R.id.plan_time_end:
+				if(planTimeEndFragment==null){
+					planTimeEndFragment=new DurationTimeDialogFragment();
+					planTimeEndFragment.setWheelInterface(new WheelResultInterface() {
+						
+						@Override
+						public void getResult(String result) {
+							// TODO Auto-generated method stub
+							planEndSelector.setText(result);
+						}
+					});
+				}
+				showDialog(planTimeEndFragment);
 			default:
 				break;
 			}
@@ -168,6 +182,8 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
+		Class T;
+		FrameActivity activity=(FrameActivity)getActivity();
 		switch (view.getId()) {
 		case R.id.plan_repeat:
 			repeatFragment=new RepeatDialogFragment();
@@ -175,66 +191,24 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			showDialog(repeatFragment);
 			break;
 		case R.id.plan_warning:
-			warningFragment=new DateWarningDialogFragment();
-			warningFragment.setShowsDialog(true);
-			showDialog(warningFragment);
+//			warningFragment=new DateWarningFragment();
+			T=DateWarningFragment.class;
+			activity.showNext(this.getId(),T, R.layout.date_warning);			
 			break;
 		case R.id.plan_model:
 			if (viewStatus.get(R.id.plan_model)) {
 				viewStatus.put(R.id.plan_model,false);
-				String dateString = (String) getText(R.string.date_layout_plan_model_1);
-				SpannableStringBuilder datestyle = new SpannableStringBuilder(
-						dateString);
-				datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvdate.setText(datestyle);
-				tvdate.setBackgroundColor(Color.parseColor("#FFACD6FF"));
-				//tvdate.setBackgroundColor(R.color.calendar_background);
 				
-				
-
 			} else {
 				viewStatus.put(R.id.plan_model,true);
-				String dateString = (String) getText(R.string.date_layout_plan_model_2);
-				SpannableStringBuilder datestyle = new SpannableStringBuilder(
-						dateString);
-				datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvdate.setText(datestyle);
-				tvdate.setBackgroundColor(Color.YELLOW);
-				//tvdate.setBackgroundColor(R.color.dateforcolor);
 			}
 
 			break;
 		case R.id.plan_time_period:
 			if (viewStatus.get(R.id.plan_time_period)) {
 				viewStatus.put(R.id.plan_time_period,false);
-				String durationString = (String) getText(R.string.date_plan_time_period_1);
-				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
-						durationString);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
-						3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
-						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvduration.setText(durationstyle);
-				tvduration.setBackgroundColor(Color.parseColor("#FFACD6FF"));
-				//tvduration.setBackgroundColor(R.color.datebackcolor);
 			} else {
 				viewStatus.put(R.id.plan_time_period,true);
-				String durationString = (String) getText(R.string.date_plan_time_period_2);
-				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
-						durationString);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
-						3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
-						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvduration.setText(durationstyle);
-				tvduration.setBackgroundColor(Color.YELLOW);
-				//tvduration.setBackgroundColor(R.color.dateforcolor);
 			}
 			break;
 		default:

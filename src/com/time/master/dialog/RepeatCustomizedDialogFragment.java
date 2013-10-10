@@ -1,5 +1,11 @@
 package com.time.master.dialog;
 
+/**
+ * "自排：做X 停X" 对话框
+ * @author WangHaiyang
+ */
+
+
 import com.time.master.R;
 
 import android.os.Bundle;
@@ -12,9 +18,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
-public class DateWarningDialogFragment extends DialogFragment {
-
-	public static final String tag="DateWarningDialogFragment";
+public class RepeatCustomizedDialogFragment extends BasicDialogFragment{
+	public static final String tag="DoDialogFragment";
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -26,16 +32,10 @@ public class DateWarningDialogFragment extends DialogFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		getDialog().setCanceledOnTouchOutside(true);
-		Window window=getDialog().getWindow();
-		window.setGravity(Gravity.BOTTOM);
-		WindowManager.LayoutParams para=(WindowManager.LayoutParams)window.getAttributes();
-		para.height=LayoutParams.WRAP_CONTENT;
-		para.width=LayoutParams.MATCH_PARENT;
-		window.setAttributes(para);
-		window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+		setDialogStyle();
 		
-		View layout=inflater.inflate(R.layout.date_warning, container, false);
+		View layout=inflater.inflate(R.layout.date_repeat_customized_dialog, container, false);
 		return layout;
 	}
+
 }
