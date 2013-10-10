@@ -119,14 +119,19 @@ containing a value of this type.
         public static final int setbar_background=0x7f020009;
         public static final int setbar_backgroundfirstpage=0x7f02000a;
         public static final int setbar_backgroundp=0x7f02000b;
-        public static final int wheel_bg=0x7f02000c;
-        public static final int wheel_bg_full=0x7f02000d;
-        public static final int wheel_bg_without_frame=0x7f02000e;
-        public static final int wheel_val=0x7f02000f;
-        public static final int wheel_val_with_frame=0x7f020010;
-        public static final int year=0x7f020011;
-        public static final int yeargray=0x7f020012;
-        public static final int yearwhite=0x7f020013;
+        public static final int time_wheel_dialog_bg=0x7f02000c;
+        public static final int wheel_bg=0x7f02000d;
+        public static final int wheel_bg_full=0x7f02000e;
+        public static final int wheel_bg_without_frame=0x7f02000f;
+        public static final int wheel_center_highlight=0x7f020010;
+        public static final int wheel_left_bg=0x7f020011;
+        public static final int wheel_middle_bg=0x7f020012;
+        public static final int wheel_right_bg=0x7f020013;
+        public static final int wheel_val=0x7f020014;
+        public static final int wheel_val_with_frame=0x7f020015;
+        public static final int year=0x7f020016;
+        public static final int yeargray=0x7f020017;
+        public static final int yearwhite=0x7f020018;
     }
     public static final class id {
         public static final int A=0x7f0a0000;
