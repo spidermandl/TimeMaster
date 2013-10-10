@@ -2,8 +2,6 @@ package com.time.master.calendar;
 
 import java.util.Calendar;
 
-import com.time.master.tool.Constant;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
@@ -14,8 +12,15 @@ import android.graphics.Shader;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
 import android.widget.LinearLayout.LayoutParams;
+
+
+import com.time.master.tool.Constant;
+/*注释者
+ * 谢冬
+*/
 
 /**
  * 日历控件单元格绘制类
@@ -252,4 +257,6 @@ public class DateWidgetDayCell extends View {
 		path.close();
 		canvas.drawPath(path, pt);
 	}
+
+
 }

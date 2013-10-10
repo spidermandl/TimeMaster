@@ -344,7 +344,9 @@ public class MonthFragment extends Fragment {
 			dayCell.setSelected(bSelected);//设置单元格被选中
 
 			// 是否有记录
+
 			boolean hasRecord = true;//判断记录内容是否为空，不为空则为有记录。
+
 
 			if (flag != null && flag[i] == true && calendar_Hashtable != null
 					&& calendar_Hashtable.containsKey(i)) {

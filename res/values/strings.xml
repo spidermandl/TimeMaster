@@ -172,6 +172,32 @@
 	<string name="date_layout_plan_model_2">倒计\n日期</string>
 	<string name="date_plan_time_period_2">时间\n占用</string>
 	
+	<string name="date_top_left">每日一次\n间隔1：00</string>
+	<string name="date_top_center">重复一天\n至2003/3/14</string>
+	<string name="date_confirm">确认</string>
+	<string name="date_month_select">月选\n日</string>
+	<string name="date_year_select">年选\n日</string>
+	<string name="date_month_current">月本\n日</string>
+	<string name="date_year_current">年本\n日</string>
+	<string name="date_working">工作\n日</string>
+	<string name="date_everyday">每日</string>
+	<string name="date_lunar_month_select">农月\n选日</string>
+	<string name="date_lunar_year_select">农年\n选日</string>
+	<string name="date_lunar_month_current">农月\n本日</string>
+	<string name="date_lunar_year_current">农年\n本日</string>
+	<string name="date_festival">节假\n日</string>
+	<string name="date_quaque">隔日</string>
+	<string name="date_commemorate_day">纪念\n日</string>
+	<string name="date_other_week">隔周</string>
+	<string name="date_day_off">休息日</string>
+	<string name="date_plan_yourself">自排：做X，停X；</string>
+	<string name="date_monday">周一</string>
+	<string name="date_tuesday">周二</string>
+	<string name="date_wednesday">周三</string>
+	<string name="date_thursday">周四</string>
+	<string name="date_friday">周五</string>
+	<string name="date_saturday">周六</string>
+	<string name="date_sunday">周日</string>
 	
 	
 </resources>

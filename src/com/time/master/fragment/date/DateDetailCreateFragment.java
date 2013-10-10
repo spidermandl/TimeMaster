@@ -46,10 +46,12 @@ public class DateDetailCreateFragment extends Fragment implements
 	long startTime = 0;
 	boolean flag = true;
 	BasicTextView dateRepeat;
+
 	BasicTextView 		previousClick,tvdate, // 日期 /倒计 按钮
 			tvduration;// 占用/期间 按钮
 
 	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
+
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -192,6 +194,7 @@ public class DateDetailCreateFragment extends Fragment implements
 			break;
 		case R.id.plan_model:
 			if (viewStatus.get(R.id.plan_model)) {
+
 				viewStatus.put(R.id.plan_model, false);
 				String dateString = (String) getText(R.string.date_layout_plan_model_1);
 				SpannableStringBuilder datestyle = new SpannableStringBuilder(
@@ -214,11 +217,18 @@ public class DateDetailCreateFragment extends Fragment implements
 						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 				tvdate.setText(datestyle);
 				// tvdate.setBackgroundColor(R.color.dateforcolor);
+
+				viewStatus.put(R.id.plan_model,false);
 			}
+//			} else {
+//				viewStatus.put(R.id.plan_model,true);
+//
+//			}
 
 			break;
 		case R.id.plan_time_period:
 			if (viewStatus.get(R.id.plan_time_period)) {
+
 				viewStatus.put(R.id.plan_time_period, false);
 				String durationString = (String) getText(R.string.date_plan_time_period_1);
 				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
@@ -240,7 +250,13 @@ public class DateDetailCreateFragment extends Fragment implements
 						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 				tvduration.setText(durationstyle);
 				// tvduration.setBackgroundColor(R.color.dateforcolor);
+
+				viewStatus.put(R.id.plan_time_period,false);
 			}
+//			else {
+//				viewStatus.put(R.id.plan_time_period,true);
+//
+//			}
 			break;
 		case R.id.plan_previous:
 
