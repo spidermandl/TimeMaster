@@ -3,6 +3,7 @@ package com.time.master.database;
 import java.io.File;
 
 import com.time.master.TimeMasterApplication;
+import com.time.master.tool.ExcelParseTool;
 
 
 import android.content.Context;
@@ -50,7 +51,7 @@ public class TimeMasterHelper extends SQLiteOpenHelper{
 		TimeMasterApplication.getInstance().setDataInitialized(false);
 		db.execSQL(CREATE_TABLE_NATIONAL_DISTRICT);
 		
-		//ExcelParseTool.initNationalLocation(this.context,db);
+		//ExcelParseTool.initNationalLocationByExcel(this.context,db);
 		
 	}
 
