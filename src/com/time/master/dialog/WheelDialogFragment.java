@@ -16,6 +16,7 @@ public abstract class WheelDialogFragment extends DialogFragment {
 
 	protected EditText editText;
 	protected TextView confirm;
+	protected TextView mode;
 	
 	private WheelResultInterface wheelInterface;
 	
