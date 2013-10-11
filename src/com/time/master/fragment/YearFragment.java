@@ -1,25 +1,11 @@
 package com.time.master.fragment;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
-=======
-
->>>>>>> 706298f472405a652e12c9a67b771220f11f67d2
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
 import com.time.master.R;
 import com.time.master.adapter.BaseAdapterDemo;
 

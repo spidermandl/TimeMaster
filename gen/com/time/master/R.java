@@ -91,50 +91,11 @@ containing a value of this type.
         public static final int wheel_numeric_item_height=0x7f060002;
     }
     public static final class drawable {
-<<<<<<< HEAD
-        public static final int checkbox=0x7f020000;
-        public static final int checkboxonclick=0x7f020001;
-        public static final int ic_action_search=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int next_month=0x7f020004;
-        public static final int pattern_background=0x7f020005;
-        public static final int pattern_switch_arrow=0x7f020006;
-        public static final int previous_month=0x7f020007;
-        public static final int setbar_background=0x7f020008;
-        public static final int setbar_backgroundfirstpage=0x7f020009;
-        public static final int setbar_backgroundp=0x7f02000a;
-        public static final int wheel_bg=0x7f02000b;
-        public static final int wheel_bg_full=0x7f02000c;
-        public static final int wheel_bg_without_frame=0x7f02000d;
-        public static final int wheel_val=0x7f02000e;
-        public static final int wheel_val_with_frame=0x7f02000f;
-        public static final int year=0x7f020010;
-        public static final int yeargray=0x7f020011;
-        public static final int yearwhite=0x7f020012;
-=======
         public static final int arrow=0x7f020000;
         public static final int checkbox=0x7f020001;
         public static final int checkboxonclick=0x7f020002;
         public static final int ic_action_search=0x7f020003;
         public static final int ic_launcher=0x7f020004;
-<<<<<<< HEAD
-        public static final int next_month=0x7f020005;
-        public static final int pattern_background=0x7f020006;
-        public static final int pattern_switch_arrow=0x7f020007;
-        public static final int previous_month=0x7f020008;
-        public static final int setbar_background=0x7f020009;
-        public static final int setbar_backgroundfirstpage=0x7f02000a;
-        public static final int setbar_backgroundp=0x7f02000b;
-        public static final int wheel_bg=0x7f02000c;
-        public static final int wheel_bg_full=0x7f02000d;
-        public static final int wheel_bg_without_frame=0x7f02000e;
-        public static final int wheel_val=0x7f02000f;
-        public static final int wheel_val_with_frame=0x7f020010;
-        public static final int year=0x7f020011;
-        public static final int yeargray=0x7f020012;
-        public static final int yearwhite=0x7f020013;
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
-=======
         public static final int minitab=0x7f020005;
         public static final int minitab_default=0x7f020006;
         public static final int minitab_unselected=0x7f020007;
@@ -153,14 +114,13 @@ containing a value of this type.
         public static final int year=0x7f020014;
         public static final int yeargray=0x7f020015;
         public static final int yearwhite=0x7f020016;
->>>>>>> 706298f472405a652e12c9a67b771220f11f67d2
     }
     public static final class id {
         public static final int A=0x7f0a0000;
         public static final int B=0x7f0a0003;
         public static final int C=0x7f0a0006;
         public static final int D=0x7f0a0009;
-        public static final int Dubai=0x7f0a011f;
+        public static final int Dubai=0x7f0a0141;
         public static final int E=0x7f0a000c;
         public static final int F=0x7f0a000f;
         public static final int G=0x7f0a0012;
@@ -185,23 +145,20 @@ containing a value of this type.
         public static final int X=0x7f0a0011;
         public static final int Y=0x7f0a0014;
         public static final int Z=0x7f0a0017;
-<<<<<<< HEAD
-        public static final int action_settings=0x7f0a012c;
-=======
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
+        public static final int action_settings=0x7f0a014b;
         public static final int add_page_add=0x7f0a001c;
         public static final int alph=0x7f0a006d;
-        public static final int arrow=0x7f0a0109;
+        public static final int arrow=0x7f0a012b;
         public static final int basic_info_up=0x7f0a00a6;
         public static final int basic_page5=0x7f0a00c7;
-        public static final int beijing=0x7f0a0110;
+        public static final int beijing=0x7f0a0132;
         public static final int btn_next_month=0x7f0a007a;
         public static final int btn_pre_month=0x7f0a0079;
-        public static final int cairo=0x7f0a0120;
-        public static final int chineseandenglish=0x7f0a010c;
-        public static final int confirm=0x7f0a010b;
-        public static final int conversion=0x7f0a010a;
-        public static final int countdown=0x7f0a0119;
+        public static final int cairo=0x7f0a0142;
+        public static final int chineseandenglish=0x7f0a012e;
+        public static final int confirm=0x7f0a012d;
+        public static final int conversion=0x7f0a012c;
+        public static final int countdown=0x7f0a013b;
         public static final int country=0x7f0a00f8;
         public static final int data_festival=0x7f0a004a;
         public static final int date_add_page=0x7f0a001b;
@@ -224,13 +181,8 @@ containing a value of this type.
         public static final int date_plan_yourself=0x7f0a0057;
         public static final int date_quaque=0x7f0a004b;
         public static final int date_saturday=0x7f0a0055;
-<<<<<<< HEAD
-        public static final int date_selector=0x7f0a0082;
-        public static final int date_selector_wheel=0x7f0a011e;
-=======
         public static final int date_selector=0x7f0a0083;
-        public static final int date_selector_wheel=0x7f0a00fd;
->>>>>>> 706298f472405a652e12c9a67b771220f11f67d2
+        public static final int date_selector_wheel=0x7f0a011f;
         public static final int date_sport_page=0x7f0a005a;
         public static final int date_sunday=0x7f0a0058;
         public static final int date_thursday=0x7f0a0056;
@@ -241,85 +193,11 @@ containing a value of this type.
         public static final int date_working=0x7f0a0045;
         public static final int date_year_current=0x7f0a004e;
         public static final int date_year_select=0x7f0a004d;
-<<<<<<< HEAD
-        public static final int day=0x7f0a0121;
-        public static final int edit_date=0x7f0a011c;
-        public static final int edit_human=0x7f0a0068;
-        public static final int edit_location=0x7f0a006f;
-        public static final int eight=0x7f0a0107;
-        public static final int famaly_tvMomid=0x7f0a008b;
-        public static final int family_btnEnd=0x7f0a0095;
-        public static final int family_etDadid=0x7f0a008a;
-        public static final int family_etHusbandid=0x7f0a0092;
-        public static final int family_etId=0x7f0a0088;
-        public static final int family_etMarryid=0x7f0a0090;
-        public static final int family_etMomid=0x7f0a008c;
-        public static final int family_etRole=0x7f0a008e;
-        public static final int family_etWifeid=0x7f0a0094;
-        public static final int family_info_up=0x7f0a0086;
-        public static final int family_title=0x7f0a0085;
-        public static final int family_tvDadid=0x7f0a0089;
-        public static final int family_tvHusbandid=0x7f0a0091;
-        public static final int family_tvId=0x7f0a0087;
-        public static final int family_tvMarryid=0x7f0a008f;
-        public static final int family_tvRole=0x7f0a008d;
-        public static final int family_tvWifeid=0x7f0a0093;
-        public static final int first=0x7f0a00f5;
-        public static final int fitness_page_add=0x7f0a005c;
-        public static final int fitness_page_fitness=0x7f0a005b;
-<<<<<<< HEAD
-        public static final int five=0x7f0a0113;
-        public static final int four=0x7f0a010c;
-        public static final int function=0x7f0a00f6;
-        public static final int generation_fragment=0x7f0a005f;
-        public static final int hour=0x7f0a0122;
-=======
-        public static final int forward=0x7f0a0122;
-        public static final int function=0x7f0a00f6;
-        public static final int generation_fragment=0x7f0a005f;
-        public static final int goon=0x7f0a011d;
-        public static final int hawaii=0x7f0a0114;
-        public static final int hour=0x7f0a0100;
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
-        public static final int human_bar=0x7f0a0066;
-        public static final int human_confirm=0x7f0a0069;
-        public static final int human_select=0x7f0a006b;
-        public static final int human_selector=0x7f0a0084;
-        public static final int human_selector_wheel=0x7f0a006a;
-        public static final int human_text=0x7f0a0124;
-        public static final int human_type=0x7f0a0067;
-        public static final int idlerwheel=0x7f0a0107;
-        public static final int india=0x7f0a0120;
-        public static final int informapush_btnRegist=0x7f0a0099;
-        public static final int informapush_btnSee=0x7f0a0097;
-        public static final int informapush_tvFogetpw=0x7f0a009b;
-        public static final int informapush_tvKeyboard=0x7f0a009c;
-        public static final int informapush_tvLogin=0x7f0a009a;
-        public static final int informapush_tvRememberpw=0x7f0a0098;
-        public static final int informapush_tvUsername=0x7f0a0096;
-        public static final int issue_list_fragment=0x7f0a0064;
-<<<<<<< HEAD
-        public static final int listView1=0x7f0a0129;
-=======
-        public static final int listView1=0x7f0a0125;
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
-        public static final int location_1=0x7f0a0072;
-        public static final int location_2=0x7f0a0073;
-        public static final int location_3=0x7f0a0074;
-        public static final int location_4=0x7f0a0075;
-        public static final int location_bar=0x7f0a006d;
-        public static final int location_confirm=0x7f0a0070;
-        public static final int location_selector=0x7f0a0083;
-        public static final int location_selector_wheel=0x7f0a0071;
-        public static final int location_text=0x7f0a0125;
-        public static final int location_type=0x7f0a006e;
-        public static final int london=0x7f0a0119;
-        public static final int lunarcalendar=0x7f0a0113;
-=======
-        public static final int day=0x7f0a0100;
-        public static final int edit_date=0x7f0a00fb;
+        public static final int day=0x7f0a0122;
+        public static final int edit_date=0x7f0a011d;
         public static final int edit_human=0x7f0a0069;
         public static final int edit_location=0x7f0a0070;
+        public static final int eight=0x7f0a0108;
         public static final int famaly_tvMomid=0x7f0a008c;
         public static final int family_btnEnd=0x7f0a0096;
         public static final int family_etDadid=0x7f0a008b;
@@ -340,21 +218,23 @@ containing a value of this type.
         public static final int first=0x7f0a00f6;
         public static final int fitness_page_add=0x7f0a005c;
         public static final int fitness_page_fitness=0x7f0a005b;
-        public static final int forward=0x7f0a0123;
+        public static final int five=0x7f0a0114;
+        public static final int forward=0x7f0a0145;
+        public static final int four=0x7f0a010d;
         public static final int function=0x7f0a00f7;
         public static final int generation_fragment=0x7f0a005f;
-        public static final int goon=0x7f0a011e;
-        public static final int hawaii=0x7f0a0115;
-        public static final int hour=0x7f0a0101;
+        public static final int goon=0x7f0a0140;
+        public static final int hawaii=0x7f0a0137;
+        public static final int hour=0x7f0a0123;
         public static final int human_bar=0x7f0a0067;
         public static final int human_confirm=0x7f0a006a;
         public static final int human_select=0x7f0a006c;
         public static final int human_selector=0x7f0a0085;
         public static final int human_selector_wheel=0x7f0a006b;
-        public static final int human_text=0x7f0a0103;
+        public static final int human_text=0x7f0a0125;
         public static final int human_type=0x7f0a0068;
-        public static final int idlerwheel=0x7f0a0108;
-        public static final int india=0x7f0a0121;
+        public static final int idlerwheel=0x7f0a012a;
+        public static final int india=0x7f0a0143;
         public static final int informapush_btnRegist=0x7f0a009a;
         public static final int informapush_btnSee=0x7f0a0098;
         public static final int informapush_tvFogetpw=0x7f0a009c;
@@ -363,7 +243,7 @@ containing a value of this type.
         public static final int informapush_tvRememberpw=0x7f0a0099;
         public static final int informapush_tvUsername=0x7f0a0097;
         public static final int issue_list_fragment=0x7f0a0064;
-        public static final int listView1=0x7f0a0126;
+        public static final int listView1=0x7f0a0148;
         public static final int location_1=0x7f0a0073;
         public static final int location_2=0x7f0a0074;
         public static final int location_3=0x7f0a0075;
@@ -372,11 +252,10 @@ containing a value of this type.
         public static final int location_confirm=0x7f0a0071;
         public static final int location_selector=0x7f0a0084;
         public static final int location_selector_wheel=0x7f0a0072;
-        public static final int location_text=0x7f0a0104;
+        public static final int location_text=0x7f0a0126;
         public static final int location_type=0x7f0a006f;
-        public static final int london=0x7f0a011a;
-        public static final int lunarcalendar=0x7f0a0114;
->>>>>>> 706298f472405a652e12c9a67b771220f11f67d2
+        public static final int london=0x7f0a013c;
+        public static final int lunarcalendar=0x7f0a0136;
         public static final int main_baseviewgroup=0x7f0a001d;
         public static final int main_baseviewgroup1=0x7f0a003a;
         public static final int main_page_add=0x7f0a003f;
@@ -384,76 +263,25 @@ containing a value of this type.
         public static final int main_page_live=0x7f0a003c;
         public static final int main_page_walk=0x7f0a003d;
         public static final int main_tab=0x7f0a005d;
-<<<<<<< HEAD
-        public static final int mainlayout=0x7f0a0076;
-<<<<<<< HEAD
-        public static final int menu_settings=0x7f0a012b;
-        public static final int minute=0x7f0a0123;
-        public static final int month=0x7f0a0120;
-=======
-        public static final int melbourne=0x7f0a0112;
-        public static final int menu_settings=0x7f0a0127;
-        public static final int minute=0x7f0a0101;
-        public static final int month=0x7f0a00fe;
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
-=======
         public static final int mainlayout=0x7f0a0077;
-        public static final int melbourne=0x7f0a0113;
-        public static final int menu_settings=0x7f0a0128;
-        public static final int minute=0x7f0a0102;
-        public static final int month=0x7f0a00ff;
->>>>>>> 706298f472405a652e12c9a67b771220f11f67d2
+        public static final int melbourne=0x7f0a0135;
+        public static final int menu_settings=0x7f0a014a;
+        public static final int minute=0x7f0a0124;
+        public static final int month=0x7f0a0121;
         public static final int month_fragment=0x7f0a0061;
-        public static final int moscow=0x7f0a011d;
+        public static final int moscow=0x7f0a013f;
         public static final int name_cancel=0x7f0a001a;
         public static final int new_issue_fragment=0x7f0a0065;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        public static final int nine=0x7f0a010d;
-        public static final int numeric_text=0x7f0a0126;
-        public static final int one=0x7f0a00f8;
-        public static final int one_four=0x7f0a010e;
-        public static final int one_nine=0x7f0a010f;
-        public static final int one_one=0x7f0a00fa;
-        public static final int one_seven=0x7f0a0102;
-        public static final int one_six=0x7f0a00fb;
-        public static final int one_two=0x7f0a0101;
-=======
-        public static final int newyork=0x7f0a0116;
-        public static final int numeric_text=0x7f0a0104;
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
-        public static final int page1=0x7f0a007b;
-        public static final int page3=0x7f0a007c;
-        public static final int page4=0x7f0a007d;
-        public static final int page5=0x7f0a007e;
-        public static final int page6=0x7f0a007f;
-        public static final int page7=0x7f0a0080;
-        public static final int page8=0x7f0a0081;
-        public static final int pagetitlefive=0x7f0a00c5;
-        public static final int pagetitlesix=0x7f0a00a4;
-        public static final int pageturning=0x7f0a010d;
-        public static final int paris=0x7f0a011a;
-        public static final int personal_btnEnd=0x7f0a00c3;
-        public static final int personal_etAdd=0x7f0a00bc;
-        public static final int personal_etAddress=0x7f0a00b8;
-        public static final int personal_etGender=0x7f0a00b6;
-        public static final int personal_etGetaddress=0x7f0a00ba;
-        public static final int personal_etMessage=0x7f0a00c2;
-        public static final int personal_etMicroblog=0x7f0a00c0;
-        public static final int personal_etName=0x7f0a00b4;
-        public static final int personal_etQq=0x7f0a00be;
-        public static final int personal_title=0x7f0a00b2;
-        public static final int personal_tvAdd=0x7f0a00bb;
-        public static final int personal_tvAddress=0x7f0a00b7;
-        public static final int personal_tvGender=0x7f0a00b5;
-        public static final int personal_tvGetaddress=0x7f0a00b9;
-        public static final int personal_tvMessage=0x7f0a00c1;
-        public static final int personal_tvMicroblog=0x7f0a00bf;
-        public static final int personal_tvName=0x7f0a00b3;
-        public static final int personal_tvQq=0x7f0a00bd;
-=======
-        public static final int newyork=0x7f0a0117;
-        public static final int numeric_text=0x7f0a0105;
+        public static final int newyork=0x7f0a0139;
+        public static final int nine=0x7f0a010e;
+        public static final int numeric_text=0x7f0a0127;
+        public static final int one=0x7f0a00f9;
+        public static final int one_four=0x7f0a010f;
+        public static final int one_nine=0x7f0a0110;
+        public static final int one_one=0x7f0a00fb;
+        public static final int one_seven=0x7f0a0103;
+        public static final int one_six=0x7f0a00fc;
+        public static final int one_two=0x7f0a0102;
         public static final int page1=0x7f0a007c;
         public static final int page3=0x7f0a007d;
         public static final int page4=0x7f0a007e;
@@ -463,8 +291,8 @@ containing a value of this type.
         public static final int page8=0x7f0a0082;
         public static final int pagetitlefive=0x7f0a00c6;
         public static final int pagetitlesix=0x7f0a00a5;
-        public static final int pageturning=0x7f0a010e;
-        public static final int paris=0x7f0a011b;
+        public static final int pageturning=0x7f0a0130;
+        public static final int paris=0x7f0a013d;
         public static final int personal_btnEnd=0x7f0a00c4;
         public static final int personal_etAdd=0x7f0a00bd;
         public static final int personal_etAddress=0x7f0a00b9;
@@ -483,7 +311,6 @@ containing a value of this type.
         public static final int personal_tvMicroblog=0x7f0a00c0;
         public static final int personal_tvName=0x7f0a00b4;
         public static final int personal_tvQq=0x7f0a00be;
->>>>>>> 706298f472405a652e12c9a67b771220f11f67d2
         public static final int plan_human=0x7f0a002f;
         public static final int plan_human_cloest=0x7f0a0034;
         public static final int plan_human_corp=0x7f0a0031;
@@ -510,133 +337,6 @@ containing a value of this type.
         public static final int plan_tool_search=0x7f0a0037;
         public static final int plan_type=0x7f0a001f;
         public static final int plan_warning=0x7f0a0027;
-<<<<<<< HEAD
-        public static final int protocol_tvAgree=0x7f0a00e1;
-        public static final int protocol_tvDisagree=0x7f0a00e0;
-        public static final int pwfind_btnAffirm=0x7f0a00a2;
-        public static final int pwfind_tvAnwser=0x7f0a009e;
-        public static final int pwfind_tvEmail=0x7f0a00a0;
-        public static final int pwfind_tvPhone=0x7f0a009f;
-        public static final int pwfind_tvQuestion=0x7f0a009d;
-        public static final int pwfind_tvView=0x7f0a00a1;
-        public static final int pwset_btnEnd=0x7f0a00b1;
-        public static final int pwset_etAnswer=0x7f0a00b0;
-        public static final int pwset_etEmail=0x7f0a00ad;
-        public static final int pwset_etPhone=0x7f0a00ac;
-        public static final int pwset_etPwinput1=0x7f0a00a7;
-        public static final int pwset_etPwinput2=0x7f0a00a9;
-        public static final int pwset_etQuestion=0x7f0a00af;
-        public static final int pwset_title=0x7f0a00a3;
-        public static final int pwset_tvFindpw=0x7f0a00ab;
-        public static final int pwset_tvPwinput1=0x7f0a00a6;
-        public static final int pwset_tvPwinput2=0x7f0a00a8;
-        public static final int pwset_tvPwremind=0x7f0a00aa;
-        public static final int pwset_tvQuestion=0x7f0a00ae;
-        public static final int qiyue=0x7f0a0105;
-        public static final int register_btnEnd=0x7f0a00da;
-        public static final int register_etBirthday=0x7f0a00cf;
-        public static final int register_etBirthplace=0x7f0a00d1;
-        public static final int register_etEmail=0x7f0a00d3;
-        public static final int register_etFamilyname=0x7f0a00ca;
-        public static final int register_etHidnumber=0x7f0a00d7;
-        public static final int register_etIdcard=0x7f0a00c8;
-        public static final int register_etName=0x7f0a00cb;
-        public static final int register_etPhonecode=0x7f0a00d9;
-        public static final int register_etTelnum=0x7f0a00d5;
-        public static final int register_etUsername=0x7f0a00cd;
-        public static final int register_title=0x7f0a00c4;
-        public static final int register_tvBirthday=0x7f0a00ce;
-        public static final int register_tvBirthplace=0x7f0a00d0;
-        public static final int register_tvEmail=0x7f0a00d2;
-        public static final int register_tvHidnumber=0x7f0a00d6;
-        public static final int register_tvIdcard=0x7f0a00c7;
-        public static final int register_tvName=0x7f0a00c9;
-        public static final int register_tvPhonecode=0x7f0a00d8;
-        public static final int register_tvTelnum=0x7f0a00d4;
-        public static final int register_tvUsername=0x7f0a00cc;
-        public static final int roman=0x7f0a011b;
-        public static final int sanfrancisco=0x7f0a0115;
-        public static final int scroll_tab=0x7f0a005e;
-<<<<<<< HEAD
-        public static final int seven=0x7f0a0100;
-        public static final int shang=0x7f0a00fe;
-        public static final int six=0x7f0a00f9;
-=======
-        public static final int seoul=0x7f0a0110;
-        public static final int singapore=0x7f0a0121;
-        public static final int solarandlunarcalendar=0x7f0a0106;
-        public static final int solarcalendar=0x7f0a010e;
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
-        public static final int systemprompt_btnLogin=0x7f0a00de;
-        public static final int systemprompt_btnSet=0x7f0a00dc;
-        public static final int systemprompt_etLogin=0x7f0a00dd;
-        public static final int systemprompt_etSet=0x7f0a00db;
-        public static final int systemprompt_tvEnd=0x7f0a00df;
-<<<<<<< HEAD
-        public static final int ten=0x7f0a0114;
-        public static final int ten_eight=0x7f0a0109;
-        public static final int ten_five=0x7f0a0115;
-        public static final int ten_three=0x7f0a0108;
-        public static final int textView1=0x7f0a012a;
-        public static final int three=0x7f0a0106;
-        public static final int three_one=0x7f0a0119;
-        public static final int three_zero=0x7f0a0118;
-        public static final int time=0x7f0a0127;
-        public static final int time_bar=0x7f0a011a;
-        public static final int time_confirm=0x7f0a011d;
-        public static final int time_type=0x7f0a011b;
-        public static final int title=0x7f0a0128;
-        public static final int two=0x7f0a00ff;
-        public static final int two_eight=0x7f0a010b;
-        public static final int two_five=0x7f0a0117;
-        public static final int two_four=0x7f0a0110;
-        public static final int two_nine=0x7f0a0111;
-        public static final int two_one=0x7f0a00fc;
-        public static final int two_seven=0x7f0a0104;
-        public static final int two_six=0x7f0a00fd;
-        public static final int two_ten=0x7f0a0116;
-        public static final int two_three=0x7f0a010a;
-        public static final int two_two=0x7f0a0103;
-=======
-        public static final int textView1=0x7f0a0126;
-        public static final int time=0x7f0a0123;
-        public static final int time_bar=0x7f0a00f8;
-        public static final int time_confirm=0x7f0a00fb;
-        public static final int time_type=0x7f0a00f9;
-        public static final int title=0x7f0a0124;
-        public static final int tokyo=0x7f0a0111;
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
-        public static final int unit_btnEnd=0x7f0a00f4;
-        public static final int unit_etAddress=0x7f0a00e7;
-        public static final int unit_etClass=0x7f0a00f1;
-        public static final int unit_etGoods=0x7f0a00ef;
-        public static final int unit_etIdcode=0x7f0a00eb;
-        public static final int unit_etIdnumber=0x7f0a00ed;
-        public static final int unit_etName=0x7f0a00e5;
-        public static final int unit_etQuale=0x7f0a00e9;
-        public static final int unit_etRole=0x7f0a00f3;
-        public static final int unit_info_up=0x7f0a00e3;
-        public static final int unit_title=0x7f0a00e2;
-        public static final int unit_tvAddress=0x7f0a00e6;
-        public static final int unit_tvClass=0x7f0a00f0;
-        public static final int unit_tvGoods=0x7f0a00ee;
-        public static final int unit_tvIdcode=0x7f0a00ea;
-        public static final int unit_tvIdnumber=0x7f0a00ec;
-        public static final int unit_tvName=0x7f0a00e4;
-        public static final int unit_tvQuale=0x7f0a00e8;
-        public static final int unit_tvRole=0x7f0a00f2;
-        public static final int vancouver=0x7f0a0117;
-        public static final int walk_page_add=0x7f0a0039;
-        public static final int week_fragment=0x7f0a0062;
-<<<<<<< HEAD
-        public static final int xia=0x7f0a0112;
-        public static final int year=0x7f0a011f;
-=======
-        public static final int worldtime=0x7f0a0105;
-        public static final int worldtime2=0x7f0a010c;
-        public static final int year=0x7f0a00fd;
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
-=======
         public static final int protocol_tvAgree=0x7f0a00e2;
         public static final int protocol_tvDisagree=0x7f0a00e1;
         public static final int pwfind_btnAffirm=0x7f0a00a3;
@@ -658,6 +358,7 @@ containing a value of this type.
         public static final int pwset_tvPwinput2=0x7f0a00a9;
         public static final int pwset_tvPwremind=0x7f0a00ab;
         public static final int pwset_tvQuestion=0x7f0a00af;
+        public static final int qiyue=0x7f0a0106;
         public static final int register_btnEnd=0x7f0a00db;
         public static final int register_etBirthday=0x7f0a00d0;
         public static final int register_etBirthplace=0x7f0a00d2;
@@ -679,26 +380,47 @@ containing a value of this type.
         public static final int register_tvPhonecode=0x7f0a00d9;
         public static final int register_tvTelnum=0x7f0a00d5;
         public static final int register_tvUsername=0x7f0a00cd;
-        public static final int roman=0x7f0a011c;
-        public static final int sanfrancisco=0x7f0a0116;
+        public static final int roman=0x7f0a013e;
+        public static final int sanfrancisco=0x7f0a0138;
         public static final int scroll_tab=0x7f0a005e;
-        public static final int seoul=0x7f0a0111;
-        public static final int singapore=0x7f0a0122;
-        public static final int solarandlunarcalendar=0x7f0a0107;
-        public static final int solarcalendar=0x7f0a010f;
+        public static final int seoul=0x7f0a0133;
+        public static final int seven=0x7f0a0101;
+        public static final int shang=0x7f0a00ff;
+        public static final int singapore=0x7f0a0144;
+        public static final int six=0x7f0a00fa;
+        public static final int solarandlunarcalendar=0x7f0a0129;
+        public static final int solarcalendar=0x7f0a0131;
         public static final int systemprompt_btnLogin=0x7f0a00df;
         public static final int systemprompt_btnSet=0x7f0a00dd;
         public static final int systemprompt_etLogin=0x7f0a00de;
         public static final int systemprompt_etSet=0x7f0a00dc;
         public static final int systemprompt_tvEnd=0x7f0a00e0;
         public static final int tab_label=0x7f0a0066;
-        public static final int textView1=0x7f0a0127;
-        public static final int time=0x7f0a0124;
-        public static final int time_bar=0x7f0a00f9;
-        public static final int time_confirm=0x7f0a00fc;
-        public static final int time_type=0x7f0a00fa;
-        public static final int title=0x7f0a0125;
-        public static final int tokyo=0x7f0a0112;
+        public static final int ten=0x7f0a0115;
+        public static final int ten_eight=0x7f0a010a;
+        public static final int ten_five=0x7f0a0116;
+        public static final int ten_three=0x7f0a0109;
+        public static final int textView1=0x7f0a0149;
+        public static final int three=0x7f0a0107;
+        public static final int three_one=0x7f0a011a;
+        public static final int three_zero=0x7f0a0119;
+        public static final int time=0x7f0a0146;
+        public static final int time_bar=0x7f0a011b;
+        public static final int time_confirm=0x7f0a011e;
+        public static final int time_type=0x7f0a011c;
+        public static final int title=0x7f0a0147;
+        public static final int tokyo=0x7f0a0134;
+        public static final int two=0x7f0a0100;
+        public static final int two_eight=0x7f0a010c;
+        public static final int two_five=0x7f0a0118;
+        public static final int two_four=0x7f0a0111;
+        public static final int two_nine=0x7f0a0112;
+        public static final int two_one=0x7f0a00fd;
+        public static final int two_seven=0x7f0a0105;
+        public static final int two_six=0x7f0a00fe;
+        public static final int two_ten=0x7f0a0117;
+        public static final int two_three=0x7f0a010b;
+        public static final int two_two=0x7f0a0104;
         public static final int unit_btnEnd=0x7f0a00f5;
         public static final int unit_etAddress=0x7f0a00e8;
         public static final int unit_etClass=0x7f0a00f2;
@@ -718,13 +440,13 @@ containing a value of this type.
         public static final int unit_tvName=0x7f0a00e5;
         public static final int unit_tvQuale=0x7f0a00e9;
         public static final int unit_tvRole=0x7f0a00f3;
-        public static final int vancouver=0x7f0a0118;
+        public static final int vancouver=0x7f0a013a;
         public static final int walk_page_add=0x7f0a0039;
         public static final int week_fragment=0x7f0a0062;
-        public static final int worldtime=0x7f0a0106;
-        public static final int worldtime2=0x7f0a010d;
-        public static final int year=0x7f0a00fe;
->>>>>>> 706298f472405a652e12c9a67b771220f11f67d2
+        public static final int worldtime=0x7f0a0128;
+        public static final int worldtime2=0x7f0a012f;
+        public static final int xia=0x7f0a0113;
+        public static final int year=0x7f0a0120;
         public static final int year_fragment=0x7f0a0060;
     }
     public static final class layout {
@@ -736,28 +458,6 @@ containing a value of this type.
         public static final int date_repeat=0x7f030005;
         public static final int date_sports_page=0x7f030006;
         public static final int frame_main=0x7f030007;
-<<<<<<< HEAD
-        public static final int generation_layout=0x7f030008;
-        public static final int human_wheel_layout=0x7f030009;
-        public static final int issue_list=0x7f03000a;
-        public static final int location_wheel_layout=0x7f03000b;
-        public static final int mainfragment=0x7f03000c;
-        public static final int month_layout=0x7f03000d;
-        public static final int myviewflipper=0x7f03000e;
-        public static final int new_issue=0x7f03000f;
-        public static final int page_family_information=0x7f030010;
-        public static final int page_information_push=0x7f030011;
-        public static final int page_password_find=0x7f030012;
-        public static final int page_password_set=0x7f030013;
-        public static final int page_personal_information=0x7f030014;
-        public static final int page_register_information=0x7f030015;
-        public static final int page_system_prompt=0x7f030016;
-        public static final int page_system_protocol=0x7f030017;
-        public static final int page_unit_information=0x7f030018;
-        public static final int pattern_switch=0x7f030019;
-<<<<<<< HEAD
-        public static final int repeat2=0x7f03001a;
-=======
         public static final int frame_minitab=0x7f030008;
         public static final int generation_layout=0x7f030009;
         public static final int human_wheel_layout=0x7f03000a;
@@ -777,28 +477,15 @@ containing a value of this type.
         public static final int page_system_protocol=0x7f030018;
         public static final int page_unit_information=0x7f030019;
         public static final int pattern_switch=0x7f03001a;
->>>>>>> 706298f472405a652e12c9a67b771220f11f67d2
-        public static final int time_wheel_layout=0x7f03001b;
-        public static final int week_layout=0x7f03001c;
-        public static final int wheel_human_text_item=0x7f03001d;
-        public static final int wheel_location_text_item=0x7f03001e;
-        public static final int wheel_nemeric_text_item=0x7f03001f;
-<<<<<<< HEAD
-=======
-        public static final int time_wheel_layout=0x7f03001a;
-        public static final int week_layout=0x7f03001b;
-        public static final int wheel_human_text_item=0x7f03001c;
-        public static final int wheel_location_text_item=0x7f03001d;
-        public static final int wheel_nemeric_text_item=0x7f03001e;
-        public static final int world_time_layout=0x7f03001f;
->>>>>>> 031aa17f3114d29ed58bba6c1224178f420a056d
-        public static final int year_item=0x7f030020;
-        public static final int year_layout=0x7f030021;
-=======
-        public static final int world_time_layout=0x7f030020;
-        public static final int year_item=0x7f030021;
-        public static final int year_layout=0x7f030022;
->>>>>>> 706298f472405a652e12c9a67b771220f11f67d2
+        public static final int repeat2=0x7f03001b;
+        public static final int time_wheel_layout=0x7f03001c;
+        public static final int week_layout=0x7f03001d;
+        public static final int wheel_human_text_item=0x7f03001e;
+        public static final int wheel_location_text_item=0x7f03001f;
+        public static final int wheel_nemeric_text_item=0x7f030020;
+        public static final int world_time_layout=0x7f030021;
+        public static final int year_item=0x7f030022;
+        public static final int year_layout=0x7f030023;
     }
     public static final class menu {
         public static final int activity_main=0x7f090000;
