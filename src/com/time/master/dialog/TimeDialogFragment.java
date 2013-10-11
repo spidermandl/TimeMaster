@@ -4,13 +4,9 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-
 import com.time.master.R;
 import com.time.master.tool.ChineseCalendar;
 import com.time.master.wheel.adapters.ArrayWheelAdapter;
@@ -19,33 +15,13 @@ import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.UIWheelView;
 import com.time.master.wheel.widget.WheelView;
-import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
 
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.time.master.R;
-import com.time.master.calendar.DayStyle;
-import com.time.master.fragment.NewIssueFragment;
-import com.time.master.wheel.adapters.NumericWheelAdapter;
-import com.time.master.wheel.widget.OnWheelClickedListener;
-import com.time.master.wheel.widget.OnWheelScrollListener;
-import com.time.master.wheel.widget.UIWheelView;
-import com.time.master.wheel.widget.WheelView;
-
 /**
  * Ê±¼äÑ¡ÔñÆ÷
  * @author duanlei
@@ -70,7 +46,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 			Bundle savedInstanceState) {
 		
 		setDialogStyle();
-		
+	
 		model=new DateModel();
 		calendar = Calendar.getInstance();
 		model.year=calendar.get(Calendar.YEAR);
