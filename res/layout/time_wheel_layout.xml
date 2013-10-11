@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+    android:background="@drawable/time_wheel_dialog_bg" >
 
     <com.time.master.view.BasicViewGroup
         android:id="@+id/time_bar"
@@ -35,11 +36,11 @@
             android:id="@+id/time_confirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFBCBCBC"
             android:gravity="center"
             android:text="确定"
             layout:new_line="false"
-            layout:width_multi="1" />
+            layout:width_multi="1"
+            layout:default_bg="0xFFFF0000" />
     </com.time.master.view.BasicViewGroup>
 
     <LinearLayout
@@ -49,34 +50,34 @@
         android:layout_below="@id/time_bar"
         android:orientation="horizontal" >
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/year"
             android:layout_width="0dip"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/month"
             android:layout_width="0dip"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/day"
             android:layout_width="0dip"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/hour"
             android:layout_width="0dip"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/minute"
             android:layout_width="0dip"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1" />
     </LinearLayout>
 

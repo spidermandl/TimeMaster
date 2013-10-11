@@ -46,7 +46,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-
+		
 		View layout = inflater.inflate(R.layout.date_detail_create_page, container, false);
 
 		dateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_start);
@@ -80,7 +80,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
 				Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 		tvdate.setText(datestyle);
-
+		
 		tvduration = (BasicTextView) layout.findViewById(R.id.plan_time_period);
 		tvduration.setOnClickListener(this);
 		viewStatus.put(tvduration.getId(), false);
