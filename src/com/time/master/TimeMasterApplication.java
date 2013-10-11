@@ -27,7 +27,7 @@ public class TimeMasterApplication extends Application {
 
 	
 	public static TimeMasterApplication getInstance(){
-		return instance;
+		return instance; 
 	}
 	
 	@Override
