@@ -34,6 +34,7 @@ public class HumanDialogFragment extends WheelDialogFragment {
 		super.onCreate(savedInstanceState);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

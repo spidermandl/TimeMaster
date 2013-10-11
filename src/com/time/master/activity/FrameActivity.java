@@ -1,13 +1,10 @@
 package com.time.master.activity;
 
+import java.util.HashMap;
+
 import com.time.master.R;
-import com.time.master.R.layout;
-import com.time.master.R.menu;
-import com.time.master.fragment.GenerationFragment;
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -19,6 +16,8 @@ import android.widget.TabWidget;
 
 public class FrameActivity extends FragmentActivity {
 
+	HashMap<Integer, Fragment> fragmentCache=new HashMap<Integer, Fragment>();
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +41,6 @@ public class FrameActivity extends FragmentActivity {
         DisplayMetrics displayMetrics = new DisplayMetrics();  
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);  
         int screenWidth = displayMetrics.widthPixels;  
-        int screenheight = displayMetrics.heightPixels;  
 		if (count >= 4) {
 			for (int i = 0; i < count; i++) {
 				// 设置每个标签的宽度，为屏幕的1/4
@@ -70,16 +68,33 @@ public class FrameActivity extends FragmentActivity {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
-    public void showNext(Fragment fragment, int ID) {
+    
+    public void showNext(int containerID,Class<Fragment> fragmentName , int fragmentID) {
+		Fragment f=fragmentCache.get(fragmentID);
+		if(f==null){
+			try {
+				f=fragmentName.newInstance();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+				return;
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+				return;
+			}
+			fragmentCache.put(fragmentID, f);
+		}
+		
 		FragmentManager fragmentManager = this.getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager
-				.beginTransaction();
-		fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,
-				android.R.anim.fade_out);
-		fragmentTransaction.replace(ID, fragment);
+		Fragment fragment=fragmentManager.findFragmentById(containerID);
+		if(fragment==null){
+			return;
+		}
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,android.R.anim.fade_out);
+
+		fragmentTransaction.replace(containerID, f);
 		fragmentTransaction.addToBackStack(null);
-		fragmentTransaction
-				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+		fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 		fragmentTransaction.commit();
 	}
 }
