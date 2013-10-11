@@ -3,6 +3,7 @@ package com.time.master.fragment.date;
 import java.util.HashMap;
 
 import com.time.master.R;
+import com.time.master.dialog.DurationTimeDialogFragment;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
 import com.time.master.dialog.RepeatDialogFragment;
@@ -32,9 +33,9 @@ import android.view.View.OnTouchListener;
  *
  */
 public class DateDetailCreateFragment extends Fragment implements OnTouchListener,android.view.View.OnClickListener{
-	WheelDialogFragment dateFragment, locationFragment, humanFragment;
+	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimePeroidFragment;
 	DialogFragment repeatFragment;
-	BasicEditText dateSelector,locationSelector,humanSelector;
+	BasicEditText dateSelector,locationSelector,humanSelector,planPeroidSelector;
 	BasicTextView dateRepeat;
 	BasicTextView tvdate, //日期 /倒计 按钮
 	              tvduration;//占用/期间 按钮
@@ -45,7 +46,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-
+		
 		View layout = inflater.inflate(R.layout.date_detail_create_page, container, false);
 
 		dateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_start);
@@ -59,6 +60,10 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		humanSelector = (BasicEditText) layout.findViewById(R.id.plan_human);
 		humanSelector.setInputType(InputType.TYPE_NULL);
 		humanSelector.setOnTouchListener(this);
+		
+		planPeroidSelector=(BasicEditText)layout.findViewById(R.id.plan_length);
+		planPeroidSelector.setInputType(InputType.TYPE_NULL);
+		planPeroidSelector.setOnTouchListener(this);
 		
 		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
 		dateRepeat.setOnClickListener(this);
@@ -75,7 +80,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
 				Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 		tvdate.setText(datestyle);
-
+		
 		tvduration = (BasicTextView) layout.findViewById(R.id.plan_time_period);
 		tvduration.setOnClickListener(this);
 		viewStatus.put(tvduration.getId(), false);
@@ -153,7 +158,19 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				}
 				showDialog(humanFragment);
 				break;
-			
+			case R.id.plan_length:
+				if(planTimePeroidFragment==null){
+					planTimePeroidFragment=new DurationTimeDialogFragment();
+					planTimePeroidFragment.setWheelInterface(new WheelResultInterface() {
+						
+						@Override
+						public void getResult(String result) {
+							// TODO Auto-generated method stub
+							planPeroidSelector.setText(result);
+						}
+					});
+				}
+				showDialog(planTimePeroidFragment);
 			default:
 				break;
 			}
