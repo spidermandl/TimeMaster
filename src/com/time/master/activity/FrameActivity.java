@@ -17,6 +17,11 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
+/*
+ * TabHost
+ * @author lanhaibin
+ * 
+ */
 public class FrameActivity extends FragmentActivity {
 
 	HashMap<Integer, Fragment> fragmentCache=new HashMap<Integer, Fragment>();
