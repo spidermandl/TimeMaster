@@ -250,6 +250,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 	Calendar calendar;
 	TimeWheelView year,month,day,hour,minute;
 	NumericWheelAdapter yearAdapter,monthAdapter,minAdapter;
+	ArrayWheelAdapter<String> monthArrayWheelAdapter,dayArrayWheelAdapter;
 	TimeNumericWheelAdapter dayAdapter,hourAdapter;
 	LinearLayout timeWheels;
 	OnWheelClickedListener clickListener=new OnWheelClickedListener() {
@@ -281,13 +282,12 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 	};
 	private String getDateString(){
 		if(dayModle==0){
-			int a[]=ChineseCalendar.sCalendarSolarToLundar(model.year, model.month, model.day);
-			return a[0]+"年"+ChineseCalendar.getChinaMonth(a[1]-1)
-					+ChineseCalendar.getChinaDay(a[2])+model.hour+"时 "+model.minute+"分 ";
+			ChineseCalendar chineseCalendar=new ChineseCalendar(true, model.year, model.month, model.day);
+			return model.year+"年"+chineseCalendar.getChinese(ChineseCalendar.CHINESE_MONTH)
+					+chineseCalendar.getChinese(ChineseCalendar.CHINESE_DATE)+model.hour+":"+model.minute;
 		}
 		else{
-			int a[]=ChineseCalendar.sCalendarLundarToSolar(model.year, model.month, model.day);
-			return a[0]+"年 "+(a[1]-1)+"月 "+(a[2]+1)+"日 "+model.hour+"时 "+model.minute+"分 ";
+			return model.year+"/"+model.month+"/"+model.day+"  "+model.hour+":"+model.minute;
 		}
 			
 	}
@@ -319,36 +319,32 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 		switch (v.getId()) {
 		case R.id.time_type:
 			if(dayModle==0){
-				int a[]=ChineseCalendar.sCalendarSolarToLundar(model.year, model.month, model.day);
 				dayModle=1;
-				ArrayWheelAdapter<String> monthArrayWheelAdapter=new ArrayWheelAdapter<String>(getActivity(),
-						ChineseCalendar.getChinaMonth());
+				monthArrayWheelAdapter=new ArrayWheelAdapter<String>(getActivity(),ChineseCalendar.chineseMonthNames);
 				monthArrayWheelAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 				monthArrayWheelAdapter.setItemTextResource(R.id.numeric_text);
 		        month.setViewAdapter(monthArrayWheelAdapter);
-		        month.setCurrentItem(a[1]-1);
-		        ArrayWheelAdapter<String> dayArrayWheelAdapter=new ArrayWheelAdapter<String>(getActivity(),
-						ChineseCalendar.getChinaDay());
+		        month.setCurrentItem(model.month);
+		        dayArrayWheelAdapter=new ArrayWheelAdapter<String>(getActivity(),ChineseCalendar.chineseDateNames);
 				dayArrayWheelAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 				dayArrayWheelAdapter.setItemTextResource(R.id.numeric_text);
 		        day.setViewAdapter(dayArrayWheelAdapter);
-		        day.setCurrentItem(a[2]);
+		        day.setCurrentItem(model.day);
 		        editText.setText(getDateString());
 		        mode.setText(R.string.date_solar_lunar_1);
 			}
 			else {
-				int a[]=ChineseCalendar.sCalendarLundarToSolar(model.year, model.month, model.day);
 				dayModle=0;
 				dayAdapter = new TimeNumericWheelAdapter(this.getActivity(), 1,calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
 			    dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			    dayAdapter.setItemTextResource(R.id.numeric_text);
 			    day.setViewAdapter(dayAdapter);
-			    day.setCurrentItem(a[2]+1);
+			    day.setCurrentItem(model.month);
 			    monthAdapter = new NumericWheelAdapter(this.getActivity(), 1,12);
 		        monthAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		        monthAdapter.setItemTextResource(R.id.numeric_text);
 		        month.setViewAdapter(monthAdapter);
-		        month.setCurrentItem(a[1]);
+		        month.setCurrentItem(model.day);
 		        editText.setText(getDateString());
 		        mode.setText(R.string.date_solar_lunar_2);
 			}
