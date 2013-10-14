@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 import com.time.master.R;
+import com.time.master.dialog.DurationTimeDialogFragment;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
 import com.time.master.dialog.RepeatDialogFragment;
@@ -36,20 +37,20 @@ import android.view.View.OnTouchListener;
  * @author Desmond
  * 
  */
-public class DateDetailCreateFragment extends Fragment implements
-		OnTouchListener, android.view.View.OnClickListener {
-	WheelDialogFragment dateFragment, locationFragment, humanFragment;
+public class DateDetailCreateFragment extends Fragment implements OnTouchListener,android.view.View.OnClickListener{
+	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimePeroidFragment;
 	DialogFragment repeatFragment;
-	BasicEditText dateSelector ,locationSelector,humanSelector,lengthSelector,endSelector;
+	BasicEditText dateSelector,locationSelector,humanSelector,planPeroidSelector,lengthSelector,endSelector;;
+	BasicTextView dateRepeat;
+
+	BasicTextView 	previousClick,tvdate, // 日期 /倒计 按钮
+			        tvduration;// 占用/期间 按钮
+
 	private Handler stepTimeHandler;
 	private Runnable mTicker;
 	long startTime = 0;
 	boolean flag = true;
-	BasicTextView dateRepeat;
-
-	BasicTextView 		previousClick,tvdate, // 日期 /倒计 按钮
-			tvduration;// 占用/期间 按钮
-
+	
 	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
 
 
@@ -57,8 +58,7 @@ public class DateDetailCreateFragment extends Fragment implements
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View layout = inflater.inflate(R.layout.date_detail_create_page,
-				container, false);
+		View layout = inflater.inflate(R.layout.date_detail_create_page, container, false);
 
 		dateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_start);
 		dateSelector.setInputType(InputType.TYPE_NULL);
@@ -79,7 +79,13 @@ public class DateDetailCreateFragment extends Fragment implements
 		previousClick = (BasicTextView) layout.findViewById(R.id.plan_previous);
 		previousClick.setOnClickListener(this);
 
-		dateRepeat = (BasicTextView) layout.findViewById(R.id.plan_repeat);
+
+		planPeroidSelector=(BasicEditText)layout.findViewById(R.id.plan_length);
+		planPeroidSelector.setInputType(InputType.TYPE_NULL);
+		planPeroidSelector.setOnTouchListener(this);
+		
+		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
+
 		dateRepeat.setOnClickListener(this);
 
 		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
@@ -96,7 +102,7 @@ public class DateDetailCreateFragment extends Fragment implements
 		datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
 				Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 		tvdate.setText(datestyle);
-
+		
 		tvduration = (BasicTextView) layout.findViewById(R.id.plan_time_period);
 		tvduration.setOnClickListener(this);
 		viewStatus.put(tvduration.getId(), false);
@@ -175,7 +181,19 @@ public class DateDetailCreateFragment extends Fragment implements
 				}
 				showDialog(humanFragment);
 				break;
-
+			case R.id.plan_length:
+				if(planTimePeroidFragment==null){
+					planTimePeroidFragment=new DurationTimeDialogFragment();
+					planTimePeroidFragment.setWheelInterface(new WheelResultInterface() {
+						
+						@Override
+						public void getResult(String result) {
+							// TODO Auto-generated method stub
+							planPeroidSelector.setText(result);
+						}
+					});
+				}
+				showDialog(planTimePeroidFragment);
 			default:
 				break;
 			}
