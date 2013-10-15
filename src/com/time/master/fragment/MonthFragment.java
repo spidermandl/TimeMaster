@@ -1,3 +1,9 @@
+/**
+ * @注释 梁丽丽
+          实现逻辑操作。
+   1、日期缓存。
+   2、
+ */
 package com.time.master.fragment;
 
 import java.util.ArrayList;
@@ -25,7 +31,7 @@ import android.widget.LinearLayout.LayoutParams;
 /**
  * 月界面
  * 
- * @author Desmond
+ * @author Desmond 
  * 
  */
 public class MonthFragment extends Fragment {
@@ -65,12 +71,13 @@ public class MonthFragment extends Fragment {
 	int dayvalue = -1;
 
 	String UserName = "";
-			
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		mainLayout = (LinearLayout)inflater.inflate(R.layout.month_layout, container, false);
+		mainLayout = (LinearLayout) inflater.inflate(R.layout.month_layout,
+				container, false);
 
 		// 获得屏幕宽和高，并計算出屏幕寬度分七等份的大小
 		Calendar_Width = TimeMasterApplication.getInstance().getScreen_W();
@@ -135,10 +142,12 @@ public class MonthFragment extends Fragment {
 				R.color.unPresentMonth_FontColor);
 		Constant.isPresentMonth_FontColor = this.getResources().getColor(
 				R.color.isPresentMonth_FontColor);
-		Constant.isToday_BgColor = this.getResources().getColor(R.color.isToday_BgColor);
-		Constant.special_Reminder = this.getResources()
-				.getColor(R.color.specialReminder);
-		Constant.common_Reminder = this.getResources().getColor(R.color.commonReminder);
+		Constant.isToday_BgColor = this.getResources().getColor(
+				R.color.isToday_BgColor);
+		Constant.special_Reminder = this.getResources().getColor(
+				R.color.specialReminder);
+		Constant.common_Reminder = this.getResources().getColor(
+				R.color.commonReminder);
 		Constant.Calendar_WeekFontColor = this.getResources().getColor(
 				R.color.Calendar_WeekFontColor);
 		return mainLayout;
@@ -195,8 +204,8 @@ public class MonthFragment extends Fragment {
 		// layRow.setBackgroundColor(Color.argb(255, 207, 207, 205));
 
 		for (int iDay = 0; iDay < 7; iDay++) {
-			DateWidgetDayHeader day = new DateWidgetDayHeader(this.getActivity(), Cell_Width,
-					35);
+			DateWidgetDayHeader day = new DateWidgetDayHeader(
+					this.getActivity(), Cell_Width, 35);
 
 			final int iWeekDay = DayStyle.getWeekDay(iDay, iFirstDayOfWeek);
 			day.setData(iWeekDay);
@@ -223,14 +232,15 @@ public class MonthFragment extends Fragment {
 
 	// 生成日历中的一行，仅画矩形
 	private View generateCalendarRow() {
-		LinearLayout layRow = createLayout(LinearLayout.HORIZONTAL);
-
+		LinearLayout layRow = createLayout(LinearLayout.HORIZONTAL);// 创建水平的线性布局。
+		// 日历中的每一行的方格为7个。
 		for (int iDay = 0; iDay < 7; iDay++) {
-			DateWidgetDayCell dayCell = new DateWidgetDayCell(this.getActivity(), Cell_Width,
-					Cell_Width);
-			dayCell.setItemClick(mOnDayCellClick);
-			days.add(dayCell);
-			layRow.addView(dayCell);
+			// 日历控件单元格绘制类实例对象来调用画矩形的方法，以及矩形的宽和高。
+			DateWidgetDayCell dayCell = new DateWidgetDayCell(
+					this.getActivity(), Cell_Width, Cell_Width);
+			dayCell.setItemClick(mOnDayCellClick);// 调用点击事件
+			days.add(dayCell);// 把单元格加到数组集合中。
+			layRow.addView(dayCell);// 把数组集合中单元格加到布局里。
 		}
 
 		return layRow;
@@ -284,22 +294,27 @@ public class MonthFragment extends Fragment {
 	// 更新日历
 	private DateWidgetDayCell updateCalendar() {
 		DateWidgetDayCell daySelected = null;
-		boolean bSelected = false;
+		boolean bSelected = false;// 当前没有选中的单元格
 		final boolean bIsSelection = (calSelected.getTimeInMillis() != 0);
+		// Field number for get and set indicating the year.
 		final int iSelectedYear = calSelected.get(Calendar.YEAR);
+		// Field number for get and set indicating(指示，表明) the month.
 		final int iSelectedMonth = calSelected.get(Calendar.MONTH);
+		// Field number for get and set indicating the day of the month.
 		final int iSelectedDay = calSelected.get(Calendar.DAY_OF_MONTH);
+		// Sets the time of this Calendar.(the time of this Calendar.)
 		calCalendar.setTimeInMillis(calStartDate.getTimeInMillis());
-
+		// array=object[60],for循环遍历，获得更新时间
 		for (int i = 0; i < days.size(); i++) {
 			final int iYear = calCalendar.get(Calendar.YEAR);
 			final int iMonth = calCalendar.get(Calendar.MONTH);
 			final int iDay = calCalendar.get(Calendar.DAY_OF_MONTH);
+			// Field number for get and set indicating the day of the week.
 			final int iDayOfWeek = calCalendar.get(Calendar.DAY_OF_WEEK);
-			DateWidgetDayCell dayCell = days.get(i);
+			DateWidgetDayCell dayCell = days.get(i);//返回获得单元格
 
 			// 判断是否当天
-			boolean bToday = false;
+			boolean bToday = false;//当 获得年月日为当天的时间 ，则设置bToday = true。
 
 			if (calToday.get(Calendar.YEAR) == iYear) {
 				if (calToday.get(Calendar.MONTH) == iMonth) {
@@ -310,26 +325,28 @@ public class MonthFragment extends Fragment {
 			}
 
 			// check holiday
-			boolean bHoliday = false;
+			boolean bHoliday = false;//获取的日期等于周六，周天，则判断为holiday
 			if ((iDayOfWeek == Calendar.SATURDAY)
 					|| (iDayOfWeek == Calendar.SUNDAY))
 				bHoliday = true;
-			if ((iMonth == Calendar.JANUARY) && (iDay == 1))
+			if ((iMonth == Calendar.JANUARY) && (iDay == 1))//获取的日期等于1月1日，则判断为holiday
 				bHoliday = true;
 
 			// 是否被选中
 			bSelected = false;
-
+            //当选中的年月日为当前年月日  则判断被选中
 			if (bIsSelection)
 				if ((iSelectedDay == iDay) && (iSelectedMonth == iMonth)
 						&& (iSelectedYear == iYear)) {
 					bSelected = true;
 				}
 
-			dayCell.setSelected(bSelected);
+			dayCell.setSelected(bSelected);//设置单元格被选中
 
 			// 是否有记录
-			boolean hasRecord = true;
+
+			boolean hasRecord = true;//判断记录内容是否为空，不为空则为有记录。
+
 
 			if (flag != null && flag[i] == true && calendar_Hashtable != null
 					&& calendar_Hashtable.containsKey(i)) {
@@ -446,14 +463,19 @@ public class MonthFragment extends Fragment {
 	// 点击日历，触发事件
 	private DateWidgetDayCell.OnItemClick mOnDayCellClick = new DateWidgetDayCell.OnItemClick() {
 		public void OnClick(DateWidgetDayCell item) {
+			// Sets the time of this Calendar.
 			calSelected.setTimeInMillis(item.getDate().getTimeInMillis());
 			int day = GetNumFromDate(calSelected, startDate);
-
+			// Returns true if this Hashtable contains the specified object as a
+			// key of one of the key/value pairs.
+			// 如果日历表中指定对象不为空且日历表中指定对象存在
 			if (calendar_Hashtable != null
 					&& calendar_Hashtable.containsKey(day)) {
+				// 将指定的值显示出来
 				arrange_text.setText(Calendar_Source.get(calendar_Hashtable
 						.get(day)));
 			} else {
+				// 否则显示暂无数据记录。
 				arrange_text.setText("暂无数据记录");
 			}
 
