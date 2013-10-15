@@ -214,29 +214,9 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			if (viewStatus.get(R.id.plan_model)) {
 
 				viewStatus.put(R.id.plan_model, false);
-				String dateString = (String) getText(R.string.date_layout_plan_model_1);
-				SpannableStringBuilder datestyle = new SpannableStringBuilder(
-						dateString);
-				datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvdate.setText(datestyle);
-				// tvdate.setBackgroundColor(R.color.calendar_background);
 
 			} else {
 				viewStatus.put(R.id.plan_model, true);
-				String dateString = (String) getText(R.string.date_layout_plan_model_2);
-				SpannableStringBuilder datestyle = new SpannableStringBuilder(
-						dateString);
-				datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvdate.setText(datestyle);
-				// tvdate.setBackgroundColor(R.color.dateforcolor);
-
-				viewStatus.put(R.id.plan_model,false);
 			}
 //			} else {
 //				viewStatus.put(R.id.plan_model,true);
@@ -248,28 +228,8 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			if (viewStatus.get(R.id.plan_time_period)) {
 
 				viewStatus.put(R.id.plan_time_period, false);
-				String durationString = (String) getText(R.string.date_plan_time_period_1);
-				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
-						durationString);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
-						3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
-						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvduration.setText(durationstyle);
-				// tvduration.setBackgroundColor(R.color.datebackcolor);
 			} else {
 				viewStatus.put(R.id.plan_time_period, true);
-				String durationString = (String) getText(R.string.date_plan_time_period_2);
-				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
-						durationString);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
-						3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
-						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvduration.setText(durationstyle);
-				// tvduration.setBackgroundColor(R.color.dateforcolor);
-
-				viewStatus.put(R.id.plan_time_period,false);
 			}
 //			else {
 //				viewStatus.put(R.id.plan_time_period,true);
@@ -343,52 +303,52 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		return timeCount;
 	}
 	//时间和
-		Calendar calendar;
-		public String addTime(long time){
-			String timeAdd="";
-			/*
-			 *1. dateSelector 得时间
-			 *2. 时间的年，月，日，时，分，秒
-			 *3. 条件判断;相加进位
-			 *4. 得到end内容
-			 */
-		   
-			calendar=Calendar.getInstance();
-			long year=calendar.get(Calendar.YEAR);
-			long month =calendar.get(Calendar.MONTH);
-			long day = calendar.get(Calendar.DAY_OF_MONTH);
-			long hour =calendar.get(Calendar.HOUR_OF_DAY);
-			long min = calendar.get(Calendar.MINUTE);
-			String res=year+"年"+month+"月"+day+"日"+hour+"时"+min+"分";
-			dateSelector.setText(res);
-			
-			
-			long hourc = time/3600000;
-			String hou = "0"+hourc;
-			hou = hou.substring(hou.length()-2, hou.length());
-			
-			
-			long minutec = (time-hourc*360000)/(60000);
-			String minute="0"+minutec;
-			minute = minute.substring(minute.length()-2, minute.length());
-			
-			
-			long secc = (time-hourc*3600000-minutec*60000)/1000;
-			String sec = "0"+secc;
-			sec = sec.substring(sec.length()-2, sec.length());
-			
-			long endMin =min+minutec;
-			long endHour=hourc+hour;
-			long endDay =day;
-			long endMon=month;
-			long endYear=year;
-			if(secc==30){
-				endMin++;
-			}
-			timeAdd=endYear+":"+endMon+":"+endDay+":"+endHour+":"+endMin;
-			return timeAdd;
-			
+	Calendar calendar;
+	public String addTime(long time){
+		String timeAdd="";
+		/*
+		 *1. dateSelector 得时间
+		 *2. 时间的年，月，日，时，分，秒
+		 *3. 条件判断;相加进位
+		 *4. 得到end内容
+		 */
+	   
+		calendar=Calendar.getInstance();
+		long year=calendar.get(Calendar.YEAR);
+		long month =calendar.get(Calendar.MONTH);
+		long day = calendar.get(Calendar.DAY_OF_MONTH);
+		long hour =calendar.get(Calendar.HOUR_OF_DAY);
+		long min = calendar.get(Calendar.MINUTE);
+		String res=year+"年"+month+"月"+day+"日"+hour+"时"+min+"分";
+		dateSelector.setText(res);
+		
+		
+		long hourc = time/3600000;
+		String hou = "0"+hourc;
+		hou = hou.substring(hou.length()-2, hou.length());
+		
+		
+		long minutec = (time-hourc*360000)/(60000);
+		String minute="0"+minutec;
+		minute = minute.substring(minute.length()-2, minute.length());
+		
+		
+		long secc = (time-hourc*3600000-minutec*60000)/1000;
+		String sec = "0"+secc;
+		sec = sec.substring(sec.length()-2, sec.length());
+		
+		long endMin =min+minutec;
+		long endHour=hourc+hour;
+		long endDay =day;
+		long endMon=month;
+		long endYear=year;
+		if(secc==30){
+			endMin++;
 		}
+		timeAdd=endYear+":"+endMon+":"+endDay+":"+endHour+":"+endMin;
+		return timeAdd;
+		
+	}
 	}
 
 
