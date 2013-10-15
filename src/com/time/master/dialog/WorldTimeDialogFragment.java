@@ -44,8 +44,10 @@ public  class WorldTimeDialogFragment extends android.support.v4.app.DialogFragm
         window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
         
         View layout=inflater.inflate(R.layout.world_time_layout, container, false);
-        View context=layout.findViewById(R.id.worldtime);
-		return layout;
+        ViewGroup worldtime1=(ViewGroup) layout.findViewById(R.id.firstworldtime);
+        ViewGroup worldtime2=(ViewGroup) layout.findViewById(R.id.secondworldtime);
+        ViewGroup worldtime3=(ViewGroup) layout.findViewById(R.id.thirdworldtime);
+        return layout;
 	}
 
 }
