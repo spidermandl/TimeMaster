@@ -39,33 +39,33 @@ public class MonthFragment extends Fragment {
 	private ArrayList<DateWidgetDayCell> days = new ArrayList<DateWidgetDayCell>();
 
 	// 日期变量
-	public static Calendar calStartDate = Calendar.getInstance();
-	private Calendar calToday = Calendar.getInstance();
-	private Calendar calCalendar = Calendar.getInstance();
-	private Calendar calSelected = Calendar.getInstance();
+	public static Calendar calStartDate = Calendar.getInstance();  //得到每个月开始日期
+	private Calendar calToday = Calendar.getInstance(); // 得到当日对象
+	private Calendar calCalendar = Calendar.getInstance(); //
+	private Calendar calSelected = Calendar.getInstance();  //得到被选中的单元格对象
 
 	// 当前操作日期
-	private int iMonthViewCurrentMonth = 0;
-	private int iMonthViewCurrentYear = 0;
-	private int iFirstDayOfWeek = Calendar.MONDAY;
+	private int iMonthViewCurrentMonth = 0;  //当前月
+	private int iMonthViewCurrentYear = 0;   //当前年
+	private int iFirstDayOfWeek = Calendar.MONDAY;  //每周从周一开始
 
-	private int Calendar_Width = 0;
-	private int Cell_Width = 0;
+	private int Calendar_Width = 0;  //日历宽
+	private int Cell_Width = 0;   //单元格宽
 
 	// 页面控件
-	TextView Top_Date = null;
-	Button btn_pre_month = null;
-	Button btn_next_month = null;
-	TextView arrange_text = null;
-	LinearLayout mainLayout = null;
-	LinearLayout arrange_layout = null;
+	TextView Top_Date = null; //头部文本
+	Button btn_pre_month = null; //下个月按钮
+	Button btn_next_month = null;  //上个月按钮
+	TextView arrange_text = null;   // 
+	LinearLayout mainLayout = null;  // 背景颜色为白色部分
+	LinearLayout arrange_layout = null;  // 单元格布局
 
 	// 数据源
 	ArrayList<String> Calendar_Source = null;
 	Hashtable<Integer, Integer> calendar_Hashtable = new Hashtable<Integer, Integer>();
 	Boolean[] flag = null;
-	Calendar startDate = null;
-	Calendar endDate = null;
+	Calendar startDate = null;//当前日历第一天
+	Calendar endDate = null; //当前日历最后一天
 	int dayvalue = -1;
 
 	String UserName = "";
@@ -81,16 +81,18 @@ public class MonthFragment extends Fragment {
 		Cell_Width = Calendar_Width / 7 + 1;
 
 		// 声明控件，并绑定事件
-		Top_Date = (TextView) mainLayout.findViewById(R.id.Top_Date);//month_layout布局文件里的文本框
-		btn_pre_month = (Button) mainLayout.findViewById(R.id.btn_pre_month);//布局里的左方向按钮
-		btn_next_month = (Button) mainLayout.findViewById(R.id.btn_next_month);//布局里的右方向按钮
-		btn_pre_month.setOnClickListener(new Pre_MonthOnClickListener());//绑定监听事件
+
+
+		Top_Date = (TextView) mainLayout.findViewById(R.id.Top_Date);
+		btn_pre_month = (Button) mainLayout.findViewById(R.id.btn_pre_month);//上月按钮
+		btn_next_month = (Button) mainLayout.findViewById(R.id.btn_next_month); //下月按钮
+		btn_pre_month.setOnClickListener(new Pre_MonthOnClickListener());
 		btn_next_month.setOnClickListener(new Next_MonthOnClickListener());
 
 		// 计算本月日历中的第一天(一般是上月的某天)，并更新日历
-		calStartDate = getCalendarStartDate();
-		mainLayout.addView(generateCalendarMain());//像布局中加入生成日历主体的布局
-		DateWidgetDayCell daySelected = updateCalendar();//
+		calStartDate = getCalendarStartDate();  //当前日历第一天
+		mainLayout.addView(generateCalendarMain()); //monthFragement下布局文件
+		DateWidgetDayCell daySelected = updateCalendar();
 
 		if (daySelected != null)//如果日被选中
 			daySelected.requestFocus();//执行响应
@@ -99,14 +101,16 @@ public class MonthFragment extends Fragment {
 				ViewGroup.LayoutParams.MATCH_PARENT,
 				ViewGroup.LayoutParams.MATCH_PARENT);
 
-		ScrollView view = new ScrollView(this.getActivity());//实例化滚轮
-		arrange_layout = createLayout(LinearLayout.VERTICAL);//创建个布局
-		arrange_layout.setPadding(5, 2, 0, 0);//传入布局的边界
-		arrange_text = new TextView(this.getActivity());//实例化一个文本框
-		mainLayout.setBackgroundColor(Color.WHITE);//设置布局颜色为白
-		arrange_text.setTextColor(Color.BLACK);//设置文办框颜色为黑
-		arrange_text.setTextSize(18);//这是文本框大小
-		arrange_layout.addView(arrange_text);//像布局中加入文本框
+
+		ScrollView view = new ScrollView(this.getActivity());
+		arrange_layout = createLayout(LinearLayout.VERTICAL);
+		arrange_layout.setPadding(5, 2, 0, 0);
+		arrange_text = new TextView(this.getActivity());
+		mainLayout.setBackgroundColor(Color.WHITE);  //背景色为白色部分
+		arrange_text.setTextColor(Color.BLACK);
+		arrange_text.setTextSize(18);
+		arrange_layout.addView(arrange_text); //日 的布局
+
 
 		startDate = GetStartDate();
 		calToday = GetTodayDate();
@@ -147,7 +151,7 @@ public class MonthFragment extends Fragment {
 				R.color.Calendar_WeekFontColor);
 		return mainLayout;
 	}
-
+	// 得到全称
 	protected String GetDateShortString(Calendar date) {
 		String returnString = date.get(Calendar.YEAR) + "/";
 		returnString += date.get(Calendar.MONTH) + 1 + "/";
@@ -158,19 +162,23 @@ public class MonthFragment extends Fragment {
 
 	// 得到当天在日历中的序号
 	private int GetNumFromDate(Calendar now, Calendar returnDate) {
-		Calendar cNow = (Calendar) now.clone();
-		Calendar cReturnDate = (Calendar) returnDate.clone();
+		Calendar cNow = (Calendar) now.clone();  //当日期
+		Calendar cReturnDate = (Calendar) returnDate.clone();   //日历
 		setTimeToMidnight(cNow);
 		setTimeToMidnight(cReturnDate);
 
 		long todayMs = cNow.getTimeInMillis();
 		long returnMs = cReturnDate.getTimeInMillis();
-		long intervalMs = todayMs - returnMs;
+		long intervalMs = todayMs - returnMs;  //距离差
 		int index = millisecondsToDays(intervalMs);
 
 		return index;
 	}
+
 //分辨率
+
+	//得到序号
+
 	private int millisecondsToDays(long intervalMs) {
 		return Math.round((intervalMs / (1000 * 86400)));
 	}
@@ -195,16 +203,16 @@ public class MonthFragment extends Fragment {
 
 	// 生成日历头部
 	private View generateCalendarHeader() {
-		LinearLayout layRow = createLayout(LinearLayout.HORIZONTAL);
+		LinearLayout layRow = createLayout(LinearLayout.HORIZONTAL);  //水平布局
 		// layRow.setBackgroundColor(Color.argb(255, 207, 207, 205));
 
-		for (int iDay = 0; iDay < 7; iDay++) {
+		for (int iDay = 0; iDay < 7; iDay++) { //遍历
 			DateWidgetDayHeader day = new DateWidgetDayHeader(this.getActivity(), Cell_Width,
 					35);
 
-			final int iWeekDay = DayStyle.getWeekDay(iDay, iFirstDayOfWeek);
-			day.setData(iWeekDay);
-			layRow.addView(day);
+			final int iWeekDay = DayStyle.getWeekDay(iDay, iFirstDayOfWeek);  //从周一开始  加7天
+			day.setData(iWeekDay); //设置数据
+			layRow.addView(day); //添加
 		}
 
 		return layRow;
@@ -212,14 +220,14 @@ public class MonthFragment extends Fragment {
 
 	// 生成日历主体
 	private View generateCalendarMain() {
-		layContent = createLayout(LinearLayout.VERTICAL);
+		layContent = createLayout(LinearLayout.VERTICAL); //垂直布局
 		// layContent.setPadding(1, 0, 1, 0);
-		layContent.setBackgroundColor(Color.argb(255, 105, 105, 103));
-		layContent.addView(generateCalendarHeader());
+		layContent.setBackgroundColor(Color.argb(255, 105, 105, 103)); //完全显示
+		layContent.addView(generateCalendarHeader()); //添加头部
 		days.clear();
 
 		for (int iRow = 0; iRow < 6; iRow++) {
-			layContent.addView(generateCalendarRow());
+			layContent.addView(generateCalendarRow()); //主体添加6个头部布局
 		}
 
 		return layContent;
@@ -232,9 +240,9 @@ public class MonthFragment extends Fragment {
 		for (int iDay = 0; iDay < 7; iDay++) {
 			DateWidgetDayCell dayCell = new DateWidgetDayCell(this.getActivity(), Cell_Width,
 					Cell_Width);
-			dayCell.setItemClick(mOnDayCellClick);
+			dayCell.setItemClick(mOnDayCellClick); //设置点击事件 
 			days.add(dayCell);
-			layRow.addView(dayCell);
+			layRow.addView(dayCell); //为行 添加矩形 
 		}
 
 		return layRow;
@@ -259,9 +267,9 @@ public class MonthFragment extends Fragment {
 
 	// 由于本日历上的日期都是从周一开始的，此方法可推算出上月在本月日历中显示的天数
 	private void UpdateStartDateForMonth() {
-		iMonthViewCurrentMonth = calStartDate.get(Calendar.MONTH);
-		iMonthViewCurrentYear = calStartDate.get(Calendar.YEAR);
-		calStartDate.set(Calendar.DAY_OF_MONTH, 1);
+		iMonthViewCurrentMonth = calStartDate.get(Calendar.MONTH);  //当前月
+		iMonthViewCurrentYear = calStartDate.get(Calendar.YEAR); //当前年
+		calStartDate.set(Calendar.DAY_OF_MONTH, 1);  //当前日
 		calStartDate.set(Calendar.HOUR_OF_DAY, 0);
 		calStartDate.set(Calendar.MINUTE, 0);
 		calStartDate.set(Calendar.SECOND, 0);
@@ -270,45 +278,46 @@ public class MonthFragment extends Fragment {
 		int iDay = 0;
 		int iStartDay = iFirstDayOfWeek;
 
-		if (iStartDay == Calendar.MONDAY) {
+		if (iStartDay == Calendar.MONDAY) { { //从周一开始 得到星期 和距离本月天数--》可得到日期
 			iDay = calStartDate.get(Calendar.DAY_OF_WEEK) - Calendar.MONDAY;
 			if (iDay < 0)
 				iDay = 6;
 		}
 
-		if (iStartDay == Calendar.SUNDAY) {
+		if (iStartDay == Calendar.SUNDAY) { //从周日开始 得到星期 和距离本月天数--》可得到日期
 			iDay = calStartDate.get(Calendar.DAY_OF_WEEK) - Calendar.SUNDAY;
 			if (iDay < 0)
 				iDay = 6;
 		}
 
 		calStartDate.add(Calendar.DAY_OF_WEEK, -iDay);
+		}
 	}
 
 	// 更新日历
 	private DateWidgetDayCell updateCalendar() {
 		DateWidgetDayCell daySelected = null;
-		boolean bSelected = false;
+		boolean bSelected = false;  //默认没选中
 		final boolean bIsSelection = (calSelected.getTimeInMillis() != 0);
-		final int iSelectedYear = calSelected.get(Calendar.YEAR);
-		final int iSelectedMonth = calSelected.get(Calendar.MONTH);
-		final int iSelectedDay = calSelected.get(Calendar.DAY_OF_MONTH);
-		calCalendar.setTimeInMillis(calStartDate.getTimeInMillis());
+		final int iSelectedYear = calSelected.get(Calendar.YEAR); //被选中所在年
+		final int iSelectedMonth = calSelected.get(Calendar.MONTH);  //被选中所在月
+		final int iSelectedDay = calSelected.get(Calendar.DAY_OF_MONTH); //被选中所在日
+		calCalendar.setTimeInMillis(calStartDate.getTimeInMillis()); //设置日历当前
 
 		for (int i = 0; i < days.size(); i++) {
-			final int iYear = calCalendar.get(Calendar.YEAR);
-			final int iMonth = calCalendar.get(Calendar.MONTH);
-			final int iDay = calCalendar.get(Calendar.DAY_OF_MONTH);
-			final int iDayOfWeek = calCalendar.get(Calendar.DAY_OF_WEEK);
-			DateWidgetDayCell dayCell = days.get(i);
+			final int iYear = calCalendar.get(Calendar.YEAR);  //得到单元格所在年
+			final int iMonth = calCalendar.get(Calendar.MONTH);  //单元格所在月
+			final int iDay = calCalendar.get(Calendar.DAY_OF_MONTH);  //单元格所在日
+			final int iDayOfWeek = calCalendar.get(Calendar.DAY_OF_WEEK); //所在星期
+			DateWidgetDayCell dayCell = days.get(i);  //将日期放在对应单元格内
 
 			// 判断是否当天
-			boolean bToday = false;
+			boolean bToday = false; //验证
 
-			if (calToday.get(Calendar.YEAR) == iYear) {
-				if (calToday.get(Calendar.MONTH) == iMonth) {
-					if (calToday.get(Calendar.DAY_OF_MONTH) == iDay) {
-						bToday = true;
+			if (calToday.get(Calendar.YEAR) == iYear) {   // calToday所在年是否为今年
+				if (calToday.get(Calendar.MONTH) == iMonth) {   //是否为当月
+					if (calToday.get(Calendar.DAY_OF_MONTH) == iDay) {  //是否为当天
+						bToday = true; //如果三个条件都满足则为当天 返回true
 					}
 				}
 			}
@@ -316,17 +325,17 @@ public class MonthFragment extends Fragment {
 			// check holiday
 			boolean bHoliday = false;
 			if ((iDayOfWeek == Calendar.SATURDAY)
-					|| (iDayOfWeek == Calendar.SUNDAY))
+					|| (iDayOfWeek == Calendar.SUNDAY))  //日期所在星期为周六或周日 那么此日为假期
 				bHoliday = true;
-			if ((iMonth == Calendar.JANUARY) && (iDay == 1))
+			if ((iMonth == Calendar.JANUARY) && (iDay == 1)) // 日期为1月1日为假期
 				bHoliday = true;
 
 			// 是否被选中
 			bSelected = false;
 
-			if (bIsSelection)
+			if (bIsSelection) //如果有可能被选中
 				if ((iSelectedDay == iDay) && (iSelectedMonth == iMonth)
-						&& (iSelectedYear == iYear)) {
+						&& (iSelectedYear == iYear)) {   //当日被选中
 					bSelected = true;
 				}
 
@@ -339,16 +348,16 @@ public class MonthFragment extends Fragment {
 					&& calendar_Hashtable.containsKey(i)) {
 				// hasRecord = flag[i];
 				hasRecord = Calendar_Source.get(calendar_Hashtable.get(i))
-						.contains(UserName);
+						.contains(UserName);  // 日志存在且不为空 记录内容和i形成键值对 记录内容包含用户名
 			}
 
 			if (bSelected)
-				daySelected = dayCell;
+				daySelected = dayCell; //为被选中赋日期
 
 			dayCell.setData(iYear, iMonth, iDay, bToday, bHoliday,
-					iMonthViewCurrentMonth, hasRecord);
+					iMonthViewCurrentMonth, hasRecord); //设置日期属性 
 
-			calCalendar.add(Calendar.DAY_OF_MONTH, 1);
+			calCalendar.add(Calendar.DAY_OF_MONTH, 1); //为日历添加 日
 		}
 
 		layContent.invalidate();
@@ -360,7 +369,7 @@ public class MonthFragment extends Fragment {
 	private void UpdateCurrentMonthDisplay() {
 		String date = calStartDate.get(Calendar.YEAR) + "年"
 				+ (calStartDate.get(Calendar.MONTH) + 1) + "月";
-		Top_Date.setText(date);
+		Top_Date.setText(date); //设置文本内容
 	}
 
 	// 点击上月按钮，触发事件
@@ -368,42 +377,42 @@ public class MonthFragment extends Fragment {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			arrange_text.setText("");
+			arrange_text.setText(""); //日 设置文本
 			calSelected.setTimeInMillis(0);
-			iMonthViewCurrentMonth--;
+			iMonthViewCurrentMonth--; //点击一次 月份减一
 
-			if (iMonthViewCurrentMonth == -1) {
+			if (iMonthViewCurrentMonth == -1) { //当年月份读完 年减一
 				iMonthViewCurrentMonth = 11;
 				iMonthViewCurrentYear--;
 			}
 
-			calStartDate.set(Calendar.DAY_OF_MONTH, 1);
-			calStartDate.set(Calendar.MONTH, iMonthViewCurrentMonth);
-			calStartDate.set(Calendar.YEAR, iMonthViewCurrentYear);
+			calStartDate.set(Calendar.DAY_OF_MONTH, 1); //设置日
+			calStartDate.set(Calendar.MONTH, iMonthViewCurrentMonth); //设置月
+			calStartDate.set(Calendar.YEAR, iMonthViewCurrentYear);  //设置年
 			calStartDate.set(Calendar.HOUR_OF_DAY, 0);
 			calStartDate.set(Calendar.MINUTE, 0);
 			calStartDate.set(Calendar.SECOND, 0);
 			calStartDate.set(Calendar.MILLISECOND, 0);
-			UpdateStartDateForMonth();
+			UpdateStartDateForMonth(); //更新月份开始日期
 
-			startDate = (Calendar) calStartDate.clone();
-			endDate = GetEndDate(startDate);
+			startDate = (Calendar) calStartDate.clone(); //和calStartDate雷同
+			endDate = GetEndDate(startDate); //与startDate呼应
 
 			// 新建线程
 			new Thread() {
 				@Override
 				public void run() {
 
-					int day = GetNumFromDate(calToday, startDate);
+					int day = GetNumFromDate(calToday, startDate);//得到相差天数
 
 					if (calendar_Hashtable != null
 							&& calendar_Hashtable.containsKey(day)) {
 						dayvalue = calendar_Hashtable.get(day);
 					}
 				}
-			}.start();
+			}.start();  //上个月在这个月的遗留
 
-			updateCalendar();
+			updateCalendar(); //更新日历
 		}
 
 	}
@@ -415,11 +424,11 @@ public class MonthFragment extends Fragment {
 			// TODO Auto-generated method stub
 			arrange_text.setText("");
 			calSelected.setTimeInMillis(0);
-			iMonthViewCurrentMonth++;
+			iMonthViewCurrentMonth++;   //点击一次 月份加一
 
 			if (iMonthViewCurrentMonth == 12) {
 				iMonthViewCurrentMonth = 0;
-				iMonthViewCurrentYear++;
+				iMonthViewCurrentYear++;  //当年月份读完 年减一
 			}
 
 			calStartDate.set(Calendar.DAY_OF_MONTH, 1);
@@ -451,21 +460,21 @@ public class MonthFragment extends Fragment {
 	private DateWidgetDayCell.OnItemClick mOnDayCellClick = new DateWidgetDayCell.OnItemClick() {
 		public void OnClick(DateWidgetDayCell item) {
 			calSelected.setTimeInMillis(item.getDate().getTimeInMillis());
-			int day = GetNumFromDate(calSelected, startDate);
+			int day = GetNumFromDate(calSelected, startDate); //被选中天数和起始日期相差天数
 
 			if (calendar_Hashtable != null
 					&& calendar_Hashtable.containsKey(day)) {
 				arrange_text.setText(Calendar_Source.get(calendar_Hashtable
-						.get(day)));
+						.get(day)));  //为单元格文本设置内容
 			} else {
 				arrange_text.setText("暂无数据记录");
 			}
 
-			item.setSelected(true);
+			item.setSelected(true); //单元格可以被选中
 			updateCalendar();
 		}
 	};
-
+	//得到当日日期
 	public Calendar GetTodayDate() {
 		Calendar cal_Today = Calendar.getInstance();
 		cal_Today.set(Calendar.HOUR_OF_DAY, 0);
@@ -480,19 +489,19 @@ public class MonthFragment extends Fragment {
 	public Calendar GetStartDate() {
 		int iDay = 0;
 		Calendar cal_Now = Calendar.getInstance();
-		cal_Now.set(Calendar.DAY_OF_MONTH, 1);
+		cal_Now.set(Calendar.DAY_OF_MONTH, 1); //只需日期
 		cal_Now.set(Calendar.HOUR_OF_DAY, 0);
 		cal_Now.set(Calendar.MINUTE, 0);
 		cal_Now.set(Calendar.SECOND, 0);
 		cal_Now.setFirstDayOfWeek(Calendar.MONDAY);
 
-		iDay = cal_Now.get(Calendar.DAY_OF_WEEK) - Calendar.MONDAY;
+		iDay = cal_Now.get(Calendar.DAY_OF_WEEK) - Calendar.MONDAY; 
 
 		if (iDay < 0) {
 			iDay = 6;
 		}
 
-		cal_Now.add(Calendar.DAY_OF_WEEK, -iDay);
+		cal_Now.add(Calendar.DAY_OF_WEEK, -iDay);  //得到星期和距离本月天数--》可得到日期
 
 		return cal_Now;
 	}
@@ -500,8 +509,8 @@ public class MonthFragment extends Fragment {
 	public Calendar GetEndDate(Calendar startDate) {
 		// Calendar end = GetStartDate(enddate);
 		Calendar endDate = Calendar.getInstance();
-		endDate = (Calendar) startDate.clone();
-		endDate.add(Calendar.DAY_OF_MONTH, 41);
+		endDate = (Calendar) startDate.clone();  
+		endDate.add(Calendar.DAY_OF_MONTH, 41);  //由startDate得到类似endDate日期 ，且位居第42格
 		return endDate;
 	}
 

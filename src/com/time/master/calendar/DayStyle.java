@@ -30,18 +30,21 @@ public class DayStyle {
 	}
 	
 	public static int getWeekDay(int index, int iFirstDayOfWeek) {
-		//方法，获得当天星期几
-		int iWeekDay = -1;//iWeekDay初始化值为-1，为了下面代码计算的礼拜几-1
 
-		if (iFirstDayOfWeek == Calendar.MONDAY) {//如果工作日第一天为周一
-			iWeekDay = index + Calendar.MONDAY;//当天所在星期范围为周一至周六索引，即周一至周六的某一天
+		int iWeekDay = -1;  //将周一放置第一位
+
+		if (iFirstDayOfWeek == Calendar.MONDAY) {  //如果一周的第一天是周一
+			iWeekDay = index + Calendar.MONDAY;
+
 			
 			if (iWeekDay > Calendar.SATURDAY)//如果当天星期大于礼拜六
 				iWeekDay = Calendar.SUNDAY;//当天星期天
 		}
 
-		if (iFirstDayOfWeek == Calendar.SUNDAY) {//如果工作日第一天为礼拜天
-			iWeekDay = index + Calendar.SUNDAY;//当天所在星期范围为星期天至下一礼拜的星期五
+
+		if (iFirstDayOfWeek == Calendar.SUNDAY) {  //如果一周的第一天是周日
+			iWeekDay = index + Calendar.SUNDAY;
+
 		}
 
 		return iWeekDay;//返回当前星期几
