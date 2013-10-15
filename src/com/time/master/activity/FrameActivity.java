@@ -6,6 +6,7 @@ import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.dialog.LoadStaticDataFragment;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -106,6 +107,11 @@ public class FrameActivity extends FragmentActivity {
 		fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 		fragmentTransaction.commit();
 	}
-    
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+    	// TODO Auto-generated method stub
+    	super.onConfigurationChanged(newConfig);
+    	System.out.println(newConfig.orientation);
+    }
 }
 
