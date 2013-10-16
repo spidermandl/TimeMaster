@@ -1,5 +1,6 @@
 package com.time.master.fragment.date;
 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -44,6 +45,7 @@ public class DateDetailCreateFragment extends Fragment implements
 		OnTouchListener, android.view.View.OnClickListener {
 	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimePeroidFragment;
 	DialogFragment repeatFragment;
+
 	BasicEditText dateSelector, locationSelector, humanSelector,planPeroidSelector,
 			lengthSelector, endSelector;// 结束日期时间
 	BasicTextView previousClick,// 开始按钮
@@ -63,7 +65,6 @@ public class DateDetailCreateFragment extends Fragment implements
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-
 		View layout = inflater.inflate(R.layout.date_detail_create_page,
 				container, false);
 
@@ -73,14 +74,17 @@ public class DateDetailCreateFragment extends Fragment implements
 		dateSelector.setInputType(InputType.TYPE_NULL);
 		dateSelector.setOnTouchListener(this);
 
+
 		locationSelector = (BasicEditText) layout
 				.findViewById(R.id.plan_location);
+
 		locationSelector.setInputType(InputType.TYPE_NULL);
 		locationSelector.setOnTouchListener(this);
 
 		humanSelector = (BasicEditText) layout.findViewById(R.id.plan_human);
 		humanSelector.setInputType(InputType.TYPE_NULL);
 		humanSelector.setOnTouchListener(this);
+
 
 /**
  * @author
@@ -102,11 +106,14 @@ public class DateDetailCreateFragment extends Fragment implements
 		planPeroidSelector.setInputType(InputType.TYPE_NULL);
 		planPeroidSelector.setOnTouchListener(this);
 
+
 		dateRepeat.setOnClickListener(this);
 
 		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
 		tvdate.setOnClickListener(this);
+
 		viewStatus.put(tvdate.getId(), false);
+
 		// tvdate.setBackgroundColor(R.color.dateforcolor);
 		String dateString = (String) getText(R.string.date_layout_plan_model_1);
 		SpannableStringBuilder datestyle = new SpannableStringBuilder(
@@ -230,15 +237,21 @@ public class DateDetailCreateFragment extends Fragment implements
 			break;
 		case R.id.plan_model:
 			if (viewStatus.get(R.id.plan_model)) {
+
 				viewStatus.put(R.id.plan_model, false);
 
 			} else {
 				viewStatus.put(R.id.plan_model, true);
 			}
+//			} else {
+//				viewStatus.put(R.id.plan_model,true);
+//
+//			}
 
 			break;
 		case R.id.plan_time_period:
 			if (viewStatus.get(R.id.plan_time_period)) {
+
 				viewStatus.put(R.id.plan_time_period, false);
 			} else {
 				viewStatus.put(R.id.plan_time_period, true);
@@ -299,20 +312,28 @@ public class DateDetailCreateFragment extends Fragment implements
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+
 			}
-			break;
-		default:
+//			else {
+//				viewStatus.put(R.id.plan_time_period,true);
+//
+//			}
 			break;
 		}
 	}
-
+	//时间计数器，最多只能到99小时
 	public String showTimeCount(long time) {
-		if (time >= 360000000) {
+		if (time >= 36000000) {
 			return "00:00:00";
 		}
 		String timeCount = "";
 		long hourc = time / 3600000;
 		String hour = "0" + hourc;
+		/**
+		 * substring():是用于截取字符串
+		 * 参数：start:截取字串的开始位置
+		 *       end:截取字串的结束位置
+		 */
 		hour = hour.substring(hour.length() - 2, hour.length());
 
 		long minutec = (time - hourc * 360000) / (60000);
@@ -326,53 +347,53 @@ public class DateDetailCreateFragment extends Fragment implements
 		timeCount = hour + ":" + minute + ":" + sec;
 
 		return timeCount;
-
 	}
-
-	// 时间和
+	//时间和
 	Calendar calendar;
-
-	public String addTime(long time) {
-		String timeAdd = "";
+	public String addTime(long time){
+		String timeAdd="";
 		/*
-		 * 1. dateSelector 得时间2. 时间的年，月，日，时，分，秒3. 条件判断;相加进位4. 得到end内容
+		 *1. dateSelector 得时间
+		 *2. 时间的年，月，日，时，分，秒
+		 *3. 条件判断;相加进位
+		 *4. 得到end内容
 		 */
-		//
-		calendar = Calendar.getInstance();
-		long year = calendar.get(Calendar.YEAR);
-		long month = calendar.get(Calendar.MONTH);
+	   
+		calendar=Calendar.getInstance();
+		long year=calendar.get(Calendar.YEAR);
+		long month =calendar.get(Calendar.MONTH);
 		long day = calendar.get(Calendar.DAY_OF_MONTH);
-		long hour = calendar.get(Calendar.HOUR_OF_DAY);
+		long hour =calendar.get(Calendar.HOUR_OF_DAY);
 		long min = calendar.get(Calendar.MINUTE);
-		String res = year + "-" + month + "-" + day + "-" + hour + ":" + min;
+		String res=year+"年"+month+"月"+day+"日"+hour+"时"+min+"分";
 		dateSelector.setText(res);
-
-		long hourc = time / 3600000;
-		String hou = "0" + hourc;
-		hou = hou.substring(hou.length() - 2, hou.length());
-
-		long minutec = (time - hourc * 360000) / (60000);
-		String minute = "0" + minutec;
-		minute = minute.substring(minute.length() - 2, minute.length());
-
-		long secc = (time - hourc * 3600000 - minutec * 60000) / 1000;
-		String sec = "0" + secc;
-		sec = sec.substring(sec.length() - 2, sec.length());
-
-		long endMin = min + minutec;
-		long endHour = hourc + hour;
-		long endDay = day;
-		long endMon = month;
-		long endYear = year;
-		while (true) {
-			if (secc == 30) {
-				endMin++;
-			}
-			timeAdd = endYear + "-" + endMon + "-" + endDay + "-" + endHour
-					+ ":" + endMin;
-			return timeAdd;
+		
+		
+		long hourc = time/3600000;
+		String hou = "0"+hourc;
+		hou = hou.substring(hou.length()-2, hou.length());
+		
+		
+		long minutec = (time-hourc*360000)/(60000);
+		String minute="0"+minutec;
+		minute = minute.substring(minute.length()-2, minute.length());
+		
+		
+		long secc = (time-hourc*3600000-minutec*60000)/1000;
+		String sec = "0"+secc;
+		sec = sec.substring(sec.length()-2, sec.length());
+		
+		long endMin =min+minutec;
+		long endHour=hourc+hour;
+		long endDay =day;
+		long endMon=month;
+		long endYear=year;
+		if(secc==30){
+			endMin++;
 		}
-
+		timeAdd=endYear+":"+endMon+":"+endDay+":"+endHour+":"+endMin;
+		return timeAdd;
+		
 	}
 
 	public Map<String, Object> save(Context context) {
@@ -396,3 +417,4 @@ public class DateDetailCreateFragment extends Fragment implements
 
 	}
 }
+
