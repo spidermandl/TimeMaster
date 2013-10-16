@@ -45,6 +45,7 @@ public  class WorldTimeDialogFragment extends android.support.v4.app.DialogFragm
         
         View layout=inflater.inflate(R.layout.world_time_layout, container, false);
         View context=layout.findViewById(R.id.worldtime);
+        
 		return layout;
 	}
 
