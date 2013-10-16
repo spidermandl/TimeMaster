@@ -2,11 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" >
-	<LinearLayout 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:orientation="vertical"
-	    >
+
     <com.time.master.view.BasicViewGroup
         xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
         android:id="@+id/firstworldtime"
@@ -14,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="#BFBFBF" >
 
-        <com.time.master.view.SelectedTextView
+        <com.time.master.view.BasicTextView
             android:id="@+id/solarandlunarcalendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,7 +32,7 @@
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.SelectedTextView
+        <com.time.master.view.BasicTextView
             android:id="@+id/arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,14 +45,14 @@
             android:id="@+id/conversion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/setbar_backgroundp"
+            android:background="#FFFF00"
             android:gravity="center"
             android:text="换算\n区"
             android:textColor="#000000"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.SelectedTextView
+        <com.time.master.view.BasicTextView
             android:id="@+id/confirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,18 +62,8 @@
             android:textColor="#000000"
             layout:new_line="false"
             layout:width_multi="1" />
-    </com.time.master.view.BasicViewGroup>
-	<LinearLayout 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:orientation="horizontal"
-	    >
-    <com.time.master.view.BasicViewGroup
-        xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
-        android:id="@+id/secondworldtime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#BFBFBF" >
+
+        
 
         <com.time.master.view.SelectedTextView
             android:id="@+id/chineseandenglish"
@@ -108,6 +94,16 @@
             android:background="#66FFFF"
             android:gravity="center"
             android:text="翻页"
+            android:textColor="#000000"
+            layout:new_line="false"
+            layout:width_multi="1" />
+        <com.time.master.view.SelectedTextView
+            android:id="@+id/solarcalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#99CCFF"
+            android:gravity="center"
+            android:text="阳历"
             android:textColor="#000000"
             layout:new_line="false"
             layout:width_multi="1" />
@@ -157,6 +153,17 @@
             layout:width_multi="1" />
 
         <com.time.master.view.SelectedTextView
+            android:id="@+id/lunarcalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#99CCFF"
+            android:gravity="center"
+            android:text="农历"
+            android:textColor="#000000"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.SelectedTextView
             android:id="@+id/hawaii"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -196,6 +203,17 @@
             android:background="#92D050"
             android:gravity="center"
             android:text="温哥\n华"
+            android:textColor="#000000"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.SelectedTextView
+            android:id="@+id/countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#99CCFF"
+            android:gravity="center"
+            android:text="倒计"
             android:textColor="#000000"
             layout:new_line="false"
             layout:width_multi="1" />
@@ -245,6 +263,17 @@
             layout:width_multi="1" />
 
         <com.time.master.view.SelectedTextView
+            android:id="@+id/goon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#99CCFF"
+            android:gravity="center"
+            android:text="持续"
+            android:textColor="#000000"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.SelectedTextView
             android:id="@+id/Dubai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -287,58 +316,6 @@
             android:textColor="#000000"
             layout:new_line="false"
             layout:width_multi="1" />
-    </com.time.master.view.BasicViewGroup>
-
-    <com.time.master.view.BasicViewGroup
-        xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
-        android:id="@+id/thirdworldtime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#BFBFBF" >
-
-        <com.time.master.view.SelectedTextView
-            android:id="@+id/solarcalendar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#99CCFF"
-            android:gravity="center"
-            android:text="阳历"
-            android:textColor="#000000"
-            layout:new_line="false"
-            layout:width_multi="1" />
-
-        <com.time.master.view.SelectedTextView
-            android:id="@+id/lunarcalendar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#99CCFF"
-            android:gravity="center"
-            android:text="农历"
-            android:textColor="#000000"
-            layout:new_line="false"
-            layout:width_multi="1" />
-
-        <com.time.master.view.SelectedTextView
-            android:id="@+id/countdown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#99CCFF"
-            android:gravity="center"
-            android:text="倒计"
-            android:textColor="#000000"
-            layout:new_line="false"
-            layout:width_multi="1" />
-
-        <com.time.master.view.SelectedTextView
-            android:id="@+id/goon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#99CCFF"
-            android:gravity="center"
-            android:text="持续"
-            android:textColor="#000000"
-            layout:new_line="false"
-            layout:width_multi="1" />
 
         <com.time.master.view.SelectedTextView
             android:id="@+id/forward"
@@ -351,6 +328,5 @@
             layout:new_line="false"
             layout:width_multi="1" />
     </com.time.master.view.BasicViewGroup>
-	</LinearLayout>
-	</LinearLayout>
+
 </RelativeLayout>
