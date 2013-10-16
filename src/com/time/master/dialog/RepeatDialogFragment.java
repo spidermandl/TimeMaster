@@ -38,7 +38,7 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 			dtplyouself, dtsunday, dtfriday;
 	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
 	
-	BasicTextView yourselfBasicTextView;// //
+	BasicTextView yourselfBasicTextView;
 
 
 	@Override

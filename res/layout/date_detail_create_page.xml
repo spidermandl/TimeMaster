@@ -88,7 +88,7 @@
         layout:width_multi="3" />
 
     <com.time.master.view.BasicTextView
-        android:id="@+id/plan_previous"
+        android:id="@+id/plan_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"

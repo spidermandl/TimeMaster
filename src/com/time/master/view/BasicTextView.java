@@ -2,14 +2,10 @@ package com.time.master.view;
 
 import com.time.master.R;
 import com.time.master.interfacer.LayoutStyleableInterface;
-
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.drawable.ColorDrawable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
-import android.view.ViewDebug.ExportedProperty;
 import android.widget.TextView;
 /***
  * 基本TextView，BasicViewGroup的子view
@@ -17,6 +13,7 @@ import android.widget.TextView;
  *
  */
 public class BasicTextView extends TextView implements LayoutStyleableInterface{
+
 
 	/**单位宽度的倍数*/
 	protected int multi_width;
@@ -26,6 +23,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	protected int naturalColor;
 	/**判断是否被选中*/
 	protected boolean isSelected=false;
+
 	
 	public BasicTextView(Context context) {
 		super(context);
@@ -51,10 +49,12 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
         init();
 	}
 
+
 	protected void init(){
 		if(naturalColor!=-1)
 			setBackgroundColor(naturalColor);
 	}
+
 	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -95,4 +95,6 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	public boolean isNewLine() {
 		return isNewLine;
 	}
+
+
 }
