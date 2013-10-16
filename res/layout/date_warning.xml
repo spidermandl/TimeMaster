@@ -97,7 +97,15 @@
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
-        layout:width_multi="3" />
+        layout:width_multi="3" 
+        android:visibility="visible"
+        />
+<!--  <include layout="@layout/gridview"
+            android:id="@+id/gridview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+         --> 
         
         <com.time.master.view.BasicTextView
         android:id="@+id/warning_ring"
@@ -131,7 +139,8 @@
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
-        layout:width_multi="3" />
+        layout:width_multi="3" 
+        android:visibility="visible"/>
         
         <com.time.master.view.BasicTextView
         android:id="@+id/warning_music"
@@ -165,7 +174,8 @@
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
-        layout:width_multi="3" />
+        layout:width_multi="3" 
+        android:visibility="visible"/>
         
         <com.time.master.view.BasicTextView
         android:id="@+id/warning_pronunciation"
@@ -199,7 +209,8 @@
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
-        layout:width_multi="3" />
+        layout:width_multi="3" 
+        android:visibility="visible"/>
         
         <com.time.master.view.BasicTextView
         android:id="@+id/warning_vibrate"
@@ -233,7 +244,8 @@
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
-        layout:width_multi="3" />
+        layout:width_multi="3" 
+        android:visibility="visible"/>
         
         <com.time.master.view.BasicTextView
         android:id="@+id/warning_icon"
@@ -267,7 +279,8 @@
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
-        layout:width_multi="3" />
+        layout:width_multi="3" 
+        android:visibility="visible"/>
         
         <com.time.master.view.BasicTextView
         android:id="@+id/warning_motion"
@@ -301,7 +314,8 @@
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
-        layout:width_multi="3" />
+        layout:width_multi="3" 
+        android:visibility="visible"/>
         
         <com.time.master.view.BasicTextView
         android:id="@+id/warning_surroundings"
@@ -334,7 +348,8 @@
         android:singleLine="true"
         android:textIsSelectable="true"
         layout:new_line="false"
-        layout:width_multi="3" />
+        layout:width_multi="3" 
+        android:visibility="visible"/>
         
         <com.time.master.view.BasicTextView
         android:id="@+id/warning_procedure"
