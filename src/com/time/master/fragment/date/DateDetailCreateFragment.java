@@ -38,6 +38,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 	BasicTextView dateRepeat;
 	BasicTextView tvdate, //日期 /倒计 按钮
 	              tvduration;//占用/期间 按钮
+	           
 	
 	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
 	
@@ -172,55 +173,17 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		case R.id.plan_model:
 			if (viewStatus.get(R.id.plan_model)) {
 				viewStatus.put(R.id.plan_model,false);
-				String dateString = (String) getText(R.string.date_layout_plan_model_1);
-				SpannableStringBuilder datestyle = new SpannableStringBuilder(
-						dateString);
-				datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvdate.setText(datestyle);
-				//tvdate.setBackgroundColor(R.color.calendar_background);
 				
-				
-
 			} else {
 				viewStatus.put(R.id.plan_model,true);
-				String dateString = (String) getText(R.string.date_layout_plan_model_2);
-				SpannableStringBuilder datestyle = new SpannableStringBuilder(
-						dateString);
-				datestyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
-						Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvdate.setText(datestyle);
-				//tvdate.setBackgroundColor(R.color.dateforcolor);
 			}
 
 			break;
 		case R.id.plan_time_period:
 			if (viewStatus.get(R.id.plan_time_period)) {
 				viewStatus.put(R.id.plan_time_period,false);
-				String durationString = (String) getText(R.string.date_plan_time_period_1);
-				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
-						durationString);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
-						3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
-						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvduration.setText(durationstyle);
-				//tvduration.setBackgroundColor(R.color.datebackcolor);
 			} else {
 				viewStatus.put(R.id.plan_time_period,true);
-				String durationString = (String) getText(R.string.date_plan_time_period_2);
-				SpannableStringBuilder durationstyle = new SpannableStringBuilder(
-						durationString);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
-						3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
-						5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-				tvduration.setText(durationstyle);
-				//tvduration.setBackgroundColor(R.color.dateforcolor);
 			}
 			break;
 		default:

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.time.master.R;
-import com.time.master.adapter.BaseAdapterDemo;
+import com.time.master.adapter.YearFrontAdapter;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -20,7 +20,7 @@ import android.widget.ListView;
 
 public class YearFragment extends Fragment {
 	private ListView TitleList;
-	private BaseAdapterDemo aDemo;
+	private YearFrontAdapter yearAdapter;
 	private List<Map<String, Object>> mData;
 
 	@Override
@@ -31,9 +31,9 @@ public class YearFragment extends Fragment {
 		mData=getData();
 		TitleList = (ListView)  layout.findViewById(R.id.listView1);
 		
-		aDemo =new BaseAdapterDemo(this.getActivity(), mData);
+		yearAdapter =new YearFrontAdapter(this.getActivity(), mData);
 
-		TitleList.setAdapter(aDemo);
+		TitleList.setAdapter(yearAdapter);
 		
         
 		return layout;

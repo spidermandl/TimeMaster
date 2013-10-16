@@ -3,15 +3,16 @@ package com.time.master.activity;
 import java.util.HashMap;
 
 import com.time.master.R;
+import com.time.master.TimeMasterApplication;
+import com.time.master.dialog.LoadStaticDataFragment;
 
 import android.os.Bundle;
-<<<<<<< HEAD
 
 
 import android.content.Context;
 
-=======
->>>>>>> e10201a9014423d77559ea373984841185095f19
+import android.support.v4.app.DialogFragment;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -93,6 +94,12 @@ public class FrameActivity extends FragmentActivity {
 						(screenWidth) / 5);
 			}
 		} 
+		
+		/**本地数据库建立，初始表数据*/
+		if (!TimeMasterApplication.getInstance().isDataInitialized()) {
+			DialogFragment df=new LoadStaticDataFragment();
+			df.show(this.getSupportFragmentManager(), "dialog");
+		}
     }
 
 //    TabHost.OnTabChangeListener tabChangeListener = new TabHost.OnTabChangeListener() {
@@ -142,5 +149,6 @@ public class FrameActivity extends FragmentActivity {
 		fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 		fragmentTransaction.commit();
 	}
+    
 }
 

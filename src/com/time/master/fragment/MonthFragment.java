@@ -329,7 +329,7 @@ public class MonthFragment extends Fragment {
 			dayCell.setSelected(bSelected);
 
 			// ÊÇ·ñÓÐ¼ÇÂ¼
-			boolean hasRecord = false;
+			boolean hasRecord = true;
 
 			if (flag != null && flag[i] == true && calendar_Hashtable != null
 					&& calendar_Hashtable.containsKey(i)) {

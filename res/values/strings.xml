@@ -98,67 +98,105 @@
 2、关于隐私（详情）
 3、免责声明（详情）
 4、法律法规（详情）</string>
-    <string name="page4_disagreecb">不接受，退出注册</string>
-    <string name="page4_agreecb">同意并理解所以条款</string>
-    <string name="page5_title">注册信息</string>
-    <string name="page5_idcard">身份证</string>
-    <string name="page5_truename">真实姓名</string>
-    <string name="page5_username">用户名</string>
-    <string name="page5_birthday">出生日期</string>
-    <string name="page5_nativeplace">籍贯</string>
-    <string name="page5_email">电子邮箱</string>
-    <string name="page5_phone">手机号</string>
-    <string name="page5_code">人机识别码</string>
-    <string name="page5_getcode">获取手机验证码</string>
-    <string name="page5_hintid">身份证号码</string>
-    <string name="page5_hintfirst">姓</string>
-    <string name="page5_hintend">名</string>
-    <string name="page6_title">恭喜你，完成注册，成为卓越人生的追求者！</string>
-    <string name="page6_pwset">密码设置</string>
-    <string name="page6_pwinput">密码输入</string>
-    <string name="page6_hintpwin">请输入密码</string>
-    <string name="page6_pwremind">密码设置提醒：设置成功！复杂程度高！</string>
-    <string name="page6_findpw">找回密码方式</string>
-    <string name="page6_hintphone">手机短信</string>
-    <string name="page6_hintemail">邮件</string>
-    <string name="page6_question">提问问题</string>
-    <string name="page6_hintintqes">输入问题</string>
-    <string name="page6_hintintans">输入答案</string>
-    <string name="page6_end">继续完善个人信息</string>
-    <string name="page7_title">继续完善个人信息</string>
-    <string name="page7_name">昵称</string>
-    <string name="page7_gender">性别</string>
-    <string name="page7_address">家庭住址</string>
-    <string name="page7_getaddress">邮寄住址</string>
-    <string name="page7_phone">添加通讯方式</string>
-    <string name="page7_qqnumber">QQ号</string>
-    <string name="page7_microblog">微博</string>
-    <string name="page7_message">微信</string>
-    <string name="page7_end">完善个人家庭信息</string>
-    <string name="page8_title">完善家庭信息</string>
-    <string name="page8_id">户口编号</string>
-    <string name="page8_dadid">父亲身份证号</string>
-    <string name="page8_momid">母亲身份证号</string>
-    <string name="page8_familyrole">家庭角色</string>
-    <string name="page8_marryid">结婚证号</string>
-    <string name="page8_husband">丈夫身份证号</string>
-    <string name="page8_wife">妻子身份证号</string>
-    <string name="page8_end">完善单位信息</string>
-    <string name="page9_title">完善单位信息</string>
-    <string name="page9_name">单位名称</string>
-    <string name="page9_address">单位地址</string>
-    <string name="page9_quale">单位性质</string>
-    <string name="page9_idcode">营业执照代码</string>
-    <string name="page9_idnumber">税务登记代码</string>
-    <string name="page9_goods">主营产品</string>
-    <string name="page9_class">部门科室</string>
-    <string name="page9_role">职务角色</string>
-    <string name="page9_end">进入主页</string>
-    <string name="date_layout_plan_model_1">日期\n倒计</string>
-    <string name="date_plan_time_period_1">占用\n时间</string>
-    <string name="date_layout_plan_model_2">倒计\n日期</string>
-    <string name="date_plan_time_period_2">时间\n占用</string>
+
     <string name="title_activity_repeat_dialog_fragment2">RepeatDialogFragment2</string>
     <string name="title_activity_repeat_dialog_fragment1">RepeatDialogFragment1</string>
+
+
+ 	<string name="page4_disagreecb">不接受，退出注册</string>
+ 	<string name="page4_agreecb">同意并理解所以条款</string>
+ 	
+ 	<string name="page5_title">注册信息</string>
+	<string name="page5_idcard">身份证</string>
+	<string name="page5_truename">真实姓名</string>
+	<string name="page5_username">用户名</string>
+	<string name="page5_birthday">出生日期</string>
+	<string name="page5_nativeplace">籍贯</string>
+	<string name="page5_email">电子邮箱</string>
+	<string name="page5_phone">手机号</string>
+	<string name="page5_code">人机识别码</string>
+	<string name="page5_getcode">获取手机验证码</string>
+	<string name="page5_hintid">身份证号码</string>
+	<string name="page5_hintfirst">姓</string>
+	<string name="page5_hintend">名</string>
+	
+	<string name="page6_title">恭喜你，完成注册，成为卓越人生的追求者！</string>
+	<string name="page6_pwset">密码设置</string>
+	<string name="page6_pwinput">密码输入</string>
+	<string name="page6_hintpwin">请输入密码</string>
+	<string name="page6_pwremind">密码设置提醒：设置成功！复杂程度高！</string>
+	<string name="page6_findpw">找回密码方式</string>
+	<string name="page6_hintphone">手机短信</string>
+	<string name="page6_hintemail">邮件</string>
+	<string name="page6_question">提问问题</string>
+	<string name="page6_hintintqes">输入问题</string>
+	<string name="page6_hintintans">输入答案</string>
+	<string name="page6_end">继续完善个人信息</string>
+	
+	<string name="page7_title">继续完善个人信息</string>
+	<string name="page7_name">昵称</string>
+	<string name="page7_gender">性别</string>
+	<string name="page7_address">家庭住址</string>
+	<string name="page7_getaddress">邮寄住址</string>
+	<string name="page7_phone">添加通讯方式</string>
+	<string name="page7_qqnumber">QQ号</string>
+	<string name="page7_microblog">微博</string>
+	<string name="page7_message">微信</string>
+	<string name="page7_end">完善个人家庭信息</string>
+	
+	<string name="page8_title">完善家庭信息</string>
+	<string name="page8_id">户口编号</string>
+	<string name="page8_dadid">父亲身份证号</string>
+	<string name="page8_momid">母亲身份证号</string>
+	<string name="page8_familyrole">家庭角色</string>
+	<string name="page8_marryid">结婚证号</string>
+	<string name="page8_husband">丈夫身份证号</string>
+	<string name="page8_wife">妻子身份证号</string>
+	<string name="page8_end">完善单位信息</string>
+	
+	<string name="page9_title">完善单位信息</string>
+	<string name="page9_name">单位名称</string>
+	<string name="page9_address">单位地址</string>
+	<string name="page9_quale">单位性质</string>
+	<string name="page9_idcode">营业执照代码</string>
+	<string name="page9_idnumber">税务登记代码</string>
+	<string name="page9_goods">主营产品</string>
+	<string name="page9_class">部门科室</string>
+	<string name="page9_role">职务角色</string>
+	<string name="page9_end">进入主页</string>
+	
+	<string name="date_layout_plan_model_1">日期\n倒计</string>
+	<string name="date_plan_time_period_1">占用\n时间</string>
+	<string name="date_layout_plan_model_2">倒计\n日期</string>
+	<string name="date_plan_time_period_2">时间\n占用</string>
+	
+	<string name="date_top_left">每日一次\n间隔1：00</string>
+	<string name="date_top_center">重复一天\n至2003/3/14</string>
+	<string name="date_confirm">确认</string>
+	<string name="date_month_select">月选\n日</string>
+	<string name="date_year_select">年选\n日</string>
+	<string name="date_month_current">月本\n日</string>
+	<string name="date_year_current">年本\n日</string>
+	<string name="date_working">工作\n日</string>
+	<string name="date_everyday">每日</string>
+	<string name="date_lunar_month_select">农月\n选日</string>
+	<string name="date_lunar_year_select">农年\n选日</string>
+	<string name="date_lunar_month_current">农月\n本日</string>
+	<string name="date_lunar_year_current">农年\n本日</string>
+	<string name="date_festival">节假\n日</string>
+	<string name="date_quaque">隔日</string>
+	<string name="date_commemorate_day">纪念\n日</string>
+	<string name="date_other_week">隔周</string>
+	<string name="date_day_off">休息日</string>
+	<string name="date_plan_yourself">自排：做X，停X；</string>
+	<string name="date_monday">周一</string>
+	<string name="date_tuesday">周二</string>
+	<string name="date_wednesday">周三</string>
+	<string name="date_thursday">周四</string>
+	<string name="date_friday">周五</string>
+	<string name="date_saturday">周六</string>
+	<string name="date_sunday">周日</string>
+	
+	
 
 </resources>
