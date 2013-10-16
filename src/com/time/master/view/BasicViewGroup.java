@@ -72,6 +72,7 @@ public class BasicViewGroup extends ViewGroup{
 			ViewGroup.LayoutParams layoutParams=view.getLayoutParams();
 			layoutParams.width=styleable.getMultiWidth()*unit_width+(styleable.getMultiWidth()-1)*gap;
 			layoutParams.height=(int)(unit_width*0.75);
+			
 			view.setLayoutParams(layoutParams);
 			/***设置子view 大小，子view的onMeasure方法被回调 **/
 			view.measure(
