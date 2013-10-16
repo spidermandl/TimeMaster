@@ -11,11 +11,6 @@ import java.util.Map;
 
 import com.time.master.R;
 import com.time.master.dialog.*;
-import com.time.master.dialog.HumanDialogFragment;
-import com.time.master.dialog.LocationDialogFragment;
-import com.time.master.dialog.RepeatDialogFragment;
-import com.time.master.dialog.TimeDialogFragment;
-import com.time.master.dialog.WheelDialogFragment;
 import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.BasicEditText;
 import com.time.master.view.BasicTextView;
@@ -94,9 +89,10 @@ public class DateDetailCreateFragment extends Fragment implements
 
 		endSelector = (BasicEditText) layout.findViewById(R.id.plan_time_end);
 
-		previousClick = (BasicTextView) layout.findViewById(R.id.plan_previous);
+		previousClick = (BasicTextView) layout.findViewById(R.id.plan_start);
 		previousClick.setOnClickListener(this);
-
+		viewStatus.put(previousClick.getId(), false);
+		
 		plan_previou = (BasicTextView) layout.findViewById(R.id.plan_previou);
 		plan_previou.setOnClickListener(this);
 
@@ -221,8 +217,8 @@ public class DateDetailCreateFragment extends Fragment implements
 		return false;
 	}
 
+	
 	boolean flag = true;
-
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
@@ -248,20 +244,27 @@ public class DateDetailCreateFragment extends Fragment implements
 				viewStatus.put(R.id.plan_time_period, true);
 			}
 			break; 
-		case R.id.plan_previous:
-
+		
+		case R.id.plan_start:
+			
 			if (flag) {
 				flag = false;
+				
+					if (viewStatus.get(R.id.plan_start)) {
+						viewStatus.put(R.id.plan_start, false);
+					} else {
+						viewStatus.put(R.id.plan_start, true);
+					}
 				lengthSelector.setText("00:00:00");
 				previousClick.setText("结束");
 				stepTimeHandler = new Handler();
 				startTime = System.currentTimeMillis();
 				mTicker = new Runnable() {
 					public void run() {
-						String content = showTimeCount(System
+			        String content = showTimeCount(System
 								.currentTimeMillis() - startTime);
 						lengthSelector.setText(content);
-
+                        //在TextView文本框中显示时间一秒一秒的过去。
 						long now = SystemClock.uptimeMillis();
 						long next = now + (1000 - now % 1000);
 						stepTimeHandler.postAtTime(mTicker, next);
@@ -272,9 +275,10 @@ public class DateDetailCreateFragment extends Fragment implements
 				flag = true;
 				previousClick.setText("继续");
 				stepTimeHandler.removeCallbacks(mTicker);
-				mTicker.run();
 				String text = addTime(System.currentTimeMillis() - startTime);
 				endSelector.setText(text);
+				
+				
 			}
 			break;
 		case R.id.plan_previou:
