@@ -117,7 +117,7 @@ public class DateDetailCreateFragment extends Fragment implements
 		startClick.setOnClickListener(this);
 		viewStatus.put(startClick.getId(), false);
 		
-		plan_previou = (BasicTextView) layout.findViewById(R.id.plan_previou);
+		plan_previou = (BasicTextView) layout.findViewById(R.id.plan_previous);
 		plan_previou.setOnClickListener(this);
 
 		dateRepeat = (BasicTextView) layout.findViewById(R.id.plan_repeat);
@@ -320,7 +320,7 @@ public class DateDetailCreateFragment extends Fragment implements
 				
 			}
 			break;
-		case R.id.plan_previou:
+		case R.id.plan_previous:
 //			Map<String, Object> map = this.save(context);
 //			endSelector.setText((map.get("end")).toString());
 //			dateSelector.setText((map.get("now")).toString());

@@ -389,7 +389,7 @@ containing a value of this type.
         public static final int plan_location_site=0x7f0a0038;
         public static final int plan_location_treasure=0x7f0a0039;
         public static final int plan_model=0x7f0a002c;
-        public static final int plan_previou=0x7f0a002e;
+        public static final int plan_previous=0x7f0a002e;
         public static final int plan_repeat=0x7f0a0032;
         public static final int plan_start=0x7f0a0031;
         public static final int plan_time_end=0x7f0a0033;

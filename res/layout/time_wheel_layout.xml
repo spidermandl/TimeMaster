@@ -50,31 +50,31 @@
         android:layout_below="@id/time_bar"
         android:orientation="horizontal" >
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/year"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/month"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/day"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/hour"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/minute"
             android:layout_width="0dip"
             android:layout_height="wrap_content"

@@ -1,5 +1,6 @@
 package com.time.master.dialog;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import android.R.integer;
@@ -17,7 +18,7 @@ import com.time.master.wheel.adapters.TimeNumericWheelAdapter;
 import com.time.master.wheel.adapters.TimeNumericWheelAdapter.WeekendTextInterface;
 import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
-import com.time.master.wheel.widget.UIWheelView;
+import com.time.master.wheel.widget.TimeWheelView;
 import com.time.master.wheel.widget.WheelView;
 import android.text.InputType;
 import android.view.Gravity;
@@ -36,10 +37,9 @@ import android.widget.TextView;
  * @author duanlei
  *
  */
-public class TimeDialogFragment extends WheelDialogFragment {
+public class TimeDialogFragment extends WheelDialogFragment implements View.OnClickListener{
 	
 	public static final String TAG="TimeDialogFragment";
-	private WeekendTextInterface textInterface;
 	public static final int TIME_LIST_NUMBER=7;
 	private int dayModel=0;//0:滚轮阳历；1：滚轮农历
 	private ChineseCalendar chineseCalendar;//当前选中时间
@@ -55,19 +55,9 @@ public class TimeDialogFragment extends WheelDialogFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		/****************************************************
-		 * 设置对话框属性，高度、宽度、动画、背景
-		 ****************************************************/
-		getDialog().setCanceledOnTouchOutside(true);//点击dialog以外区域，关闭dialog
-        Window window = getDialog().getWindow();
-        window.setGravity(Gravity.BOTTOM);  //此处可以设置dialog显示的位置  
-        window.setWindowAnimations(R.style.wheelAnimation);  //添加动画 
-        WindowManager.LayoutParams para=(WindowManager.LayoutParams)window.getAttributes();
-        para.height=LayoutParams.WRAP_CONTENT;
-        para.width=LayoutParams.MATCH_PARENT;
-        window.setAttributes(para);
-        window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        
+		
+		setDialogStyle();
+	
 		model=new DateModel();
 		calendar = Calendar.getInstance();
 		model.year=calendar.get(Calendar.YEAR);
@@ -81,13 +71,27 @@ public class TimeDialogFragment extends WheelDialogFragment {
 
         editText=(EditText)layout.findViewById(R.id.edit_date);
         confirm =(TextView)layout.findViewById(R.id.time_confirm);
+        timeWheels = (LinearLayout)layout.findViewById(R.id.date_selector_wheel);
+        int padding=TimeMasterApplication.getInstance().getScreen_W()/36;
+        timeWheels.setPadding(padding, 0, padding, padding);
+        mode=(TextView)layout.findViewById(R.id.time_type);
+        mode.setOnClickListener(this);
+        mode.setText(R.string.date_solar_lunar_2);
+        mode.setBackgroundColor(Color.YELLOW);
         
-		year = (UIWheelView) layout.findViewById(R.id.year);
+        
+        
+        editText.setOnClickListener(this);
+        
+        
+        
+		year = (TimeWheelView) layout.findViewById(R.id.year);
         yearAdapter = new NumericWheelAdapter(this.getActivity(), model.year-5000, model.year+5000);
         yearAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         yearAdapter.setItemTextResource(R.id.numeric_text);
+        year.setVisibleItems(TIME_LIST_NUMBER);
         year.setViewAdapter(yearAdapter);
-        year.setBackground(R.drawable.wheel_bg_full);
+        //year.setBackground(R.drawable.wheel_left_bg);
         year.setCurrentItem(5000);
         year.addScrollingListener(new OnWheelScrollListener() {
 			
@@ -100,17 +104,22 @@ public class TimeDialogFragment extends WheelDialogFragment {
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				model.year=calendar.get(Calendar.YEAR)+wheel.getCurrentItem()-5000;
+				System.out.println(wheel.getCurrentItem());
+				freshDayWheel();
+				
 				editText.setText(getDateString());
+				
 			}
 		});
         year.addClickingListener(clickListener);
         
-        month = (UIWheelView) layout.findViewById(R.id.month);
+        month = (TimeWheelView)layout.findViewById(R.id.month);
         monthAdapter = new NumericWheelAdapter(this.getActivity(), 1,12);
         monthAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         monthAdapter.setItemTextResource(R.id.numeric_text);
+        month.setVisibleItems(TIME_LIST_NUMBER);
         month.setViewAdapter(monthAdapter);
-        month.setBackground(R.drawable.wheel_bg_full);
+        //month.setBackground(R.drawable.wheel_middle_bg);
         month.setCyclic(true);
         month.setCurrentItem(model.month-1);
         month.addScrollingListener(new OnWheelScrollListener() {
@@ -153,13 +162,14 @@ public class TimeDialogFragment extends WheelDialogFragment {
 		});
         month.addClickingListener(clickListener);
         
-        day = (UIWheelView) layout.findViewById(R.id.day);
-        dayAdapter = new NumericWheelAdapter(this.getActivity(), 1,calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+        day = (TimeWheelView) layout.findViewById(R.id.day);
+        dayAdapter = new TimeNumericWheelAdapter(this.getActivity(), 1,calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
         dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         dayAdapter.setItemTextResource(R.id.numeric_text);
+        dayAdapter.setTextInterface(textInterface);
+        day.setVisibleItems(TIME_LIST_NUMBER);
         day.setViewAdapter(dayAdapter);
-        day.setBackground(R.drawable.wheel_bg_full);
-        day.setRightLineWidth(6);
+        //day.setBackground(R.drawable.wheel_middle_bg);
         day.setCyclic(true);
         day.setCurrentItem(model.day-1);
         day.addScrollingListener(new OnWheelScrollListener() {
@@ -178,12 +188,15 @@ public class TimeDialogFragment extends WheelDialogFragment {
 		});
         day.addClickingListener(clickListener);
         
-        hour = (UIWheelView) layout.findViewById(R.id.hour);
-        hourAdapter = new NumericWheelAdapter(this.getActivity(), 0,23);
+        
+        hour = (TimeWheelView) layout.findViewById(R.id.hour);
+        hourAdapter = new TimeNumericWheelAdapter(this.getActivity(), 0,23);
         hourAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         hourAdapter.setItemTextResource(R.id.numeric_text);
+        hourAdapter.setSuffix(":");
+        hour.setVisibleItems(TIME_LIST_NUMBER);
         hour.setViewAdapter(hourAdapter);
-        hour.setBackground(R.drawable.wheel_bg_full);
+        //hour.setBackground(R.drawable.wheel_middle_bg);
         hour.setCyclic(true);
         hour.setCurrentItem(model.hour);
         hour.addScrollingListener(new OnWheelScrollListener() {
@@ -202,13 +215,13 @@ public class TimeDialogFragment extends WheelDialogFragment {
 		});
         hour.addClickingListener(clickListener);
         
-        minute = (UIWheelView) layout.findViewById(R.id.minute);
+        minute = (TimeWheelView) layout.findViewById(R.id.minute);
         minAdapter = new NumericWheelAdapter(this.getActivity(), 0, 59, "%02d");
         minAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         minAdapter.setItemTextResource(R.id.numeric_text);
+        minute.setVisibleItems(TIME_LIST_NUMBER);
         minute.setViewAdapter(minAdapter);
-        minute.setBackground(R.drawable.wheel_bg_full);
-        minute.setRightLineWidth(0);
+        //minute.setBackground(R.drawable.wheel_right_bg);
         minute.setCyclic(true);
         minute.setCurrentItem(model.minute);
         minute.addScrollingListener(new OnWheelScrollListener() {
@@ -240,11 +253,10 @@ public class TimeDialogFragment extends WheelDialogFragment {
 	}
 	DateModel model;
 	Calendar calendar;
-
-	UIWheelView year,month,day,hour,minute;
-	NumericWheelAdapter yearAdapter,monthAdapter,dayAdapter,hourAdapter,minAdapter;
+	TimeWheelView year,month,day,hour,minute;
+	NumericWheelAdapter yearAdapter,monthAdapter,minAdapter;
 	ArrayWheelAdapter<String> monthArrayWheelAdapter,dayArrayWheelAdapter;
-	TimeNumericWheelAdapter daytAdapter,hourtAdapter;
+	TimeNumericWheelAdapter dayAdapter,hourAdapter;
 	LinearLayout timeWheels;
 
 	OnWheelClickedListener clickListener=new OnWheelClickedListener() {
@@ -255,7 +267,25 @@ public class TimeDialogFragment extends WheelDialogFragment {
 			
 		}
 	};
-	
+	/***
+	 * 周末日期滚轮字体颜色变化
+	 */
+	WeekendTextInterface textInterface=new WeekendTextInterface() {
+		
+		@Override
+		public void changeText(int index,TextView textView) {
+			Calendar calendar=Calendar.getInstance();
+			calendar.set(model.year, model.month-1, index+1);
+			int weekend=calendar.get(Calendar.DAY_OF_WEEK);
+			if(weekend==Calendar.SUNDAY||weekend==Calendar.SATURDAY){
+				textView.setTextColor(0xFFFF0000);
+			}
+			else{
+				textView.setTextColor(0xFF000000);
+			}
+			
+		}
+	};
 	private String getDateString(){
 
 		if(dayModel==0){
@@ -289,11 +319,11 @@ public class TimeDialogFragment extends WheelDialogFragment {
 	        calendar.set(Calendar.MONTH, model.month-1);
 	        
 	        int maxDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-	        daytAdapter=new TimeNumericWheelAdapter(TimeDialogFragment.this.getActivity(), 1, maxDays);
-	        daytAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
-	        daytAdapter.setItemTextResource(R.id.numeric_text);
-	        daytAdapter.setTextInterface(textInterface);
-	        day.setViewAdapter(daytAdapter);
+	        dayAdapter=new TimeNumericWheelAdapter(TimeDialogFragment.this.getActivity(), 1, maxDays);
+	        dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
+	        dayAdapter.setItemTextResource(R.id.numeric_text);
+	        dayAdapter.setTextInterface(textInterface);
+	        day.setViewAdapter(dayAdapter);
 	        int curDay = Math.min(maxDays, day.getCurrentItem() + 1);
 	        day.setCurrentItem(curDay - 1, true);
 	        model.day=curDay;
@@ -323,7 +353,7 @@ public class TimeDialogFragment extends WheelDialogFragment {
 				+"  "+model.hour+":"+(model.minute<10?"0"+model.minute:model.minute);
 	}
 
-
+	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
@@ -372,11 +402,11 @@ public class TimeDialogFragment extends WheelDialogFragment {
 			model.year=chineseCalendar.get(ChineseCalendar.YEAR);
 			model.month=(chineseCalendar.get(ChineseCalendar.MONTH)+1);
 			model.day=chineseCalendar.get(ChineseCalendar.DATE);
-			daytAdapter = new TimeNumericWheelAdapter(this.getActivity(), 1,calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
-		    daytAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
-		    daytAdapter.setItemTextResource(R.id.numeric_text);
-		    daytAdapter.setTextInterface(textInterface);
-		    day.setViewAdapter(daytAdapter);
+			dayAdapter = new TimeNumericWheelAdapter(this.getActivity(), 1,calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+		    dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
+		    dayAdapter.setItemTextResource(R.id.numeric_text);
+		    dayAdapter.setTextInterface(textInterface);
+		    day.setViewAdapter(dayAdapter);
 		    day.setCurrentItem(model.day-1);
 		    monthAdapter = new NumericWheelAdapter(this.getActivity(), 1,12);
 	        monthAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
@@ -390,6 +420,7 @@ public class TimeDialogFragment extends WheelDialogFragment {
 		
 	}
 
+	@Override
 	protected void pushConfirm() {
 		CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 		model.currentTime=chineseCalendar;
