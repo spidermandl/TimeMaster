@@ -5,30 +5,28 @@ package com.time.master.dialog;
  * @author ZhouYongJian
  *
  */
-import com.time.master.R;
+
 import com.time.master.view.SelectedTextView;
 
-import android.annotation.SuppressLint;
 import android.app.DialogFragment;
 import android.app.SearchManager.OnCancelListener;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.ViewGroup.LayoutParams;
 import android.webkit.WebView.FindListener;
 
-public class WorldTimeDialogFragment extends
-		android.support.v4.app.DialogFragment implements android.view.View.OnClickListener {
-	private SelectedTextView idlerWheel, conversion, chineseToEnglish,
-			solarCalendar, beijing, seoul, tokyo, melbourne, lunarcalendar;
-	
+
+
+public  class WorldTimeDialogFragment extends BasicDialogFragment {
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -42,6 +40,7 @@ public class WorldTimeDialogFragment extends
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
+
 		getDialog().setCanceledOnTouchOutside(true);// 点击dialog以外区域，关闭dialog
 		Window window = getDialog().getWindow();
 		window.setGravity(Gravity.BOTTOM); // 此处可以设置dialog显示的位置
@@ -62,6 +61,12 @@ public class WorldTimeDialogFragment extends
 		conversion.setOnClickListener(this);
 		beijing=(SelectedTextView)layout.findViewById(R.id.beijing);
 		beijing.setOnClickListener(this);
+=======
+		setDialogStyle();
+		
+        View layout=inflater.inflate(R.layout.world_time_layout, container, false);
+        View context=layout.findViewById(R.id.worldtime);
+>>>>>>> master
 		return layout;
 	}
 

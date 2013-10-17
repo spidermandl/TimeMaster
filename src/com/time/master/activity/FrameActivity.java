@@ -1,11 +1,10 @@
 package com.time.master.activity;
 
 import java.util.HashMap;
-
-import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.dialog.LoadStaticDataFragment;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -20,6 +19,11 @@ import android.widget.TabWidget;
 public class FrameActivity extends FragmentActivity {
 
 	HashMap<Integer, Fragment> fragmentCache=new HashMap<Integer, Fragment>();
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+	}
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +76,8 @@ public class FrameActivity extends FragmentActivity {
 //		}
 //    	
 //    };
+    
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);

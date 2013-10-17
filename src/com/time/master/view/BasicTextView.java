@@ -2,14 +2,10 @@ package com.time.master.view;
 
 import com.time.master.R;
 import com.time.master.interfacer.LayoutStyleableInterface;
-
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.drawable.ColorDrawable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
-import android.view.ViewDebug.ExportedProperty;
 import android.widget.TextView;
 /***
  * 基本TextView，BasicViewGroup的子view
@@ -18,14 +14,18 @@ import android.widget.TextView;
  */
 public class BasicTextView extends TextView implements LayoutStyleableInterface{
 
+
 	/**单位宽度的倍数*/
 	protected int multi_width;
 	/**起始行单位空间*/
 	protected boolean isNewLine;
 	/**默认背景色*/
 	protected int naturalColor;
+	/**所属控件组*/
+	protected int group;
 	/**判断是否被选中*/
 	protected boolean isSelected=false;
+
 	
 	public BasicTextView(Context context) {
 		super(context);
@@ -37,6 +37,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		multi_width = a.getInt(R.styleable.ViewGroupType_width_multi, 1);
 		isNewLine=a.getBoolean(R.styleable.ViewGroupType_new_line, false);
 		naturalColor=a.getInt(R.styleable.ViewGroupType_default_bg, -1);
+		group=a.getInt(R.styleable.ViewGroupType_attr_group, -1);
         a.recycle();
         init();
 	}
@@ -51,10 +52,24 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
         init();
 	}
 
+	/**还原成未选中状态颜色*/
+	public void setNaturalBackground(){
+		isSelected=false;
+		if(naturalColor!=1){
+			this.setBackgroundColor(naturalColor);
+		}
+	}
+
+	/**按钮是否被选中*/
+	public boolean isSelected(){
+		return isSelected;
+	}
+	
 	protected void init(){
 		if(naturalColor!=-1)
 			setBackgroundColor(naturalColor);
 	}
+
 	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -95,4 +110,13 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	public boolean isNewLine() {
 		return isNewLine;
 	}
+
+	@Override
+	public int getGroup() {
+		// TODO Auto-generated method stub
+		return group;
+	}
+
+	
+
 }
