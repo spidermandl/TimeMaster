@@ -4,6 +4,7 @@ import com.time.master.TimeMasterApplication;
 import com.time.master.interfacer.LayoutStyleableInterface;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,8 @@ public class BasicViewGroup extends ViewGroup{
 		super(context, attrs, defStyle);
 		init();
 	}
+	
+	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		int num=this.getChildCount();

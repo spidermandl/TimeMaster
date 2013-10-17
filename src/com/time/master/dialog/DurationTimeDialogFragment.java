@@ -303,5 +303,10 @@ public class DurationTimeDialogFragment extends WheelDialogFragment{
 		LayoutParams param = new LinearLayout.LayoutParams(0,LayoutParams.MATCH_PARENT,weight);
 		view.setLayoutParams(param);
 	}
+	@Override
+	protected void pushConfirm() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

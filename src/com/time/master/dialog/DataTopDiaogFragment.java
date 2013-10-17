@@ -247,4 +247,10 @@ OnTouchListener, android.view.View.OnClickListener {
 		}
 	};
 	
+	@Override
+	protected void pushConfirm() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

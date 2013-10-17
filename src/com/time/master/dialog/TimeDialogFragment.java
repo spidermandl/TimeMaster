@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import com.time.master.R;
 import com.time.master.interfacer.WheelResultInterface;
+import com.time.master.TimeMasterApplication;
+import com.time.master.model.CacheModel;
 import com.time.master.tool.ChineseCalendar;
 import com.time.master.wheel.adapters.ArrayWheelAdapter;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
@@ -39,8 +41,9 @@ public class TimeDialogFragment extends WheelDialogFragment {
 	public static final String TAG="TimeDialogFragment";
 	private WeekendTextInterface textInterface;
 	public static final int TIME_LIST_NUMBER=7;
-	ChineseCalendar chineseCalendar;
 	private int dayModel=0;//0:滚轮阳历；1：滚轮农历
+	private ChineseCalendar chineseCalendar;//当前选中时间
+	
 	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
 
 	@Override
@@ -72,9 +75,8 @@ public class TimeDialogFragment extends WheelDialogFragment {
 		model.day=calendar.get(Calendar.DAY_OF_MONTH);
 		model.hour=calendar.get(Calendar.HOUR_OF_DAY);
 		model.minute=calendar.get(Calendar.MINUTE);
-
-		chineseCalendar=new ChineseCalendar(false,model.year, model.month-1, model.day);//阳历月减一
-
+		//chineseCalendar=new ChineseCalendar(false,model.year, model.month-1, model.day);//阳历月减一
+		chineseCalendar = new ChineseCalendar(calendar.getTime());
 		View layout=inflater.inflate(R.layout.time_wheel_layout, container, false);
 
         editText=(EditText)layout.findViewById(R.id.edit_date);
@@ -260,6 +262,8 @@ public class TimeDialogFragment extends WheelDialogFragment {
 			chineseCalendar.set(ChineseCalendar.YEAR, model.year);
 			chineseCalendar.set(ChineseCalendar.MONTH, model.month-1);
 			chineseCalendar.set(ChineseCalendar.DAY_OF_MONTH, model.day);
+			chineseCalendar.set(ChineseCalendar.HOUR_OF_DAY, model.hour);
+			chineseCalendar.set(ChineseCalendar.MINUTE, model.minute);
 			return chineseCalendar.get(ChineseCalendar.CHINESE_YEAR)+"年"+chineseCalendar.getChinese(ChineseCalendar.CHINESE_MONTH)
 					+chineseCalendar.getChinese(ChineseCalendar.CHINESE_DATE)+model.hour+":"+(model.minute<10?"0"+model.minute:model.minute);
 		}
@@ -267,6 +271,8 @@ public class TimeDialogFragment extends WheelDialogFragment {
 			chineseCalendar.set(ChineseCalendar.CHINESE_DATE, model.year);
 			chineseCalendar.set(ChineseCalendar.CHINESE_MONTH, model.month);
 			chineseCalendar.set(ChineseCalendar.CHINESE_DATE, model.day);
+			chineseCalendar.set(ChineseCalendar.HOUR_OF_DAY, model.hour);
+			chineseCalendar.set(ChineseCalendar.MINUTE, model.minute);
 			return chineseCalendar.get(ChineseCalendar.YEAR)+"/"
 		            +(chineseCalendar.get(ChineseCalendar.MONTH)+1)+"/"
 					+chineseCalendar.get(ChineseCalendar.DAY_OF_MONTH)
@@ -384,5 +390,10 @@ public class TimeDialogFragment extends WheelDialogFragment {
 		
 	}
 
+	protected void pushConfirm() {
+		CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
+		model.currentTime=chineseCalendar;
+		
+	}
 
 }

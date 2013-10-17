@@ -21,6 +21,8 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	protected boolean isNewLine;
 	/**默认背景色*/
 	protected int naturalColor;
+	/**所属控件组*/
+	protected int group;
 	/**判断是否被选中*/
 	protected boolean isSelected=false;
 
@@ -35,6 +37,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		multi_width = a.getInt(R.styleable.ViewGroupType_width_multi, 1);
 		isNewLine=a.getBoolean(R.styleable.ViewGroupType_new_line, false);
 		naturalColor=a.getInt(R.styleable.ViewGroupType_default_bg, -1);
+		group=a.getInt(R.styleable.ViewGroupType_attr_group, -1);
         a.recycle();
         init();
 	}
@@ -49,7 +52,19 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
         init();
 	}
 
+	/**还原成未选中状态颜色*/
+	public void setNaturalBackground(){
+		isSelected=false;
+		if(naturalColor!=1){
+			this.setBackgroundColor(naturalColor);
+		}
+	}
 
+	/**按钮是否被选中*/
+	public boolean isSelected(){
+		return isSelected;
+	}
+	
 	protected void init(){
 		if(naturalColor!=-1)
 			setBackgroundColor(naturalColor);
@@ -96,5 +111,12 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		return isNewLine;
 	}
 
+	@Override
+	public int getGroup() {
+		// TODO Auto-generated method stub
+		return group;
+	}
+
+	
 
 }

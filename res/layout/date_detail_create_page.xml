@@ -87,7 +87,6 @@
         layout:new_line="false"
         layout:width_multi="3" />
 
-
     <com.time.master.view.SwtchTextView
         android:id="@+id/plan_start"
 

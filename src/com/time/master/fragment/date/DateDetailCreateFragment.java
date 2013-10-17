@@ -7,16 +7,27 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import com.time.master.R;
 import com.time.master.dialog.*;
+import com.time.master.TimeMasterApplication;
+import com.time.master.dialog.DurationTimeDialogFragment;
+import com.time.master.dialog.HumanDialogFragment;
+import com.time.master.dialog.LocationDialogFragment;
+import com.time.master.dialog.RepeatDialogFragment;
+import com.time.master.dialog.TimeDialogFragment;
+import com.time.master.dialog.WheelDialogFragment;
 import com.time.master.interfacer.WheelResultInterface;
+import com.time.master.model.CacheModel;
+import com.time.master.tool.ChineseCalendar;
 import com.time.master.view.BasicEditText;
 import com.time.master.view.BasicTextView;
 
 import android.content.Context;
+import android.R.string;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,6 +44,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
+import android.webkit.DateSorter;
 
 /**
  * 日---新增选项界面
@@ -46,14 +58,22 @@ public class DateDetailCreateFragment extends Fragment implements
 	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimePeroidFragment;
 	DialogFragment repeatFragment;
 
-	BasicEditText dateSelector, locationSelector, humanSelector,planPeroidSelector,
-			lengthSelector, endSelector;// 结束日期时间
-	BasicTextView previousClick,// 开始按钮
-			plan_previou;// 承前按钮
+	BasicEditText dateSelector,//开始时间输入框
+	              locationSelector,
+	              humanSelector,
+	              planPeroidSelector,
+	              lengthSelector,
+	              endSelector;//结束时间输入框
+	BasicTextView dateRepeat,
+	              plan_previou;// 承前按钮;
 
-	BasicTextView dateRepeat;
-	BasicTextView tvdate, // 日期 /倒计 按钮
-			tvduration;// 占用/期间 按钮
+	BasicTextView 	startClick,//开始按钮
+	                tvdate, // 日期 /倒计 按钮
+			        tvduration;// 占用/期间 按钮
+
+	private ChineseCalendar startChineseDate,//开始时间
+	                        endChineseDate;//结束时间
+	
 	private Handler stepTimeHandler;
 	private Runnable mTicker;
 	long startTime = 0;
@@ -93,9 +113,9 @@ public class DateDetailCreateFragment extends Fragment implements
 
 		endSelector = (BasicEditText) layout.findViewById(R.id.plan_time_end);
 
-		previousClick = (BasicTextView) layout.findViewById(R.id.plan_start);
-		previousClick.setOnClickListener(this);
-		viewStatus.put(previousClick.getId(), false);
+		startClick = (BasicTextView) layout.findViewById(R.id.plan_start);
+		startClick.setOnClickListener(this);
+		viewStatus.put(startClick.getId(), false);
 		
 		plan_previou = (BasicTextView) layout.findViewById(R.id.plan_previou);
 		plan_previou.setOnClickListener(this);
@@ -168,6 +188,9 @@ public class DateDetailCreateFragment extends Fragment implements
 						@Override
 						public void getResult(String result) {
 							dateSelector.setText(result);
+							CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
+							startChineseDate=model.currentTime;
+							model.startTime=startChineseDate;
 						}
 					});
 				}
@@ -236,12 +259,15 @@ public class DateDetailCreateFragment extends Fragment implements
 			showDialog(repeatFragment);
 			break;
 		case R.id.plan_model:
+			CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 			if (viewStatus.get(R.id.plan_model)) {
-
 				viewStatus.put(R.id.plan_model, false);
-
+				dateSelector.setText(getChineseDateString(model.startTime));
+				endSelector.setText(getChineseDateString(model.endTime));
 			} else {
 				viewStatus.put(R.id.plan_model, true);
+				dateSelector.setText(getCountdownDateString(model.startTime));
+				endSelector.setText(getCountdownDateString(model.endTime));
 			}
 //			} else {
 //				viewStatus.put(R.id.plan_model,true);
@@ -256,10 +282,10 @@ public class DateDetailCreateFragment extends Fragment implements
 			} else {
 				viewStatus.put(R.id.plan_time_period, true);
 			}
-			break; 
-		
+
+			break;
 		case R.id.plan_start:
-			
+
 			if (flag) {
 				flag = false;
 				
@@ -269,7 +295,7 @@ public class DateDetailCreateFragment extends Fragment implements
 						viewStatus.put(R.id.plan_start, true);
 					}
 				lengthSelector.setText("00:00:00");
-				previousClick.setText("结束");
+				startClick.setText("结束");
 				stepTimeHandler = new Handler();
 				startTime = System.currentTimeMillis();
 				mTicker = new Runnable() {
@@ -286,9 +312,9 @@ public class DateDetailCreateFragment extends Fragment implements
 				mTicker.run();
 			} else {
 				flag = true;
-				previousClick.setText("继续");
-				stepTimeHandler.removeCallbacks(mTicker);
-				String text = addTime(System.currentTimeMillis() - startTime);
+				startClick.setText("继续");
+				stepTimeHandler.removeCallbacks(mTicker);//删除队列当中未执行的线程对象
+				String text=addTime(System.currentTimeMillis()-startTime);
 				endSelector.setText(text);
 				
 				
@@ -365,7 +391,7 @@ public class DateDetailCreateFragment extends Fragment implements
 		long day = calendar.get(Calendar.DAY_OF_MONTH);
 		long hour =calendar.get(Calendar.HOUR_OF_DAY);
 		long min = calendar.get(Calendar.MINUTE);
-		String res=year+"年"+month+"月"+day+"日"+hour+"时"+min+"分";
+		String res=year+"/"+month+"/"+day+" "+hour+":"+min;
 		dateSelector.setText(res);
 		
 		
@@ -391,10 +417,41 @@ public class DateDetailCreateFragment extends Fragment implements
 		if(secc==30){
 			endMin++;
 		}
-		timeAdd=endYear+":"+endMon+":"+endDay+":"+endHour+":"+endMin;
+		timeAdd=endYear+"/"+endMon+"/"+endDay+" "+endHour+":"+endMin;
 		return timeAdd;
 		
 	}
+	private String getChineseDateString(ChineseCalendar date) {
+		if(date==null)
+			date=new ChineseCalendar(new Date());
+		int minute=date.get(ChineseCalendar.MINUTE);
+		return date.get(ChineseCalendar.YEAR)+"/"
+	            +(date.get(ChineseCalendar.MONTH)+1)+"/"
+				+date.get(ChineseCalendar.DAY_OF_MONTH)
+				+"  "+date.get(ChineseCalendar.HOUR_OF_DAY)+":"
+				+(minute<10?"0"+minute:minute);
+	}
+	
+	private String getCountdownDateString(ChineseCalendar date){
+		if(date==null)
+			return "0天  00:00";
+		else{
+			StringBuffer stringB=new StringBuffer();
+			long now=new Date().getTime(),
+			future=date.getTime().getTime(),
+			between=future-now;
+			if(between<0)
+				stringB.append("-");
+			between=between>0?between:-between;
+			long day = between / (24 * 60 * 60 * 1000);
+	        long hour = (between / (60 * 60 * 1000) - day * 24);
+	        long min = ((between / (60 * 1000)) - day * 24 * 60 - hour * 60);
+	        //day + "天" + hour + "小时" + min + "分" + s + "秒" + ms;
+	        stringB.append(day).append("天  ").append(hour<10?"0"+hour:hour).append(":").append(min<10?"0"+min:min);
+	        return stringB.toString();
+		}
+	}
+
 
 	public Map<String, Object> save(Context context) {
 
