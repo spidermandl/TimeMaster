@@ -83,6 +83,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
         yearAdapter = new NumericWheelAdapter(this.getActivity(), model.year-5000, model.year+5000);
         yearAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         yearAdapter.setItemTextResource(R.id.numeric_text);
+        
         year.setVisibleItems(TIME_LIST_NUMBER);
         year.setViewAdapter(yearAdapter);
         //year.setBackground(R.drawable.wheel_left_bg);
