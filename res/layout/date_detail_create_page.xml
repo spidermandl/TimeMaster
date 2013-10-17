@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.time.master.view.BasicViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+<com.time.master.view.BasicViewGroup 
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -307,3 +311,4 @@
         layout:width_multi="1"/>
 
 </com.time.master.view.BasicViewGroup>
+</ScrollView>

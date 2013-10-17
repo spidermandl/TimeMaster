@@ -4,6 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     <!-- 日期，健 -->
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
     <com.time.master.view.BasicViewGroup
         android:id="@+id/date_sport_page" 
         android:layout_width="match_parent"
@@ -192,7 +196,7 @@
             layout:new_line="false"
             layout:width_multi="1" />
     </com.time.master.view.BasicViewGroup>
-
+</ScrollView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
