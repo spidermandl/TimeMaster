@@ -1,0 +1,249 @@
+10-03 15:13:50.067: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:13:50.077: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:13:50.087: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:16:04.032: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:16:04.032: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:16:04.042: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:16:04.732: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:16:04.742: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:16:04.902: E/Trace(15888): error opening trace file: No such file or directory (2)
+10-03 15:16:05.223: E/SQLiteLog(11840): (1) no such table: RecentTable
+10-03 15:16:05.373: E/Trace(15913): error opening trace file: No such file or directory (2)
+10-03 15:16:05.513: E/PeopleApp(15913): DialerService connected !
+10-03 15:16:05.653: E/Trace(15939): error opening trace file: No such file or directory (2)
+10-03 15:16:05.763: E/NotificationService(592): Ignoring notification with icon==0: Notification(pri=0 contentView=null vibrate=null sound=nullnull defaults=0x0 flags=0x62 kind=[null])
+10-03 15:16:08.176: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:16:09.237: E/test(15753): installGameCenter begin
+10-03 15:16:09.237: E/test(15753): cachePath = /data/data/com.sxiaoao.car3d3/cache/temp.apk
+10-03 15:16:09.307: E/hwcomposer(204): void qhwc::QueuedBufferStore::unlockBuffer(private_handle_t*) Invalid Handle
+10-03 15:16:09.317: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:16:09.317: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:16:09.327: E/test(15753): curVersionCode = 3220006
+10-03 15:16:09.327: E/test(15753): apkVerionCode = 3220006
+10-03 15:16:09.327: E/test(15753): has installed
+10-03 15:16:10.378: E/NotificationService(592): Ignoring notification with icon==0: Notification(pri=0 contentView=null vibrate=null sound=nullnull defaults=0x0 flags=0x62 kind=[null])
+10-03 15:16:10.568: E/HtcModeClient(10265): Check connection and retry 1 times.
+10-03 15:16:11.269: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:16:11.269: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:16:11.329: E/MediaProvider(24301): no database for attached volume content://media/external
+10-03 15:16:12.470: E/hwcomposer(204): void qhwc::QueuedBufferStore::unlockBuffer(private_handle_t*) Invalid Handle
+10-03 15:16:13.632: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:16:14.302: E/libgenlock(204): perform_lock_unlock_operation: GENLOCK_IOC_DREADLOCK failed (lockType0x0,err=Invalid argument fd=40 privFd=43)
+10-03 15:16:14.302: E/hwcomposer(204): void qhwc::QueuedBufferStore::unlockBuffer(private_handle_t*): genlock_unlock_buffer failed
+10-03 15:16:14.322: E/hwcomposer(204): void qhwc::QueuedBufferStore::unlockBuffer(private_handle_t*) Invalid Handle
+10-03 15:16:15.593: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:16:15.593: E/Trace(16019): error opening trace file: No such file or directory (2)
+10-03 15:16:15.703: E/HtcModeClient(10265): Check connection and retry 2 times.
+10-03 15:16:19.346: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:16:20.717: E/HtcModeClient(10265): Check connection and retry 3 times.
+10-03 15:16:22.059: E/Trace(16132): error opening trace file: No such file or directory (2)
+10-03 15:16:25.743: E/HtcModeClient(10265): Check connection and retry 4 times.
+10-03 15:16:30.758: E/HtcModeClient(10265): Check connection and retry 5 times.
+10-03 15:16:32.039: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:16:34.382: E/PackageManager(592): Package com.mobage.ww.a692.Bahamut_Android requires unavailable shared library com.google.android.maps; failing!
+10-03 15:16:34.442: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:16:35.783: E/HtcModeClient(10265): Check connection and retry 6 times.
+10-03 15:16:36.594: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:16:40.799: E/HtcModeClient(10265): Check connection and retry 7 times.
+10-03 15:16:45.304: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:16:45.594: E/SQLiteLog(24301): (1) duplicate column name: _isFOTA
+10-03 15:16:45.594: E/MediaProvider(24301): _isFOTA already exists
+10-03 15:16:45.654: E/Trace(16272): error opening trace file: No such file or directory (2)
+10-03 15:16:45.704: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:16:45.704: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:16:45.754: E/Trace(16293): error opening trace file: No such file or directory (2)
+10-03 15:16:45.824: E/HtcModeClient(10265): Check connection and retry 8 times.
+10-03 15:16:45.854: E/Trace(16305): error opening trace file: No such file or directory (2)
+10-03 15:16:45.944: E/Trace(16321): error opening trace file: No such file or directory (2)
+10-03 15:16:46.094: E/HtcMusicEnhancer(16293): [EnhancerService]dlCursor is null
+10-03 15:16:46.125: E/HtcMusicEnhancer(16293): [EnhancerService]dlCursor is null
+10-03 15:16:47.076: E/MediaProvider(24301): no database for attached volume content://media/external
+10-03 15:16:49.408: E/ImageDecoder(16272): doDecode() NG - decodeIterate -1
+10-03 15:16:49.418: E/ImageDecoder(16272): doDecode() NG - decodeIterate -1
+10-03 15:16:49.418: E/ImageDecoder(16272): doDecode() NG - decodeIterate -1
+10-03 15:16:50.840: E/HtcModeClient(10265): Check connection and retry 9 times.
+10-03 15:16:52.932: E/SQLiteLog(24301): (1) duplicate column name: _isFOTA
+10-03 15:16:52.932: E/MediaProvider(24301): _isFOTA already exists
+10-03 15:16:52.992: E/HtcMusicEnhancer(16293): [EnhancerService]dlCursor is null
+10-03 15:16:53.022: E/HtcMusicEnhancer(16293): [EnhancerService]dlCursor is null
+10-03 15:16:53.052: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:16:54.754: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:16:55.635: E/ImageDecoder(16272): doDecode() NG - decodeIterate -1
+10-03 15:16:55.635: E/ImageDecoder(16272): doDecode() NG - decodeIterate -1
+10-03 15:16:55.635: E/ImageDecoder(16272): doDecode() NG - decodeIterate -1
+10-03 15:16:55.865: E/HtcModeClient(10265): Check connection and retry 10 times.
+10-03 15:16:58.398: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:16:59.018: E/overlay(204): Failed to call ioctl MSMFB_OVERLAY_SET err=Operation not permitted
+10-03 15:16:59.018: E/overlay(204): MdpCtrl failed to setOverlay, restoring last known good ov info
+10-03 15:16:59.018: E/overlay(204): == Bad OVInfo is:  mdp_overlay z=1 fg=0 alpha=255 mask=-1 flags=0x840000 id=-1
+10-03 15:16:59.018: E/overlay(204): src msmfb_img w=1088 h=1920 format=12 MDP_RGBA_8888
+10-03 15:16:59.018: E/overlay(204): src_rect mdp_rect x=0 y=0 w=1080 h=1920
+10-03 15:16:59.018: E/overlay(204): dst_rect mdp_rect x=0 y=0 w=1080 h=1920
+10-03 15:16:59.018: E/overlay(204): user_data user_data cnt=8
+10-03 15:16:59.018: E/overlay(204): i=0 val=0
+10-03 15:16:59.018: E/overlay(204): i=1 val=0
+10-03 15:16:59.018: E/overlay(204): i=2 val=0
+10-03 15:16:59.018: E/overlay(204): i=3 val=0
+10-03 15:16:59.018: E/overlay(204): i=4 val=0
+10-03 15:16:59.018: E/overlay(204): i=5 val=0
+10-03 15:16:59.018: E/overlay(204): i=6 val=0
+10-03 15:16:59.018: E/overlay(204): i=7 val=0
+10-03 15:16:59.018: E/overlay(204): == Last good known OVInfo is:  mdp_overlay z=0 fg=0 alpha=0 mask=0 flags=0x0 id=-1
+10-03 15:16:59.018: E/overlay(204): src msmfb_img w=0 h=0 format=0 MDP_RGB_565
+10-03 15:16:59.018: E/overlay(204): src_rect mdp_rect x=0 y=0 w=0 h=0
+10-03 15:16:59.018: E/overlay(204): dst_rect mdp_rect x=0 y=0 w=0 h=0
+10-03 15:16:59.018: E/overlay(204): user_data user_data cnt=8
+10-03 15:16:59.018: E/overlay(204): i=0 val=0
+10-03 15:16:59.018: E/overlay(204): i=1 val=0
+10-03 15:16:59.018: E/overlay(204): i=2 val=0
+10-03 15:16:59.018: E/overlay(204): i=3 val=0
+10-03 15:16:59.018: E/overlay(204): i=4 val=0
+10-03 15:16:59.018: E/overlay(204): i=5 val=0
+10-03 15:16:59.018: E/overlay(204): i=6 val=0
+10-03 15:16:59.018: E/overlay(204): i=7 val=0
+10-03 15:16:59.018: E/overlay(204): MdpCtrl Lkgo ov has id -1, will not restore
+10-03 15:16:59.018: E/overlay(204): Ctrl commit failed set overlay
+10-03 15:16:59.018: E/overlay(204): OverlayImpl p0 failed to commit
+10-03 15:16:59.018: E/overlay(204): Overlay commit failed
+10-03 15:16:59.018: E/hwcomposer(204): prepare: commit failed
+10-03 15:16:59.028: E/hwcomposer(204): void qhwc::QueuedBufferStore::unlockBuffer(private_handle_t*) Invalid Handle
+10-03 15:17:00.099: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:17:00.880: E/HtcModeClient(10265): Check connection and retry 11 times.
+10-03 15:17:02.682: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:17:05.896: E/HtcModeClient(10265): Check connection and retry 12 times.
+10-03 15:17:10.911: E/HtcModeClient(10265): Check connection and retry 12 times. Stop service and kill this process.
+10-03 15:17:13.704: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:17:14.615: E/AudioSessionOutALSA(216): Writing to mEfd 63, value KILL_EVENT_THREAD (1) ++, this 0x400361a0
+10-03 15:17:14.615: E/AudioSessionOutALSA(216): Writing to mEfd -1, value KILL_EVENT_THREAD (1) --, this 0x400361a0
+10-03 15:17:14.625: E/alsa_ucm(216): del_from_list: Empty list
+10-03 15:17:14.625: E/alsa_ucm(216): Modifier not enabled currently, invalid modifier
+10-03 15:17:14.625: E/ALSAModule(216): Number of modifiers 0
+10-03 15:17:14.625: E/ALSAModule(216): usecase_type is 0
+10-03 15:17:14.655: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:17:14.655: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:17:14.665: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:17:18.039: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:17:19.650: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:17:44.827: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:17:46.779: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:18:00.133: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:18:04.448: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:18:04.448: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:18:04.458: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:18:04.818: E/(331): [FB565] fb_update: FBIOPAN_DISPLAY failed, yoffset=0, partial_update=0, left=0, top=0, eright=1080, ebottom=1920
+10-03 15:18:04.818: E/(331): [FB565] fb_update: FBIOPAN_DISPLAY failed, yoffset=0, partial_update=1, left=240, top=779, eright=840, ebottom=1141
+10-03 15:18:04.818: E/(331): [FB565] fb_update: FBIOPAN_DISPLAY failed, yoffset=0, partial_update=1, left=432, top=1141, eright=648, ebottom=1225
+10-03 15:19:00.047: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:19:05.894: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:19:05.894: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:19:05.904: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:20:00.142: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:20:00.142: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:20:00.152: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:20:30.374: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:21:00.156: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:21:00.166: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:21:05.992: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:22:00.150: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:22:00.160: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:22:00.170: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:22:06.246: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:22:06.256: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:22:06.266: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:22:13.744: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:23:00.154: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:00.148: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:00.148: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:24:10.519: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:10.529: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:24:10.529: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:24:11.650: E/test(15753): installGameCenter begin
+10-03 15:24:11.650: E/test(15753): cachePath = /data/data/com.sxiaoao.car3d3/cache/temp.apk
+10-03 15:24:11.670: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:24:11.700: E/test(15753): curVersionCode = 3220006
+10-03 15:24:11.700: E/test(15753): apkVerionCode = 3220006
+10-03 15:24:11.700: E/test(15753): has installed
+10-03 15:24:11.730: E/hwcomposer(204): void qhwc::QueuedBufferStore::unlockBuffer(private_handle_t*) Invalid Handle
+10-03 15:24:13.582: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:14.753: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:15.354: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:16.795: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:16.795: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:24:18.667: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:19.168: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:20.519: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:20.619: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000
+10-03 15:24:20.619: E/ThermalDaemon(1189): CPU1 Max freq recover to 1512000
+10-03 15:24:20.690: E/Trace(16814): error opening trace file: No such file or directory (2)
+10-03 15:24:20.870: E/EmbeddedLogger(592): App crashed! Process: com.time.master
+10-03 15:24:20.870: E/EmbeddedLogger(592): App crashed! Package: com.time.master v1 (1.0)
+10-03 15:24:20.870: E/EmbeddedLogger(592): Application Label: TimeMaster
+10-03 15:24:20.870: E/AndroidRuntime(16814): FATAL EXCEPTION: main
+10-03 15:24:20.870: E/AndroidRuntime(16814): java.lang.RuntimeException: Unable to start activity ComponentInfo{com.time.master/com.time.master.activity.FrameActivity}: android.view.InflateException: Binary XML file line #61: Error inflating class fragment
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2355)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2391)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.app.ActivityThread.access$600(ActivityThread.java:151)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1335)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.os.Looper.loop(Looper.java:155)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.app.ActivityThread.main(ActivityThread.java:5511)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at java.lang.reflect.Method.invokeNative(Native Method)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at java.lang.reflect.Method.invoke(Method.java:511)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:1029)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:796)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at dalvik.system.NativeStart.main(Native Method)
+10-03 15:24:20.870: E/AndroidRuntime(16814): Caused by: android.view.InflateException: Binary XML file line #61: Error inflating class fragment
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:704)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:746)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:749)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:749)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:749)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.view.LayoutInflater.inflate(LayoutInflater.java:489)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.view.LayoutInflater.inflate(LayoutInflater.java:396)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.view.LayoutInflater.inflate(LayoutInflater.java:352)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at com.android.internal.policy.impl.PhoneWindow.setContentView(PhoneWindow.java:369)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.app.Activity.setContentView(Activity.java:1912)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at com.time.master.activity.FrameActivity.onCreate(FrameActivity.java:27)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.app.Activity.performCreate(Activity.java:5066)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1101)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2311)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	... 11 more
+10-03 15:24:20.870: E/AndroidRuntime(16814): Caused by: java.lang.IllegalStateException: Fragment com.time.master.fragment.DateFragment did not create a view.
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.support.v4.app.FragmentActivity.onCreateView(FragmentActivity.java:295)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:676)
+10-03 15:24:20.870: E/AndroidRuntime(16814): 	... 24 more
+10-03 15:24:20.930: E/overlay(204): Failed to call ioctl MSMFB_OVERLAY_SET err=Operation not permitted
+10-03 15:24:20.930: E/overlay(204): MdpCtrl failed to setOverlay, restoring last known good ov info
+10-03 15:24:20.930: E/overlay(204): == Bad OVInfo is:  mdp_overlay z=0 fg=1 alpha=255 mask=-1 flags=0x840000 id=-1
+10-03 15:24:20.930: E/overlay(204): src msmfb_img w=1088 h=1920 format=12 MDP_RGBA_8888
+10-03 15:24:20.930: E/overlay(204): src_rect mdp_rect x=0 y=75 w=1080 h=1845
+10-03 15:24:20.930: E/overlay(204): dst_rect mdp_rect x=0 y=75 w=1080 h=1845
+10-03 15:24:20.930: E/overlay(204): user_data user_data cnt=8
+10-03 15:24:20.930: E/overlay(204): i=0 val=0
+10-03 15:24:20.930: E/overlay(204): i=1 val=0
+10-03 15:24:20.930: E/overlay(204): i=2 val=0
+10-03 15:24:20.930: E/overlay(204): i=3 val=0
+10-03 15:24:20.930: E/overlay(204): i=4 val=0
+10-03 15:24:20.930: E/overlay(204): i=5 val=0
+10-03 15:24:20.930: E/overlay(204): i=6 val=0
+10-03 15:24:20.930: E/overlay(204): i=7 val=0
+10-03 15:24:20.930: E/overlay(204): == Last good known OVInfo is:  mdp_overlay z=0 fg=0 alpha=0 mask=0 flags=0x0 id=-1
+10-03 15:24:20.930: E/overlay(204): src msmfb_img w=0 h=0 format=0 MDP_RGB_565
+10-03 15:24:20.930: E/overlay(204): src_rect mdp_rect x=0 y=0 w=0 h=0
+10-03 15:24:20.930: E/overlay(204): dst_rect mdp_rect x=0 y=0 w=0 h=0
+10-03 15:24:20.930: E/overlay(204): user_data user_data cnt=8
+10-03 15:24:20.940: E/overlay(204): i=0 val=0
+10-03 15:24:20.940: E/overlay(204): i=1 val=0
+10-03 15:24:20.940: E/overlay(204): i=2 val=0
+10-03 15:24:20.940: E/overlay(204): i=3 val=0
+10-03 15:24:20.940: E/overlay(204): i=4 val=0
+10-03 15:24:20.940: E/overlay(204): i=5 val=0
+10-03 15:24:20.940: E/overlay(204): i=6 val=0
+10-03 15:24:20.940: E/overlay(204): i=7 val=0
+10-03 15:24:20.940: E/overlay(204): MdpCtrl Lkgo ov has id -1, will not restore
+10-03 15:24:20.940: E/overlay(204): Ctrl commit failed set overlay
+10-03 15:24:20.940: E/overlay(204): OverlayImpl p0 failed to commit
+10-03 15:24:20.940: E/overlay(204): Overlay commit failed
+10-03 15:24:20.940: E/hwcomposer(204): prepare: commit failed
+10-03 15:24:31.211: E/ThermalDaemon(1189): CPU3 Max freq recover to 1512000
+10-03 15:24:31.221: E/ThermalDaemon(1189): CPU2 Max freq recover to 1512000

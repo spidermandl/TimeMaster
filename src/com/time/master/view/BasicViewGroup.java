@@ -18,9 +18,6 @@ import android.view.ViewGroup;
  */
 public class BasicViewGroup extends ViewGroup{
 
-	
-
-
 	protected int screen_width,
 	screen_height,
 	unit_width,//view 单位长度

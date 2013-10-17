@@ -1,9 +1,9 @@
+
+
 package com.time.master.calendar;
 
 import java.util.Calendar;
-/*
- * 谢冬
- */
+
 /**
  * 日历控件样式绘制类
  * @Description: 日历控件样式绘制类
@@ -28,22 +28,30 @@ public class DayStyle {
 	public static String getWeekDayName(int iDay) {//方法，获得当前天数
 		return vecStrWeekDayNames[iDay];//返回字符串数组 天[]
 	}
-	
+	/**
+	 * 判断当天是星期几。
+	 * @param index  指针索引  用于指向下一个地址（星期几）
+	 * @param iFirstDayOfWeek  本周的第一天
+	 * @return
+	 */
 	public static int getWeekDay(int index, int iFirstDayOfWeek) {
-		//方法，获得当天星期几
-		int iWeekDay = -1;//iWeekDay初始化值为-1，为了下面代码计算的礼拜几-1
 
-		if (iFirstDayOfWeek == Calendar.MONDAY) {//如果工作日第一天为周一
-			iWeekDay = index + Calendar.MONDAY;//当天所在星期范围为周一至周六索引，即周一至周六的某一天
-			
-			if (iWeekDay > Calendar.SATURDAY)//如果当天星期大于礼拜六
-				iWeekDay = Calendar.SUNDAY;//当天星期天
+		
+		//一周有7天  , iweekday是用来获取当天是星期几
+		int iWeekDay = -1;
+       //判断 本周的第一天是星期一，此时iweekday=星期一，一直到周六是都满足 ，当>周六时。跳到下一个判断。
+		if (iFirstDayOfWeek == Calendar.MONDAY) {
+			iWeekDay = index + Calendar.MONDAY;
+			 //iweekday>星期六（6），就将iweekday=0(表示星期日) 
+			if (iWeekDay > Calendar.SATURDAY)
+				iWeekDay = Calendar.SUNDAY;
 		}
-
-		if (iFirstDayOfWeek == Calendar.SUNDAY) {//如果工作日第一天为礼拜天
-			iWeekDay = index + Calendar.SUNDAY;//当天所在星期范围为星期天至下一礼拜的星期五
+		 //判断 本周的第一天是星期日，则iweekday=0（星期日）
+		if (iFirstDayOfWeek == Calendar.SUNDAY) {
+			iWeekDay = index + Calendar.SUNDAY;
 		}
+        
+		return iWeekDay;//返回周几。
 
-		return iWeekDay;//返回当前星期几
 	}
 }
