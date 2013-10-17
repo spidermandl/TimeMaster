@@ -20,6 +20,14 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
+        public static final int attr_group=0x7f010003;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
         public static final int default_bg=0x7f010002;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
@@ -28,7 +36,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int first_half=0x7f010003;
+        public static final int first_half=0x7f010004;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -44,7 +52,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int second_half=0x7f010004;
+        public static final int second_half=0x7f010005;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -711,7 +719,7 @@ containing a value of this type.
            @see #SwitchTextView_second_half
          */
         public static final int[] SwitchTextView = {
-            0x7f010003, 0x7f010004
+            0x7f010004, 0x7f010005
         };
         /**
           <p>This symbol is the offset where the {@link com.time.master.R.attr#first_half}
@@ -747,17 +755,33 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ViewGroupType_attr_group com.time.master:attr_group}</code></td><td></td></tr>
            <tr><td><code>{@link #ViewGroupType_default_bg com.time.master:default_bg}</code></td><td></td></tr>
            <tr><td><code>{@link #ViewGroupType_new_line com.time.master:new_line}</code></td><td></td></tr>
            <tr><td><code>{@link #ViewGroupType_width_multi com.time.master:width_multi}</code></td><td></td></tr>
            </table>
+           @see #ViewGroupType_attr_group
            @see #ViewGroupType_default_bg
            @see #ViewGroupType_new_line
            @see #ViewGroupType_width_multi
          */
         public static final int[] ViewGroupType = {
-            0x7f010000, 0x7f010001, 0x7f010002
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003
         };
+        /**
+          <p>This symbol is the offset where the {@link com.time.master.R.attr#attr_group}
+          attribute's value can be found in the {@link #ViewGroupType} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:attr_group
+        */
+        public static final int ViewGroupType_attr_group = 3;
         /**
           <p>This symbol is the offset where the {@link com.time.master.R.attr#default_bg}
           attribute's value can be found in the {@link #ViewGroupType} array.
