@@ -1,8 +1,9 @@
 package com.time.master.fragment.date;
 
-import com.time.master.dialog.WheelDialogFragment;
+import com.time.master.dialog.TimeDialogFragment;
+//import com.time.master.dialog.WheelDialogFragment;
 
-public class DurationTimeDialogFragment extends WheelDialogFragment {
+public class DurationTimeDialogFragment extends TimeDialogFragment {
 
 	@Override
 	protected String getSelectedString() {
