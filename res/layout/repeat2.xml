@@ -4,12 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    
-
-    
     <!-- ////////////////////////////////////////////////////////////// -->
-    
-        <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,7 +55,7 @@
         android:text="21"
         layout:new_line="false"
         layout:width_multi="1" />
-    
+
     <com.time.master.view.BasicTextView
         android:id="@+id/two_six"
         android:layout_width="wrap_content"
@@ -68,8 +65,8 @@
         android:text="26"
         layout:new_line="false"
         layout:width_multi="1" />
-    
-     <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/shang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,11 +75,10 @@
         android:text="上"
         layout:new_line="false"
         layout:width_multi="1" />
-    
-  
-     <!-- ////////////////////////////////////////////////////////////// -->
-   
-      <com.time.master.view.BasicTextView
+
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -91,8 +87,8 @@
         android:text="2"
         layout:new_line="true"
         layout:width_multi="1" />
-      
-        <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/seven"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -101,8 +97,8 @@
         android:text="7"
         layout:new_line="false"
         layout:width_multi="1" />
-        
-        <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/one_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,8 +107,8 @@
         android:text="12"
         layout:new_line="false"
         layout:width_multi="1" />
-        
-        <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/one_seven"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -121,8 +117,8 @@
         android:text="17"
         layout:new_line="false"
         layout:width_multi="1" />
-          
-        <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/two_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -131,8 +127,8 @@
         android:text="22"
         layout:new_line="false"
         layout:width_multi="1" />
-            
-        <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/two_seven"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -141,20 +137,19 @@
         android:text="27"
         layout:new_line="false"
         layout:width_multi="1" />
-        
-         <com.time.master.view.BasicTextView
-        android:id="@+id/qiyue"
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/yue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/setbar_backgroundp"
         android:gravity="center"
-        android:text="七月"
         layout:new_line="false"
         layout:width_multi="1" />
-              
-       <!-- ////////////////////////////////////////////////////////////// -->
-              
-          <com.time.master.view.BasicTextView
+
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -162,9 +157,9 @@
         android:gravity="center"
         android:text="3"
         layout:new_line="true"
-        layout:width_multi="1" />  
-        
-        <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/eight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -173,8 +168,8 @@
         android:text="8"
         layout:new_line="false"
         layout:width_multi="1" />
-        
-        <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/ten_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -183,8 +178,8 @@
         android:text="13"
         layout:new_line="false"
         layout:width_multi="1" />
-        
-        <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/ten_eight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -193,8 +188,8 @@
         android:text="18"
         layout:new_line="false"
         layout:width_multi="1" />
-          
-        <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/two_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -203,8 +198,8 @@
         android:text="23"
         layout:new_line="false"
         layout:width_multi="1" />
-              
-        <com.time.master.view.BasicTextView
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/two_eight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -212,9 +207,10 @@
         android:gravity="center"
         android:text="28"
         layout:new_line="false"
-        layout:width_multi="1" />   
-        <!-- ////////////////////////////////////////////////////////////// -->  
-          <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -222,9 +218,9 @@
         android:gravity="center"
         android:text="4"
         layout:new_line="true"
-        layout:width_multi="1" />  
-        
-        <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/nine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -232,9 +228,9 @@
         android:gravity="center"
         android:text="9"
         layout:new_line="false"
-        layout:width_multi="1" />  
-        
-         <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/one_four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -242,9 +238,9 @@
         android:gravity="center"
         android:text="14"
         layout:new_line="false"
-        layout:width_multi="1" />  
-        
-          <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/one_nine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -252,9 +248,9 @@
         android:gravity="center"
         android:text="19"
         layout:new_line="false"
-        layout:width_multi="1" />  
-        
-           <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/two_four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -262,9 +258,9 @@
         android:gravity="center"
         android:text="24"
         layout:new_line="false"
-        layout:width_multi="1" />  
-        
-            <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/two_nine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -272,9 +268,9 @@
         android:gravity="center"
         android:text="29"
         layout:new_line="false"
-        layout:width_multi="1" />  
-        
-             <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/xia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -283,10 +279,10 @@
         android:text="下"
         layout:new_line="false"
         layout:width_multi="1" />
-        
-       <!-- ////////////////////////////////////////////////////////////// -->  
-       
-          <com.time.master.view.BasicTextView
+
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -294,9 +290,9 @@
         android:gravity="center"
         android:text="5"
         layout:new_line="true"
-        layout:width_multi="1" /> 
-        
-        <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/ten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -304,9 +300,9 @@
         android:gravity="center"
         android:text="10"
         layout:new_line="false"
-        layout:width_multi="1" /> 
-       
-        <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/ten_five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -314,9 +310,9 @@
         android:gravity="center"
         android:text="15"
         layout:new_line="false"
-        layout:width_multi="1" /> 
-       
-        <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/two_ten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -324,9 +320,9 @@
         android:gravity="center"
         android:text="20"
         layout:new_line="false"
-        layout:width_multi="1" /> 
-        
-        <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/two_five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -334,9 +330,9 @@
         android:gravity="center"
         android:text="25"
         layout:new_line="false"
-        layout:width_multi="1" /> 
-        
-        <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/three_zero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -344,9 +340,9 @@
         android:gravity="center"
         android:text="30"
         layout:new_line="false"
-        layout:width_multi="1" /> 
-        
-         <com.time.master.view.BasicTextView
+        layout:width_multi="1" />
+
+    <com.time.master.view.BasicTextView
         android:id="@+id/three_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -355,7 +351,5 @@
         android:text="31"
         layout:new_line="false"
         layout:width_multi="1" />
-       
-       
-       
+
 </com.time.master.view.BasicviewGroup2>

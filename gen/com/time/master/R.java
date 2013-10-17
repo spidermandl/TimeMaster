@@ -69,6 +69,7 @@ containing a value of this type.
         public static final int unPresentMonth_FontColor=0x7f05001c;
         public static final int weekname_color=0x7f050007;
         public static final int white=0x7f050013;
+        public static final int yue=0x7f050022;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -358,7 +359,6 @@ containing a value of this type.
         public static final int pwset_tvPwinput2=0x7f0a00a9;
         public static final int pwset_tvPwremind=0x7f0a00ab;
         public static final int pwset_tvQuestion=0x7f0a00af;
-        public static final int qiyue=0x7f0a0106;
         public static final int register_btnEnd=0x7f0a00db;
         public static final int register_etBirthday=0x7f0a00d0;
         public static final int register_etBirthplace=0x7f0a00d2;
@@ -448,6 +448,7 @@ containing a value of this type.
         public static final int xia=0x7f0a0113;
         public static final int year=0x7f0a0120;
         public static final int year_fragment=0x7f0a0060;
+        public static final int yue=0x7f0a0106;
     }
     public static final class layout {
         public static final int alphabet_panel=0x7f030000;
