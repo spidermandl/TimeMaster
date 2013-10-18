@@ -35,6 +35,10 @@ public class TimeMasterApplication extends Application {
 	/***数据库已经初始化*/
 	private boolean dataInitialized=true;
 	
+	/*** 屏幕的样式 1代表竖屏 2代表横屏 */
+	private int screenMode=1;
+	
+
 	public static TimeMasterApplication getInstance(){
 		return instance;
 	}
@@ -103,6 +107,19 @@ public class TimeMasterApplication extends Application {
 		this.dataInitialized = dataInitialized;
 	}
 
+	public int getScreenMode() {
+		return screenMode;
+	}
+
+	public void setScreenMode(int screenMode) {
+		this.screenMode = screenMode;
+		DisplayMetrics displaymetrics = new DisplayMetrics();
+		WindowManager window=(WindowManager)(this.getSystemService(Context.WINDOW_SERVICE));
+		window.getDefaultDisplay().getMetrics(displaymetrics);
+		screen_width=displaymetrics.widthPixels;
+		screen_height=displaymetrics.heightPixels;
+	}
+	
 	public CacheModel getCacheModel() {
 		return cacheModel;
 	}

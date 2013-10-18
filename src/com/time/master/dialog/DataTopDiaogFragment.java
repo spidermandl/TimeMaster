@@ -1,7 +1,5 @@
 package com.time.master.dialog;
 
-
-
 import java.util.HashMap;
 
 import android.os.Bundle;
@@ -33,6 +31,7 @@ public class DataTopDiaogFragment extends WheelDialogFragment implements View.On
 	private Day aboutDay;
 	
 	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -87,7 +86,6 @@ public class DataTopDiaogFragment extends WheelDialogFragment implements View.On
 		    addtimesAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    addtimesAdapter.setItemTextResource(R.id.numeric_text);
 		    add_times.setViewAdapter(addtimesAdapter);
-		   // add_times.setBackground(R.drawable.wheel_bg_full);
 		    add_times.setCurrentItem(50);
 		    add_times.addScrollingListener(new OnWheelScrollListener() {
 				

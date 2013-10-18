@@ -9,7 +9,6 @@
         android:id="@+id/day_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
-
         <com.time.master.view.BasicTextView
             
             android:id="@+id/date_top_first"
@@ -70,13 +69,13 @@
     
     <!-- /////////////////////////////////////////////////// -->
 
+
     <LinearLayout
         android:id="@+id/day_selector_wheel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/day_top"
         android:orientation="horizontal" >
-
         <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/day"
             android:layout_width="0dip"
@@ -88,7 +87,6 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
-
         <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/day_times"
             android:layout_width="0dip"
@@ -100,7 +98,6 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
-
         <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/whatever"
             android:layout_width="0dip"

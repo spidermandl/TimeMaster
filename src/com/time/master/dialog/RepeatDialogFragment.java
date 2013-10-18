@@ -1,7 +1,11 @@
 package com.time.master.dialog;
 
 import java.util.HashMap;
-
+import com.time.master.R;
+import com.time.master.interfacer.WheelResultInterface;
+import com.time.master.view.BasicTextView;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
@@ -23,7 +27,7 @@ import com.time.master.view.BasicTextView;
  * 
  */
 public class RepeatDialogFragment extends BasicDialogFragment implements
-		OnClickListener,OnTouchListener, android.view.View.OnClickListener {
+DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 	WheelDialogFragment topFragment;
 	public static final String tag = "RepeatDialogFragment";
 	BasicTextView date_top_left;//每日一次 按钮 
