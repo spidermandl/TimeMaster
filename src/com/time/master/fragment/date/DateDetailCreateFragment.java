@@ -295,7 +295,7 @@ public class DateDetailCreateFragment extends Fragment implements
 						viewStatus.put(R.id.plan_start, true);
 					}
 				lengthSelector.setText("00:00:00");
-				startClick.setText("½áÊø");
+				startClick.setText("ÔİÍ£");
 				stepTimeHandler = new Handler();
 				startTime = System.currentTimeMillis();
 				mTicker = new Runnable() {
