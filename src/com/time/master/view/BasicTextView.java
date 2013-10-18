@@ -26,6 +26,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	/**判断是否被选中*/
 	protected boolean isSelected=false;
 
+	protected int status=0;//状态值
 	
 	public BasicTextView(Context context) {
 		super(context);
@@ -115,6 +116,14 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	public int getGroup() {
 		// TODO Auto-generated method stub
 		return group;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 	
