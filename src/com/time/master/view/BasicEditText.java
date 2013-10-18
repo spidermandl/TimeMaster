@@ -48,4 +48,10 @@ public class BasicEditText extends EditText implements LayoutStyleableInterface{
 	public boolean isNewLine() {
 		return isNewLine;
 	}
+
+	@Override
+	public int getGroup() {
+		// TODO Auto-generated method stub
+		return -1;
+	}
 }

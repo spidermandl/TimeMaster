@@ -46,4 +46,10 @@ public class BasicView extends View implements LayoutStyleableInterface {
 		return isNewLine;
 	}
 
+	@Override
+	public int getGroup() {
+		// TODO Auto-generated method stub
+		return -1;
+	}
+
 }
