@@ -17,7 +17,7 @@
             android:layout_height="fill_parent"
             android:background="@drawable/daynumber"
             android:gravity="center"
-            android:text="@string/date_top_first"
+          
             android:textColor="#0000FF"
             layout:new_line="true"
             layout:width_multi="1"/>
