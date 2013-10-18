@@ -2,6 +2,8 @@ package com.time.master.dialog;
 
 
 
+import java.util.HashMap;
+
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.Gravity;
@@ -13,19 +15,24 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 
 import com.time.master.R;
+import com.time.master.TimeMasterApplication;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
+import com.time.master.wheel.widget.TimeWheelView;
 import com.time.master.wheel.widget.UIWheelView;
 import com.time.master.wheel.widget.WheelView;
 
-public class DataTopDiaogFragment extends WheelDialogFragment implements
-OnTouchListener, android.view.View.OnClickListener {
+public class DataTopDiaogFragment extends WheelDialogFragment implements View.OnClickListener {
 	
 	public static final String TAG="DataDialogFragment";
+	
 	private Day aboutDay;
+	
+	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,15 +42,8 @@ OnTouchListener, android.view.View.OnClickListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		this.getDialog().setCanceledOnTouchOutside(true);
-		Window window=this.getDialog().getWindow();
-		window.setGravity(Gravity.BOTTOM);
-		window.setWindowAnimations(R.style.wheelAnimation);
-		WindowManager.LayoutParams para=(WindowManager.LayoutParams)window.getAttributes();
-		para.width=LayoutParams.MATCH_PARENT;
-		para.height=LayoutParams.WRAP_CONTENT;
-		window.setAttributes(para);
-		window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND|WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+		
+		setDialogStyle();
 		
 		aboutDay=new Day();
 	    for(int i=0;i<=100;i++){
@@ -55,13 +55,16 @@ OnTouchListener, android.view.View.OnClickListener {
 	    }
 		
 	    View layout = inflater.inflate(R.layout.data_top_layout, container, false);
-	    
-		day=(UIWheelView)layout.findViewById(R.id.day);
+	    timeWheels = (LinearLayout)layout.findViewById(R.id.day_selector_wheel);
+        int padding=TimeMasterApplication.getInstance().getScreen_W()/36;
+        timeWheels.setPadding(padding, 0, padding, padding);
+		day=(TimeWheelView)layout.findViewById(R.id.day);
 	    dayAdapter=new NumericWheelAdapter(getActivity(), aboutDay.day-100, aboutDay.day+0);
 	    dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 	    dayAdapter.setItemTextResource(R.id.numeric_text);
+	   
 	    day.setViewAdapter(dayAdapter);
-	    day.setBackground(R.drawable.wheel_bg_full);
+	    //day.setBackground(R.drawable.wheel_bg_full);
 	    day.setCurrentItem(50);
 	    day.addScrollingListener(new OnWheelScrollListener() {
 			
@@ -79,12 +82,12 @@ OnTouchListener, android.view.View.OnClickListener {
 		});
 	    	day.addClickingListener(clickListener);
 	    	
-	    	add_times=(UIWheelView)layout.findViewById(R.id.add_times);
+	    	add_times=(TimeWheelView)layout.findViewById(R.id.add_times);
 		    addtimesAdapter=new NumericWheelAdapter(getActivity(), aboutDay.add_times-100, aboutDay.add_times+0);
 		    addtimesAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    addtimesAdapter.setItemTextResource(R.id.numeric_text);
 		    add_times.setViewAdapter(addtimesAdapter);
-		    add_times.setBackground(R.drawable.wheel_bg_full);
+		   // add_times.setBackground(R.drawable.wheel_bg_full);
 		    add_times.setCurrentItem(50);
 		    add_times.addScrollingListener(new OnWheelScrollListener() {
 				
@@ -102,12 +105,12 @@ OnTouchListener, android.view.View.OnClickListener {
 			});
 		    add_times.addClickingListener(clickListener);
 		    	
-		    day_times=(UIWheelView)layout.findViewById(R.id.day_times);
+		    day_times=(TimeWheelView)layout.findViewById(R.id.day_times);
 		    daytimesAdapter=new NumericWheelAdapter(getActivity(), aboutDay.day_times-100, aboutDay.day_times+0);
 		    daytimesAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    daytimesAdapter.setItemTextResource(R.id.numeric_text);
 		    day_times.setViewAdapter(daytimesAdapter);
-		    day_times.setBackground(R.drawable.wheel_bg_full);
+		   // day_times.setBackground(R.drawable.wheel_bg_full);
 		    day_times.setCurrentItem(50);
 		    day_times.addScrollingListener(new OnWheelScrollListener() {
 				
@@ -125,12 +128,12 @@ OnTouchListener, android.view.View.OnClickListener {
 			});
 		    day_times.addClickingListener(clickListener);
 	    	
-		    space=(UIWheelView)layout.findViewById(R.id.space);
+		    space=(TimeWheelView)layout.findViewById(R.id.space);
 		    spaceAdapter=new NumericWheelAdapter(getActivity(), aboutDay.space-100, aboutDay.space+0);
 		    spaceAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    spaceAdapter.setItemTextResource(R.id.numeric_text);
 		    space.setViewAdapter(dayAdapter);
-		    space.setBackground(R.drawable.wheel_bg_full);
+		    //space.setBackground(R.drawable.wheel_bg_full);
 		    space.setCurrentItem(50);
 		    space.addScrollingListener(new OnWheelScrollListener() {
 				
@@ -148,12 +151,12 @@ OnTouchListener, android.view.View.OnClickListener {
 			});
 		    space.addClickingListener(clickListener);
 		    
-		    whatever=(UIWheelView)layout.findViewById(R.id.whatever);
+		    whatever=(TimeWheelView)layout.findViewById(R.id.whatever);
 		    whateverAdapter=new NumericWheelAdapter(getActivity(), aboutDay.whatever-100, aboutDay.whatever+0);
 		    whateverAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    whateverAdapter.setItemTextResource(R.id.numeric_text);
 		    whatever.setViewAdapter(whateverAdapter);
-		    whatever.setBackground(R.drawable.wheel_bg_full);
+		   // whatever.setBackground(R.drawable.wheel_bg_full);
 		    whatever.setCurrentItem(50);
 		    whatever.addScrollingListener(new OnWheelScrollListener() {
 				
@@ -235,8 +238,8 @@ OnTouchListener, android.view.View.OnClickListener {
 		}
 		
 	}
-	
-	UIWheelView day,add_times,day_times,space,whatever;
+	LinearLayout timeWheels;
+	TimeWheelView day,add_times,day_times,space,whatever;
 	NumericWheelAdapter dayAdapter,addtimesAdapter,daytimesAdapter,spaceAdapter,whateverAdapter;
 	OnWheelClickedListener clickListener=new OnWheelClickedListener() {
 		

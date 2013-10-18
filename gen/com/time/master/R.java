@@ -118,28 +118,29 @@ containing a value of this type.
         public static final int arrow=0x7f020000;
         public static final int checkbox=0x7f020001;
         public static final int checkboxonclick=0x7f020002;
-        public static final int ic_action_search=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int next_month=0x7f020005;
-        public static final int pattern_background=0x7f020006;
-        public static final int pattern_switch_arrow=0x7f020007;
-        public static final int previous_month=0x7f020008;
-        public static final int setbar_background=0x7f020009;
-        public static final int setbar_backgroundfirstpage=0x7f02000a;
-        public static final int setbar_backgroundp=0x7f02000b;
-        public static final int time_wheel_dialog_bg=0x7f02000c;
-        public static final int wheel_bg=0x7f02000d;
-        public static final int wheel_bg_full=0x7f02000e;
-        public static final int wheel_bg_without_frame=0x7f02000f;
-        public static final int wheel_center_highlight=0x7f020010;
-        public static final int wheel_left_bg=0x7f020011;
-        public static final int wheel_middle_bg=0x7f020012;
-        public static final int wheel_right_bg=0x7f020013;
-        public static final int wheel_val=0x7f020014;
-        public static final int wheel_val_with_frame=0x7f020015;
-        public static final int year=0x7f020016;
-        public static final int yeargray=0x7f020017;
-        public static final int yearwhite=0x7f020018;
+        public static final int daynumber=0x7f020003;
+        public static final int ic_action_search=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int next_month=0x7f020006;
+        public static final int pattern_background=0x7f020007;
+        public static final int pattern_switch_arrow=0x7f020008;
+        public static final int previous_month=0x7f020009;
+        public static final int setbar_background=0x7f02000a;
+        public static final int setbar_backgroundfirstpage=0x7f02000b;
+        public static final int setbar_backgroundp=0x7f02000c;
+        public static final int time_wheel_dialog_bg=0x7f02000d;
+        public static final int wheel_bg=0x7f02000e;
+        public static final int wheel_bg_full=0x7f02000f;
+        public static final int wheel_bg_without_frame=0x7f020010;
+        public static final int wheel_center_highlight=0x7f020011;
+        public static final int wheel_left_bg=0x7f020012;
+        public static final int wheel_middle_bg=0x7f020013;
+        public static final int wheel_right_bg=0x7f020014;
+        public static final int wheel_val=0x7f020015;
+        public static final int wheel_val_with_frame=0x7f020016;
+        public static final int year=0x7f020017;
+        public static final int yeargray=0x7f020018;
+        public static final int yearwhite=0x7f020019;
     }
     public static final class id {
         public static final int A=0x7f0a0000;
@@ -749,7 +750,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:first_half
+          @attr name com.time.master:first_half
         */
         public static final int SwitchTextView_first_half = 0;
         /**
@@ -763,7 +764,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:second_half
+          @attr name com.time.master:second_half
         */
         public static final int SwitchTextView_second_half = 1;
         /**   自定义viewgroup的布局参数 
@@ -796,7 +797,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:attr_group
+          @attr name com.time.master:attr_group
         */
         public static final int ViewGroupType_attr_group = 3;
         /**
@@ -810,7 +811,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:default_bg
+          @attr name com.time.master:default_bg
         */
         public static final int ViewGroupType_default_bg = 2;
         /**
@@ -824,7 +825,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:new_line
+          @attr name com.time.master:new_line
         */
         public static final int ViewGroupType_new_line = 1;
         /**
@@ -838,7 +839,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:width_multi
+          @attr name com.time.master:width_multi
         */
         public static final int ViewGroupType_width_multi = 0;
     };

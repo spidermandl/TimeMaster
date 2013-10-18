@@ -4,6 +4,7 @@ import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.tool.ChineseCalendar;
 
 import android.text.InputType;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -56,4 +57,9 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 	abstract protected String getSelectedString();
 	/** 确认按钮事件*/
 	abstract protected void pushConfirm();
+
+	public boolean onTouch(View arg0, MotionEvent arg1) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
