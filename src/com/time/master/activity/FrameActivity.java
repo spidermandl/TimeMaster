@@ -117,8 +117,7 @@ public class FrameActivity extends FragmentActivity {
     	// TODO Auto-generated method stub
     	super.onConfigurationChanged(newConfig);
     	TimeMasterApplication.getInstance().setScreenMode(newConfig.orientation);
-    	BasicViewGroup basicViewGroup=(BasicViewGroup) findViewById(R.id.date_front_page);
-    	basicViewGroup.invalidate();
+    	tabHost.invalidate();
     	
     }
 }
