@@ -1,6 +1,8 @@
 package com.time.master.activity;
 
 import java.util.HashMap;
+
+import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.dialog.LoadStaticDataFragment;
 
