@@ -9,7 +9,6 @@ import java.io.InputStreamReader;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 
 import com.time.master.R;
 import com.time.master.dialog.*;
@@ -26,13 +25,9 @@ import com.time.master.tool.ChineseCalendar;
 import com.time.master.view.BasicEditText;
 import com.time.master.view.BasicTextView;
 
-import android.content.Context;
-import android.R.string;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
-import android.os.SystemClock;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -45,7 +40,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
-import android.webkit.DateSorter;
 
 /**
  * 日---新增选项界面
