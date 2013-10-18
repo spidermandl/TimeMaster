@@ -5,6 +5,7 @@ package com.time.master.dialog;
  *
  */
 import com.time.master.R;
+import com.time.master.view.SelectedTextView;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
@@ -14,7 +15,6 @@ import android.view.ViewGroup;
 
 
 public  class WorldTimeDialogFragment extends BasicDialogFragment {
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
