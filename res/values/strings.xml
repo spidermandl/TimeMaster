@@ -1,9 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">TimeMaster</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    	
     <string name="generation">辈</string>
     <string name="year">年</string>
     <string name="month">月</string>
@@ -11,7 +11,6 @@
     <string name="date">日</string>
     <string name="list">列表</string>
     <string name="new_item">新建</string>
-    
     <string name="a00">农历\n阳历</string>
     <string name="a01">换算\n栏</string>
     <string name="a03">滚轮\n区</string>
@@ -38,7 +37,6 @@
     <string name="a52">新加\n坡</string>
     <string name="a53">香港\n</string>
     <string name="a54">提前\n</string>
-    
     <string name="A">A</string>
     <string name="B">B</string>
     <string name="C">C</string>
@@ -67,37 +65,32 @@
     <string name="Z">Z</string>
     <string name="cancel">取消</string>
     <string name="action_settings">Settings</string>
-	
-	<string name="page_title">卓越人生管理系统</string>
-    
-	<string name="page1_sysprompt">系统提示</string>
-	<string name="page1_content">前言：
+    <string name="page_title">卓越人生管理系统</string>
+    <string name="page1_sysprompt">系统提示</string>
+    <string name="page1_content">前言：
 	    卓越的人生源于规划，写下您的梦想、理想和思想，指定为之奋斗的战略部署，记录您为之付出的点点滴滴，分析、调整、成长，目标随之 越来越近，目标也许越来越宏伟。当您回首，往事历历在目，泪水与欢颜是您成长的力量； 当您展望，未来美好而 清晰，激情和创意是您飞翔的翅膀。
 	    一切从此刻开始！</string>
-	<string name="page1_hintname">请输入您的用户名</string>
-	<string name="page1_hintpw">请输入您的密码</string>
-	<string name="page1_setbtn">设置</string>
-	<string name="page1_loginbtn">登录</string>
-	<string name="page1_end">信息推送</string>
-	
-	<string name="page2_one">记住用户名</string>
-	<string name="page2_two">记住密码</string>
-	<string name="page2_three">自动登陆</string>
-	<string name="page2_four">忘记密码</string>
-	<string name="page2_five">启用魔术键盘</string>
-	<string name="page2_seebtn">浏览</string>
-	<string name="page2_registbtn">注册</string>
-	
-	<string name="page3_title0">找回密码</string>
-	<string name="page3_tv1">提出问题</string>
-	<string name="page3_hint1">注册问题</string>
-	<string name="page3_hint2">输入答案</string>
-	<string name="page3_tv2">选择找回方式</string>
-	<string name="page3_cb1">手机短信</string>
-	<string name="page3_cb2">邮件</string>
-	<string name="page3_hint3">显示手机号码，或者邮箱地址</string>
-	<string name="page3_btn">确认发送</string>
-    
+    <string name="page1_hintname">请输入您的用户名</string>
+    <string name="page1_hintpw">请输入您的密码</string>
+    <string name="page1_setbtn">设置</string>
+    <string name="page1_loginbtn">登录</string>
+    <string name="page1_end">信息推送</string>
+    <string name="page2_one">记住用户名</string>
+    <string name="page2_two">记住密码</string>
+    <string name="page2_three">自动登陆</string>
+    <string name="page2_four">忘记密码</string>
+    <string name="page2_five">启用魔术键盘</string>
+    <string name="page2_seebtn">浏览</string>
+    <string name="page2_registbtn">注册</string>
+    <string name="page3_title0">找回密码</string>
+    <string name="page3_tv1">提出问题</string>
+    <string name="page3_hint1">注册问题</string>
+    <string name="page3_hint2">输入答案</string>
+    <string name="page3_tv2">选择找回方式</string>
+    <string name="page3_cb1">手机短信</string>
+    <string name="page3_cb2">邮件</string>
+    <string name="page3_hint3">显示手机号码，或者邮箱地址</string>
+    <string name="page3_btn">确认发送</string>
     <string name="page4_title">系统协议</string>
     <string name="page4_content">1、系统简介（详情）
            本系统采用实名制，意在打一个诚信的互联网世界，并会对用户进行诚信的评价。本系统采用以身份证与手机号捆绑的注册方式，用户必须使用本人的身份证和本人的手机进行注册，注册验证码通过手机短信验证。一个身份证和一个手机号只能注册一个主用户，和八个辅助用户（需监管的未成年人，老年人和不能自我管理的人）。辅助用户登录系统后只能使用被授权的功能，主用户可以管理辅助用户的资料，未成年人只成年后其辅助用户可以升级到主用户。
@@ -105,6 +98,11 @@
 2、关于隐私（详情）
 3、免责声明（详情）
 4、法律法规（详情）</string>
+
+    <string name="title_activity_repeat_dialog_fragment2">RepeatDialogFragment2</string>
+    <string name="title_activity_repeat_dialog_fragment1">RepeatDialogFragment1</string>
+
+
  	<string name="page4_disagreecb">不接受，退出注册</string>
  	<string name="page4_agreecb">同意并理解所以条款</string>
  	
@@ -204,4 +202,5 @@
 	<string name="date_sunday">周日</string>
 	
 	
+
 </resources>

@@ -134,7 +134,7 @@ public class DateWidgetDayCell extends View {
 			canvas.drawRect(rect, pt);
 		}
 
-		if (hasRecord) {
+		if (!hasRecord) {
 			CreateReminder(canvas, Constant.special_Reminder);
 		}
 //		 else if (!hasRecord && !bToday && !bSelected) {

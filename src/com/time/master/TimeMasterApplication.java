@@ -36,7 +36,7 @@ public class TimeMasterApplication extends Application {
 	private boolean dataInitialized=true;
 	
 	public static TimeMasterApplication getInstance(){
-		return instance;
+		return instance; 
 	}
 	
 	@Override

@@ -3,17 +3,21 @@ package com.time.master.dialog;
 import java.util.HashMap;
 import com.time.master.R;
 import com.time.master.view.BasicTextView;
+
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
+import android.widget.TextView;
 
 /**
  * "重复"对话框界面
@@ -21,6 +25,7 @@ import android.view.WindowManager.LayoutParams;
  * @author wanghuiming
  * 
  */
+
 public class RepeatDialogFragment extends BasicDialogFragment implements
 		OnClickListener, android.view.View.OnClickListener {
 
@@ -35,11 +40,13 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 	
 	BasicTextView yourselfBasicTextView;
 
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Light);
 		super.onCreate(savedInstanceState);
+
 
 	}
 
@@ -143,5 +150,6 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 		// TODO Auto-generated method stub
 
 	}
+
 
 }
