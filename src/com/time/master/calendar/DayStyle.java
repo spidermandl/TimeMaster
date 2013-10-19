@@ -35,7 +35,7 @@ public class DayStyle {
 	 * @return
 	 */
 	public static int getWeekDay(int index, int iFirstDayOfWeek) {
-<<<<<<< HEAD
+
 
 		int iWeekDay = -1;  //将周一放置第一位
 
@@ -51,25 +51,13 @@ public class DayStyle {
 		if (iFirstDayOfWeek == Calendar.SUNDAY) {  //如果一周的第一天是周日
 			iWeekDay = index + Calendar.SUNDAY;
 
-=======
 
+
+	
 		
-		//一周有7天  , iweekday是用来获取当天是星期几
-		int iWeekDay = -1;
-       //判断 本周的第一天是星期一，此时iweekday=星期一，一直到周六是都满足 ，当>周六时。跳到下一个判断。
-		if (iFirstDayOfWeek == Calendar.MONDAY) {
-			iWeekDay = index + Calendar.MONDAY;
-			 //iweekday>星期六（6），就将iweekday=0(表示星期日) 
-			if (iWeekDay > Calendar.SATURDAY)
-				iWeekDay = Calendar.SUNDAY;
-		}
-		 //判断 本周的第一天是星期日，则iweekday=0（星期日）
-		if (iFirstDayOfWeek == Calendar.SUNDAY) {
-			iWeekDay = index + Calendar.SUNDAY;
->>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
-		}
-        
-		return iWeekDay;//返回周几。
 
 	}
+		return iWeekDay;
+		
+   }
 }

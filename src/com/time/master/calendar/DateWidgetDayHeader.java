@@ -53,17 +53,11 @@ public class DateWidgetDayHeader extends View {
 		pt.setColor(Constant.Calendar_WeekFontColor);//设置颜色
 		
 		// draw day name
-<<<<<<< HEAD
+
 
 		final String sDayName = DayStyle.getWeekDayName(iWeekDay);   //根据日期  得到星期几
 
 		final int iPosX = (int) rect.left + ((int) rect.width() >> 1)
-=======
-		final String sDayName = DayStyle.getWeekDayName(iWeekDay);//画出当天星期几
-
-		final int iPosX = (int) rect.left + ((int) rect.width() >> 1)//设置字体居中。精确的定位到方框中
-
->>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 				- ((int) pt.measureText(sDayName) >> 1);
 		final int iPosY = (int) (this.getHeight()
 				- (this.getHeight() - getTextHeight()) / 2 - pt

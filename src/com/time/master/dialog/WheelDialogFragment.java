@@ -1,9 +1,10 @@
 package com.time.master.dialog;
 
-
 import com.time.master.interfacer.WheelResultInterface;
-import android.support.v4.app.DialogFragment;
+import com.time.master.tool.ChineseCalendar;
+
 import android.text.InputType;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 	protected EditText editText;
 	protected TextView confirm;
 	protected TextView mode;
+	
 	
 	private WheelResultInterface wheelInterface;
 	
@@ -43,7 +45,9 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 				
 				@Override
 				public void onClick(View v) {
-					wheelInterface.getResult(editText.getEditableText().toString());
+					pushConfirm();
+					
+					wheelInterface.getResult(getSelectedString());
 					WheelDialogFragment.this.dismiss();
 				}
 			});
@@ -51,4 +55,11 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 	}
 	
 	abstract protected String getSelectedString();
+	/** 确认按钮事件*/
+	abstract protected void pushConfirm();
+
+	public boolean onTouch(View arg0, MotionEvent arg1) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
