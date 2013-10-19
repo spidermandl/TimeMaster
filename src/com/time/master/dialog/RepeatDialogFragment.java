@@ -26,7 +26,8 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 	WheelDialogFragment topFragment;
 	public static final String tag = "RepeatDialogFragment";
 	BasicTextView date_top_left;//每日一次 按钮 
-	DialogFragment datatopFragment;
+	DialogFragment datatopFragment,selectdayFragment;
+	
 	BasicTextView confirm, dtmselect, dtmcurrent, dtworking, dteveryday,
 			dtmonday, dtlmselect, dtlmcurrent, dtfestival, dtqueque, dttuesday,
 			dtyselect, dtycurrent, dtcomday, dtotherweek, dtwednesday,
@@ -141,6 +142,10 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 			datatopFragment.setShowsDialog(true);
 			showDialog(datatopFragment);
 			break;
+		case R.id.date_month_select:
+			selectdayFragment=new SelectDayFragment();
+			selectdayFragment.setShowsDialog(true);
+			showDialog(selectdayFragment);
 		
 		default:
 			break;
