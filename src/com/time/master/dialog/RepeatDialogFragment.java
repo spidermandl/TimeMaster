@@ -1,8 +1,12 @@
 package com.time.master.dialog;
 
+import java.util.HashMap;
 import com.time.master.R;
+import com.time.master.view.BasicTextView;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,22 +17,37 @@ import android.view.WindowManager.LayoutParams;
 
 /**
  * "重复"对话框界面
- * @author bianyanling
- *
+ * 
+ * @author wanghuiming
+ * 
  */
-public class RepeatDialogFragment extends DialogFragment {
+public class RepeatDialogFragment extends BasicDialogFragment implements
+		OnClickListener, android.view.View.OnClickListener {
 
-	public static final String tag="RepeatDialogFragment";
+	public static final String tag = "RepeatDialogFragment";
+
+	BasicTextView confirm, dtmselect, dtmcurrent, dtworking, dteveryday,
+			dtmonday, dtlmselect, dtlmcurrent, dtfestival, dtqueque, dttuesday,
+			dtyselect, dtycurrent, dtcomday, dtotherweek, dtwednesday,
+			dtlyselect, dtlycurrent, dtdayoff, dtsaturday, dtthursday,
+			dtplyouself, dtsunday, dtfriday;
+	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
+	
+	BasicTextView yourselfBasicTextView;// //
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		setStyle(DialogFragment.STYLE_NO_FRAME,android.R.style.Theme_Light);
+		setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Light);
 		super.onCreate(savedInstanceState);
+
 	}
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+
+		/*// TODO Auto-generated method stub
 		getDialog().setCanceledOnTouchOutside(true);
 		Window window=getDialog().getWindow();
 		window.setGravity(Gravity.BOTTOM);
@@ -37,7 +56,104 @@ public class RepeatDialogFragment extends DialogFragment {
 		para.width=LayoutParams.MATCH_PARENT;
 		window.setAttributes(para);
 		window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-		View layout=inflater.inflate(R.layout.date_repeat, container, false);
+		View layout=inflater.inflate(R.layout.date_repeat, container, false);*/
+
+		
+		setDialogStyle();
+
+		View layout = inflater.inflate(R.layout.date_repeat, container, false);
+
+		confirm = (BasicTextView) layout.findViewById(R.id.date_confirm);
+		dtmselect = (BasicTextView) layout.findViewById(R.id.date_month_select);
+		dtmcurrent = (BasicTextView) layout
+				.findViewById(R.id.date_month_current);
+		dtworking = (BasicTextView) layout.findViewById(R.id.date_working);
+		dteveryday = (BasicTextView) layout.findViewById(R.id.date_everyday);
+		dtmonday = (BasicTextView) layout.findViewById(R.id.date_monday);
+		dtlmcurrent = (BasicTextView) layout
+				.findViewById(R.id.date_lunar_month_current);
+		dtlmselect = (BasicTextView) layout
+				.findViewById(R.id.date_lunar_month_select);
+		dtfestival = (BasicTextView) layout.findViewById(R.id.date_festival);
+		dtqueque = (BasicTextView) layout.findViewById(R.id.date_quaque);
+		dttuesday = (BasicTextView) layout.findViewById(R.id.date_tuesday);
+		dtyselect = (BasicTextView) layout.findViewById(R.id.date_year_select);
+		dtycurrent = (BasicTextView) layout
+				.findViewById(R.id.date_year_current);
+		dtcomday = (BasicTextView) layout
+				.findViewById(R.id.date_commemorate_day);
+		dtotherweek = (BasicTextView) layout.findViewById(R.id.date_other_week);
+		dtwednesday = (BasicTextView) layout.findViewById(R.id.date_wednesday);
+		dtlyselect = (BasicTextView) layout
+				.findViewById(R.id.date_lunar_year_select);
+		dtlycurrent = (BasicTextView) layout
+				.findViewById(R.id.date_lunar_year_current);
+		dtdayoff = (BasicTextView) layout.findViewById(R.id.date_day_off);
+		dtsaturday = (BasicTextView) layout.findViewById(R.id.date_saturday);
+		dtthursday = (BasicTextView) layout.findViewById(R.id.date_thursday);
+		dtplyouself = (BasicTextView) layout
+				.findViewById(R.id.date_plan_yourself);
+		dtsunday = (BasicTextView) layout.findViewById(R.id.date_sunday);
+		dtfriday = (BasicTextView) layout.findViewById(R.id.date_friday);
+
+		dtmselect.setOnClickListener(this);
+		dtmcurrent.setOnClickListener(this);
+		dtworking.setOnClickListener(this);
+		dteveryday.setOnClickListener(this);
+		dtmonday.setOnClickListener(this);
+		dtlmcurrent.setOnClickListener(this);
+		dtlmselect.setOnClickListener(this);
+		dtfestival.setOnClickListener(this);
+		dtqueque.setOnClickListener(this);
+		dttuesday.setOnClickListener(this);
+		dtyselect.setOnClickListener(this);
+		dtycurrent.setOnClickListener(this);
+		dtcomday.setOnClickListener(this);
+		dtotherweek.setOnClickListener(this);
+		dtwednesday.setOnClickListener(this);
+		dtlyselect.setOnClickListener(this);
+		dtlycurrent.setOnClickListener(this);
+		dtdayoff.setOnClickListener(this);
+		dtsaturday.setOnClickListener(this);
+		dtthursday.setOnClickListener(this);
+		dtplyouself.setOnClickListener(this);
+		dtsunday.setOnClickListener(this);
+		dtfriday.setOnClickListener(this);
+
+		yourselfBasicTextView = (BasicTextView) layout
+				.findViewById(R.id.date_plan_yourself);
+		yourselfBasicTextView.setOnClickListener(this);// //
+
 		return layout;
 	}
+
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		if(v instanceof BasicTextView){
+			Boolean isSelected=viewStatus.get(v.getId());
+			if(isSelected==null||isSelected==false){
+				viewStatus.put(v.getId(), true);
+			}else{
+				viewStatus.put(v.getId(), false);
+			}
+		}
+		switch (v.getId()) {
+		case R.id.date_plan_yourself:
+			showDialog(new RepeatCustomizedDialogFragment());
+			break;
+
+		default:
+			break;
+		}
+
+	}
+
+	@Override
+	public void onClick(DialogInterface dialog, int which) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

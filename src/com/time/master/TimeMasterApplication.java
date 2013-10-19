@@ -3,6 +3,8 @@ package com.time.master;
 import java.lang.ref.SoftReference;
 import java.util.HashMap;
 
+import com.time.master.database.TimeMasterHelper;
+
 
 import android.app.Application;
 import android.content.Context;
@@ -20,11 +22,16 @@ public class TimeMasterApplication extends Application {
 	 * singleton instance of Application
 	 */
 	private static TimeMasterApplication instance;
+	
+	private TimeMasterHelper databaseHelper;
 	/**
-	 * store bitmap cache for accessing UI resource
+	 * 界面显示图片资源缓存
+	 * 系统内存不足时会被清除，释放内存
 	 */
 	HashMap<Integer,SoftReference<Bitmap>> bitmapCache=new HashMap<Integer, SoftReference<Bitmap>>();
-
+    
+	/***数据库已经初始化*/
+	private boolean dataInitialized=true;
 	
 	public static TimeMasterApplication getInstance(){
 		return instance;
@@ -44,6 +51,7 @@ public class TimeMasterApplication extends Application {
 //		ueHandler = new UEHandler(this); 
 //        Thread.setDefaultUncaughtExceptionHandler(ueHandler); 
 //		FlurryAgent.onStartSession(this, Constant.FLURRY_KEY);
+		setDatabaseHelper(new TimeMasterHelper(this));
 		super.onCreate();
 	}
 	
@@ -74,5 +82,21 @@ public class TimeMasterApplication extends Application {
 	
 	public int getScreen_H(){
 		return this.screen_height;
+	}
+
+	public TimeMasterHelper getDatabaseHelper() {
+		return databaseHelper;
+	}
+
+	public void setDatabaseHelper(TimeMasterHelper databaseHelper) {
+		this.databaseHelper = databaseHelper;
+	}
+
+	public boolean isDataInitialized() {
+		return dataInitialized;
+	}
+
+	public void setDataInitialized(boolean dataInitialized) {
+		this.dataInitialized = dataInitialized;
 	}
 }
