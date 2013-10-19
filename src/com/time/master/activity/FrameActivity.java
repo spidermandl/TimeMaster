@@ -42,7 +42,7 @@ public class FrameActivity extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frame_main);
-<<<<<<< HEAD
+
         TabHost tabHost=(TabHost)this.findViewById(R.id.main_tab);
         
         RelativeLayout generationTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
@@ -73,10 +73,7 @@ public class FrameActivity extends FragmentActivity {
         TextView newTabLabel = (TextView) newTab.findViewById(R.id.tab_label);
         newTabLabel.setText("ÐÂ½¨");
         
-        
-=======
         tabHost=(TabHost)this.findViewById(R.id.main_tab);
->>>>>>> master
         tabHost.setup();
         
         tabHost.addTab(tabHost.newTabSpec("generation").setIndicator(generationTab).setContent(R.id.generation_fragment));

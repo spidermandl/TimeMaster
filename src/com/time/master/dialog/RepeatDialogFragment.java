@@ -8,32 +8,11 @@ import com.time.master.view.BasicTextView;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-<<<<<<< HEAD
-
-import android.view.Gravity;
-=======
-import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
->>>>>>> master
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-<<<<<<< HEAD
 
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.WindowManager.LayoutParams;
-import android.widget.TextView;
-=======
-import android.view.View.OnTouchListener;
-import android.view.ViewGroup;
-
-import com.time.master.R;
-import com.time.master.interfacer.WheelResultInterface;
-import com.time.master.view.BasicTextView;
->>>>>>> master
 
 /**
  * "重复"对话框界面
@@ -175,8 +154,6 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 
 	}
 
-<<<<<<< HEAD
-=======
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 		// TODO Auto-generated method stub
@@ -197,6 +174,5 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 	}
 		return false;
 	}
->>>>>>> master
 
 }
