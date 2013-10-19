@@ -177,4 +177,10 @@ public class LocationDialogFragment extends WheelDialogFragment {
 	protected String getSelectedString() {
 		return getLocationString();
 	}
+
+	@Override
+	protected void pushConfirm() {
+		// TODO Auto-generated method stub
+		
+	}
 }

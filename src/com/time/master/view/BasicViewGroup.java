@@ -41,6 +41,8 @@ public class BasicViewGroup extends ViewGroup{
 		super(context, attrs, defStyle);
 		init();
 	}
+	
+	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		init();

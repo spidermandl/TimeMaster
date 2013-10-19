@@ -23,7 +23,9 @@ import android.widget.TabWidget;
 public class FrameActivity extends FragmentActivity {
 
 	HashMap<Integer, Fragment> fragmentCache=new HashMap<Integer, Fragment>();
+
 	 TabHost tabHost;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

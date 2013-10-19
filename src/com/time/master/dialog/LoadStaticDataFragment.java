@@ -55,8 +55,8 @@ public class LoadStaticDataFragment extends DialogFragment {
 			
 			@Override
 			public void run() {
-				ExcelParseTool.initNationalLocationByExcel(LoadStaticDataFragment.this.getActivity(), 
-						TimeMasterApplication.getInstance().getDatabaseHelper().getDb());
+//				ExcelParseTool.initNationalLocationByExcel(LoadStaticDataFragment.this.getActivity(), 
+//						TimeMasterApplication.getInstance().getDatabaseHelper().getDb());
 				handler.sendEmptyMessage(LOADING_FINISHED);
 				
 			}

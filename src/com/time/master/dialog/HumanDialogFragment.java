@@ -245,4 +245,10 @@ public class HumanDialogFragment extends WheelDialogFragment {
 	protected String getSelectedString() {
 		return "";
 	}
+
+	@Override
+	protected void pushConfirm() {
+		// TODO Auto-generated method stub
+		
+	}
 }

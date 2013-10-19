@@ -4,5 +4,6 @@ public interface LayoutStyleableInterface {
 
 	int getMultiWidth();
 	boolean isNewLine();
+	int getGroup();
 	
 }

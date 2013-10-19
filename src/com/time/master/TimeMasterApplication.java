@@ -4,6 +4,7 @@ import java.lang.ref.SoftReference;
 import java.util.HashMap;
 
 import com.time.master.database.TimeMasterHelper;
+import com.time.master.model.CacheModel;
 
 
 import android.app.Application;
@@ -30,6 +31,7 @@ public class TimeMasterApplication extends Application {
 	 */
 	HashMap<Integer,SoftReference<Bitmap>> bitmapCache=new HashMap<Integer, SoftReference<Bitmap>>();
     
+	private CacheModel cacheModel;
 	/***数据库已经初始化*/
 	private boolean dataInitialized=true;
 	
@@ -56,6 +58,7 @@ public class TimeMasterApplication extends Application {
 //        Thread.setDefaultUncaughtExceptionHandler(ueHandler); 
 //		FlurryAgent.onStartSession(this, Constant.FLURRY_KEY);
 		setDatabaseHelper(new TimeMasterHelper(this));
+		cacheModel=new CacheModel();
 		super.onCreate();
 	}
 	
@@ -116,4 +119,9 @@ public class TimeMasterApplication extends Application {
 		screen_width=displaymetrics.widthPixels;
 		screen_height=displaymetrics.heightPixels;
 	}
+	
+	public CacheModel getCacheModel() {
+		return cacheModel;
+	}
+	
 }
