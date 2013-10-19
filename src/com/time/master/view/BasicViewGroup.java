@@ -4,6 +4,7 @@ import com.time.master.TimeMasterApplication;
 import com.time.master.interfacer.LayoutStyleableInterface;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,8 @@ public class BasicViewGroup extends ViewGroup{
 	unit_width,//view 单位长度
 	gap,//view的间隔长度
 	current_margin_top=0,//当前放置y坐标
-	current_margin_left=0;//当前放置x坐标
+	current_margin_left=0,//当前放置x坐标
+	screen_mode; //1代表竖屏 ， 2代表横屏
 	
 	public BasicViewGroup(Context context) {
 		super(context);
@@ -39,8 +41,11 @@ public class BasicViewGroup extends ViewGroup{
 		super(context, attrs, defStyle);
 		init();
 	}
+	
+	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		init();
 		int num=this.getChildCount();
 		int line=0;
 		for(int i=0;i<num;i++){
@@ -51,13 +56,14 @@ public class BasicViewGroup extends ViewGroup{
 			}
 		}
 		int height=line==0?0:(int)(line*unit_width*0.75+gap*(line+1));
+		
 		setMeasuredDimension(TimeMasterApplication.getInstance().getScreen_W(),height);
 		//super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}
 	
 	@Override
 	protected void onLayout(boolean changed, int l, int t, int r, int b) {
-		
+		init();
 		int num=this.getChildCount();
 		for(int i=0;i<num;i++){
 			View view=this.getChildAt(i);
@@ -83,17 +89,21 @@ public class BasicViewGroup extends ViewGroup{
 
 		}
 
-		init();
+		
 	}
 
 	/***
 	 * 初始化所有参数
 	 */
 	protected void init(){
+		screen_mode=TimeMasterApplication.getInstance().getScreenMode();
 		screen_width=TimeMasterApplication.getInstance().getScreen_W();
+		screen_height=TimeMasterApplication.getInstance().getScreen_H();
 		unit_width=screen_width/6;
 		gap=screen_width/36;
 		current_margin_top=(int)(-0.75*unit_width);
 	}
+	
+	
 
 }
