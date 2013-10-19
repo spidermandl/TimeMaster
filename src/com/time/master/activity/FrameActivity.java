@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
+import com.time.master.database.TimeMasterHelper;
 import com.time.master.dialog.LoadStaticDataFragment;
 import com.time.master.view.BasicViewGroup;
 
@@ -60,7 +61,7 @@ public class FrameActivity extends FragmentActivity {
 			df.show(this.getSupportFragmentManager(), "dialog");
 		}
 		System.out.println("new");
-		
+		System.out.println(TimeMasterHelper.getDataBasePath());
     }
 
 //    TabHost.OnTabChangeListener tabChangeListener = new TabHost.OnTabChangeListener() {
