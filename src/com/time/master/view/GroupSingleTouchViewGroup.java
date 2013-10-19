@@ -46,6 +46,7 @@ public class GroupSingleTouchViewGroup extends BasicViewGroup{
 				if(group!=-1){
 					if(view instanceof SelectedTextView)
 						((SelectedTextView)view).setSingleSelectedInterface(singleInterface);
+						//((SelectedTextView)view).setSingleSelectedInterface()
 					ArrayList<LayoutStyleableInterface> list;
 					if(groupMap.containsKey(group))
 						list=groupMap.get(group);
@@ -75,8 +76,9 @@ public class GroupSingleTouchViewGroup extends BasicViewGroup{
 			
 		}
 	};
-	
+
 	interface SingleSelectedInterface{
 		void setSingleView(LayoutStyleableInterface Ilayout);
 	}
+	
 }
