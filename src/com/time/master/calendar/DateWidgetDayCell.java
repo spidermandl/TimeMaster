@@ -2,8 +2,6 @@ package com.time.master.calendar;
 
 import java.util.Calendar;
 
-import com.time.master.tool.Constant;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
@@ -14,11 +12,16 @@ import android.graphics.Shader;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
 import android.widget.LinearLayout.LayoutParams;
+
+
+import com.time.master.tool.Constant;
 /*注释者
  * 谢冬
 */
+
 /**
  * 日历控件单元格绘制类
  * @Description: 日历控件单元格绘制类
@@ -29,16 +32,17 @@ public class DateWidgetDayCell extends View {
 	
 	// 基本元素
 	private OnItemClick itemClick = null;
-	private Paint pt = new Paint();//定义一个属性，私有化实例化一个画笔对象pt
-	private RectF rect = new RectF();//定义一个矩形，并实例化矩形对象rect
-	private String sDate = "";//定义一个字符串类型的属性日期
+	private Paint pt = new Paint();
+	private RectF rect = new RectF();
+	private String sDate = "";
 
 	// 当前日期
-	private int iDateYear = 0;//定义属性当前日期（年）初始化
-	private int iDateMonth = 0;//定义属性当前日期（月）初始化
-	private int iDateDay = 0;//定义属性当前日期（天）初始化
+	private int iDateYear = 0;
+	private int iDateMonth = 0;
+	private int iDateDay = 0;
 
 	// 布尔变量
+<<<<<<< HEAD
 	private boolean bSelected = false;//定义属性并初始化bSelected
 	private boolean bIsActiveMonth = false;//定义属性并初始化bIsActiveMonth
 	private boolean bToday = false;//定义属性并初始化bToday
@@ -53,19 +57,40 @@ public class DateWidgetDayCell extends View {
 	public interface OnItemClick {   //自定义接口类 
 		public void OnClick(DateWidgetDayCell item);  //单元格的点击事件
 
+=======
+	private boolean bSelected = false;
+	private boolean bIsActiveMonth = false;
+	private boolean bToday = false;
+	private boolean bTouchedDown = false;
+	private boolean bHoliday = false;
+	private boolean hasRecord = false;
+
+	public static int ANIM_ALPHA_DURATION = 100;
+
+	
+	public interface OnItemClick {
+		public void OnClick(DateWidgetDayCell item);
+>>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 	}
 
 	// 构造函数
 	public DateWidgetDayCell(Context context, int iWidth, int iHeight) {
+<<<<<<< HEAD
 
 		super(context);
 		setFocusable(true);  // 设置单元格有焦点 
 		setLayoutParams(new LayoutParams(iWidth, iHeight));  // 单元格布局 宽 高
 
+=======
+		super(context);
+		setFocusable(true);
+		setLayoutParams(new LayoutParams(iWidth, iHeight));
+>>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 	}
 
 	// 取变量值  
 	public Calendar getDate() {
+<<<<<<< HEAD
 
 		Calendar calDate = Calendar.getInstance(); //得到Calendar对象
 		calDate.clear(); // 清除之前calendar文件 相当于刷新
@@ -74,11 +99,20 @@ public class DateWidgetDayCell extends View {
 		calDate.set(Calendar.DAY_OF_MONTH, iDateDay);   //设置日 值为iDateDay
 		return calDate; //返回calDate
 
+=======
+		Calendar calDate = Calendar.getInstance();
+		calDate.clear();
+		calDate.set(Calendar.YEAR, iDateYear);
+		calDate.set(Calendar.MONTH, iDateMonth);
+		calDate.set(Calendar.DAY_OF_MONTH, iDateDay);
+		return calDate;
+>>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 	}
 
 	// 设置变量值
 	public void setData(int iYear, int iMonth, int iDay, Boolean bToday,
 			Boolean bHoliday, int iActiveMonth, boolean hasRecord) {
+<<<<<<< HEAD
 
 		iDateYear = iYear;  
 		iDateMonth = iMonth; 
@@ -90,14 +124,26 @@ public class DateWidgetDayCell extends View {
 		this.bHoliday = bHoliday; // 判断是否为节假日
 		this.hasRecord = hasRecord; // 判断是否有记录（安排）
 
+=======
+		iDateYear = iYear;
+		iDateMonth = iMonth;
+		iDateDay = iDay;
+
+		this.sDate = Integer.toString(iDateDay);
+		this.bIsActiveMonth = (iDateMonth == iActiveMonth);
+		this.bToday = bToday;
+		this.bHoliday = bHoliday;
+		this.hasRecord = hasRecord;
+>>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 	}
 
 	// 重载绘制方法
 	@Override
 	protected void onDraw(Canvas canvas) {
 		// TODO Auto-generated method stub
-		super.onDraw(canvas);//继承父类构造方法
+		super.onDraw(canvas);
 
+<<<<<<< HEAD
 
 		rect.set(0, 0, this.getWidth(), this.getHeight());   //设置矩形宽高
 		rect.inset(1, 1);   //设置矩形宽高比例为1:1
@@ -112,6 +158,19 @@ public class DateWidgetDayCell extends View {
 		return (this.isFocused() || bTouchedDown);//返回当前是否聚焦和点下
 
 		
+=======
+		rect.set(0, 0, this.getWidth(), this.getHeight());
+		rect.inset(1, 1);
+
+		final boolean bFocused = IsViewFocused();
+
+		drawDayView(canvas, bFocused);
+		drawDayNumber(canvas);
+	}
+
+	public boolean IsViewFocused() {
+		return (this.isFocused() || bTouchedDown);
+>>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 	}
 
 
@@ -147,14 +206,15 @@ public class DateWidgetDayCell extends View {
 		if (hasRecord) {  //有记录的 提醒
 			CreateReminder(canvas, Constant.special_Reminder);
 		}
-		// else if (!hasRecord && !bToday && !bSelected) {
-		// CreateReminder(canvas, Calendar_TestActivity.Calendar_DayBgColor);
-		// }
+//		 else if (!hasRecord && !bToday && !bSelected) {
+//		 CreateReminder(canvas, Calendar_TestActivity.Calendar_DayBgColor);
+//		 }
 	}
 
-	// 绘制日历中的数
+	// 绘制日历中的数字
 	public void drawDayNumber(Canvas canvas) {
 		// draw day number
+<<<<<<< HEAD
 
 		pt.setTypeface(null);//设置字体样式
 		pt.setAntiAlias(true);//设置矩形效果
@@ -163,12 +223,21 @@ public class DateWidgetDayCell extends View {
 		pt.setTextSize(fTextSize);//设置字体大小
 		pt.setColor(Constant.isPresentMonth_FontColor);//设置画笔的颜色
 		pt.setUnderlineText(false);//设置有无下划线
+=======
+		pt.setTypeface(null);
+		pt.setAntiAlias(true);
+		pt.setShader(null);
+		pt.setFakeBoldText(true);
+		pt.setTextSize(fTextSize);
+		pt.setColor(Constant.isPresentMonth_FontColor);
+		pt.setUnderlineText(false);
+>>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 		
-		if (!bIsActiveMonth)//判断如果不是当前月
-			pt.setColor(Constant.unPresentMonth_FontColor);//设置显示字体颜色
+		if (!bIsActiveMonth)
+			pt.setColor(Constant.unPresentMonth_FontColor);
 
-		if (bToday)//如果是当天
-			pt.setUnderlineText(true);//显示字体显示下滑线
+		if (bToday)
+			pt.setUnderlineText(true);
 
 		pt.setTypeface(null);
 		pt.setAntiAlias(true); //去锯齿
@@ -191,11 +260,15 @@ public class DateWidgetDayCell extends View {
 				- (this.getHeight() - getTextHeight()) / 2 - pt
 				.getFontMetrics().bottom);
 
+<<<<<<< HEAD
 
 		canvas.drawText(sDate, iPosX, iPosY, pt); // 绘制数字
 
+=======
+		canvas.drawText(sDate, iPosX, iPosY, pt);
+>>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 
-		pt.setUnderlineText(false);//无下划线
+		pt.setUnderlineText(false);
 	}
 
 	// 得到字体高度
@@ -209,29 +282,39 @@ public class DateWidgetDayCell extends View {
 			return Constant.isToday_BgColor;  //  是当日 设置为此颜色
 		// if (bHoliday) //如需周末有特殊背景色，可去掉注释
 		// return Calendar_TestActivity.isHoliday_BgColor;
+<<<<<<< HEAD
 
 		return Constant.Calendar_DayBgColor;   // 是节假日设置此颜色
 
+=======
+		return Constant.Calendar_DayBgColor;
+>>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 	}
 
 	// 设置是否被选中
 	@Override
 	public void setSelected(boolean bEnable) {
-		if (this.bSelected != bEnable) {//如果选中情况不等于返回布尔类型值
-			this.bSelected = bEnable;//如果选中情况等于返回布尔类型值
-			this.invalidate();//当前窗口无效，需重新绘制
+		if (this.bSelected != bEnable) {
+			this.bSelected = bEnable;
+			this.invalidate();
 		}
 	}
 
+<<<<<<< HEAD
 	// 设置单元格点击
 	public void setItemClick(OnItemClick itemClick) {
 		this.itemClick = itemClick;
+=======
+	public void setItemClick(OnItemClick itemClick) {
+		this.itemClick = itemClick;
+	}
+>>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 
 	}
 	// 单元格点击事件
 	public void doItemClick() {
-		if (itemClick != null)//如果访问不为空
-			itemClick.OnClick(this);//访问当前
+		if (itemClick != null)
+			itemClick.OnClick(this);
 	}
 
 	// 点击事件
@@ -288,4 +371,6 @@ public class DateWidgetDayCell extends View {
 		path.close();
 		canvas.drawPath(path, pt); //利用画笔画路径
 	}
+
+
 }

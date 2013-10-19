@@ -18,19 +18,27 @@ import android.view.ViewGroup;
  */
 public class BasicViewGroup extends ViewGroup{
 
-	
-	int screen_width,
+	protected int screen_width,
 	screen_height,
 	unit_width,//view 单位长度
 	gap,//view的间隔长度
 	current_margin_top=0,//当前放置y坐标
 	current_margin_left=0;//当前放置x坐标
 	
+	public BasicViewGroup(Context context) {
+		super(context);
+		init();
+	}
+	
 	public BasicViewGroup(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		init();
 	}
-
+	
+	public BasicViewGroup(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		init();
+	}
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		int num=this.getChildCount();

@@ -1,7 +1,6 @@
+
 package com.time.master.calendar;
-/*
- * 谢冬
-*/
+
 import com.time.master.tool.Constant;
 
 import android.content.Context;
@@ -35,7 +34,7 @@ public class DateWidgetDayHeader extends View {
 
 		// 设置矩形大小
 		rect.set(0, 0, this.getWidth(), this.getHeight());
-		rect.inset(1, 1);//终点坐标
+		rect.inset(1, 1);//描边，为正数时：描内边，为负数时:描外边。
 
 		// 绘制日历头部
 		drawDayHeader(canvas);
@@ -54,10 +53,17 @@ public class DateWidgetDayHeader extends View {
 		pt.setColor(Constant.Calendar_WeekFontColor);//设置颜色
 		
 		// draw day name
+<<<<<<< HEAD
 
 		final String sDayName = DayStyle.getWeekDayName(iWeekDay);   //根据日期  得到星期几
 
 		final int iPosX = (int) rect.left + ((int) rect.width() >> 1)
+=======
+		final String sDayName = DayStyle.getWeekDayName(iWeekDay);//画出当天星期几
+
+		final int iPosX = (int) rect.left + ((int) rect.width() >> 1)//设置字体居中。精确的定位到方框中
+
+>>>>>>> c6668860d3c549eb3fbe02ed695310be2cf65344
 				- ((int) pt.measureText(sDayName) >> 1);
 		final int iPosY = (int) (this.getHeight()
 				- (this.getHeight() - getTextHeight()) / 2 - pt
@@ -67,7 +73,7 @@ public class DateWidgetDayHeader extends View {
 
 	// 得到字体高度
 	private int getTextHeight() {
-		return (int) (-pt.ascent() + pt.descent());
+		return (int) (-pt.ascent() + pt.descent());//查
 	}
 
 	// 得到一星期的第几天的文本标记

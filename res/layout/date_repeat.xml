@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.time.master.view.BasicViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_top_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#FF007FFF"
+        android:text="@string/date_top_left"
+        android:textColor="#000000"
+        layout:new_line="true"
+        layout:width_multi="2" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_top_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#FF007FFF"
+        android:text="@+id/plan_time_end"
+        android:textColor="#000000"
+        layout:new_line="false"
+        layout:width_multi="2" />
+
+    <com.time.master.view.BasicTextView
+        android:id="@+id/date_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#FFFF0000"
+        android:text="@string/date_confirm"
+        layout:new_line="false"
+        layout:width_multi="1"/>
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_month_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_month_select"
+        layout:new_line="true"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_month_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_month_current"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_working"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_working"
+        layout:new_line="false"
+        layout:width_multi="1" 
+        layout:default_bg="0xFF99CCFF"/>
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_everyday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_everyday"
+        layout:new_line="false"
+        layout:width_multi="1" 
+        layout:default_bg="0xFF99CCFF"/>
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_monday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_monday"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_lunar_month_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_lunar_month_select"
+        layout:new_line="true"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_lunar_month_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_lunar_month_current"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_festival"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_festival"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_quaque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_quaque"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_tuesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_tuesday"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_year_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_year_select"
+        layout:new_line="true"
+        layout:width_multi="1" 
+        layout:default_bg="0xFF99CCFF"/>
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_year_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_year_current"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_commemorate_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_commemorate_day"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_other_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_other_week"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_wednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_wednesday"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_lunar_year_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_lunar_year_select"
+        layout:new_line="true"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_lunar_year_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_lunar_year_current"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_day_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_day_off"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_saturday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_saturday"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_thursday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_thursday"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_plan_yourself"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_plan_yourself"
+        layout:new_line="true"
+        layout:width_multi="3"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_sunday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_sunday"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+
+    <com.time.master.view.SelectedTextView
+        android:id="@+id/date_friday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/date_friday"
+        layout:new_line="false"
+        layout:width_multi="1"
+        layout:default_bg="0xFF99CCFF" />
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+</com.time.master.view.BasicViewGroup>

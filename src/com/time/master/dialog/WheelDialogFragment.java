@@ -1,8 +1,7 @@
 package com.time.master.dialog;
 
-import com.time.master.R;
-import com.time.master.interfacer.WheelResultInterface;
 
+import com.time.master.interfacer.WheelResultInterface;
 import android.support.v4.app.DialogFragment;
 import android.text.InputType;
 import android.view.View;
@@ -14,10 +13,11 @@ import android.widget.TextView;
  * @author Desmond
  *
  */
-public abstract class WheelDialogFragment extends DialogFragment {
+public abstract class WheelDialogFragment extends BasicDialogFragment {
 
 	protected EditText editText;
 	protected TextView confirm;
+	protected TextView mode;
 	
 	private WheelResultInterface wheelInterface;
 	
