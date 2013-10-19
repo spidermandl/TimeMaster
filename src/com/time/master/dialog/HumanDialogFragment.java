@@ -38,19 +38,9 @@ public class HumanDialogFragment extends WheelDialogFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		/****************************************************
-		 * 设置对话框属性，高度、宽度、动画、背景
-		 ****************************************************/
-		getDialog().setCanceledOnTouchOutside(true);
-        Window window = getDialog().getWindow();
-        window.setGravity(Gravity.BOTTOM);  //此处可以设置dialog显示的位置  
-        window.setWindowAnimations(R.style.wheelAnimation);  //添加动画 
-        WindowManager.LayoutParams para=(WindowManager.LayoutParams)window.getAttributes();
-        para.height=LayoutParams.WRAP_CONTENT;
-        para.width=LayoutParams.MATCH_PARENT;
-        window.setAttributes(para);
-        window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        
+		
+		setDialogStyle();
+		
         View layout=inflater.inflate(R.layout.human_wheel_layout, container, false);
 		human = (UIWheelView) layout.findViewById(R.id.human_select);
 		editText=(EditText)layout.findViewById(R.id.edit_human);
@@ -254,5 +244,11 @@ public class HumanDialogFragment extends WheelDialogFragment {
 	@Override
 	protected String getSelectedString() {
 		return "";
+	}
+
+	@Override
+	protected void pushConfirm() {
+		// TODO Auto-generated method stub
+		
 	}
 }

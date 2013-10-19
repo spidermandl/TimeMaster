@@ -2,15 +2,11 @@ package com.time.master.fragment;
 
 import com.time.master.R;
 import com.time.master.activity.FrameActivity;
-import com.time.master.dialog.HumanDialogFragment;
-import com.time.master.dialog.LocationDialogFragment;
-import com.time.master.dialog.TimeDialogFragment;
-import com.time.master.dialog.WheelDialogFragment;
+
 import com.time.master.fragment.date.DateAddFragment;
 import com.time.master.fragment.date.DateSportFragment;
 import com.time.master.fragment.date.DateHabbitFragment;
-import com.time.master.interfacer.WheelResultInterface;
-import com.time.master.view.BasicEditText;
+
 import com.time.master.view.BasicTextView;
 import com.time.master.view.BasicViewGroup;
 

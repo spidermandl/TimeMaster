@@ -21,6 +21,7 @@
             layout:new_line="true"
             layout:width_multi="1"
             android:gravity="center"
+            android:clickable="true"
              />
 
         <com.time.master.view.BasicTextView
@@ -56,6 +57,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
              />
 
         <com.time.master.view.BasicTextView
@@ -68,6 +70,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
          <com.time.master.view.BasicTextView
             android:id="@+id/chineseandenglish"
@@ -79,6 +82,7 @@
             layout:new_line="true"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
           <com.time.master.view.BasicTextView
             android:id="@+id/worldtime2"
@@ -90,6 +94,7 @@
             layout:new_line="false"
             layout:width_multi="2" 
             android:gravity="center"
+             android:clickable="true"
             />
            <com.time.master.view.BasicTextView
             android:id="@+id/pageturning"
@@ -101,6 +106,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/solarcalendar"
@@ -112,6 +118,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/beijing"
@@ -123,6 +130,7 @@
             layout:new_line="true"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             /> <com.time.master.view.BasicTextView
             android:id="@+id/seoul"
             android:layout_width="wrap_content"
@@ -133,6 +141,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
              <com.time.master.view.BasicTextView
             android:id="@+id/tokyo"
@@ -144,6 +153,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/melbourne"
@@ -155,6 +165,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/lunarcalendar"
@@ -166,6 +177,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/hawaii"
@@ -177,6 +189,7 @@
             layout:new_line="true"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/sanfrancisco"
@@ -188,6 +201,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/newyork"
@@ -199,6 +213,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/vancouver"
@@ -210,6 +225,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/countdown"
@@ -221,6 +237,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/london"
@@ -232,6 +249,7 @@
             layout:new_line="true"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/paris"
@@ -243,6 +261,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/roman"
@@ -254,6 +273,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/moscow"
@@ -265,6 +285,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/goon"
@@ -276,6 +297,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/Dubai"
@@ -287,6 +309,7 @@
             layout:new_line="true"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/cairo"
@@ -298,6 +321,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/india"
@@ -309,6 +333,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             <com.time.master.view.BasicTextView
             android:id="@+id/singapore"
@@ -320,6 +345,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
              <com.time.master.view.BasicTextView
             android:id="@+id/forward"
@@ -331,6 +357,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             android:gravity="center"
+             android:clickable="true"
             />
             
             
