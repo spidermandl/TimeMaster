@@ -41,7 +41,8 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 	
 	public static final String TAG="TimeDialogFragment";
 	public static final int TIME_LIST_NUMBER=7;
-	private int dayModel=0;//0:滚轮阳历；1：滚轮农历
+	public static int dayModelStatus;
+	private  int  dayModel=0;//0:滚轮阳历；1：滚轮农历
 	private ChineseCalendar chineseCalendar;//当前选中时间
 	
 	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
@@ -89,6 +90,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
         yearAdapter = new NumericWheelAdapter(this.getActivity(), model.year-5000, model.year+5000);
         yearAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         yearAdapter.setItemTextResource(R.id.numeric_text);
+        
         year.setVisibleItems(TIME_LIST_NUMBER);
         year.setViewAdapter(yearAdapter);
         //year.setBackground(R.drawable.wheel_left_bg);
@@ -362,6 +364,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 			break;
 		case R.id.edit_date:
 			this.dismiss();
+			dayModelStatus=dayModel;
 			showDialog(new WorldTimeDialogFragment());
 			break;
 		default:
