@@ -9,13 +9,9 @@ import com.time.master.wheel.widget.UIWheelView;
 import com.time.master.wheel.widget.WheelView;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -180,5 +176,11 @@ public class LocationDialogFragment extends WheelDialogFragment {
 	@Override
 	protected String getSelectedString() {
 		return getLocationString();
+	}
+
+	@Override
+	protected void pushConfirm() {
+		// TODO Auto-generated method stub
+		
 	}
 }

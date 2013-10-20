@@ -51,7 +51,7 @@ public class TimeMasterHelper extends SQLiteOpenHelper{
 		TimeMasterApplication.getInstance().setDataInitialized(false);
 		db.execSQL(CREATE_TABLE_NATIONAL_DISTRICT);
 		
-		//ExcelParseTool.initNationalLocation(this.context,db);
+		//ExcelParseTool.initNationalLocationByExcel(this.context,db);
 		
 	}
 

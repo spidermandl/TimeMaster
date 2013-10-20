@@ -46,4 +46,10 @@ public class DateLastDialogFragment extends WheelDialogFragment {
 		return null;
 	}
 
+	@Override
+	protected void pushConfirm() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

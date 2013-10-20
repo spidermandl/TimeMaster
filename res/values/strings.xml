@@ -168,9 +168,13 @@
 	<string name="page9_end">进入主页</string>
 	
 	<string name="date_layout_plan_model_1">日期\n倒计</string>
-	<string name="date_plan_time_period_1">占用\n时间</string>
+	<string name="date_plan_time_period_1">占用\n期间</string>
 	<string name="date_layout_plan_model_2">倒计\n日期</string>
-	<string name="date_plan_time_period_2">时间\n占用</string>
+	<string name="date_plan_time_period_2">期间\n占用</string>
+	
+	<string name="date_solar_lunar_1">阳历\n农历</string>
+	<string name="date_solar_lunar_2">农历\n阳历</string>
+	
 	
 	<string name="date_top_left">每日一次\n间隔1：00</string>
 	<string name="date_top_center">重复一天\n至2003/3/14</string>
@@ -264,4 +268,10 @@
 	<string name="warning_icon_backgroundcolor">底色</string>
 	<string name="warning_icon_framecolor">框色</string>
 	<string name="warning_icon_wordcolor">字色</string>
+	
+	<string name="date_top_first">天数</string>
+	<string name="date_top_second">总次数</string>
+	<string name="date_top_third">日次数</string>
+	<string name="date_top_forth">间隔</string>
+	<string name="date_top_fifth">确认</string>
 </resources>

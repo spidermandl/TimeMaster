@@ -5,7 +5,9 @@ import java.util.HashMap;
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.dialog.LoadStaticDataFragment;
+import com.time.master.view.BasicViewGroup;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -20,12 +22,14 @@ import android.widget.TabWidget;
 public class FrameActivity extends FragmentActivity {
 
 	HashMap<Integer, Fragment> fragmentCache=new HashMap<Integer, Fragment>();
+
+	 TabHost tabHost;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frame_main);
-        TabHost tabHost=(TabHost)this.findViewById(R.id.main_tab);
+        tabHost=(TabHost)this.findViewById(R.id.main_tab);
         tabHost.setup();
         
         tabHost.addTab(tabHost.newTabSpec("generation").setIndicator(this.getResources().getString(R.string.generation)).setContent(R.id.generation_fragment));
@@ -57,6 +61,8 @@ public class FrameActivity extends FragmentActivity {
 			DialogFragment df=new LoadStaticDataFragment();
 			df.show(this.getSupportFragmentManager(), "dialog");
 		}
+		System.out.println("new");
+		
     }
 
 //    TabHost.OnTabChangeListener tabChangeListener = new TabHost.OnTabChangeListener() {
@@ -72,6 +78,8 @@ public class FrameActivity extends FragmentActivity {
 //		}
 //    	
 //    };
+    
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
@@ -100,12 +108,19 @@ public class FrameActivity extends FragmentActivity {
 		}
 		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 		fragmentTransaction.setCustomAnimations(android.R.anim.fade_in,android.R.anim.fade_out);
-
+		
 		fragmentTransaction.replace(containerID, f);
 		fragmentTransaction.addToBackStack(null);
 		fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 		fragmentTransaction.commit();
 	}
-    
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+    	// TODO Auto-generated method stub
+    	super.onConfigurationChanged(newConfig);
+    	TimeMasterApplication.getInstance().setScreenMode(newConfig.orientation);
+    	tabHost.invalidate();
+    	
+    }
 }
 

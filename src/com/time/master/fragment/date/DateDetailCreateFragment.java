@@ -1,16 +1,31 @@
 package com.time.master.fragment.date;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 import com.time.master.R;
 import com.time.master.activity.FrameActivity;
 import com.time.master.dialog.*;
+import com.time.master.TimeMasterApplication;
+import com.time.master.dialog.DurationTimeDialogFragment;
+import com.time.master.dialog.HumanDialogFragment;
+import com.time.master.dialog.LocationDialogFragment;
+import com.time.master.dialog.RepeatDialogFragment;
+import com.time.master.dialog.TimeDialogFragment;
+import com.time.master.dialog.WheelDialogFragment;
 import com.time.master.interfacer.WheelResultInterface;
+import com.time.master.model.CacheModel;
+import com.time.master.tool.ChineseCalendar;
 import com.time.master.view.BasicEditText;
 import com.time.master.view.BasicTextView;
 
+import android.R.string;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.SystemClock;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -23,24 +38,39 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
+import android.webkit.DateSorter;
+
 /**
  * 日---新增选项界面
+ * 
  * @author Desmond
- *
+ * 
  */
 public class DateDetailCreateFragment extends Fragment implements OnTouchListener,android.view.View.OnClickListener{
-
-	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimeEndFragment;
+	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimePeroidFragment;
 	DialogFragment repeatFragment;
-//	Fragment warningFragment;
-	BasicEditText dateSelector,locationSelector,humanSelector,planEndSelector;
-	BasicTextView dateRepeat,dateWarning;
-	BasicTextView tvdate, //日期 /倒计 按钮
-	              tvduration;//占用/期间 按钮
-	           
+	BasicEditText dateSelector,//开始时间输入框
+	              locationSelector,
+	              humanSelector,
+	              planPeroidSelector,
+	              lengthSelector,
+	              endSelector;//结束时间输入框
+
+	BasicTextView 	startClick,//开始按钮
+	                tvdate, // 日期 /倒计 按钮
+			        tvduration,// 占用/期间 按钮
+                    dateRepeat,//重复按钮
+                    dateWarning;//提醒按钮
+
+	private ChineseCalendar startChineseDate,//开始时间
+	                        endChineseDate;//结束时间
 	
-	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
+	private Handler countTimeHandler;//计时handler
+	private Runnable mTicker;//计时runnable
 	
+	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
+
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -50,19 +80,30 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		dateSelector.setInputType(InputType.TYPE_NULL);
 		dateSelector.setOnTouchListener(this);
 
-		locationSelector = (BasicEditText) layout.findViewById(R.id.plan_location);
+	    locationSelector = (BasicEditText) layout.findViewById(R.id.plan_location);
 		locationSelector.setInputType(InputType.TYPE_NULL);
 		locationSelector.setOnTouchListener(this);
 
 		humanSelector = (BasicEditText) layout.findViewById(R.id.plan_human);
 		humanSelector.setInputType(InputType.TYPE_NULL);
 		humanSelector.setOnTouchListener(this);
+
+		lengthSelector = (BasicEditText) layout.findViewById(R.id.plan_length);
 		
-		planEndSelector=(BasicEditText)layout.findViewById(R.id.plan_time_end);
-		planEndSelector.setInputType(InputType.TYPE_NULL);
-		planEndSelector.setOnTouchListener(this);
+		endSelector = (BasicEditText) layout.findViewById(R.id.plan_time_end);
+		endSelector.setInputType(InputType.TYPE_NULL);
+		endSelector.setOnTouchListener(this);
+		
+		startClick = (BasicTextView) layout.findViewById(R.id.plan_start);
+		startClick.setOnClickListener(this);
+
+
+		planPeroidSelector=(BasicEditText)layout.findViewById(R.id.plan_length);
+		planPeroidSelector.setInputType(InputType.TYPE_NULL);
+		planPeroidSelector.setOnTouchListener(this);
 		
 		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
+
 		dateRepeat.setOnClickListener(this);
 		
 		dateWarning=(BasicTextView)layout.findViewById(R.id.plan_warning);
@@ -70,8 +111,10 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 
 		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
 		tvdate.setOnClickListener(this);
+
 		viewStatus.put(tvdate.getId(), false);
-		//tvdate.setBackgroundColor(R.color.dateforcolor);
+
+		// tvdate.setBackgroundColor(R.color.dateforcolor);
 		String dateString = (String) getText(R.string.date_layout_plan_model_1);
 		SpannableStringBuilder datestyle = new SpannableStringBuilder(
 				dateString);
@@ -80,18 +123,18 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		datestyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
 				Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 		tvdate.setText(datestyle);
-
+		
 		tvduration = (BasicTextView) layout.findViewById(R.id.plan_time_period);
 		tvduration.setOnClickListener(this);
 		viewStatus.put(tvduration.getId(), false);
-		//tvduration.setBackgroundColor(R.color.dateforcolor);
+		// tvduration.setBackgroundColor(R.color.dateforcolor);
 		String durationString = (String) getText(R.string.date_plan_time_period_1);
 		SpannableStringBuilder durationstyle = new SpannableStringBuilder(
 				durationString);
-		durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0,
-				3, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
-		durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3,
-				5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+		durationstyle.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 3,
+				Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+		durationstyle.setSpan(new ForegroundColorSpan(Color.WHITE), 3, 5,
+				Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
 		tvduration.setText(durationstyle);
 		return layout;
 	}
@@ -117,39 +160,60 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		if (event.getAction() == MotionEvent.ACTION_UP) {
 			switch (v.getId()) {
 			case R.id.plan_time_start:
-				if (dateFragment == null){
+				if (dateFragment == null) {
 					dateFragment = new TimeDialogFragment();
-					/**设定获取滚轮内容接口*/
-					dateFragment.setWheelInterface(new WheelResultInterface() {
-						
-						@Override
-						public void getResult(String result) {
-							dateSelector.setText(result);
-						}
-					});
 				}
+				/** 设定获取滚轮内容接口 */
+				dateFragment.setWheelInterface(new WheelResultInterface() {
+
+					@Override
+					public void getResult(String result) {
+						dateSelector.setText(result);
+						CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
+						startChineseDate=model.currentTime;
+						model.startTime=startChineseDate;
+					}
+				});
+				showDialog(dateFragment);
+				break;
+			case R.id.plan_time_end:
+				if (dateFragment == null) {
+					dateFragment = new TimeDialogFragment();
+				}
+				/** 设定获取滚轮内容接口 */
+				dateFragment.setWheelInterface(new WheelResultInterface() {
+
+					@Override
+					public void getResult(String result) {
+						endSelector.setText(result);
+						CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
+						endChineseDate=model.currentTime;
+						model.endTime=endChineseDate;
+					}
+				});
 				showDialog(dateFragment);
 				break;
 			case R.id.plan_location:
-				if (locationFragment == null){
+				if (locationFragment == null) {
 					locationFragment = new LocationDialogFragment();
-					/**设定获取滚轮内容接口*/
-					locationFragment.setWheelInterface(new WheelResultInterface() {
-						
-						@Override
-						public void getResult(String result) {
-							locationSelector.setText(result);
-						}
-					});
+					/** 设定获取滚轮内容接口 */
+					locationFragment
+							.setWheelInterface(new WheelResultInterface() {
+
+								@Override
+								public void getResult(String result) {
+									locationSelector.setText(result);
+								}
+							});
 				}
 				showDialog(locationFragment);
 				break;
 			case R.id.plan_human:
-				if (humanFragment == null){
+				if (humanFragment == null) {
 					humanFragment = new HumanDialogFragment();
-					/**设定获取滚轮内容接口*/
+					/** 设定获取滚轮内容接口 */
 					humanFragment.setWheelInterface(new WheelResultInterface() {
-						
+
 						@Override
 						public void getResult(String result) {
 							humanSelector.setText(result);
@@ -158,19 +222,19 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				}
 				showDialog(humanFragment);
 				break;
-			case R.id.plan_time_end:
-				if(planTimeEndFragment==null){
-					planTimeEndFragment=new DurationTimeDialogFragment();
-					planTimeEndFragment.setWheelInterface(new WheelResultInterface() {
+			case R.id.plan_length:
+				if(planTimePeroidFragment==null){
+					planTimePeroidFragment=new DurationTimeDialogFragment();
+					planTimePeroidFragment.setWheelInterface(new WheelResultInterface() {
 						
 						@Override
 						public void getResult(String result) {
 							// TODO Auto-generated method stub
-							planEndSelector.setText(result);
+							planPeroidSelector.setText(result);
 						}
 					});
 				}
-				showDialog(planTimeEndFragment);
+				showDialog(planTimePeroidFragment);
 			default:
 				break;
 			}
@@ -185,7 +249,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		FrameActivity activity=(FrameActivity)getActivity();
 		switch (view.getId()) {
 		case R.id.plan_repeat:
-			repeatFragment=new RepeatDialogFragment();
+			repeatFragment = new RepeatDialogFragment();
 			repeatFragment.setShowsDialog(true);
 			showDialog(repeatFragment);
 			break;
@@ -195,23 +259,144 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			activity.showNext(this.getId(),T, R.layout.date_warning);			
 			break;
 		case R.id.plan_model:
+			CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 			if (viewStatus.get(R.id.plan_model)) {
-				viewStatus.put(R.id.plan_model,false);
-				
+				viewStatus.put(R.id.plan_model, false);
+				dateSelector.setText(getChineseDateString(model.startTime));
+				endSelector.setText(getChineseDateString(model.endTime));
 			} else {
-				viewStatus.put(R.id.plan_model,true);
+				viewStatus.put(R.id.plan_model, true);
+				dateSelector.setText(getCountdownDateString(model.startTime));
+				endSelector.setText(getCountdownDateString(model.endTime));
 			}
 
 			break;
 		case R.id.plan_time_period:
 			if (viewStatus.get(R.id.plan_time_period)) {
-				viewStatus.put(R.id.plan_time_period,false);
+
+				viewStatus.put(R.id.plan_time_period, false);
 			} else {
-				viewStatus.put(R.id.plan_time_period,true);
+				viewStatus.put(R.id.plan_time_period, true);
 			}
+//			else {
+//				viewStatus.put(R.id.plan_time_period,true);
+//
+//			}
 			break;
-		default:
+		case R.id.plan_start://开始计时按钮
+			if(countTimeHandler==null){
+				/**初始化计时handler*/
+				countTimeHandler=new Handler(){
+					public void handleMessage(android.os.Message msg) {
+						switch(msg.what){
+						case 1://计时状态
+							lengthSelector.setText((String)msg.obj);
+							mTicker.run();
+							break;
+						case 2://禁止状态
+							countTimeHandler.removeCallbacks(mTicker);
+							break;
+						}
+					};
+				};
+			}
+			if(mTicker==null){
+				/**初始化计时runnable*/
+				mTicker = new Runnable() {
+					public void run() {
+						CacheModel m=TimeMasterApplication.getInstance().getCacheModel();
+						m.tickingTime+=1000L;
+						countTimeHandler.postDelayed(mTicker, 1000L);
+						lengthSelector.setText(getTimeGap(m.tickingTime,true));
+//						Message msg=new Message();
+//						msg.what=1;
+//						msg.obj=getTimeGap(m.tickingTime,true);
+//						countTimeHandler.sendMessageDelayed(msg, 1000L);
+					}
+				};
+			}
+			model=TimeMasterApplication.getInstance().getCacheModel();
+			if(model.startTime==null)
+				model.startTime=new ChineseCalendar(new Date());
+			if(dateSelector.getText().toString()==null||dateSelector.getText().toString().equals("")){//开始按钮为空
+				dateSelector.setText(getChineseDateString(model.startTime));
+			}
+			BasicTextView v=(BasicTextView)view;
+			switch (v.getStatus()){
+			case 0:
+				v.setStatus(1);
+				startClick.setText("结束");
+				startClick.setBackgroundColor(0xFFFF0000);
+				mTicker.run();
+				break;
+			case 1://停止计时
+				v.setStatus(2);
+				startClick.setText("继续");
+				startClick.setBackgroundColor(0xFF00FF00);
+				countTimeHandler.sendEmptyMessage(2);
+				
+				if(model.endTime==null||(model.startTime.getTimeInMillis()+model.tickingTime)>model.endTime.getTimeInMillis()){
+					model.endTime=new ChineseCalendar(new Date(model.startTime.getTimeInMillis()+model.tickingTime));
+					endSelector.setText(getChineseDateString(model.endTime));
+				}else{
+					if(endSelector.getText().toString()==null||endSelector.getText().toString().equals("")){
+						endSelector.setText(getChineseDateString(model.endTime));
+					}
+				}
+				break;
+			case 2:
+			    v.setStatus(1);
+			    startClick.setText("结束");
+			    startClick.setBackgroundColor(0xFFFF0000);
+			    mTicker.run();
+			    break;
+			default:
+				v.setStatus(0);
+				break;
+			}
 			break;
 		}
 	}
+	
+	private String getChineseDateString(ChineseCalendar date) {
+		if(date==null)
+			date=new ChineseCalendar(new Date());
+		int minute=date.get(ChineseCalendar.MINUTE);
+		return date.get(ChineseCalendar.YEAR)+"/"
+	            +(date.get(ChineseCalendar.MONTH)+1)+"/"
+				+date.get(ChineseCalendar.DAY_OF_MONTH)
+				+"  "+date.get(ChineseCalendar.HOUR_OF_DAY)+":"
+				+(minute<10?"0"+minute:minute);
+	}
+	
+	private String getCountdownDateString(ChineseCalendar date){
+		if(date==null)
+			return "0天  00:00";
+		else{
+			StringBuffer stringB=new StringBuffer();
+			long now=new Date().getTime(),
+			future=date.getTime().getTime(),
+			between=future-now;
+			if(between<0)
+				stringB.append("-");
+			between=between>0?between:-between;
+	        stringB.append(getTimeGap(between,false));
+	        return stringB.toString();
+		}
+	}
+	
+	private String getTimeGap(long diff,boolean hasSeconds){
+		StringBuffer stringB=new StringBuffer();
+		long day = diff / (24 * 60 * 60 * 1000);
+        long hour = (diff / (60 * 60 * 1000) - day * 24);
+        long min = ((diff / (60 * 1000)) - day * 24 * 60 - hour * 60);
+        long seconds=((diff / (1000)) - day * 24 * 60 * 60 - hour * 60 * 60-min*60);
+        //day + "天" + hour + "小时" + min + "分" + s + "秒" + ms;
+        stringB.append(day).append("天  ").append(hour<10?"0"+hour:hour).append(":").append(min<10?"0"+min:min);
+        if(hasSeconds)
+        	stringB.append(":").append(seconds<10?"0"+seconds:seconds);
+        return stringB.toString();
+	}
 }
+
+
