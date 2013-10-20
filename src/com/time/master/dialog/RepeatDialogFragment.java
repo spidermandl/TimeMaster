@@ -4,21 +4,15 @@ import java.util.HashMap;
 import com.time.master.R;
 import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.BasicTextView;
+
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
-import android.view.ViewGroup;
 
-import com.time.master.R;
-import com.time.master.interfacer.WheelResultInterface;
-import com.time.master.view.BasicTextView;
+import android.view.ViewGroup;
 
 /**
  * "重复"对话框界面
@@ -26,12 +20,14 @@ import com.time.master.view.BasicTextView;
  * @author wanghuiming
  * 
  */
+
 public class RepeatDialogFragment extends BasicDialogFragment implements
 DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 	WheelDialogFragment topFragment;
 	public static final String tag = "RepeatDialogFragment";
-	BasicTextView date_top_left;//每日一次 按钮 
-	DialogFragment datatopFragment;
+	BasicTextView date_top_left,//每日一次 按钮 
+	              date_top_center;//重复一天按钮
+	DialogFragment datetopFragment, datecenterFragment;
 	BasicTextView confirm, dtmselect, dtmcurrent, dtworking, dteveryday,
 			dtmonday, dtlmselect, dtlmcurrent, dtfestival, dtqueque, dttuesday,
 			dtyselect, dtycurrent, dtcomday, dtotherweek, dtwednesday,
@@ -41,11 +37,13 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 	
 	BasicTextView yourselfBasicTextView;
 
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Light);
 		super.onCreate(savedInstanceState);
+
 
 	}
 
@@ -59,6 +57,9 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
         
 		date_top_left=(BasicTextView)layout.findViewById(R.id.date_top_left);
 		date_top_left.setOnClickListener(this);
+		
+		date_top_center=(BasicTextView)layout.findViewById(R.id.date_top_center);
+		date_top_center.setOnClickListener(this);
 		
 		confirm = (BasicTextView) layout.findViewById(R.id.date_confirm);
 		dtmselect = (BasicTextView) layout.findViewById(R.id.date_month_select);
@@ -140,11 +141,15 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 			showDialog(new RepeatCustomizedDialogFragment());
 			break;
 		case R.id.date_top_left:
-			datatopFragment = new DataTopDiaogFragment();
-			datatopFragment.setShowsDialog(true);
-			showDialog(datatopFragment);
+			datetopFragment = new DateTopDiaogFragment();
+			datetopFragment.setShowsDialog(true);
+			showDialog(datetopFragment);
 			break;
-		
+		case R.id.date_top_center:
+			datecenterFragment = new DateCenterDialogFragment();
+			datecenterFragment.setShowsDialog(true);
+			showDialog(datecenterFragment);
+			break;
 		default:
 			break;
 		}
@@ -163,7 +168,7 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 		if(event.getAction()==MotionEvent.ACTION_UP){
 			switch(v.getId()){
 			case R.id.date_top_left:
-				topFragment=new DataTopDiaogFragment();
+				topFragment=new DateTopDiaogFragment();
 				topFragment.setWheelInterface(new WheelResultInterface() {
 					
 					@Override
