@@ -46,7 +46,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
+
 		setDialogStyle();
 
 		View layout = inflater.inflate(R.layout.world_time_layout, container,
@@ -99,23 +99,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 		forward.setOnClickListener(this);
 		idlerWheel.setOnClickListener(this);
 		conversion.setOnClickListener(this);
-=======
-		getDialog().setCanceledOnTouchOutside(true);//点击dialog以外区域，关闭dialog
-        Window window = getDialog().getWindow();
-        window.setGravity(Gravity.BOTTOM);  //此处可以设置dialog显示的位置  
-        window.setWindowAnimations(R.style.wheelAnimation);  //添加动画 
-        WindowManager.LayoutParams para=(WindowManager.LayoutParams)window.getAttributes();
-        para.height=LayoutParams.WRAP_CONTENT;
-        para.width=LayoutParams.MATCH_PARENT;
-        window.setAttributes(para);
-        window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND | WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-        
-        View layout=inflater.inflate(R.layout.world_time_layout, container, false);
 
-        View context=layout.findViewById(R.id.worldtime);
-        
-
->>>>>>> 7405dd721f1357ed781bc41ddc77651302f7adc5
 		return layout;
 	}
 
