@@ -8,6 +8,8 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
 
 public class TabTextView extends SelectedTextView {
 
@@ -16,7 +18,7 @@ public class TabTextView extends SelectedTextView {
 	unit_width,//view 单位长度
 	gap,//view的间隔长度
 	screen_mode; //1代表竖屏 ， 2代表横屏
-	
+	protected RelativeLayout.LayoutParams params=(LayoutParams) this.getLayoutParams();
 	Paint mPaint,marginPaint,linePaint;
 	boolean hasRightEdge=false;
 	float strokeWdith=10f;
@@ -76,7 +78,9 @@ public class TabTextView extends SelectedTextView {
 	public TabTextView setCenterText(String text){
 		this.setText(text);
 		this.setTextColor(0xFF000000);
-		//this.setGravity(Gravity.CENTER);
+		this.setGravity(Gravity.CENTER);
+		//params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 0);
+		//params.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
 		return this;
 	}
 	

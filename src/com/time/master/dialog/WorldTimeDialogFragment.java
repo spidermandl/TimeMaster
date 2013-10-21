@@ -20,8 +20,8 @@ import com.time.master.view.BasicViewGroup;
 public class WorldTimeDialogFragment extends BasicDialogFragment implements
 		OnClickListener {
 	private TimeDialogFragment temp = new TimeDialogFragment();
-	private BasicTextView showStatus;
-	private SelectedTextView translate, idlerWheel, conversion;
+	private BasicTextView showStatus,arrow;
+	private SelectedTextView translate, idlerWheel, conversion,comfirm;
 	private SelectedTextView city1, city2, city3, city4, city5, city6, city7,
 			city8, city9, city10, city11, city12, city13, city14, city15,
 			city16, solarcalendar, lunarcalendar, countdown, goon, forward;
@@ -73,6 +73,8 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 		conversion.setBackgroundColor(0xFFFFFFFF);
 		idlerWheel = (SelectedTextView) layout.findViewById(R.id.idlerwheel);
 		showStatus = (BasicTextView) layout.findViewById(R.id.showstatus);
+		arrow=(BasicTextView) layout.findViewById(R.id.arrow);
+		comfirm=(SelectedTextView) layout.findViewById(R.id.confirm);
 		if (calendarStatus == 0) {
 			calendarStatusTop = "农历";
 			calendarStatusBottom = "阳历";
@@ -99,6 +101,24 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 		forward.setOnClickListener(this);
 		idlerWheel.setOnClickListener(this);
 		conversion.setOnClickListener(this);
+		city1.setOnClickListener(this);
+		city2.setOnClickListener(this);
+		city3.setOnClickListener(this);
+		city4.setOnClickListener(this);
+		city5.setOnClickListener(this);
+		city6.setOnClickListener(this);
+		city7.setOnClickListener(this);
+		city8.setOnClickListener(this);
+		city9.setOnClickListener(this);
+		city10.setOnClickListener(this);
+		city11.setOnClickListener(this);
+		city12.setOnClickListener(this);
+		city13.setOnClickListener(this);
+		city14.setOnClickListener(this);
+		city15.setOnClickListener(this);
+		city16.setOnClickListener(this);
+		arrow.setOnClickListener(this);
+		comfirm.setOnClickListener(this);
 		return layout;
 	}
 
@@ -130,19 +150,19 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 				city1.setText("北京");
 				city2.setText("首尔");
 				city3.setText("东京");
-				city4.setText("墨尔\n本");
-				city5.setText("夏威\n夷");
-				city6.setText("旧金\n山");
+				city4.setText("墨尔本");
+				city5.setText("夏威夷");
+				city6.setText("旧金山");
 				city7.setText("纽约");
-				city8.setText("温哥\n华");
+				city8.setText("温哥华");
 				city9.setText("伦敦");
 				city10.setText("巴黎");
 				city11.setText("罗马");
-				city12.setText("莫斯\n科");
+				city12.setText("莫斯科");
 				city13.setText("迪拜");
 				city14.setText("开罗");
 				city15.setText("印度");
-				city16.setText("新加\n坡");
+				city16.setText("新加坡");
 				languageStatus = !languageStatus;
 			}
 
@@ -204,11 +224,207 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 			break;
 		case R.id.conversion:
 			activeStatus = CONVERSIONACTIVE;
+			idlerWheel.setBackgroundColor(0xFFFFFF00);
+			conversion.setBackgroundColor(0xFFFFFFFF);
 			break;
 		case R.id.idlerwheel:
 			activeStatus = IDLERWHEELACTIVE;
 			conversion.setBackgroundColor(0xFFFFFF00);
+			idlerWheel.setBackgroundColor(0xFFFFFFFF);
 			break;
+		case R.id.Beikin:
+			if (activeStatus) {
+				calendarStatusTop = (String) city1.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city1.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			
+			break;
+		case R.id.Seoul:
+			if (activeStatus) {
+				calendarStatusTop = (String) city2.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city2.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			
+			break;
+		case R.id.Tokyo:
+			if (activeStatus) {
+				calendarStatusTop = (String) city3.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city3.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			
+			break;
+		case R.id.Melbourne:
+			if (activeStatus) {
+				calendarStatusTop = (String) city4.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city4.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.Hawaii:
+			if (activeStatus) {
+				calendarStatusTop = (String) city5.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city5.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.Sanfrancisco:
+			if (activeStatus) {
+				calendarStatusTop = (String) city6.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city6.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.NewYork:
+			if (activeStatus) {
+				calendarStatusTop = (String) city7.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city7.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.Vancouver:
+			if (activeStatus) {
+				calendarStatusTop = (String) city8.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city8.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.London:
+			if (activeStatus) {
+				calendarStatusTop = (String) city9.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city9.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.Paris:
+			if (activeStatus) {
+				calendarStatusTop = (String) city10.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city10.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.Roman:
+			if (activeStatus) {
+				calendarStatusTop = (String) city11.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city11.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.Moscow:
+			if (activeStatus) {
+				calendarStatusTop = (String) city12.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city12.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.Dubai:
+			if (activeStatus) {
+				calendarStatusTop = (String) city13.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city13.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.Cairo:
+			if (activeStatus) {
+				calendarStatusTop = (String) city14.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city14.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.India:
+			if (activeStatus) {
+				calendarStatusTop = (String) city15.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city15.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.Singapore:
+			if (activeStatus) {
+				calendarStatusTop = (String) city16.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			} else {
+				calendarStatusBottom = (String) city16.getText();
+				showStatus.setText(calendarStatusTop + "\n"
+						+ calendarStatusBottom);
+			}
+			break;
+		case R.id.arrow:
+			if(activeStatus==IDLERWHEELACTIVE){
+				idlerWheel.setBackgroundColor(0xFFFFFF00);
+				conversion.setBackgroundColor(0xFFFFFFFF);
+				activeStatus=CONVERSIONACTIVE;
+			}else{
+				conversion.setBackgroundColor(0xFFFFFF00);
+				idlerWheel.setBackgroundColor(0xFFFFFFFF);
+				activeStatus=IDLERWHEELACTIVE;
+			}
+			break;
+		case R.id.confirm:
+			this.dismiss();
+			showDialog(new TimeDialogFragment());
 		default:
 			break;
 		}

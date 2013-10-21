@@ -31,7 +31,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             layout:default_bg="0xFFFFFF00"
-            layout:attr_group="1"/>
+          />
 
         <com.time.master.view.BasicTextView
             android:id="@+id/arrow"
@@ -51,8 +51,8 @@
             android:textColor="#000000"
             layout:new_line="false"
             layout:width_multi="1" 
-            layout:default_bg="0xFFFFFF00"
-            layout:attr_group="1"/>
+            layout:default_bg="0xFFFFFFFF"
+            />
 
         <com.time.master.view.SelectedTextView
             android:id="@+id/confirm"
@@ -151,7 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="墨尔\n本"
+            android:text="墨尔本"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="false"
@@ -175,7 +175,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="夏威\n夷"
+            android:text="夏威夷"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="true"
@@ -187,7 +187,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="旧金\n山"
+            android:text="旧金山"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="false"
@@ -211,7 +211,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="温哥\n华"
+            android:text="温哥华"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="false"
@@ -271,7 +271,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="莫斯\n科"
+            android:text="莫斯科"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="false"
@@ -331,7 +331,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="新加\n坡"
+            android:text="新加坡"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="false"
