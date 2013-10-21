@@ -18,7 +18,7 @@ import com.time.master.R;
 import com.time.master.dialog.TimeDialogFragment.DateModel;
 import com.time.master.view.BasicTextView;
 
-public class RepeatDialogFragment1  extends DialogFragment implements OnClickListener{
+public class SelectDayFragment  extends DialogFragment implements OnClickListener{
 	public static final String tag="RepeatDialogFragment";
 	private BasicTextView btvup;
 	private BasicTextView btvdown;

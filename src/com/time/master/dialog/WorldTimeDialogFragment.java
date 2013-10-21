@@ -5,18 +5,18 @@ package com.time.master.dialog;
  * @author ZhouYongJian
  *
  */
+
+import com.time.master.R;
+import com.time.master.view.SelectedTextView;
+
 import android.app.DialogFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-
-import com.time.master.R;
 import com.time.master.view.BasicTextView;
 import com.time.master.view.BasicViewGroup;
-import com.time.master.view.SelectedTextView;
-
 public class WorldTimeDialogFragment extends BasicDialogFragment implements
 		OnClickListener {
 	private TimeDialogFragment temp = new TimeDialogFragment();

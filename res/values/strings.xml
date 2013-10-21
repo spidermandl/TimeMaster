@@ -201,6 +201,9 @@
 	<string name="date_saturday">周六</string>
 	<string name="date_sunday">周日</string>
 	
-	
-
+	<string name="date_top_first">天数</string>
+	<string name="date_top_second">总次数</string>
+	<string name="date_top_third">日次数</string>
+	<string name="date_top_forth">间隔</string>
+	<string name="date_top_fifth">确认</string>
 </resources>
