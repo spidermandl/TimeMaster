@@ -42,7 +42,9 @@ public class DateTopDiaogFragment extends WheelDialogFragment implements View.On
 		
 		aboutDay=new Day();
 	    
+
 	    View layout = inflater.inflate(R.layout.data_top_left_layout, container, false);
+
 	    timeWheels = (LinearLayout)layout.findViewById(R.id.day_selector_wheel);
         int padding=TimeMasterApplication.getInstance().getScreen_W()/36;
         timeWheels.setPadding(padding, 0, padding, padding);
@@ -241,6 +243,18 @@ public class DateTopDiaogFragment extends WheelDialogFragment implements View.On
 		public void onItemClicked(WheelView wheel, int itemIndex) {
 			// TODO Auto-generated method stub
 			wheel.setCurrentItem(itemIndex,true);
+//			switch(wheel.getId()){
+//			case R.id.day:
+//				int day_value=day.getCurrentItem();
+//				int add_value=add_times.getCurrentItem();
+//				//int times_value=day_times.getCurrentItem();
+//				if(add_value%day_value!=0){
+//					day_times.setCurrentItem(add_value/day_value+1);
+//				}else{
+//					day_times.setCurrentItem(add_value/day_value);
+//				}
+//				break;
+//			}
 		}
 	};
 	public void changeTimes(){
