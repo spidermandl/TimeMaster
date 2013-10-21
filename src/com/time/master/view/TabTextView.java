@@ -76,7 +76,7 @@ public class TabTextView extends SelectedTextView {
 	public TabTextView setCenterText(String text){
 		this.setText(text);
 		this.setTextColor(0xFF000000);
-		this.setGravity(Gravity.CENTER);
+		//this.setGravity(Gravity.CENTER);
 		return this;
 	}
 	

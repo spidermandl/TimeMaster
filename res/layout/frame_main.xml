@@ -29,8 +29,9 @@
                     android:layout_height="wrap_content"
                     android:showDividers="none"
                     android:divider="@null"
-                    android:orientation="horizontal" >
-
+                    android:orientation="horizontal" 
+                   	
+                    >
                    
                 </TabWidget>
             </HorizontalScrollView>
