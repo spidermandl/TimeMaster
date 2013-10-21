@@ -48,16 +48,23 @@ public class BasicViewGroup extends ViewGroup{
 		init();
 		int num=this.getChildCount();
 		int line=0;
+		int width=0;
+		int max_width=0;//计算最大宽度的行
 		for(int i=0;i<num;i++){
 			View view=this.getChildAt(i);
 			LayoutStyleableInterface styleable=(LayoutStyleableInterface)view;
 			if(styleable.isNewLine()){
+				if(width>max_width)
+					max_width=width;
+				width=0;
 				line++;
 			}
+			width+=unit_width+gap;
 		}
+		
 		int height=line==0?0:(int)(line*unit_width*0.75+gap*(line+1));
 		
-		setMeasuredDimension(TimeMasterApplication.getInstance().getScreen_W(),height);
+		setMeasuredDimension(max_width,height);
 		//super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}
 	

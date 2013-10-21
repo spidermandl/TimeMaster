@@ -5,7 +5,9 @@ import java.util.HashMap;
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.dialog.LoadStaticDataFragment;
+import com.time.master.view.BasicTextView;
 import com.time.master.view.BasicViewGroup;
+import com.time.master.view.TabTextView;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -36,7 +38,7 @@ public class FrameActivity extends FragmentActivity {
 
 	HashMap<Integer, Fragment> fragmentCache=new HashMap<Integer, Fragment>();
 
-	 TabHost tabHost;
+	TabHost tabHost;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,37 +47,44 @@ public class FrameActivity extends FragmentActivity {
 
         TabHost tabHost=(TabHost)this.findViewById(R.id.main_tab);
         
-        RelativeLayout generationTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
-        TextView generationTabLabel = (TextView) generationTab.findViewById(R.id.tab_label);
-        generationTabLabel.setText("辈");
-        
-        RelativeLayout yearTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
-        TextView yearTabLabel = (TextView) yearTab.findViewById(R.id.tab_label);
-        yearTabLabel.setText("年");
-        
-        RelativeLayout monthTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
-        TextView monthTabLabel = (TextView) monthTab.findViewById(R.id.tab_label);
-        monthTabLabel.setText("月");
-        
-        RelativeLayout weekTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
-        TextView weekTabLabel = (TextView) weekTab.findViewById(R.id.tab_label);
-        weekTabLabel.setText("周");
-        
-        RelativeLayout dateTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
-        TextView dateTabLabel = (TextView) dateTab.findViewById(R.id.tab_label);
-        dateTabLabel.setText("日");
-        
-        RelativeLayout listTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
-        TextView listTabLabel = (TextView) listTab.findViewById(R.id.tab_label);
-        listTabLabel.setText("列表");
-        
-        RelativeLayout newTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
-        TextView newTabLabel = (TextView) newTab.findViewById(R.id.tab_label);
-        newTabLabel.setText("新建");
+//        RelativeLayout generationTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
+//        TextView generationTabLabel = (TextView) generationTab.findViewById(R.id.tab_label);
+//        generationTabLabel.setText("辈");
+//        
+//        RelativeLayout yearTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
+//        TextView yearTabLabel = (TextView) yearTab.findViewById(R.id.tab_label);
+//        yearTabLabel.setText("年");
+//        
+//        RelativeLayout monthTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
+//        TextView monthTabLabel = (TextView) monthTab.findViewById(R.id.tab_label);
+//        monthTabLabel.setText("月");
+//        
+//        RelativeLayout weekTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
+//        TextView weekTabLabel = (TextView) weekTab.findViewById(R.id.tab_label);
+//        weekTabLabel.setText("周");
+//        
+//        RelativeLayout dateTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
+//        TextView dateTabLabel = (TextView) dateTab.findViewById(R.id.tab_label);
+//        dateTabLabel.setText("日");
+//        
+//        RelativeLayout listTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
+//        TextView listTabLabel = (TextView) listTab.findViewById(R.id.tab_label);
+//        listTabLabel.setText("列表");
+//        
+//        RelativeLayout newTab = (RelativeLayout) LayoutInflater.from(this).inflate(R.layout.frame_minitab, null);
+//        TextView newTabLabel = (TextView) newTab.findViewById(R.id.tab_label);
+//        newTabLabel.setText("新建");
         
         tabHost=(TabHost)this.findViewById(R.id.main_tab);
         tabHost.setup();
         
+        BasicTextView generationTab=new TabTextView(this).setCenterText("辈"),
+                      yearTab=new TabTextView(this).setCenterText("年"),
+                      monthTab=new TabTextView(this).setCenterText("月"),
+                      weekTab=new TabTextView(this).setCenterText("周"),
+                      dateTab=new TabTextView(this).setCenterText("日"),
+                      listTab=new TabTextView(this).setCenterText("列表"),
+                      newTab=new TabTextView(this).setCenterText("新建");
         tabHost.addTab(tabHost.newTabSpec("generation").setIndicator(generationTab).setContent(R.id.generation_fragment));
         tabHost.addTab(tabHost.newTabSpec("year").setIndicator(yearTab).setContent(R.id.year_fragment));
         tabHost.addTab(tabHost.newTabSpec("month").setIndicator(monthTab).setContent(R.id.month_fragment));
