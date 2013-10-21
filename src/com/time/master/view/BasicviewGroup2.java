@@ -45,7 +45,7 @@ protected void onLayout(boolean changed, int l, int t, int r, int b) {
 			ViewGroup.LayoutParams layoutParams=view.getLayoutParams();
 			layoutParams.width=styleable.getMultiWidth()*unit_width+(styleable.getMultiWidth()-1)*gap;
 			layoutParams.height=(int)(unit_width*0.75);
-			if(i==13)
+			if(i==18)
 				layoutParams.height=layoutParams.height*2+gap;
 			view.setLayoutParams(layoutParams);
 			/***设置子view 大小，子view的onMeasure方法被回调 **/
