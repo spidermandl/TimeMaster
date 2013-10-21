@@ -27,18 +27,20 @@ import com.time.master.view.BasicTextView;
  * 
  */
 public class RepeatDialogFragment extends BasicDialogFragment implements
-DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
+		DialogInterface.OnClickListener, View.OnTouchListener,
+		View.OnClickListener {
 	WheelDialogFragment topFragment;
 	public static final String tag = "RepeatDialogFragment";
-	BasicTextView date_top_left;//每日一次 按钮 
-	DialogFragment datatopFragment;
+	BasicTextView date_top_left,// 每日一次 按钮
+			date_top_center;// 重复一天按钮
+	DialogFragment datatopFragment,datecenterFragment;
 	BasicTextView confirm, dtmselect, dtmcurrent, dtworking, dteveryday,
 			dtmonday, dtlmselect, dtlmcurrent, dtfestival, dtqueque, dttuesday,
 			dtyselect, dtycurrent, dtcomday, dtotherweek, dtwednesday,
 			dtlyselect, dtlycurrent, dtdayoff, dtsaturday, dtthursday,
 			dtplyouself, dtsunday, dtfriday;
 	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
-	
+
 	BasicTextView yourselfBasicTextView;
 
 	@Override
@@ -52,14 +54,17 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		
+
 		setDialogStyle();
 
 		View layout = inflater.inflate(R.layout.date_repeat, container, false);
-        
-		date_top_left=(BasicTextView)layout.findViewById(R.id.date_top_left);
+
+		date_top_left = (BasicTextView) layout.findViewById(R.id.date_top_left);
 		date_top_left.setOnClickListener(this);
-		
+
+		date_top_center = (BasicTextView) layout.findViewById(R.id.date_top_center);
+		date_top_center.setOnClickListener(this);
+
 		confirm = (BasicTextView) layout.findViewById(R.id.date_confirm);
 		dtmselect = (BasicTextView) layout.findViewById(R.id.date_month_select);
 		dtmcurrent = (BasicTextView) layout
@@ -123,15 +128,14 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 		return layout;
 	}
 
-
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		if(v instanceof BasicTextView){
-			Boolean isSelected=viewStatus.get(v.getId());
-			if(isSelected==null||isSelected==false){
+		if (v instanceof BasicTextView) {
+			Boolean isSelected = viewStatus.get(v.getId());
+			if (isSelected == null || isSelected == false) {
 				viewStatus.put(v.getId(), true);
-			}else{
+			} else {
 				viewStatus.put(v.getId(), false);
 			}
 		}
@@ -140,11 +144,17 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 			showDialog(new RepeatCustomizedDialogFragment());
 			break;
 		case R.id.date_top_left:
-			datatopFragment = new DataTopDiaogFragment();
-			datatopFragment.setShowsDialog(true);
-			showDialog(datatopFragment);
+			if (dtmcurrent.isSelected() || dtlmcurrent.isSelected()) {
+				datatopFragment = new DateTopDiaogFragment();
+				datatopFragment.setShowsDialog(true);
+				showDialog(datatopFragment);
+			}
 			break;
-		
+		case R.id.date_top_center:
+			datecenterFragment = new DateCenterDialogFragment();
+			datecenterFragment.setShowsDialog(true);
+			showDialog(datecenterFragment);
+			break;
 		default:
 			break;
 		}
@@ -160,21 +170,21 @@ DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 		// TODO Auto-generated method stub
-		if(event.getAction()==MotionEvent.ACTION_UP){
-			switch(v.getId()){
+		if (event.getAction() == MotionEvent.ACTION_UP) {
+			switch (v.getId()) {
 			case R.id.date_top_left:
-				topFragment=new DataTopDiaogFragment();
+				topFragment = new DateTopDiaogFragment();
 				topFragment.setWheelInterface(new WheelResultInterface() {
-					
+
 					@Override
 					public void getResult(String result) {
 						// TODO Auto-generated method stub
-						
+
 					}
-				}); 
-					
+				});
+
+			}
 		}
-	}
 		return false;
 	}
 

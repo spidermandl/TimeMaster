@@ -71,9 +71,11 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 
         editText=(EditText)layout.findViewById(R.id.edit_date);
         confirm =(TextView)layout.findViewById(R.id.time_confirm);
+        
         timeWheels = (LinearLayout)layout.findViewById(R.id.date_selector_wheel);
         int padding=TimeMasterApplication.getInstance().getScreen_W()/36;
         timeWheels.setPadding(padding, 0, padding, padding);
+        
         mode=(TextView)layout.findViewById(R.id.time_type);
         mode.setOnClickListener(this);
         mode.setText(R.string.date_solar_lunar_2);
@@ -286,6 +288,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 			
 		}
 	};
+	
 	private String getDateString(){
 
 		if(dayModel==0){

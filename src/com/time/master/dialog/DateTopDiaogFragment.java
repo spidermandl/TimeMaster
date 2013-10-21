@@ -4,27 +4,23 @@ import java.util.HashMap;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
+import com.time.master.wheel.adapters.SecondNumericWheelAdapter;
+import com.time.master.wheel.adapters.TimeNumericWheelAdapter;
 import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.TimeWheelView;
-import com.time.master.wheel.widget.UIWheelView;
 import com.time.master.wheel.widget.WheelView;
 
-public class DataTopDiaogFragment extends WheelDialogFragment implements View.OnClickListener {
+public class DateTopDiaogFragment extends WheelDialogFragment implements View.OnClickListener {
 	
 	public static final String TAG="DataDialogFragment";
 	
@@ -45,20 +41,13 @@ public class DataTopDiaogFragment extends WheelDialogFragment implements View.On
 		setDialogStyle();
 		
 		aboutDay=new Day();
-	    for(int i=0;i<=100;i++){
-	    	aboutDay.setDay(i);
-	    	aboutDay.setAdd_times(i);
-	    	aboutDay.setDay_times(i);
-	    	aboutDay.setSpace(i);
-	    	aboutDay.setWhatever(i);
-	    }
-		
-	    View layout = inflater.inflate(R.layout.data_top_layout, container, false);
+	    
+	    View layout = inflater.inflate(R.layout.data_top_left_layout, container, false);
 	    timeWheels = (LinearLayout)layout.findViewById(R.id.day_selector_wheel);
         int padding=TimeMasterApplication.getInstance().getScreen_W()/36;
         timeWheels.setPadding(padding, 0, padding, padding);
 		day=(TimeWheelView)layout.findViewById(R.id.day);
-	    dayAdapter=new NumericWheelAdapter(getActivity(), aboutDay.day-100, aboutDay.day+0);
+	    dayAdapter=new NumericWheelAdapter(getActivity(),0,100);
 	    dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 	    dayAdapter.setItemTextResource(R.id.numeric_text);
 	   
@@ -72,17 +61,17 @@ public class DataTopDiaogFragment extends WheelDialogFragment implements View.On
 				// TODO Auto-generated method stub
 				
 			}
-			
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				// TODO Auto-generated method stub
 				aboutDay.day=wheel.getCurrentItem();
+				changeTimes();
 			}
 		});
 	    	day.addClickingListener(clickListener);
 	    	
 	    	add_times=(TimeWheelView)layout.findViewById(R.id.add_times);
-		    addtimesAdapter=new NumericWheelAdapter(getActivity(), aboutDay.add_times-100, aboutDay.add_times+0);
+		    addtimesAdapter=new NumericWheelAdapter(getActivity(),0, 100);
 		    addtimesAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    addtimesAdapter.setItemTextResource(R.id.numeric_text);
 		    add_times.setViewAdapter(addtimesAdapter);
@@ -99,12 +88,13 @@ public class DataTopDiaogFragment extends WheelDialogFragment implements View.On
 				public void onScrollingFinished(WheelView wheel) {
 					// TODO Auto-generated method stub
 					aboutDay.add_times=wheel.getCurrentItem();
+					changedays();
 				}
 			});
 		    add_times.addClickingListener(clickListener);
 		    	
 		    day_times=(TimeWheelView)layout.findViewById(R.id.day_times);
-		    daytimesAdapter=new NumericWheelAdapter(getActivity(), aboutDay.day_times-100, aboutDay.day_times+0);
+		    daytimesAdapter=new NumericWheelAdapter(getActivity(), 0,100);
 		    daytimesAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    daytimesAdapter.setItemTextResource(R.id.numeric_text);
 		    day_times.setViewAdapter(daytimesAdapter);
@@ -127,10 +117,11 @@ public class DataTopDiaogFragment extends WheelDialogFragment implements View.On
 		    day_times.addClickingListener(clickListener);
 	    	
 		    space=(TimeWheelView)layout.findViewById(R.id.space);
-		    spaceAdapter=new NumericWheelAdapter(getActivity(), aboutDay.space-100, aboutDay.space+0);
+		    spaceAdapter=new TimeNumericWheelAdapter(getActivity(), 0, 100);
 		    spaceAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    spaceAdapter.setItemTextResource(R.id.numeric_text);
-		    space.setViewAdapter(dayAdapter);
+		    spaceAdapter.setSuffix(":");
+		    space.setViewAdapter(spaceAdapter);
 		    //space.setBackground(R.drawable.wheel_bg_full);
 		    space.setCurrentItem(50);
 		    space.addScrollingListener(new OnWheelScrollListener() {
@@ -150,12 +141,13 @@ public class DataTopDiaogFragment extends WheelDialogFragment implements View.On
 		    space.addClickingListener(clickListener);
 		    
 		    whatever=(TimeWheelView)layout.findViewById(R.id.whatever);
-		    whateverAdapter=new NumericWheelAdapter(getActivity(), aboutDay.whatever-100, aboutDay.whatever+0);
+		    whateverAdapter=new SecondNumericWheelAdapter(getActivity(),0,11);
 		    whateverAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    whateverAdapter.setItemTextResource(R.id.numeric_text);
+		    whateverAdapter.getItemText(5);
 		    whatever.setViewAdapter(whateverAdapter);
 		   // whatever.setBackground(R.drawable.wheel_bg_full);
-		    whatever.setCurrentItem(50);
+		    whatever.setCurrentItem(5);
 		    whatever.addScrollingListener(new OnWheelScrollListener() {
 				
 				@Override
@@ -236,17 +228,39 @@ public class DataTopDiaogFragment extends WheelDialogFragment implements View.On
 		}
 		
 	}
+	/**
+	 * 时间数据模型，天数、总次数、日次数、间隔、确认
+	 */
 	LinearLayout timeWheels;
 	TimeWheelView day,add_times,day_times,space,whatever;
-	NumericWheelAdapter dayAdapter,addtimesAdapter,daytimesAdapter,spaceAdapter,whateverAdapter;
+	NumericWheelAdapter dayAdapter,addtimesAdapter,daytimesAdapter;
+	TimeNumericWheelAdapter spaceAdapter;
+	SecondNumericWheelAdapter whateverAdapter;
 	OnWheelClickedListener clickListener=new OnWheelClickedListener() {
-		
 		@Override
 		public void onItemClicked(WheelView wheel, int itemIndex) {
 			// TODO Auto-generated method stub
 			wheel.setCurrentItem(itemIndex,true);
 		}
 	};
+	public void changeTimes(){
+		int day_value=day.getCurrentItem();
+		int times_value=day_times.getCurrentItem();
+		if(day_value*times_value<=100){
+			add_times.setCurrentItem(day_value*times_value);
+		}else{
+			add_times.setCurrentItem(add_times.getCurrentItem());
+		}
+	}
+	public void changedays(){
+		int add_value=add_times.getCurrentItem();
+		int times_value=day_times.getCurrentItem();
+		if(add_value%times_value!=0){
+			day.setCurrentItem(add_value/times_value+1);
+		}else{
+			day.setCurrentItem(add_value/times_value);
+		}
+	}
 	
 	@Override
 	protected void pushConfirm() {
