@@ -20,9 +20,14 @@ import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.TimeWheelView;
 import com.time.master.wheel.widget.WheelView;
 
-public class DateTopDiaogFragment extends WheelDialogFragment implements View.OnClickListener {
+/**
+ * √ø»’÷ÿ∏¥dialog
+ * @author xujin
+ *
+ */
+public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements View.OnClickListener {
 	
-	public static final String TAG="DataDialogFragment";
+	public static final String TAG="DateDailyRepeatDiaogFragment";
 	
 	private Day aboutDay;
 	
@@ -43,7 +48,7 @@ public class DateTopDiaogFragment extends WheelDialogFragment implements View.On
 		aboutDay=new Day();
 	    
 
-	    View layout = inflater.inflate(R.layout.data_top_left_layout, container, false);
+	    View layout = inflater.inflate(R.layout.date_daily_repeat_dialog, container, false);
 
 	    timeWheels = (LinearLayout)layout.findViewById(R.id.day_selector_wheel);
         int padding=TimeMasterApplication.getInstance().getScreen_W()/36;
@@ -119,7 +124,7 @@ public class DateTopDiaogFragment extends WheelDialogFragment implements View.On
 		    day_times.addClickingListener(clickListener);
 	    	
 		    space=(TimeWheelView)layout.findViewById(R.id.space);
-		    spaceAdapter=new TimeNumericWheelAdapter(getActivity(), 0, 100);
+		    spaceAdapter=new TimeNumericWheelAdapter(getActivity(), 0, 24);
 		    spaceAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    spaceAdapter.setItemTextResource(R.id.numeric_text);
 		    spaceAdapter.setSuffix(":");

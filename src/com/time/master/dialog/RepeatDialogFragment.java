@@ -145,13 +145,13 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 		case R.id.date_top_left:
 
 			if (dtmcurrent.isSelected() || dtlmcurrent.isSelected()) {
-				datatopFragment = new DateTopDiaogFragment();
+				datatopFragment = new DateDailyRepeatDiaogFragment();
 				datatopFragment.setShowsDialog(true);
 				showDialog(datatopFragment);
 			}
 			break;
 		case R.id.date_top_center:
-			datecenterFragment = new DateCenterDialogFragment();
+			datecenterFragment = new DateDaysRepeatDialogFragment();
 			datecenterFragment.setShowsDialog(true);
 			showDialog(datecenterFragment);
 			break;
@@ -173,7 +173,7 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 		if (event.getAction() == MotionEvent.ACTION_UP) {
 			switch (v.getId()) {
 			case R.id.date_top_left:
-				topFragment = new DateTopDiaogFragment();
+				topFragment = new DateDailyRepeatDiaogFragment();
 
 				topFragment.setWheelInterface(new WheelResultInterface() {
 

@@ -30,11 +30,15 @@ import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.TimeWheelView;
 import com.time.master.wheel.widget.WheelView;
-
-public class DateCenterDialogFragment extends TimeDialogFragment implements
+/**
+ * 天重复dialog
+ * @author lianglili
+ *
+ */
+public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		View.OnClickListener {
 
-	public static final String TAG = "DateCenterDialogFragment";
+	public static final String TAG = "DateDaysRepeatDialogFragment";
 
 	public static final int TIME_LIST_NUMBER = 7;
 	private int dayModel = 0;// 0:滚轮阳历；1：滚轮农历
@@ -60,7 +64,7 @@ public class DateCenterDialogFragment extends TimeDialogFragment implements
 		model.month = calendar.get(Calendar.MONTH) + 1;
 		model.day = calendar.get(Calendar.DAY_OF_MONTH);
 		chineseCalendar = new ChineseCalendar(calendar.getTime());
-		View layout = inflater.inflate(R.layout.date_top_center_layout,container, false);
+		View layout = inflater.inflate(R.layout.date_days_repeat_dialog,container, false);
 
 		timeWheels = (LinearLayout) layout.findViewById(R.id.day_center_selector_wheel);
 		int padding = TimeMasterApplication.getInstance().getScreen_W() / 36;
@@ -119,7 +123,7 @@ public class DateCenterDialogFragment extends TimeDialogFragment implements
 					calendar.set(Calendar.MONTH, model.month - 1);
 
 					int maxDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-					dayAdapter = new TimeNumericWheelAdapter(DateCenterDialogFragment.this.getActivity(), 1,maxDays);
+					dayAdapter = new TimeNumericWheelAdapter(DateDaysRepeatDialogFragment.this.getActivity(), 1,maxDays);
 					dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 					dayAdapter.setItemTextResource(R.id.numeric_text);
 
@@ -163,7 +167,6 @@ public class DateCenterDialogFragment extends TimeDialogFragment implements
 		daynumberAdapter.setItemTextResource(R.id.numeric_text);
 		daynumber.setVisibleItems(TIME_LIST_NUMBER);
 		daynumber.setViewAdapter(daynumberAdapter);
-		daynumber.setCyclic(true);
 		daynumber.setCurrentItem(1);
 		daynumber.addScrollingListener(new OnWheelScrollListener() {
 
@@ -186,7 +189,6 @@ public class DateCenterDialogFragment extends TimeDialogFragment implements
 		totalcount.setVisibleItems(TIME_LIST_NUMBER);
 		totalcount.setViewAdapter(totalcountAdapter);
 		// minute.setBackground(R.drawable.wheel_right_bg);
-		totalcount.setCyclic(true);
 		totalcount.setCurrentItem(model.totalcount);
 		totalcount.addScrollingListener(new OnWheelScrollListener() {
 
@@ -271,7 +273,7 @@ public class DateCenterDialogFragment extends TimeDialogFragment implements
 	        calendar.set(Calendar.MONTH, model.month-1);
 	        
 	        int maxDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-	        dayAdapter=new TimeNumericWheelAdapter(DateCenterDialogFragment.this.getActivity(), 1, maxDays);
+	        dayAdapter=new TimeNumericWheelAdapter(DateDaysRepeatDialogFragment.this.getActivity(), 1, maxDays);
 	        dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 	        dayAdapter.setItemTextResource(R.id.numeric_text);
 	        dayAdapter.setTextInterface(textInterface);
@@ -380,5 +382,11 @@ public class DateCenterDialogFragment extends TimeDialogFragment implements
 		default:
 			break;
 		}
+	}
+
+	@Override
+	protected String getSelectedString() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
