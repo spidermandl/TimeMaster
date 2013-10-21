@@ -5,6 +5,7 @@ import com.time.master.interfacer.LayoutStyleableInterface;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.text.style.LineHeightSpan.WithDensity;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +46,6 @@ public class BasicViewGroup extends ViewGroup{
 	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		init();
 		int num=this.getChildCount();
 		int line=0;
 		int width=0;
@@ -59,9 +59,9 @@ public class BasicViewGroup extends ViewGroup{
 				width=0;
 				line++;
 			}
-			width+=unit_width+gap;
+			width+=styleable.getMultiWidth()*unit_width+styleable.getMultiWidth()*gap;
 		}
-		
+		max_width=max_width<width?width+gap:max_width+gap;
 		int height=line==0?0:(int)(line*unit_width*0.75+gap*(line+1));
 		
 		setMeasuredDimension(max_width,height);
