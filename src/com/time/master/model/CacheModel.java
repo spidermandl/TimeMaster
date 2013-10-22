@@ -8,7 +8,7 @@ import com.time.master.tool.ChineseCalendar;
  */
 public class CacheModel {
 
-	public ChineseCalendar startTime,//时间模块开始时间
+	public ChineseCalendar  startTime,//时间模块开始时间
 	                        endTime,//时间模块结束时间
 	                        currentTime;//当前选中时间,变化频繁，缺少参考性
 	

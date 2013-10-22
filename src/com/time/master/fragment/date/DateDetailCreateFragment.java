@@ -62,7 +62,7 @@ public class DateDetailCreateFragment extends Fragment implements
 	BasicEditText dateSelector,//开始时间输入框
 	              locationSelector,
 	              humanSelector,
-	              planPeroidSelector,
+	              planPeroidSelector,//用时：0天1小时0分
 	              lengthSelector,
 	              endSelector;//结束时间输入框
 	BasicTextView dateRepeat,
@@ -96,8 +96,7 @@ public class DateDetailCreateFragment extends Fragment implements
 
 		locationSelector = (BasicEditText) layout
 				.findViewById(R.id.plan_location);
-
-		locationSelector.setInputType(InputType.TYPE_NULL);
+        locationSelector.setInputType(InputType.TYPE_NULL);
 		locationSelector.setOnTouchListener(this);
 
 		humanSelector = (BasicEditText) layout.findViewById(R.id.plan_human);
@@ -122,20 +121,17 @@ public class DateDetailCreateFragment extends Fragment implements
 		plan_previou.setOnClickListener(this);
 
 		dateRepeat = (BasicTextView) layout.findViewById(R.id.plan_repeat);
-	
+		dateRepeat.setOnClickListener(this);
+		
 		planPeroidSelector=(BasicEditText)layout.findViewById(R.id.plan_length);
 		planPeroidSelector.setInputType(InputType.TYPE_NULL);
 		planPeroidSelector.setOnTouchListener(this);
 
-
-		dateRepeat.setOnClickListener(this);
-
 		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
 		tvdate.setOnClickListener(this);
-
 		viewStatus.put(tvdate.getId(), false);
 
-		// tvdate.setBackgroundColor(R.color.dateforcolor);
+		
 		String dateString = (String) getText(R.string.date_layout_plan_model_1);
 		SpannableStringBuilder datestyle = new SpannableStringBuilder(
 				dateString);
@@ -371,10 +367,6 @@ public class DateDetailCreateFragment extends Fragment implements
 			}
 			break;
 		case R.id.plan_previous:
-//			Map<String, Object> map = this.save(context);
-//			endSelector.setText((map.get("end")).toString());
-//			dateSelector.setText((map.get("now")).toString());
-//			lengthSelector.setText((map.get("t")).toString());
 			File file = new File(this.getActivity().getFilesDir(), "Date.txt");
 
 			try {
@@ -384,16 +376,11 @@ public class DateDetailCreateFragment extends Fragment implements
 				String end = endSelector.getText().toString();
 				out.write((now + ";" + t + ";" + end).getBytes());
 
-				//save(context);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 
 			}
-//			else {
-//				viewStatus.put(R.id.plan_time_period,true);
-//
-//			}
 			break;
 		}
 	}

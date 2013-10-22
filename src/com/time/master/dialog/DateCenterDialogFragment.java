@@ -35,11 +35,12 @@ public class DateCenterDialogFragment extends TimeDialogFragment implements
 		View.OnClickListener {
 
 	public static final String TAG = "DateCenterDialogFragment";
-
+	DialogFragment datecenterconfirmFragment;
 	public static final int TIME_LIST_NUMBER = 7;
 	private int dayModel = 0;// 0:滚轮阳历；1：滚轮农历
 	private ChineseCalendar chineseCalendar;// 当前选中时间
-	private BasicTextView date_center_second;
+	private BasicTextView date_center_second,//更换农阳历
+	                      date_center_first;//确认
 	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
 
 	@Override
@@ -68,6 +69,10 @@ public class DateCenterDialogFragment extends TimeDialogFragment implements
 		
 		mode=(TextView)layout.findViewById(R.id.date_center_second);
         mode.setOnClickListener(this);
+        
+        date_center_first=(BasicTextView)layout.findViewById(R.id.date_center_first);
+        date_center_first.setOnClickListener(this);
+        
         mode.setText(R.string.date_top_center_lunar_2);
         mode.setBackgroundColor(Color.YELLOW);
         
@@ -376,7 +381,13 @@ public class DateCenterDialogFragment extends TimeDialogFragment implements
 		case R.id.date_center_second:
 			changeTimeStyle(dayModel);
 			break;
-
+	    case R.id.date_center_first:
+	    	datecenterconfirmFragment = new RepeatDialogFragment();
+	    	((RepeatDialogFragment) datecenterconfirmFragment).changePage();
+	    	datecenterconfirmFragment.setShowsDialog(true);
+			showDialog(datecenterconfirmFragment);
+			
+			break;
 		default:
 			break;
 		}

@@ -2,6 +2,7 @@ package com.time.master.dialog;
 
 import java.util.HashMap;
 
+import android.R.integer;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
@@ -11,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.time.master.R;
+import com.time.master.R.layout;
 import com.time.master.TimeMasterApplication;
+import com.time.master.view.BasicTextView;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.adapters.SecondNumericWheelAdapter;
 import com.time.master.wheel.adapters.TimeNumericWheelAdapter;
@@ -19,13 +22,14 @@ import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.TimeWheelView;
 import com.time.master.wheel.widget.WheelView;
+import com.time.master.dialog.RepeatDialogFragment;;
 
 public class DateTopDiaogFragment extends WheelDialogFragment implements View.OnClickListener {
 	
 	public static final String TAG="DataDialogFragment";
-	
+	DialogFragment datetopconfirmFragment;
 	private Day aboutDay;
-	
+	private  BasicTextView date_top_fifth;
 	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
 	
 	@Override
@@ -41,13 +45,18 @@ public class DateTopDiaogFragment extends WheelDialogFragment implements View.On
 		setDialogStyle();
 		
 		aboutDay=new Day();
-	    
-
-	    View layout = inflater.inflate(R.layout.data_top_left_layout, container, false);
+		
+		
+		
+	    View layout = inflater.inflate(R.layout.date_top_left_layout, container, false);
 
 	    timeWheels = (LinearLayout)layout.findViewById(R.id.day_selector_wheel);
         int padding=TimeMasterApplication.getInstance().getScreen_W()/36;
         timeWheels.setPadding(padding, 0, padding, padding);
+        
+        date_top_fifth=(BasicTextView)layout.findViewById(R.id.date_top_fifth);
+        date_top_fifth.setOnClickListener(this);
+        
 		day=(TimeWheelView)layout.findViewById(R.id.day);
 	    dayAdapter=new NumericWheelAdapter(getActivity(),0,100);
 	    dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
@@ -170,8 +179,18 @@ public class DateTopDiaogFragment extends WheelDialogFragment implements View.On
 	}
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
+		switch (v.getId()) {
+	    case R.id.date_top_fifth:
+	    	datetopconfirmFragment = new RepeatDialogFragment();
+	    	((RepeatDialogFragment) datetopconfirmFragment).changePage();
+	    	datetopconfirmFragment.setShowsDialog(true);
+			showDialog(datetopconfirmFragment);
+			
+			
+			break;
+		default:
+			break;
+		}
 	}
 	@Override
 	protected String getSelectedString() {
@@ -243,18 +262,7 @@ public class DateTopDiaogFragment extends WheelDialogFragment implements View.On
 		public void onItemClicked(WheelView wheel, int itemIndex) {
 			// TODO Auto-generated method stub
 			wheel.setCurrentItem(itemIndex,true);
-//			switch(wheel.getId()){
-//			case R.id.day:
-//				int day_value=day.getCurrentItem();
-//				int add_value=add_times.getCurrentItem();
-//				//int times_value=day_times.getCurrentItem();
-//				if(add_value%day_value!=0){
-//					day_times.setCurrentItem(add_value/day_value+1);
-//				}else{
-//					day_times.setCurrentItem(add_value/day_value);
-//				}
-//				break;
-//			}
+
 		}
 	};
 	public void changeTimes(){

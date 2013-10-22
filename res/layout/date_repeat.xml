@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:background="#FF007FFF"
-        android:text="@string/date_top_left"
+        android:text="@string/date_top_left_lunar1"
         android:textColor="#000000"
         layout:new_line="true"
         layout:width_multi="2" />
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:background="#FF007FFF"
-        android:text="@+id/plan_time_end"
+        android:text="@+id/date_top_centerone_lunar1"
         android:textColor="#000000"
         layout:new_line="false"
         layout:width_multi="2" />
