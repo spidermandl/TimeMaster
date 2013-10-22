@@ -213,11 +213,11 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 			break;
 		case R.id.forward:
 			if (activeStatus) {
-				calendarStatusTop = (String) forward.getText();
+				calendarStatusBottom = (String) forward.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) forward.getText();
+				calendarStatusTop = (String) forward.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
@@ -234,11 +234,11 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 			break;
 		case R.id.Beikin:
 			if (activeStatus) {
-				calendarStatusTop = (String) city1.getText();
+				calendarStatusBottom = (String) city1.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city1.getText();
+				calendarStatusTop = (String) city1.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
@@ -246,11 +246,11 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 			break;
 		case R.id.Seoul:
 			if (activeStatus) {
-				calendarStatusTop = (String) city2.getText();
+				calendarStatusBottom = (String) city2.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city2.getText();
+				calendarStatusTop = (String) city2.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
@@ -258,11 +258,11 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 			break;
 		case R.id.Tokyo:
 			if (activeStatus) {
-				calendarStatusTop = (String) city3.getText();
+				calendarStatusBottom = (String) city3.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city3.getText();
+				calendarStatusTop = (String) city3.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
@@ -270,143 +270,143 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 			break;
 		case R.id.Melbourne:
 			if (activeStatus) {
-				calendarStatusTop = (String) city4.getText();
+				calendarStatusBottom = (String) city4.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city4.getText();
+				calendarStatusTop = (String) city4.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.Hawaii:
 			if (activeStatus) {
-				calendarStatusTop = (String) city5.getText();
+				calendarStatusBottom = (String) city5.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city5.getText();
+				calendarStatusTop = (String) city5.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.Sanfrancisco:
 			if (activeStatus) {
-				calendarStatusTop = (String) city6.getText();
+				calendarStatusBottom = (String) city6.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city6.getText();
+				calendarStatusTop = (String) city6.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.NewYork:
 			if (activeStatus) {
-				calendarStatusTop = (String) city7.getText();
+				calendarStatusBottom = (String) city7.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city7.getText();
+				calendarStatusTop = (String) city7.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.Vancouver:
 			if (activeStatus) {
-				calendarStatusTop = (String) city8.getText();
+				calendarStatusBottom = (String) city8.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city8.getText();
+				calendarStatusTop = (String) city8.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.London:
 			if (activeStatus) {
-				calendarStatusTop = (String) city9.getText();
+				calendarStatusBottom = (String) city9.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city9.getText();
+				calendarStatusTop = (String) city9.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.Paris:
 			if (activeStatus) {
-				calendarStatusTop = (String) city10.getText();
+				calendarStatusBottom = (String) city10.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city10.getText();
+				calendarStatusTop = (String) city10.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.Roman:
 			if (activeStatus) {
-				calendarStatusTop = (String) city11.getText();
+				calendarStatusBottom = (String) city11.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city11.getText();
+				calendarStatusTop = (String) city11.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.Moscow:
 			if (activeStatus) {
-				calendarStatusTop = (String) city12.getText();
+				calendarStatusBottom = (String) city12.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city12.getText();
+				calendarStatusTop = (String) city12.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.Dubai:
 			if (activeStatus) {
-				calendarStatusTop = (String) city13.getText();
+				calendarStatusBottom = (String) city13.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city13.getText();
+				calendarStatusTop = (String) city13.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.Cairo:
 			if (activeStatus) {
-				calendarStatusTop = (String) city14.getText();
+				calendarStatusBottom = (String) city14.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city14.getText();
+				calendarStatusTop = (String) city14.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.India:
 			if (activeStatus) {
-				calendarStatusTop = (String) city15.getText();
+				calendarStatusBottom = (String) city15.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city15.getText();
+				calendarStatusTop = (String) city15.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
 			break;
 		case R.id.Singapore:
 			if (activeStatus) {
-				calendarStatusTop = (String) city16.getText();
+				calendarStatusBottom = (String) city16.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			} else {
-				calendarStatusBottom = (String) city16.getText();
+				calendarStatusTop = (String) city16.getText();
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
