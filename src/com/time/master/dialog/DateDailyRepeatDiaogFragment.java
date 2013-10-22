@@ -24,10 +24,19 @@ import com.time.master.wheel.widget.TimeWheelView;
 import com.time.master.wheel.widget.WheelView;
 import com.time.master.dialog.RepeatDialogFragment;;
 
-public class DateTopDiaogFragment extends WheelDialogFragment implements View.OnClickListener {
+/**
+ * √ø»’÷ÿ∏¥dialog
+ * @author xujing
+ *
+ */
+public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements View.OnClickListener {
 	
-	public static final String TAG="DataDialogFragment";
+
 	DialogFragment datetopconfirmFragment;
+
+	public static final String TAG="DateDailyRepeatDiaogFragment";
+	
+
 	private Day aboutDay;
 	private  BasicTextView date_top_fifth;
 	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
@@ -45,10 +54,10 @@ public class DateTopDiaogFragment extends WheelDialogFragment implements View.On
 		setDialogStyle();
 		
 		aboutDay=new Day();
-		
-		
-		
-	    View layout = inflater.inflate(R.layout.date_top_left_layout, container, false);
+
+
+	    View layout = inflater.inflate(R.layout.date_daily_repeat_dialog, container, false);
+
 
 	    timeWheels = (LinearLayout)layout.findViewById(R.id.day_selector_wheel);
         int padding=TimeMasterApplication.getInstance().getScreen_W()/36;
@@ -128,7 +137,7 @@ public class DateTopDiaogFragment extends WheelDialogFragment implements View.On
 		    day_times.addClickingListener(clickListener);
 	    	
 		    space=(TimeWheelView)layout.findViewById(R.id.space);
-		    spaceAdapter=new TimeNumericWheelAdapter(getActivity(), 0, 100);
+		    spaceAdapter=new TimeNumericWheelAdapter(getActivity(), 0, 24);
 		    spaceAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		    spaceAdapter.setItemTextResource(R.id.numeric_text);
 		    spaceAdapter.setSuffix(":");
@@ -182,7 +191,7 @@ public class DateTopDiaogFragment extends WheelDialogFragment implements View.On
 		switch (v.getId()) {
 	    case R.id.date_top_fifth:
 	    	datetopconfirmFragment = new RepeatDialogFragment();
-	    	((RepeatDialogFragment) datetopconfirmFragment).changePage();
+	    	//((RepeatDialogFragment) datetopconfirmFragment).changePage();
 	    	datetopconfirmFragment.setShowsDialog(true);
 			showDialog(datetopconfirmFragment);
 			

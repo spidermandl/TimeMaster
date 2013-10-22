@@ -28,8 +28,6 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 		View.OnClickListener {
 	WheelDialogFragment topFragment;
 	public static final String tag = "RepeatDialogFragment";
-	//private int daytop=0;//0:每日1次；1：每日2次
-	//private int daycenter=0;//0:重复1次；1：重复2次
 	BasicTextView date_top_left,// 每日一次 按钮
 			date_top_center;// 重复一天按钮
 	DialogFragment datatopFragment,datecenterFragment;
@@ -139,12 +137,10 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 	//点击确认时 ，跳回本页面的改变。
 	  
       public void changePage(){
-    	  //Log.e(tag, "ok");
     	  boolean isSelected=true;
     	  date_top_left.setText(R.string.date_top_left_lunar2);
     	  date_top_center.setText(R.string.date_top_centerone_lunar2);
 	      dtmcurrent.isSelected();
-    	  //Log.v(tag, "done");
      	  dtlmcurrent.isSelected();
 		
       }
@@ -166,14 +162,14 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 		case R.id.date_top_left:
 
 			if (dtmcurrent.isSelected() && dtlmcurrent.isSelected()) {
-				datatopFragment = new DateTopDiaogFragment();
+				datatopFragment = new DateDailyRepeatDiaogFragment();
 				datatopFragment.setShowsDialog(true);
 				showDialog(datatopFragment);
-				//changPage();
+				
 			}
 			break;
 		case R.id.date_top_center:
-			datecenterFragment = new DateCenterDialogFragment();
+			datecenterFragment = new DateDaysRepeatDialogFragment();
 			datecenterFragment.setShowsDialog(true);
 			showDialog(datecenterFragment);
 			//changPage();
@@ -196,7 +192,7 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 		if (event.getAction() == MotionEvent.ACTION_UP) {
 			switch (v.getId()) {
 			case R.id.date_top_left:
-				topFragment = new DateTopDiaogFragment();
+				topFragment = new DateDailyRepeatDiaogFragment();
 
 				topFragment.setWheelInterface(new WheelResultInterface() {
 
