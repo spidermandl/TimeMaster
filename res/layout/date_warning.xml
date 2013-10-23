@@ -381,11 +381,13 @@
          <include
         android:visibility="invisible"
         layout="@layout/gridview"
+     
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/groupTwo"
         android:layout_below="@id/groupOne"
         android:layout_toLeftOf="@id/groupFour"
+        android:layout_marginTop="9dp"
        />
     </RelativeLayout>
 

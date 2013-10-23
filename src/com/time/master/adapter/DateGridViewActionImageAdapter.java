@@ -10,34 +10,37 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;  
 import android.widget.ImageView;  
     
- public class DateGridViewImageAdapter extends BaseAdapter  
+ public class DateGridViewActionImageAdapter extends BaseAdapter  
  {  
      // 定义Context  
      private Context     mContext;  
      // 定义整型数组 即图片源  
      private Integer[]   mImageIds   =   
      {   
-             R.drawable.imag1,   
-             R.drawable.imag2,   
-             R.drawable.imag3,   
-             R.drawable.imag4,   
-             R.drawable.imag5,   
-             R.drawable.imag6,
-             R.drawable.imag7,
-             R.drawable.imag8,
-             R.drawable.imag9,
-             R.drawable.imag10,
-             R.drawable.imag11,
-             R.drawable.imag12,
-             R.drawable.imag13,
-             R.drawable.imag14,
-             R.drawable.imag15,
-             R.drawable.imag16,
-             R.drawable.imag17,
+             R.drawable.img1,   
+             R.drawable.img2,   
+             R.drawable.img3,   
+             R.drawable.img4,   
+             R.drawable.img5,   
+             R.drawable.img6,
+             R.drawable.img7,
+             R.drawable.img8,
+             R.drawable.img9,
+             R.drawable.img10,
+             R.drawable.img11,
+             R.drawable.img12,
+             R.drawable.img13,
+             R.drawable.img14,
+             R.drawable.img15,
+             R.drawable.img16,
+             R.drawable.img17,
+             R.drawable.img18,
+             R.drawable.img19,
+             R.drawable.img20,
              
      };  
     
-     public DateGridViewImageAdapter(Context c)  
+     public DateGridViewActionImageAdapter(Context c)  
      {  
         mContext = c;  
     }  

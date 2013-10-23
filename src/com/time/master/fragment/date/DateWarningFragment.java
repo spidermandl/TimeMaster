@@ -7,6 +7,7 @@ import com.time.master.dialog.RepeatDialogFragment;
 import com.time.master.view.BasicTextView;
 import com.time.master.view.BasicViewGroup;
 import com.time.master.view.GapCleanViewGroup;
+import com.time.master.view.TimeMasterGirdView;
 
 import android.graphics.Color;
 import android.opengl.Visibility;
@@ -29,6 +30,7 @@ import android.widget.GridView;
 
 import com.time.master.R;
 import com.time.master.activity.FrameActivity;
+import com.time.master.adapter.DateGridViewActionImageAdapter;
 import com.time.master.adapter.DateGridViewImageAdapter;
 import com.time.master.dialog.*;
 import com.time.master.interfacer.WheelResultInterface;
@@ -43,7 +45,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 	DialogFragment warningFragment;
 	BasicViewGroup viewGroup;
 	GapCleanViewGroup gapCleanViewGroup;
-	GridView gridview1;
+	TimeMasterGirdView gridview1;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -92,8 +94,8 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 		warningMotion.setOnClickListener(this);
 		
 		viewGroup.cutDownBottomGap(1);
-		gridview1=(GridView)layout.findViewById(R.id.gridview);
-		gridview1.setAdapter(new DateGridViewImageAdapter(getActivity()));
+		gridview1=(TimeMasterGirdView)layout.findViewById(R.id.gridview);
+		
 		return layout;
 	}
 //	 void showDialog(DialogFragment dialogFragment) {
@@ -272,6 +274,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftSeven.setText(R.string.warning_icon_wordcolor);
 			gridview1.setVisibility(View.VISIBLE);
 			gapCleanViewGroup.setVisibility(View.INVISIBLE);
+			gridview1.setAdapter(new DateGridViewImageAdapter(getActivity()));
 			break;
 		case R.id.warning_motion:
 			leftOne.setText(R.string.warning_icon_sign);
@@ -283,6 +286,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftSeven.setText(R.string.warning_icon_wordcolor);
 			gridview1.setVisibility(View.VISIBLE);
 			gapCleanViewGroup.setVisibility(View.INVISIBLE);
+			gridview1.setAdapter(new DateGridViewActionImageAdapter(getActivity()));
 			break;
 		default:
 			break;
