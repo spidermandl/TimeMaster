@@ -14,7 +14,7 @@
             android:id="@+id/date_top_first"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="@drawable/daynumber"
+            android:background="@drawable/day_top_daynumber"
             android:gravity="center"
           
             android:textColor="#0000FF"

@@ -2,7 +2,6 @@ package com.time.master.dialog;
 
 import java.util.Calendar;
 
-import android.R.color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.Gravity;
@@ -15,11 +14,16 @@ import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
 import com.time.master.R;
-import com.time.master.dialog.TimeDialogFragment.DateModel;
 import com.time.master.view.BasicTextView;
 
 
-public class SelectDayFragment  extends DialogFragment implements OnClickListener{
+/***
+ * 重复选日期界面
+ * @author shaojunmei
+ *
+ */
+public class SelectDayFragment  extends BasicDialogFragment implements OnClickListener{
+
 	public static final String tag="RepeatDialogFragment";
 	private BasicTextView btvup;
 	private BasicTextView btvdown;
@@ -38,7 +42,9 @@ public class SelectDayFragment  extends DialogFragment implements OnClickListene
 	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+		
+		setDialogStyle();
+		
 		View layout=inflater.inflate(R.layout.repeat2, container, false);
 		cumonth=(BasicTextView)layout.findViewById(R.id.yue);
 		thirtyone=(BasicTextView )layout.findViewById(R.id.three_one);
@@ -86,8 +92,6 @@ public class SelectDayFragment  extends DialogFragment implements OnClickListene
 		  
 			cumonth.setText(months[month-1]+"月");
 			
-				
-				
 			break;
 			
 		case R.id.xia:

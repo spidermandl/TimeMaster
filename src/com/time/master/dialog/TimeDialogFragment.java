@@ -12,6 +12,7 @@ import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.TimeMasterApplication;
 import com.time.master.model.CacheModel;
 import com.time.master.tool.ChineseCalendar;
+import com.time.master.view.WheelItemTextView;
 import com.time.master.wheel.adapters.ArrayWheelAdapter;
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.adapters.TimeNumericWheelAdapter;
@@ -20,14 +21,12 @@ import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.TimeWheelView;
 import com.time.master.wheel.widget.WheelView;
-import android.text.InputType;
-import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,7 +36,9 @@ import android.widget.TextView;
  * @author duanlei
  *
  */
-public class TimeDialogFragment extends WheelDialogFragment implements View.OnClickListener{
+
+public class TimeDialogFragment extends WheelDialogFragment implements OnClickListener,OnTouchListener{
+
 	
 	public static final String TAG="TimeDialogFragment";
 	public static final int TIME_LIST_NUMBER=7;
@@ -72,9 +73,11 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 
         editText=(EditText)layout.findViewById(R.id.edit_date);
         confirm =(TextView)layout.findViewById(R.id.time_confirm);
+        
         timeWheels = (LinearLayout)layout.findViewById(R.id.date_selector_wheel);
         int padding=TimeMasterApplication.getInstance().getScreen_W()/36;
         timeWheels.setPadding(padding, 0, padding, padding);
+        
         mode=(TextView)layout.findViewById(R.id.time_type);
         mode.setOnClickListener(this);
         mode.setText(R.string.date_solar_lunar_2);
@@ -221,11 +224,12 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
         minAdapter = new NumericWheelAdapter(this.getActivity(), 0, 59, "%02d");
         minAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         minAdapter.setItemTextResource(R.id.numeric_text);
+        minAdapter.setTimeInterval(5);
         minute.setVisibleItems(TIME_LIST_NUMBER);
         minute.setViewAdapter(minAdapter);
         //minute.setBackground(R.drawable.wheel_right_bg);
         minute.setCyclic(true);
-        minute.setCurrentItem(model.minute);
+        minute.setCurrentItem(model.minute/5);
         minute.addScrollingListener(new OnWheelScrollListener() {
 			
 			@Override
@@ -236,17 +240,20 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 			
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
-				model.minute=wheel.getCurrentItem();
+				model.minute=wheel.getCurrentItem()*5;
 				editText.setText(getDateString());
 			}
 		});
+       
         minute.addClickingListener(clickListener);
         String str=getDateString();
         editText.setText(str);
 
         superInit();
+        
 		return layout;
 	}
+	
 	/**
 	 * 时间数据模型，年、月、日、小时、分钟
 	 */
@@ -288,6 +295,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 			
 		}
 	};
+	
 	private String getDateString(){
 
 		if(dayModel==0){
@@ -360,12 +368,12 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.time_type:
-			changeTimeStyle(dayModel);
-			break;
-		case R.id.edit_date:
 			this.dismiss();
 			dayModelStatus=dayModel;
 			showDialog(new WorldTimeDialogFragment());
+			break;
+		case R.id.edit_date:
+			changeTimeStyle(dayModel);
 			break;
 		default:
 			break;
@@ -428,6 +436,19 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 		CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 		model.currentTime=chineseCalendar;
 		
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.numeric_text:
+			
+			break;
+		default:
+			break;
+		}
+		return true;
 	}
 
 }

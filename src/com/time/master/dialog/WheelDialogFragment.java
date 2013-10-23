@@ -1,8 +1,11 @@
 package com.time.master.dialog;
 
+import java.util.HashMap;
+
 import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.tool.ChineseCalendar;
 
+import android.os.Bundle;
 import android.text.InputType;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,6 +26,7 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 	
 	private WheelResultInterface wheelInterface;
 	
+	
 	public void setWheelInterface(WheelResultInterface wheelInterface) {
 		this.wheelInterface = wheelInterface;
 	}
@@ -36,8 +40,6 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 		if(editText!=null){
 		    editText.setInputType(InputType.TYPE_NULL);
 		    editText.setText(getSelectedString());
-		}else{
-			return;
 		}
         
 		if(confirm!=null&&wheelInterface!=null){
@@ -45,10 +47,10 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 				
 				@Override
 				public void onClick(View v) {
-					pushConfirm();
-					
-					wheelInterface.getResult(getSelectedString());
 					WheelDialogFragment.this.dismiss();
+					
+					pushConfirm();
+					wheelInterface.getResult(getSelectedString());
 				}
 			});
 		}
@@ -62,4 +64,5 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
 }
