@@ -76,6 +76,7 @@ public class GroupSingleTouchViewGroup extends BasicViewGroup{
 		}
 	};
 	
+	/**单选按钮组接口*/
 	interface SingleSelectedInterface{
 		void setSingleView(LayoutStyleableInterface Ilayout);
 	}

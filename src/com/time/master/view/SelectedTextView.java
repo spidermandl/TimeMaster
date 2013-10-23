@@ -22,6 +22,14 @@ public class SelectedTextView extends BasicTextView {
 		super(context, attrs, defStyle);
 	}
 
+	/**…Ë÷√—°÷–◊¥Ã¨*/
+	public void setSelected(){
+		isSelected=true;
+		this.setBackgroundColor(0xFFFFFFFF);
+		if(singleSelectedInterface!=null){
+			singleSelectedInterface.setSingleView(this);
+		}
+	}
 	@Override
 	protected void actionDown() {
 		if(isSelected){

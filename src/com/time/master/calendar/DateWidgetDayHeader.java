@@ -17,9 +17,11 @@ import android.widget.LinearLayout.LayoutParams;
 public class DateWidgetDayHeader extends View {
 	// 字体大小
 	private final static int fTextSize = 22;
-	private Paint pt = new Paint();//定义一个属性画笔，实例化画笔对象pt
-	private RectF rect = new RectF();//定义一个矩形，并实例化矩形对象rect
-	private int iWeekDay = -1;//初始化当天礼拜几
+
+	private Paint pt = new Paint();
+	private RectF rect = new RectF();
+	private int iWeekDay = -1; 
+
 
 	public DateWidgetDayHeader(Context context, int iWidth, int iHeight) {//设置日历头部控件内容，宽和高的方法
 		super(context);//继承父类内容
@@ -51,10 +53,11 @@ public class DateWidgetDayHeader extends View {
 		pt.setColor(Constant.Calendar_WeekFontColor);//设置颜色
 		
 		// draw day name
-		final String sDayName = DayStyle.getWeekDayName(iWeekDay);//画出当天星期几
 
-		final int iPosX = (int) rect.left + ((int) rect.width() >> 1)//设置字体居中。精确的定位到方框中
 
+		final String sDayName = DayStyle.getWeekDayName(iWeekDay);   //根据日期  得到星期几
+
+		final int iPosX = (int) rect.left + ((int) rect.width() >> 1)
 				- ((int) pt.measureText(sDayName) >> 1);
 		final int iPosY = (int) (this.getHeight()
 				- (this.getHeight() - getTextHeight()) / 2 - pt

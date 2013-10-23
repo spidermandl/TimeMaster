@@ -113,13 +113,21 @@ public class DateWidgetDayCell extends View {
 			LinearGradient lGradBkg = null;
 
 			if (bFocused) {
-				lGradBkg = new LinearGradient(rect.left, 0, rect.right, 0,
-						0xffaa5500, 0xffffddbb, Shader.TileMode.CLAMP);
+				lGradBkg = new LinearGradient(rect.left, 0, rect.right, 
+
+0,
+						0xffaa5500, 0xffffddbb, 
+
+Shader.TileMode.CLAMP);
 			}
 
 			if (bSelected) {
-				lGradBkg = new LinearGradient(rect.left, 0, rect.right, 0,
-						0xff225599, 0xffbbddff, Shader.TileMode.CLAMP);
+				lGradBkg = new LinearGradient(rect.left, 0, rect.right, 
+
+0,
+						0xff225599, 0xffbbddff, 
+
+Shader.TileMode.CLAMP);
 			}
 
 			if (lGradBkg != null) {
