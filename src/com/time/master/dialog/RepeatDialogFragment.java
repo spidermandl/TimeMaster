@@ -19,9 +19,14 @@ import android.view.WindowManager.LayoutParams;
 
 /**
  * "重复"对话框界面
+<<<<<<< HEAD
+ * @author wanghuiming
+ *
+=======
  * 
  * @author wanghuiming
  * 
+>>>>>>> 8fa076907061732cb7a0875ee8bef7dc314099e2
  */
 public class RepeatDialogFragment extends BasicDialogFragment implements
 DialogInterface.OnClickListener,View.OnTouchListener, View.OnClickListener {

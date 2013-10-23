@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:background="#FFBCBCBC"
             android:gravity="center"
-            android:text="阳历/n持续"
+            android:text="阳历\n持续"
             layout:new_line="true"
             layout:width_multi="1" />
 
@@ -52,31 +52,31 @@
         android:layout_below="@id/duration_time_bar"
         android:orientation="horizontal" >
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/duration_line1"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/duration_line2"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/duration_line3"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/duration_line4"
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <com.time.master.wheel.widget.UIWheelView
+        <com.time.master.wheel.widget.TimeWheelView
             android:id="@+id/duration_line5"
             android:layout_width="0dip"
             android:layout_height="match_parent"
