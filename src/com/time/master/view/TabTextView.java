@@ -57,21 +57,26 @@ public class TabTextView extends SelectedTextView {
 	}
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		if(!hasRightEdge)
-		    this.setMeasuredDimension(gap+unit_width, (int)(unit_width*0.75)+(int)strokeWdith);
-		else
-			this.setMeasuredDimension(gap+unit_width+gap, (int)(unit_width*0.75)+(int)strokeWdith);
+//		if(!hasRightEdge)
+//		    this.setMeasuredDimension(gap+unit_width, (int)(unit_width*0.75)+(int)strokeWdith);
+//		else
+//			this.setMeasuredDimension(gap+unit_width+gap, (int)(unit_width*0.75)+(int)strokeWdith);
+		this.setMeasuredDimension(screen_width/5, (int)(unit_width*0.75)+(int)strokeWdith);
 		//super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}
 	
 	@Override
 	protected void onDraw(Canvas canvas) {
-		canvas.drawRect(0, 0, gap, unit_width*0.75f, marginPaint);//×ó±ß¿ò
-        canvas.drawRect(gap, 0, gap+unit_width, unit_width*0.75f, mPaint);//¾ÓÖÐ¾ØÐÎ
-		if(hasRightEdge)
-			canvas.drawRect(gap+unit_width, 0, gap+gap+unit_width, unit_width*0.75f, marginPaint);//ÓÒ±ß¿ò
-		
-		canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, unit_width+gap+(hasRightEdge?gap:0), unit_width*0.75f+strokeWdith/2, linePaint);
+//		canvas.drawRect(0, 0, gap, unit_width*0.75f, marginPaint);//×ó±ß¿ò
+//        canvas.drawRect(gap, 0, gap+unit_width, unit_width*0.75f, mPaint);//¾ÓÖÐ¾ØÐÎ
+//		if(hasRightEdge)
+//			canvas.drawRect(gap+unit_width, 0, gap+gap+unit_width, unit_width*0.75f, marginPaint);//ÓÒ±ß¿ò
+//		
+//		canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, unit_width+gap+(hasRightEdge?gap:0), unit_width*0.75f+strokeWdith/2, linePaint);
+		canvas.drawRect(0, 0, gap/2, unit_width*0.75f, marginPaint);//×ó±ß¿ò
+		canvas.drawRect(gap/2, 0, screen_width/5-gap/2, unit_width*0.75f, mPaint);//¾ÓÖÐ¾ØÐÎ
+		canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, unit_width*0.75f, marginPaint);//ÓÒ±ß¿ò
+		canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, screen_width/5, unit_width*0.75f+strokeWdith/2, linePaint);
 		super.onDraw(canvas);
 	}
 	
