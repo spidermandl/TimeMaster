@@ -203,6 +203,22 @@
 	<string name="date_saturday">周六</string>
 	<string name="date_sunday">周日</string>
 	
+	<string name="do_do">做</string>
+	<string name="date_yes">确认</string>
+	<string name="do_ge">隔</string>
+	<string name="do_del">删除</string>
+	<string name="do_next">下一个</string>
+	<string name="do_num0">0</string>
+	<string name="do_num1">1</string>
+	<string name="do_num2">2</string>
+	<string name="do_num3">3</string>
+	<string name="do_num4">4</string>
+	<string name="do_num5">5</string>
+	<string name="do_num6">6</string>
+	<string name="do_num7">7</string>
+	<string name="do_num8">8</string>
+	<string name="do_num9">9</string>
+	
 	<string name="warning_everytime">每次</string>
 	<string name="warning_advanced">提前1：30</string>
 	<string name="warning_add">添加</string>
