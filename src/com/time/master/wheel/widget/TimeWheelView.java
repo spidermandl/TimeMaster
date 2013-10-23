@@ -1,11 +1,13 @@
 package com.time.master.wheel.widget;
 
 import com.time.master.R;
+import com.time.master.view.WheelItemTextView;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.widget.LinearLayout;
 
 public class TimeWheelView extends WheelView {
 	
@@ -33,5 +35,5 @@ public class TimeWheelView extends WheelView {
 	protected void drawCenterRect(Canvas canvas) {
 		super.drawCenterRect(canvas);
 	}
-
+	
 }

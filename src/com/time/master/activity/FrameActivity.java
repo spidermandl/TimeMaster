@@ -62,8 +62,7 @@ public class FrameActivity extends FragmentActivity {
 			DialogFragment df=new LoadStaticDataFragment();
 			df.show(this.getSupportFragmentManager(), "dialog");
 		}
-		System.out.println("new");
-		System.out.println(TimeMasterHelper.getDataBasePath());
+		
     }
 
 //    TabHost.OnTabChangeListener tabChangeListener = new TabHost.OnTabChangeListener() {

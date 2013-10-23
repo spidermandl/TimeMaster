@@ -13,6 +13,7 @@ import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.TimeMasterApplication;
 import com.time.master.model.CacheModel;
 import com.time.master.tool.ChineseCalendar;
+import com.time.master.view.WheelItemTextView;
 import com.time.master.wheel.adapters.ArrayWheelAdapter;
 
 import com.time.master.wheel.adapters.NumericWheelAdapter;
@@ -25,8 +26,10 @@ import com.time.master.wheel.widget.WheelView;
 import android.text.InputType;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
@@ -40,7 +43,7 @@ import android.widget.TextView;
  * @author Desmond
  *
  */
-public class TimeDialogFragment extends WheelDialogFragment implements OnClickListener{
+public class TimeDialogFragment extends WheelDialogFragment implements OnClickListener,OnTouchListener{
 	
 	public static final String TAG="TimeDialogFragment";
 	public static final int TIME_LIST_NUMBER=7;
@@ -219,6 +222,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
         minAdapter = new NumericWheelAdapter(this.getActivity(), 0, 59, "%02d");
         minAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         minAdapter.setItemTextResource(R.id.numeric_text);
+        minAdapter.setTimeInterval(5);
         minute.setVisibleItems(TIME_LIST_NUMBER);
         minute.setViewAdapter(minAdapter);
         //minute.setBackground(R.drawable.wheel_right_bg);
@@ -238,12 +242,17 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 				editText.setText(getDateString());
 			}
 		});
+       
         minute.addClickingListener(clickListener);
+       
+    
         String str=getDateString();
         editText.setText(str);
         superInit();
+        
 		return layout;
 	}
+	
 	/**
 	 * 时间数据模型，年、月、日、小时、分钟
 	 */
@@ -421,6 +430,19 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 		CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 		model.currentTime=chineseCalendar;
 		
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.numeric_text:
+			
+			break;
+		default:
+			break;
+		}
+		return true;
 	}
 
 }
