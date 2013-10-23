@@ -8,7 +8,7 @@
         android:id="@+id/day"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#BFBFBF" >
+        android:background="#A8CA01" >
 
         <com.time.master.view.BasicTextView
             android:id="@+id/pmonth"
