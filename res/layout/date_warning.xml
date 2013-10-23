@@ -16,7 +16,7 @@
         android:background="#FFFF00"
         android:gravity="center"
         android:text="@string/warning_everytime"
-       layout:new_line="true"
+       	layout:new_line="true"
         layout:width_multi="1" />
         
         <com.time.master.view.BasicTextView
@@ -84,7 +84,7 @@
         android:background="#8EABFF"
         android:gravity="center"
         android:text="@string/warning_library"
-       layout:new_line="true"
+      	layout:new_line="true"
         layout:width_multi="1" />
         
         <com.time.master.view.BasicTextView
@@ -100,12 +100,14 @@
         layout:width_multi="3" 
         android:visibility="visible"
         />
-<!--  <include layout="@layout/gridview"
+        <!--  
+  		<include 
+     		layout="@layout/gridview"
             android:id="@+id/gridview1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"/>
-         --> 
+         -->
         
         <com.time.master.view.BasicTextView
         android:id="@+id/warning_ring"
