@@ -47,9 +47,8 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 	public static final int TIME_LIST_NUMBER = 7;
 	private int dayModel = 0;// 0:滚轮阳历；1：滚轮农历
 	private ChineseCalendar chineseCalendar;// 当前选中时间
-	private BasicTextView date_center_second,// 更换农阳历
-			date_center_first;// 确认
-	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
+	private BasicTextView date_center_second;// 更换农阳历
+			//date_center_first;// 确认
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +62,11 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 		setDialogStyle();
 
+		viewStatus=savedInstanceState;
+		if(viewStatus==null){
+			viewStatus=new Bundle();
+		}
+		
 		model = new DateModel();
 		calendar = Calendar.getInstance();
 		model.year = calendar.get(Calendar.YEAR);
@@ -79,10 +83,6 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 		mode = (TextView) layout.findViewById(R.id.date_center_second);
 		mode.setOnClickListener(this);
-
-		date_center_first = (BasicTextView) layout
-				.findViewById(R.id.date_center_first);
-		date_center_first.setOnClickListener(this);
 
 		mode.setText(R.string.date_top_center_lunar_2);
 		mode.setBackgroundColor(Color.YELLOW);
@@ -225,6 +225,8 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			}
 		});
 		totalcount.addClickingListener(clickListener);
+
+		confirm = (BasicTextView) layout.findViewById(R.id.date_center_first);
 		superInit();
 		return layout;
 	}
@@ -246,7 +248,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 	}
 
 	/**
-	 * 时间数据模型，年、月、日、小时、分钟
+	 * 时间数据模型，年、月、日、天数、总次数
 	 */
 	class DateModel {
 		int year, month, day, daynumber, totalcount;
@@ -271,8 +273,6 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 	@Override
 	protected void pushConfirm() {
-		CacheModel model = TimeMasterApplication.getInstance().getCacheModel();
-		model.currentTime = chineseCalendar;
 
 	}
 
@@ -419,21 +419,16 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		case R.id.date_center_second:
 			changeTimeStyle(dayModel);
 			break;
-		case R.id.date_center_first:
-			datecenterconfirmFragment = new RepeatDialogFragment();
-			//((RepeatDialogFragment) datecenterconfirmFragment).changePage();
-			datecenterconfirmFragment.setShowsDialog(true);
-			showDialog(datecenterconfirmFragment);
-
-			break;
 		default:
 			break;
 		}
 	}
-
+	
 	@Override
 	protected String getSelectedString() {
-		// TODO Auto-generated method stub
+		TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache.put(
+				TAG, 
+				"重复"+(model.daynumber)+"天\n至"+model.year+"/"+model.month+"/"+model.day);
 		return null;
 	}
 }
