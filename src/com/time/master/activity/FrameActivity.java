@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
+import com.time.master.database.TimeMasterHelper;
 import com.time.master.dialog.LoadStaticDataFragment;
 
 import com.time.master.view.TabTextView;
@@ -12,36 +13,27 @@ import android.content.res.Configuration;
 
 import android.os.Bundle;
 
-
-import android.content.Context;
-
 import android.support.v4.app.DialogFragment;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
-import android.widget.TextView;
 
-/*
- * TabHost
- * @author lanhaibin
+/***
  * 
+ * @author desmond.duan
+ *
  */
 public class FrameActivity extends FragmentActivity {
 
 	HashMap<Integer, Fragment> fragmentCache=new HashMap<Integer, Fragment>();
-
+    
 	TabHost tabHost;
-	
+	 
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.frame_main);
@@ -98,7 +90,6 @@ public class FrameActivity extends FragmentActivity {
 			DialogFragment df=new LoadStaticDataFragment();
 			df.show(this.getSupportFragmentManager(), "dialog");
 		}
-		System.out.println("new");
 		
     }
     /**fragment«–ªª*/

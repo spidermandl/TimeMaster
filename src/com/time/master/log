@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 10-21 00:12:03.478: E/Trace(32669): error opening trace file: No such file or directory (2)
 10-21 00:12:03.769: E/AndroidRuntime(32669): FATAL EXCEPTION: main
 10-21 00:12:03.769: E/AndroidRuntime(32669): java.lang.RuntimeException: Unable to start activity ComponentInfo{com.time.master/com.time.master.activity.FrameActivity}: java.lang.IllegalStateException: The specified child already has a parent. You must call removeView() on the child's parent first.
@@ -25,3 +26,50 @@
 10-21 00:12:03.769: E/AndroidRuntime(32669): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1101)
 10-21 00:12:03.769: E/AndroidRuntime(32669): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2311)
 10-21 00:12:03.769: E/AndroidRuntime(32669): 	... 11 more
+=======
+10-23 09:25:59.182: E/Trace(4673): error opening trace file: No such file or directory (2)
+10-23 09:27:01.989: E/AndroidRuntime(4673): FATAL EXCEPTION: main
+10-23 09:27:01.989: E/AndroidRuntime(4673): java.lang.NullPointerException
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.os.Bundle.putAll(Bundle.java:303)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at com.time.master.dialog.BasicDialogFragment.onSaveInstanceState(BasicDialogFragment.java:71)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.support.v4.app.FragmentManagerImpl.saveFragmentBasicState(FragmentManager.java:1574)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.support.v4.app.FragmentManagerImpl.saveAllState(FragmentManager.java:1644)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.support.v4.app.FragmentActivity.onSaveInstanceState(FragmentActivity.java:499)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.app.Activity.performSaveInstanceState(Activity.java:1170)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.app.Instrumentation.callActivityOnSaveInstanceState(Instrumentation.java:1317)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.app.ActivityThread.performStopActivityInner(ActivityThread.java:3470)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.app.ActivityThread.handleStopActivity(ActivityThread.java:3529)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.app.ActivityThread.access$900(ActivityThread.java:151)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1357)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.os.Looper.loop(Looper.java:155)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at android.app.ActivityThread.main(ActivityThread.java:5511)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at java.lang.reflect.Method.invokeNative(Native Method)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at java.lang.reflect.Method.invoke(Method.java:511)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:1029)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:796)
+10-23 09:27:01.989: E/AndroidRuntime(4673): 	at dalvik.system.NativeStart.main(Native Method)
+10-23 09:27:06.264: E/Trace(4917): error opening trace file: No such file or directory (2)
+10-23 09:28:47.542: E/Trace(5093): error opening trace file: No such file or directory (2)
+10-23 09:29:24.862: E/AndroidRuntime(5093): FATAL EXCEPTION: main
+10-23 09:29:24.862: E/AndroidRuntime(5093): java.lang.NullPointerException
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.os.Bundle.putAll(Bundle.java:303)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at com.time.master.dialog.BasicDialogFragment.onSaveInstanceState(BasicDialogFragment.java:71)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.support.v4.app.FragmentManagerImpl.saveFragmentBasicState(FragmentManager.java:1574)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.support.v4.app.FragmentManagerImpl.saveAllState(FragmentManager.java:1644)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.support.v4.app.FragmentActivity.onSaveInstanceState(FragmentActivity.java:499)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.app.Activity.performSaveInstanceState(Activity.java:1170)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.app.Instrumentation.callActivityOnSaveInstanceState(Instrumentation.java:1317)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.app.ActivityThread.performStopActivityInner(ActivityThread.java:3470)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.app.ActivityThread.handleStopActivity(ActivityThread.java:3529)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.app.ActivityThread.access$900(ActivityThread.java:151)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1357)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.os.Handler.dispatchMessage(Handler.java:99)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.os.Looper.loop(Looper.java:155)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at android.app.ActivityThread.main(ActivityThread.java:5511)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at java.lang.reflect.Method.invokeNative(Native Method)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at java.lang.reflect.Method.invoke(Method.java:511)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:1029)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:796)
+10-23 09:29:24.862: E/AndroidRuntime(5093): 	at dalvik.system.NativeStart.main(Native Method)
+>>>>>>> master

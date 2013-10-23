@@ -31,6 +31,9 @@ public class TimeMasterApplication extends Application {
 	 */
 	HashMap<Integer,SoftReference<Bitmap>> bitmapCache=new HashMap<Integer, SoftReference<Bitmap>>();
     
+	/**
+	 * 时间缓存
+	 */
 	private CacheModel cacheModel;
 	/***数据库已经初始化*/
 	private boolean dataInitialized=true;
