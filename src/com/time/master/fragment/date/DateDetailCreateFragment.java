@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.HashMap;
 
 import com.time.master.R;
+import com.time.master.activity.FrameActivity;
+import com.time.master.dialog.*;
 import com.time.master.TimeMasterApplication;
 import com.time.master.dialog.DurationTimeDialogFragment;
 import com.time.master.dialog.HumanDialogFragment;
@@ -53,11 +55,12 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 	              planPeroidSelector,
 	              lengthSelector,
 	              endSelector;//结束时间输入框
-	BasicTextView dateRepeat;
 
 	BasicTextView 	startClick,//开始按钮
 	                tvdate, // 日期 /倒计 按钮
-			        tvduration;// 占用/期间 按钮
+			        tvduration,// 占用/期间 按钮
+                    dateRepeat,//重复按钮
+                    dateWarning;//提醒按钮
 
 	private ChineseCalendar startChineseDate,//开始时间
 	                        endChineseDate;//结束时间
@@ -73,7 +76,6 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			Bundle savedInstanceState) {
 
 		View layout = inflater.inflate(R.layout.date_detail_create_page, container, false);
-
 		dateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_start);
 		dateSelector.setInputType(InputType.TYPE_NULL);
 		dateSelector.setOnTouchListener(this);
@@ -103,6 +105,9 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
 
 		dateRepeat.setOnClickListener(this);
+		
+		dateWarning=(BasicTextView)layout.findViewById(R.id.plan_warning);
+		dateWarning.setOnClickListener(this);
 
 		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
 		tvdate.setOnClickListener(this);
@@ -240,11 +245,18 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
+		Class T;
+		FrameActivity activity=(FrameActivity)getActivity();
 		switch (view.getId()) {
 		case R.id.plan_repeat:
 			repeatFragment = new RepeatDialogFragment();
 			repeatFragment.setShowsDialog(true);
 			showDialog(repeatFragment);
+			break;
+		case R.id.plan_warning:
+//			warningFragment=new DateWarningFragment();
+			T=DateWarningFragment.class;
+			activity.showNext(this.getId(),T, R.layout.date_warning);			
 			break;
 		case R.id.plan_model:
 			CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
