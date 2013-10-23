@@ -421,10 +421,9 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			break;
 		case R.id.date_center_first:
 			datecenterconfirmFragment = new RepeatDialogFragment();
-			//((RepeatDialogFragment) datecenterconfirmFragment).changePage();
 			datecenterconfirmFragment.setShowsDialog(true);
 			showDialog(datecenterconfirmFragment);
-
+			//((RepeatDialogFragment) datecenterconfirmFragment).changePage();
 			break;
 		default:
 			break;

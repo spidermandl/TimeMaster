@@ -191,10 +191,9 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 		switch (v.getId()) {
 	    case R.id.date_top_fifth:
 	    	datetopconfirmFragment = new RepeatDialogFragment();
-	    	//((RepeatDialogFragment) datetopconfirmFragment).changePage();
 	    	datetopconfirmFragment.setShowsDialog(true);
 			showDialog(datetopconfirmFragment);
-			
+			//((RepeatDialogFragment) datetopconfirmFragment).changePage();
 			
 			break;
 		default:
