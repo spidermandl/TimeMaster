@@ -63,7 +63,7 @@ public class FrameActivity extends FragmentActivity {
         tabHost.addTab(tabHost.newTabSpec("date").setIndicator(dateTab).setContent(R.id.date_fragment));
         tabHost.addTab(tabHost.newTabSpec("list").setIndicator(listTab).setContent(R.id.issue_list_fragment));
         tabHost.addTab(tabHost.newTabSpec("new").setIndicator(newTab).setContent(R.id.new_issue_fragment));
-        tabHost.setCurrentTabByTag("generation");
+        tabHost.setCurrentTabByTag("date");
         
         TabWidget tabWidget = tabHost.getTabWidget();  
         // 标签的个数  
