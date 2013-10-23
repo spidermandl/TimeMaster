@@ -5,6 +5,8 @@ import com.time.master.activity.FrameActivity;
 import com.time.master.dialog.DateWarningDialogFragment;
 import com.time.master.dialog.RepeatDialogFragment;
 import com.time.master.view.BasicTextView;
+import com.time.master.view.BasicViewGroup;
+import com.time.master.view.GapCleanViewGroup;
 
 import android.graphics.Color;
 import android.opengl.Visibility;
@@ -27,6 +29,7 @@ import android.widget.GridView;
 
 import com.time.master.R;
 import com.time.master.activity.FrameActivity;
+import com.time.master.adapter.DateGridViewImageAdapter;
 import com.time.master.dialog.*;
 import com.time.master.interfacer.WheelResultInterface;
 
@@ -38,13 +41,17 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 	centerSeven, centerEight;
 	BasicTextView leftOne,leftTwo,leftThree,leftFour,leftFive,leftSix,leftSeven;
 	DialogFragment warningFragment;
-//	View gridview1;
+	BasicViewGroup viewGroup;
+	GapCleanViewGroup gapCleanViewGroup;
+	GridView gridview1;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		View layout = inflater.inflate(R.layout.date_warning, container, false);
 		
+		viewGroup=(BasicViewGroup)layout.findViewById(R.id.groupOne);
+		gapCleanViewGroup=(GapCleanViewGroup)layout.findViewById(R.id.groupThree);
 		warningEverytime=(BasicTextView)layout.findViewById(R.id.warning_everytime);
 		warningAdd=(BasicTextView)layout.findViewById(R.id.warning_add);
 		warningCompose=(BasicTextView)layout.findViewById(R.id.warning_compose);
@@ -84,8 +91,9 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 		warningIcon.setOnClickListener(this);
 		warningMotion.setOnClickListener(this);
 		
-//		gridview1=(View)layout.findViewById(R.id.gridview1);
-		
+		viewGroup.cutDownBottomGap(1);
+		gridview1=(GridView)layout.findViewById(R.id.gridview);
+		gridview1.setAdapter(new DateGridViewImageAdapter(getActivity()));
 		return layout;
 	}
 //	 void showDialog(DialogFragment dialogFragment) {
@@ -143,14 +151,8 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftFive.setText(R.string.warning_man_sound);
 			leftSix.setText(R.string.warning_female_sound);
 			leftSeven.setText(R.string.warning_child_sound);
-			centerOne.setVisibility(View.VISIBLE);
-			centerTwo.setVisibility(View.VISIBLE);
-			centerThree.setVisibility(View.VISIBLE);
-			centerFour.setVisibility(View.VISIBLE);
-			centerFive.setVisibility(View.VISIBLE);
-			centerSix.setVisibility(View.VISIBLE);
-			centerSeven.setVisibility(View.VISIBLE);
-			centerEight.setVisibility(View.VISIBLE);
+			gridview1.setVisibility(View.INVISIBLE);
+			gapCleanViewGroup.setVisibility(View.VISIBLE);
 			break;
 			
 		case R.id.warning_music:			
@@ -178,6 +180,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			centerSix.setTextColor(Color.parseColor("#000000"));
 			centerSeven.setTextColor(Color.parseColor("#000000"));
 			centerEight.setTextColor(Color.parseColor("#000000"));
+			gridview1.setVisibility(View.INVISIBLE);
 			leftOne.setText(R.string.warning_collect);
 			leftTwo.setText(R.string.warning_download);
 			leftThree.setText(R.string.warning_audition);
@@ -185,14 +188,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftFive.setText(R.string.warning_man_sound);
 			leftSix.setText(R.string.warning_female_sound);
 			leftSeven.setText(R.string.warning_child_sound);
-			centerOne.setVisibility(View.VISIBLE);
-			centerTwo.setVisibility(View.VISIBLE);
-			centerThree.setVisibility(View.VISIBLE);
-			centerFour.setVisibility(View.VISIBLE);
-			centerFive.setVisibility(View.VISIBLE);
-			centerSix.setVisibility(View.VISIBLE);
-			centerSeven.setVisibility(View.VISIBLE);
-			centerEight.setVisibility(View.VISIBLE);
+			gapCleanViewGroup.setVisibility(View.VISIBLE);
 			break;
 
 		case R.id.warning_pronunciation:
@@ -227,14 +223,8 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftFive.setText(R.string.warning_man_sound);
 			leftSix.setText(R.string.warning_female_sound);
 			leftSeven.setText(R.string.warning_child_sound);
-			centerOne.setVisibility(View.VISIBLE);
-			centerTwo.setVisibility(View.VISIBLE);
-			centerThree.setVisibility(View.VISIBLE);
-			centerFour.setVisibility(View.VISIBLE);
-			centerFive.setVisibility(View.VISIBLE);
-			centerSix.setVisibility(View.VISIBLE);
-			centerSeven.setVisibility(View.VISIBLE);
-			centerEight.setVisibility(View.VISIBLE);
+			gridview1.setVisibility(View.INVISIBLE);
+			gapCleanViewGroup.setVisibility(View.VISIBLE);
 			break;
 		case R.id.warning_vibrate:
 			centerOne.setText(R.string.warning_vibrate_one);
@@ -268,24 +258,11 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftFive.setText(R.string.warning_man_sound);
 			leftSix.setText(R.string.warning_female_sound);
 			leftSeven.setText(R.string.warning_child_sound);
-			centerOne.setVisibility(View.VISIBLE);
-			centerTwo.setVisibility(View.VISIBLE);
-			centerThree.setVisibility(View.VISIBLE);
-			centerFour.setVisibility(View.VISIBLE);
-			centerFive.setVisibility(View.VISIBLE);
-			centerSix.setVisibility(View.VISIBLE);
-			centerSeven.setVisibility(View.VISIBLE);
-			centerEight.setVisibility(View.VISIBLE);
+			gridview1.setVisibility(View.INVISIBLE);
+			gapCleanViewGroup.setVisibility(View.VISIBLE);
 			break;
 		case R.id.warning_icon:
-//			T=DateWarningIcon1Fragment.class;
-//			activity.showNext(this.getId(),T, R.layout.date_warning_icon1);	
-//			warningFragment=new DateWarningDialogFragment();
-//			warningFragment.setShowsDialog(true);
-//			showDialog(warningFragment);
-			
-//			activity.showNext(this.getId(),T, R.layout.date_warning_icon);			
-			
+		
 			leftOne.setText(R.string.warning_icon_sign);
 			leftTwo.setText(R.string.warning_icon_geometry);
 			leftThree.setText(R.string.warning_icon_mask);
@@ -293,15 +270,8 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftFive.setText(R.string.warning_icon_backgroundcolor);
 			leftSix.setText(R.string.warning_icon_framecolor);
 			leftSeven.setText(R.string.warning_icon_wordcolor);
-//			gridview1.setVisibility(View.VISIBLE);
-			centerOne.setVisibility(View.INVISIBLE);
-			centerTwo.setVisibility(View.INVISIBLE);
-			centerThree.setVisibility(View.INVISIBLE);
-			centerFour.setVisibility(View.INVISIBLE);
-			centerFive.setVisibility(View.INVISIBLE);
-			centerSix.setVisibility(View.INVISIBLE);
-			centerSeven.setVisibility(View.INVISIBLE);
-			centerEight.setVisibility(View.INVISIBLE);
+			gridview1.setVisibility(View.VISIBLE);
+			gapCleanViewGroup.setVisibility(View.INVISIBLE);
 			break;
 		case R.id.warning_motion:
 			leftOne.setText(R.string.warning_icon_sign);
@@ -311,14 +281,8 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftFive.setText(R.string.warning_icon_backgroundcolor);
 			leftSix.setText(R.string.warning_icon_framecolor);
 			leftSeven.setText(R.string.warning_icon_wordcolor);
-			centerOne.setVisibility(View.INVISIBLE);
-			centerTwo.setVisibility(View.INVISIBLE);
-			centerThree.setVisibility(View.INVISIBLE);
-			centerFour.setVisibility(View.INVISIBLE);
-			centerFive.setVisibility(View.INVISIBLE);
-			centerSix.setVisibility(View.INVISIBLE);
-			centerSeven.setVisibility(View.INVISIBLE);
-			centerEight.setVisibility(View.INVISIBLE);
+			gridview1.setVisibility(View.VISIBLE);
+			gapCleanViewGroup.setVisibility(View.INVISIBLE);
 			break;
 		default:
 			break;
