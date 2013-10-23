@@ -14,6 +14,7 @@ public class SelectedTextView extends BasicTextView {
 	private GroupSingleTouchViewGroup.SingleSelectedInterface singleSelectedInterface;
 	
 	
+	
 	public SelectedTextView(Context context) {
 		super(context);
 	}	
@@ -35,6 +36,7 @@ public class SelectedTextView extends BasicTextView {
 				singleSelectedInterface.setSingleView(this);
 				Log.e("SelectedTextView", "actionDown");
 			}
+			
 		}
 		
 		isSelected=isSelected?false:true;
@@ -45,6 +47,7 @@ public class SelectedTextView extends BasicTextView {
 	
 	public void setSingleSelectedInterface(GroupSingleTouchViewGroup.SingleSelectedInterface singleSelectedInterface) {
 		this.singleSelectedInterface = singleSelectedInterface;
-	}
+		
 	
+}
 }

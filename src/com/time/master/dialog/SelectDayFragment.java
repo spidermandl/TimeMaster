@@ -18,14 +18,15 @@ import com.time.master.R;
 import com.time.master.dialog.TimeDialogFragment.DateModel;
 import com.time.master.view.BasicTextView;
 
+
 public class SelectDayFragment  extends DialogFragment implements OnClickListener{
 	public static final String tag="RepeatDialogFragment";
 	private BasicTextView btvup;
 	private BasicTextView btvdown;
 	private BasicTextView cumonth;
-	private BasicTextView thirtyone;
-	private BasicTextView thirty;
-	private BasicTextView tweentynine;
+	private BasicTextView  thirtyone;
+	private BasicTextView  thirty;
+	private BasicTextView  tweentynine;
 	Calendar calendar;
 	int year,month,day,maxDay;
 	static private final String[] months={"一","二","三","四","五","六","七","八","九","十","十一","十二"}; 
@@ -40,9 +41,9 @@ public class SelectDayFragment  extends DialogFragment implements OnClickListene
 		// TODO Auto-generated method stub
 		View layout=inflater.inflate(R.layout.repeat2, container, false);
 		cumonth=(BasicTextView)layout.findViewById(R.id.yue);
-		thirtyone=(BasicTextView)layout.findViewById(R.id.three_one);
-		thirty=(BasicTextView)layout.findViewById(R.id.three_zero);
-		tweentynine=(BasicTextView)layout.findViewById(R.id.two_nine);
+		thirtyone=(BasicTextView )layout.findViewById(R.id.three_one);
+		thirty=(BasicTextView )layout.findViewById(R.id.three_zero);
+		tweentynine=(BasicTextView )layout.findViewById(R.id.two_nine);
 		
 		
 		calendar = Calendar.getInstance();

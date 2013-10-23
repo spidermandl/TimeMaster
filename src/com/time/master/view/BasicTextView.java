@@ -27,6 +27,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 	protected boolean isSelected=false;
 
 	protected int status=0;//״ֵ̬
+	private GroupSingleSelectedViewGroup.SingleSelectedInterface singleSelectedInterface;
 	
 	public BasicTextView(Context context) {
 		super(context);
@@ -77,6 +78,11 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		// TODO Auto-generated method stub
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}
+	public void setSingleSelectedInterface(GroupSingleSelectedViewGroup.SingleSelectedInterface singleSelectedInterface) {
+		this.singleSelectedInterface = singleSelectedInterface;
+		
+	
+}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
