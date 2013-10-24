@@ -3,10 +3,7 @@ package com.time.master.view;
 import com.time.master.TimeMasterApplication;
 import com.time.master.interfacer.LayoutStyleableInterface;
 
-import android.R.integer;
 import android.content.Context;
-import android.content.res.Configuration;
-import android.text.style.LineHeightSpan.WithDensity;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +44,7 @@ public class BasicViewGroup extends ViewGroup{
 	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		init();
 		int num=this.getChildCount();
 		int line=0;
 		int width=0;

@@ -126,7 +126,7 @@ public class FrameActivity extends FragmentActivity {
     public void onConfigurationChanged(Configuration newConfig) {
     	// TODO Auto-generated method stub
     	super.onConfigurationChanged(newConfig);
-    	TimeMasterApplication.getInstance().setScreenMode(newConfig.orientation);
+    	//TimeMasterApplication.getInstance().setScreenMode(newConfig.orientation);
     	tabHost.invalidate();
     	
     }
