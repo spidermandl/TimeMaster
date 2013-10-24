@@ -1,5 +1,6 @@
 package com.time.master.view;
 
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -12,6 +13,7 @@ public class SelectedTextView extends BasicTextView {
 	
 	private GroupSingleTouchViewGroup.SingleSelectedInterface singleSelectedInterface;
 	
+	
 	public SelectedTextView(Context context) {
 		super(context);
 	}	
@@ -22,6 +24,14 @@ public class SelectedTextView extends BasicTextView {
 		super(context, attrs, defStyle);
 	}
 
+	/**…Ë÷√—°÷–◊¥Ã¨*/
+	public void setSelected(){
+		isSelected=true;
+		this.setBackgroundColor(0xFFFFFFFF);
+		if(singleSelectedInterface!=null){
+			singleSelectedInterface.setSingleView(this);
+		}
+	}
 	@Override
 	protected void actionDown() {
 		if(isSelected){
@@ -44,4 +54,5 @@ public class SelectedTextView extends BasicTextView {
 	public void setSingleSelectedInterface(GroupSingleTouchViewGroup.SingleSelectedInterface singleSelectedInterface) {
 		this.singleSelectedInterface = singleSelectedInterface;
 	}
+	
 }

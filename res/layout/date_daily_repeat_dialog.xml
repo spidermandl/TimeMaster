@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/time_wheel_dialog_bg" >
+
+    <com.time.master.view.BasicViewGroup
+        android:id="@+id/day_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <com.time.master.view.BasicTextView
+            
+            android:id="@+id/date_top_first"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/day_top_daynumber"
+            android:gravity="center"
+          
+            android:textColor="#0000FF"
+            layout:new_line="true"
+            layout:width_multi="1"/>
+
+            
+        <com.time.master.view.BasicTextView
+            android:id="@+id/date_top_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:text="@string/date_top_second"
+            android:textColor="#000000"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/date_top_third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:text="@string/date_top_third"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/date_top_forth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:text="@string/date_top_forth"
+            android:textColor="#000000"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        <com.time.master.view.BasicTextView
+            android:id="@+id/date_top_fifth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF0000"
+            android:gravity="center"
+            android:text="@string/date_top_fifth"
+            android:textColor="#0000FF"
+            layout:new_line="false"
+            layout:width_multi="1" />
+
+        </com.time.master.view.BasicViewGroup>
+    
+    <!-- /////////////////////////////////////////////////// -->
+
+
+    <LinearLayout
+        android:id="@+id/day_selector_wheel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/day_top"
+        android:orientation="horizontal" >
+        <com.time.master.wheel.widget.TimeWheelView
+            android:id="@+id/day"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.time.master.wheel.widget.TimeWheelView
+            android:id="@+id/add_times"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <com.time.master.wheel.widget.TimeWheelView
+            android:id="@+id/day_times"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+       <com.time.master.wheel.widget.TimeWheelView
+            android:id="@+id/space"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <com.time.master.wheel.widget.TimeWheelView
+            android:id="@+id/whatever"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</RelativeLayout>

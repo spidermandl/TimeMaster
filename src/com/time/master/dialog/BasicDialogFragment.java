@@ -2,10 +2,12 @@ package com.time.master.dialog;
 
 import com.time.master.R;
 
+import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
@@ -15,7 +17,12 @@ import android.view.WindowManager.LayoutParams;
  *
  */
 public abstract class BasicDialogFragment extends DialogFragment {
-
+	
+	/**
+	 * 按键操作缓存
+	 */
+	protected Bundle viewStatus;
+	
 	protected void showDialog(DialogFragment dialogFragment) {
 
 		// DialogFragment.show() will take care of adding the fragment
@@ -48,4 +55,26 @@ public abstract class BasicDialogFragment extends DialogFragment {
 		window.setAttributes(para);
 		window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND| WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 	}
+	
+	/**
+	 * 设置按钮选中状态
+	 * @param view
+	 */
+	protected void setViewStatus(View view){
+		if(view.isSelected())
+			viewStatus.putBoolean(view.getId()+"", true);
+		else
+			viewStatus.putBoolean(view.getId()+"", false);
+	}
+    @Override
+    public void onSaveInstanceState(Bundle arg0) {
+    	if(arg0==null)
+    		arg0=viewStatus;
+    	else{
+    		if(viewStatus!=null)
+    			arg0.putAll(viewStatus);
+    	}
+    	super.onSaveInstanceState(arg0);
+    }
+    
 }

@@ -4,7 +4,6 @@ import com.time.master.TimeMasterApplication;
 import com.time.master.interfacer.LayoutStyleableInterface;
 
 import android.content.Context;
-import android.content.res.Configuration;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,7 @@ public class BasicViewGroup extends ViewGroup{
 	current_margin_top=0,//当前放置y坐标
 	current_margin_left=0,//当前放置x坐标
 	screen_mode; //1代表竖屏 ， 2代表横屏
-	
+	int gapNumber=0;
 	public BasicViewGroup(Context context) {
 		super(context);
 		init();
@@ -48,16 +47,23 @@ public class BasicViewGroup extends ViewGroup{
 		init();
 		int num=this.getChildCount();
 		int line=0;
+		int width=0;
+		int max_width=0;//计算最大宽度的行
 		for(int i=0;i<num;i++){
 			View view=this.getChildAt(i);
 			LayoutStyleableInterface styleable=(LayoutStyleableInterface)view;
 			if(styleable.isNewLine()){
+				if(width>max_width)
+					max_width=width;
+				width=0;
 				line++;
 			}
+			width+=styleable.getMultiWidth()*unit_width+styleable.getMultiWidth()*gap;
 		}
-		int height=line==0?0:(int)(line*unit_width*0.75+gap*(line+1));
+		max_width=max_width<width?width+gap:max_width+gap;
+		int height=line==0?0:(int)(line*unit_width*0.75+gap*(line+1-gapNumber));
 		
-		setMeasuredDimension(TimeMasterApplication.getInstance().getScreen_W(),height);
+		setMeasuredDimension(max_width,height);
 		//super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}
 	
@@ -75,6 +81,7 @@ public class BasicViewGroup extends ViewGroup{
 			ViewGroup.LayoutParams layoutParams=view.getLayoutParams();
 			layoutParams.width=styleable.getMultiWidth()*unit_width+(styleable.getMultiWidth()-1)*gap;
 			layoutParams.height=(int)(unit_width*0.75);
+			
 			view.setLayoutParams(layoutParams);
 			/***设置子view 大小，子view的onMeasure方法被回调 **/
 			view.measure(
@@ -102,7 +109,9 @@ public class BasicViewGroup extends ViewGroup{
 		gap=screen_width/36;
 		current_margin_top=(int)(-0.75*unit_width);
 	}
-	
+	public void cutDownBottomGap(int num){
+		this.gapNumber=num;
+	}
 	
 
 }
