@@ -249,6 +249,7 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		switch (v.getId()) {
 		case R.id.do_do1:
 		    do1.setInputType(InputType.TYPE_NULL);
+//		    do1.setInputType(getId());
 			do1.setFocusable(true);
 //			do1.setFocusableInTouchMode(true);
 			do1.requestFocus();
@@ -264,6 +265,7 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 				break;
 		case R.id.do_ge1:
 			ge1.setInputType(InputType.TYPE_NULL);
+//			ge1.setInputType(getId());
 			ge1.setFocusable(true);
 			ge1.requestFocus();
 				break;
