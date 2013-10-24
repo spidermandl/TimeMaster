@@ -20,14 +20,9 @@ import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.TimeWheelView;
 import com.time.master.wheel.widget.WheelView;
-import android.text.InputType;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -428,6 +423,12 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 		CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 		model.currentTime=chineseCalendar;
 		
+	}
+
+	@Override
+	protected int getSelectedInt() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

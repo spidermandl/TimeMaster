@@ -183,4 +183,10 @@ public class LocationDialogFragment extends WheelDialogFragment {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	protected int getSelectedInt() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

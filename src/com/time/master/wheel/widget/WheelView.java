@@ -403,6 +403,7 @@ public class WheelView extends View {
 		setCurrentItem(index, false);
 	}	
 	
+		
 	/**
 	 * Tests if wheel is cyclic. That means before the 1st item there is shown the last one
 	 * @return true if wheel is cyclic

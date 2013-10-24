@@ -9,7 +9,6 @@ import java.io.InputStreamReader;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 
 import com.time.master.R;
 import com.time.master.dialog.*;
@@ -26,13 +25,9 @@ import com.time.master.tool.ChineseCalendar;
 import com.time.master.view.BasicEditText;
 import com.time.master.view.BasicTextView;
 
-import android.content.Context;
-import android.R.string;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
-import android.os.SystemClock;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -45,7 +40,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
-import android.webkit.DateSorter;
 
 /**
  * 日---新增选项界面
@@ -59,12 +53,12 @@ public class DateDetailCreateFragment extends Fragment implements
 	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimePeroidFragment;
 	DialogFragment repeatFragment;
 
-	BasicEditText dateSelector,//开始时间输入框
+	BasicEditText startDateSelector,//开始时间输入框
 	              locationSelector,
 	              humanSelector,
 	              planPeroidSelector,//用时：0天1小时0分
 	              lengthSelector,
-	              endSelector;//结束时间输入框
+	              endDateSelector;//结束时间输入框
 	BasicTextView dateRepeat,
 	              plan_previou;// 承前按钮;
 
@@ -88,10 +82,10 @@ public class DateDetailCreateFragment extends Fragment implements
 				container, false);
 
 
-		dateSelector = (BasicEditText) layout
+		startDateSelector = (BasicEditText) layout
 				.findViewById(R.id.plan_time_start);
-		dateSelector.setInputType(InputType.TYPE_NULL);
-		dateSelector.setOnTouchListener(this);
+		startDateSelector.setInputType(InputType.TYPE_NULL);
+		startDateSelector.setOnTouchListener(this);
 
 
 		locationSelector = (BasicEditText) layout
@@ -109,9 +103,9 @@ public class DateDetailCreateFragment extends Fragment implements
  */
 		lengthSelector = (BasicEditText) layout.findViewById(R.id.plan_length);
 
-		endSelector = (BasicEditText) layout.findViewById(R.id.plan_time_end);
-		endSelector.setInputType(InputType.TYPE_NULL);
-		endSelector.setOnTouchListener(this);
+		endDateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_end);
+		endDateSelector.setInputType(InputType.TYPE_NULL);
+		endDateSelector.setOnTouchListener(this);
 		
 		startClick = (BasicTextView) layout.findViewById(R.id.plan_start);
 		startClick.setOnClickListener(this);
@@ -185,7 +179,7 @@ public class DateDetailCreateFragment extends Fragment implements
 
 					@Override
 					public void getResult(String result) {
-						dateSelector.setText(result);
+						startDateSelector.setText(result);
 						CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 						startChineseDate=model.currentTime;
 						model.startTime=startChineseDate;
@@ -202,7 +196,7 @@ public class DateDetailCreateFragment extends Fragment implements
 
 					@Override
 					public void getResult(String result) {
-						endSelector.setText(result);
+						endDateSelector.setText(result);
 						CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 						endChineseDate=model.currentTime;
 						model.endTime=endChineseDate;
@@ -276,12 +270,12 @@ public class DateDetailCreateFragment extends Fragment implements
 			CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 			if (viewStatus.get(R.id.plan_model)) {
 				viewStatus.put(R.id.plan_model, false);
-				dateSelector.setText(getChineseDateString(model.startTime));
-				endSelector.setText(getChineseDateString(model.endTime));
+				startDateSelector.setText(getChineseDateString(model.startTime));
+				endDateSelector.setText(getChineseDateString(model.endTime));
 			} else {
 				viewStatus.put(R.id.plan_model, true);
-				dateSelector.setText(getCountdownDateString(model.startTime));
-				endSelector.setText(getCountdownDateString(model.endTime));
+				startDateSelector.setText(getCountdownDateString(model.startTime));
+				endDateSelector.setText(getCountdownDateString(model.endTime));
 			}
 
 			break;
@@ -329,8 +323,8 @@ public class DateDetailCreateFragment extends Fragment implements
 			model=TimeMasterApplication.getInstance().getCacheModel();
 			if(model.startTime==null)
 				model.startTime=new ChineseCalendar(new Date());
-			if(dateSelector.getText().toString()==null||dateSelector.getText().toString().equals("")){//开始按钮为空
-				dateSelector.setText(getChineseDateString(model.startTime));
+			if(startDateSelector.getText().toString()==null||startDateSelector.getText().toString().equals("")){//开始按钮为空
+				startDateSelector.setText(getChineseDateString(model.startTime));
 			}
 			BasicTextView v=(BasicTextView)view;
 			switch (v.getStatus()){
@@ -348,10 +342,10 @@ public class DateDetailCreateFragment extends Fragment implements
 				
 				if(model.endTime==null||(model.startTime.getTimeInMillis()+model.tickingTime)>model.endTime.getTimeInMillis()){
 					model.endTime=new ChineseCalendar(new Date(model.startTime.getTimeInMillis()+model.tickingTime));
-					endSelector.setText(getChineseDateString(model.endTime));
+					endDateSelector.setText(getChineseDateString(model.endTime));
 				}else{
-					if(endSelector.getText().toString()==null||endSelector.getText().toString().equals("")){
-						endSelector.setText(getChineseDateString(model.endTime));
+					if(endDateSelector.getText().toString()==null||endDateSelector.getText().toString().equals("")){
+						endDateSelector.setText(getChineseDateString(model.endTime));
 					}
 				}
 				break;
@@ -372,8 +366,8 @@ public class DateDetailCreateFragment extends Fragment implements
 			try {
 				FileOutputStream out = new FileOutputStream(file);
 				String t = lengthSelector.getText().toString();
-				String now = dateSelector.getText().toString();
-				String end = endSelector.getText().toString();
+				String now = startDateSelector.getText().toString();
+				String end = endDateSelector.getText().toString();
 				out.write((now + ";" + t + ";" + end).getBytes());
 
 			} catch (Exception e) {

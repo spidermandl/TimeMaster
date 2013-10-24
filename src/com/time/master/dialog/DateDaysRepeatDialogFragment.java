@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import android.R.integer;
 import android.graphics.Color;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
@@ -17,8 +18,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.time.master.R;
+import com.time.master.R.string;
 import com.time.master.TimeMasterApplication;
 import com.time.master.dialog.TimeDialogFragment.DateModel;
+import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.model.CacheModel;
 import com.time.master.tool.ChineseCalendar;
 import com.time.master.view.BasicTextView;
@@ -47,9 +50,9 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 	public static final int TIME_LIST_NUMBER = 7;
 	private int dayModel = 0;// 0:滚轮阳历；1：滚轮农历
 	private ChineseCalendar chineseCalendar;// 当前选中时间
-	private BasicTextView date_center_second,// 更换农阳历
-			date_center_first;// 确认
-	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
+	private BasicTextView date_center_second;// 更换农阳历
+
+	// date_center_first;// 确认
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,11 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			Bundle savedInstanceState) {
 
 		setDialogStyle();
+
+		viewStatus = savedInstanceState;
+		if (viewStatus == null) {
+			viewStatus = new Bundle();
+		}
 
 		model = new DateModel();
 		calendar = Calendar.getInstance();
@@ -79,11 +87,14 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 		mode = (TextView) layout.findViewById(R.id.date_center_second);
 		mode.setOnClickListener(this);
-
-		date_center_first = (BasicTextView) layout
-				.findViewById(R.id.date_center_first);
-		date_center_first.setOnClickListener(this);
-
+		
+		int daynum = daynumber.getCurrentItem(TimeMasterApplication
+				.getInstance().getCacheModel().tmpResultsCache
+				.get(model.daynumber));
+		if (daynum != 0) {
+			daynumber.setCurrentItem(model.daynumber);
+		}
+		
 		mode.setText(R.string.date_top_center_lunar_2);
 		mode.setBackgroundColor(Color.YELLOW);
 
@@ -187,18 +198,22 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		daynumberAdapter.setItemTextResource(R.id.numeric_text);
 		daynumber.setVisibleItems(TIME_LIST_NUMBER);
 		daynumber.setViewAdapter(daynumberAdapter);
-		daynumber.setCurrentItem(1);
+		daynumber.setCurrentItem(model.daynumber);
 		daynumber.addScrollingListener(new OnWheelScrollListener() {
 
 			@Override
 			public void onScrollingStarted(WheelView wheel) {
+
 			}
 
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
+
 				model.daynumber = wheel.getCurrentItem();
+
 				changDay();
 			}
+
 		});
 		daynumber.addClickingListener(clickListener);
 
@@ -225,6 +240,8 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			}
 		});
 		totalcount.addClickingListener(clickListener);
+
+		confirm = (BasicTextView) layout.findViewById(R.id.date_center_first);
 		superInit();
 		return layout;
 	}
@@ -246,10 +263,11 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 	}
 
 	/**
-	 * 时间数据模型，年、月、日、小时、分钟
+	 * 时间数据模型，年、月、日、天数、总次数
 	 */
 	class DateModel {
-		int year, month, day, daynumber, totalcount;
+		int year, month, day, totalcount;
+		int daynumber;
 	}
 
 	DateModel model;
@@ -271,8 +289,6 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 	@Override
 	protected void pushConfirm() {
-		CacheModel model = TimeMasterApplication.getInstance().getCacheModel();
-		model.currentTime = chineseCalendar;
 
 	}
 
@@ -419,12 +435,27 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		case R.id.date_center_second:
 			changeTimeStyle(dayModel);
 			break;
+
 		case R.id.date_center_first:
+
 			datecenterconfirmFragment = new RepeatDialogFragment();
 			datecenterconfirmFragment.setShowsDialog(true);
+			((WheelDialogFragment) datecenterconfirmFragment)
+					.setWheelInterface(new WheelResultInterface() {
+
+						@Override
+						public void getResult(String result) {
+							daynumber.getCurrentItem(TimeMasterApplication
+									.getInstance().getCacheModel().tmpResultsCache
+									.get(model.daynumber));
+
+						}
+
+					});
 			showDialog(datecenterconfirmFragment);
-			//((RepeatDialogFragment) datecenterconfirmFragment).changePage();
+
 			break;
+
 		default:
 			break;
 		}
@@ -432,7 +463,18 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 	@Override
 	protected String getSelectedString() {
-		// TODO Auto-generated method stub
+		TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache
+				.put(TAG, "重复" + (model.daynumber) + "天\n至" + model.year + "/"
+						+ model.month + "/" + model.day);
+
 		return null;
+	}
+
+	@Override
+	protected int getSelectedInt() {
+		TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache
+				.get(model.daynumber);
+
+		return 0;
 	}
 }

@@ -1,5 +1,7 @@
 package com.time.master.model;
 
+import java.util.HashMap;
+
 import com.time.master.tool.ChineseCalendar;
 /**
  * 应用缓存模型
@@ -14,5 +16,9 @@ public class CacheModel {
 	
 	public long tickingTime=0;//计时时间，long型
 
+   
+     public HashMap<String, String> tmpResultsCache=new HashMap<String, String>();//dialog 返回结果数据缓存
     
+
+   
 }
