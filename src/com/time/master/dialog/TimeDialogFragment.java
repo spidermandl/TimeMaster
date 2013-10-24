@@ -3,7 +3,6 @@ package com.time.master.dialog;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
-
 import android.R.integer;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,8 +12,8 @@ import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.TimeMasterApplication;
 import com.time.master.model.CacheModel;
 import com.time.master.tool.ChineseCalendar;
+import com.time.master.view.WheelItemTextView;
 import com.time.master.wheel.adapters.ArrayWheelAdapter;
-
 import com.time.master.wheel.adapters.NumericWheelAdapter;
 import com.time.master.wheel.adapters.TimeNumericWheelAdapter;
 import com.time.master.wheel.adapters.TimeNumericWheelAdapter.WeekendTextInterface;
@@ -22,32 +21,33 @@ import com.time.master.wheel.widget.OnWheelClickedListener;
 import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.TimeWheelView;
 import com.time.master.wheel.widget.WheelView;
-import android.text.InputType;
-import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
  * 时间选择器
- * @author Desmond
+ * @author duanlei
  *
  */
-public class TimeDialogFragment extends WheelDialogFragment implements OnClickListener{
+
+public class TimeDialogFragment extends WheelDialogFragment implements OnClickListener,OnTouchListener{
+
 	
 	public static final String TAG="TimeDialogFragment";
 	public static final int TIME_LIST_NUMBER=7;
-	private int dayModel=0;//0:滚轮阳历；1：滚轮农历
+	public static int dayModelStatus;
+	private  int  dayModel=0;//0:滚轮阳历；1：滚轮农历
 	private ChineseCalendar chineseCalendar;//当前选中时间
 	
 	HashMap<Integer, Boolean> viewStatus=new HashMap<Integer, Boolean>();
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -73,6 +73,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 
         editText=(EditText)layout.findViewById(R.id.edit_date);
         confirm =(TextView)layout.findViewById(R.id.time_confirm);
+        
         timeWheels = (LinearLayout)layout.findViewById(R.id.date_selector_wheel);
         int padding=TimeMasterApplication.getInstance().getScreen_W()/36;
         timeWheels.setPadding(padding, 0, padding, padding);
@@ -92,6 +93,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
         yearAdapter = new NumericWheelAdapter(this.getActivity(), model.year-5000, model.year+5000);
         yearAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         yearAdapter.setItemTextResource(R.id.numeric_text);
+        
         year.setVisibleItems(TIME_LIST_NUMBER);
         year.setViewAdapter(yearAdapter);
         //year.setBackground(R.drawable.wheel_left_bg);
@@ -136,6 +138,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				model.month=wheel.getCurrentItem()+1;
+
 				if(dayModel==0){
 			        Calendar calendar = Calendar.getInstance();
 			        calendar.set(Calendar.YEAR, model.year);
@@ -152,6 +155,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 			        model.day=curDay;
 				}
 				freshDayWheel();
+
 				editText.setText(getDateString());
 //				int max=calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 //				dayAdapter=new NumericWheelAdapter(DateFragment.this.getActivity(), 1,max);
@@ -220,11 +224,12 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
         minAdapter = new NumericWheelAdapter(this.getActivity(), 0, 59, "%02d");
         minAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
         minAdapter.setItemTextResource(R.id.numeric_text);
+        minAdapter.setTimeInterval(5);
         minute.setVisibleItems(TIME_LIST_NUMBER);
         minute.setViewAdapter(minAdapter);
         //minute.setBackground(R.drawable.wheel_right_bg);
         minute.setCyclic(true);
-        minute.setCurrentItem(model.minute);
+        minute.setCurrentItem(model.minute/5);
         minute.addScrollingListener(new OnWheelScrollListener() {
 			
 			@Override
@@ -235,17 +240,20 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 			
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
-				model.minute=wheel.getCurrentItem();
+				model.minute=wheel.getCurrentItem()*5;
 				editText.setText(getDateString());
 			}
 		});
+       
         minute.addClickingListener(clickListener);
-        
         String str=getDateString();
         editText.setText(str);
+
         superInit();
+        
 		return layout;
 	}
+	
 	/**
 	 * 时间数据模型，年、月、日、小时、分钟
 	 */
@@ -259,6 +267,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 	ArrayWheelAdapter<String> monthArrayWheelAdapter,dayArrayWheelAdapter;
 	TimeNumericWheelAdapter dayAdapter,hourAdapter;
 	LinearLayout timeWheels;
+
 	OnWheelClickedListener clickListener=new OnWheelClickedListener() {
 		
 		@Override
@@ -286,7 +295,9 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 			
 		}
 	};
+	
 	private String getDateString(){
+
 		if(dayModel==0){
 			chineseCalendar.set(ChineseCalendar.YEAR, model.year);
 			chineseCalendar.set(ChineseCalendar.MONTH, model.month-1);
@@ -343,6 +354,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 		}
 		
 	}
+
 	@Override
 	protected String getSelectedString() {
 		return chineseCalendar.get(ChineseCalendar.YEAR)+"/"
@@ -356,11 +368,12 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.time_type:
-			changeTimeStyle(dayModel);
+			this.dismiss();
+			dayModelStatus=dayModel;
+			showDialog(new WorldTimeDialogFragment());
 			break;
 		case R.id.edit_date:
-			this.dismiss();
-			showDialog(new WorldTimeDialogFragment());
+			changeTimeStyle(dayModel);
 			break;
 		default:
 			break;
@@ -423,6 +436,19 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 		CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 		model.currentTime=chineseCalendar;
 		
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.numeric_text:
+			
+			break;
+		default:
+			break;
+		}
+		return true;
 	}
 
 }
