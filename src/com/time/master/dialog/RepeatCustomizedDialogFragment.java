@@ -19,8 +19,10 @@ import android.support.v4.app.DialogFragment;
 import android.text.InputType;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
@@ -28,7 +30,7 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class RepeatCustomizedDialogFragment extends BasicDialogFragment implements OnClickListener{
+public class RepeatCustomizedDialogFragment extends BasicDialogFragment implements OnClickListener, OnTouchListener{
 	public static final String tag="DoDialogFragment";
 	BasicTextView doNext,doConfirm,num0,num1,num2,num3,num4,num5,num6,num7,num8,num9;
 	EditText do1,do2,do3,ge1,ge2,ge3;
@@ -69,12 +71,13 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		num8=(BasicTextView)layout.findViewById(R.id.do_num8);
 		num9=(BasicTextView)layout.findViewById(R.id.do_num9);
 		
-		do1.setOnClickListener(this);	
-		do2.setOnClickListener(this);
-		do3.setOnClickListener(this);
-		ge1.setOnClickListener(this);
-		ge2.setOnClickListener(this);
-		ge3.setOnClickListener(this);
+		do1.setOnTouchListener(this);	
+		do2.setOnTouchListener(this);
+		do3.setOnTouchListener(this);
+		ge1.setOnTouchListener(this);
+		ge2.setOnTouchListener(this);
+		ge3.setOnTouchListener(this);
+		
 		doConfirm.setOnClickListener(this);
 		doNext.setOnClickListener(this);
 		num0.setOnClickListener(this);
@@ -95,16 +98,16 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		list.add(do3);
 		list.add(ge3);
 		
-		linkedList.add(num0);
-		linkedList.add(num1);
-		linkedList.add(num2);
-		linkedList.add(num3);
-		linkedList.add(num4);
-		linkedList.add(num5);
-		linkedList.add(num6);
-		linkedList.add(num7);
-		linkedList.add(num8);
-		linkedList.add(num9);
+//		linkedList.add(num0);
+//		linkedList.add(num1);
+//		linkedList.add(num2);
+//		linkedList.add(num3);
+//		linkedList.add(num4);
+//		linkedList.add(num5);
+//		linkedList.add(num6);
+//		linkedList.add(num7);
+//		linkedList.add(num8);
+//		linkedList.add(num9);
 		
 		return layout;
 	}
@@ -187,8 +190,8 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 				break;
 		case R.id.do_num3:
 //			onChange(R.id.do_num3);
-			list.get(index).setText(string);
 			string+=(String) num3.getText();
+			list.get(index).setText(string);
 				break;
 		case R.id.do_num4:
 //			onChange(R.id.do_num4);
@@ -221,24 +224,7 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 			list.get(index).setText(string);
 				break;
 				
-		case R.id.do_do1:
-		    do1.setInputType(InputType.TYPE_NULL);
-				break;
-		case R.id.do_do2:
-			do2.setInputType(InputType.TYPE_NULL);
-				break;
-		case R.id.do_do3:
-			do3.setInputType(InputType.TYPE_NULL);
-				break;
-		case R.id.do_ge1:
-			ge1.setInputType(InputType.TYPE_NULL);
-				break;
-		case R.id.do_ge2:
-			ge2.setInputType(InputType.TYPE_NULL);
-				break;
-		case R.id.do_ge3:
-			ge3.setInputType(InputType.TYPE_NULL);
-				break;
+		
 				
 		case R.id.do_next:
 			index+=1;
@@ -255,6 +241,44 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		default:
 			break;
 		}
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.do_do1:
+		    do1.setInputType(InputType.TYPE_NULL);
+			do1.setFocusable(true);
+//			do1.setFocusableInTouchMode(true);
+			do1.requestFocus();
+				break;
+		case R.id.do_do2:
+			do2.setInputType(InputType.TYPE_NULL);
+			do2.setFocusable(true);
+			do2.requestFocus();
+				break;
+		case R.id.do_do3:
+			do3.setInputType(InputType.TYPE_NULL);
+			do3.setFocusable(true);
+				break;
+		case R.id.do_ge1:
+			ge1.setInputType(InputType.TYPE_NULL);
+			ge1.setFocusable(true);
+			ge1.requestFocus();
+				break;
+		case R.id.do_ge2:
+			ge2.setInputType(InputType.TYPE_NULL);
+			ge2.setFocusable(true);
+				break;
+		case R.id.do_ge3:
+			ge3.setInputType(InputType.TYPE_NULL);
+			ge3.setFocusable(true);
+				break;
+		default:
+			break;
+		}
+		return false;
 	}
 	 
 }
