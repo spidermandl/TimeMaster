@@ -15,6 +15,7 @@ import android.view.WindowManager.LayoutParams;
 
 import com.time.master.R;
 import com.time.master.view.BasicTextView;
+import com.time.master.view.SelectedTextView;
 
 
 /***
@@ -28,8 +29,8 @@ public class SelectDayFragment  extends BasicDialogFragment implements OnClickLi
 	private BasicTextView btvup;
 	private BasicTextView btvdown;
 	private BasicTextView cumonth;
-	private BasicTextView  thirtyone;
-	private BasicTextView  thirty;
+	private SelectedTextView  thirtyone;
+	private SelectedTextView  thirty;
 	private BasicTextView  tweentynine;
 	Calendar calendar;
 	int year,month,day,maxDay;
@@ -47,9 +48,9 @@ public class SelectDayFragment  extends BasicDialogFragment implements OnClickLi
 		
 		View layout=inflater.inflate(R.layout.repeat2, container, false);
 		cumonth=(BasicTextView)layout.findViewById(R.id.yue);
-		thirtyone=(BasicTextView )layout.findViewById(R.id.three_one);
-		thirty=(BasicTextView )layout.findViewById(R.id.three_zero);
-		tweentynine=(BasicTextView )layout.findViewById(R.id.two_nine);
+		thirtyone=(SelectedTextView)layout.findViewById(R.id.three_one);
+		thirty=(SelectedTextView)layout.findViewById(R.id.three_zero);
+		tweentynine=(SelectedTextView)layout.findViewById(R.id.two_nine);
 		
 		
 		calendar = Calendar.getInstance();

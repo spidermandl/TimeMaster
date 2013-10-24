@@ -8,74 +8,81 @@
         android:id="@+id/day"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#A8CA01" >
+         android:background="#BFBFBF"  >
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/pmonth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="隔月"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="2"
             layout:new_line="true"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/emonth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="每月"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="2"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/pyear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="隔年"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="2"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/eyear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="每年"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="2"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/conform"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="确认"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="2"
             layout:new_line="false"
             layout:width_multi="2" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="1"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="true"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/six"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="6"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
@@ -86,6 +93,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="11"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
@@ -96,6 +104,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="16"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
@@ -106,6 +115,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="21"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
@@ -116,6 +126,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="26"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
@@ -131,62 +142,68 @@
             layout:width_multi="1" />
         <!-- ////////////////////////////////////////////////////////////// -->
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="2"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="true"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="7"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/one_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="12"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/one_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="17"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/two_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="22"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/two_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="27"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
@@ -201,123 +218,135 @@
             layout:width_multi="1" />
         <!-- ////////////////////////////////////////////////////////////// -->
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="3"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="true"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/eight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="8"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/ten_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="13"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/ten_eight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="18"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/two_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="23"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/two_eight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="28"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
         <!-- ////////////////////////////////////////////////////////////// -->
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="4"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="true"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/nine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="9"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/one_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="14"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/one_nine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="19"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/two_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="24"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/two_nine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="29"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
@@ -333,72 +362,79 @@
             layout:width_multi="1" />
         <!-- ////////////////////////////////////////////////////////////// -->
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="5"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="true"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/ten"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="10"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/ten_five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="15"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/two_ten"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="20"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/two_five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="25"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/three_zero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="30"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
 
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
             android:id="@+id/three_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="31"
+            layout:default_bg="0x0095dcfd"
             layout:attr_group="3"
             layout:new_line="false"
             layout:width_multi="1" />
