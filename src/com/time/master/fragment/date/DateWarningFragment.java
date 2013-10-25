@@ -32,7 +32,6 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 	centerSeven, centerEight;
 	BasicTextView warningAdvanced;
 	BasicTextView leftOne,leftTwo,leftThree,leftFour,leftFive,leftSix,leftSeven;
-	BasicEditText leadTimeEditText; 
 	DialogFragment warningFragment,durationTimeDialogFragment;
 	private ChineseCalendar startChineseDate,//开始时间
     endChineseDate;//结束时间
@@ -50,7 +49,6 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 		viewGroup=(BasicViewGroup)layout.findViewById(R.id.groupOne);
 		gapCleanViewGroup=(GapCleanViewGroup)layout.findViewById(R.id.groupThree);
 		warningEverytime=(BasicTextView)layout.findViewById(R.id.warning_everytime);
-		leadTimeEditText=(BasicEditText)layout.findViewById(R.id.warning_advanced);
 		warningAdd=(BasicTextView)layout.findViewById(R.id.warning_add);
 		warningCompose=(BasicTextView)layout.findViewById(R.id.warning_compose);
 		warningConfirm=(BasicTextView)layout.findViewById(R.id.warning_confirm);
@@ -123,7 +121,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 //		FrameActivity activity=(FrameActivity)getActivity();
 		switch (v.getId()) {
 		case R.id.warning_add:
-			leadTimeEditText.setText(" ");
+			warningAdvanced.setText(" ");
 			
 			break;
 		case R.id.warning_ring:

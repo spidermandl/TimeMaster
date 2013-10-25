@@ -26,7 +26,7 @@
                 layout:new_line="true"
                 layout:width_multi="1" />
 
-            <com.time.master.view.BasicEditText
+            <com.time.master.view.BasicTextView
                 android:id="@+id/warning_advanced"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
