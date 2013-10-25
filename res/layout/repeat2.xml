@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" >
-    
-    <com.time.master.view.BasicviewGroup2
+
+    <com.time.master.view.GroupSingleSelectedView
         xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
         android:id="@+id/day"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-         android:background="#BFBFBF"  >
+        android:background="#BFBFBF" >
 
         <com.time.master.view.SelectedTextView
             android:id="@+id/pmonth"
@@ -16,8 +16,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="隔月"
-            layout:default_bg="0xffeeee22"
             layout:attr_group="2"
+            layout:default_bg="0xffeeee22"
             layout:new_line="true"
             layout:width_multi="1" />
 
@@ -27,8 +27,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="每月"
-            layout:default_bg="0xffeeee22"
             layout:attr_group="2"
+            layout:default_bg="0xffeeee22"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -38,8 +38,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="隔年"
-            layout:default_bg="0xffeeee22"
             layout:attr_group="2"
+            layout:default_bg="0xffeeee22"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -49,8 +49,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="每年"
-            layout:default_bg="0xffeeee22"
             layout:attr_group="2"
+            layout:default_bg="0xffeeee22"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -58,9 +58,9 @@
             android:id="@+id/conform"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="#ff3333"
             android:gravity="center"
             android:text="确认"
-            android:background="#ff3333"
             layout:new_line="false"
             layout:width_multi="2" />
 
@@ -70,8 +70,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="1"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="true"
             layout:width_multi="1" />
 
@@ -81,8 +81,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="6"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -92,8 +92,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="11"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -103,8 +103,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="16"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -114,8 +114,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="21"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -125,8 +125,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="26"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -147,8 +147,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="2"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="true"
             layout:width_multi="1" />
 
@@ -158,8 +158,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="7"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -169,8 +169,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="12"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -180,8 +180,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="17"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -191,8 +191,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="22"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -202,8 +202,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="27"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -223,8 +223,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="3"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="true"
             layout:width_multi="1" />
 
@@ -234,8 +234,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="8"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -245,8 +245,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="13"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -256,8 +256,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="18"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -267,8 +267,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="23"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -278,8 +278,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="28"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
         <!-- ////////////////////////////////////////////////////////////// -->
@@ -290,8 +290,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="4"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="true"
             layout:width_multi="1" />
 
@@ -301,8 +301,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="9"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -312,8 +312,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="14"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -323,8 +323,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="19"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -334,8 +334,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="24"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -345,8 +345,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="29"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -367,8 +367,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="5"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="true"
             layout:width_multi="1" />
 
@@ -378,8 +378,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="10"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -389,8 +389,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="15"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -400,8 +400,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="20"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -411,8 +411,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="25"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -422,8 +422,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="30"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
 
@@ -433,11 +433,10 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="31"
-            layout:default_bg="0xff95dcfd"
             layout:attr_group="3"
+            layout:default_bg="0xff95dcfd"
             layout:new_line="false"
             layout:width_multi="1" />
-    </com.time.master.view.BasicviewGroup2>
-
+    </com.time.master.view.GroupSingleSelectedView>
 
 </RelativeLayout>

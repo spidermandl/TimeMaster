@@ -31,7 +31,7 @@ public class SelectDayFragment  extends BasicDialogFragment implements OnClickLi
 	private BasicTextView cumonth;
 	private SelectedTextView  thirtyone;
 	private SelectedTextView  thirty;
-	private BasicTextView  tweentynine;
+	private SelectedTextView  tweentynine;
 	Calendar calendar;
 	int year,month,day,maxDay;
 	static private final String[] months={"一","二","三","四","五","六","七","八","九","十","十一","十二"}; 
