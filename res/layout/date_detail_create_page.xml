@@ -91,7 +91,7 @@
         layout:new_line="false"
         layout:width_multi="3" />
 
-    <com.time.master.view.BasicTextView
+    <com.time.master.view.SwtchTextView
         android:id="@+id/plan_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

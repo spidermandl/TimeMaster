@@ -32,7 +32,7 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
     // Values
 
     protected int minValue;
-    private int maxValue;
+    protected int maxValue;
     private int timeInterval=1;
 
   // format

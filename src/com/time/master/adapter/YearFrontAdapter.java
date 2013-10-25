@@ -51,8 +51,10 @@ public class YearFrontAdapter extends BaseAdapter {
 	}
 
 	/**
-	 * 当 ListView每显示一个条目的时候就会调用适配器中的getView方法 该方法有三个参数 第一个参数是 position 或得位置
-	 * 第二个参数是 就是对第一屏数据进行了缓存,显示第二屏。 就会重用缓存的View显示背后所绑定的数据 第三个参数 parent就是父窗体了
+	 * 当 ListView每显示一个条目的时候就会调用适配器中的getView方法 该方法有三个参数
+	 *  第一个参数：是 position 或得位置
+	 *  第二个参数：是 就是对第一屏数据进行了缓存,显示第二屏。 就会重用缓存的View显示背后所绑定的数据
+	 *  第三个参数：parent就是父窗体了
 	 */
 
 	@Override

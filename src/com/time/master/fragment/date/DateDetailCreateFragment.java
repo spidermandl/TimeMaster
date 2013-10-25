@@ -1,12 +1,14 @@
 package com.time.master.fragment.date;
 
-import java.util.Calendar;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.HashMap;
 import com.time.master.R;
 import com.time.master.activity.FrameActivity;
-import com.time.master.dialog.*;
 import com.time.master.TimeMasterApplication;
+import com.time.master.dialog.DateTimeWarningDialogFragment;
 import com.time.master.dialog.DurationTimeDialogFragment;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
@@ -21,8 +23,6 @@ import com.time.master.view.BasicTextView;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
-import android.os.SystemClock;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -35,7 +35,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
-import android.webkit.DateSorter;
 
 /**
  * 日---新增选项界面
@@ -43,22 +42,27 @@ import android.webkit.DateSorter;
  * @author Desmond
  * 
  */
-public class DateDetailCreateFragment extends Fragment implements OnTouchListener,android.view.View.OnClickListener{
+
+public class DateDetailCreateFragment extends Fragment implements
+		OnTouchListener, android.view.View.OnClickListener {
 	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimePeroidFragment;
-	DialogFragment repeatFragment;
-	BasicEditText dateSelector,//开始时间输入框
+	DialogFragment repeatFragment,timewarningFragment;
+
+	BasicEditText startDateSelector,//开始时间输入框
 	              locationSelector,
 	              humanSelector,
-	              planPeroidSelector,
+	              planPeroidSelector,//用时：0天1小时0分
 	              lengthSelector,
-	              endSelector;//结束时间输入框
+	              endDateSelector;//结束时间输入框
 
 	BasicTextView 	startClick,//开始按钮
 	                tvdate, // 日期 /倒计 按钮
 			        tvduration,// 占用/期间 按钮
                     dateRepeat,//重复按钮
-                    dateWarning;//提醒按钮
-
+                    dateWarning,//提醒按钮
+	                plan_previou,// 承前按钮
+					plan_type;// 类按钮
+					
 	private ChineseCalendar startChineseDate,//开始时间
 	                        endChineseDate;//结束时间
 	
@@ -67,34 +71,48 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 	
 	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
 
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View layout = inflater.inflate(R.layout.date_detail_create_page, container, false);
-		dateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_start);
-		dateSelector.setInputType(InputType.TYPE_NULL);
-		dateSelector.setOnTouchListener(this);
 
-	    locationSelector = (BasicEditText) layout.findViewById(R.id.plan_location);
-		locationSelector.setInputType(InputType.TYPE_NULL);
+		View layout = inflater.inflate(R.layout.date_detail_create_page,container, false);
+
+
+		startDateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_start);
+		startDateSelector.setInputType(InputType.TYPE_NULL);
+		startDateSelector.setOnTouchListener(this);
+
+
+		locationSelector = (BasicEditText) layout
+				.findViewById(R.id.plan_location);
+        locationSelector.setInputType(InputType.TYPE_NULL);
 		locationSelector.setOnTouchListener(this);
 
 		humanSelector = (BasicEditText) layout.findViewById(R.id.plan_human);
 		humanSelector.setInputType(InputType.TYPE_NULL);
 		humanSelector.setOnTouchListener(this);
 
+
+/**
+ * @author
+ */
 		lengthSelector = (BasicEditText) layout.findViewById(R.id.plan_length);
-		
-		endSelector = (BasicEditText) layout.findViewById(R.id.plan_time_end);
-		endSelector.setInputType(InputType.TYPE_NULL);
-		endSelector.setOnTouchListener(this);
+
+		endDateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_end);
+		endDateSelector.setInputType(InputType.TYPE_NULL);
+		endDateSelector.setOnTouchListener(this);
 		
 		startClick = (BasicTextView) layout.findViewById(R.id.plan_start);
 		startClick.setOnClickListener(this);
+		viewStatus.put(startClick.getId(), false);
+		
+		plan_previou = (BasicTextView) layout.findViewById(R.id.plan_previous);
+		plan_previou.setOnClickListener(this);
 
-
+		dateRepeat = (BasicTextView) layout.findViewById(R.id.plan_repeat);
+		dateRepeat.setOnClickListener(this);
+		
 		planPeroidSelector=(BasicEditText)layout.findViewById(R.id.plan_length);
 		planPeroidSelector.setInputType(InputType.TYPE_NULL);
 		planPeroidSelector.setOnTouchListener(this);
@@ -105,13 +123,15 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		
 		dateWarning=(BasicTextView)layout.findViewById(R.id.plan_warning);
 		dateWarning.setOnClickListener(this);
+		
+		plan_type=(BasicTextView)layout.findViewById(R.id.plan_type);
+		plan_type.setOnClickListener(this);
 
 		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
 		tvdate.setOnClickListener(this);
-
 		viewStatus.put(tvdate.getId(), false);
 
-		// tvdate.setBackgroundColor(R.color.dateforcolor);
+		
 		String dateString = (String) getText(R.string.date_layout_plan_model_1);
 		SpannableStringBuilder datestyle = new SpannableStringBuilder(
 				dateString);
@@ -165,7 +185,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 
 					@Override
 					public void getResult(String result) {
-						dateSelector.setText(result);
+						startDateSelector.setText(result);
 						CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 						startChineseDate=model.currentTime;
 						model.startTime=startChineseDate;
@@ -182,7 +202,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 
 					@Override
 					public void getResult(String result) {
-						endSelector.setText(result);
+						endDateSelector.setText(result);
 						CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 						endChineseDate=model.currentTime;
 						model.endTime=endChineseDate;
@@ -219,6 +239,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				}
 				showDialog(humanFragment);
 				break;
+
 			case R.id.plan_length:
 				if(planTimePeroidFragment==null){
 					planTimePeroidFragment=new DurationTimeDialogFragment();
@@ -232,6 +253,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 					});
 				}
 				showDialog(planTimePeroidFragment);
+
 			default:
 				break;
 			}
@@ -239,6 +261,8 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 		return false;
 	}
 
+	
+	boolean flag = true;
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
@@ -255,16 +279,21 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			T=DateWarningFragment.class;
 			activity.showNext(this.getId(),T, R.layout.date_warning);			
 			break;
+		case R.id.plan_type:
+			timewarningFragment=new DateTimeWarningDialogFragment();
+			timewarningFragment.setShowsDialog(true);
+			showDialog(timewarningFragment);
+			break;
 		case R.id.plan_model:
 			CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 			if (viewStatus.get(R.id.plan_model)) {
 				viewStatus.put(R.id.plan_model, false);
-				dateSelector.setText(getChineseDateString(model.startTime));
-				endSelector.setText(getChineseDateString(model.endTime));
+				startDateSelector.setText(getChineseDateString(model.startTime));
+				endDateSelector.setText(getChineseDateString(model.endTime));
 			} else {
 				viewStatus.put(R.id.plan_model, true);
-				dateSelector.setText(getCountdownDateString(model.startTime));
-				endSelector.setText(getCountdownDateString(model.endTime));
+				startDateSelector.setText(getCountdownDateString(model.startTime));
+				endDateSelector.setText(getCountdownDateString(model.endTime));
 			}
 
 			break;
@@ -275,10 +304,7 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			} else {
 				viewStatus.put(R.id.plan_time_period, true);
 			}
-//			else {
-//				viewStatus.put(R.id.plan_time_period,true);
-//
-//			}
+
 			break;
 		case R.id.plan_start://开始计时按钮
 			if(countTimeHandler==null){
@@ -315,8 +341,8 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 			model=TimeMasterApplication.getInstance().getCacheModel();
 			if(model.startTime==null)
 				model.startTime=new ChineseCalendar(new Date());
-			if(dateSelector.getText().toString()==null||dateSelector.getText().toString().equals("")){//开始按钮为空
-				dateSelector.setText(getChineseDateString(model.startTime));
+			if(startDateSelector.getText().toString()==null||startDateSelector.getText().toString().equals("")){//开始按钮为空
+				startDateSelector.setText(getChineseDateString(model.startTime));
 			}
 			BasicTextView v=(BasicTextView)view;
 			switch (v.getStatus()){
@@ -334,10 +360,10 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				
 				if(model.endTime==null||(model.startTime.getTimeInMillis()+model.tickingTime)>model.endTime.getTimeInMillis()){
 					model.endTime=new ChineseCalendar(new Date(model.startTime.getTimeInMillis()+model.tickingTime));
-					endSelector.setText(getChineseDateString(model.endTime));
+					endDateSelector.setText(getChineseDateString(model.endTime));
 				}else{
-					if(endSelector.getText().toString()==null||endSelector.getText().toString().equals("")){
-						endSelector.setText(getChineseDateString(model.endTime));
+					if(endDateSelector.getText().toString()==null||endDateSelector.getText().toString().equals("")){
+						endDateSelector.setText(getChineseDateString(model.endTime));
 					}
 				}
 				break;
@@ -352,9 +378,24 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 				break;
 			}
 			break;
+		case R.id.plan_previous:
+			File file = new File(this.getActivity().getFilesDir(), "Date.txt");
+
+			try {
+				FileOutputStream out = new FileOutputStream(file);
+				String t = lengthSelector.getText().toString();
+				String now = startDateSelector.getText().toString();
+				String end = endDateSelector.getText().toString();
+				out.write((now + ";" + t + ";" + end).getBytes());
+
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+
+			}
+			break;
 		}
 	}
-	
 	private String getChineseDateString(ChineseCalendar date) {
 		if(date==null)
 			date=new ChineseCalendar(new Date());
@@ -381,7 +422,6 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
 	        return stringB.toString();
 		}
 	}
-	
 	private String getTimeGap(long diff,boolean hasSeconds){
 		StringBuffer stringB=new StringBuffer();
 		long day = diff / (24 * 60 * 60 * 1000);
@@ -394,6 +434,28 @@ public class DateDetailCreateFragment extends Fragment implements OnTouchListene
         	stringB.append(":").append(seconds<10?"0"+seconds:seconds);
         return stringB.toString();
 	}
-}
 
+
+
+//	public Map<String, Object> save(Context context) {
+//
+//		Map<String, Object> map = new HashMap<String, Object>();
+//
+//		try {
+//			FileInputStream in = new FileInputStream(
+//					"/data/data/com.time.master/files/Date.txt");
+//		    BufferedReader bf = new BufferedReader(new InputStreamReader(in));
+//			String tr = bf.readLine();
+//			String[] str = tr.split(";");
+//			map.put("now", str[0]);
+//			map.put("t", str[1]);
+//			map.put("end", str[2]);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return map;
+//
+//	}
+}
 

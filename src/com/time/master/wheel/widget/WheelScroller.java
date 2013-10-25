@@ -158,7 +158,7 @@ public class WheelScroller {
     }
     
     // gesture listener
-    private SimpleOnGestureListener gestureListener = new SimpleOnGestureListener() {
+    public SimpleOnGestureListener gestureListener = new SimpleOnGestureListener() {
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
             // Do scrolling in onTouchEvent() since onScroll() are not call immediately
             //  when user touch and move the wheel
