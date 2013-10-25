@@ -27,7 +27,7 @@ import com.time.master.wheel.widget.WheelView;
  * 持续时间选择器
  * 
  * @author xianrui
- */
+ */          
 public class DurationTimeDialogFragment extends WheelDialogFragment {
 
 	public static final String TAG = "DurationTimeDialogFragment";

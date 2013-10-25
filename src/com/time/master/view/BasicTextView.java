@@ -17,6 +17,8 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 
 	/**单位宽度的倍数*/
 	protected int multi_width;
+	/**单位高度的倍数*/
+	protected int multi_height;
 	/**起始行单位空间*/
 	protected boolean isNewLine;
 	/**默认背景色*/
@@ -36,6 +38,7 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		super(context, attrs);
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ViewGroupType);
 		multi_width = a.getInt(R.styleable.ViewGroupType_width_multi, 1);
+
 		isNewLine=a.getBoolean(R.styleable.ViewGroupType_new_line, false);
 		naturalColor=a.getInt(R.styleable.ViewGroupType_default_bg, -1);
 		group=a.getInt(R.styleable.ViewGroupType_attr_group, -1);

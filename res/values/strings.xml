@@ -294,6 +294,16 @@
 	<string name="warning_icon_framecolor">框色</string>
 	<string name="warning_icon_wordcolor">字色</string>
 	
+	<string name="day_warning_plan_change_inform">计划变化通知相关方</string>
+	<string name="day_warning_plan_cancel">计划取消</string>
+	<string name="day_warning_plan_start">按计划开始</string>
+	<string name="day_warning_plan_shelve">计划搁置</string>
+	<string name="day_warning_now_start">现在开始</string>
+	<string name="day_warning_reset_warn">重设提醒</string>
+	<string name="day_warning_minutes_warn">5分钟后再提醒</string>
+	<string name="day_warning_not_warn">不再提醒</string>
+	<string name="day_warning_known">已知</string>
+	
 	<string name="date_top_first">天数</string>
 	<string name="date_top_second">总次数</string>
 	

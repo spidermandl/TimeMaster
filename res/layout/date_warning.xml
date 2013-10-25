@@ -87,7 +87,7 @@
 		
 <!--         第二个 -->
 
-        <com.time.master.view.BasicViewGroup
+        <com.time.master.view.GroupSingleTouchViewGroup
             android:id="@+id/groupTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,87 +96,95 @@
             
             <!-- The third line -->
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_library"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#8EABFF"
                 android:gravity="center"
                 android:text="@string/warning_library"
+                layout:default_bg="0xFF8EABFF"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
             
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_collect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#8EABFF"
+                layout:default_bg="0xFF8EABFF"
                 android:gravity="center"
                 android:text="@string/warning_collect"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_download"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#8EABFF"
+                layout:default_bg="0xFF8EABFF"
                 android:gravity="center"
                 android:text="@string/warning_download"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_audition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#8EABFF"
+                layout:default_bg="0xFF8EABFF"
                 android:gravity="center"
                 android:text="@string/warning_audition"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_transcribe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#8EABFF"
+                layout:default_bg="0xFF8EABFF"
                 android:gravity="center"
                 android:text="@string/warning_transcribe"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_man_sound"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#8EABFF"
+                layout:default_bg="0xFF8EABFF"
                 android:gravity="center"
                 android:text="@string/warning_man_sound"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_famale_sound"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#8EABFF"
+                layout:default_bg="0xFF8EABFF"
                 android:gravity="center"
                 android:text="@string/warning_female_sound"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_child_sound"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#8EABFF"
+                layout:default_bg="0xFF8EABFF"
                 android:gravity="center"
                 android:text="@string/warning_child_sound"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
             
-        </com.time.master.view.BasicViewGroup>
+        </com.time.master.view.GroupSingleTouchViewGroup>
         
 <!--         第三个 -->
         
@@ -290,94 +298,102 @@
 
 <!--         第四个 -->
         
-        <com.time.master.view.BasicViewGroup
+        <com.time.master.view.GroupSingleTouchViewGroup
             android:id="@+id/groupFour"
             android:layout_toRightOf="@id/groupThree"
             android:layout_below="@id/groupOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_ring"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#FFAA00"
+                layout:default_bg="0xFFFFAA00"
                 android:gravity="center"
                 android:text="@string/warning_ring"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_music"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#8FFF6B"
+                layout:default_bg="0xFF8FFF6B"
                 android:gravity="center"
                 android:text="@string/warning_music"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_pronunciation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#00B97D"
+                layout:default_bg="0xFF00B97D"
                 android:gravity="center"
                 android:text="@string/warning_pronunciation"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_vibrate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#007AB9"
+                layout:default_bg="0xFF007AB9"
                 android:gravity="center"
                 android:text="@string/warning_vibrate"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#FFD4FF"
+                layout:default_bg="0xFFFFD4FF"
                 android:gravity="center"
                 android:text="@string/warning_icon"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_motion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#B90000"
+                layout:default_bg="0xFFB90000"
                 android:gravity="center"
                 android:text="@string/warning_motion"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_surroundings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#8EABFF"
+                layout:default_bg="0xFF8EABFF"
                 android:gravity="center"
                 android:text="@string/warning_surroundings"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
 
-            <com.time.master.view.BasicTextView
+            <com.time.master.view.SelectedTextView
                 android:id="@+id/warning_procedure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#C0C0C0"
+                layout:default_bg="0xFFC0C0C0"
                 android:gravity="center"
                 android:text="@string/warning_procedure"
                 layout:new_line="true"
-                layout:width_multi="1" />
+                layout:width_multi="1"
+                layout:attr_group="1" />
             
-        </com.time.master.view.BasicViewGroup>
+        </com.time.master.view.GroupSingleTouchViewGroup>
          <include
         android:visibility="invisible"
         layout="@layout/gridview"
