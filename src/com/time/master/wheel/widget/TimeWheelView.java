@@ -39,9 +39,9 @@ public class TimeWheelView extends WheelView {
 		
 	}
 
-	public int getCurrentItem(String string) {
+	public int getCurrentItem(Integer daynum) {
 		// TODO Auto-generated method stub
-		return 0;
+		return daynum;
 	}
 
 	

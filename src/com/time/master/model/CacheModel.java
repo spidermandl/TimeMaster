@@ -18,7 +18,7 @@ public class CacheModel {
 
    
      public HashMap<String, String> tmpResultsCache=new HashMap<String, String>();//dialog 返回结果数据缓存
-    
+     public HashMap<String, Integer> tmpResultCache=new HashMap<String, Integer>();
 
    
 }

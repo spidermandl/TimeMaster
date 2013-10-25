@@ -1,28 +1,17 @@
 package com.time.master.dialog;
 
 import java.util.Calendar;
-import java.util.HashMap;
-
-import android.R.integer;
 import android.graphics.Color;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.time.master.R;
-import com.time.master.R.string;
 import com.time.master.TimeMasterApplication;
-import com.time.master.dialog.TimeDialogFragment.DateModel;
 import com.time.master.interfacer.WheelResultInterface;
-import com.time.master.model.CacheModel;
 import com.time.master.tool.ChineseCalendar;
 import com.time.master.view.BasicTextView;
 import com.time.master.wheel.adapters.ArrayWheelAdapter;
@@ -37,7 +26,7 @@ import com.time.master.wheel.widget.WheelView;
 /**
  * 天重复dialog
  * 
- * @author lianglili
+ * @author梁丽丽
  * 
  */
 public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
@@ -52,7 +41,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 	private ChineseCalendar chineseCalendar;// 当前选中时间
 	private BasicTextView date_center_second;// 更换农阳历
 
-	// date_center_first;// 确认
+	// date_center_first;确认
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -87,14 +76,14 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 		mode = (TextView) layout.findViewById(R.id.date_center_second);
 		mode.setOnClickListener(this);
-		
+
 		int daynum = daynumber.getCurrentItem(TimeMasterApplication
-				.getInstance().getCacheModel().tmpResultsCache
-				.get(model.daynumber));
+				.getInstance().getCacheModel().tmpResultCache
+				.get(TAG));
 		if (daynum != 0) {
 			daynumber.setCurrentItem(model.daynumber);
 		}
-		
+
 		mode.setText(R.string.date_top_center_lunar_2);
 		mode.setBackgroundColor(Color.YELLOW);
 
@@ -438,16 +427,17 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 		case R.id.date_center_first:
 
-			datecenterconfirmFragment = new RepeatDialogFragment();
+			datecenterconfirmFragment = new RepeatDialogFragment1();
 			datecenterconfirmFragment.setShowsDialog(true);
 			((WheelDialogFragment) datecenterconfirmFragment)
 					.setWheelInterface(new WheelResultInterface() {
 
 						@Override
 						public void getResult(String result) {
-							daynumber.getCurrentItem(TimeMasterApplication
-									.getInstance().getCacheModel().tmpResultsCache
-									.get(model.daynumber));
+							daynumber
+									.setCurrentItem(TimeMasterApplication
+											.getInstance().getCacheModel().tmpResultCache
+											.get(TAG));
 
 						}
 
@@ -472,8 +462,8 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 	@Override
 	protected int getSelectedInt() {
-		TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache
-				.get(model.daynumber);
+		TimeMasterApplication.getInstance().getCacheModel().tmpResultCache
+				.put(TAG, model.daynumber);
 
 		return 0;
 	}
