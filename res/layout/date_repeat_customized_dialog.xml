@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#BFBFBF" >
-    <com.time.master.view.BasicTextView
+    <com.time.master.view.BasicEditText
         android:id="@+id/do_do1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="做"
+        android:text="@string/do_do"
         android:textColor="#000000"
         layout:new_line="true"
         layout:width_multi="2" />
@@ -21,18 +21,18 @@
         android:layout_height="wrap_content"
         android:background="#FF0000"
         android:gravity="center"
-        android:text="确认"
+        android:text="@string/date_yes"
         layout:new_line="false"
         layout:width_multi="3" />
     <!-- ////////////////////////////////////////////////////////////// -->
     
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.BasicEditText
         android:id="@+id/do_ge1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="隔"
+        android:text="@string/do_ge"
         layout:new_line="true"
         layout:width_multi="2" />
 
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:gravity="center"
-        android:text="0"
+        android:text="@string/do_num0"
         layout:new_line="false"
         layout:width_multi="1" />
 
@@ -52,18 +52,18 @@
         android:layout_height="wrap_content"
         android:background="#99CCFF"
         android:gravity="center"
-        android:text="删除"
+        android:text="@string/do_del"
         layout:new_line="false"
         layout:width_multi="2" />
     <!-- ////////////////////////////////////////////////////////////// -->
     
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.BasicEditText
         android:id="@+id/do_do2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="做"
+        android:text="@string/do_do"
         layout:new_line="true"
         layout:width_multi="2" />
 
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:gravity="center"
-        android:text="7"
+        android:text="@string/do_num7"
         layout:new_line="false"
         layout:width_multi="1" />
     
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:gravity="center"
-        android:text="8"
+        android:text="@string/do_num8"
         layout:new_line="false"
         layout:width_multi="1" />
     
@@ -93,18 +93,18 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:gravity="center"
-        android:text="9"
+        android:text="@string/do_num9"
         layout:new_line="false"
         layout:width_multi="1" />
     <!-- ////////////////////////////////////////////////////////////// -->
     
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.BasicEditText
         android:id="@+id/do_ge2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="隔"
+        android:text="@string/do_ge"
         layout:new_line="true"
         layout:width_multi="2" />
         
@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:gravity="center"
-        android:text="4"
+        android:text="@string/do_num4"
         layout:new_line="false"
         layout:width_multi="1" />
         
@@ -124,7 +124,7 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:gravity="center"
-        android:text="5"
+        android:text="@string/do_num5"
         layout:new_line="false"
         layout:width_multi="1" />
         
@@ -134,18 +134,18 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:gravity="center"
-        android:text="6"
+        android:text="@string/do_num6"
         layout:new_line="false"
         layout:width_multi="1" />
     <!-- ////////////////////////////////////////////////////////////// -->
     
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.BasicEditText
         android:id="@+id/do_do3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="做"
+        android:text="@string/do_do"
         layout:new_line="true"
         layout:width_multi="2" />
         
@@ -155,7 +155,7 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:gravity="center"
-        android:text="1"
+        android:text="@string/do_num1"
         layout:new_line="false"
         layout:width_multi="1" />
         
@@ -165,7 +165,7 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:gravity="center"
-        android:text="2"
+        android:text="@string/do_num2"
         layout:new_line="false"
         layout:width_multi="1" />
         
@@ -175,18 +175,18 @@
         android:layout_height="wrap_content"
         android:background="#F2F2F2"
         android:gravity="center"
-        android:text="3"
+        android:text="@string/do_num3"
         layout:new_line="false"
         layout:width_multi="1" />
     <!-- ////////////////////////////////////////////////////////////// -->
 
-    <com.time.master.view.BasicTextView
+    <com.time.master.view.BasicEditText
         android:id="@+id/do_ge3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="隔"
+        android:text="@string/do_ge"
         layout:new_line="true"
         layout:width_multi="2" />
 
@@ -196,7 +196,7 @@
         android:layout_height="wrap_content"
         android:background="#FFFF00"
         android:gravity="center"
-        android:text="下一个"
+        android:text="@string/do_next"
         layout:new_line="false"
         layout:width_multi="3" />
     <!-- ////////////////////////////////////////////////////////////// -->
