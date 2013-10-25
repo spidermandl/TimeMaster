@@ -4,6 +4,7 @@ import com.time.master.R;
 import com.time.master.activity.FrameActivity;
 import com.time.master.dialog.DateWarningDialogFragment;
 import com.time.master.dialog.RepeatDialogFragment;
+import com.time.master.view.BasicEditText;
 import com.time.master.view.BasicTextView;
 import com.time.master.view.BasicViewGroup;
 import com.time.master.view.GapCleanViewGroup;
@@ -42,6 +43,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 	BasicTextView centerOne,	centerTwo, centerThree, centerFour, centerFive, centerSix,
 	centerSeven, centerEight;
 	BasicTextView leftOne,leftTwo,leftThree,leftFour,leftFive,leftSix,leftSeven;
+	BasicEditText leadTimeEditText; 
 	DialogFragment warningFragment;
 	BasicViewGroup viewGroup;
 	GapCleanViewGroup gapCleanViewGroup;
@@ -55,6 +57,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 		viewGroup=(BasicViewGroup)layout.findViewById(R.id.groupOne);
 		gapCleanViewGroup=(GapCleanViewGroup)layout.findViewById(R.id.groupThree);
 		warningEverytime=(BasicTextView)layout.findViewById(R.id.warning_everytime);
+		leadTimeEditText=(BasicEditText)layout.findViewById(R.id.warning_advanced);
 		warningAdd=(BasicTextView)layout.findViewById(R.id.warning_add);
 		warningCompose=(BasicTextView)layout.findViewById(R.id.warning_compose);
 		warningConfirm=(BasicTextView)layout.findViewById(R.id.warning_confirm);
@@ -121,6 +124,10 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 //		Class T;
 //		FrameActivity activity=(FrameActivity)getActivity();
 		switch (v.getId()) {
+		case R.id.warning_add:
+			leadTimeEditText.setText(" ");
+			
+			break;
 		case R.id.warning_ring:
 			centerOne.setText(R.string.warning_ring_one);
 			centerTwo.setText(R.string.warning_ring_two);
