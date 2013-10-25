@@ -1,17 +1,15 @@
 package com.time.master.fragment.date;
 
 import com.time.master.R;
-import com.time.master.activity.FrameActivity;
-import com.time.master.dialog.DateWarningDialogFragment;
-import com.time.master.dialog.RepeatDialogFragment;
 import com.time.master.view.BasicEditText;
+import com.time.master.TimeMasterApplication;
+import com.time.master.dialog.WheelDialogFragment;
+import com.time.master.tool.ChineseCalendar;
 import com.time.master.view.BasicTextView;
 import com.time.master.view.BasicViewGroup;
 import com.time.master.view.GapCleanViewGroup;
 import com.time.master.view.TimeMasterGirdView;
-
 import android.graphics.Color;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -20,21 +18,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.support.v4.app.FragmentTransaction;
-import android.text.InputType;
-import android.text.Layout;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
-import android.view.MotionEvent;
-import android.view.View.OnTouchListener;
-import android.widget.GridView;
-
-import com.time.master.R;
-import com.time.master.activity.FrameActivity;
 import com.time.master.adapter.DateGridViewActionImageAdapter;
 import com.time.master.adapter.DateGridViewImageAdapter;
 import com.time.master.dialog.*;
 import com.time.master.interfacer.WheelResultInterface;
+import com.time.master.model.CacheModel;
 
 public class DateWarningFragment extends Fragment implements OnClickListener {
 
@@ -42,12 +30,17 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			warningRing, warningMusic, warningPronunciation, warningVibrate,warningIcon,warningMotion;
 	BasicTextView centerOne,	centerTwo, centerThree, centerFour, centerFive, centerSix,
 	centerSeven, centerEight;
+	BasicTextView warningAdvanced;
 	BasicTextView leftOne,leftTwo,leftThree,leftFour,leftFive,leftSix,leftSeven;
 	BasicEditText leadTimeEditText; 
-	DialogFragment warningFragment;
+	DialogFragment warningFragment,durationTimeDialogFragment;
+	private ChineseCalendar startChineseDate,//开始时间
+    endChineseDate;//结束时间
+
 	BasicViewGroup viewGroup;
 	GapCleanViewGroup gapCleanViewGroup;
 	TimeMasterGirdView gridview1;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -67,6 +60,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 		warningVibrate=(BasicTextView)layout.findViewById(R.id.warning_vibrate);
 		warningIcon=(BasicTextView)layout.findViewById(R.id.warning_icon);
 		warningMotion=(BasicTextView)layout.findViewById(R.id.warning_motion);
+		warningAdvanced=(BasicTextView)layout.findViewById(R.id.warning_advanced);
 		
 		leftOne=(BasicTextView)layout.findViewById(R.id.warning_collect);
 		leftTwo=(BasicTextView)layout.findViewById(R.id.warning_download);
@@ -95,9 +89,13 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 		warningVibrate.setOnClickListener(this);
 		warningIcon.setOnClickListener(this);
 		warningMotion.setOnClickListener(this);
+		warningAdvanced.setOnClickListener(this);
 		
 		viewGroup.cutDownBottomGap(1);
 		gridview1=(TimeMasterGirdView)layout.findViewById(R.id.gridview);
+		
+	//	warningAdvanced.setInputType(InputType.TYPE_NULL);
+		
 		
 		return layout;
 	}
@@ -295,9 +293,37 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			gapCleanViewGroup.setVisibility(View.INVISIBLE);
 			gridview1.setAdapter(new DateGridViewActionImageAdapter(getActivity()));
 			break;
+		case R.id.warning_advanced:
+			durationTimeDialogFragment=new DurationTimeDialogFragment();						
+			((WheelDialogFragment) durationTimeDialogFragment).setWheelInterface(new WheelResultInterface() {
+				@Override
+				public void getResult(String result) {
+					warningAdvanced.setText(result);
+					CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
+					startChineseDate=model.currentTime;
+					model.startTime=startChineseDate;
+				}
+			});
+			showDialog(durationTimeDialogFragment);
+			break;
 		default:
 			break;
 		}
+	}
+	void showDialog(DialogFragment dialogFragment) {
+
+		// DialogFragment.show() will take care of adding the fragment
+		// in a transaction. We also want to remove any currently showing
+		// dialog, so make our own transaction and take care of that here.
+		FragmentTransaction ft = getFragmentManager().beginTransaction();
+		Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+		if (prev != null) {
+			ft.remove(prev);
+		}
+		ft.addToBackStack(null);
+
+		// Create and show the dialog.
+		dialogFragment.show(ft, "dialog");
 	}
 	
 }

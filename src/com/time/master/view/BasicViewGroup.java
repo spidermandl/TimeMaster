@@ -5,8 +5,6 @@ import com.time.master.interfacer.LayoutStyleableInterface;
 
 import android.R.integer;
 import android.content.Context;
-import android.content.res.Configuration;
-import android.text.style.LineHeightSpan.WithDensity;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +23,16 @@ public class BasicViewGroup extends ViewGroup{
 	screen_height,
 	unit_width,//view 单位长度
 	gap,//view的间隔长度
+	unit_height,//view单位高度
 	current_margin_top=0,//当前放置y坐标
 	current_margin_left=0,//当前放置x坐标
 	screen_mode; //1代表竖屏 ， 2代表横屏
+
+	int multi=1;
+	int chlidrenId;
+
 	int gapNumber=0;
+
 	public BasicViewGroup(Context context) {
 		super(context);
 		init();
@@ -47,6 +51,7 @@ public class BasicViewGroup extends ViewGroup{
 	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		init();
 		int num=this.getChildCount();
 		int line=0;
 		int width=0;
@@ -82,7 +87,11 @@ public class BasicViewGroup extends ViewGroup{
 			}
 			ViewGroup.LayoutParams layoutParams=view.getLayoutParams();
 			layoutParams.width=styleable.getMultiWidth()*unit_width+(styleable.getMultiWidth()-1)*gap;
-			layoutParams.height=(int)(unit_width*0.75);
+			if(i==chlidrenId)
+			layoutParams.height=(int)(unit_width*0.75)*multi+(gap)*(multi-1);
+			else {
+				layoutParams.height=(int)(unit_width*0.75);
+			}
 			
 			view.setLayoutParams(layoutParams);
 			/***设置子view 大小，子view的onMeasure方法被回调 **/
@@ -111,8 +120,14 @@ public class BasicViewGroup extends ViewGroup{
 		gap=screen_width/36;
 		current_margin_top=(int)(-0.75*unit_width);
 	}
+
+	public void setSpecialChildren(int childrenID,int multi){
+		this.chlidrenId=childrenID;
+		this.multi=multi;
+	}
 	public void cutDownBottomGap(int num){
 		this.gapNumber=num;
+
 	}
 	
 

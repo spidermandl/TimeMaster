@@ -134,7 +134,9 @@ public class WheelScroller {
             case MotionEvent.ACTION_DOWN:
                 lastTouchedY = event.getY();
                 scroller.forceFinished(true);
-                clearMessages();
+                clearMessages();            
+                
+                
                 break;
     
             case MotionEvent.ACTION_MOVE:
@@ -165,13 +167,14 @@ public class WheelScroller {
         
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             lastScrollY = 0;
-//            final int maxY = 0x7FFFFFFF;
             final int maxY = 3;
             final int minY = -maxY;
+
             scroller.fling(0, lastScrollY, 0, (int) -velocityY, 0, 0, minY, maxY);
             setNextMessage(MESSAGE_SCROLL);
             return true;
         }
+
     };
 
     // Messages

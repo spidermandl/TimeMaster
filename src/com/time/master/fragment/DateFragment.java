@@ -2,32 +2,16 @@ package com.time.master.fragment;
 
 import com.time.master.R;
 import com.time.master.activity.FrameActivity;
-
 import com.time.master.fragment.date.DateAddFragment;
 import com.time.master.fragment.date.DateSportFragment;
 import com.time.master.fragment.date.DateHabbitFragment;
-
 import com.time.master.view.BasicTextView;
 import com.time.master.view.BasicViewGroup;
-
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.text.InputType;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnTouchListener;
-import android.webkit.WebView.FindListener;
 
 /**
  * "»’"√Ê∞Â

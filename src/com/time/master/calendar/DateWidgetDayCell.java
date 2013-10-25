@@ -253,16 +253,16 @@ Shader.TileMode.CLAMP);
 		anim.startNow();
 		view.startAnimation(anim);
 	}
-
+	// 记录日期
 	public void CreateReminder(Canvas canvas, int Color) {
-		pt.setStyle(Paint.Style.FILL_AND_STROKE);
+		pt.setStyle(Paint.Style.FILL_AND_STROKE);//填充
 		pt.setColor(Color);
 		Path path = new Path();
 		path.moveTo(rect.right - rect.width() / 4, rect.top);
 		path.lineTo(rect.right, rect.top);
 		path.lineTo(rect.right, rect.top + rect.width() / 4);
 		path.lineTo(rect.right - rect.width() / 4, rect.top);
-		path.close();
+		path.close();//终点和起点连接
 		canvas.drawPath(path, pt);
 	}
 

@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" 
     android:background="@drawable/time_wheel_dialog_bg">
+
+
     <com.time.master.view.BasicViewGroup
         android:id="@+id/duration_time_bar"
         android:layout_width="wrap_content"
@@ -13,7 +15,7 @@
             android:id="@+id/duration_time_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFBCBCBC"
+            android:background="#FFFFFF00"
             android:gravity="center"
             android:text="阳历\n持续"
             layout:new_line="true"
@@ -35,18 +37,16 @@
             android:id="@+id/duration_time_confirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#FFBCBCBC"
             android:gravity="center"
             android:text="确定"
+            layout:default_bg="0xFFFF0000"
             layout:new_line="false"
             layout:width_multi="1" />
     </com.time.master.view.BasicViewGroup>
-    
-	<!-- this is new line -->
-	
-	
-	
-     <LinearLayout
+
+    <!-- this is new line -->
+
+    <LinearLayout
         android:id="@+id/duration_date_selector_wheel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,5 +83,5 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
     </LinearLayout>
-    
+
 </RelativeLayout>
