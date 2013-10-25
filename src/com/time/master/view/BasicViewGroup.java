@@ -41,7 +41,21 @@ public class BasicViewGroup extends ViewGroup{
 		init();
 	}
 	
-	
+	@Override
+	public void addView(View child) {
+		// TODO Auto-generated method stub
+		super.addView(child);
+	}
+	@Override
+	public void addView(View child, int index) {
+		// TODO Auto-generated method stub
+		super.addView(child, index);
+	}
+	@Override
+	public void addView(View child, int index, LayoutParams params) {
+		// TODO Auto-generated method stub
+		super.addView(child, index, params);
+	}
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		init();

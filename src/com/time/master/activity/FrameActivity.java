@@ -10,6 +10,7 @@ import com.time.master.dialog.LoadStaticDataFragment;
 import com.time.master.view.TabTextView;
 
 import android.content.res.Configuration;
+import android.graphics.LinearGradient;
 
 import android.os.Bundle;
 
@@ -19,6 +20,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 
@@ -32,6 +38,10 @@ public class FrameActivity extends FragmentActivity {
 	HashMap<Integer, Fragment> fragmentCache=new HashMap<Integer, Fragment>();
     
 	TabHost tabHost;
+	LinearLayout mainFrame;
+	TabWidget tabWidget;  
+    ScrollView verticalScroll;
+    HorizontalScrollView horizontalScroll;
 	 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +49,12 @@ public class FrameActivity extends FragmentActivity {
         setContentView(R.layout.frame_main);
         tabHost=(TabHost)this.findViewById(R.id.main_tab);
         tabHost.setup();
+        mainFrame=(LinearLayout)this.findViewById(R.id.main_layout);
+        tabWidget = tabHost.getTabWidget();  
+        verticalScroll=(ScrollView)this.findViewById(R.id.vertical_scroll_tab);
+        horizontalScroll=(HorizontalScrollView)this.findViewById(R.id.horizontal_scroll_tab);
+        
+        configureOrientation();
         
         TabTextView generationTab=new TabTextView(this).setCenterText("辈"),
         yearTab=new TabTextView(this).setCenterText("年"),
@@ -65,7 +81,6 @@ public class FrameActivity extends FragmentActivity {
         tabHost.addTab(tabHost.newTabSpec("new").setIndicator(newTab).setContent(R.id.new_issue_fragment));
         tabHost.setCurrentTabByTag("date");
         
-        TabWidget tabWidget = tabHost.getTabWidget();  
         // 标签的个数  
         int count = tabWidget.getChildCount();  
         // 获取手机屏幕的宽高  
@@ -124,11 +139,29 @@ public class FrameActivity extends FragmentActivity {
     
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
-    	// TODO Auto-generated method stub
-    	super.onConfigurationChanged(newConfig);
-    	//TimeMasterApplication.getInstance().setScreenMode(newConfig.orientation);
     	tabHost.invalidate();
+    	configureOrientation();
+    	super.onConfigurationChanged(newConfig);
     	
+    }
+    
+    private void configureOrientation(){
+    	int orientation=this.getResources().getConfiguration().orientation;
+		if(orientation==Configuration.ORIENTATION_PORTRAIT){
+			ViewGroup.LayoutParams para=horizontalScroll.getLayoutParams();
+			para.width=LayoutParams.MATCH_PARENT;
+			para.height=LayoutParams.WRAP_CONTENT;
+			para.width=LayoutParams.MATCH_PARENT;
+			para.height=LayoutParams.WRAP_CONTENT;
+			tabWidget.setOrientation(Configuration.ORIENTATION_LANDSCAPE);
+		}else{
+			ViewGroup.LayoutParams para=horizontalScroll.getLayoutParams();
+			para.width=LayoutParams.WRAP_CONTENT;
+			para.height=LayoutParams.MATCH_PARENT;
+			para.width=LayoutParams.WRAP_CONTENT;
+			para.height=LayoutParams.MATCH_PARENT;
+			tabWidget.setOrientation(Configuration.ORIENTATION_PORTRAIT);
+		}
     }
 }
 
