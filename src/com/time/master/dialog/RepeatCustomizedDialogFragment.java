@@ -249,30 +249,36 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		    do1.setInputType(InputType.TYPE_NULL);
 //		    do1.setInputType(getId());
 //			do1.setFocusableInTouchMode(true);
-			do1.requestFocus();
+//			do1.requestFocus();
+			do1.getSelectionEnd();
 				break;
 		case R.id.do_do2:
 			do2.setInputType(InputType.TYPE_NULL);
 			do2.setFocusable(true);
-			do2.requestFocus();
+//			do2.requestFocus();
+			do2.getSelectionEnd();
 				break;
 		case R.id.do_do3:
 			do3.setInputType(InputType.TYPE_NULL);
 			do3.setFocusable(true);
+			do3.getSelectionEnd();
 				break;
 		case R.id.do_ge1:
 			ge1.setInputType(InputType.TYPE_NULL);
 //			ge1.setInputType(getId());
 			ge1.setFocusable(true);
-			ge1.requestFocus();
+//			ge1.requestFocus();
+//			ge1.setSelection(index)
 				break;
 		case R.id.do_ge2:
 			ge2.setInputType(InputType.TYPE_NULL);
 			ge2.setFocusable(true);
+			ge2.getSelectionEnd();
 				break;
 		case R.id.do_ge3:
 			ge3.setInputType(InputType.TYPE_NULL);
 			ge3.setFocusable(true);
+			ge3.getSelectionEnd();
 				break;
 		default:
 			break;
