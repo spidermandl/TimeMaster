@@ -6,6 +6,7 @@ package com.time.master.dialog;
  */
 
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -34,9 +35,9 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 	public static final String tag="DoDialogFragment";
 	BasicTextView doNext,doConfirm,num0,num1,num2,num3,num4,num5,num6,num7,num8,num9;
 	EditText do1,do2,do3,ge1,ge2,ge3;
-	LinkedList<EditText> list=new LinkedList<EditText>();
-	LinkedList<TextView> linkedList=new LinkedList<TextView>();
-	String string=null;
+	List<EditText> list=new ArrayList<EditText>();
+//	LinkedList<TextView> linkedList=new LinkedList<TextView>();
+	String string=" ";
 	int index=0;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -111,62 +112,53 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		
 		return layout;
 	}
-//	private void onChange(int id){
-////		switch (id) {
-////		case R.id.do_num0:
-////			list.get(id).getText();
-////			break;
-////		case R.id.do_num1:
-////			list.get(id).getText();
-////			break;
-////
-////		default:
-////			break;
-////		}
-//		for(int i=0;i<9;i++){
-//		if(list.get(i).getId()==R.id.do_num0){
-//			list.get(i).getText();
-////			list.get(index).setText(string);
-//		}
-//		if(list.get(i).getId()==R.id.do_num1){
-//			list.get(i).getText();
-////			list.get(index).setText(string);
-//		}
-//		if(list.get(i).getId()==R.id.do_num2){
-//			list.get(i).getText();
-////			list.get(index).setText(string);
-//		}
-//		if(list.get(i).getId()==R.id.do_num3){
-//			list.get(i).getText();
-////			list.get(index).setText(string);
-//		}
-//		
-//		if(list.get(i).getId()==R.id.do_num4){
-//			list.get(i).getText();
-////			list.get(index).setText(string);
-//		}
-//		if(list.get(i).getId()==R.id.do_num5){
-//			list.get(i).getText();
-////			list.get(index).setText(string);
-//		}
-//		if(list.get(i).getId()==R.id.do_num6){
-//			list.get(i).getText();
-////			list.get(index).setText(string);
-//		}
-//		if(list.get(i).getId()==R.id.do_num7){
-//			list.get(i).getText();
-////			list.get(index).setText(string);
-//		}
-//		if(list.get(i).getId()==R.id.do_num8){
-//			list.get(i).getText();
-////			list.get(index).setText(string);
-//		}
-//		if(list.get(i).getId()==R.id.do_num9){
-//			list.get(i).getText();
-////			list.get(index).setText(string);
-//		}
-//		}	
-//	}
+	private void onChange(int id){
+		switch (id) {
+		case R.id.do_num0:
+			list.get(id).getText();
+			string+=(String)num0.getText();
+			break;
+		case R.id.do_num1:
+			list.get(id).getText();
+			string+=(String)num1.getText();
+			break;
+		case R.id.do_num2:
+			list.get(id).getText();
+			string+=(String)num2.getText();
+			break;
+		case R.id.do_num3:
+			list.get(id).getText();
+			string+=(String)num3.getText();
+			break;
+		case R.id.do_num4:
+			list.get(id).getText();
+			string+=(String)num4.getText();
+			break;
+		case R.id.do_num5:
+			list.get(id).getText();
+			string+=(String)num5.getText();
+			break;
+		case R.id.do_num6:
+			list.get(id).getText();
+			string+=(String)num6.getText();
+			break;
+		case R.id.do_num7:
+			list.get(id).getText();
+			string+=(String)num7.getText();
+			break;
+		case R.id.do_num8:
+			list.get(id).getText();
+			string+=(String)num8.getText();
+			break;
+		case R.id.do_num9:
+			list.get(id).getText();
+			string+=(String)num9.getText();
+			break;
+
+		default:
+			break;
+		}
+	}
 
 	@Override
 	public void onClick(View v) {
@@ -174,14 +166,13 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		switch (v.getId()) {
 		case R.id.do_num0:
 			string+=(String)num0.getText();
+			list.get(index).setText(string);
 //			onChange(R.id.do_num0);
-		list.get(index).setText(string);
 			break;
 		case R.id.do_num1:
 			string+=(String)num1.getText();
-//			onChange(R.id.do_num1);
 			list.get(index).setText(string);
-//			string+=(String) num0.getText();
+//			onChange(R.id.do_num1);
 				break;
 		case R.id.do_num2:
 //			onChange(R.id.do_num2);
@@ -227,13 +218,19 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		
 				
 		case R.id.do_next:
-			index+=1;
+			if(++index>5)
+				index=0;
+			list.get(index).setFocusable(true);	
+			string=" ";
+//			index+=1;
 				break;
 		case R.id.date_yes:
 			
 				break;
 		case R.id.do_del:
-			
+//			if(index==0)
+//			list.get(index).setFocusable(true);	
+//			string=" ";
 				break;
 				
 				
@@ -248,9 +245,9 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.do_do1:
+			do1.setFocusable(true);
 		    do1.setInputType(InputType.TYPE_NULL);
 //		    do1.setInputType(getId());
-			do1.setFocusable(true);
 //			do1.setFocusableInTouchMode(true);
 			do1.requestFocus();
 				break;
