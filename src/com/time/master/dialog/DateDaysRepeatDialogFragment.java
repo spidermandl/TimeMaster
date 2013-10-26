@@ -212,7 +212,6 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		totalcountAdapter.setItemTextResource(R.id.numeric_text);
 		totalcount.setVisibleItems(TIME_LIST_NUMBER);
 		totalcount.setViewAdapter(totalcountAdapter);
-		// minute.setBackground(R.drawable.wheel_right_bg);
 		totalcount.setCurrentItem(model.totalcount);
 		totalcount.addScrollingListener(new OnWheelScrollListener() {
 
