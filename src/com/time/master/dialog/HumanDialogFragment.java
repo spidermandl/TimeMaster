@@ -252,9 +252,5 @@ public class HumanDialogFragment extends WheelDialogFragment {
 		
 	}
 
-	@Override
-	protected int getSelectedInt() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
 }

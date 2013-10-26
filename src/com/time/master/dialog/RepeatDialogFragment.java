@@ -190,4 +190,5 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 		if(viewStatus.getBoolean(view.getId()+"",false))
 			view.setSelected();
 	}
+
 }

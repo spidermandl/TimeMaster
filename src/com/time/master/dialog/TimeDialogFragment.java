@@ -420,15 +420,11 @@ public class TimeDialogFragment extends WheelDialogFragment implements View.OnCl
 
 	@Override
 	protected void pushConfirm() {
-		CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
-		model.currentTime=chineseCalendar;
+		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	protected int getSelectedInt() {
-		// TODO Auto-generated method stub
-		return 0;
+
+
 	}
 
-}

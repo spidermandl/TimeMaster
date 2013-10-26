@@ -23,7 +23,6 @@ import com.time.master.wheel.widget.OnWheelScrollListener;
 import com.time.master.wheel.widget.TimeWheelView;
 import com.time.master.wheel.widget.WheelView;
 
-
 /**
  * 每日重复dialog
  * 
@@ -54,6 +53,12 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 
 		aboutDay = new Day();
 
+		HashMap<String, Integer> hashmap = getString();
+
+		if (hashmap.isEmpty()) {
+			getSelectedString();
+			hashmap = getString();
+		}
 		View layout = inflater.inflate(R.layout.date_daily_repeat_dialog,
 				container, false);
 
@@ -68,7 +73,6 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 		dayAdapter = new NumericWheelAdapter(getActivity(), 0, 100);
 		dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		dayAdapter.setItemTextResource(R.id.numeric_text);
-		day.setCyclic(true);
 		day.setViewAdapter(dayAdapter);
 		// day.setBackground(R.drawable.wheel_bg_full);
 		day.setCurrentItem(0);
@@ -83,7 +87,7 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				// TODO Auto-generated method stub
-				aboutDay.day = wheel.getCurrentItem();
+				aboutDay.setDay(wheel.getCurrentItem());
 				changeTimes();
 			}
 		});
@@ -95,7 +99,6 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 		addtimesAdapter.setItemTextResource(R.id.numeric_text);
 		add_times.setViewAdapter(addtimesAdapter);
 		add_times.setCurrentItem(0);
-		add_times.setCyclic(true);
 		add_times.addScrollingListener(new OnWheelScrollListener() {
 
 			@Override
@@ -107,7 +110,7 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				// TODO Auto-generated method stub
-				aboutDay.add_times = wheel.getCurrentItem();
+				aboutDay.setAdd_times(wheel.getCurrentItem());
 				changedays();
 			}
 		});
@@ -119,21 +122,19 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 		daytimesAdapter.setItemTextResource(R.id.numeric_text);
 		day_times.setViewAdapter(daytimesAdapter);
 		// day_times.setBackground(R.drawable.wheel_bg_full);
-		day_times.setCurrentItem(0);
-		day_times.setCyclic(true);
+		day_times.setCurrentItem(hashmap.get("day"));
 		day_times.addScrollingListener(new OnWheelScrollListener() {
 
 			@Override
 			public void onScrollingStarted(WheelView wheel) {
 				// TODO Auto-generated method stub
-//				String[] s = getInfo();
-//				day_times.setCurrentItem(Integer.parseInt(s[0]));
+
 			}
 
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				// TODO Auto-generated method stub
-				aboutDay.day_times = wheel.getCurrentItem();
+				aboutDay.setDay_times(wheel.getCurrentItem());
 			}
 		});
 		day_times.addClickingListener(clickListener);
@@ -145,21 +146,20 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 		spaceAdapter.setSuffix(":");
 		space.setViewAdapter(spaceAdapter);
 		// space.setBackground(R.drawable.wheel_bg_full);
-		space.setCurrentItem(0);
+		space.setCurrentItem(hashmap.get("space"));
 		space.setCyclic(true);
 		space.addScrollingListener(new OnWheelScrollListener() {
 
 			@Override
 			public void onScrollingStarted(WheelView wheel) {
 				// TODO Auto-generated method stub
-//				String[] s = getInfo();
-//				space.setCurrentItem(Integer.parseInt(s[1]));
+
 			}
 
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				// TODO Auto-generated method stub
-				aboutDay.space = wheel.getCurrentItem();
+				aboutDay.setSpace(wheel.getCurrentItem());
 			}
 		});
 		space.addClickingListener(clickListener);
@@ -171,8 +171,9 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 		whateverAdapter.getItemText(5);
 		whatever.setViewAdapter(whateverAdapter);
 		// whatever.setBackground(R.drawable.wheel_bg_full);
-		whatever.setCurrentItem(0);
+		whatever.setCurrentItem(hashmap.get("whatever"));
 		whatever.setCyclic(true);
+		System.out.println(hashmap.get("whatever"));
 		whatever.addScrollingListener(new OnWheelScrollListener() {
 
 			@Override
@@ -184,11 +185,12 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				// TODO Auto-generated method stub
-				aboutDay.whatever = wheel.getCurrentItem();
+				aboutDay.setWhatever(wheel.getCurrentItem());
+
 			}
 		});
 		whatever.addClickingListener(clickListener);
-		
+
 		superInit();
 		return layout;
 	}
@@ -208,7 +210,8 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 	}
 
 	class Day {
-		int day, add_times, day_times, space, whatever;
+		private int day = 0, add_times = 0, day_times = 0, space = 0,
+				whatever = 0;
 
 		public int getDay() {
 			return day;
@@ -282,10 +285,13 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 	public void changedays() {
 		int add_value = add_times.getCurrentItem();
 		int times_value = day_times.getCurrentItem();
-		if (add_value % times_value != 0) {
-			day.setCurrentItem(add_value / times_value + 1);
-		} else {
-			day.setCurrentItem(add_value / times_value);
+		if (times_value != 0) {
+			if (add_value % times_value != 0) {
+				day.setCurrentItem(add_value / times_value + 1);
+				add_times.setCurrentItem(0);
+			} else {
+				day.setCurrentItem(add_value / times_value);
+			}
 		}
 	}
 
@@ -297,24 +303,35 @@ public class DateDailyRepeatDiaogFragment extends WheelDialogFragment implements
 
 	@Override
 	protected String getSelectedString() {
-		TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache.put(
-				TAG, 
-				"每日"+(aboutDay.getDay_times())+"次\n间隔"+aboutDay.getSpace()+":"+aboutDay.getWhatever());
+		int second = aboutDay.getWhatever() * 5;
+		String sec = null;
+		if (second < 10) {
+			sec = "0" + second;
+		} else {
+			sec = "" + second;
+		}
+
+		TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache
+				.put(TAG,"每日" + (aboutDay.getDay_times()) + "次\n间隔"
+								+ aboutDay.getSpace() + ":" + sec);
+		 TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.put("day",
+		 aboutDay.getDay_times());
+		 TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.put("space",
+		 aboutDay.getSpace());
+		 TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.put("whatever",
+		 aboutDay.getWhatever());
+		
+
 		return null;
 	}
-	
-//	public String[] getInfo(){
-//		String str=TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache.get(TAG);
-//		String[] s=str.split("\n");
-//		for(int i=0;i<s.length;i++){
-//			System.out.println(s[i]);
-//		}
-//		return s;
-//	}
 
-	@Override
-	protected int getSelectedInt() {
-		// TODO Auto-generated method stub
-		return 0;
+	public HashMap<String, Integer> getString() {
+		 TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.get("day");
+		 TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.get("space");
+		 TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.get("whatever");
+		
+		return TimeMasterApplication.getInstance().getCacheModel().tmpResultCache;
 	}
+
+
 }

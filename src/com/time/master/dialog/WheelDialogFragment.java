@@ -61,7 +61,7 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 	/** 确认按钮事件*/
 	abstract protected void pushConfirm();
 	
-	abstract protected int getSelectedInt();
+	
 
 	public boolean onTouch(View arg0, MotionEvent arg1) {
 		// TODO Auto-generated method stub

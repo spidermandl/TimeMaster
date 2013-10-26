@@ -34,15 +34,14 @@ public class TimeWheelView extends WheelView {
 		super.drawCenterRect(canvas);
 	}
 
-	public void setCurrentItem(String string) {
-		// TODO Auto-generated method stub
-		
-	}
+//	public void setCurrentItem(String string) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
-	public int getCurrentItem(Integer daynum) {
-		// TODO Auto-generated method stub
-		return daynum;
-	}
+
+
+
 
 	
 
