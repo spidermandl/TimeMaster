@@ -1,29 +1,10 @@
 package com.time.master.fragment.date;
 
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-
-import com.time.master.R;
-import com.time.master.dialog.*;
-import com.time.master.TimeMasterApplication;
-import com.time.master.dialog.DurationTimeDialogFragment;
-import com.time.master.dialog.HumanDialogFragment;
-import com.time.master.dialog.LocationDialogFragment;
-import com.time.master.dialog.RepeatDialogFragment;
-import com.time.master.dialog.TimeDialogFragment;
-import com.time.master.dialog.WheelDialogFragment;
-import com.time.master.interfacer.WheelResultInterface;
-import com.time.master.model.CacheModel;
-import com.time.master.tool.ChineseCalendar;
-import com.time.master.view.BasicEditText;
-import com.time.master.view.BasicTextView;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -38,8 +19,23 @@ import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
+
+import com.time.master.R;
+import com.time.master.TimeMasterApplication;
+import com.time.master.database.TimeMasterHelper;
+import com.time.master.dialog.DurationTimeDialogFragment;
+import com.time.master.dialog.HumanDialogFragment;
+import com.time.master.dialog.LocationDialogFragment;
+import com.time.master.dialog.RepeatDialogFragment;
+import com.time.master.dialog.TimeDialogFragment;
+import com.time.master.dialog.WheelDialogFragment;
+import com.time.master.interfacer.WheelResultInterface;
+import com.time.master.model.CacheModel;
+import com.time.master.tool.ChineseCalendar;
+import com.time.master.view.BasicEditText;
+import com.time.master.view.BasicTextView;
 
 /**
  * 日---新增选项界面
@@ -52,7 +48,6 @@ public class DateDetailCreateFragment extends Fragment implements
 		OnTouchListener, android.view.View.OnClickListener {
 	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimePeroidFragment;
 	DialogFragment repeatFragment;
-
 	BasicEditText startDateSelector,//开始时间输入框
 	              locationSelector,
 	              humanSelector,
@@ -65,9 +60,10 @@ public class DateDetailCreateFragment extends Fragment implements
 	BasicTextView 	startClick,//开始按钮
 	                tvdate, // 日期 /倒计 按钮
 			        tvduration;// 占用/期间 按钮
-
+	
 	private ChineseCalendar startChineseDate,//开始时间
-	                        endChineseDate;//结束时间
+	                        endChineseDate,
+	                        durationChinsesDate;//结束时间
 	
 	private Handler countTimeHandler;//计时handler
 	private Runnable mTicker;//计时runnable
@@ -97,7 +93,7 @@ public class DateDetailCreateFragment extends Fragment implements
 		humanSelector = (BasicEditText) layout.findViewById(R.id.plan_human);
 		humanSelector.setInputType(InputType.TYPE_NULL);
 		humanSelector.setOnTouchListener(this);
-
+		
 
 /**
  * @author
@@ -300,7 +296,9 @@ public class DateDetailCreateFragment extends Fragment implements
 						switch(msg.what){
 						case 1://计时状态
 							lengthSelector.setText((String)msg.obj);
+							
 							mTicker.run();
+							
 							break;
 						case 2://禁止状态
 							countTimeHandler.removeCallbacks(mTicker);
@@ -336,7 +334,9 @@ public class DateDetailCreateFragment extends Fragment implements
 				v.setStatus(1);
 				startClick.setText("结束");
 				startClick.setBackgroundColor(0xFFFF0000);
+				TimeMasterApplication.getInstance().getDatabaseHelper().insertScheduleRecord(startChineseDate);
 				mTicker.run();
+				
 				break;
 			case 1://停止计时
 				v.setStatus(2);
@@ -347,20 +347,27 @@ public class DateDetailCreateFragment extends Fragment implements
 				if(model.endTime==null||(model.startTime.getTimeInMillis()+model.tickingTime)>model.endTime.getTimeInMillis()){
 					model.endTime=new ChineseCalendar(new Date(model.startTime.getTimeInMillis()+model.tickingTime));
 					endDateSelector.setText(getChineseDateString(model.endTime));
+					endChineseDate=new ChineseCalendar(model.endTime);
+					TimeMasterApplication.getInstance().getDatabaseHelper().updateEndTime(endChineseDate);
 				}else{
 					if(endDateSelector.getText().toString()==null||endDateSelector.getText().toString().equals("")){
 						endDateSelector.setText(getChineseDateString(model.endTime));
+						endChineseDate=new ChineseCalendar(model.endTime);
+						TimeMasterApplication.getInstance().getDatabaseHelper().updateEndTime(endChineseDate);
 					}
 				}
+				
 				break;
 			case 2:
 			    v.setStatus(1);
 			    startClick.setText("结束");
 			    startClick.setBackgroundColor(0xFFFF0000);
 			    mTicker.run();
+			    durationChinsesDate=new ChineseCalendar(new Date(model.tickingTime));
+			    TimeMasterApplication.getInstance().getDatabaseHelper().updateDurationTime(durationChinsesDate);
 			    break;
 			default:
-				v.setStatus(0);
+				//v.setStatus(0);
 				break;
 			}
 			break;

@@ -424,7 +424,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 			break;
 		case R.id.confirm:
 			this.dismiss();
-			showDialog(new TimeDialogFragment());
+			
 		default:
 			break;
 		}
