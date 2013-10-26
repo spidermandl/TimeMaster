@@ -1,14 +1,14 @@
 package com.time.master.dialog;
 
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
+
 import android.R.integer;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import com.time.master.R;
-import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.TimeMasterApplication;
 import com.time.master.model.CacheModel;
 import com.time.master.tool.ChineseCalendar;
@@ -237,7 +237,6 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 				// TODO Auto-generated method stub
 				
 			}
-			
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				model.minute=wheel.getCurrentItem()*5;

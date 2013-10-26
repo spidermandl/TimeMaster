@@ -37,7 +37,7 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 	EditText do1,do2,do3,ge1,ge2,ge3;
 	List<EditText> list=new ArrayList<EditText>();
 //	LinkedList<TextView> linkedList=new LinkedList<TextView>();
-	String string=" ";
+	String string="";
 	int index=0;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -222,6 +222,7 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 				index=0;
 			list.get(index).setFocusable(true);	
 			string=" ";
+			list.get(index).getSelectionEnd();
 //			index+=1;
 				break;
 		case R.id.date_yes:
@@ -247,38 +248,31 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		case R.id.do_do1:
 			do1.setFocusable(true);
 		    do1.setInputType(InputType.TYPE_NULL);
-//		    do1.setInputType(getId());
 //			do1.setFocusableInTouchMode(true);
 //			do1.requestFocus();
-			do1.getSelectionEnd();
 				break;
 		case R.id.do_do2:
 			do2.setInputType(InputType.TYPE_NULL);
 			do2.setFocusable(true);
 //			do2.requestFocus();
-			do2.getSelectionEnd();
 				break;
 		case R.id.do_do3:
 			do3.setInputType(InputType.TYPE_NULL);
 			do3.setFocusable(true);
-			do3.getSelectionEnd();
 				break;
 		case R.id.do_ge1:
 			ge1.setInputType(InputType.TYPE_NULL);
 //			ge1.setInputType(getId());
 			ge1.setFocusable(true);
 //			ge1.requestFocus();
-//			ge1.setSelection(index)
 				break;
 		case R.id.do_ge2:
 			ge2.setInputType(InputType.TYPE_NULL);
 			ge2.setFocusable(true);
-			ge2.getSelectionEnd();
 				break;
 		case R.id.do_ge3:
 			ge3.setInputType(InputType.TYPE_NULL);
 			ge3.setFocusable(true);
-			ge3.getSelectionEnd();
 				break;
 		default:
 			break;
