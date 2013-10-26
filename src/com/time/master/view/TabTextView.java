@@ -17,9 +17,9 @@ public class TabTextView extends SelectedTextView {
 	Context context;
 	protected int screen_width,
 	screen_height,
-	unit_width,//view µ¥Î»³¤¶È
-	gap,//viewµÄ¼ä¸ô³¤¶È
-	screen_mode; //1´ú±íÊúÆÁ £¬ 2´ú±íºáÆÁ
+	unit_width,//view å•ä½é•¿åº¦
+	gap,//viewçš„é—´éš”é•¿åº¦
+	screen_mode; //1ä»£è¡¨ç«–å± ï¼Œ 2ä»£è¡¨æ¨ªå±
 	protected RelativeLayout.LayoutParams params=(LayoutParams) this.getLayoutParams();
 	Paint mPaint,marginPaint,linePaint;
 	boolean hasRightEdge=false;
@@ -38,7 +38,7 @@ public class TabTextView extends SelectedTextView {
 		init(context);
 	}
 	/***
-	 * ³õÊ¼»¯ËùÓĞ²ÎÊı
+	 * åˆå§‹åŒ–æ‰€æœ‰å‚æ•°
 	 */
 	protected void init(Context context){
 		this.context=context;
@@ -55,8 +55,8 @@ public class TabTextView extends SelectedTextView {
 		linePaint.setColor(0xFFCCCCCC);
 		linePaint.setStyle(Style.STROKE);
 		linePaint.setStrokeWidth(strokeWdith);
-		linePaint.setAntiAlias(true); // Ïû³ı¾â³İ   
-		linePaint.setFlags(Paint.ANTI_ALIAS_FLAG); // Ïû³ı¾â³İ  
+		linePaint.setAntiAlias(true); // æ¶ˆé™¤é”¯é½¿   
+		linePaint.setFlags(Paint.ANTI_ALIAS_FLAG); // æ¶ˆé™¤é”¯é½¿  
 	}
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -74,23 +74,23 @@ public class TabTextView extends SelectedTextView {
 	
 	@Override
 	protected void onDraw(Canvas canvas) {
-//		canvas.drawRect(0, 0, gap, unit_width*0.75f, marginPaint);//×ó±ß¿ò
-//        canvas.drawRect(gap, 0, gap+unit_width, unit_width*0.75f, mPaint);//¾ÓÖĞ¾ØĞÎ
+//		canvas.drawRect(0, 0, gap, unit_width*0.75f, marginPaint);//å·¦è¾¹æ¡†
+//        canvas.drawRect(gap, 0, gap+unit_width, unit_width*0.75f, mPaint);//å±…ä¸­çŸ©å½¢
 //		if(hasRightEdge)
-//			canvas.drawRect(gap+unit_width, 0, gap+gap+unit_width, unit_width*0.75f, marginPaint);//ÓÒ±ß¿ò
+//			canvas.drawRect(gap+unit_width, 0, gap+gap+unit_width, unit_width*0.75f, marginPaint);//å³è¾¹æ¡†
 //		
 //		canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, unit_width+gap+(hasRightEdge?gap:0), unit_width*0.75f+strokeWdith/2, linePaint);
 		if(screen_mode==Configuration.ORIENTATION_PORTRAIT){
-			canvas.drawRect(0, 0, gap/2, unit_width*0.75f, marginPaint);//×ó±ß¿ò
-			canvas.drawRect(gap/2, 0, screen_width/5-gap/2, unit_width*0.75f, mPaint);//¾ÓÖĞ¾ØĞÎ
-			canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, unit_width*0.75f, marginPaint);//ÓÒ±ß¿ò
+			canvas.drawRect(0, 0, gap/2, unit_width*0.75f, marginPaint);//å·¦è¾¹æ¡†
+			canvas.drawRect(gap/2, 0, screen_width/5-gap/2, unit_width*0.75f, mPaint);//å±…ä¸­çŸ©å½¢
+			canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, unit_width*0.75f, marginPaint);//å³è¾¹æ¡†
 			canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, screen_width/5, unit_width*0.75f+strokeWdith/2, linePaint);
 		}else{
-			canvas.drawRect(0, 0, gap/2, getMeasuredHeight(), marginPaint);//×ó±ß¿ò
-			canvas.drawRect(0, 0, getMeasuredWidth(),gap/2, marginPaint);//ÉÏ±ß¿ò
-			canvas.drawRect(gap/2, 0, getMeasuredWidth()-gap/2, getMeasuredHeight()-gap/2, mPaint);//¾ÓÖĞ¾ØĞÎ
-			canvas.drawRect(0, getMeasuredHeightAndState()-gap/2, getMeasuredWidth(), getMeasuredHeight(), marginPaint);//ÏÂ±ß¿ò
-			canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, getMeasuredHeight(), marginPaint);//ÓÒ±ß¿ò
+			canvas.drawRect(0, 0, gap/2, getMeasuredHeight(), marginPaint);//å·¦è¾¹æ¡†
+			canvas.drawRect(0, 0, getMeasuredWidth(),gap/2, marginPaint);//ä¸Šè¾¹æ¡†
+			canvas.drawRect(gap/2, 0, getMeasuredWidth()-gap/2, getMeasuredHeight()-gap/2, mPaint);//å±…ä¸­çŸ©å½¢
+            canvas.drawRect(0, getMeasuredHeight()-gap/2, getMeasuredWidth(),getMeasuredHeight(), marginPaint);
+			canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, getMeasuredHeight(), marginPaint);//å³è¾¹æ¡†
 			canvas.drawLine(getMeasuredWidth()-gap/2+strokeWdith/2, 0, getMeasuredWidth()-gap/2+strokeWdith/2, getMeasuredHeight(), linePaint);
 		}
 		super.onDraw(canvas);

@@ -809,15 +809,6 @@ containing a value of this type.
         public static final int date_top_center_lunar_2=0x7f07009d;
         public static final int date_top_centerone_lunar1=0x7f0700a0;
         public static final int date_top_centerone_lunar2=0x7f0700a1;
-<<<<<<< HEAD
-        public static final int date_top_fifth=0x7f07010b;
-        public static final int date_top_first=0x7f070107;
-        public static final int date_top_forth=0x7f07010a;
-        public static final int date_top_left_lunar1=0x7f07009e;
-        public static final int date_top_left_lunar2=0x7f07009f;
-        public static final int date_top_second=0x7f070108;
-        public static final int date_top_third=0x7f070109;
-=======
         public static final int date_top_fifth=0x7f070114;
         public static final int date_top_first=0x7f070110;
         public static final int date_top_forth=0x7f070113;
@@ -825,15 +816,12 @@ containing a value of this type.
         public static final int date_top_left_lunar2=0x7f07009f;
         public static final int date_top_second=0x7f070111;
         public static final int date_top_third=0x7f070112;
->>>>>>> f73e283426324bd3f310a28643a13349681bcda8
         public static final int date_tuesday=0x7f0700b5;
         public static final int date_wednesday=0x7f0700b6;
         public static final int date_working=0x7f0700a8;
         public static final int date_year_current=0x7f0700a7;
         public static final int date_year_select=0x7f0700a5;
         public static final int date_yes=0x7f0700bc;
-<<<<<<< HEAD
-=======
         public static final int day_warning_known=0x7f07010f;
         public static final int day_warning_minutes_warn=0x7f07010d;
         public static final int day_warning_not_warn=0x7f07010e;
@@ -843,7 +831,6 @@ containing a value of this type.
         public static final int day_warning_plan_shelve=0x7f07010a;
         public static final int day_warning_plan_start=0x7f070109;
         public static final int day_warning_reset_warn=0x7f07010c;
->>>>>>> f73e283426324bd3f310a28643a13349681bcda8
         public static final int do_del=0x7f0700be;
         public static final int do_do=0x7f0700bb;
         public static final int do_ge=0x7f0700bd;

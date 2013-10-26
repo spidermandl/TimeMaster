@@ -1,7 +1,7 @@
 package com.time.master.dialog;
 
 /**
- * "×ÔÅÅ£º×öX Í£X" ¶Ô»°¿ò
+ * "ï¿½ï¿½ï¿½Å£ï¿½ï¿½ï¿½X Í£X" ï¿½Ô»ï¿½ï¿½ï¿½
  * @author WangHaiyang
  */
 
@@ -33,7 +33,7 @@ import android.widget.TextView;
 
 public class RepeatCustomizedDialogFragment extends BasicDialogFragment implements OnClickListener, OnTouchListener{
 	public static final String tag="DoDialogFragment";
-	BasicTextView doNext,doConfirm,num0,num1,num2,num3,num4,num5,num6,num7,num8,num9;
+	BasicTextView doNext,doConfirm,doDelete,num0,num1,num2,num3,num4,num5,num6,num7,num8,num9;
 	EditText do1,do2,do3,ge1,ge2,ge3;
 	List<EditText> list=new ArrayList<EditText>();
 //	LinkedList<TextView> linkedList=new LinkedList<TextView>();
@@ -61,6 +61,7 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		ge3=(EditText)layout.findViewById(R.id.do_ge3);
 		doConfirm=(BasicTextView)layout.findViewById(R.id.date_yes);
 		doNext=(BasicTextView)layout.findViewById(R.id.do_next);
+		doDelete=(BasicTextView)layout.findViewById(R.id.do_del);
 		num0=(BasicTextView)layout.findViewById(R.id.do_num0);
 		num1=(BasicTextView)layout.findViewById(R.id.do_num1);
 		num2=(BasicTextView)layout.findViewById(R.id.do_num2);
@@ -81,6 +82,7 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		
 		doConfirm.setOnClickListener(this);
 		doNext.setOnClickListener(this);
+		doDelete.setOnClickListener(this);
 		num0.setOnClickListener(this);
 		num1.setOnClickListener(this);
 		num2.setOnClickListener(this);
@@ -213,25 +215,23 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 //			onChange(R.id.do_num9);
 			string+=(String) num9.getText();
 			list.get(index).setText(string);
-				break;
-				
-		
-				
+				break;		
 		case R.id.do_next:
 			if(++index>5)
 				index=0;
-			list.get(index).setFocusable(true);	
-			string=" ";
-			list.get(index).getSelectionEnd();
-//			index+=1;
+			string="";
+			list.get(index).setCursorVisible(true);
 				break;
 		case R.id.date_yes:
 			
 				break;
 		case R.id.do_del:
-//			if(index==0)
 //			list.get(index).setFocusable(true);	
+//			string="";
+			list.get(index).setText("");
+//		System.out.println(index);
 //			string=" ";
+		
 				break;
 				
 				
@@ -248,6 +248,7 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		case R.id.do_do1:
 			do1.setFocusable(true);
 		    do1.setInputType(InputType.TYPE_NULL);
+		    do1.setCursorVisible(isVisible());
 //			do1.setFocusableInTouchMode(true);
 //			do1.requestFocus();
 				break;
@@ -262,8 +263,8 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 				break;
 		case R.id.do_ge1:
 			ge1.setInputType(InputType.TYPE_NULL);
-//			ge1.setInputType(getId());
 			ge1.setFocusable(true);
+			ge1.setCursorVisible(isVisible());
 //			ge1.requestFocus();
 				break;
 		case R.id.do_ge2:
