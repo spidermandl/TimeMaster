@@ -89,7 +89,7 @@ public class TabTextView extends SelectedTextView {
 			canvas.drawRect(0, 0, gap/2, getMeasuredHeight(), marginPaint);//×ó±ß¿ò
 			canvas.drawRect(0, 0, getMeasuredWidth(),gap/2, marginPaint);//ÉÏ±ß¿ò
 			canvas.drawRect(gap/2, 0, getMeasuredWidth()-gap/2, getMeasuredHeight()-gap/2, mPaint);//¾ÓÖĞ¾ØĞÎ
-			canvas.drawRect(0, getMeasuredHeightAndState()-gap/2, getMeasuredWidth(), getMeasuredHeight(), marginPaint);//ÏÂ±ß¿ò
+			canvas.drawRect(gap/2, getMeasuredHeight(), screen_width/5, getMeasuredHeight(), marginPaint);//ÏÂ±ß¿ò
 			canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, getMeasuredHeight(), marginPaint);//ÓÒ±ß¿ò
 			canvas.drawLine(getMeasuredWidth()-gap/2+strokeWdith/2, 0, getMeasuredWidth()-gap/2+strokeWdith/2, getMeasuredHeight(), linePaint);
 		}
