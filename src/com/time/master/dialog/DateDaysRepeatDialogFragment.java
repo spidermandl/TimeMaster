@@ -324,42 +324,6 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 	}
 
-	private String getDateString() {
-
-		if (dayModel == 0) {
-			chineseCalendar.set(ChineseCalendar.YEAR, dateModel.yearc);
-			chineseCalendar.set(ChineseCalendar.MONTH, dateModel.monthc - 1);
-			chineseCalendar.set(ChineseCalendar.DAY_OF_MONTH, dateModel.dayc);
-			chineseCalendar.set(ChineseCalendar.HOUR_OF_DAY, dateModel.daynumberc);
-			chineseCalendar.set(ChineseCalendar.MINUTE, dateModel.totalcountc);
-			return chineseCalendar.get(ChineseCalendar.CHINESE_YEAR)
-					+ "Äê"
-					+ chineseCalendar.getChinese(ChineseCalendar.CHINESE_MONTH)
-					+ chineseCalendar.getChinese(ChineseCalendar.CHINESE_DATE)
-					+ dateModel.daynumberc
-					+ ":"
-					+ (dateModel.totalcountc < 10 ? "0" + dateModel.totalcountc
-							: dateModel.totalcountc);
-		} else {
-			chineseCalendar.set(ChineseCalendar.CHINESE_DATE, dateModel.yearc);
-			chineseCalendar.set(ChineseCalendar.CHINESE_MONTH, dateModel.monthc);
-			chineseCalendar.set(ChineseCalendar.CHINESE_DATE, dateModel.dayc);
-			chineseCalendar.set(ChineseCalendar.HOUR_OF_DAY, dateModel.daynumberc);
-			chineseCalendar.set(ChineseCalendar.MINUTE, dateModel.totalcountc);
-			return chineseCalendar.get(ChineseCalendar.YEAR)
-					+ "/"
-					+ (chineseCalendar.get(ChineseCalendar.MONTH) + 1)
-					+ "/"
-					+ chineseCalendar.get(ChineseCalendar.DAY_OF_MONTH)
-					+ "  "
-					+ dateModel.daynumberc
-					+ ":"
-					+ (dateModel.totalcountc < 10 ? "0" + dateModel.totalcountc
-							: dateModel.totalcountc);
-		}
-
-	}
-
 	/** ¹öÂÖÒõÑôÄ£Ê½ÇÐ»» */
 	private void changeTimeStyle(int dayModel) {
 		if (dayModel == 0) {
