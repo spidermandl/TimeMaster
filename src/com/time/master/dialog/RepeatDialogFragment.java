@@ -92,6 +92,7 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 		setInitialStatus(dtworking);
 		setInitialStatus(dteveryday);
 		setInitialStatus(dtmonday);
+		setInitialStatus(dtmcurrent);
 		setInitialStatus(dtlmcurrent);
 		setInitialStatus(dtlmselect);
 		setInitialStatus(dtfestival);

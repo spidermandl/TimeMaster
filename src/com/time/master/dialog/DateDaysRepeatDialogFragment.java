@@ -1,6 +1,7 @@
 package com.time.master.dialog;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 import android.graphics.Color;
@@ -63,20 +64,24 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			viewStatus = new Bundle();
 		}
 		
-		model = new DateModel();
-		calendar = Calendar.getInstance();
-		model.yearc = calendar.get(Calendar.YEAR);
-		model.monthc = calendar.get(Calendar.MONTH) + 1;
-		model.dayc = calendar.get(Calendar.DAY_OF_MONTH);
-		chineseCalendar = new ChineseCalendar(calendar.getTime());
-		
-		dateModel=new DateModel();
-		HashMap<String, Integer> hashmap = getString();
-
-		if (hashmap.isEmpty()) {
-			getSelectedString();
-			hashmap = getString();
+		dateModel = new DateModel();
+		HashMap<String, String> cache=TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache;
+		if(cache.containsKey(TAG)){
+			/**判断缓存是否写入过*/
+			dateModel.yearc=Integer.parseInt(cache.get(TAG+"year"));
+			dateModel.monthc=Integer.parseInt(cache.get(TAG+"month"));
+			dateModel.dayc=Integer.parseInt(cache.get(TAG+"day"));
+			dateModel.daynumberc=Integer.parseInt(cache.get(TAG+"daynumber"));
+			dateModel.totalcountc= Integer.parseInt(cache.get(TAG+"totalnumber"));
+			chineseCalendar=new ChineseCalendar(dateModel.yearc, dateModel.monthc-1, dateModel.dayc);
+		}else{
+			chineseCalendar = new ChineseCalendar(new Date());
+			dateModel.yearc = chineseCalendar.get(Calendar.YEAR);
+			dateModel.monthc = chineseCalendar.get(Calendar.MONTH) + 1;
+			dateModel.dayc = chineseCalendar.get(Calendar.DAY_OF_MONTH);
 		}
+		
+		
 		View layout = inflater.inflate(R.layout.date_days_repeat_dialog,
 				container, false);
 
@@ -87,15 +92,11 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 		mode = (TextView) layout.findViewById(R.id.date_center_second);
 		mode.setOnClickListener(this);
-
-		
-
 		mode.setText(R.string.date_top_center_lunar_2);
 		mode.setBackgroundColor(Color.YELLOW);
 
 		year = (TimeWheelView) layout.findViewById(R.id.yearone);
-		yearAdapter = new NumericWheelAdapter(this.getActivity(),
-				model.yearc - 5000, model.yearc + 5000);
+		yearAdapter = new NumericWheelAdapter(this.getActivity(),dateModel.yearc - 5000, dateModel.yearc + 5000);
 		yearAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		yearAdapter.setItemTextResource(R.id.numeric_text);
 		year.setVisibleItems(TIME_LIST_NUMBER);
@@ -111,8 +112,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
-				model.yearc = calendar.get(Calendar.YEAR)
-						+ wheel.getCurrentItem() - 5000;
+				dateModel.yearc = chineseCalendar.get(Calendar.YEAR)+ wheel.getCurrentItem() - 5000;
 				System.out.println(wheel.getCurrentItem());
 				freshDayWheel();
 			}
@@ -126,7 +126,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		month.setVisibleItems(TIME_LIST_NUMBER);
 		month.setViewAdapter(monthAdapter);
 		month.setCyclic(true);
-		month.setCurrentItem(hashmap.get("month"));
+		month.setCurrentItem(dateModel.monthc-1);
 		month.addScrollingListener(new OnWheelScrollListener() {
 
 			@Override
@@ -136,11 +136,11 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 			
-				dateModel.setMonthc( wheel.getCurrentItem()+1);
+				dateModel.monthc=wheel.getCurrentItem()+1;
 				if (dayModel == 0) {
 					Calendar calendar = Calendar.getInstance();
-					calendar.set(Calendar.YEAR, model.yearc);
-					calendar.set(Calendar.MONTH, model.monthc - 1);
+					calendar.set(Calendar.YEAR, dateModel.yearc);
+					calendar.set(Calendar.MONTH, dateModel.monthc - 1);
 
 					int maxDays = calendar
 							.getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -154,7 +154,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 					day.setViewAdapter(dayAdapter);
 					int curDay = Math.min(maxDays, day.getCurrentItem() + 1);
 					day.setCurrentItem(curDay - 1, true);
-					model.dayc = curDay;
+					dateModel.dayc = curDay;
 					freshDayWheel();
 				}
 			}
@@ -163,14 +163,14 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 		day = (TimeWheelView) layout.findViewById(R.id.dayone);
 		dayAdapter = new TimeNumericWheelAdapter(this.getActivity(), 1,
-				calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+				chineseCalendar.getActualMaximum(Calendar.DAY_OF_MONTH));
 		dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 		dayAdapter.setItemTextResource(R.id.numeric_text);
 		dayAdapter.setTextInterface(textInterface);
 		day.setVisibleItems(TIME_LIST_NUMBER);
 		day.setViewAdapter(dayAdapter);
 		day.setCyclic(true);
-		day.setCurrentItem(hashmap.get("day"));
+		day.setCurrentItem(dateModel.dayc);
 		day.addScrollingListener(new OnWheelScrollListener() {
 
 			@Override
@@ -180,7 +180,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 			
-				dateModel.setDayc( wheel.getCurrentItem());
+				dateModel.dayc = wheel.getCurrentItem();
 				freshDayWheel();
 
 			}
@@ -194,7 +194,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		daynumberAdapter.setItemTextResource(R.id.numeric_text);
 		daynumber.setVisibleItems(TIME_LIST_NUMBER);
 		daynumber.setViewAdapter(daynumberAdapter);
-		daynumber.setCurrentItem(hashmap.get("daynumber"));
+		daynumber.setCurrentItem(dateModel.daynumberc);
 		daynumber.addScrollingListener(new OnWheelScrollListener() {
 
 			@Override
@@ -206,7 +206,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			public void onScrollingFinished(WheelView wheel) {
 
 		
-				dateModel.setDaynumberc( wheel.getCurrentItem());
+				dateModel.daynumberc = wheel.getCurrentItem();
 				changDay();
 			}
 
@@ -219,7 +219,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		totalcountAdapter.setItemTextResource(R.id.numeric_text);
 		totalcount.setVisibleItems(TIME_LIST_NUMBER);
 		totalcount.setViewAdapter(totalcountAdapter);
-		totalcount.setCurrentItem(model.totalcountc);
+		totalcount.setCurrentItem(dateModel.totalcountc);
 		totalcount.addScrollingListener(new OnWheelScrollListener() {
 
 			@Override
@@ -230,7 +230,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
-				model.totalcountc = wheel.getCurrentItem();
+				dateModel.totalcountc = wheel.getCurrentItem();
 
 			}
 		});
@@ -247,13 +247,6 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		int daynum = (day.getCurrentItem() + num);
 		int monthnum = (month.getCurrentItem());
 		day.setCurrentItem(daynum);
-//		for (int i = 0; i < 5; i++) {
-//
-//			if (daynum > 30 * i) {
-//				month.setCurrentItem(monthnum + i);
-//				day.setCurrentItem(daynum - 30);
-//			}
-//		}
 
 	}
 
@@ -261,52 +254,9 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 	 * 时间数据模型，年、月、日、天数、总次数
 	 */
 	class DateModel {
-		private int yearc, monthc, dayc, totalcountc,daynumberc;
-
-		public int getYearc() {
-			return yearc;
-		}
-
-		public void setYearc(int yearc) {
-			this.yearc = yearc;
-		}
-
-		public int getMonthc() {
-			return monthc;
-		}
-
-		public void setMonthc(int monthc) {
-			this.monthc = monthc;
-		}
-
-		public int getDayc() {
-			return dayc;
-		}
-
-		public void setDayc(int dayc) {
-			this.dayc = dayc;
-		}
-
-		public int getTotalcountc() {
-			return totalcountc;
-		}
-
-		public void setTotalcountc(int totalcountc) {
-			this.totalcountc = totalcountc;
-		}
-
-		public int getDaynumberc() {
-			return daynumberc;
-		}
-
-		public void setDaynumberc(int daynumberc) {
-			this.daynumberc = daynumberc;
-		}
-
+		int yearc, monthc, dayc,daynumberc=0,totalcountc=0;
 	}
-
-	DateModel model;
-	Calendar calendar;
+	//Calendar calendar;
 	TimeWheelView year, month, day, daynumber, totalcount;
 	NumericWheelAdapter yearAdapter, monthAdapter, totalcountAdapter;
 	ArrayWheelAdapter<String> monthArrayWheelAdapter, dayArrayWheelAdapter;
@@ -332,7 +282,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		@Override
 		public void changeText(int index, TextView textView) {
 			Calendar calendar = Calendar.getInstance();
-			calendar.set(model.yearc, model.monthc - 1, index + 1);
+			calendar.set(dateModel.yearc, dateModel.monthc - 1, index + 1);
 		}
 	};
 
@@ -340,8 +290,8 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 	private void freshDayWheel() {
 		if (dayModel == 0) {
 			Calendar calendar = Calendar.getInstance();
-			calendar.set(Calendar.YEAR, model.yearc);
-			calendar.set(Calendar.MONTH, model.monthc - 1);
+			calendar.set(Calendar.YEAR, dateModel.yearc);
+			calendar.set(Calendar.MONTH, dateModel.monthc - 1);
 
 			int maxDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 			dayAdapter = new TimeNumericWheelAdapter(
@@ -352,12 +302,12 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			day.setViewAdapter(dayAdapter);
 			int curDay = Math.min(maxDays, day.getCurrentItem() + 1);
 			day.setCurrentItem(curDay - 1, true);
-			model.dayc = curDay;
+			dateModel.dayc = curDay;
 		} else {
-			chineseCalendar = new ChineseCalendar(true, model.yearc,
-					model.monthc, model.dayc);
-			int maxDays = ChineseCalendar.daysInChineseMonth(model.yearc,
-					model.monthc);
+			chineseCalendar = new ChineseCalendar(true, dateModel.yearc,
+					dateModel.monthc, dateModel.dayc);
+			int maxDays = ChineseCalendar.daysInChineseMonth(dateModel.yearc,
+					dateModel.monthc);
 
 			String[] chineseDateName = new String[maxDays];
 			System.arraycopy(ChineseCalendar.chineseDateNames_1, 0,
@@ -370,7 +320,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			day.setViewAdapter(dayArrayWheelAdapter);
 			int curDay = Math.min(maxDays, day.getCurrentItem() + 1);
 			day.setCurrentItem(curDay - 1, true);
-			model.dayc = curDay;
+			dateModel.dayc = curDay;
 		}
 
 	}
@@ -378,35 +328,35 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 	private String getDateString() {
 
 		if (dayModel == 0) {
-			chineseCalendar.set(ChineseCalendar.YEAR, model.yearc);
-			chineseCalendar.set(ChineseCalendar.MONTH, model.monthc - 1);
-			chineseCalendar.set(ChineseCalendar.DAY_OF_MONTH, model.dayc);
-			chineseCalendar.set(ChineseCalendar.HOUR_OF_DAY, model.daynumberc);
-			chineseCalendar.set(ChineseCalendar.MINUTE, model.totalcountc);
+			chineseCalendar.set(ChineseCalendar.YEAR, dateModel.yearc);
+			chineseCalendar.set(ChineseCalendar.MONTH, dateModel.monthc - 1);
+			chineseCalendar.set(ChineseCalendar.DAY_OF_MONTH, dateModel.dayc);
+			chineseCalendar.set(ChineseCalendar.HOUR_OF_DAY, dateModel.daynumberc);
+			chineseCalendar.set(ChineseCalendar.MINUTE, dateModel.totalcountc);
 			return chineseCalendar.get(ChineseCalendar.CHINESE_YEAR)
 					+ "年"
 					+ chineseCalendar.getChinese(ChineseCalendar.CHINESE_MONTH)
 					+ chineseCalendar.getChinese(ChineseCalendar.CHINESE_DATE)
-					+ model.daynumberc
+					+ dateModel.daynumberc
 					+ ":"
-					+ (model.totalcountc < 10 ? "0" + model.totalcountc
-							: model.totalcountc);
+					+ (dateModel.totalcountc < 10 ? "0" + dateModel.totalcountc
+							: dateModel.totalcountc);
 		} else {
-			chineseCalendar.set(ChineseCalendar.CHINESE_DATE, model.yearc);
-			chineseCalendar.set(ChineseCalendar.CHINESE_MONTH, model.monthc);
-			chineseCalendar.set(ChineseCalendar.CHINESE_DATE, model.dayc);
-			chineseCalendar.set(ChineseCalendar.HOUR_OF_DAY, model.daynumberc);
-			chineseCalendar.set(ChineseCalendar.MINUTE, model.totalcountc);
+			chineseCalendar.set(ChineseCalendar.CHINESE_DATE, dateModel.yearc);
+			chineseCalendar.set(ChineseCalendar.CHINESE_MONTH, dateModel.monthc);
+			chineseCalendar.set(ChineseCalendar.CHINESE_DATE, dateModel.dayc);
+			chineseCalendar.set(ChineseCalendar.HOUR_OF_DAY, dateModel.daynumberc);
+			chineseCalendar.set(ChineseCalendar.MINUTE, dateModel.totalcountc);
 			return chineseCalendar.get(ChineseCalendar.YEAR)
 					+ "/"
 					+ (chineseCalendar.get(ChineseCalendar.MONTH) + 1)
 					+ "/"
 					+ chineseCalendar.get(ChineseCalendar.DAY_OF_MONTH)
 					+ "  "
-					+ model.daynumberc
+					+ dateModel.daynumberc
 					+ ":"
-					+ (model.totalcountc < 10 ? "0" + model.totalcountc
-							: model.totalcountc);
+					+ (dateModel.totalcountc < 10 ? "0" + dateModel.totalcountc
+							: dateModel.totalcountc);
 		}
 
 	}
@@ -415,10 +365,10 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 	private void changeTimeStyle(int dayModel) {
 		if (dayModel == 0) {
 			// 阳历滚轮变成阴历滚轮
-			chineseCalendar.set(model.yearc, model.monthc - 1, model.dayc);
-			model.yearc = chineseCalendar.get(ChineseCalendar.CHINESE_YEAR);
-			model.monthc = chineseCalendar.get(ChineseCalendar.CHINESE_MONTH);
-			model.dayc = chineseCalendar.get(ChineseCalendar.CHINESE_DATE);
+			chineseCalendar.set(dateModel.yearc, dateModel.monthc - 1, dateModel.dayc);
+			dateModel.yearc = chineseCalendar.get(ChineseCalendar.CHINESE_YEAR);
+			dateModel.monthc = chineseCalendar.get(ChineseCalendar.CHINESE_MONTH);
+			dateModel.dayc = chineseCalendar.get(ChineseCalendar.CHINESE_DATE);
 			this.dayModel = 1;
 
 			ArrayWheelAdapter<String> monthArrayWheelAdapter = new ArrayWheelAdapter<String>(
@@ -427,7 +377,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 					.setItemResource(R.layout.wheel_nemeric_text_item);
 			monthArrayWheelAdapter.setItemTextResource(R.id.numeric_text);
 			month.setViewAdapter(monthArrayWheelAdapter);
-			month.setCurrentItem(model.monthc - 1);
+			month.setCurrentItem(dateModel.monthc - 1);
 
 			ArrayWheelAdapter<String> dayArrayWheelAdapter = new ArrayWheelAdapter<String>(
 					getActivity(), ChineseCalendar.chineseDateNames_1);
@@ -435,29 +385,29 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 					.setItemResource(R.layout.wheel_nemeric_text_item);
 			dayArrayWheelAdapter.setItemTextResource(R.id.numeric_text);
 			day.setViewAdapter(dayArrayWheelAdapter);
-			day.setCurrentItem(model.dayc - 1);
+			day.setCurrentItem(dateModel.dayc - 1);
 
 			mode.setText(R.string.date_top_center_lunar_1);
 		} else {
 			// 阴历滚轮变成阳历滚轮
-			chineseCalendar = new ChineseCalendar(true, model.yearc,
-					model.monthc, model.dayc);
+			chineseCalendar = new ChineseCalendar(true, dateModel.yearc,
+					dateModel.monthc, dateModel.dayc);
 			this.dayModel = 0;
-			model.yearc = chineseCalendar.get(ChineseCalendar.YEAR);
-			model.monthc = (chineseCalendar.get(ChineseCalendar.MONTH) + 1);
-			model.dayc = chineseCalendar.get(ChineseCalendar.DATE);
+			dateModel.yearc = chineseCalendar.get(ChineseCalendar.YEAR);
+			dateModel.monthc = (chineseCalendar.get(ChineseCalendar.MONTH) + 1);
+			dateModel.dayc = chineseCalendar.get(ChineseCalendar.DATE);
 			dayAdapter = new TimeNumericWheelAdapter(this.getActivity(), 1,
-					calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+					chineseCalendar.getActualMaximum(Calendar.DAY_OF_MONTH));
 			dayAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			dayAdapter.setItemTextResource(R.id.numeric_text);
 			dayAdapter.setTextInterface(textInterface);
 			day.setViewAdapter(dayAdapter);
-			day.setCurrentItem(model.dayc - 1);
+			day.setCurrentItem(dateModel.dayc - 1);
 			monthAdapter = new NumericWheelAdapter(this.getActivity(), 1, 12);
 			monthAdapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			monthAdapter.setItemTextResource(R.id.numeric_text);
 			month.setViewAdapter(monthAdapter);
-			month.setCurrentItem(model.monthc - 1);
+			month.setCurrentItem(dateModel.monthc - 1);
 
 			mode.setText(R.string.date_top_center_lunar_2);
 		}
@@ -483,31 +433,19 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 			break;
 		}
 	}
-	final static String DAY_NUM = TAG+"_DAY_NUM";
+
 	@Override
 	protected String getSelectedString() {
-		TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache
-				.put(TAG, "重复" + dateModel.getDaynumberc() + "天\n至" + model.yearc + "/"
-						+ dateModel.getMonthc() + "/" + dateModel.getDayc());
-		TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.put("daynumber",dateModel.getDaynumberc());
-//		TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.put("year",dateModel.getYearc());
-		TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.put("month",dateModel.getMonthc());
-		TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.put("day",dateModel.getDayc());
+		/**写入缓存*/
+		HashMap<String, String> cache=TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache;
+		cache.put(TAG, "重复" + dateModel.daynumberc + "天\n至" + dateModel.yearc + "/"+ dateModel.monthc + "/" + dateModel.dayc);
+		cache.put(TAG+"year", String.valueOf(dateModel.yearc));
+		cache.put(TAG+"month",String.valueOf(dateModel.monthc));
+		cache.put(TAG+"day",String.valueOf(dateModel.dayc));
+		cache.put(TAG+"daynumber",String.valueOf(dateModel.daynumberc));
+		cache.put(TAG+"totalnumber", String.valueOf(dateModel.totalcountc));
 		
 		return null;
 	}
-	public HashMap<String, Integer> getString() {
-		 
-		 TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.get("daynumber");
-//		 TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.get("year");
-		 TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.get("month");
-		 TimeMasterApplication.getInstance().getCacheModel().tmpResultCache.get("day");
-		 
-		return TimeMasterApplication.getInstance().getCacheModel().tmpResultCache;
-	}
-	
-
-		
-
 	
 }

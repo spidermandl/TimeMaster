@@ -811,7 +811,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.time.master:first_half
+          @attr name android:first_half
         */
         public static final int SwitchTextView_first_half = 0;
         /**
@@ -825,7 +825,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.time.master:second_half
+          @attr name android:second_half
         */
         public static final int SwitchTextView_second_half = 1;
         /**   自定义viewgroup的布局参数 
@@ -858,7 +858,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.time.master:attr_group
+          @attr name android:attr_group
         */
         public static final int ViewGroupType_attr_group = 3;
         /**
@@ -872,7 +872,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.time.master:default_bg
+          @attr name android:default_bg
         */
         public static final int ViewGroupType_default_bg = 2;
         /**
@@ -886,7 +886,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.time.master:new_line
+          @attr name android:new_line
         */
         public static final int ViewGroupType_new_line = 1;
         /**
@@ -900,7 +900,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.time.master:width_multi
+          @attr name android:width_multi
         */
         public static final int ViewGroupType_width_multi = 0;
     };
