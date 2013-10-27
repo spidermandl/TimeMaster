@@ -152,9 +152,9 @@ public class SelectDayFragment extends BasicDialogFragment implements
 
 	public void changedefaultcolor(int fatherdialog) {
 		switch (fatherdialog) {
-		case 1: emonth.setBackgroundColor(0xeeffff00);
+		case 1: //emonth.setBackgroundColor(0xeeff0000);
 			break;
-		case 2:eyear.setBackgroundColor(0xeeffff00);
+		case 2://eyear.setBackgroundColor(0xeeff0000);
 			break;
 
 		default:
