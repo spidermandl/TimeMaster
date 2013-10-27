@@ -260,7 +260,6 @@ public class DateDetailCreateFragment extends Fragment implements
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
-		CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 		switch (view.getId()) {
 		case R.id.plan_repeat:
 			repeatFragment = new RepeatDialogFragment();
@@ -268,7 +267,7 @@ public class DateDetailCreateFragment extends Fragment implements
 			showDialog(repeatFragment);
 			break;
 		case R.id.plan_model:
-			
+			CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 			if (viewStatus.get(R.id.plan_model)) {
 				viewStatus.put(R.id.plan_model, false);
 				startDateSelector.setText(getChineseDateString(model.startTime));
@@ -324,13 +323,13 @@ public class DateDetailCreateFragment extends Fragment implements
 					}
 				};
 			}
-			
+			model=TimeMasterApplication.getInstance().getCacheModel();
 			if(model.startTime==null)
 				model.startTime=new ChineseCalendar(new Date());
 			if(startDateSelector.getText().toString()==null||startDateSelector.getText().toString().equals("")){//开始按钮为空
 				startDateSelector.setText(getChineseDateString(model.startTime));
 			}
-			BasicTextView v=(BasicTextView)view;
+			 BasicTextView v=(BasicTextView)view;
 			switch (v.getStatus()){
 			case 0:
 				v.setStatus(1);
@@ -340,6 +339,7 @@ public class DateDetailCreateFragment extends Fragment implements
 				model.currentTime=new ChineseCalendar(date);
 				startChineseDate=model.currentTime;
 				model.startTime=startChineseDate;
+				//插入开始时间
 				TimeMasterApplication.getInstance().getDatabaseHelper().insertScheduleRecord(startChineseDate);
 				mTicker.run();
 				
@@ -354,11 +354,13 @@ public class DateDetailCreateFragment extends Fragment implements
 					model.endTime=new ChineseCalendar(new Date(model.startTime.getTimeInMillis()+model.tickingTime));
 					endDateSelector.setText(getChineseDateString(model.endTime));
 					endChineseDate=new ChineseCalendar(model.endTime);
+					//更新结束时间
 					TimeMasterApplication.getInstance().getDatabaseHelper().updateEndTime(endChineseDate);
 				}else{
 					if(endDateSelector.getText().toString()==null||endDateSelector.getText().toString().equals("")){
 						endDateSelector.setText(getChineseDateString(model.endTime));
 						endChineseDate=new ChineseCalendar(model.endTime);
+						//更新结束时间
 						TimeMasterApplication.getInstance().getDatabaseHelper().updateEndTime(endChineseDate);
 					}
 				}
@@ -370,8 +372,8 @@ public class DateDetailCreateFragment extends Fragment implements
 			    startClick.setBackgroundColor(0xFFFF0000);
 			    mTicker.run();
 			    durationChinsesDate=new ChineseCalendar(new Date(model.tickingTime));
+			    //更新持续时间
 			    TimeMasterApplication.getInstance().getDatabaseHelper().updateDurationTime(durationChinsesDate);
-				TimeMasterApplication.getInstance().getDatabaseHelper().getLastStartTime();
 			    break;
 			
 			default:
@@ -379,28 +381,34 @@ public class DateDetailCreateFragment extends Fragment implements
 				break;
 			}
 			break;
+		/*当还未向数据库更新结束时间时，最近的结束时间为降序队列第一个（lastendtime），更新结束时间后为第二个(lastsecondtime)*/
 		case R.id.plan_previous:
 			model=TimeMasterApplication.getInstance().getCacheModel();
 			if(model.startTime!=null){
-				//String str=new String("结束时间日期");
-				long endtime=0;
+				long lastsecondendtime=0;
+				long lastendtime=0;
+				long finalendtime=0;
 				model.endTime=new ChineseCalendar(new Date(model.startTime.getTimeInMillis()+model.tickingTime));
-				endtime=TimeMasterApplication.getInstance().getDatabaseHelper().getLastSecondEndTime();
-				if(endtime==0){
+				lastsecondendtime=TimeMasterApplication.getInstance().getDatabaseHelper().getLastSecondEndTime();
+				lastendtime=TimeMasterApplication.getInstance().getDatabaseHelper().getLastEndTime();
+				finalendtime=lastsecondendtime;
+				/*数据库里没有数据时，告知用户*/
+				if(lastsecondendtime==0||lastendtime==0){
 					Toast.makeText(getActivity(), "目前没有已结束事件的时间点供选择",
 					     Toast.LENGTH_SHORT).show();
+					break;
 				}
-				else if(endtime==model.endTime.getTimeInMillis()){
-					Toast.makeText(getActivity(), "当前事件未完全结束，无法承前",
-					     Toast.LENGTH_SHORT).show();
+				/*还未向数据库更新结束时间*/
+				if(lastendtime<model.endTime.getTimeInMillis()){
+						finalendtime=lastendtime;
 				
 				}
-				else {
-					
-					model.startTime=new ChineseCalendar(new Date(endtime));
+				model.startTime=new ChineseCalendar(new Date(finalendtime));
 					startDateSelector.setText(getChineseDateString(model.startTime));
+						Toast.makeText(getActivity(), "已完成承前操作",
+						     Toast.LENGTH_SHORT).show();//有时多次点击承前按钮，但是开始时间输入框时间保持不变，看不出效果，故加此Toast。
 				
-				}
+				
 			}
 			else{
 				Toast.makeText(getActivity(), "请选择一个开始时间或点击开始按钮",

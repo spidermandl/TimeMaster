@@ -87,7 +87,7 @@ public class TimeMasterHelper extends SQLiteOpenHelper {
 		System.out.println("插入开始时间"+starttime.getTimeInMillis());
 		db.insert(Tables.T_SCHEDULE_RECORDS, null, values);
 	}
-
+	/** 在时间记录表(_SCHEDULE_RECORDS)中更新开始时间(_END_TIME) */
 	public void updateEndTime(ChineseCalendar endtime) {
 		ContentValues values = new ContentValues();
 		values.put(ScheduleRecordsColumn._END_TIME, endtime.getTimeInMillis());
@@ -97,7 +97,7 @@ public class TimeMasterHelper extends SQLiteOpenHelper {
 		System.out.println("更新结束时间"+endtime.getTimeInMillis());
 		db.update(Tables.T_SCHEDULE_RECORDS, values, whereClause, whereArgs);
 	}
-
+	/** 在时间记录表(_SCHEDULE_RECORDS)中更新持续时间(_DURATION_TIME) */
 	public void updateDurationTime(ChineseCalendar durationtime) {
 		ContentValues values = new ContentValues();
 		values.put(ScheduleRecordsColumn._DURATION_TIME,
@@ -109,7 +109,7 @@ public class TimeMasterHelper extends SQLiteOpenHelper {
 		db.update(Tables.T_SCHEDULE_RECORDS, values, whereClause, whereArgs);
 	}
 	
-
+	/** 以_START_TIME为关键字降序排序，获取最大即最近的开始时间*/
 	public long getLastStartTime(){
 		Cursor cursor = db
 				.query(Tables.T_SCHEDULE_RECORDS,
@@ -127,6 +127,7 @@ public class TimeMasterHelper extends SQLiteOpenHelper {
 		return starttime;
 		
 	}
+	/** 以_END_TIME为关键字降序排序，获取最大即最近的开始时间*/
 	public long getLastEndTime() {
 		Cursor cursor = db
 				.query(Tables.T_SCHEDULE_RECORDS,
@@ -143,6 +144,7 @@ public class TimeMasterHelper extends SQLiteOpenHelper {
 			}
 		return endtime;
 	}
+	/** 以_END_TIME为关键字降序排序，获取第二近的开始时间，避免承前时，开始时间变为当前时间的结束时间造成逻辑错误。*/
 	public long getLastSecondEndTime() {
 		Cursor cursor = db
 				.query(Tables.T_SCHEDULE_RECORDS,
