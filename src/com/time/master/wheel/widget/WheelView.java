@@ -1,4 +1,4 @@
-/*
+/**
  *  Android Wheel Control.
  *  https://code.google.com/p/android-wheel/
  *  
@@ -852,6 +852,7 @@ public class WheelView extends View {
 				itemsLayout.addView(view, 0);
 			} else {
 				itemsLayout.addView(view);
+				
 			}
 			
 			return true;
@@ -891,7 +892,7 @@ public class WheelView extends View {
 		index %= count;
 		return viewAdapter.getItem(index, recycle.getItem(), itemsLayout);
 	}
-	
+
 	/**
 	 * Stops scrolling
 	 */

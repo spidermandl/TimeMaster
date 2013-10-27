@@ -11,12 +11,12 @@
         android:background="#BFBFBF" >
 
         <com.time.master.view.BasicTextView
-            android:id="@+id/solarandlunarcalendar"
+            android:id="@+id/showstatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/setbar_backgroundp"
             android:gravity="center"
-            android:text="阴历\n阳历"
+            android:text=""
             android:textColor="#000000"
             layout:new_line="true"
             layout:width_multi="1" />
@@ -31,7 +31,7 @@
             layout:new_line="false"
             layout:width_multi="1" 
             layout:default_bg="0xFFFFFF00"
-            layout:attr_group="1"/>
+          />
 
         <com.time.master.view.BasicTextView
             android:id="@+id/arrow"
@@ -51,8 +51,8 @@
             android:textColor="#000000"
             layout:new_line="false"
             layout:width_multi="1" 
-            layout:default_bg="0xFFFFFF00"
-            layout:attr_group="1"/>
+            layout:default_bg="0xFFFFFFFF"
+            />
 
         <com.time.master.view.SelectedTextView
             android:id="@+id/confirm"
@@ -66,7 +66,7 @@
             layout:width_multi="1" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/chineseandenglish"
+            android:id="@+id/translate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -111,7 +111,7 @@
             layout:attr_group="2" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/beijing"
+            android:id="@+id/Beikin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -123,7 +123,7 @@
             layout:attr_group="3" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/seoul"
+            android:id="@+id/Seoul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -135,7 +135,7 @@
             layout:attr_group="3" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/tokyo"
+            android:id="@+id/Tokyo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -147,11 +147,11 @@
             layout:attr_group="3" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/melbourne"
+            android:id="@+id/Melbourne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="墨尔\n本"
+            android:text="墨尔本"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="false"
@@ -171,11 +171,11 @@
             layout:attr_group="2" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/hawaii"
+            android:id="@+id/Hawaii"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="夏威\n夷"
+            android:text="夏威夷"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="true"
@@ -183,11 +183,11 @@
             layout:attr_group="3"/>
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/sanfrancisco"
+            android:id="@+id/Sanfrancisco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="旧金\n山"
+            android:text="旧金山"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="false"
@@ -195,7 +195,7 @@
             layout:attr_group="3"/>
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/newyork"
+            android:id="@+id/NewYork"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -207,11 +207,11 @@
             layout:attr_group="3" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/vancouver"
+            android:id="@+id/Vancouver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="温哥\n华"
+            android:text="温哥华"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="false"
@@ -231,7 +231,7 @@
             layout:attr_group="2" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/london"
+            android:id="@+id/London"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -243,7 +243,7 @@
             layout:attr_group="3" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/paris"
+            android:id="@+id/Paris"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -255,7 +255,7 @@
             layout:attr_group="3" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/roman"
+            android:id="@+id/Roman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -267,11 +267,11 @@
             layout:attr_group="3" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/moscow"
+            android:id="@+id/Moscow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="莫斯\n科"
+            android:text="莫斯科"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="false"
@@ -303,7 +303,7 @@
             layout:attr_group="3" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/cairo"
+            android:id="@+id/Cairo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -315,7 +315,7 @@
             layout:attr_group="3" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/india"
+            android:id="@+id/India"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -327,11 +327,11 @@
             layout:attr_group="3" />
 
         <com.time.master.view.SelectedTextView
-            android:id="@+id/singapore"
+            android:id="@+id/Singapore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="新加\n坡"
+            android:text="新加坡"
             android:textColor="#000000"
             layout:default_bg="0xFF92D050"
             layout:new_line="false"
@@ -351,4 +351,6 @@
             layout:attr_group="2"/>
         </com.time.master.view.GroupSingleTouchViewGroup>
 
+
 </RelativeLayout>
+

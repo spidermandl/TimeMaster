@@ -28,7 +28,7 @@ public class LoadStaticDataFragment extends DialogFragment {
 	boolean finished=false;
 	TextView content;
 	/**¸üÐÂUI*/
-	Handler handler=new Handler(){
+	Handler handler=new Handler(){	
 		public void handleMessage(android.os.Message msg) {
 			switch (msg.what) {
 			case LOADING_DATA:

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        
+<!--         第一个 -->
+
+		<com.time.master.view.BasicViewGroup
+    		android:id="@+id/groupOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            
+		    <com.time.master.view.BasicTextView
+                android:id="@+id/warning_everytime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFF00"
+                android:gravity="center"
+                android:text="@string/warning_everytime"
+                layout:new_line="true"
+                layout:width_multi="1" />
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_advanced"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:hint="@string/warning_advanced"
+                android:singleLine="true"
+                android:textIsSelectable="true"
+                layout:new_line="false"
+                layout:width_multi="3" />
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFF00"
+                android:gravity="center"
+                android:text="@string/warning_add"
+                layout:new_line="false"
+                layout:width_multi="1" />
+
+            <!-- The second line -->
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_compose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFF00"
+                android:gravity="center"
+                android:text="@string/warning_compose"
+                layout:new_line="true"
+                layout:width_multi="1" />
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_way"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setbar_backgroundp"
+                android:gravity="center"
+                android:hint="@string/warning_way"
+                android:singleLine="true"
+                android:textIsSelectable="true"
+                layout:new_line="false"
+                layout:width_multi="3" />
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FF0000"
+                android:gravity="center"
+                android:text="@string/warning_confirm"
+                layout:new_line="false"
+                layout:width_multi="1" />
+		    
+    
+		</com.time.master.view.BasicViewGroup>
+		
+<!--         第二个 -->
+
+        <com.time.master.view.GroupSingleTouchViewGroup
+            android:id="@+id/groupTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupOne" >
+            
+            
+            <!-- The third line -->
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_library"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/warning_library"
+                layout:default_bg="0xFF8EABFF"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+            
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF8EABFF"
+                android:gravity="center"
+                android:text="@string/warning_collect"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF8EABFF"
+                android:gravity="center"
+                android:text="@string/warning_download"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_audition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF8EABFF"
+                android:gravity="center"
+                android:text="@string/warning_audition"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_transcribe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF8EABFF"
+                android:gravity="center"
+                android:text="@string/warning_transcribe"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_man_sound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF8EABFF"
+                android:gravity="center"
+                android:text="@string/warning_man_sound"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_famale_sound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF8EABFF"
+                android:gravity="center"
+                android:text="@string/warning_female_sound"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_child_sound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF8EABFF"
+                android:gravity="center"
+                android:text="@string/warning_child_sound"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+            
+        </com.time.master.view.GroupSingleTouchViewGroup>
+        
+<!--         第三个 -->
+        
+        <com.time.master.view.GapCleanViewGroup
+            android:id="@+id/groupThree"
+            android:layout_toRightOf="@id/groupTwo"
+            android:layout_below="@id/groupOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_center_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFAA00"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/warning_ring_one"
+                android:textIsSelectable="true"
+                layout:new_line="true"
+                layout:width_multi="3" />
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_center_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFAA00"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/warning_ring_two"
+                android:textIsSelectable="true"
+                layout:new_line="true"
+                layout:width_multi="3" />
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_center_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFAA00"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/warning_ring_three"
+                android:textIsSelectable="true"
+                layout:new_line="true"
+                layout:width_multi="3" />
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_center_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFAA00"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/warning_ring_four"
+                android:textIsSelectable="true"
+                layout:new_line="true"
+                layout:width_multi="3" />
+
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_center_five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFAA00"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/warning_ring_five"
+                android:textIsSelectable="true"
+                layout:new_line="true"
+                layout:width_multi="3" />
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_center_six"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFAA00"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/warning_ring_six"
+                android:textIsSelectable="true"
+                layout:new_line="true"
+                layout:width_multi="3" />
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_center_seven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFAA00"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/warning_ring_seven"
+                android:textIsSelectable="true"
+                layout:new_line="true"
+                layout:width_multi="3" />
+
+            <com.time.master.view.BasicTextView
+                android:id="@+id/warning_center_eight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFAA00"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/warning_ring_eight"
+                android:textIsSelectable="true"
+                layout:new_line="true"
+                layout:width_multi="3" />
+            
+        </com.time.master.view.GapCleanViewGroup>
+        
+        
+
+<!--         第四个 -->
+        
+        <com.time.master.view.GroupSingleTouchViewGroup
+            android:id="@+id/groupFour"
+            android:layout_toRightOf="@id/groupThree"
+            android:layout_below="@id/groupOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_ring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFFFFAA00"
+                android:gravity="center"
+                android:text="@string/warning_ring"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF8FFF6B"
+                android:gravity="center"
+                android:text="@string/warning_music"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_pronunciation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF00B97D"
+                android:gravity="center"
+                android:text="@string/warning_pronunciation"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_vibrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF007AB9"
+                android:gravity="center"
+                android:text="@string/warning_vibrate"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFFFFD4FF"
+                android:gravity="center"
+                android:text="@string/warning_icon"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_motion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFFB90000"
+                android:gravity="center"
+                android:text="@string/warning_motion"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_surroundings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFF8EABFF"
+                android:gravity="center"
+                android:text="@string/warning_surroundings"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+
+            <com.time.master.view.SelectedTextView
+                android:id="@+id/warning_procedure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout:default_bg="0xFFC0C0C0"
+                android:gravity="center"
+                android:text="@string/warning_procedure"
+                layout:new_line="true"
+                layout:width_multi="1"
+                layout:attr_group="1" />
+            
+        </com.time.master.view.GroupSingleTouchViewGroup>
+         <include
+        android:visibility="invisible"
+        layout="@layout/gridview"
+     
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/groupTwo"
+        android:layout_below="@id/groupOne"
+        android:layout_toLeftOf="@id/groupFour"
+        android:layout_marginTop="9dp"
+       />
+    </RelativeLayout>
+
+</ScrollView>

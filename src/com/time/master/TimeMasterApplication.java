@@ -9,6 +9,7 @@ import com.time.master.model.CacheModel;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
@@ -43,7 +44,7 @@ public class TimeMasterApplication extends Application {
 	
 
 	public static TimeMasterApplication getInstance(){
-		return instance;
+		return instance; 
 	}
 	
 	@Override
@@ -87,11 +88,17 @@ public class TimeMasterApplication extends Application {
 	}
 
 	public int getScreen_W(){
-		return this.screen_width;
+		if(this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_PORTRAIT)
+		   return this.screen_width;
+		else
+			return this.screen_height;
 	}
 	
 	public int getScreen_H(){
-		return this.screen_height;
+		if(this.getResources().getConfiguration().orientation==Configuration.ORIENTATION_PORTRAIT)
+			return this.screen_height;
+		else
+			return this.screen_width;
 	}
 
 	public TimeMasterHelper getDatabaseHelper() {

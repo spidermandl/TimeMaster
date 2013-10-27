@@ -39,13 +39,13 @@ public class GroupSingleTouchViewGroup extends BasicViewGroup{
 		int childcount=this.getChildCount();
 		for(int i=0;i<childcount;i++){
 			View view=this.getChildAt(i);
-			Log.e("GroupSingleTouchTextView", "onmeasure");
 			if(view instanceof LayoutStyleableInterface){
 				int group=((LayoutStyleableInterface)view).getGroup();
 				/**未分组状态下，group为-1*/
 				if(group!=-1){
 					if(view instanceof SelectedTextView)
 						((SelectedTextView)view).setSingleSelectedInterface(singleInterface);
+						//((SelectedTextView)view).setSingleSelectedInterface()
 					ArrayList<LayoutStyleableInterface> list;
 					if(groupMap.containsKey(group))
 						list=groupMap.get(group);
@@ -75,9 +75,9 @@ public class GroupSingleTouchViewGroup extends BasicViewGroup{
 			
 		}
 	};
-	
 	/**单选按钮组接口*/
 	interface SingleSelectedInterface{
 		void setSingleView(LayoutStyleableInterface Ilayout);
 	}
+	
 }

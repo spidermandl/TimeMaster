@@ -64,8 +64,9 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		
 		dateModel = new DateModel();
 		HashMap<String, String> cache=TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache;
+		/**判断缓存是否写入过*/
 		if(cache.containsKey(TAG)){
-			/**判断缓存是否写入过*/
+			/**一次性将缓存读入dateModel*/
 			dateModel.yearc=Integer.parseInt(cache.get(TAG+"year"));
 			dateModel.monthc=Integer.parseInt(cache.get(TAG+"month"));
 			dateModel.dayc=Integer.parseInt(cache.get(TAG+"day"));

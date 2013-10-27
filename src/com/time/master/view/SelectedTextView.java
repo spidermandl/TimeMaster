@@ -1,5 +1,6 @@
 package com.time.master.view;
 
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.util.Log;
 public class SelectedTextView extends BasicTextView {
 	
 	private GroupSingleTouchViewGroup.SingleSelectedInterface singleSelectedInterface;
+	
 	
 	public SelectedTextView(Context context) {
 		super(context);
@@ -52,4 +54,5 @@ public class SelectedTextView extends BasicTextView {
 	public void setSingleSelectedInterface(GroupSingleTouchViewGroup.SingleSelectedInterface singleSelectedInterface) {
 		this.singleSelectedInterface = singleSelectedInterface;
 	}
+	
 }

@@ -166,9 +166,9 @@
 	<string name="page9_end">进入主页</string>
 	
 	<string name="date_layout_plan_model_1">日期\n倒计</string>
-	<string name="date_plan_time_period_1">占用\n时间</string>
+	<string name="date_plan_time_period_1">占用\n期间</string>
 	<string name="date_layout_plan_model_2">倒计\n日期</string>
-	<string name="date_plan_time_period_2">时间\n占用</string>
+	<string name="date_plan_time_period_2">期间\n占用</string>
 	
 	<string name="date_solar_lunar_1">阳历\n农历</string>
 	<string name="date_solar_lunar_2">农历\n阳历</string>
@@ -211,6 +211,98 @@
 	<string name="date_friday">周五</string>
 	<string name="date_saturday">周六</string>
 	<string name="date_sunday">周日</string>
+	
+	<string name="do_do">做</string>
+	<string name="date_yes">确认</string>
+	<string name="do_ge">隔</string>
+	<string name="do_del">删除</string>
+	<string name="do_next">下一个</string>
+	<string name="do_num0">0</string>
+	<string name="do_num1">1</string>
+	<string name="do_num2">2</string>
+	<string name="do_num3">3</string>
+	<string name="do_num4">4</string>
+	<string name="do_num5">5</string>
+	<string name="do_num6">6</string>
+	<string name="do_num7">7</string>
+	<string name="do_num8">8</string>
+	<string name="do_num9">9</string>
+	
+	<string name="warning_everytime">每次</string>
+	<string name="warning_advanced">提前1：30</string>
+	<string name="warning_add">添加</string>
+	<string name="warning_compose">组合</string>
+	<string name="warning_way">提醒方式</string>
+	<string name="warning_confirm">确定</string>
+	<string name="warning_library">库</string>
+	<string name="warning_collect">收藏</string>
+	<string name="warning_music">音乐</string>
+	<string name="warning_download">下载</string>
+	<string name="warning_pronunciation">语音</string>
+	<string name="warning_audition">试听</string>
+	<string name="warning_vibrate">振动</string>
+	<string name="warning_transcribe">录制</string>
+	<string name="warning_icon">图标</string>
+	<string name="warning_motion">动作</string>
+	<string name="warning_surroundings">环境</string>
+	<string name="warning_procedure">流程</string>
+	<string name="warning_man_sound">男声</string>
+	<string name="warning_female_sound">女声</string>
+	<string name="warning_child_sound">童声</string>
+	<string name="warning_ring">铃声</string>
+	<string name="warning_ring_one">铃声一</string>
+	<string name="warning_ring_two">铃声二</string>
+	<string name="warning_ring_three">铃声三</string>
+	<string name="warning_ring_four">铃声四</string>
+	<string name="warning_ring_five">铃声五</string>
+	<string name="warning_ring_six">铃声六</string>
+	<string name="warning_ring_seven">铃声七</string>
+	<string name="warning_ring_eight">铃声八</string>
+	
+	<string name="warning_music_one">音乐1</string>
+	<string name="warning_music_two">音乐2</string>
+	<string name="warning_music_three">音乐3</string>
+	<string name="warning_music_four">音乐4</string>
+	<string name="warning_music_five">音乐5</string>
+	<string name="warning_music_six">音乐6</string>
+	<string name="warning_music_seven">音乐7</string>
+	<string name="warning_music_eight">音乐8</string>
+	
+	<string name="warning_pronunciation_time">语音报时</string>
+	<string name="warning_pronunciation_plan">语音报计划标题</string>
+	<string name="warning_pronunciation_record">语音报录音</string>
+	<string name="warning_pronunciation_getup">该起床了</string>
+	<string name="warning_pronunciation_dine">该吃饭了</string>
+	<string name="warning_pronunciation_work">该上班了</string>
+	<string name="warning_pronunciation_pills">该吃药了</string>
+	<string name="warning_pronunciation_rest">该休息了</string>
+	
+	<string name="warning_vibrate_one">振动持续</string>
+	<string name="warning_vibrate_two">振动一次</string>
+	<string name="warning_vibrate_three">振动5秒</string>
+	<string name="warning_vibrate_four">振动10秒</string>
+	<string name="warning_vibrate_five">振动15秒</string>
+	<string name="warning_vibrate_six">振动30秒</string>
+	<string name="warning_vibrate_seven">振动60秒</string>
+	<string name="warning_vibrate_eight">振动120秒</string>
+	
+	<string name="warning_icon_sign">符号</string>
+	<string name="warning_icon_geometry">几何</string>
+	<string name="warning_icon_mask">脸谱</string>
+	<string name="warning_icon_cartoon">卡通</string>
+	<string name="warning_icon_backgroundcolor">底色</string>
+	<string name="warning_icon_framecolor">框色</string>
+	<string name="warning_icon_wordcolor">字色</string>
+	
+	<string name="day_warning_plan_change_inform">计划变化通知相关方</string>
+	<string name="day_warning_plan_cancel">计划取消</string>
+	<string name="day_warning_plan_start">按计划开始</string>
+	<string name="day_warning_plan_shelve">计划搁置</string>
+	<string name="day_warning_now_start">现在开始</string>
+	<string name="day_warning_reset_warn">重设提醒</string>
+	<string name="day_warning_minutes_warn">5分钟后再提醒</string>
+	<string name="day_warning_not_warn">不再提醒</string>
+	<string name="day_warning_known">已知</string>
 	
 	<string name="date_top_first">天数</string>
 	<string name="date_top_second">总次数</string>

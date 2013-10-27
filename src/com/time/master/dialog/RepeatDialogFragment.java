@@ -3,6 +3,9 @@ import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.BasicTextView;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.content.DialogInterface;
 import com.time.master.view.SelectedTextView;
 
 import android.os.Bundle;
@@ -14,10 +17,10 @@ import android.view.ViewGroup;
 
 /**
  * "重复"对话框界面
- * 
  * @author wanghuiming
- * 
+ *
  */
+
 
 public class RepeatDialogFragment extends BasicDialogFragment implements View.OnClickListener {
 	public static final String tag = "RepeatDialogFragment";
@@ -32,12 +35,13 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 			dtplyouself, dtsunday, dtfriday,
 			yourselfBasicTextView;//自排按钮
 
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Light);
 		super.onCreate(savedInstanceState);
-		
+
 	}
 
 	@Override

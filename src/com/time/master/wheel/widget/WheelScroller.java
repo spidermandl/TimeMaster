@@ -134,7 +134,9 @@ public class WheelScroller {
             case MotionEvent.ACTION_DOWN:
                 lastTouchedY = event.getY();
                 scroller.forceFinished(true);
-                clearMessages();
+                clearMessages();            
+                
+                
                 break;
     
             case MotionEvent.ACTION_MOVE:
@@ -156,7 +158,7 @@ public class WheelScroller {
     }
     
     // gesture listener
-    private SimpleOnGestureListener gestureListener = new SimpleOnGestureListener() {
+    public SimpleOnGestureListener gestureListener = new SimpleOnGestureListener() {
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
             // Do scrolling in onTouchEvent() since onScroll() are not call immediately
             //  when user touch and move the wheel
@@ -165,12 +167,14 @@ public class WheelScroller {
         
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             lastScrollY = 0;
-            final int maxY = 0x7FFFFFFF;
+            final int maxY = 3;
             final int minY = -maxY;
+
             scroller.fling(0, lastScrollY, 0, (int) -velocityY, 0, 0, minY, maxY);
             setNextMessage(MESSAGE_SCROLL);
             return true;
         }
+
     };
 
     // Messages

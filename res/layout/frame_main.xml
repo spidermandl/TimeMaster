@@ -1,39 +1,52 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-     >
+    android:layout_height="match_parent" >
 
     <TabHost
         android:id="@+id/main_tab"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/main_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-            <HorizontalScrollView  
-                android:layout_width="match_parent"  
-                android:layout_height="wrap_content" 
-                android:layout_alignParentTop="true"
-                android:fillViewport="true"  
-                android:scrollbars="none" 
-                android:id="@+id/scroll_tab"> 
-            <!-- 注意：id必须设置为android:id="@android:id/tabs"，否则会抛异常 -->
-            <TabWidget
-                android:id="@android:id/tabs"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ScrollView
+                android:id="@+id/vertical_scroll_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" />
-            </HorizontalScrollView>
+                android:fillViewport="true"
+                android:scrollbars="none" >
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontal_scroll_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    android:scrollbars="none" >
+
+                    <!-- 注意：id必须设置为android:id="@android:id/tabs"，否则会抛异常 -->
+
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:divider="@null"
+                        android:orientation="horizontal"
+                        android:showDividers="none" >
+                    </TabWidget>
+                </HorizontalScrollView>
+            </ScrollView>
 
             <!-- 注意：id必须设置为android:id="@android:id/tabcontent"，否则会抛异常 -->
+
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_below="@id/scroll_tab" >
+                android:layout_height="wrap_content" >
 
                 <fragment
                     android:id="@+id/generation_fragment"
@@ -64,20 +77,20 @@
                     android:name="com.time.master.fragment.DateFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-                
+
                 <fragment
                     android:id="@+id/issue_list_fragment"
                     android:name="com.time.master.fragment.IssueListFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-                                
+
                 <fragment
                     android:id="@+id/new_issue_fragment"
                     android:name="com.time.master.fragment.NewIssueFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </FrameLayout>
-        </RelativeLayout>
+        </LinearLayout>
     </TabHost>
 
 </RelativeLayout>
