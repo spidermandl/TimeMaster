@@ -201,10 +201,18 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 			});
 			showDialog(datecenterFragment);
 			break;
-		case R.id.date_month_select:
+		case R.id.date_month_select:      
 			selecteddayFragment = new SelectDayFragment();
 			selecteddayFragment.setShowsDialog(true);
 			showDialog(selecteddayFragment);
+			//selecteddayFragment.changedefaultcolor(1);
+			
+		case R.id.date_year_select:
+			selecteddayFragment = new SelectDayFragment();
+			selecteddayFragment.setShowsDialog(true);
+			showDialog(selecteddayFragment);
+			//selecteddayFragment.changedefaultcolor(2);
+			
 		default:
 			break;
 		}
