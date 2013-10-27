@@ -14,8 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
-import com.time.master.dialog.DateDailyRepeatDiaogFragment.Day;
-import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.tool.ChineseCalendar;
 import com.time.master.view.BasicTextView;
 import com.time.master.wheel.adapters.ArrayWheelAdapter;
@@ -420,15 +418,7 @@ public class DateDaysRepeatDialogFragment extends WheelDialogFragment implements
 		case R.id.date_center_second:
 			changeTimeStyle(dayModel);
 			break;
-
-		case R.id.date_center_first:
-
-			datecenterconfirmFragment = new RepeatDialogFragment1();
-			datecenterconfirmFragment.setShowsDialog(true);
-			showDialog(datecenterconfirmFragment);
-
-			break;
-
+			
 		default:
 			break;
 		}
