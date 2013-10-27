@@ -1,8 +1,6 @@
 package com.time.master.fragment.date;
 
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -21,10 +19,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
-import com.time.master.database.TimeMasterHelper;
 import com.time.master.dialog.DurationTimeDialogFragment;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
@@ -67,13 +65,14 @@ public class DateDetailCreateFragment extends Fragment implements
 	
 	private Handler countTimeHandler;//计时handler
 	private Runnable mTicker;//计时runnable
+
 	
 	HashMap<Integer, Boolean> viewStatus = new HashMap<Integer, Boolean>();
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-
+		
 		View layout = inflater.inflate(R.layout.date_detail_create_page,
 				container, false);
 
@@ -179,6 +178,7 @@ public class DateDetailCreateFragment extends Fragment implements
 
 					@Override
 					public void getResult(String result) {
+						
 						startDateSelector.setText(result);
 						CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 						startChineseDate=model.currentTime;
@@ -260,6 +260,7 @@ public class DateDetailCreateFragment extends Fragment implements
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
+		CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
 		switch (view.getId()) {
 		case R.id.plan_repeat:
 			repeatFragment = new RepeatDialogFragment();
@@ -267,7 +268,7 @@ public class DateDetailCreateFragment extends Fragment implements
 			showDialog(repeatFragment);
 			break;
 		case R.id.plan_model:
-			CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
+			
 			if (viewStatus.get(R.id.plan_model)) {
 				viewStatus.put(R.id.plan_model, false);
 				startDateSelector.setText(getChineseDateString(model.startTime));
@@ -289,6 +290,7 @@ public class DateDetailCreateFragment extends Fragment implements
 
 			break;
 		case R.id.plan_start://开始计时按钮
+			
 			if(countTimeHandler==null){
 				/**初始化计时handler*/
 				countTimeHandler=new Handler(){
@@ -322,7 +324,7 @@ public class DateDetailCreateFragment extends Fragment implements
 					}
 				};
 			}
-			model=TimeMasterApplication.getInstance().getCacheModel();
+			
 			if(model.startTime==null)
 				model.startTime=new ChineseCalendar(new Date());
 			if(startDateSelector.getText().toString()==null||startDateSelector.getText().toString().equals("")){//开始按钮为空
@@ -334,6 +336,10 @@ public class DateDetailCreateFragment extends Fragment implements
 				v.setStatus(1);
 				startClick.setText("结束");
 				startClick.setBackgroundColor(0xFFFF0000);
+				Date date =new Date(System.currentTimeMillis());
+				model.currentTime=new ChineseCalendar(date);
+				startChineseDate=model.currentTime;
+				model.startTime=startChineseDate;
 				TimeMasterApplication.getInstance().getDatabaseHelper().insertScheduleRecord(startChineseDate);
 				mTicker.run();
 				
@@ -365,37 +371,43 @@ public class DateDetailCreateFragment extends Fragment implements
 			    mTicker.run();
 			    durationChinsesDate=new ChineseCalendar(new Date(model.tickingTime));
 			    TimeMasterApplication.getInstance().getDatabaseHelper().updateDurationTime(durationChinsesDate);
+				TimeMasterApplication.getInstance().getDatabaseHelper().getLastStartTime();
 			    break;
+			
 			default:
-				//v.setStatus(0);
+				v.setStatus(0);
 				break;
 			}
 			break;
 		case R.id.plan_previous:
-//			Map<String, Object> map = this.save(context);
-//			endSelector.setText((map.get("end")).toString());
-//			dateSelector.setText((map.get("now")).toString());
-//			lengthSelector.setText((map.get("t")).toString());
-			File file = new File(this.getActivity().getFilesDir(), "Date.txt");
-
-			try {
-				FileOutputStream out = new FileOutputStream(file);
-				String t = lengthSelector.getText().toString();
-				String now = startDateSelector.getText().toString();
-				String end = endDateSelector.getText().toString();
-				out.write((now + ";" + t + ";" + end).getBytes());
-
-				//save(context);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-
+			model=TimeMasterApplication.getInstance().getCacheModel();
+			if(model.startTime!=null){
+				//String str=new String("结束时间日期");
+				long endtime=0;
+				model.endTime=new ChineseCalendar(new Date(model.startTime.getTimeInMillis()+model.tickingTime));
+				endtime=TimeMasterApplication.getInstance().getDatabaseHelper().getLastSecondEndTime();
+				if(endtime==0){
+					Toast.makeText(getActivity(), "目前没有已结束事件的时间点供选择",
+					     Toast.LENGTH_SHORT).show();
+				}
+				else if(endtime==model.endTime.getTimeInMillis()){
+					Toast.makeText(getActivity(), "当前事件未完全结束，无法承前",
+					     Toast.LENGTH_SHORT).show();
+				
+				}
+				else {
+					
+					model.startTime=new ChineseCalendar(new Date(endtime));
+					startDateSelector.setText(getChineseDateString(model.startTime));
+				
+				}
 			}
-//			else {
-//				viewStatus.put(R.id.plan_time_period,true);
-//
-//			}
+			else{
+				Toast.makeText(getActivity(), "请选择一个开始时间或点击开始按钮",
+					     Toast.LENGTH_SHORT).show();
+			}
 			break;
+		
 		}
 	}
 	private String getChineseDateString(ChineseCalendar date) {
