@@ -3,6 +3,7 @@ package com.time.master.view;
 import com.time.master.TimeMasterApplication;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
@@ -13,6 +14,7 @@ import android.widget.RelativeLayout.LayoutParams;
 
 public class TabTextView extends SelectedTextView {
 
+	Context context;
 	protected int screen_width,
 	screen_height,
 	unit_width,//view µ¥Î»³¤¶È
@@ -25,25 +27,26 @@ public class TabTextView extends SelectedTextView {
 	
 	public TabTextView(Context context) {
 		super(context);
-		init();
+		init(context);
 	}
 	public TabTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		init();
+		init(context);
 	}
 	public TabTextView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		init();
+		init(context);
 	}
 	/***
 	 * ³õÊ¼»¯ËùÓÐ²ÎÊý
 	 */
-	protected void init(){
-		screen_mode=TimeMasterApplication.getInstance().getScreenMode();
+	protected void init(Context context){
+		this.context=context;
+		screen_mode=context.getResources().getConfiguration().orientation;
 		screen_width=TimeMasterApplication.getInstance().getScreen_W();
 		screen_height=TimeMasterApplication.getInstance().getScreen_H();
-		unit_width=screen_width/6;
-		gap=screen_width/36;
+		unit_width=screen_mode==Configuration.ORIENTATION_PORTRAIT?screen_width/6:screen_height/6;
+		gap=screen_mode==Configuration.ORIENTATION_PORTRAIT?screen_width/36:screen_height/36;
 		mPaint=new Paint();
 		mPaint.setColor(0xFFCCCCCC);
 		marginPaint=new Paint();
@@ -61,7 +64,11 @@ public class TabTextView extends SelectedTextView {
 //		    this.setMeasuredDimension(gap+unit_width, (int)(unit_width*0.75)+(int)strokeWdith);
 //		else
 //			this.setMeasuredDimension(gap+unit_width+gap, (int)(unit_width*0.75)+(int)strokeWdith);
-		this.setMeasuredDimension(screen_width/5, (int)(unit_width*0.75)+(int)strokeWdith);
+		screen_mode=context.getResources().getConfiguration().orientation;
+		if(screen_mode==Configuration.ORIENTATION_PORTRAIT)
+			this.setMeasuredDimension(screen_width/5, (int)(unit_width*0.75)+(int)strokeWdith);
+		else
+			this.setMeasuredDimension(screen_width/5, (int)(unit_width*0.75)+gap);
 		//super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}
 	
@@ -73,10 +80,19 @@ public class TabTextView extends SelectedTextView {
 //			canvas.drawRect(gap+unit_width, 0, gap+gap+unit_width, unit_width*0.75f, marginPaint);//ÓÒ±ß¿ò
 //		
 //		canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, unit_width+gap+(hasRightEdge?gap:0), unit_width*0.75f+strokeWdith/2, linePaint);
-		canvas.drawRect(0, 0, gap/2, unit_width*0.75f, marginPaint);//×ó±ß¿ò
-		canvas.drawRect(gap/2, 0, screen_width/5-gap/2, unit_width*0.75f, mPaint);//¾ÓÖÐ¾ØÐÎ
-		canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, unit_width*0.75f, marginPaint);//ÓÒ±ß¿ò
-		canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, screen_width/5, unit_width*0.75f+strokeWdith/2, linePaint);
+		if(screen_mode==Configuration.ORIENTATION_PORTRAIT){
+			canvas.drawRect(0, 0, gap/2, unit_width*0.75f, marginPaint);//×ó±ß¿ò
+			canvas.drawRect(gap/2, 0, screen_width/5-gap/2, unit_width*0.75f, mPaint);//¾ÓÖÐ¾ØÐÎ
+			canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, unit_width*0.75f, marginPaint);//ÓÒ±ß¿ò
+			canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, screen_width/5, unit_width*0.75f+strokeWdith/2, linePaint);
+		}else{
+			canvas.drawRect(0, 0, gap/2, getMeasuredHeight(), marginPaint);//×ó±ß¿ò
+			canvas.drawRect(0, 0, getMeasuredWidth(),gap/2, marginPaint);//ÉÏ±ß¿ò
+			canvas.drawRect(gap/2, 0, getMeasuredWidth()-gap/2, getMeasuredHeight()-gap/2, mPaint);//¾ÓÖÐ¾ØÐÎ
+			canvas.drawRect(0, getMeasuredHeightAndState()-gap/2, getMeasuredWidth(), getMeasuredHeight(), marginPaint);//ÏÂ±ß¿ò
+			canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, getMeasuredHeight(), marginPaint);//ÓÒ±ß¿ò
+			canvas.drawLine(getMeasuredWidth()-gap/2+strokeWdith/2, 0, getMeasuredWidth()-gap/2+strokeWdith/2, getMeasuredHeight(), linePaint);
+		}
 		super.onDraw(canvas);
 	}
 	

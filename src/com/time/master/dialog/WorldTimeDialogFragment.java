@@ -21,7 +21,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 		OnClickListener {
 	private TimeDialogFragment temp = new TimeDialogFragment();
 	private BasicTextView showStatus,arrow;
-	private SelectedTextView translate, idlerWheel, conversion,comfirm;
+	private SelectedTextView translate, idlerWheel, conversion,confirm;
 	private SelectedTextView city1, city2, city3, city4, city5, city6, city7,
 			city8, city9, city10, city11, city12, city13, city14, city15,
 			city16, solarcalendar, lunarcalendar, countdown, goon, forward;
@@ -74,7 +74,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 		idlerWheel = (SelectedTextView) layout.findViewById(R.id.idlerwheel);
 		showStatus = (BasicTextView) layout.findViewById(R.id.showstatus);
 		arrow=(BasicTextView) layout.findViewById(R.id.arrow);
-		comfirm=(SelectedTextView) layout.findViewById(R.id.confirm);
+		confirm=(SelectedTextView) layout.findViewById(R.id.confirm);
 		if (calendarStatus == 0) {
 			calendarStatusTop = "Å©Àú";
 			calendarStatusBottom = "ÑôÀú";
@@ -118,16 +118,17 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 		city15.setOnClickListener(this);
 		city16.setOnClickListener(this);
 		arrow.setOnClickListener(this);
-		comfirm.setOnClickListener(this);
+		confirm.setOnClickListener(this);
 		return layout;
 	}
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		switch (v.getId()) {
+		switch(v.getId()){
 		case R.id.translate:
-			if (languageStatus) {
+			if(languageStatus)
+			{
 				city1.setText("Beijing");
 				city2.setText("Seoul");
 				city3.setText("Tokyo");
@@ -424,7 +425,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 			break;
 		case R.id.confirm:
 			this.dismiss();
-			
+
 		default:
 			break;
 		}

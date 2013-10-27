@@ -11,6 +11,7 @@ import java.util.HashMap;
 import com.time.master.R;
 import com.time.master.activity.FrameActivity;
 import com.time.master.TimeMasterApplication;
+import com.time.master.dialog.DateTimeWarningDialogFragment;
 import com.time.master.dialog.DurationTimeDialogFragment;
 import com.time.master.dialog.HumanDialogFragment;
 import com.time.master.dialog.LocationDialogFragment;
@@ -63,7 +64,8 @@ import com.time.master.view.BasicTextView;
 public class DateDetailCreateFragment extends Fragment implements
 		OnTouchListener, android.view.View.OnClickListener {
 	WheelDialogFragment dateFragment, locationFragment, humanFragment,planTimePeroidFragment;
-	DialogFragment repeatFragment;
+
+	DialogFragment repeatFragment,timewarningFragment;
 	BasicEditText startDateSelector,//开始时间输入框
 	              locationSelector,
 	              humanSelector,
@@ -71,16 +73,14 @@ public class DateDetailCreateFragment extends Fragment implements
 	              lengthSelector,
 	              endDateSelector;//结束时间输入框
 
-	BasicTextView 	startClick,//开始按钮
+	BasicTextView startClick,//开始按钮
 	                tvdate, // 日期 /倒计 按钮
 			        tvduration,// 占用/期间 按钮
-
-			       
-                    dateRepeat,//重复按钮
+			        dateRepeat,//重复按钮
                     dateWarning,//提醒按钮
-	                plan_previou;// 承前按钮
-
-
+                    plan_previou,// 承前按钮
+					plan_type;// 类按钮
+					
 	private ChineseCalendar startChineseDate,//开始时间
 	                        endChineseDate,
 	                        durationChinsesDate;//结束时间
@@ -143,6 +143,9 @@ public class DateDetailCreateFragment extends Fragment implements
 		
 		dateWarning=(BasicTextView)layout.findViewById(R.id.plan_warning);
 		dateWarning.setOnClickListener(this);
+		
+		plan_type=(BasicTextView)layout.findViewById(R.id.plan_type);
+		plan_type.setOnClickListener(this);
 
 		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
 		tvdate.setOnClickListener(this);
@@ -296,6 +299,11 @@ public class DateDetailCreateFragment extends Fragment implements
 			//warningFragment=new DateWarningFragment();
 			//T=DateWarningFragment.class;
 			activity.showNext(this.getId(),T, R.layout.date_warning);			
+			break;
+		case R.id.plan_type:
+			timewarningFragment=new DateTimeWarningDialogFragment();
+			timewarningFragment.setShowsDialog(true);
+			showDialog(timewarningFragment);
 			break;
 		case R.id.plan_model:
 			CacheModel model=TimeMasterApplication.getInstance().getCacheModel();

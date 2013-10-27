@@ -27,7 +27,7 @@ import com.time.master.wheel.widget.WheelView;
  * 持续时间选择器
  * 
  * @author xianrui
- */
+ */          
 public class DurationTimeDialogFragment extends WheelDialogFragment {
 
 	public static final String TAG = "DurationTimeDialogFragment";
@@ -61,7 +61,7 @@ public class DurationTimeDialogFragment extends WheelDialogFragment {
 		model = new DateModel();
 		calendar = Calendar.getInstance();
 		model.year = calendar.get(Calendar.YEAR);
-		model.month = calendar.get(Calendar.MONTH);
+		model.month = calendar.get(Calendar.MONTH)+1;
 		model.day = calendar.get(Calendar.DAY_OF_MONTH);
 		model.hour = calendar.get(Calendar.HOUR_OF_DAY);
 		model.minute = calendar.get(Calendar.MINUTE);
@@ -223,7 +223,7 @@ public class DurationTimeDialogFragment extends WheelDialogFragment {
 	}
 
 	private String getDateString() {
-		return model.day + "/ " + model.hour + "/" + model.minute;
+		return model.year + "/ "+model.month + "/ "+model.day + "/ " + model.hour + ":" + model.minute;
 	}
 
 	@Override
