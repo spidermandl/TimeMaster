@@ -2,7 +2,6 @@ package com.time.master.dialog;
 
 import java.util.Calendar;
 
-import android.R.color;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.Gravity;
@@ -15,17 +14,24 @@ import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
 import com.time.master.R;
-import com.time.master.dialog.TimeDialogFragment.DateModel;
 import com.time.master.view.BasicTextView;
+import com.time.master.view.SelectedTextView;
 
-public class SelectDayFragment  extends DialogFragment implements OnClickListener{
+
+/***
+ * 重复选日期界面
+ * @author shaojunmei
+ *
+ */
+public class SelectDayFragment  extends BasicDialogFragment implements OnClickListener{
+
 	public static final String tag="RepeatDialogFragment";
 	private BasicTextView btvup;
 	private BasicTextView btvdown;
 	private BasicTextView cumonth;
-	private BasicTextView thirtyone;
-	private BasicTextView thirty;
-	private BasicTextView tweentynine;
+	private SelectedTextView  thirtyone;
+	private SelectedTextView  thirty;
+	private SelectedTextView  tweentynine;
 	Calendar calendar;
 	int year,month,day,maxDay;
 	static private final String[] months={"一","二","三","四","五","六","七","八","九","十","十一","十二"}; 
@@ -37,12 +43,14 @@ public class SelectDayFragment  extends DialogFragment implements OnClickListene
 	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+		
+		setDialogStyle();
+		
 		View layout=inflater.inflate(R.layout.repeat2, container, false);
 		cumonth=(BasicTextView)layout.findViewById(R.id.yue);
-		thirtyone=(BasicTextView)layout.findViewById(R.id.three_one);
-		thirty=(BasicTextView)layout.findViewById(R.id.three_zero);
-		tweentynine=(BasicTextView)layout.findViewById(R.id.two_nine);
+		thirtyone=(SelectedTextView)layout.findViewById(R.id.three_one);
+		thirty=(SelectedTextView)layout.findViewById(R.id.three_zero);
+		tweentynine=(SelectedTextView)layout.findViewById(R.id.two_nine);
 		
 		
 		calendar = Calendar.getInstance();
@@ -85,8 +93,6 @@ public class SelectDayFragment  extends DialogFragment implements OnClickListene
 		  
 			cumonth.setText(months[month-1]+"月");
 			
-				
-				
 			break;
 			
 		case R.id.xia:

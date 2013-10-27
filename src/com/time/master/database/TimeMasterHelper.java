@@ -15,6 +15,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
 import android.sax.StartElementListener;
+import android.webkit.WebChromeClient.CustomViewCallback;
 import android.widget.Toast;
 
 public class TimeMasterHelper extends SQLiteOpenHelper {
@@ -116,6 +117,9 @@ public class TimeMasterHelper extends SQLiteOpenHelper {
 						new String[] { "_id,_start_time,_duration_time,_end_time" },
 						null,null, null, null,
 						"_start_time desc");
+		if(cursor.getCount()==0){
+			return 0;
+		}
 		long starttime=0;
 		
 			if(cursor.moveToFirst()){
@@ -134,6 +138,9 @@ public class TimeMasterHelper extends SQLiteOpenHelper {
 						new String[] { "_id,_start_time,_duration_time,_end_time" },
 						null,null, null, null,
 						"_end_time desc");
+		if(cursor.getCount()==0){
+			return 0;
+		}
 		long endtime=0;
 		
 			if(cursor.moveToFirst()){
@@ -152,8 +159,10 @@ public class TimeMasterHelper extends SQLiteOpenHelper {
 						null,null, null, null,
 						"_end_time desc");
 		long endtime=0;
-		
-			if(cursor.moveToFirst()){
+		if(cursor.getCount()<2){
+			return 0;
+		}
+		if(cursor.moveToFirst()){
 				cursor.moveToNext();
 				int id=cursor.getInt(cursor.getColumnIndex("_id"));
 				endtime=cursor.getLong(cursor.getColumnIndex("_end_time"));
@@ -161,6 +170,7 @@ public class TimeMasterHelper extends SQLiteOpenHelper {
 			}
 		return endtime;
 	}
+	
 
 	/********************************* 静态数据库操作代码块 **********************************************************************/
 	/** 数据库表名 */

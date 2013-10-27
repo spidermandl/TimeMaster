@@ -77,6 +77,10 @@ public class BasicTextView extends TextView implements LayoutStyleableInterface{
 		// TODO Auto-generated method stub
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}
+	
+		
+	
+
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {

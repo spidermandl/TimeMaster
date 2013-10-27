@@ -1,9 +1,27 @@
 package com.time.master.fragment.date;
 
 
+
 import java.util.Date;
 import java.util.HashMap;
-
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Date;
+import java.util.HashMap;
+import com.time.master.R;
+import com.time.master.activity.FrameActivity;
+import com.time.master.TimeMasterApplication;
+import com.time.master.dialog.DurationTimeDialogFragment;
+import com.time.master.dialog.HumanDialogFragment;
+import com.time.master.dialog.LocationDialogFragment;
+import com.time.master.dialog.RepeatDialogFragment;
+import com.time.master.dialog.TimeDialogFragment;
+import com.time.master.dialog.WheelDialogFragment;
+import com.time.master.interfacer.WheelResultInterface;
+import com.time.master.model.CacheModel;
+import com.time.master.tool.ChineseCalendar;
+import com.time.master.view.BasicEditText;
+import com.time.master.view.BasicTextView;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -49,16 +67,20 @@ public class DateDetailCreateFragment extends Fragment implements
 	BasicEditText startDateSelector,//开始时间输入框
 	              locationSelector,
 	              humanSelector,
-	              planPeroidSelector,
+	              planPeroidSelector,//用时：0天1小时0分
 	              lengthSelector,
 	              endDateSelector;//结束时间输入框
-	BasicTextView dateRepeat,
-	              plan_previou;// 承前按钮;
 
 	BasicTextView 	startClick,//开始按钮
 	                tvdate, // 日期 /倒计 按钮
-			        tvduration;// 占用/期间 按钮
-	
+			        tvduration,// 占用/期间 按钮
+
+			       
+                    dateRepeat,//重复按钮
+                    dateWarning,//提醒按钮
+	                plan_previou;// 承前按钮
+
+
 	private ChineseCalendar startChineseDate,//开始时间
 	                        endChineseDate,
 	                        durationChinsesDate;//结束时间
@@ -72,21 +94,19 @@ public class DateDetailCreateFragment extends Fragment implements
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		
-		View layout = inflater.inflate(R.layout.date_detail_create_page,
-				container, false);
 
 
-		startDateSelector = (BasicEditText) layout
-				.findViewById(R.id.plan_time_start);
+		View layout = inflater.inflate(R.layout.date_detail_create_page,container, false);
+
+
+		startDateSelector = (BasicEditText) layout.findViewById(R.id.plan_time_start);
 		startDateSelector.setInputType(InputType.TYPE_NULL);
 		startDateSelector.setOnTouchListener(this);
 
 
 		locationSelector = (BasicEditText) layout
 				.findViewById(R.id.plan_location);
-
-		locationSelector.setInputType(InputType.TYPE_NULL);
+        locationSelector.setInputType(InputType.TYPE_NULL);
 		locationSelector.setOnTouchListener(this);
 
 		humanSelector = (BasicEditText) layout.findViewById(R.id.plan_human);
@@ -111,20 +131,24 @@ public class DateDetailCreateFragment extends Fragment implements
 		plan_previou.setOnClickListener(this);
 
 		dateRepeat = (BasicTextView) layout.findViewById(R.id.plan_repeat);
-	
+		dateRepeat.setOnClickListener(this);
+		
 		planPeroidSelector=(BasicEditText)layout.findViewById(R.id.plan_length);
 		planPeroidSelector.setInputType(InputType.TYPE_NULL);
 		planPeroidSelector.setOnTouchListener(this);
-
+		
+		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
 
 		dateRepeat.setOnClickListener(this);
+		
+		dateWarning=(BasicTextView)layout.findViewById(R.id.plan_warning);
+		dateWarning.setOnClickListener(this);
 
 		tvdate = (BasicTextView) layout.findViewById(R.id.plan_model);
 		tvdate.setOnClickListener(this);
-
 		viewStatus.put(tvdate.getId(), false);
 
-		// tvdate.setBackgroundColor(R.color.dateforcolor);
+		
 		String dateString = (String) getText(R.string.date_layout_plan_model_1);
 		SpannableStringBuilder datestyle = new SpannableStringBuilder(
 				dateString);
@@ -260,11 +284,18 @@ public class DateDetailCreateFragment extends Fragment implements
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
+		Class T =null;
+		FrameActivity activity=(FrameActivity)getActivity();
 		switch (view.getId()) {
 		case R.id.plan_repeat:
 			repeatFragment = new RepeatDialogFragment();
 			repeatFragment.setShowsDialog(true);
 			showDialog(repeatFragment);
+			break;
+		case R.id.plan_warning:
+			//warningFragment=new DateWarningFragment();
+			//T=DateWarningFragment.class;
+			activity.showNext(this.getId(),T, R.layout.date_warning);			
 			break;
 		case R.id.plan_model:
 			CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
@@ -323,6 +354,7 @@ public class DateDetailCreateFragment extends Fragment implements
 					}
 				};
 			}
+		
 			model=TimeMasterApplication.getInstance().getCacheModel();
 			if(model.startTime==null)
 				model.startTime=new ChineseCalendar(new Date());
@@ -383,13 +415,16 @@ public class DateDetailCreateFragment extends Fragment implements
 			break;
 		/*当还未向数据库更新结束时间时，最近的结束时间为降序队列第一个（lastendtime），更新结束时间后为第二个(lastsecondtime)*/
 		case R.id.plan_previous:
+
 			model=TimeMasterApplication.getInstance().getCacheModel();
 			if(model.startTime!=null){
 				long lastsecondendtime=0;
 				long lastendtime=0;
 				long finalendtime=0;
 				model.endTime=new ChineseCalendar(new Date(model.startTime.getTimeInMillis()+model.tickingTime));
+				//if(TimeMasterApplication.getInstance().getDatabaseHelper().getMaxRow()>2){
 				lastsecondendtime=TimeMasterApplication.getInstance().getDatabaseHelper().getLastSecondEndTime();
+				//}
 				lastendtime=TimeMasterApplication.getInstance().getDatabaseHelper().getLastEndTime();
 				finalendtime=lastsecondendtime;
 				/*数据库里没有数据时，告知用户*/
@@ -413,6 +448,8 @@ public class DateDetailCreateFragment extends Fragment implements
 			else{
 				Toast.makeText(getActivity(), "请选择一个开始时间或点击开始按钮",
 					     Toast.LENGTH_SHORT).show();
+
+			
 			}
 			break;
 		

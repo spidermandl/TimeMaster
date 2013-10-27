@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.time.master.view.BasicViewGroup 
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res/com.time.master"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#FFFFFF"
+    >
+ 
+    <com.time.master.view.BasicTextView
+        android:id="@+id/warning_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFF00"
+        android:gravity="center"
+        android:text="tupian"
+       layout:new_line="true"
+        layout:width_multi="3" />
+    </com.time.master.view.BasicViewGroup>
