@@ -14,8 +14,7 @@ public class TimeMasterGirdView extends GridView {
 
     public TimeMasterGirdView(Context context) { 
         super(context); 
-        this.setHorizontalSpacing(TimeMasterApplication.getInstance().getScreen_W()/36);
-        this.setVerticalSpacing(TimeMasterApplication.getInstance().getScreen_W()/36);
+      
     } 
 
     public TimeMasterGirdView(Context context, AttributeSet attrs, int defStyle) { 
