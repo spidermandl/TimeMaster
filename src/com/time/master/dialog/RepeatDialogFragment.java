@@ -1,6 +1,4 @@
 package com.time.master.dialog;
-
-import java.util.HashMap;
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.interfacer.WheelResultInterface;
@@ -68,6 +66,7 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 		if(txt!=null)date_top_center.setText(txt);
 		
 		
+		
 		confirm = (BasicTextView) layout.findViewById(R.id.date_confirm);
 		dtmselect = (SelectedTextView) layout.findViewById(R.id.date_month_select);
 		dtmcurrent = (SelectedTextView) layout.findViewById(R.id.date_month_current);
@@ -97,6 +96,7 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 		setInitialStatus(dtworking);
 		setInitialStatus(dteveryday);
 		setInitialStatus(dtmonday);
+		setInitialStatus(dtmcurrent);
 		setInitialStatus(dtlmcurrent);
 		setInitialStatus(dtlmselect);
 		setInitialStatus(dtfestival);
@@ -159,11 +159,13 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 				datatopFragment = new DateDailyRepeatDiaogFragment();
 				datatopFragment.setShowsDialog(true);
 				datatopFragment.setWheelInterface(new WheelResultInterface() {
-					
+
 					@Override
 					public void getResult(String result) {
 						date_top_left.setText(TimeMasterApplication.getInstance().getCacheModel().
-                                              tmpResultsCache.get(DateDailyRepeatDiaogFragment.TAG));
+                                tmpResultsCache.get(DateDailyRepeatDiaogFragment.TAG));
+		
+						
 					}
 				});
 				showDialog(datatopFragment);
@@ -177,8 +179,9 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 				@Override
 				public void getResult(String result) {
 					date_top_center.setText(TimeMasterApplication.getInstance().getCacheModel().
-                                            tmpResultsCache.get(DateDaysRepeatDialogFragment.TAG));
-				}
+							tmpResultsCache.get(DateDaysRepeatDialogFragment.TAG));
+					}
+				
 			});
 			showDialog(datecenterFragment);
 			break;
@@ -192,4 +195,5 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 		if(viewStatus.getBoolean(view.getId()+"",false))
 			view.setSelected();
 	}
+
 }

@@ -27,6 +27,7 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 	private WheelResultInterface wheelInterface;
 	
 	
+	
 	public void setWheelInterface(WheelResultInterface wheelInterface) {
 		this.wheelInterface = wheelInterface;
 	}
@@ -59,6 +60,8 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 	abstract protected String getSelectedString();
 	/** 确认按钮事件*/
 	abstract protected void pushConfirm();
+	
+	
 
 	public boolean onTouch(View arg0, MotionEvent arg1) {
 		// TODO Auto-generated method stub
