@@ -5,6 +5,7 @@ import com.time.master.interfacer.LayoutStyleableInterface;
 
 import android.R.integer;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ import android.view.ViewGroup;
  *
  */
 public class BasicViewGroup extends ViewGroup{
-
+	Context context;
 	protected int screen_width,
 	screen_height,
 	unit_width,//view 单位长度
@@ -35,16 +36,19 @@ public class BasicViewGroup extends ViewGroup{
 
 	public BasicViewGroup(Context context) {
 		super(context);
+		this.context=context;
 		init();
 	}
 	
 	public BasicViewGroup(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		this.context=context;
 		init();
 	}
 	
 	public BasicViewGroup(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		this.context=context;
 		init();
 	}
 	
@@ -127,8 +131,10 @@ public class BasicViewGroup extends ViewGroup{
 	 * 初始化所有参数
 	 */
 	protected void init(){
-		screen_mode=TimeMasterApplication.getInstance().getScreenMode();
+		int screen_mode=context.getResources().getConfiguration().orientation;
 		screen_width=TimeMasterApplication.getInstance().getScreen_W();
+		if(screen_mode==2)
+			screen_width=screen_width*7/8-screen_width/64;
 		screen_height=TimeMasterApplication.getInstance().getScreen_H();
 		unit_width=screen_width/6;
 		gap=screen_width/36;

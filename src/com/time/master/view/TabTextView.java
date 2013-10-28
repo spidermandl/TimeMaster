@@ -18,6 +18,7 @@ public class TabTextView extends SelectedTextView {
 	protected int screen_width,
 	screen_height,
 	unit_width,//view 单位长度
+    unit_point,	
 	gap,//view的间隔长度
 	screen_mode; //1代表竖屏 ， 2代表横屏
 	protected RelativeLayout.LayoutParams params=(LayoutParams) this.getLayoutParams();
@@ -28,14 +29,17 @@ public class TabTextView extends SelectedTextView {
 	public TabTextView(Context context) {
 		super(context);
 		init(context);
+		init_paint();
 	}
 	public TabTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		init(context);
+		init_paint();
 	}
 	public TabTextView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		init(context);
+		init_paint();
 	}
 	/***
 	 * 初始化所有参数
@@ -45,8 +49,12 @@ public class TabTextView extends SelectedTextView {
 		screen_mode=context.getResources().getConfiguration().orientation;
 		screen_width=TimeMasterApplication.getInstance().getScreen_W();
 		screen_height=TimeMasterApplication.getInstance().getScreen_H();
-		unit_width=screen_mode==Configuration.ORIENTATION_PORTRAIT?screen_width/6:screen_height/6;
-		gap=screen_mode==Configuration.ORIENTATION_PORTRAIT?screen_width/36:screen_height/36;
+		unit_width=screen_mode==Configuration.ORIENTATION_PORTRAIT?screen_width/6:screen_width/8;
+		gap=screen_mode==Configuration.ORIENTATION_PORTRAIT?screen_width/36:screen_width/64;
+		unit_point=screen_mode==Configuration.ORIENTATION_PORTRAIT?screen_width/5:screen_width/7;
+		
+	}
+	protected void init_paint() {
 		mPaint=new Paint();
 		mPaint.setColor(0xFFCCCCCC);
 		marginPaint=new Paint();
@@ -60,20 +68,23 @@ public class TabTextView extends SelectedTextView {
 	}
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		init(context);
 //		if(!hasRightEdge)
 //		    this.setMeasuredDimension(gap+unit_width, (int)(unit_width*0.75)+(int)strokeWdith);
 //		else
 //			this.setMeasuredDimension(gap+unit_width+gap, (int)(unit_width*0.75)+(int)strokeWdith);
 		screen_mode=context.getResources().getConfiguration().orientation;
 		if(screen_mode==Configuration.ORIENTATION_PORTRAIT)
-			this.setMeasuredDimension(screen_width/5, (int)(unit_width*0.75)+(int)strokeWdith);
+			this.setMeasuredDimension(unit_point, (int)(unit_width*0.75)+(int)strokeWdith);
 		else
-			this.setMeasuredDimension(screen_width/5, (int)(unit_width*0.75)+gap);
+			this.setMeasuredDimension(unit_point, (int)(unit_width*0.75)+gap);
 		//super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+		
 	}
 	
 	@Override
 	protected void onDraw(Canvas canvas) {
+		init(context);
 //		canvas.drawRect(0, 0, gap, unit_width*0.75f, marginPaint);//左边框
 //        canvas.drawRect(gap, 0, gap+unit_width, unit_width*0.75f, mPaint);//居中矩形
 //		if(hasRightEdge)
@@ -82,17 +93,18 @@ public class TabTextView extends SelectedTextView {
 //		canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, unit_width+gap+(hasRightEdge?gap:0), unit_width*0.75f+strokeWdith/2, linePaint);
 		if(screen_mode==Configuration.ORIENTATION_PORTRAIT){
 			canvas.drawRect(0, 0, gap/2, unit_width*0.75f, marginPaint);//左边框
-			canvas.drawRect(gap/2, 0, screen_width/5-gap/2, unit_width*0.75f, mPaint);//居中矩形
-			canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, unit_width*0.75f, marginPaint);//右边框
-			canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, screen_width/5, unit_width*0.75f+strokeWdith/2, linePaint);
+			canvas.drawRect(gap/2, 0, unit_point-gap/2, unit_width*0.75f, mPaint);//居中矩形
+			canvas.drawRect(unit_point-gap/2, 0, unit_point, unit_width*0.75f, marginPaint);//右边框
+			canvas.drawLine(0, unit_width*0.75f+strokeWdith/2, unit_point, unit_width*0.75f+strokeWdith/2, linePaint);
 		}else{
 			canvas.drawRect(0, 0, gap/2, getMeasuredHeight(), marginPaint);//左边框
 			canvas.drawRect(0, 0, getMeasuredWidth(),gap/2, marginPaint);//上边框
 			canvas.drawRect(gap/2, 0, getMeasuredWidth()-gap/2, getMeasuredHeight()-gap/2, mPaint);//居中矩形
-			canvas.drawRect(0, getMeasuredHeightAndState()-gap/2, getMeasuredWidth(), getMeasuredHeight(), marginPaint);//下边框
-			canvas.drawRect(screen_width/5-gap/2, 0, screen_width/5, getMeasuredHeight(), marginPaint);//右边框
+			canvas.drawRect(0, getMeasuredHeight()-gap/2, getMeasuredWidth(), getMeasuredHeight(), marginPaint);//下边框
+			canvas.drawRect(unit_point-gap/2, 0, unit_point, getMeasuredHeight(), marginPaint);//右边框
 			canvas.drawLine(getMeasuredWidth()-gap/2+strokeWdith/2, 0, getMeasuredWidth()-gap/2+strokeWdith/2, getMeasuredHeight(), linePaint);
 		}
+		
 		super.onDraw(canvas);
 	}
 	

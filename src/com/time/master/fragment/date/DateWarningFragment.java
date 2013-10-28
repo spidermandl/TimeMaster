@@ -36,8 +36,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 	private ChineseCalendar startChineseDate,//开始时间
     endChineseDate;//结束时间
 
-	BasicViewGroup viewGroup;
-	GapCleanViewGroup gapCleanViewGroup;
+	GapCleanViewGroup viewGroup;
 	TimeMasterGirdView gridview1;
 
 	@Override
@@ -46,8 +45,6 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 		// TODO Auto-generated method stub
 		View layout = inflater.inflate(R.layout.date_warning, container, false);
 		
-		viewGroup=(BasicViewGroup)layout.findViewById(R.id.groupOne);
-		gapCleanViewGroup=(GapCleanViewGroup)layout.findViewById(R.id.groupThree);
 		warningEverytime=(BasicTextView)layout.findViewById(R.id.warning_everytime);
 		warningAdd=(BasicTextView)layout.findViewById(R.id.warning_add);
 		warningCompose=(BasicTextView)layout.findViewById(R.id.warning_compose);
@@ -59,6 +56,8 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 		warningIcon=(BasicTextView)layout.findViewById(R.id.warning_icon);
 		warningMotion=(BasicTextView)layout.findViewById(R.id.warning_motion);
 		warningAdvanced=(BasicTextView)layout.findViewById(R.id.warning_advanced);
+		
+		viewGroup=(GapCleanViewGroup)layout.findViewById(R.id.warning_children_view_group);
 		
 		leftOne=(BasicTextView)layout.findViewById(R.id.warning_collect);
 		leftTwo=(BasicTextView)layout.findViewById(R.id.warning_download);
@@ -89,7 +88,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 		warningMotion.setOnClickListener(this);
 		warningAdvanced.setOnClickListener(this);
 		
-		viewGroup.cutDownBottomGap(1);
+		
 		gridview1=(TimeMasterGirdView)layout.findViewById(R.id.gridview);
 		
 	//	warningAdvanced.setInputType(InputType.TYPE_NULL);
@@ -157,7 +156,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftSix.setText(R.string.warning_female_sound);
 			leftSeven.setText(R.string.warning_child_sound);
 			gridview1.setVisibility(View.INVISIBLE);
-			gapCleanViewGroup.setVisibility(View.VISIBLE);
+			viewGroup.setVisibility(View.VISIBLE);
 			break;
 			
 		case R.id.warning_music:			
@@ -193,7 +192,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftFive.setText(R.string.warning_man_sound);
 			leftSix.setText(R.string.warning_female_sound);
 			leftSeven.setText(R.string.warning_child_sound);
-			gapCleanViewGroup.setVisibility(View.VISIBLE);
+			viewGroup.setVisibility(View.VISIBLE);
 			break;
 
 		case R.id.warning_pronunciation:
@@ -229,7 +228,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftSix.setText(R.string.warning_female_sound);
 			leftSeven.setText(R.string.warning_child_sound);
 			gridview1.setVisibility(View.INVISIBLE);
-			gapCleanViewGroup.setVisibility(View.VISIBLE);
+			viewGroup.setVisibility(View.VISIBLE);
 			break;
 		case R.id.warning_vibrate:
 			centerOne.setText(R.string.warning_vibrate_one);
@@ -264,7 +263,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftSix.setText(R.string.warning_female_sound);
 			leftSeven.setText(R.string.warning_child_sound);
 			gridview1.setVisibility(View.INVISIBLE);
-			gapCleanViewGroup.setVisibility(View.VISIBLE);
+			viewGroup.setVisibility(View.VISIBLE);
 			break;
 		case R.id.warning_icon:
 		
@@ -276,7 +275,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftSix.setText(R.string.warning_icon_framecolor);
 			leftSeven.setText(R.string.warning_icon_wordcolor);
 			gridview1.setVisibility(View.VISIBLE);
-			gapCleanViewGroup.setVisibility(View.INVISIBLE);
+			viewGroup.setVisibility(View.INVISIBLE);
 			gridview1.setAdapter(new DateGridViewImageAdapter(getActivity()));
 			break;
 		case R.id.warning_motion:
@@ -288,7 +287,7 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 			leftSix.setText(R.string.warning_icon_framecolor);
 			leftSeven.setText(R.string.warning_icon_wordcolor);
 			gridview1.setVisibility(View.VISIBLE);
-			gapCleanViewGroup.setVisibility(View.INVISIBLE);
+			viewGroup.setVisibility(View.INVISIBLE);
 			gridview1.setAdapter(new DateGridViewActionImageAdapter(getActivity()));
 			break;
 		case R.id.warning_advanced:

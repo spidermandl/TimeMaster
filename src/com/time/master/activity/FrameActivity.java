@@ -42,6 +42,7 @@ public class FrameActivity extends FragmentActivity {
 	TabWidget tabWidget;  
     ScrollView verticalScroll;
     HorizontalScrollView horizontalScroll;
+    
 	 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,20 +85,18 @@ public class FrameActivity extends FragmentActivity {
         // 标签的个数  
         int count = tabWidget.getChildCount();  
         // 获取手机屏幕的宽高  
-        DisplayMetrics displayMetrics = new DisplayMetrics();  
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);  
-        int screenWidth = displayMetrics.widthPixels;  
+        int screenWidth = TimeMasterApplication.getInstance().getScreen_W();  
         
 //		for (int i = 0; i < count; i++) {
 //		   tabWidget.getChildTabViewAt(i).getLayoutParams().width=screenWidth/6+screenWidth/36+(i==count-1?screenWidth/36:0);
 //	    }
 		
-		if (count >= 5) {
-			for (int i = 0; i < count; i++) {
-				// 设置每个标签的宽度，为屏幕的1/5
-				tabWidget.getChildTabViewAt(i).setMinimumWidth((screenWidth) / 5);
-			}
-		} 
+//		if (count >= 5) {
+//			for (int i = 0; i < count; i++) {
+//				// 设置每个标签的宽度，为屏幕的1/5
+//				tabWidget.getChildTabViewAt(i).setMinimumWidth((screenWidth) / 5);
+//			}
+//		} 
 		
 
 		/**本地数据库建立，初始表数据*/
@@ -139,6 +138,11 @@ public class FrameActivity extends FragmentActivity {
     
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
+    	
+    	if(newConfig.orientation==1)
+    		mainFrame.setOrientation(LinearLayout.VERTICAL);
+    	if(newConfig.orientation==2)
+    		mainFrame.setOrientation(LinearLayout.HORIZONTAL);
     	tabHost.invalidate();
     	configureOrientation();
     	super.onConfigurationChanged(newConfig);
