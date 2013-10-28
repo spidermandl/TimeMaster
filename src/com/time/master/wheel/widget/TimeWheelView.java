@@ -35,5 +35,4 @@ public class TimeWheelView extends WheelView {
 	protected void drawCenterRect(Canvas canvas) {
 		super.drawCenterRect(canvas);
 	}
-	
 }

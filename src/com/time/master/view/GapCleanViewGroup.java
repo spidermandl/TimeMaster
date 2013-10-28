@@ -73,8 +73,15 @@ public class GapCleanViewGroup extends BasicViewGroup {
 			current_margin_left+=layoutParams.width;
 
 		}
-
 		
+		
+		
+	}
+	@Override
+	protected void init() {
+		// TODO Auto-generated method stub
+		super.init();
+		current_margin_top-=gap;
 	}
 
 }

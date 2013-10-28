@@ -432,8 +432,7 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 
 	@Override
 	protected void pushConfirm() {
-		CacheModel model=TimeMasterApplication.getInstance().getCacheModel();
-		model.currentTime=chineseCalendar;
+		// TODO Auto-generated method stub
 		
 	}
 
