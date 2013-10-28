@@ -57,13 +57,13 @@ public class FrameActivity extends FragmentActivity {
         
         configureOrientation();
         
-        TabTextView generationTab=new TabTextView(this).setCenterText("±²"),
-        yearTab=new TabTextView(this).setCenterText("Äê"),
-        monthTab=new TabTextView(this).setCenterText("ÔÂ"),
-        weekTab=new TabTextView(this).setCenterText("ÖÜ"),
-        dateTab=new TabTextView(this).setCenterText("ÈÕ"),
-        listTab=new TabTextView(this).setCenterText("ÁÐ±í"),
-        newTab=new TabTextView(this).setCenterText(" ÐÂ½¨");
+        TabTextView generationTab=new TabTextView(this).setCenterText("è¾ˆ"),
+           yearTab=new TabTextView(this).setCenterText("å¹´"),
+           monthTab=new TabTextView(this).setCenterText("æœˆ"),
+           weekTab=new TabTextView(this).setCenterText("å‘¨"),
+           dateTab=new TabTextView(this).setCenterText("æ—¥"),
+           listTab=new TabTextView(this).setCenterText("åˆ—è¡¨"),
+           newTab=new TabTextView(this).setCenterText(" æ–°å»º");
         generationTab.setCenterBackgroud(0xFFFF0000);
         yearTab.setCenterBackgroud(0xFF00FF00);
         monthTab.setCenterBackgroud(0xFF0000FF);
@@ -82,9 +82,9 @@ public class FrameActivity extends FragmentActivity {
         tabHost.addTab(tabHost.newTabSpec("new").setIndicator(newTab).setContent(R.id.new_issue_fragment));
         tabHost.setCurrentTabByTag("date");
         
-        // ±êÇ©µÄ¸öÊý  
+        // ï¿½ï¿½Ç©ï¿½Ä¸ï¿½ï¿½ï¿½  
         int count = tabWidget.getChildCount();  
-        // »ñÈ¡ÊÖ»úÆÁÄ»µÄ¿í¸ß  
+        // ï¿½ï¿½È¡ï¿½Ö»ï¿½ï¿½ï¿½Ä»ï¿½Ä¿ï¿½ï¿½  
         int screenWidth = TimeMasterApplication.getInstance().getScreen_W();  
         
 //		for (int i = 0; i < count; i++) {
@@ -93,20 +93,20 @@ public class FrameActivity extends FragmentActivity {
 		
 //		if (count >= 5) {
 //			for (int i = 0; i < count; i++) {
-//				// ÉèÖÃÃ¿¸ö±êÇ©µÄ¿í¶È£¬ÎªÆÁÄ»µÄ1/5
+//				// ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½Ç©ï¿½Ä¿ï¿½È£ï¿½Îªï¿½ï¿½Ä»ï¿½ï¿½1/5
 //				tabWidget.getChildTabViewAt(i).setMinimumWidth((screenWidth) / 5);
 //			}
 //		} 
 		
 
-		/**±¾µØÊý¾Ý¿â½¨Á¢£¬³õÊ¼±íÊý¾Ý*/
+		/**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿â½¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½*/
 		if (!TimeMasterApplication.getInstance().isDataInitialized()) {
 			DialogFragment df=new LoadStaticDataFragment();
 			df.show(this.getSupportFragmentManager(), "dialog");
 		}
 		
     }
-    /**fragmentÇÐ»»*/
+    /**fragmentï¿½Ð»ï¿½*/
     public void showNext(int containerID,Class<Fragment> fragmentName , int fragmentID) {
 		Fragment f=fragmentCache.get(fragmentID);
 		if(f==null){
