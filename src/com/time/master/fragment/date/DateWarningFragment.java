@@ -90,7 +90,8 @@ public class DateWarningFragment extends Fragment implements OnClickListener {
 		
 		
 		gridview1=(TimeMasterGirdView)layout.findViewById(R.id.gridview);
-		
+		gridview1.setHorizontalSpacing(TimeMasterApplication.getInstance().getScreen_W()/36);
+		gridview1.setVerticalSpacing(TimeMasterApplication.getInstance().getScreen_W()/36);
 	//	warningAdvanced.setInputType(InputType.TYPE_NULL);
 		
 		
