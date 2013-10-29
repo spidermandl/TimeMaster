@@ -1,7 +1,5 @@
 package com.time.master.view;
 
-import com.time.master.TimeMasterApplication;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.GridView;
