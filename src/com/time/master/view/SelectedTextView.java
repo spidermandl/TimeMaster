@@ -11,7 +11,7 @@ import android.util.Log;
  */
 public class SelectedTextView extends BasicTextView {
 	
-	private GroupSingleTouchViewGroup.SingleSelectedInterface singleSelectedInterface;
+	private SingleSelectedInterface singleSelectedInterface;
 	private GroupSingleSelectedView.SingleSelectedInterface daysingleSelectedInterface;
 	
 	
@@ -60,11 +60,9 @@ public class SelectedTextView extends BasicTextView {
 	protected void actionUp() {
 	}
 	
-	public void setSingleSelectedInterface(GroupSingleTouchViewGroup.SingleSelectedInterface singleSelectedInterface) {
+	public void setSingleSelectedInterface(SingleSelectedInterface singleSelectedInterface) {
 		this.singleSelectedInterface = singleSelectedInterface;
-		
-	
-}
+     }
 	public void setSingleSelectedInterface(GroupSingleSelectedView.SingleSelectedInterface singleSelectedInterface) {
 		this.daysingleSelectedInterface = singleSelectedInterface;
 		

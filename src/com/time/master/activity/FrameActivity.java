@@ -42,6 +42,7 @@ public class FrameActivity extends FragmentActivity {
 	TabWidget tabWidget;  
     ScrollView verticalScroll;
     HorizontalScrollView horizontalScroll;
+    
 	 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,13 +57,13 @@ public class FrameActivity extends FragmentActivity {
         
         configureOrientation();
         
-        TabTextView generationTab=new TabTextView(this).setCenterText("±²"),
-        yearTab=new TabTextView(this).setCenterText("Äê"),
-        monthTab=new TabTextView(this).setCenterText("ÔÂ"),
-        weekTab=new TabTextView(this).setCenterText("ÖÜ"),
-        dateTab=new TabTextView(this).setCenterText("ÈÕ"),
-        listTab=new TabTextView(this).setCenterText("ÁĞ±í"),
-        newTab=new TabTextView(this).setCenterText(" ĞÂ½¨");
+        TabTextView generationTab=new TabTextView(this).setCenterText("è¾ˆ"),
+                yearTab=new TabTextView(this).setCenterText("å¹´"),
+                monthTab=new TabTextView(this).setCenterText("æœˆ"),
+                weekTab=new TabTextView(this).setCenterText("å‘¨"),
+                dateTab=new TabTextView(this).setCenterText("æ—¥"),
+                listTab=new TabTextView(this).setCenterText("åˆ—è¡¨"),
+                newTab=new TabTextView(this).setCenterText(" æ–°å»º");
         generationTab.setCenterBackgroud(0xFFFF0000);
         yearTab.setCenterBackgroud(0xFF00FF00);
         monthTab.setCenterBackgroud(0xFF0000FF);
@@ -81,33 +82,31 @@ public class FrameActivity extends FragmentActivity {
         tabHost.addTab(tabHost.newTabSpec("new").setIndicator(newTab).setContent(R.id.new_issue_fragment));
         tabHost.setCurrentTabByTag("date");
         
-        // ±êÇ©µÄ¸öÊı  
+        // é”Ÿæ–¤æ‹·ç­¾é”Ÿä¾¥é©æ‹·é”Ÿæ–¤æ‹·  
         int count = tabWidget.getChildCount();  
-        // »ñÈ¡ÊÖ»úÆÁÄ»µÄ¿í¸ß  
-        DisplayMetrics displayMetrics = new DisplayMetrics();  
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);  
-        int screenWidth = displayMetrics.widthPixels;  
+        // é”Ÿæ–¤æ‹·å–é”Ÿè¡—ä¼™æ‹·é”Ÿæ–¤æ‹·å¹•é”Ÿä¾¥åŒ¡æ‹·é”Ÿï¿½ 
+        int screenWidth = TimeMasterApplication.getInstance().getScreen_W();  
         
 //		for (int i = 0; i < count; i++) {
 //		   tabWidget.getChildTabViewAt(i).getLayoutParams().width=screenWidth/6+screenWidth/36+(i==count-1?screenWidth/36:0);
 //	    }
 		
-		if (count >= 5) {
-			for (int i = 0; i < count; i++) {
-				// ÉèÖÃÃ¿¸ö±êÇ©µÄ¿í¶È£¬ÎªÆÁÄ»µÄ1/5
-				tabWidget.getChildTabViewAt(i).setMinimumWidth((screenWidth) / 5);
-			}
-		} 
+//		if (count >= 5) {
+//			for (int i = 0; i < count; i++) {
+//				// é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·æ¯é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·ç­¾é”Ÿä¾¥åŒ¡æ‹·é¾‹é”Ÿè½¿îæ‹·é”Ÿä¾¥ä¼™æ‹·é”Ÿï¿½/5
+//				tabWidget.getChildTabViewAt(i).setMinimumWidth((screenWidth) / 5);
+//			}
+//		} 
 		
 
-		/**±¾µØÊı¾İ¿â½¨Á¢£¬³õÊ¼±íÊı¾İ*/
+		/**é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·è˜é¥¨îŸ’æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·é”Ÿç»ç¡·æ‹·é”Ÿæ–¤æ‹·é”Ÿæ–¤æ‹·*/
 		if (!TimeMasterApplication.getInstance().isDataInitialized()) {
 			DialogFragment df=new LoadStaticDataFragment();
 			df.show(this.getSupportFragmentManager(), "dialog");
 		}
 		
     }
-    /**fragmentÇĞ»»*/
+    /**fragmenté”Ÿå«ä¼™æ‹·*/
     public void showNext(int containerID,Class<Fragment> fragmentName , int fragmentID) {
 		Fragment f=fragmentCache.get(fragmentID);
 		if(f==null){
@@ -139,11 +138,17 @@ public class FrameActivity extends FragmentActivity {
     
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
+    	
+    	if(newConfig.orientation==1)
+    		mainFrame.setOrientation(LinearLayout.VERTICAL);
+    	if(newConfig.orientation==2)
+    		mainFrame.setOrientation(LinearLayout.HORIZONTAL);
     	tabHost.invalidate();
     	configureOrientation();
     	super.onConfigurationChanged(newConfig);
     	
     }
+    
     
     private void configureOrientation(){
     	int orientation=this.getResources().getConfiguration().orientation;

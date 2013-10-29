@@ -32,7 +32,7 @@ public class BasicviewGroup2 extends BasicViewGroup{
 		gap=screen_width/64;
 		current_margin_top=(int)(-0.75*unit_width);
 	}
-protected void onLayout(boolean changed, int l, int t, int r, int b) {
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
 		
 		int num=this.getChildCount();
 		for(int i=0;i<num;i++){

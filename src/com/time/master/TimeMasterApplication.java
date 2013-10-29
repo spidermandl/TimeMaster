@@ -117,18 +117,6 @@ public class TimeMasterApplication extends Application {
 		this.dataInitialized = dataInitialized;
 	}
 
-	public int getScreenMode() {
-		return screenMode;
-	}
-
-	public void setScreenMode(int screenMode) {
-		this.screenMode = screenMode;
-		DisplayMetrics displaymetrics = new DisplayMetrics();
-		WindowManager window=(WindowManager)(this.getSystemService(Context.WINDOW_SERVICE));
-		window.getDefaultDisplay().getMetrics(displaymetrics);
-		screen_width=displaymetrics.widthPixels;
-		screen_height=displaymetrics.heightPixels;
-	}
 	
 	public CacheModel getCacheModel() {
 		return cacheModel;

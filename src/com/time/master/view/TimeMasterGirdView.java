@@ -12,11 +12,14 @@ public class TimeMasterGirdView extends GridView {
 
     public TimeMasterGirdView(Context context) { 
         super(context); 
+      
     } 
 
     public TimeMasterGirdView(Context context, AttributeSet attrs, int defStyle) { 
         super(context, attrs, defStyle); 
+       
     } 
+    
 
     @Override 
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) { 

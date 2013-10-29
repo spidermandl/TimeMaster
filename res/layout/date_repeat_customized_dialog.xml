@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="@string/do_do"
+        android:hint="@string/do_do"
         android:textColor="#000000"
         layout:new_line="true"
         layout:width_multi="2" />
@@ -32,15 +32,15 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="@string/do_ge"
+        android:hint="@string/do_ge"
         layout:new_line="true"
         layout:width_multi="2" />
 
-    <com.time.master.view.BasicTextView
+    <com.time.master.view.SelectedTextView
         android:id="@+id/do_num0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2"
+        android:background="#DADADA"
         android:gravity="center"
         android:text="@string/do_num0"
         layout:new_line="false"
@@ -63,35 +63,35 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="@string/do_do"
+        android:hint="@string/do_do"
         layout:new_line="true"
         layout:width_multi="2" />
 
-    <com.time.master.view.BasicTextView
+    <com.time.master.view.SelectedTextView
         android:id="@+id/do_num7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2"
+        android:background="#DADADA"
         android:gravity="center"
         android:text="@string/do_num7"
         layout:new_line="false"
         layout:width_multi="1" />
     
-    <com.time.master.view.BasicTextView
+    <com.time.master.view.SelectedTextView
         android:id="@+id/do_num8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2"
+        android:background="#DADADA"
         android:gravity="center"
         android:text="@string/do_num8"
         layout:new_line="false"
         layout:width_multi="1" />
     
-    <com.time.master.view.BasicTextView
+    <com.time.master.view.SelectedTextView
         android:id="@+id/do_num9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2"
+        android:background="#DADADA"
         android:gravity="center"
         android:text="@string/do_num9"
         layout:new_line="false"
@@ -104,35 +104,35 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="@string/do_ge"
+        android:hint="@string/do_ge"
         layout:new_line="true"
         layout:width_multi="2" />
         
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
         android:id="@+id/do_num4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2"
+        android:background="#DADADA"
         android:gravity="center"
         android:text="@string/do_num4"
         layout:new_line="false"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
         android:id="@+id/do_num5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2"
+        android:background="#DADADA"
         android:gravity="center"
         android:text="@string/do_num5"
         layout:new_line="false"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
         android:id="@+id/do_num6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2"
+        android:background="#DADADA"
         android:gravity="center"
         android:text="@string/do_num6"
         layout:new_line="false"
@@ -145,35 +145,35 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="@string/do_do"
+        android:hint="@string/do_do"
         layout:new_line="true"
         layout:width_multi="2" />
         
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
         android:id="@+id/do_num1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2"
+        android:background="#DADADA"
         android:gravity="center"
         android:text="@string/do_num1"
         layout:new_line="false"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
         android:id="@+id/do_num2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2"
+        android:background="#DADADA"
         android:gravity="center"
         android:text="@string/do_num2"
         layout:new_line="false"
         layout:width_multi="1" />
         
-        <com.time.master.view.BasicTextView
+        <com.time.master.view.SelectedTextView
         android:id="@+id/do_num3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F2F2F2"
+        android:background="#DADADA"
         android:gravity="center"
         android:text="@string/do_num3"
         layout:new_line="false"
@@ -186,7 +186,7 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="@string/do_ge"
+        android:hint="@string/do_ge"
         layout:new_line="true"
         layout:width_multi="2" />
 

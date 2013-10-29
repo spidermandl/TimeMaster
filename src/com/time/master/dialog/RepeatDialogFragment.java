@@ -1,6 +1,4 @@
 package com.time.master.dialog;
-
-import java.util.HashMap;
 import com.time.master.R;
 import com.time.master.TimeMasterApplication;
 import com.time.master.interfacer.WheelResultInterface;
@@ -59,19 +57,15 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 
 		date_top_left = (BasicTextView) layout.findViewById(R.id.date_top_left);
 		date_top_left.setOnClickListener(this);
-		String txt = TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache
-				.get(DateDailyRepeatDiaogFragment.TAG);
-		if (txt != null)
-			date_top_left.setText(txt);
 
-		date_top_center = (BasicTextView) layout
-				.findViewById(R.id.date_top_center);
-		date_top_center.setOnClickListener(this);
-		txt = TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache
-				.get(DateDaysRepeatDialogFragment.TAG);
-		if (txt != null)
-			date_top_center.setText(txt);
+		String txt=TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache.get(DateDailyRepeatDiaogFragment.TAG);
+		if(txt!=null)date_top_left.setText(txt);
 
+		date_top_center = (BasicTextView) layout.findViewById(R.id.date_top_center);
+		date_top_center.setOnClickListener(this);	
+		txt=TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache.get(DateDaysRepeatDialogFragment.TAG);
+		if(txt!=null)date_top_center.setText(txt);
+		
 		confirm = (BasicTextView) layout.findViewById(R.id.date_confirm);
 		dtmselect = (SelectedTextView) layout
 				.findViewById(R.id.date_month_select);
@@ -114,6 +108,7 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 		setInitialStatus(dtworking);
 		setInitialStatus(dteveryday);
 		setInitialStatus(dtmonday);
+		setInitialStatus(dtmcurrent);
 		setInitialStatus(dtlmcurrent);
 		setInitialStatus(dtlmselect);
 		setInitialStatus(dtfestival);
@@ -179,9 +174,10 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 
 					@Override
 					public void getResult(String result) {
-						date_top_left.setText(TimeMasterApplication
-								.getInstance().getCacheModel().tmpResultsCache
-								.get(DateDailyRepeatDiaogFragment.TAG));
+
+						date_top_left.setText(TimeMasterApplication.getInstance().getCacheModel().
+                                tmpResultsCache.get(DateDailyRepeatDiaogFragment.TAG));
+		
 					}
 				});
 				showDialog(datatopFragment);
@@ -194,10 +190,9 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 
 				@Override
 				public void getResult(String result) {
-					date_top_center.setText(TimeMasterApplication.getInstance()
-							.getCacheModel().tmpResultsCache
-							.get(DateDaysRepeatDialogFragment.TAG));
-				}
+					date_top_center.setText(TimeMasterApplication.getInstance().getCacheModel().
+							tmpResultsCache.get(DateDaysRepeatDialogFragment.TAG));
+					}
 			});
 			showDialog(datecenterFragment);
 			break;
@@ -222,4 +217,5 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 		if (viewStatus.getBoolean(view.getId() + "", false))
 			view.setSelected();
 	}
+
 }
