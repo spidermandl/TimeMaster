@@ -205,14 +205,13 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 			selecteddayFragment = new SelectDayFragment();
 			selecteddayFragment.setShowsDialog(true);
 			showDialog(selecteddayFragment);
-			//selecteddayFragment.changedefaultcolor(1);
+			break;
 			
 		case R.id.date_year_select:
 			selecteddayFragment = new SelectDayFragment();
 			selecteddayFragment.setShowsDialog(true);
 			showDialog(selecteddayFragment);
-			//selecteddayFragment.changedefaultcolor(2);
-			
+			break;
 		default:
 			break;
 		}

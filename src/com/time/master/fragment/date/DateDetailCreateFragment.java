@@ -436,7 +436,8 @@ public class DateDetailCreateFragment extends Fragment implements
 				lastendtime=TimeMasterApplication.getInstance().getDatabaseHelper().getLastEndTime();
 				finalendtime=lastsecondendtime;
 				/*数据库里没有数据时，告知用户*/
-				if(lastsecondendtime==0||lastendtime==0){
+				//if(lastsecondendtime==0||lastendtime==0){
+				if(lastendtime==0){
 					Toast.makeText(getActivity(), "目前没有已结束事件的时间点供选择",
 					     Toast.LENGTH_SHORT).show();
 					break;
