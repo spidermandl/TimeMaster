@@ -58,12 +58,12 @@ public class FrameActivity extends FragmentActivity {
         configureOrientation();
         
         TabTextView generationTab=new TabTextView(this).setCenterText("辈"),
-           yearTab=new TabTextView(this).setCenterText("年"),
-           monthTab=new TabTextView(this).setCenterText("月"),
-           weekTab=new TabTextView(this).setCenterText("周"),
-           dateTab=new TabTextView(this).setCenterText("日"),
-           listTab=new TabTextView(this).setCenterText("列表"),
-           newTab=new TabTextView(this).setCenterText(" 新建");
+                yearTab=new TabTextView(this).setCenterText("年"),
+                monthTab=new TabTextView(this).setCenterText("月"),
+                weekTab=new TabTextView(this).setCenterText("周"),
+                dateTab=new TabTextView(this).setCenterText("日"),
+                listTab=new TabTextView(this).setCenterText("列表"),
+                newTab=new TabTextView(this).setCenterText(" 新建");
         generationTab.setCenterBackgroud(0xFFFF0000);
         yearTab.setCenterBackgroud(0xFF00FF00);
         monthTab.setCenterBackgroud(0xFF0000FF);
@@ -82,9 +82,9 @@ public class FrameActivity extends FragmentActivity {
         tabHost.addTab(tabHost.newTabSpec("new").setIndicator(newTab).setContent(R.id.new_issue_fragment));
         tabHost.setCurrentTabByTag("date");
         
-        // ��ǩ�ĸ���  
+        // 锟斤拷签锟侥革拷锟斤拷  
         int count = tabWidget.getChildCount();  
-        // ��ȡ�ֻ���Ļ�Ŀ��  
+        // 锟斤拷取锟街伙拷锟斤拷幕锟侥匡拷锟� 
         int screenWidth = TimeMasterApplication.getInstance().getScreen_W();  
         
 //		for (int i = 0; i < count; i++) {
@@ -93,20 +93,20 @@ public class FrameActivity extends FragmentActivity {
 		
 //		if (count >= 5) {
 //			for (int i = 0; i < count; i++) {
-//				// ����ÿ����ǩ�Ŀ�ȣ�Ϊ��Ļ��1/5
+//				// 锟斤拷锟斤拷每锟斤拷锟斤拷签锟侥匡拷龋锟轿拷锟侥伙拷锟�/5
 //				tabWidget.getChildTabViewAt(i).setMinimumWidth((screenWidth) / 5);
 //			}
 //		} 
 		
 
-		/**������ݿ⽨������ʼ�����*/
+		/**锟斤拷锟斤拷锟斤拷菘饨拷锟斤拷锟斤拷锟绞硷拷锟斤拷锟斤拷*/
 		if (!TimeMasterApplication.getInstance().isDataInitialized()) {
 			DialogFragment df=new LoadStaticDataFragment();
 			df.show(this.getSupportFragmentManager(), "dialog");
 		}
 		
     }
-    /**fragment�л�*/
+    /**fragment锟叫伙拷*/
     public void showNext(int containerID,Class<Fragment> fragmentName , int fragmentID) {
 		Fragment f=fragmentCache.get(fragmentID);
 		if(f==null){
