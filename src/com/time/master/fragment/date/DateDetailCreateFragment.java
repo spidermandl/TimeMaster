@@ -166,7 +166,7 @@ public class DateDetailCreateFragment extends Fragment implements
 		if (prev != null) {
 			ft.remove(prev);
 		}
-		ft.addToBackStack(null);
+		//ft.addToBackStack(null);
 
 		// Create and show the dialog.
 		dialogFragment.show(ft, "dialog");
@@ -177,9 +177,10 @@ public class DateDetailCreateFragment extends Fragment implements
 		if (event.getAction() == MotionEvent.ACTION_UP) {
 			switch (v.getId()) {
 			case R.id.plan_time_start:
-				if (dateFragment == null) {
+//				if (dateFragment == null) {
 					dateFragment = new TimeDialogFragment();
-				}
+//				}
+					TimeMasterApplication.getInstance().setEditText(startDateSelector);
 				/** 设定获取滚轮内容接口 */
 				dateFragment.setWheelInterface(new WheelResultInterface() {
 
@@ -197,6 +198,7 @@ public class DateDetailCreateFragment extends Fragment implements
 				if (dateFragment == null) {
 					dateFragment = new TimeDialogFragment();
 				}
+				TimeMasterApplication.getInstance().setEditText(endDateSelector);
 				/** 设定获取滚轮内容接口 */
 				dateFragment.setWheelInterface(new WheelResultInterface() {
 
@@ -211,6 +213,7 @@ public class DateDetailCreateFragment extends Fragment implements
 				showDialog(dateFragment);
 				break;
 			case R.id.plan_location:
+				TimeMasterApplication.getInstance().setEditText(locationSelector);
 				if (locationFragment == null) {
 					locationFragment = new LocationDialogFragment();
 					/** 设定获取滚轮内容接口 */

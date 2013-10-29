@@ -7,6 +7,8 @@ package com.time.master.dialog;
  */
 
 import com.time.master.R;
+import com.time.master.TimeMasterApplication;
+import com.time.master.interfacer.WheelResultInterface;
 import com.time.master.view.SelectedTextView;
 
 import android.app.DialogFragment;
@@ -19,19 +21,21 @@ import com.time.master.view.BasicTextView;
 import com.time.master.view.BasicViewGroup;
 public class WorldTimeDialogFragment extends BasicDialogFragment implements
 		OnClickListener {
-	private TimeDialogFragment temp = new TimeDialogFragment();
 	private BasicTextView showStatus,arrow;
 	private SelectedTextView translate, idlerWheel, conversion,confirm;
 	private SelectedTextView city1, city2, city3, city4, city5, city6, city7,
 			city8, city9, city10, city11, city12, city13, city14, city15,
 			city16, solarcalendar, lunarcalendar, countdown, goon, forward;
 	private boolean languageStatus = true;
-	private int calendarStatus = temp.dayModelStatus;
+	private int calendarStatus;
+	
+
 	private static final boolean IDLERWHEELACTIVE = true;
 	private static final boolean CONVERSIONACTIVE = false;
 	private boolean activeStatus = CONVERSIONACTIVE;
 	private String calendarStatusTop;
 	private String calendarStatusBottom;
+	private boolean countdownisSelect=false;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -75,6 +79,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 		showStatus = (BasicTextView) layout.findViewById(R.id.showstatus);
 		arrow=(BasicTextView) layout.findViewById(R.id.arrow);
 		confirm=(SelectedTextView) layout.findViewById(R.id.confirm);
+		
 		if (calendarStatus == 0) {
 			calendarStatusTop = "Å©Àú";
 			calendarStatusBottom = "ÑôÀú";
@@ -199,6 +204,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
+			countdownisSelect=true;
 			break;
 		case R.id.goon:
 			if (activeStatus) {
@@ -210,6 +216,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
+			countdownisSelect=true;
 			break;
 		case R.id.forward:
 			if (activeStatus) {
@@ -221,6 +228,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 				showStatus.setText(calendarStatusTop + "\n"
 						+ calendarStatusBottom);
 			}
+			countdownisSelect=true;
 			break;
 		case R.id.conversion:
 			activeStatus = CONVERSIONACTIVE;
@@ -423,10 +431,39 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 			}
 			break;
 		case R.id.confirm:
+			
+			if(countdownisSelect){
+				DurationTimeDialogFragment fragment=new DurationTimeDialogFragment();
+				fragment.setWheelInterface(new WheelResultInterface() {
+					
+					@Override
+					public void getResult(String result) {
+						// TODO Auto-generated method stub
+						TimeMasterApplication.getInstance().getEditText().setText(result);
+					}
+				});
+				showDialog(fragment);
+			}
+				
+			else {
+				TimeDialogFragment fragment=new TimeDialogFragment();
+				fragment.setWheelInterface(new WheelResultInterface() {
+					
+					@Override
+					public void getResult(String result) {
+						// TODO Auto-generated method stub
+						TimeMasterApplication.getInstance().getEditText().setText(result);
+					}
+				});
+				showDialog(fragment);
+			}
 			this.dismiss();
 		default:
 			break;
 		}
+	}
+	public void setCalendarStatus(int calendarStatus) {
+		this.calendarStatus = calendarStatus;
 	}
 
 }

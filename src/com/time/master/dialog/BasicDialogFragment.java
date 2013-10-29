@@ -33,7 +33,7 @@ public abstract class BasicDialogFragment extends DialogFragment {
 		if (prev != null) {
 			ft.remove(prev);
 		}
-		ft.addToBackStack(null);
+		//ft.addToBackStack(null);
 
 		// Create and show the dialog.
 		dialogFragment.show(ft, "dialog");// //

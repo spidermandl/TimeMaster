@@ -42,7 +42,6 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 	
 	public static final String TAG="TimeDialogFragment";
 	public static final int TIME_LIST_NUMBER=7;
-	public static int dayModelStatus;
 	private  int  dayModel=0;//0:滚轮阳历；1：滚轮农历
 	private ChineseCalendar chineseCalendar;//当前选中时间
 	
@@ -367,9 +366,11 @@ public class TimeDialogFragment extends WheelDialogFragment implements OnClickLi
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.time_type:
-			this.dismiss();
-			dayModelStatus=dayModel;
-			showDialog(new WorldTimeDialogFragment());
+			
+			WorldTimeDialogFragment worldTimeDialogFragment=new WorldTimeDialogFragment();
+			worldTimeDialogFragment.setCalendarStatus(dayModel);
+			showDialog(worldTimeDialogFragment);
+			
 			break;
 		case R.id.edit_date:
 			changeTimeStyle(dayModel);

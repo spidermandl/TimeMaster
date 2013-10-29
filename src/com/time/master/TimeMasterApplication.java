@@ -13,6 +13,7 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 public class TimeMasterApplication extends Application {
 
@@ -26,6 +27,9 @@ public class TimeMasterApplication extends Application {
 	private static TimeMasterApplication instance;
 	
 	private TimeMasterHelper databaseHelper;
+	private EditText editText;
+	
+
 	/**
 	 * 界面显示图片资源缓存
 	 * 系统内存不足时会被清除，释放内存
@@ -121,5 +125,13 @@ public class TimeMasterApplication extends Application {
 	public CacheModel getCacheModel() {
 		return cacheModel;
 	}
+	public EditText getEditText() {
+		return editText;
+	}
+
+	public void setEditText(EditText editText) {
+		this.editText = editText;
+	}
+
 	
 }
