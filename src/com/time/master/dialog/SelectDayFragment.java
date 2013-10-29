@@ -25,7 +25,7 @@ import com.time.master.view.SelectedTextView;
  * @author shaojunmei
  * 
  */
-public class SelectDayFragment extends BasicDialogFragment implements
+public class SelectDayFragment extends WheelDialogFragment implements
 		OnClickListener {
 
 	public static final String tag = "RepeatDialogFragment";
@@ -77,17 +77,9 @@ public class SelectDayFragment extends BasicDialogFragment implements
 		btvdown.setOnClickListener(this);
 		changeDay(31 - maxDay);
 
-		getDialog().setCanceledOnTouchOutside(true);
-		Window window = getDialog().getWindow();
-		window.setGravity(Gravity.BOTTOM);
-		WindowManager.LayoutParams para = (WindowManager.LayoutParams) window
-				.getAttributes();
-		para.height = LayoutParams.WRAP_CONTENT;
-		para.width = LayoutParams.MATCH_PARENT;
-		window.setAttributes(para);
-		window.clearFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND
-				| WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-
+		confirm=(BasicTextView)layout.findViewById(R.id.day_selected_conform);
+		
+		super.superInit();
 		return layout;
 	}
 
@@ -160,6 +152,18 @@ public class SelectDayFragment extends BasicDialogFragment implements
 		default:
 			break;
 		}
+	}
+
+	@Override
+	protected String getSelectedString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected void pushConfirm() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

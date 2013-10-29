@@ -22,12 +22,11 @@ import android.view.ViewGroup;
  * 
  */
 
-public class RepeatDialogFragment extends BasicDialogFragment implements
+public class RepeatDialogFragment extends WheelDialogFragment implements
 		View.OnClickListener {
 	public static final String tag = "RepeatDialogFragment";
 	BasicTextView date_top_left,// 每日一次 按钮
-			date_top_center,// 重复一天按钮
-			confirm;// 确认按钮
+			date_top_center;// 重复一天按钮
 	WheelDialogFragment datatopFragment, datecenterFragment;
 	SelectDayFragment selecteddayFragment;
 	SelectedTextView dtmselect, dtmcurrent, dtworking, dteveryday, dtmonday,
@@ -66,7 +65,7 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 		txt=TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache.get(DateDaysRepeatDialogFragment.TAG);
 		if(txt!=null)date_top_center.setText(txt);
 		
-		confirm = (BasicTextView) layout.findViewById(R.id.date_confirm);
+		confirm = (BasicTextView) layout.findViewById(R.id.date_repeat_confirm);
 		dtmselect = (SelectedTextView) layout
 				.findViewById(R.id.date_month_select);
 		dtmcurrent = (SelectedTextView) layout
@@ -153,6 +152,8 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 		dtfriday.setOnClickListener(this);
 		yourselfBasicTextView.setOnClickListener(this);
 
+		
+		super.superInit();
 		return layout;
 	}
 
@@ -216,6 +217,18 @@ public class RepeatDialogFragment extends BasicDialogFragment implements
 	private void setInitialStatus(SelectedTextView view) {
 		if (viewStatus.getBoolean(view.getId() + "", false))
 			view.setSelected();
+	}
+
+	@Override
+	protected String getSelectedString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected void pushConfirm() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

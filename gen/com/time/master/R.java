@@ -255,7 +255,6 @@ containing a value of this type.
         public static final int btn_next_month=0x7f0a010b;
         public static final int btn_pre_month=0x7f0a010a;
         public static final int confirm=0x7f0a01af;
-        public static final int conform=0x7f0a00c9;
         public static final int conversion=0x7f0a01ae;
         public static final int countdown=0x7f0a01bd;
         public static final int country=0x7f0a0189;
@@ -266,7 +265,6 @@ containing a value of this type.
         public static final int date_center_second=0x7f0a002c;
         public static final int date_center_third=0x7f0a002d;
         public static final int date_commemorate_day=0x7f0a0067;
-        public static final int date_confirm=0x7f0a005a;
         public static final int date_day=0x7f0a01a3;
         public static final int date_day_off=0x7f0a006c;
         public static final int date_everyday=0x7f0a005e;
@@ -291,6 +289,7 @@ containing a value of this type.
         public static final int date_other_week=0x7f0a0068;
         public static final int date_plan_yourself=0x7f0a006f;
         public static final int date_quaque=0x7f0a0063;
+        public static final int date_repeat_confirm=0x7f0a005a;
         public static final int date_saturday=0x7f0a006d;
         public static final int date_selector=0x7f0a0114;
         public static final int date_selector_wheel=0x7f0a018e;
@@ -315,6 +314,7 @@ containing a value of this type.
         public static final int day=0x7f0a0025;
         public static final int day_center=0x7f0a002a;
         public static final int day_center_selector_wheel=0x7f0a002f;
+        public static final int day_selected_conform=0x7f0a00c9;
         public static final int day_selector_wheel=0x7f0a0024;
         public static final int day_times=0x7f0a0027;
         public static final int day_top=0x7f0a001e;
