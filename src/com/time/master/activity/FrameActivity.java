@@ -145,6 +145,7 @@ public class FrameActivity extends FragmentActivity {
     	
     }
     
+    
     private void configureOrientation(){
     	int orientation=this.getResources().getConfiguration().orientation;
 		if(orientation==Configuration.ORIENTATION_PORTRAIT){
