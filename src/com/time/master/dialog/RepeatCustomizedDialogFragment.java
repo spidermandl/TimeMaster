@@ -101,6 +101,7 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		list.add(do3);
 		list.add(ge3);
 		
+		index=list.get(index).getSelectionStart();
 //		linkedList.add(num0);
 //		linkedList.add(num1);
 //		linkedList.add(num2);
@@ -220,7 +221,8 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 			if(++index>5)
 				index=0;
 			string="";
-			list.get(index).setCursorVisible(true);
+			list.get(index).setSelection(string.length());
+//			list.get(index).setCursorVisible(true);
 				break;
 		case R.id.date_yes:
 			
@@ -250,30 +252,33 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 		    do1.setInputType(InputType.TYPE_NULL);
 		    do1.setCursorVisible(isVisible());
 //			do1.setFocusableInTouchMode(true);
-//			do1.requestFocus();
+			do1.requestFocus();
 				break;
 		case R.id.do_do2:
 			do2.setInputType(InputType.TYPE_NULL);
 			do2.setFocusable(true);
-//			do2.requestFocus();
+			do2.requestFocus();
 				break;
 		case R.id.do_do3:
 			do3.setInputType(InputType.TYPE_NULL);
 			do3.setFocusable(true);
+			do3.requestFocus();
 				break;
 		case R.id.do_ge1:
 			ge1.setInputType(InputType.TYPE_NULL);
 			ge1.setFocusable(true);
 			ge1.setCursorVisible(isVisible());
-//			ge1.requestFocus();
+			ge1.requestFocus();
 				break;
 		case R.id.do_ge2:
 			ge2.setInputType(InputType.TYPE_NULL);
 			ge2.setFocusable(true);
+			ge2.requestFocus();
 				break;
 		case R.id.do_ge3:
 			ge3.setInputType(InputType.TYPE_NULL);
 			ge3.setFocusable(true);
+			ge3.requestFocus();
 				break;
 		default:
 			break;
