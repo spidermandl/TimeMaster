@@ -27,7 +27,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 			city8, city9, city10, city11, city12, city13, city14, city15,
 			city16, solarcalendar, lunarcalendar, countdown, goon, forward;
 	private boolean languageStatus = true;
-	private int calendarStatus;
+	private int calendarStatus=1;
 	
 
 	private static final boolean IDLERWHEELACTIVE = true;

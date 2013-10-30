@@ -6,6 +6,7 @@ import android.app.DialogFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -28,7 +29,7 @@ import com.time.master.wheel.widget.WheelView;
  * 
  * @author xianrui
  */          
-public class DurationTimeDialogFragment extends WheelDialogFragment {
+public class DurationTimeDialogFragment extends WheelDialogFragment implements OnClickListener {
 
 	public static final String TAG = "DurationTimeDialogFragment";
 	public static final int TIME_LIST_NUMBER = 7;
@@ -73,12 +74,14 @@ public class DurationTimeDialogFragment extends WheelDialogFragment {
 
 		editText = (EditText) layout.findViewById(R.id.duration_edit_date);
 		confirm = (TextView) layout.findViewById(R.id.duration_time_confirm);
+		
 
 		timeWheels = (LinearLayout) layout
 				.findViewById(R.id.duration_date_selector_wheel);
 		int padding = TimeMasterApplication.getInstance().getScreen_W() / 36;
 		timeWheels.setPadding(padding, 0, padding, padding);
-		mode=(TextView)layout.findViewById(R.id.time_type);
+		mode=(TextView)layout.findViewById(R.id.duration_time_type);
+		mode.setOnClickListener(this);
 		line1 = (TimeWheelView) layout.findViewById(R.id.duration_line1);
 		line1Adapter = new ArrayWheelAdapter<String>(getActivity(), timeMode);
 		line1Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
@@ -362,6 +365,20 @@ public class DurationTimeDialogFragment extends WheelDialogFragment {
 	protected void pushConfirm() {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case  R.id.duration_time_type:
+			WorldTimeDialogFragment worldTimeDialogFragment=new WorldTimeDialogFragment();
+			showDialog(worldTimeDialogFragment);
+			break;
+
+		default:
+			break;
+		}
 	}
 	
 
