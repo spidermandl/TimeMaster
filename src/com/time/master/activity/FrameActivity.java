@@ -97,7 +97,7 @@ public class FrameActivity extends FragmentActivity {
 //				tabWidget.getChildTabViewAt(i).setMinimumWidth((screenWidth) / 5);
 //			}
 //		} 
-		
+		System.out.println(TimeMasterApplication.getInstance().getDatabaseHelper().getDataBasePath());
 
 		/**锟斤拷锟斤拷锟斤拷菘饨拷锟斤拷锟斤拷锟绞硷拷锟斤拷锟斤拷*/
 		if (!TimeMasterApplication.getInstance().isDataInitialized()) {

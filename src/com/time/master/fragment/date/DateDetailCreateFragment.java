@@ -300,7 +300,7 @@ public class DateDetailCreateFragment extends Fragment implements
 			break;
 		case R.id.plan_warning:
 			//warningFragment=new DateWarningFragment();
-			//T=DateWarningFragment.class;
+			T=DateWarningFragment.class;
 			activity.showNext(this.getId(),T, R.layout.date_warning);			
 			break;
 		case R.id.plan_type:

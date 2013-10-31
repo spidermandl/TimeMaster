@@ -229,8 +229,8 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 				break;
 		case R.id.do_del:
 //			list.get(index).setFocusable(true);	
-//			string="";
-			list.get(index).setText("");
+			string="";
+			list.get(index).setText(string);
 //		System.out.println(index);
 //			string=" ";
 		

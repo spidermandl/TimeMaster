@@ -66,11 +66,15 @@ public class GroupSingleSelectedView extends BasicviewGroup2{
 		
 		@Override
 		public void setSingleView(LayoutStyleableInterface Ilayout) {
+			int n=0;
 			ArrayList<LayoutStyleableInterface> list=groupMap.get(Ilayout.getGroup());
 			for(LayoutStyleableInterface i:list){
-				Log.e("GroupSingleTouchTextView", "setSingleView");
+				n++;
+//				Log.e("GroupSingleTouchTextView", "setSingleView");
+				
 				if(Ilayout!=i&&((SelectedTextView)i).isSelected()){
 					((SelectedTextView)i).setNaturalBackground();
+				
 				}
 			}
 			
