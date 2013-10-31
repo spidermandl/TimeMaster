@@ -43,7 +43,7 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 		    editText.setText(getSelectedString());
 		}
         
-		if(confirm!=null&&wheelInterface!=null){
+		if(confirm!=null){
 			confirm.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
@@ -51,7 +51,8 @@ public abstract class WheelDialogFragment extends BasicDialogFragment {
 					WheelDialogFragment.this.dismiss();
 					
 					pushConfirm();
-					wheelInterface.getResult(getSelectedString());
+					if(wheelInterface!=null)
+						wheelInterface.getResult(getSelectedString());
 				}
 			});
 		}

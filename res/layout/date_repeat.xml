@@ -28,7 +28,7 @@
         layout:width_multi="2" />
 
     <com.time.master.view.BasicTextView
-        android:id="@+id/date_confirm"
+        android:id="@+id/date_repeat_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#FFFF0000"

@@ -130,9 +130,10 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		switch (v.getId()) {
+		switch(v.getId()){
 		case R.id.translate:
-			if (languageStatus) {
+			if(languageStatus)
+			{
 				city1.setText("Beijing");
 				city2.setText("Seoul");
 				city3.setText("Tokyo");
@@ -458,6 +459,7 @@ public class WorldTimeDialogFragment extends BasicDialogFragment implements
 				showDialog(fragment);
 			}
 			this.dismiss();
+
 		default:
 			break;
 		}

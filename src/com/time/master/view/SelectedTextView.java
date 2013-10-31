@@ -12,6 +12,8 @@ import android.util.Log;
 public class SelectedTextView extends BasicTextView {
 	
 	private SingleSelectedInterface singleSelectedInterface;
+	private GroupSingleSelectedView.SingleSelectedInterface daysingleSelectedInterface;
+	
 	
 	
 	public SelectedTextView(Context context) {
@@ -31,6 +33,9 @@ public class SelectedTextView extends BasicTextView {
 		if(singleSelectedInterface!=null){
 			singleSelectedInterface.setSingleView(this);
 		}
+		if(daysingleSelectedInterface!=null){
+			daysingleSelectedInterface.setSingleView(this);
+		}
 	}
 	@Override
 	protected void actionDown() {
@@ -43,6 +48,10 @@ public class SelectedTextView extends BasicTextView {
 				singleSelectedInterface.setSingleView(this);
 				Log.e("SelectedTextView", "actionDown");
 			}
+			if(daysingleSelectedInterface!=null){
+				daysingleSelectedInterface.setSingleView(this);
+			}
+			
 		}
 		
 		isSelected=isSelected?false:true;
@@ -53,5 +62,10 @@ public class SelectedTextView extends BasicTextView {
 	
 	public void setSingleSelectedInterface(SingleSelectedInterface singleSelectedInterface) {
 		this.singleSelectedInterface = singleSelectedInterface;
-	}
+     }
+	public void setSingleSelectedInterface(GroupSingleSelectedView.SingleSelectedInterface singleSelectedInterface) {
+		this.daysingleSelectedInterface = singleSelectedInterface;
+		
+	
+}
 }

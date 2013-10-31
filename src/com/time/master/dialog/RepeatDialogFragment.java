@@ -17,24 +17,23 @@ import android.view.ViewGroup;
 
 /**
  * "重复"对话框界面
+ * 
  * @author wanghuiming
- *
+ * 
  */
 
-
-public class RepeatDialogFragment extends BasicDialogFragment implements View.OnClickListener {
+public class RepeatDialogFragment extends WheelDialogFragment implements
+		View.OnClickListener {
 	public static final String tag = "RepeatDialogFragment";
 	BasicTextView date_top_left,// 每日一次 按钮
-			date_top_center,// 重复一天按钮
-			confirm;//确认按钮
-	WheelDialogFragment datatopFragment,datecenterFragment;
-	SelectedTextView dtmselect, dtmcurrent, dtworking, dteveryday,
-			dtmonday, dtlmselect, dtlmcurrent, dtfestival, dtqueque, dttuesday,
+			date_top_center;// 重复一天按钮
+	WheelDialogFragment datatopFragment, datecenterFragment;
+	SelectDayFragment selecteddayFragment;
+	SelectedTextView dtmselect, dtmcurrent, dtworking, dteveryday, dtmonday,
+			dtlmselect, dtlmcurrent, dtfestival, dtqueque, dttuesday,
 			dtyselect, dtycurrent, dtcomday, dtotherweek, dtwednesday,
 			dtlyselect, dtlycurrent, dtdayoff, dtsaturday, dtthursday,
-			dtplyouself, dtsunday, dtfriday,
-			yourselfBasicTextView;//自排按钮
-
+			dtplyouself, dtsunday, dtfriday, yourselfBasicTextView;// 自排按钮
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -50,13 +49,14 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 
 		setDialogStyle();
 
-		if(viewStatus==null)
-			viewStatus=new Bundle();
-		
+		if (viewStatus == null)
+			viewStatus = new Bundle();
+
 		View layout = inflater.inflate(R.layout.date_repeat, container, false);
 
 		date_top_left = (BasicTextView) layout.findViewById(R.id.date_top_left);
 		date_top_left.setOnClickListener(this);
+
 		String txt=TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache.get(DateDailyRepeatDiaogFragment.TAG);
 		if(txt!=null)date_top_left.setText(txt);
 
@@ -65,33 +65,44 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 		txt=TimeMasterApplication.getInstance().getCacheModel().tmpResultsCache.get(DateDaysRepeatDialogFragment.TAG);
 		if(txt!=null)date_top_center.setText(txt);
 		
-		
-		
-		confirm = (BasicTextView) layout.findViewById(R.id.date_confirm);
-		dtmselect = (SelectedTextView) layout.findViewById(R.id.date_month_select);
-		dtmcurrent = (SelectedTextView) layout.findViewById(R.id.date_month_current);
+		confirm = (BasicTextView) layout.findViewById(R.id.date_repeat_confirm);
+		dtmselect = (SelectedTextView) layout
+				.findViewById(R.id.date_month_select);
+		dtmcurrent = (SelectedTextView) layout
+				.findViewById(R.id.date_month_current);
 		dtworking = (SelectedTextView) layout.findViewById(R.id.date_working);
 		dteveryday = (SelectedTextView) layout.findViewById(R.id.date_everyday);
 		dtmonday = (SelectedTextView) layout.findViewById(R.id.date_monday);
-		dtlmcurrent = (SelectedTextView) layout.findViewById(R.id.date_lunar_month_current);
-		dtlmselect = (SelectedTextView) layout.findViewById(R.id.date_lunar_month_select);
+		dtlmcurrent = (SelectedTextView) layout
+				.findViewById(R.id.date_lunar_month_current);
+		dtlmselect = (SelectedTextView) layout
+				.findViewById(R.id.date_lunar_month_select);
 		dtfestival = (SelectedTextView) layout.findViewById(R.id.date_festival);
 		dtqueque = (SelectedTextView) layout.findViewById(R.id.date_quaque);
 		dttuesday = (SelectedTextView) layout.findViewById(R.id.date_tuesday);
-		dtyselect = (SelectedTextView) layout.findViewById(R.id.date_year_select);
-		dtycurrent = (SelectedTextView) layout.findViewById(R.id.date_year_current);
-		dtcomday = (SelectedTextView) layout.findViewById(R.id.date_commemorate_day);
-		dtotherweek = (SelectedTextView) layout.findViewById(R.id.date_other_week);
-		dtwednesday = (SelectedTextView) layout.findViewById(R.id.date_wednesday);
-		dtlyselect = (SelectedTextView) layout.findViewById(R.id.date_lunar_year_select);
-		dtlycurrent = (SelectedTextView) layout.findViewById(R.id.date_lunar_year_current);
+		dtyselect = (SelectedTextView) layout
+				.findViewById(R.id.date_year_select);
+		dtycurrent = (SelectedTextView) layout
+				.findViewById(R.id.date_year_current);
+		dtcomday = (SelectedTextView) layout
+				.findViewById(R.id.date_commemorate_day);
+		dtotherweek = (SelectedTextView) layout
+				.findViewById(R.id.date_other_week);
+		dtwednesday = (SelectedTextView) layout
+				.findViewById(R.id.date_wednesday);
+		dtlyselect = (SelectedTextView) layout
+				.findViewById(R.id.date_lunar_year_select);
+		dtlycurrent = (SelectedTextView) layout
+				.findViewById(R.id.date_lunar_year_current);
 		dtdayoff = (SelectedTextView) layout.findViewById(R.id.date_day_off);
 		dtsaturday = (SelectedTextView) layout.findViewById(R.id.date_saturday);
 		dtthursday = (SelectedTextView) layout.findViewById(R.id.date_thursday);
-		dtplyouself = (SelectedTextView) layout.findViewById(R.id.date_plan_yourself);
+		dtplyouself = (SelectedTextView) layout
+				.findViewById(R.id.date_plan_yourself);
 		dtsunday = (SelectedTextView) layout.findViewById(R.id.date_sunday);
 		dtfriday = (SelectedTextView) layout.findViewById(R.id.date_friday);
-		yourselfBasicTextView = (SelectedTextView) layout.findViewById(R.id.date_plan_yourself);
+		yourselfBasicTextView = (SelectedTextView) layout
+				.findViewById(R.id.date_plan_yourself);
 
 		setInitialStatus(dtworking);
 		setInitialStatus(dteveryday);
@@ -115,7 +126,7 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 		setInitialStatus(dtsunday);
 		setInitialStatus(dtfriday);
 		setInitialStatus(yourselfBasicTextView);
-		
+
 		dtmselect.setOnClickListener(this);
 		dtmcurrent.setOnClickListener(this);
 		dtworking.setOnClickListener(this);
@@ -140,7 +151,9 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 		dtsunday.setOnClickListener(this);
 		dtfriday.setOnClickListener(this);
 		yourselfBasicTextView.setOnClickListener(this);
+
 		
+		super.superInit();
 		return layout;
 	}
 
@@ -162,10 +175,10 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 
 					@Override
 					public void getResult(String result) {
+
 						date_top_left.setText(TimeMasterApplication.getInstance().getCacheModel().
                                 tmpResultsCache.get(DateDailyRepeatDiaogFragment.TAG));
 		
-						
 					}
 				});
 				showDialog(datatopFragment);
@@ -175,25 +188,47 @@ public class RepeatDialogFragment extends BasicDialogFragment implements View.On
 			datecenterFragment = new DateDaysRepeatDialogFragment();
 			datecenterFragment.setShowsDialog(true);
 			datecenterFragment.setWheelInterface(new WheelResultInterface() {
-				
+
 				@Override
 				public void getResult(String result) {
 					date_top_center.setText(TimeMasterApplication.getInstance().getCacheModel().
 							tmpResultsCache.get(DateDaysRepeatDialogFragment.TAG));
 					}
-				
 			});
 			showDialog(datecenterFragment);
+			break;
+		case R.id.date_month_select:      
+			selecteddayFragment = new SelectDayFragment();
+			selecteddayFragment.setShowsDialog(true);
+			showDialog(selecteddayFragment);
+			break;
+			
+		case R.id.date_year_select:
+			selecteddayFragment = new SelectDayFragment();
+			selecteddayFragment.setShowsDialog(true);
+			showDialog(selecteddayFragment);
 			break;
 		default:
 			break;
 		}
 
 	}
-    
-	private void setInitialStatus(SelectedTextView view){
-		if(viewStatus.getBoolean(view.getId()+"",false))
+
+	private void setInitialStatus(SelectedTextView view) {
+		if (viewStatus.getBoolean(view.getId() + "", false))
 			view.setSelected();
+	}
+
+	@Override
+	protected String getSelectedString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected void pushConfirm() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
