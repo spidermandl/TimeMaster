@@ -38,7 +38,8 @@
     <color name="specialReminder">#FF0000</color>
     <color name="commonReminder">#BDBAB5</color>
     <color name="gray">#808080</color>
- 
+ 	<color name="button_click_0">#DADADA</color>
+ 	<color name="button_click_1">#FFFFFF</color>
     
     
     

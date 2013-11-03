@@ -137,9 +137,7 @@ public class DateDetailCreateFragment extends Fragment implements
 		planPeroidSelector.setInputType(InputType.TYPE_NULL);
 		planPeroidSelector.setOnTouchListener(this);
 		
-		dateRepeat=(BasicTextView)layout.findViewById(R.id.plan_repeat);
-
-		dateRepeat.setOnClickListener(this);
+		
 		
 		dateWarning=(BasicTextView)layout.findViewById(R.id.plan_warning);
 		dateWarning.setOnClickListener(this);

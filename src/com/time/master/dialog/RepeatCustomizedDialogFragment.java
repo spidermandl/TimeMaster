@@ -222,6 +222,9 @@ public class RepeatCustomizedDialogFragment extends BasicDialogFragment implemen
 				index=0;
 			string="";
 			list.get(index).setSelection(string.length());
+			list.get(index).setFocusable(true);
+			list.get(index).setFocusableInTouchMode(true);
+			list.get(index).requestFocus();
 //			list.get(index).setCursorVisible(true);
 				break;
 		case R.id.date_yes:
