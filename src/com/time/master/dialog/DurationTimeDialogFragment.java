@@ -35,9 +35,14 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 	public static final int TIME_LIST_NUMBER = 7;
 	DateModel model;
 
-	private ChineseCalendar chineseCalendar;// 当前选中时间
+    /**单位计量时间*/
+	public static final long CAL_YEAR=3652/10*24*3600*1000L;
+	public static final long CAL_MONTH=30*24*3600*1000L;
+	public static final long CAL_DAY=24*3600*1000L;
+	public static final long CAL_HOUR=3600*1000L;
+	public static final long CAL_MIN=60*1000L;
+	
 
-	Calendar calendar;
 	TimeWheelView line1, line2, line3, line4, line5;
 	NumericWheelAdapter line2Adapter, line3Adapter, line4Adapter;
 
@@ -60,14 +65,18 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 		// TODO Auto-generated method stub
 		setDialogStyle();
 		model = new DateModel();
-		calendar = Calendar.getInstance();
-		model.year = calendar.get(Calendar.YEAR);
-		model.month = calendar.get(Calendar.MONTH)+1;
-		model.day = calendar.get(Calendar.DAY_OF_MONTH);
-		model.hour = calendar.get(Calendar.HOUR_OF_DAY);
-		model.minute = calendar.get(Calendar.MINUTE);
+		model.durationStyle=2;
+		model.timeStyle=3;
+//		model.year=(int)(duration/CAL_YEAR);
+//		model.month=(duration%CAL_YEAR)/CAL_MONTH
+		
+//		calendar = Calendar.getInstance();
+//		model.year = calendar.get(Calendar.YEAR);
+//		model.month = calendar.get(Calendar.MONTH)+1;
+//		model.day = calendar.get(Calendar.DAY_OF_MONTH);
+//		model.hour = calendar.get(Calendar.HOUR_OF_DAY);
+//		model.minute = calendar.get(Calendar.MINUTE);
 
-		chineseCalendar = new ChineseCalendar(calendar.getTime());
 
 		View layout = inflater.inflate(R.layout.timeduration_wheel_layout,
 				container, false);
@@ -90,7 +99,7 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 		line1.setViewAdapter(line1Adapter);
 		// line1.setBackground(R.drawable.wheel_bg_full);
 		line1.setCyclic(false);
-		line1.setCurrentItem(5000);
+		line1.setCurrentItem(2);
 
 		line1.addScrollingListener(new OnWheelScrollListener() {
 
@@ -103,11 +112,6 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
 				// TODO Auto-generated method stub
-				model.year = calendar.get(Calendar.YEAR)
-						+ wheel.getCurrentItem() - 5000;
-				System.out.println(wheel.getCurrentItem());
-				// freshDayWheel();
-
 				editText.setText(getDateString());
 
 			}
@@ -136,7 +140,35 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
-				model.day = wheel.getCurrentItem();
+				switch (model.timeStyle) {
+				case 0:
+					break;
+				case 1:
+					model.year=0;
+					model.month=0;
+					model.day=0;
+					model.hour=wheel.getCurrentItem();
+					break;
+				case 2:
+					model.year=0;
+					model.month=0;
+					model.day=wheel.getCurrentItem();
+					model.hour=0;
+					break;
+				case 3:
+					model.year=0;
+					model.month=0;
+					model.day=wheel.getCurrentItem();
+					break;
+				case 4:
+					model.year=wheel.getCurrentItem();
+					model.hour=0;
+					model.minute=0;
+					break;
+				default:
+					break;
+				}
+				calLongTime();
 				editText.setText(getDateString());
 			}
 		});
@@ -163,7 +195,35 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
-				model.hour = wheel.getCurrentItem();
+				switch (model.timeStyle) {
+				case 0:
+					break;
+				case 1:
+					model.year=0;
+					model.month=0;
+					model.day=0;
+					model.minute=wheel.getCurrentItem()*6;
+					break;
+				case 2:
+					model.year=0;
+					model.month=0;
+					model.hour=0;
+					model.minute=wheel.getCurrentItem()*24*6;
+					break;
+				case 3:
+					model.year=0;
+					model.month=0;
+					model.hour=wheel.getCurrentItem();
+					break;
+				case 4:
+					model.month=wheel.getCurrentItem();
+					model.hour=0;
+					model.minute=0;
+					break;
+				default:
+					break;
+				}
+				calLongTime();
 				editText.setText(getDateString());
 			}
 		});
@@ -184,13 +244,37 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 
 			@Override
 			public void onScrollingStarted(WheelView wheel) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
-				model.minute = wheel.getCurrentItem();
+				switch (model.timeStyle) {
+				case 0:
+					model.minute=wheel.getCurrentItem();
+					model.hour=0;
+					model.day=0;
+					model.month=0;
+					model.year=0;
+					break;
+				case 1:
+					
+					break;
+				case 2:
+					
+					break;
+				case 3:
+					model.minute=wheel.getCurrentItem()*5;
+					break;
+				case 4:
+					model.day=wheel.getCurrentItem();
+					model.hour=0;
+					model.minute=0;
+					break;
+				default:
+					break;
+				}
+				calLongTime();
 				editText.setText(getDateString());
 			}
 		});
@@ -215,12 +299,13 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 
 			@Override
 			public void onScrollingFinished(WheelView wheel) {
-				// TODO Auto-generated method stub
+				model.timeStyle=wheel.getCurrentItem();
 				changeStyle(wheel.getCurrentItem());
 			}
 		});
 		line5.addClickingListener(clickListener);
-
+		changeStyle(model.timeStyle);
+		
 		superInit();
 		return layout;
 	}
@@ -228,7 +313,11 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 	private String getDateString() {
 		return model.year + "/ "+model.month + "/ "+model.day + "/ " + model.hour + ":" + model.minute;
 	}
-
+    /**计算long型时间*/
+	private void calLongTime(){
+		long duration=model.year*CAL_YEAR+model.month*CAL_MONTH+model.day*CAL_DAY+model.hour*CAL_HOUR+model.minute*CAL_MIN;
+		TimeMasterApplication.getInstance().getCacheModel().durationTime=duration;
+	}
 	@Override
 	protected String getSelectedString() {
 		// TODO Auto-generated method stub
@@ -249,6 +338,7 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 	}
 
 	private void changeStyle(int styleNumber) {
+		long duration=TimeMasterApplication.getInstance().getCacheModel().durationTime;
 		switch (styleNumber) {
 		case 0:
 			line2.setVisibility(View.GONE);
@@ -261,8 +351,11 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 			line4Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line4Adapter.setItemTextResource(R.id.numeric_text);
 			line4.setViewAdapter(line4Adapter);
+			duration=duration%CAL_MIN;
+			line4.setCurrentItem((int)duration/1000);
 			break;
 		case 1:
+			duration=duration%CAL_DAY;
 			line2.setVisibility(View.VISIBLE);
 			line3.setVisibility(View.VISIBLE);
 			line4.setVisibility(View.GONE);
@@ -274,11 +367,13 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 			line2Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line2Adapter.setItemTextResource(R.id.numeric_text);
 			line2.setViewAdapter(line2Adapter);
+			line2.setCurrentItem((int)(duration/CAL_HOUR));
 			line3Adapter = new NumericWheelAdapter(this.getActivity(), 0, 9);
 			line3Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line3Adapter.setItemTextResource(R.id.numeric_text);
 			line3Adapter.setSpeicalString(".", "");
 			line3.setViewAdapter(line3Adapter);
+			line3.setCurrentItem((int)(duration%CAL_HOUR*10/CAL_HOUR));
 			break;
 		case 2:
 			line2.setVisibility(View.VISIBLE);
@@ -292,11 +387,13 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 			line2Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line2Adapter.setItemTextResource(R.id.numeric_text);
 			line2.setViewAdapter(line2Adapter);
+			line2.setCurrentItem((int)(duration/CAL_DAY));
 			line3Adapter = new NumericWheelAdapter(this.getActivity(), 0, 9);
 			line3Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line3Adapter.setItemTextResource(R.id.numeric_text);
 			line3Adapter.setSpeicalString(".", "");
 			line3.setViewAdapter(line3Adapter);
+			line3.setCurrentItem((int)(duration%CAL_DAY*10/CAL_DAY));
 			break;
 		case 3:
 			line2.setVisibility(View.VISIBLE);
@@ -312,18 +409,21 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 			line2Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line2Adapter.setItemTextResource(R.id.numeric_text);
 			line2.setViewAdapter(line2Adapter);
+			line2.setCurrentItem((int)(duration/CAL_DAY));
 			line3Adapter = new NumericWheelAdapter(this.getActivity(), 0, 23,
 					"%02d");
 			line3Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line3Adapter.setItemTextResource(R.id.numeric_text);
 			line3Adapter.setSpeicalString("", ":");
 			line3.setViewAdapter(line3Adapter);
+			line3.setCurrentItem((int)(duration%CAL_DAY/CAL_HOUR));
 			line4Adapter = new NumericWheelAdapter(this.getActivity(), 0, 59,
 					"%02d");
 			line4Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line4Adapter.setItemTextResource(R.id.numeric_text);
 			line4Adapter.setTimeInterval(5);
 			line4.setViewAdapter(line4Adapter);
+			line4.setCurrentItem((int)(duration%CAL_HOUR/(CAL_MIN*5)));
 			break;
 		case 4:
 			line2.setVisibility(View.VISIBLE);
@@ -335,31 +435,30 @@ public class DurationTimeDialogFragment extends WheelDialogFragment implements O
 			// setViewLayoutParams(line2, 1.0f);
 			// setViewLayoutParams(line3, 1.0f);
 			// setViewLayoutParams(line4, 1.0f);
-			line2Adapter = new NumericWheelAdapter(this.getActivity(), 0, 365);
+			line2Adapter = new NumericWheelAdapter(this.getActivity(), 0, 5000);
 			line2Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line2Adapter.setItemTextResource(R.id.numeric_text);
 			line2Adapter.setSpeicalString("", "年");
 			line2.setViewAdapter(line2Adapter);
-			line3Adapter = new NumericWheelAdapter(this.getActivity(), 0, 12);
+			line2.setCurrentItem((int)(duration/CAL_YEAR));
+			line3Adapter = new NumericWheelAdapter(this.getActivity(), 0, 11);
 			line3Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line3Adapter.setItemTextResource(R.id.numeric_text);
 			line3Adapter.setSpeicalString("", "月");
 			line3.setViewAdapter(line3Adapter);
-			line4Adapter = new NumericWheelAdapter(this.getActivity(), 0, 32);
+			line3.setCurrentItem((int)(duration%CAL_YEAR/CAL_MONTH));
+			line4Adapter = new NumericWheelAdapter(this.getActivity(), 0, 29);
 			line4Adapter.setItemResource(R.layout.wheel_nemeric_text_item);
 			line4Adapter.setItemTextResource(R.id.numeric_text);
 			line4Adapter.setSpeicalString("", "日");
 			line4.setViewAdapter(line4Adapter);
+			line4.setCurrentItem((int)(duration%CAL_MONTH/CAL_DAY));
 		default:
 			break;
 		}
+		TimeMasterApplication.getInstance().getCacheModel().durationTime=duration;
 	}
 
-	private void setViewLayoutParams(UIWheelView view, float weight) {
-		LayoutParams param = new LinearLayout.LayoutParams(0,
-				LayoutParams.MATCH_PARENT, weight);
-		view.setLayoutParams(param);
-	}
 
 	@Override
 	protected void pushConfirm() {
