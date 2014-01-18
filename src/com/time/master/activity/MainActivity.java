@@ -34,7 +34,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		SystemPrompt pageFragment = new SystemPrompt();
 		fragmentTransaction.add(R.id.mainlayout, pageFragment);
 		fragmentTransaction.commit();
-		
+		//test
 	}
 
 	// public void showPopupWindow(Context context, View view) {
